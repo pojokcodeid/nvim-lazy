@@ -49,7 +49,7 @@ return {
 	{
 		"numToStr/Comment.nvim",
 		commit = "97a188a98b5a3a6f9b1b850799ac078faa17ab67",
-		event = "BufReadPost",
+		event = "InsertEnter",
 		init = function()
 			require("user.comment")
 		end,
@@ -183,7 +183,7 @@ return {
 	},
 	{
 		"NvChad/nvim-colorizer.lua",
-		event = "BufWinEnter",
+		event = "VeryLazy",
 		opts = function()
 			require("user.colorizer")
 		end,
