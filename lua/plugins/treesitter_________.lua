@@ -1,8 +1,8 @@
 return {
     {
       "nvim-treesitter/nvim-treesitter",
-      build = ":TSUpdate",
-      event = "BufReadPost",
+      -- build = ":TSUpdate",
+      -- event = "BufReadPost",
       ---@type TSConfig
       opts = {
         sync_install = false,
@@ -36,19 +36,19 @@ return {
         ensure_installed = {
 					"bash",
 					"html",
-					"c",
-					"javascript",
-					"json",
-					"lua",
-					"python",
-					"typescript",
-					"tsx",
-					"css",
-					"rust",
-					"java",
-					"yaml",
-					"markdown",
-					"markdown_inline",
+					-- "c",
+					-- "javascript",
+					-- "json",
+					-- "lua",
+					-- "python",
+					-- "typescript",
+					-- "tsx",
+					-- "css",
+					-- "rust",
+					-- "java",
+					-- "yaml",
+					-- "markdown",
+					-- "markdown_inline",
         },
       },
       ---@param opts TSConfig

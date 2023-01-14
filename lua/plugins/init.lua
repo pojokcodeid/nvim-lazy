@@ -55,7 +55,16 @@ return {
 		end,
 	},
 	-- include treesitter
-	require("plugins.treesitter"),
+	-- require("plugins.treesitter"),
+	{
+		"nvim-treesitter/nvim-treesitter",
+		commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
+		run = ":TSUpdate",
+		event = "BufWinEnter",
+		opts = function()
+			require("user.treesitter")
+		end,
+	},
 	{
 		"kyazdani42/nvim-web-devicons",
 		commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352",
@@ -159,7 +168,7 @@ return {
 	{ "mg979/vim-visual-multi", event = "BufWinEnter" },
 	{
 		"windwp/nvim-ts-autotag",
-		dependencies = "nvim-treesitter",
+		dependencies = "nvim-treesitter/nvim-treesitter",
 		init = function()
 			require("nvim-ts-autotag").setup()
 		end,
