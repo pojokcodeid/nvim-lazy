@@ -1,0 +1,23 @@
+{
+    "Codeigniter4_Validation_Controller": {
+        "prefix": "ci4:validation:controller",
+        "lang": ["php"],
+        "body": [
+            "\\$validation = \\\\Config\\\\Services::validation();",
+            "\\$rules = [",
+            "\t 'field_1' => [",
+            "\t\t'label'\t=> 'Field 1 Custom Name',",
+            "\t\t'rules'\t=> 'required',",
+            "\t\t'errors'\t=> [",
+            "\t\t\t'required'\t=> '{field} is required.'",
+            "\t\t]",
+            "\t],",
+            "];",
+            "if (!\\$this->validate(\\$rules)) {",
+            "\treturn redirect()->to('${1:route}')->withInput()->with('validation', \\$validation);",
+            "}",
+            "$0"
+        ],
+        "description": "CodeIgniter 4 - Make Validation in Controller"
+    }
+}

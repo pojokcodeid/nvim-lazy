@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "type": "shell",
+  "command": "npm",
+  // run the custom script "compile" as defined in package.json
+  "args": [
+    "run",
+    "compile",
+    "--loglevel",
+    "silent"
+  ],
+  "isBackground": true,
+  // The tsc compiler is started in watching mode
+  "problemMatcher": "$tsc-watch"
+}

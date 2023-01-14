@@ -1,0 +1,11 @@
+# tasks:
+#   - init: echo "Replace me with a build script for the project."
+#     command: mkdir -p /workspace/data && mongod --dbpath /workspace/data --fork --logpath /workspace/data/mongod.log
+ports:
+   - port: 3000
+     onOpen: open-preview
+vscode:
+   extensions:
+      - auchenberg.vscode-browser-preview@0.6.7:UsqnxvUQdYtm8ZISiN056w==
+      - evilz.vscode-reveal@4.0.4:q3Ae+UO4Nv6SYzToAsa1zw==
+      - HansUXdev.bootstrap5-snippets@1.2.3:e23xRdDNFFIPdzsiYVQ07g==

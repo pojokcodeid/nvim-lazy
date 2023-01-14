@@ -1,0 +1,128 @@
+{
+  "name": "bootstrap5-snippets",
+  "description": "Code snippets for Bootstrap 5 ",
+  "version": "1.2.5",
+  "displayName": "Bootstrap 5 & Font Awesome Snippets",
+  "publisher": "HansUXdev",
+  "icon": "bootstrap.png",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HansUXdev/B5-SNIPPETS"
+  },
+  "engines": {
+    "vscode": "0.10.x"
+  },
+  "devDependencies": {
+    "json-concat": "^0.0.1"
+  },
+  "scripts": {
+    "concat": "node_modules\\.bin\\json-concat snippets/types/*.json snippets/snippets.json",
+    "package": "npx vsce package",
+    "snip": "code --install-extension bootstrap5-snippets-1.2.4.vsix",
+    "test": "npx vsce package && npm run snip",
+    "prePublish": "npm run concat && npx vsce package && npm run snip"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "Bootstrap 5",
+    "Bootstrap",
+    "Font Awesome",
+    "Snippets",
+    "Bootstrap Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "blade",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "ejs",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "html",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "handlebars",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "latte",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "php",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "plaintext",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "razor",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "tpl",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "twig",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "vue-html",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "django-html",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "jinja-html",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "erb",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "HTML (Eex)",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "volt",
+        "path": "./snippets/bootstrap.json"
+      },
+      {
+        "language": "nunjucks",
+        "path": "./snippets/bootstrap.json"
+      }
+    ]
+  }
+}

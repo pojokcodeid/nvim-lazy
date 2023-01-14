@@ -1,0 +1,3939 @@
+{
+  "Font awesome css link": {
+    "prefix": "!fa",
+    "body": "<link rel=\"stylesheet\" href=\"${1:https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}\">$0",
+    "description": "Font awesome css link"
+  },
+  "500px": {
+    "prefix": "fa-500px",
+    "body": "<i class=\"fa fa-500px${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "500px"   
+  },
+  "address-book": {
+    "prefix": "fa-address-book",
+    "body": "<i class=\"fa fa-address-book${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "address-book"   
+  },
+  "address-book-o": {
+    "prefix": "fa-address-book-o",
+    "body": "<i class=\"fa fa-address-book-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "address-book-o"   
+  },
+  "address-card": {
+    "prefix": "fa-address-card",
+    "body": "<i class=\"fa fa-address-card${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "address-card"   
+  },
+  "address-card-o": {
+    "prefix": "fa-address-card-o",
+    "body": "<i class=\"fa fa-address-card-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "address-card-o"   
+  },
+  "adjust": {
+    "prefix": "fa-adjust",
+    "body": "<i class=\"fa fa-adjust${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "adjust"   
+  },
+  "adn": {
+    "prefix": "fa-adn",
+    "body": "<i class=\"fa fa-adn${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "adn"   
+  },
+  "align-center": {
+    "prefix": "fa-align-center",
+    "body": "<i class=\"fa fa-align-center${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "align-center"   
+  },
+  "align-justify": {
+    "prefix": "fa-align-justify",
+    "body": "<i class=\"fa fa-align-justify${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "align-justify"   
+  },
+  "align-left": {
+    "prefix": "fa-align-left",
+    "body": "<i class=\"fa fa-align-left${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "align-left"   
+  },
+  "align-right": {
+    "prefix": "fa-align-right",
+    "body": "<i class=\"fa fa-align-right${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "align-right"   
+  },
+  "amazon": {
+    "prefix": "fa-amazon",
+    "body": "<i class=\"fa fa-amazon${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "amazon"   
+  },
+  "ambulance": {
+    "prefix": "fa-ambulance",
+    "body": "<i class=\"fa fa-ambulance${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "ambulance"   
+  },
+  "american-sign-language-interpreting": {
+    "prefix": "fa-american-sign-language-interpreting",
+    "body": "<i class=\"fa fa-american-sign-language-interpreting${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "american-sign-language-interpreting"   
+  },
+  "anchor": {
+    "prefix": "fa-anchor",
+    "body": "<i class=\"fa fa-anchor${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "anchor"   
+  },
+  "android": {
+    "prefix": "fa-android",
+    "body": "<i class=\"fa fa-android${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "android"   
+  },
+  "angellist": {
+    "prefix": "fa-angellist",
+    "body": "<i class=\"fa fa-angellist${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "angellist"   
+  },
+  "angle-double-down": {
+    "prefix": "fa-angle-double-down",
+    "body": "<i class=\"fa fa-angle-double-down${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "angle-double-down"   
+  },
+  "angle-double-left": {
+    "prefix": "fa-angle-double-left",
+    "body": "<i class=\"fa fa-angle-double-left${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "angle-double-left"   
+  },
+  "angle-double-right": {
+    "prefix": "fa-angle-double-right",
+    "body": "<i class=\"fa fa-angle-double-right${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "angle-double-right"   
+  },
+  "angle-double-up": {
+    "prefix": "fa-angle-double-up",
+    "body": "<i class=\"fa fa-angle-double-up${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "angle-double-up"   
+  },
+  "angle-down": {
+    "prefix": "fa-angle-down",
+    "body": "<i class=\"fa fa-angle-down${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "angle-down"   
+  },
+  "angle-left": {
+    "prefix": "fa-angle-left",
+    "body": "<i class=\"fa fa-angle-left${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "angle-left"   
+  },
+  "angle-right": {
+    "prefix": "fa-angle-right",
+    "body": "<i class=\"fa fa-angle-right${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "angle-right"   
+  },
+  "angle-up": {
+    "prefix": "fa-angle-up",
+    "body": "<i class=\"fa fa-angle-up${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "angle-up"   
+  },
+  "apple": {
+    "prefix": "fa-apple",
+    "body": "<i class=\"fa fa-apple${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "apple"   
+  },
+  "archive": {
+    "prefix": "fa-archive",
+    "body": "<i class=\"fa fa-archive${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "archive"   
+  },
+  "area-chart": {
+    "prefix": "fa-area-chart",
+    "body": "<i class=\"fa fa-area-chart${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "area-chart"   
+  },
+  "arrow-circle-down": {
+    "prefix": "fa-arrow-circle-down",
+    "body": "<i class=\"fa fa-arrow-circle-down${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "arrow-circle-down"   
+  },
+  "arrow-circle-left": {
+    "prefix": "fa-arrow-circle-left",
+    "body": "<i class=\"fa fa-arrow-circle-left${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "arrow-circle-left"   
+  },
+  "arrow-circle-o-down": {
+    "prefix": "fa-arrow-circle-o-down",
+    "body": "<i class=\"fa fa-arrow-circle-o-down${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "arrow-circle-o-down"   
+  },
+  "arrow-circle-o-left": {
+    "prefix": "fa-arrow-circle-o-left",
+    "body": "<i class=\"fa fa-arrow-circle-o-left${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "arrow-circle-o-left"   
+  },
+  "arrow-circle-o-right": {
+    "prefix": "fa-arrow-circle-o-right",
+    "body": "<i class=\"fa fa-arrow-circle-o-right${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "arrow-circle-o-right"   
+  },
+  "arrow-circle-o-up": {
+    "prefix": "fa-arrow-circle-o-up",
+    "body": "<i class=\"fa fa-arrow-circle-o-up${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "arrow-circle-o-up"   
+  },
+  "arrow-circle-right": {
+    "prefix": "fa-arrow-circle-right",
+    "body": "<i class=\"fa fa-arrow-circle-right${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "arrow-circle-right"   
+  },
+  "arrow-circle-up": {
+    "prefix": "fa-arrow-circle-up",
+    "body": "<i class=\"fa fa-arrow-circle-up${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "arrow-circle-up"   
+  },
+  "arrow-down": {
+    "prefix": "fa-arrow-down",
+    "body": "<i class=\"fa fa-arrow-down${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "arrow-down"   
+  },
+  "arrow-left": {
+    "prefix": "fa-arrow-left",
+    "body": "<i class=\"fa fa-arrow-left${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "arrow-left"   
+  },
+  "arrow-right": {
+    "prefix": "fa-arrow-right",
+    "body": "<i class=\"fa fa-arrow-right${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "arrow-right"   
+  },
+  "arrows": {
+    "prefix": "fa-arrows",
+    "body": "<i class=\"fa fa-arrows${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "arrows"   
+  },
+  "arrows-alt": {
+    "prefix": "fa-arrows-alt",
+    "body": "<i class=\"fa fa-arrows-alt${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "arrows-alt"   
+  },
+  "arrows-h": {
+    "prefix": "fa-arrows-h",
+    "body": "<i class=\"fa fa-arrows-h${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "arrows-h"   
+  },
+  "arrows-v": {
+    "prefix": "fa-arrows-v",
+    "body": "<i class=\"fa fa-arrows-v${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "arrows-v"   
+  },
+  "arrow-up": {
+    "prefix": "fa-arrow-up",
+    "body": "<i class=\"fa fa-arrow-up${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "arrow-up"   
+  },
+  "asl-interpreting": {
+    "prefix": "fa-asl-interpreting",
+    "body": "<i class=\"fa fa-asl-interpreting${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "asl-interpreting"   
+  },
+  "assistive-listening-systems": {
+    "prefix": "fa-assistive-listening-systems",
+    "body": "<i class=\"fa fa-assistive-listening-systems${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "assistive-listening-systems"   
+  },
+  "asterisk": {
+    "prefix": "fa-asterisk",
+    "body": "<i class=\"fa fa-asterisk${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "asterisk"   
+  },
+  "at": {
+    "prefix": "fa-at",
+    "body": "<i class=\"fa fa-at${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "at"   
+  },
+  "audio-description": {
+    "prefix": "fa-audio-description",
+    "body": "<i class=\"fa fa-audio-description${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "audio-description"   
+  },
+  "automobile": {
+    "prefix": "fa-automobile",
+    "body": "<i class=\"fa fa-automobile${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "automobile"   
+  },
+  "backward": {
+    "prefix": "fa-backward",
+    "body": "<i class=\"fa fa-backward${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "backward"   
+  },
+  "balance-scale": {
+    "prefix": "fa-balance-scale",
+    "body": "<i class=\"fa fa-balance-scale${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "balance-scale"   
+  },
+  "ban": {
+    "prefix": "fa-ban",
+    "body": "<i class=\"fa fa-ban${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "ban"   
+  },
+  "bandcamp": {
+    "prefix": "fa-bandcamp",
+    "body": "<i class=\"fa fa-bandcamp${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bandcamp"   
+  },
+  "bank": {
+    "prefix": "fa-bank",
+    "body": "<i class=\"fa fa-bank${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bank"   
+  },
+  "bar-chart": {
+    "prefix": "fa-bar-chart",
+    "body": "<i class=\"fa fa-bar-chart${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bar-chart"   
+  },
+  "bar-chart-o": {
+    "prefix": "fa-bar-chart-o",
+    "body": "<i class=\"fa fa-bar-chart-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bar-chart-o",
+
+  },
+  "barcode": {
+    "prefix": "fa-barcode",
+    "body": "<i class=\"fa fa-barcode${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "barcode",
+ 
+  },
+  "bars": {
+    "prefix": "fa-bars",
+    "body": "<i class=\"fa fa-bars${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bars"   
+  },
+  "bath": {
+    "prefix": "fa-bath",
+    "body": "<i class=\"fa fa-bath${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bath"   
+  },
+  "bathtub": {
+    "prefix": "fa-bathtub",
+    "body": "<i class=\"fa fa-bathtub${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bathtub"   
+  },
+  "battery": {
+    "prefix": "fa-battery",
+    "body": "<i class=\"fa fa-battery${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "battery"   
+  },
+  "battery-0": {
+    "prefix": "fa-battery-0",
+    "body": "<i class=\"fa fa-battery-0${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "battery-0"   
+  },
+  "battery-1": {
+    "prefix": "fa-battery-1",
+    "body": "<i class=\"fa fa-battery-1${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "battery-1"   
+  },
+  "battery-2": {
+    "prefix": "fa-battery-2",
+    "body": "<i class=\"fa fa-battery-2${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "battery-2"   
+  },
+  "battery-3": {
+    "prefix": "fa-battery-3",
+    "body": "<i class=\"fa fa-battery-3${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "battery-3"   
+  },
+  "battery-4": {
+    "prefix": "fa-battery-4",
+    "body": "<i class=\"fa fa-battery-4${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "battery-4"   
+  },
+  "battery-empty": {
+    "prefix": "fa-battery-empty",
+    "body": "<i class=\"fa fa-battery-empty${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "battery-empty"   
+  },
+  "battery-full": {
+    "prefix": "fa-battery-full",
+    "body": "<i class=\"fa fa-battery-full${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "battery-full"   
+  },
+  "battery-half": {
+    "prefix": "fa-battery-half",
+    "body": "<i class=\"fa fa-battery-half${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "battery-half"   
+  },
+  "battery-quarter": {
+    "prefix": "fa-battery-quarter",
+    "body": "<i class=\"fa fa-battery-quarter${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "battery-quarter"   
+  },
+  "battery-three-quarters": {
+    "prefix": "fa-battery-three-quarters",
+    "body": "<i class=\"fa fa-battery-three-quarters${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "battery-three-quarters"   
+  },
+  "bed": {
+    "prefix": "fa-bed",
+    "body": "<i class=\"fa fa-bed${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bed"   
+  },
+  "beer": {
+    "prefix": "fa-beer",
+    "body": "<i class=\"fa fa-beer${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "beer"   
+  },
+  "behance": {
+    "prefix": "fa-behance",
+    "body": "<i class=\"fa fa-behance${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "behance"   
+  },
+  "behance-square": {
+    "prefix": "fa-behance-square",
+    "body": "<i class=\"fa fa-behance-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "behance-square"   
+  },
+  "bell": {
+    "prefix": "fa-bell",
+    "body": "<i class=\"fa fa-bell${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bell"   
+  },
+  "bell-o": {
+    "prefix": "fa-bell-o",
+    "body": "<i class=\"fa fa-bell-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bell-o"   
+  },
+  "bell-slash": {
+    "prefix": "fa-bell-slash",
+    "body": "<i class=\"fa fa-bell-slash${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bell-slash"   
+  },
+  "bell-slash-o": {
+    "prefix": "fa-bell-slash-o",
+    "body": "<i class=\"fa fa-bell-slash-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bell-slash-o"   
+  },
+  "bicycle": {
+    "prefix": "fa-bicycle",
+    "body": "<i class=\"fa fa-bicycle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bicycle"   
+  },
+  "binoculars": {
+    "prefix": "fa-binoculars",
+    "body": "<i class=\"fa fa-binoculars${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "binoculars"   
+  },
+  "birthday-cake": {
+    "prefix": "fa-birthday-cake",
+    "body": "<i class=\"fa fa-birthday-cake${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "birthday-cake"   
+  },
+  "bitbucket": {
+    "prefix": "fa-bitbucket",
+    "body": "<i class=\"fa fa-bitbucket${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bitbucket"   
+  },
+  "bitbucket-square": {
+    "prefix": "fa-bitbucket-square",
+    "body": "<i class=\"fa fa-bitbucket-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bitbucket-square"   
+  },
+  "bitcoin": {
+    "prefix": "fa-bitcoin",
+    "body": "<i class=\"fa fa-bitcoin${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bitcoin"   
+  },
+  "black-tie": {
+    "prefix": "fa-black-tie",
+    "body": "<i class=\"fa fa-black-tie${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "black-tie"   
+  },
+  "blind": {
+    "prefix": "fa-blind",
+    "body": "<i class=\"fa fa-blind${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "blind"   
+  },
+  "bluetooth": {
+    "prefix": "fa-bluetooth",
+    "body": "<i class=\"fa fa-bluetooth${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bluetooth"   
+  },
+  "bluetooth-b": {
+    "prefix": "fa-bluetooth-b",
+    "body": "<i class=\"fa fa-bluetooth-b${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bluetooth-b"   
+  },
+  "bold": {
+    "prefix": "fa-bold",
+    "body": "<i class=\"fa fa-bold${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bold"   
+  },
+  "bolt": {
+    "prefix": "fa-bolt",
+    "body": "<i class=\"fa fa-bolt${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bolt"   
+  },
+  "bomb": {
+    "prefix": "fa-bomb",
+    "body": "<i class=\"fa fa-bomb${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bomb"   
+  },
+  "book": {
+    "prefix": "fa-book",
+    "body": "<i class=\"fa fa-book${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "book"   
+  },
+  "bookmark": {
+    "prefix": "fa-bookmark",
+    "body": "<i class=\"fa fa-bookmark${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bookmark"   
+  },
+  "bookmark-o": {
+    "prefix": "fa-bookmark-o",
+    "body": "<i class=\"fa fa-bookmark-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bookmark-o"   
+  },
+  "braille": {
+    "prefix": "fa-braille",
+    "body": "<i class=\"fa fa-braille${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "braille"   
+  },
+  "briefcase": {
+    "prefix": "fa-briefcase",
+    "body": "<i class=\"fa fa-briefcase${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "briefcase"   
+  },
+  "btc": {
+    "prefix": "fa-btc",
+    "body": "<i class=\"fa fa-btc${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "btc"   
+  },
+  "bug": {
+    "prefix": "fa-bug",
+    "body": "<i class=\"fa fa-bug${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bug"   
+  },
+  "building": {
+    "prefix": "fa-building",
+    "body": "<i class=\"fa fa-building${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "building"   
+  },
+  "building-o": {
+    "prefix": "fa-building-o",
+    "body": "<i class=\"fa fa-building-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "building-o"   
+  },
+  "bullhorn": {
+    "prefix": "fa-bullhorn",
+    "body": "<i class=\"fa fa-bullhorn${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bullhorn"   
+  },
+  "bullseye": {
+    "prefix": "fa-bullseye",
+    "body": "<i class=\"fa fa-bullseye${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bullseye"   
+  },
+  "bus": {
+    "prefix": "fa-bus",
+    "body": "<i class=\"fa fa-bus${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "bus"   
+  },
+  "buysellads": {
+    "prefix": "fa-buysellads",
+    "body": "<i class=\"fa fa-buysellads${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "buysellads"   
+  },
+  "cab": {
+    "prefix": "fa-cab",
+    "body": "<i class=\"fa fa-cab${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cab"   
+  },
+  "calculator": {
+    "prefix": "fa-calculator",
+    "body": "<i class=\"fa fa-calculator${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "calculator"   
+  },
+  "calendar": {
+    "prefix": "fa-calendar",
+    "body": "<i class=\"fa fa-calendar${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "calendar"   
+  },
+  "calendar-check-o": {
+    "prefix": "fa-calendar-check-o",
+    "body": "<i class=\"fa fa-calendar-check-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "calendar-check-o"   
+  },
+  "calendar-minus-o": {
+    "prefix": "fa-calendar-minus-o",
+    "body": "<i class=\"fa fa-calendar-minus-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "calendar-minus-o"   
+  },
+  "calendar-o": {
+    "prefix": "fa-calendar-o",
+    "body": "<i class=\"fa fa-calendar-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "calendar-o"   
+  },
+  "calendar-plus-o": {
+    "prefix": "fa-calendar-plus-o",
+    "body": "<i class=\"fa fa-calendar-plus-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "calendar-plus-o"   
+  },
+  "calendar-times-o": {
+    "prefix": "fa-calendar-times-o",
+    "body": "<i class=\"fa fa-calendar-times-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "calendar-times-o"   
+  },
+  "camera": {
+    "prefix": "fa-camera",
+    "body": "<i class=\"fa fa-camera${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "camera"   
+  },
+  "camera-retro": {
+    "prefix": "fa-camera-retro",
+    "body": "<i class=\"fa fa-camera-retro${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "camera-retro"   
+  },
+  "car": {
+    "prefix": "fa-car",
+    "body": "<i class=\"fa fa-car${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "car"   
+  },
+  "caret-down": {
+    "prefix": "fa-caret-down",
+    "body": "<i class=\"fa fa-caret-down${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "caret-down"   
+  },
+  "caret-left": {
+    "prefix": "fa-caret-left",
+    "body": "<i class=\"fa fa-caret-left${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "caret-left"   
+  },
+  "caret-right": {
+    "prefix": "fa-caret-right",
+    "body": "<i class=\"fa fa-caret-right${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "caret-right"   
+  },
+  "caret-square-o-down": {
+    "prefix": "fa-caret-square-o-down",
+    "body": "<i class=\"fa fa-caret-square-o-down${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "caret-square-o-down"   
+  },
+  "caret-square-o-left": {
+    "prefix": "fa-caret-square-o-left",
+    "body": "<i class=\"fa fa-caret-square-o-left${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "caret-square-o-left"   
+  },
+  "caret-square-o-right": {
+    "prefix": "fa-caret-square-o-right",
+    "body": "<i class=\"fa fa-caret-square-o-right${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "caret-square-o-right"   
+  },
+  "caret-square-o-up": {
+    "prefix": "fa-caret-square-o-up",
+    "body": "<i class=\"fa fa-caret-square-o-up${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "caret-square-o-up"   
+  },
+  "caret-up": {
+    "prefix": "fa-caret-up",
+    "body": "<i class=\"fa fa-caret-up${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "caret-up"   
+  },
+  "cart-arrow-down": {
+    "prefix": "fa-cart-arrow-down",
+    "body": "<i class=\"fa fa-cart-arrow-down${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cart-arrow-down"   
+  },
+  "cart-plus": {
+    "prefix": "fa-cart-plus",
+    "body": "<i class=\"fa fa-cart-plus${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cart-plus"   
+  },
+  "cc": {
+    "prefix": "fa-cc",
+    "body": "<i class=\"fa fa-cc${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cc"   
+  },
+  "cc-amex": {
+    "prefix": "fa-cc-amex",
+    "body": "<i class=\"fa fa-cc-amex${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cc-amex"   
+  },
+  "cc-diners-club": {
+    "prefix": "fa-cc-diners-club",
+    "body": "<i class=\"fa fa-cc-diners-club${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cc-diners-club"   
+  },
+  "cc-discover": {
+    "prefix": "fa-cc-discover",
+    "body": "<i class=\"fa fa-cc-discover${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cc-discover"   
+  },
+  "cc-jcb": {
+    "prefix": "fa-cc-jcb",
+    "body": "<i class=\"fa fa-cc-jcb${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cc-jcb"   
+  },
+  "cc-mastercard": {
+    "prefix": "fa-cc-mastercard",
+    "body": "<i class=\"fa fa-cc-mastercard${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cc-mastercard"   
+  },
+  "cc-paypal": {
+    "prefix": "fa-cc-paypal",
+    "body": "<i class=\"fa fa-cc-paypal${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cc-paypal"   
+  },
+  "cc-stripe": {
+    "prefix": "fa-cc-stripe",
+    "body": "<i class=\"fa fa-cc-stripe${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cc-stripe"   
+  },
+  "cc-visa": {
+    "prefix": "fa-cc-visa",
+    "body": "<i class=\"fa fa-cc-visa${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cc-visa"   
+  },
+  "certificate": {
+    "prefix": "fa-certificate",
+    "body": "<i class=\"fa fa-certificate${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "certificate"   
+  },
+  "chain": {
+    "prefix": "fa-chain",
+    "body": "<i class=\"fa fa-chain${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "chain"   
+  },
+  "chain-broken": {
+    "prefix": "fa-chain-broken",
+    "body": "<i class=\"fa fa-chain-broken${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "chain-broken"   
+  },
+  "check": {
+    "prefix": "fa-check",
+    "body": "<i class=\"fa fa-check${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "check"   
+  },
+  "check-circle": {
+    "prefix": "fa-check-circle",
+    "body": "<i class=\"fa fa-check-circle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "check-circle"   
+  },
+  "check-circle-o": {
+    "prefix": "fa-check-circle-o",
+    "body": "<i class=\"fa fa-check-circle-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "check-circle-o"   
+  },
+  "check-square": {
+    "prefix": "fa-check-square",
+    "body": "<i class=\"fa fa-check-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "check-square"   
+  },
+  "check-square-o": {
+    "prefix": "fa-check-square-o",
+    "body": "<i class=\"fa fa-check-square-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "check-square-o"   
+  },
+  "chevron-circle-down": {
+    "prefix": "fa-chevron-circle-down",
+    "body": "<i class=\"fa fa-chevron-circle-down${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "chevron-circle-down"   
+  },
+  "chevron-circle-left": {
+    "prefix": "fa-chevron-circle-left",
+    "body": "<i class=\"fa fa-chevron-circle-left${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "chevron-circle-left"   
+  },
+  "chevron-circle-right": {
+    "prefix": "fa-chevron-circle-right",
+    "body": "<i class=\"fa fa-chevron-circle-right${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "chevron-circle-right"   
+  },
+  "chevron-circle-up": {
+    "prefix": "fa-chevron-circle-up",
+    "body": "<i class=\"fa fa-chevron-circle-up${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "chevron-circle-up"   
+  },
+  "chevron-down": {
+    "prefix": "fa-chevron-down",
+    "body": "<i class=\"fa fa-chevron-down${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "chevron-down"   
+  },
+  "chevron-left": {
+    "prefix": "fa-chevron-left",
+    "body": "<i class=\"fa fa-chevron-left${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "chevron-left"   
+  },
+  "chevron-right": {
+    "prefix": "fa-chevron-right",
+    "body": "<i class=\"fa fa-chevron-right${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "chevron-right"   
+  },
+  "chevron-up": {
+    "prefix": "fa-chevron-up",
+    "body": "<i class=\"fa fa-chevron-up${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "chevron-up"   
+  },
+  "child": {
+    "prefix": "fa-child",
+    "body": "<i class=\"fa fa-child${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "child"   
+  },
+  "chrome": {
+    "prefix": "fa-chrome",
+    "body": "<i class=\"fa fa-chrome${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "chrome"   
+  },
+  "circle": {
+    "prefix": "fa-circle",
+    "body": "<i class=\"fa fa-circle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "circle"   
+  },
+  "circle-o": {
+    "prefix": "fa-circle-o",
+    "body": "<i class=\"fa fa-circle-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "circle-o"   
+  },
+  "circle-o-notch": {
+    "prefix": "fa-circle-o-notch",
+    "body": "<i class=\"fa fa-circle-o-notch${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "circle-o-notch"   
+  },
+  "circle-thin": {
+    "prefix": "fa-circle-thin",
+    "body": "<i class=\"fa fa-circle-thin${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "circle-thin"   
+  },
+  "clipboard": {
+    "prefix": "fa-clipboard",
+    "body": "<i class=\"fa fa-clipboard${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "clipboard"   
+  },
+  "clock-o": {
+    "prefix": "fa-clock-o",
+    "body": "<i class=\"fa fa-clock-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "clock-o"   
+  },
+  "clone": {
+    "prefix": "fa-clone",
+    "body": "<i class=\"fa fa-clone${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "clone"   
+  },
+  "close": {
+    "prefix": "fa-close",
+    "body": "<i class=\"fa fa-close${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "close"   
+  },
+  "cloud": {
+    "prefix": "fa-cloud",
+    "body": "<i class=\"fa fa-cloud${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cloud"   
+  },
+  "cloud-download": {
+    "prefix": "fa-cloud-download",
+    "body": "<i class=\"fa fa-cloud-download${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cloud-download"   
+  },
+  "cloud-upload": {
+    "prefix": "fa-cloud-upload",
+    "body": "<i class=\"fa fa-cloud-upload${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cloud-upload"   
+  },
+  "cny": {
+    "prefix": "fa-cny",
+    "body": "<i class=\"fa fa-cny${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cny"   
+  },
+  "code": {
+    "prefix": "fa-code",
+    "body": "<i class=\"fa fa-code${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "code"   
+  },
+  "code-fork": {
+    "prefix": "fa-code-fork",
+    "body": "<i class=\"fa fa-code-fork${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "code-fork"   
+  },
+  "codepen": {
+    "prefix": "fa-codepen",
+    "body": "<i class=\"fa fa-codepen${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "codepen"   
+  },
+  "codiepie": {
+    "prefix": "fa-codiepie",
+    "body": "<i class=\"fa fa-codiepie${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "codiepie"   
+  },
+  "coffee": {
+    "prefix": "fa-coffee",
+    "body": "<i class=\"fa fa-coffee${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "coffee"   
+  },
+  "cog": {
+    "prefix": "fa-cog",
+    "body": "<i class=\"fa fa-cog${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cog"   
+  },
+  "cogs": {
+    "prefix": "fa-cogs",
+    "body": "<i class=\"fa fa-cogs${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cogs"   
+  },
+  "columns": {
+    "prefix": "fa-columns",
+    "body": "<i class=\"fa fa-columns${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "columns"   
+  },
+  "comment": {
+    "prefix": "fa-comment",
+    "body": "<i class=\"fa fa-comment${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "comment"   
+  },
+  "commenting": {
+    "prefix": "fa-commenting",
+    "body": "<i class=\"fa fa-commenting${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "commenting"   
+  },
+  "commenting-o": {
+    "prefix": "fa-commenting-o",
+    "body": "<i class=\"fa fa-commenting-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "commenting-o"   
+  },
+  "comment-o": {
+    "prefix": "fa-comment-o",
+    "body": "<i class=\"fa fa-comment-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "comment-o"   
+  },
+  "comments": {
+    "prefix": "fa-comments",
+    "body": "<i class=\"fa fa-comments${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "comments"   
+  },
+  "comments-o": {
+    "prefix": "fa-comments-o",
+    "body": "<i class=\"fa fa-comments-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "comments-o"   
+  },
+  "compass": {
+    "prefix": "fa-compass",
+    "body": "<i class=\"fa fa-compass${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "compass"   
+  },
+  "compress": {
+    "prefix": "fa-compress",
+    "body": "<i class=\"fa fa-compress${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "compress"   
+  },
+  "connectdevelop": {
+    "prefix": "fa-connectdevelop",
+    "body": "<i class=\"fa fa-connectdevelop${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "connectdevelop"   
+  },
+  "contao": {
+    "prefix": "fa-contao",
+    "body": "<i class=\"fa fa-contao${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "contao"   
+  },
+  "copy": {
+    "prefix": "fa-copy",
+    "body": "<i class=\"fa fa-copy${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "copy"   
+  },
+  "copyright": {
+    "prefix": "fa-copyright",
+    "body": "<i class=\"fa fa-copyright${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "copyright"   
+  },
+  "creative-commons": {
+    "prefix": "fa-creative-commons",
+    "body": "<i class=\"fa fa-creative-commons${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "creative-commons"   
+  },
+  "credit-card": {
+    "prefix": "fa-credit-card",
+    "body": "<i class=\"fa fa-credit-card${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "credit-card"   
+  },
+  "credit-card-alt": {
+    "prefix": "fa-credit-card-alt",
+    "body": "<i class=\"fa fa-credit-card-alt${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "credit-card-alt"   
+  },
+  "crop": {
+    "prefix": "fa-crop",
+    "body": "<i class=\"fa fa-crop${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "crop"   
+  },
+  "crosshairs": {
+    "prefix": "fa-crosshairs",
+    "body": "<i class=\"fa fa-crosshairs${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "crosshairs"   
+  },
+  "css3": {
+    "prefix": "fa-css3",
+    "body": "<i class=\"fa fa-css3${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "css3"   
+  },
+  "cube": {
+    "prefix": "fa-cube",
+    "body": "<i class=\"fa fa-cube${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cube"   
+  },
+  "cubes": {
+    "prefix": "fa-cubes",
+    "body": "<i class=\"fa fa-cubes${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cubes"   
+  },
+  "cut": {
+    "prefix": "fa-cut",
+    "body": "<i class=\"fa fa-cut${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cut"   
+  },
+  "cutlery": {
+    "prefix": "fa-cutlery",
+    "body": "<i class=\"fa fa-cutlery${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "cutlery"   
+  },
+  "dashboard": {
+    "prefix": "fa-dashboard",
+    "body": "<i class=\"fa fa-dashboard${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "dashboard"   
+  },
+  "dashcube": {
+    "prefix": "fa-dashcube",
+    "body": "<i class=\"fa fa-dashcube${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "dashcube"   
+  },
+  "database": {
+    "prefix": "fa-database",
+    "body": "<i class=\"fa fa-database${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "database"   
+  },
+  "deaf": {
+    "prefix": "fa-deaf",
+    "body": "<i class=\"fa fa-deaf${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "deaf"   
+  },
+  "deafness": {
+    "prefix": "fa-deafness",
+    "body": "<i class=\"fa fa-deafness${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "deafness"   
+  },
+  "dedent": {
+    "prefix": "fa-dedent",
+    "body": "<i class=\"fa fa-dedent${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "dedent"   
+  },
+  "delicious": {
+    "prefix": "fa-delicious",
+    "body": "<i class=\"fa fa-delicious${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "delicious"   
+  },
+  "desktop": {
+    "prefix": "fa-desktop",
+    "body": "<i class=\"fa fa-desktop${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "desktop"   
+  },
+  "deviantart": {
+    "prefix": "fa-deviantart",
+    "body": "<i class=\"fa fa-deviantart${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "deviantart"   
+  },
+  "diamond": {
+    "prefix": "fa-diamond",
+    "body": "<i class=\"fa fa-diamond${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "diamond"   
+  },
+  "digg": {
+    "prefix": "fa-digg",
+    "body": "<i class=\"fa fa-digg${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "digg"   
+  },
+  "dollar": {
+    "prefix": "fa-dollar",
+    "body": "<i class=\"fa fa-dollar${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "dollar"   
+  },
+  "dot-circle-o": {
+    "prefix": "fa-dot-circle-o",
+    "body": "<i class=\"fa fa-dot-circle-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "dot-circle-o"   
+  },
+  "download": {
+    "prefix": "fa-download",
+    "body": "<i class=\"fa fa-download${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "download"   
+  },
+  "dribbble": {
+    "prefix": "fa-dribbble",
+    "body": "<i class=\"fa fa-dribbble${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "dribbble"   
+  },
+  "drivers-license": {
+    "prefix": "fa-drivers-license",
+    "body": "<i class=\"fa fa-drivers-license${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "drivers-license"   
+  },
+  "drivers-license-o": {
+    "prefix": "fa-drivers-license-o",
+    "body": "<i class=\"fa fa-drivers-license-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "drivers-license-o"   
+  },
+  "dropbox": {
+    "prefix": "fa-dropbox",
+    "body": "<i class=\"fa fa-dropbox${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "dropbox"   
+  },
+  "drupal": {
+    "prefix": "fa-drupal",
+    "body": "<i class=\"fa fa-drupal${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "drupal"   
+  },
+  "edge": {
+    "prefix": "fa-edge",
+    "body": "<i class=\"fa fa-edge${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "edge"   
+  },
+  "edit": {
+    "prefix": "fa-edit",
+    "body": "<i class=\"fa fa-edit${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "edit"   
+  },
+  "eercast": {
+    "prefix": "fa-eercast",
+    "body": "<i class=\"fa fa-eercast${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "eercast"   
+  },
+  "eject": {
+    "prefix": "fa-eject",
+    "body": "<i class=\"fa fa-eject${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "eject"   
+  },
+  "ellipsis-h": {
+    "prefix": "fa-ellipsis-h",
+    "body": "<i class=\"fa fa-ellipsis-h${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "ellipsis-h"   
+  },
+  "ellipsis-v": {
+    "prefix": "fa-ellipsis-v",
+    "body": "<i class=\"fa fa-ellipsis-v${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "ellipsis-v"   
+  },
+  "empire": {
+    "prefix": "fa-empire",
+    "body": "<i class=\"fa fa-empire${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "empire"   
+  },
+  "envelope": {
+    "prefix": "fa-envelope",
+    "body": "<i class=\"fa fa-envelope${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "envelope"   
+  },
+  "envelope-o": {
+    "prefix": "fa-envelope-o",
+    "body": "<i class=\"fa fa-envelope-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "envelope-o"   
+  },
+  "envelope-open": {
+    "prefix": "fa-envelope-open",
+    "body": "<i class=\"fa fa-envelope-open${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "envelope-open"   
+  },
+  "envelope-open-o": {
+    "prefix": "fa-envelope-open-o",
+    "body": "<i class=\"fa fa-envelope-open-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "envelope-open-o"   
+  },
+  "envelope-square": {
+    "prefix": "fa-envelope-square",
+    "body": "<i class=\"fa fa-envelope-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "envelope-square"   
+  },
+  "envira": {
+    "prefix": "fa-envira",
+    "body": "<i class=\"fa fa-envira${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "envira"   
+  },
+  "eraser": {
+    "prefix": "fa-eraser",
+    "body": "<i class=\"fa fa-eraser${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "eraser"   
+  },
+  "etsy": {
+    "prefix": "fa-etsy",
+    "body": "<i class=\"fa fa-etsy${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "etsy"   
+  },
+  "eur": {
+    "prefix": "fa-eur",
+    "body": "<i class=\"fa fa-eur${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "eur"   
+  },
+  "euro": {
+    "prefix": "fa-euro",
+    "body": "<i class=\"fa fa-euro${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "euro"   
+  },
+  "exchange": {
+    "prefix": "fa-exchange",
+    "body": "<i class=\"fa fa-exchange${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "exchange"   
+  },
+  "exclamation": {
+    "prefix": "fa-exclamation",
+    "body": "<i class=\"fa fa-exclamation${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "exclamation"   
+  },
+  "exclamation-circle": {
+    "prefix": "fa-exclamation-circle",
+    "body": "<i class=\"fa fa-exclamation-circle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "exclamation-circle"   
+  },
+  "exclamation-triangle": {
+    "prefix": "fa-exclamation-triangle",
+    "body": "<i class=\"fa fa-exclamation-triangle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "exclamation-triangle"   
+  },
+  "expand": {
+    "prefix": "fa-expand",
+    "body": "<i class=\"fa fa-expand${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "expand"   
+  },
+  "expeditedssl": {
+    "prefix": "fa-expeditedssl",
+    "body": "<i class=\"fa fa-expeditedssl${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "expeditedssl"   
+  },
+  "external-link": {
+    "prefix": "fa-external-link",
+    "body": "<i class=\"fa fa-external-link${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "external-link"   
+  },
+  "external-link-square": {
+    "prefix": "fa-external-link-square",
+    "body": "<i class=\"fa fa-external-link-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "external-link-square"   
+  },
+  "eye": {
+    "prefix": "fa-eye",
+    "body": "<i class=\"fa fa-eye${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "eye"   
+  },
+  "eyedropper": {
+    "prefix": "fa-eyedropper",
+    "body": "<i class=\"fa fa-eyedropper${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "eyedropper"   
+  },
+  "eye-slash": {
+    "prefix": "fa-eye-slash",
+    "body": "<i class=\"fa fa-eye-slash${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "eye-slash"   
+  },
+  "fa": {
+    "prefix": "fa-fa",
+    "body": "<i class=\"fa fa-fa${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "fa"   
+  },
+  "facebook": {
+    "prefix": "fa-facebook",
+    "body": "<i class=\"fa fa-facebook${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "facebook"   
+  },
+  "facebook-f": {
+    "prefix": "fa-facebook-f",
+    "body": "<i class=\"fa fa-facebook-f${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "facebook-f"   
+  },
+  "facebook-official": {
+    "prefix": "fa-facebook-official",
+    "body": "<i class=\"fa fa-facebook-official${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "facebook-official"   
+  },
+  "facebook-square": {
+    "prefix": "fa-facebook-square",
+    "body": "<i class=\"fa fa-facebook-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "facebook-square"   
+  },
+  "fast-backward": {
+    "prefix": "fa-fast-backward",
+    "body": "<i class=\"fa fa-fast-backward${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "fast-backward"   
+  },
+  "fast-forward": {
+    "prefix": "fa-fast-forward",
+    "body": "<i class=\"fa fa-fast-forward${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "fast-forward"   
+  },
+  "fax": {
+    "prefix": "fa-fax",
+    "body": "<i class=\"fa fa-fax${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "fax"   
+  },
+  "feed": {
+    "prefix": "fa-feed",
+    "body": "<i class=\"fa fa-feed${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "feed"   
+  },
+  "female": {
+    "prefix": "fa-female",
+    "body": "<i class=\"fa fa-female${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "female"   
+  },
+  "fighter-jet": {
+    "prefix": "fa-fighter-jet",
+    "body": "<i class=\"fa fa-fighter-jet${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "fighter-jet"   
+  },
+  "file": {
+    "prefix": "fa-file",
+    "body": "<i class=\"fa fa-file${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "file"   
+  },
+  "file-archive-o": {
+    "prefix": "fa-file-archive-o",
+    "body": "<i class=\"fa fa-file-archive-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "file-archive-o"   
+  },
+  "file-audio-o": {
+    "prefix": "fa-file-audio-o",
+    "body": "<i class=\"fa fa-file-audio-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "file-audio-o"   
+  },
+  "file-code-o": {
+    "prefix": "fa-file-code-o",
+    "body": "<i class=\"fa fa-file-code-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "file-code-o"   
+  },
+  "file-excel-o": {
+    "prefix": "fa-file-excel-o",
+    "body": "<i class=\"fa fa-file-excel-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "file-excel-o"   
+  },
+  "file-image-o": {
+    "prefix": "fa-file-image-o",
+    "body": "<i class=\"fa fa-file-image-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "file-image-o"   
+  },
+  "file-movie-o": {
+    "prefix": "fa-file-movie-o",
+    "body": "<i class=\"fa fa-file-movie-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "file-movie-o"   
+  },
+  "file-o": {
+    "prefix": "fa-file-o",
+    "body": "<i class=\"fa fa-file-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "file-o"   
+  },
+  "file-pdf-o": {
+    "prefix": "fa-file-pdf-o",
+    "body": "<i class=\"fa fa-file-pdf-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "file-pdf-o"   
+  },
+  "file-photo-o": {
+    "prefix": "fa-file-photo-o",
+    "body": "<i class=\"fa fa-file-photo-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "file-photo-o"   
+  },
+  "file-picture-o": {
+    "prefix": "fa-file-picture-o",
+    "body": "<i class=\"fa fa-file-picture-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "file-picture-o"   
+  },
+  "file-powerpoint-o": {
+    "prefix": "fa-file-powerpoint-o",
+    "body": "<i class=\"fa fa-file-powerpoint-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "file-powerpoint-o"   
+  },
+  "files-o": {
+    "prefix": "fa-files-o",
+    "body": "<i class=\"fa fa-files-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "files-o"   
+  },
+  "file-sound-o": {
+    "prefix": "fa-file-sound-o",
+    "body": "<i class=\"fa fa-file-sound-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "file-sound-o"   
+  },
+  "file-text": {
+    "prefix": "fa-file-text",
+    "body": "<i class=\"fa fa-file-text${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "file-text"   
+  },
+  "file-text-o": {
+    "prefix": "fa-file-text-o",
+    "body": "<i class=\"fa fa-file-text-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "file-text-o"   
+  },
+  "file-video-o": {
+    "prefix": "fa-file-video-o",
+    "body": "<i class=\"fa fa-file-video-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "file-video-o"   
+  },
+  "file-word-o": {
+    "prefix": "fa-file-word-o",
+    "body": "<i class=\"fa fa-file-word-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "file-word-o"   
+  },
+  "file-zip-o": {
+    "prefix": "fa-file-zip-o",
+    "body": "<i class=\"fa fa-file-zip-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "file-zip-o"   
+  },
+  "film": {
+    "prefix": "fa-film",
+    "body": "<i class=\"fa fa-film${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "film"   
+  },
+  "filter": {
+    "prefix": "fa-filter",
+    "body": "<i class=\"fa fa-filter${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "filter"   
+  },
+  "fire": {
+    "prefix": "fa-fire",
+    "body": "<i class=\"fa fa-fire${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "fire"   
+  },
+  "fire-extinguisher": {
+    "prefix": "fa-fire-extinguisher",
+    "body": "<i class=\"fa fa-fire-extinguisher${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "fire-extinguisher"   
+  },
+  "firefox": {
+    "prefix": "fa-firefox",
+    "body": "<i class=\"fa fa-firefox${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "firefox"   
+  },
+  "first-order": {
+    "prefix": "fa-first-order",
+    "body": "<i class=\"fa fa-first-order${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "first-order"   
+  },
+  "flag": {
+    "prefix": "fa-flag",
+    "body": "<i class=\"fa fa-flag${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "flag"   
+  },
+  "flag-checkered": {
+    "prefix": "fa-flag-checkered",
+    "body": "<i class=\"fa fa-flag-checkered${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "flag-checkered"   
+  },
+  "flag-o": {
+    "prefix": "fa-flag-o",
+    "body": "<i class=\"fa fa-flag-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "flag-o"   
+  },
+  "flash": {
+    "prefix": "fa-flash",
+    "body": "<i class=\"fa fa-flash${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "flash"   
+  },
+  "flask": {
+    "prefix": "fa-flask",
+    "body": "<i class=\"fa fa-flask${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "flask"   
+  },
+  "flickr": {
+    "prefix": "fa-flickr",
+    "body": "<i class=\"fa fa-flickr${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "flickr"   
+  },
+  "floppy-o": {
+    "prefix": "fa-floppy-o",
+    "body": "<i class=\"fa fa-floppy-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "floppy-o"   
+  },
+  "folder": {
+    "prefix": "fa-folder",
+    "body": "<i class=\"fa fa-folder${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "folder"   
+  },
+  "folder-o": {
+    "prefix": "fa-folder-o",
+    "body": "<i class=\"fa fa-folder-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "folder-o"   
+  },
+  "folder-open": {
+    "prefix": "fa-folder-open",
+    "body": "<i class=\"fa fa-folder-open${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "folder-open"   
+  },
+  "folder-open-o": {
+    "prefix": "fa-folder-open-o",
+    "body": "<i class=\"fa fa-folder-open-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "folder-open-o"   
+  },
+  "font": {
+    "prefix": "fa-font",
+    "body": "<i class=\"fa fa-font${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "font"   
+  },
+  "font-awesome": {
+    "prefix": "fa-font-awesome",
+    "body": "<i class=\"fa fa-font-awesome${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "font-awesome"   
+  },
+  "fonticons": {
+    "prefix": "fa-fonticons",
+    "body": "<i class=\"fa fa-fonticons${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "fonticons"   
+  },
+  "fort-awesome": {
+    "prefix": "fa-fort-awesome",
+    "body": "<i class=\"fa fa-fort-awesome${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "fort-awesome"   
+  },
+  "forumbee": {
+    "prefix": "fa-forumbee",
+    "body": "<i class=\"fa fa-forumbee${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "forumbee"   
+  },
+  "forward": {
+    "prefix": "fa-forward",
+    "body": "<i class=\"fa fa-forward${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "forward"   
+  },
+  "foursquare": {
+    "prefix": "fa-foursquare",
+    "body": "<i class=\"fa fa-foursquare${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "foursquare"   
+  },
+  "free-code-camp": {
+    "prefix": "fa-free-code-camp",
+    "body": "<i class=\"fa fa-free-code-camp${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "free-code-camp"   
+  },
+  "frown-o": {
+    "prefix": "fa-frown-o",
+    "body": "<i class=\"fa fa-frown-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "frown-o"   
+  },
+  "futbol-o": {
+    "prefix": "fa-futbol-o",
+    "body": "<i class=\"fa fa-futbol-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "futbol-o"   
+  },
+  "gamepad": {
+    "prefix": "fa-gamepad",
+    "body": "<i class=\"fa fa-gamepad${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "gamepad"   
+  },
+  "gavel": {
+    "prefix": "fa-gavel",
+    "body": "<i class=\"fa fa-gavel${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "gavel"   
+  },
+  "gbp": {
+    "prefix": "fa-gbp",
+    "body": "<i class=\"fa fa-gbp${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "gbp"   
+  },
+  "ge": {
+    "prefix": "fa-ge",
+    "body": "<i class=\"fa fa-ge${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "ge"   
+  },
+  "gear": {
+    "prefix": "fa-gear",
+    "body": "<i class=\"fa fa-gear${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "gear"   
+  },
+  "gears": {
+    "prefix": "fa-gears",
+    "body": "<i class=\"fa fa-gears${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "gears"   
+  },
+  "genderless": {
+    "prefix": "fa-genderless",
+    "body": "<i class=\"fa fa-genderless${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "genderless"   
+  },
+  "get-pocket": {
+    "prefix": "fa-get-pocket",
+    "body": "<i class=\"fa fa-get-pocket${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "get-pocket"   
+  },
+  "gg": {
+    "prefix": "fa-gg",
+    "body": "<i class=\"fa fa-gg${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "gg"   
+  },
+  "gg-circle": {
+    "prefix": "fa-gg-circle",
+    "body": "<i class=\"fa fa-gg-circle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "gg-circle"   
+  },
+  "gift": {
+    "prefix": "fa-gift",
+    "body": "<i class=\"fa fa-gift${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "gift"   
+  },
+  "git": {
+    "prefix": "fa-git",
+    "body": "<i class=\"fa fa-git${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "git"   
+  },
+  "github": {
+    "prefix": "fa-github",
+    "body": "<i class=\"fa fa-github${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "github"   
+  },
+  "github-alt": {
+    "prefix": "fa-github-alt",
+    "body": "<i class=\"fa fa-github-alt${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "github-alt"   
+  },
+  "github-square": {
+    "prefix": "fa-github-square",
+    "body": "<i class=\"fa fa-github-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "github-square"   
+  },
+  "gitlab": {
+    "prefix": "fa-gitlab",
+    "body": "<i class=\"fa fa-gitlab${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "gitlab"   
+  },
+  "git-square": {
+    "prefix": "fa-git-square",
+    "body": "<i class=\"fa fa-git-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "git-square"   
+  },
+  "gittip": {
+    "prefix": "fa-gittip",
+    "body": "<i class=\"fa fa-gittip${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "gittip"   
+  },
+  "glass": {
+    "prefix": "fa-glass",
+    "body": "<i class=\"fa fa-glass${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "glass"   
+  },
+  "glide": {
+    "prefix": "fa-glide",
+    "body": "<i class=\"fa fa-glide${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "glide"   
+  },
+  "glide-g": {
+    "prefix": "fa-glide-g",
+    "body": "<i class=\"fa fa-glide-g${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "glide-g"   
+  },
+  "globe": {
+    "prefix": "fa-globe",
+    "body": "<i class=\"fa fa-globe${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "globe"   
+  },
+  "google": {
+    "prefix": "fa-google",
+    "body": "<i class=\"fa fa-google${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "google"   
+  },
+  "google-plus": {
+    "prefix": "fa-google-plus",
+    "body": "<i class=\"fa fa-google-plus${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "google-plus"   
+  },
+  "google-plus-circle": {
+    "prefix": "fa-google-plus-circle",
+    "body": "<i class=\"fa fa-google-plus-circle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "google-plus-circle"   
+  },
+  "google-plus-official": {
+    "prefix": "fa-google-plus-official",
+    "body": "<i class=\"fa fa-google-plus-official${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "google-plus-official"   
+  },
+  "google-plus-square": {
+    "prefix": "fa-google-plus-square",
+    "body": "<i class=\"fa fa-google-plus-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "google-plus-square"   
+  },
+  "google-wallet": {
+    "prefix": "fa-google-wallet",
+    "body": "<i class=\"fa fa-google-wallet${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "google-wallet"   
+  },
+  "graduation-cap": {
+    "prefix": "fa-graduation-cap",
+    "body": "<i class=\"fa fa-graduation-cap${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "graduation-cap"   
+  },
+  "gratipay": {
+    "prefix": "fa-gratipay",
+    "body": "<i class=\"fa fa-gratipay${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "gratipay"   
+  },
+  "grav": {
+    "prefix": "fa-grav",
+    "body": "<i class=\"fa fa-grav${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "grav"   
+  },
+  "group": {
+    "prefix": "fa-group",
+    "body": "<i class=\"fa fa-group${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "group"   
+  },
+  "hacker-news": {
+    "prefix": "fa-hacker-news",
+    "body": "<i class=\"fa fa-hacker-news${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hacker-news"   
+  },
+  "hand-grab-o": {
+    "prefix": "fa-hand-grab-o",
+    "body": "<i class=\"fa fa-hand-grab-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hand-grab-o"   
+  },
+  "hand-lizard-o": {
+    "prefix": "fa-hand-lizard-o",
+    "body": "<i class=\"fa fa-hand-lizard-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hand-lizard-o"   
+  },
+  "hand-o-down": {
+    "prefix": "fa-hand-o-down",
+    "body": "<i class=\"fa fa-hand-o-down${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hand-o-down"   
+  },
+  "hand-o-left": {
+    "prefix": "fa-hand-o-left",
+    "body": "<i class=\"fa fa-hand-o-left${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hand-o-left"   
+  },
+  "hand-o-right": {
+    "prefix": "fa-hand-o-right",
+    "body": "<i class=\"fa fa-hand-o-right${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hand-o-right"   
+  },
+  "hand-o-up": {
+    "prefix": "fa-hand-o-up",
+    "body": "<i class=\"fa fa-hand-o-up${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hand-o-up"   
+  },
+  "hand-paper-o": {
+    "prefix": "fa-hand-paper-o",
+    "body": "<i class=\"fa fa-hand-paper-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hand-paper-o"   
+  },
+  "hand-peace-o": {
+    "prefix": "fa-hand-peace-o",
+    "body": "<i class=\"fa fa-hand-peace-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hand-peace-o"   
+  },
+  "hand-pointer-o": {
+    "prefix": "fa-hand-pointer-o",
+    "body": "<i class=\"fa fa-hand-pointer-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hand-pointer-o"   
+  },
+  "hand-rock-o": {
+    "prefix": "fa-hand-rock-o",
+    "body": "<i class=\"fa fa-hand-rock-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hand-rock-o"   
+  },
+  "hand-scissors-o": {
+    "prefix": "fa-hand-scissors-o",
+    "body": "<i class=\"fa fa-hand-scissors-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hand-scissors-o"   
+  },
+  "handshake-o": {
+    "prefix": "fa-handshake-o",
+    "body": "<i class=\"fa fa-handshake-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "handshake-o"   
+  },
+  "hand-spock-o": {
+    "prefix": "fa-hand-spock-o",
+    "body": "<i class=\"fa fa-hand-spock-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hand-spock-o"   
+  },
+  "hand-stop-o": {
+    "prefix": "fa-hand-stop-o",
+    "body": "<i class=\"fa fa-hand-stop-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hand-stop-o"   
+  },
+  "hard-of-hearing": {
+    "prefix": "fa-hard-of-hearing",
+    "body": "<i class=\"fa fa-hard-of-hearing${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hard-of-hearing"   
+  },
+  "hashtag": {
+    "prefix": "fa-hashtag",
+    "body": "<i class=\"fa fa-hashtag${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hashtag"   
+  },
+  "hdd-o": {
+    "prefix": "fa-hdd-o",
+    "body": "<i class=\"fa fa-hdd-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hdd-o"   
+  },
+  "header": {
+    "prefix": "fa-header",
+    "body": "<i class=\"fa fa-header${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "header"   
+  },
+  "headphones": {
+    "prefix": "fa-headphones",
+    "body": "<i class=\"fa fa-headphones${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "headphones"   
+  },
+  "heart": {
+    "prefix": "fa-heart",
+    "body": "<i class=\"fa fa-heart${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "heart"   
+  },
+  "heartbeat": {
+    "prefix": "fa-heartbeat",
+    "body": "<i class=\"fa fa-heartbeat${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "heartbeat"   
+  },
+  "heart-o": {
+    "prefix": "fa-heart-o",
+    "body": "<i class=\"fa fa-heart-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "heart-o"   
+  },
+  "history": {
+    "prefix": "fa-history",
+    "body": "<i class=\"fa fa-history${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "history"   
+  },
+  "home": {
+    "prefix": "fa-home",
+    "body": "<i class=\"fa fa-home${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "home"   
+  },
+  "hospital-o": {
+    "prefix": "fa-hospital-o",
+    "body": "<i class=\"fa fa-hospital-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hospital-o"   
+  },
+  "hotel": {
+    "prefix": "fa-hotel",
+    "body": "<i class=\"fa fa-hotel${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hotel"   
+  },
+  "hourglass": {
+    "prefix": "fa-hourglass",
+    "body": "<i class=\"fa fa-hourglass${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hourglass"   
+  },
+  "hourglass-1": {
+    "prefix": "fa-hourglass-1",
+    "body": "<i class=\"fa fa-hourglass-1${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hourglass-1"   
+  },
+  "hourglass-2": {
+    "prefix": "fa-hourglass-2",
+    "body": "<i class=\"fa fa-hourglass-2${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hourglass-2"   
+  },
+  "hourglass-3": {
+    "prefix": "fa-hourglass-3",
+    "body": "<i class=\"fa fa-hourglass-3${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hourglass-3"   
+  },
+  "hourglass-end": {
+    "prefix": "fa-hourglass-end",
+    "body": "<i class=\"fa fa-hourglass-end${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hourglass-end"   
+  },
+  "hourglass-half": {
+    "prefix": "fa-hourglass-half",
+    "body": "<i class=\"fa fa-hourglass-half${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hourglass-half"   
+  },
+  "hourglass-o": {
+    "prefix": "fa-hourglass-o",
+    "body": "<i class=\"fa fa-hourglass-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hourglass-o"   
+  },
+  "hourglass-start": {
+    "prefix": "fa-hourglass-start",
+    "body": "<i class=\"fa fa-hourglass-start${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "hourglass-start"   
+  },
+  "houzz": {
+    "prefix": "fa-houzz",
+    "body": "<i class=\"fa fa-houzz${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "houzz"   
+  },
+  "h-square": {
+    "prefix": "fa-h-square",
+    "body": "<i class=\"fa fa-h-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "h-square"   
+  },
+  "html5": {
+    "prefix": "fa-html5",
+    "body": "<i class=\"fa fa-html5${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "html5"   
+  },
+  "i-cursor": {
+    "prefix": "fa-i-cursor",
+    "body": "<i class=\"fa fa-i-cursor${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "i-cursor"   
+  },
+  "id-badge": {
+    "prefix": "fa-id-badge",
+    "body": "<i class=\"fa fa-id-badge${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "id-badge"   
+  },
+  "id-card": {
+    "prefix": "fa-id-card",
+    "body": "<i class=\"fa fa-id-card${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "id-card"   
+  },
+  "id-card-o": {
+    "prefix": "fa-id-card-o",
+    "body": "<i class=\"fa fa-id-card-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "id-card-o"   
+  },
+  "ils": {
+    "prefix": "fa-ils",
+    "body": "<i class=\"fa fa-ils${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "ils"   
+  },
+  "image": {
+    "prefix": "fa-image",
+    "body": "<i class=\"fa fa-image${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "image"   
+  },
+  "imdb": {
+    "prefix": "fa-imdb",
+    "body": "<i class=\"fa fa-imdb${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "imdb"   
+  },
+  "inbox": {
+    "prefix": "fa-inbox",
+    "body": "<i class=\"fa fa-inbox${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "inbox"   
+  },
+  "indent": {
+    "prefix": "fa-indent",
+    "body": "<i class=\"fa fa-indent${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "indent"   
+  },
+  "industry": {
+    "prefix": "fa-industry",
+    "body": "<i class=\"fa fa-industry${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "industry"   
+  },
+  "info": {
+    "prefix": "fa-info",
+    "body": "<i class=\"fa fa-info${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "info"   
+  },
+  "info-circle": {
+    "prefix": "fa-info-circle",
+    "body": "<i class=\"fa fa-info-circle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "info-circle"   
+  },
+  "inr": {
+    "prefix": "fa-inr",
+    "body": "<i class=\"fa fa-inr${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "inr"   
+  },
+  "instagram": {
+    "prefix": "fa-instagram",
+    "body": "<i class=\"fa fa-instagram${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "instagram"   
+  },
+  "institution": {
+    "prefix": "fa-institution",
+    "body": "<i class=\"fa fa-institution${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "institution"   
+  },
+  "internet-explorer": {
+    "prefix": "fa-internet-explorer",
+    "body": "<i class=\"fa fa-internet-explorer${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "internet-explorer"   
+  },
+  "intersex": {
+    "prefix": "fa-intersex",
+    "body": "<i class=\"fa fa-intersex${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "intersex"   
+  },
+  "ioxhost": {
+    "prefix": "fa-ioxhost",
+    "body": "<i class=\"fa fa-ioxhost${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "ioxhost"   
+  },
+  "italic": {
+    "prefix": "fa-italic",
+    "body": "<i class=\"fa fa-italic${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "italic"   
+  },
+  "joomla": {
+    "prefix": "fa-joomla",
+    "body": "<i class=\"fa fa-joomla${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "joomla"   
+  },
+  "jpy": {
+    "prefix": "fa-jpy",
+    "body": "<i class=\"fa fa-jpy${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "jpy"   
+  },
+  "jsfiddle": {
+    "prefix": "fa-jsfiddle",
+    "body": "<i class=\"fa fa-jsfiddle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "jsfiddle"   
+  },
+  "key": {
+    "prefix": "fa-key",
+    "body": "<i class=\"fa fa-key${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "key"   
+  },
+  "keyboard-o": {
+    "prefix": "fa-keyboard-o",
+    "body": "<i class=\"fa fa-keyboard-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "keyboard-o"   
+  },
+  "krw": {
+    "prefix": "fa-krw",
+    "body": "<i class=\"fa fa-krw${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "krw"   
+  },
+  "language": {
+    "prefix": "fa-language",
+    "body": "<i class=\"fa fa-language${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "language"   
+  },
+  "laptop": {
+    "prefix": "fa-laptop",
+    "body": "<i class=\"fa fa-laptop${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "laptop"   
+  },
+  "lastfm": {
+    "prefix": "fa-lastfm",
+    "body": "<i class=\"fa fa-lastfm${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "lastfm"   
+  },
+  "lastfm-square": {
+    "prefix": "fa-lastfm-square",
+    "body": "<i class=\"fa fa-lastfm-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "lastfm-square"   
+  },
+  "leaf": {
+    "prefix": "fa-leaf",
+    "body": "<i class=\"fa fa-leaf${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "leaf"   
+  },
+  "leanpub": {
+    "prefix": "fa-leanpub",
+    "body": "<i class=\"fa fa-leanpub${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "leanpub"   
+  },
+  "legal": {
+    "prefix": "fa-legal",
+    "body": "<i class=\"fa fa-legal${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "legal"   
+  },
+  "lemon-o": {
+    "prefix": "fa-lemon-o",
+    "body": "<i class=\"fa fa-lemon-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "lemon-o"   
+  },
+  "level-down": {
+    "prefix": "fa-level-down",
+    "body": "<i class=\"fa fa-level-down${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "level-down"   
+  },
+  "level-up": {
+    "prefix": "fa-level-up",
+    "body": "<i class=\"fa fa-level-up${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "level-up"   
+  },
+  "life-bouy": {
+    "prefix": "fa-life-bouy",
+    "body": "<i class=\"fa fa-life-bouy${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "life-bouy"   
+  },
+  "life-buoy": {
+    "prefix": "fa-life-buoy",
+    "body": "<i class=\"fa fa-life-buoy${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "life-buoy"   
+  },
+  "life-ring": {
+    "prefix": "fa-life-ring",
+    "body": "<i class=\"fa fa-life-ring${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "life-ring"   
+  },
+  "life-saver": {
+    "prefix": "fa-life-saver",
+    "body": "<i class=\"fa fa-life-saver${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "life-saver"   
+  },
+  "lightbulb-o": {
+    "prefix": "fa-lightbulb-o",
+    "body": "<i class=\"fa fa-lightbulb-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "lightbulb-o"   
+  },
+  "line-chart": {
+    "prefix": "fa-line-chart",
+    "body": "<i class=\"fa fa-line-chart${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "line-chart"   
+  },
+  "link": {
+    "prefix": "fa-link",
+    "body": "<i class=\"fa fa-link${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "link"   
+  },
+  "linkedin": {
+    "prefix": "fa-linkedin",
+    "body": "<i class=\"fa fa-linkedin${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "linkedin"   
+  },
+  "linkedin-square": {
+    "prefix": "fa-linkedin-square",
+    "body": "<i class=\"fa fa-linkedin-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "linkedin-square"   
+  },
+  "linode": {
+    "prefix": "fa-linode",
+    "body": "<i class=\"fa fa-linode${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "linode"   
+  },
+  "linux": {
+    "prefix": "fa-linux",
+    "body": "<i class=\"fa fa-linux${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "linux"   
+  },
+  "list": {
+    "prefix": "fa-list",
+    "body": "<i class=\"fa fa-list${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "list"   
+  },
+  "list-alt": {
+    "prefix": "fa-list-alt",
+    "body": "<i class=\"fa fa-list-alt${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "list-alt"   
+  },
+  "list-ol": {
+    "prefix": "fa-list-ol",
+    "body": "<i class=\"fa fa-list-ol${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "list-ol"   
+  },
+  "list-ul": {
+    "prefix": "fa-list-ul",
+    "body": "<i class=\"fa fa-list-ul${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "list-ul"   
+  },
+  "location-arrow": {
+    "prefix": "fa-location-arrow",
+    "body": "<i class=\"fa fa-location-arrow${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "location-arrow"   
+  },
+  "lock": {
+    "prefix": "fa-lock",
+    "body": "<i class=\"fa fa-lock${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "lock"   
+  },
+  "long-arrow-down": {
+    "prefix": "fa-long-arrow-down",
+    "body": "<i class=\"fa fa-long-arrow-down${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "long-arrow-down"   
+  },
+  "long-arrow-left": {
+    "prefix": "fa-long-arrow-left",
+    "body": "<i class=\"fa fa-long-arrow-left${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "long-arrow-left"   
+  },
+  "long-arrow-right": {
+    "prefix": "fa-long-arrow-right",
+    "body": "<i class=\"fa fa-long-arrow-right${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "long-arrow-right"   
+  },
+  "long-arrow-up": {
+    "prefix": "fa-long-arrow-up",
+    "body": "<i class=\"fa fa-long-arrow-up${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "long-arrow-up"   
+  },
+  "low-vision": {
+    "prefix": "fa-low-vision",
+    "body": "<i class=\"fa fa-low-vision${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "low-vision"   
+  },
+  "magic": {
+    "prefix": "fa-magic",
+    "body": "<i class=\"fa fa-magic${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "magic"   
+  },
+  "magnet": {
+    "prefix": "fa-magnet",
+    "body": "<i class=\"fa fa-magnet${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "magnet"   
+  },
+  "mail-forward": {
+    "prefix": "fa-mail-forward",
+    "body": "<i class=\"fa fa-mail-forward${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "mail-forward"   
+  },
+  "mail-reply": {
+    "prefix": "fa-mail-reply",
+    "body": "<i class=\"fa fa-mail-reply${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "mail-reply"   
+  },
+  "mail-reply-all": {
+    "prefix": "fa-mail-reply-all",
+    "body": "<i class=\"fa fa-mail-reply-all${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "mail-reply-all"   
+  },
+  "male": {
+    "prefix": "fa-male",
+    "body": "<i class=\"fa fa-male${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "male"   
+  },
+  "map": {
+    "prefix": "fa-map",
+    "body": "<i class=\"fa fa-map${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "map"   
+  },
+  "map-marker": {
+    "prefix": "fa-map-marker",
+    "body": "<i class=\"fa fa-map-marker${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "map-marker"   
+  },
+  "map-o": {
+    "prefix": "fa-map-o",
+    "body": "<i class=\"fa fa-map-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "map-o"   
+  },
+  "map-pin": {
+    "prefix": "fa-map-pin",
+    "body": "<i class=\"fa fa-map-pin${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "map-pin"   
+  },
+  "map-signs": {
+    "prefix": "fa-map-signs",
+    "body": "<i class=\"fa fa-map-signs${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "map-signs"   
+  },
+  "mars": {
+    "prefix": "fa-mars",
+    "body": "<i class=\"fa fa-mars${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "mars"   
+  },
+  "mars-double": {
+    "prefix": "fa-mars-double",
+    "body": "<i class=\"fa fa-mars-double${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "mars-double"   
+  },
+  "mars-stroke": {
+    "prefix": "fa-mars-stroke",
+    "body": "<i class=\"fa fa-mars-stroke${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "mars-stroke"   
+  },
+  "mars-stroke-h": {
+    "prefix": "fa-mars-stroke-h",
+    "body": "<i class=\"fa fa-mars-stroke-h${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "mars-stroke-h"   
+  },
+  "mars-stroke-v": {
+    "prefix": "fa-mars-stroke-v",
+    "body": "<i class=\"fa fa-mars-stroke-v${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "mars-stroke-v"   
+  },
+  "maxcdn": {
+    "prefix": "fa-maxcdn",
+    "body": "<i class=\"fa fa-maxcdn${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "maxcdn"   
+  },
+  "meanpath": {
+    "prefix": "fa-meanpath",
+    "body": "<i class=\"fa fa-meanpath${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "meanpath"   
+  },
+  "medium": {
+    "prefix": "fa-medium",
+    "body": "<i class=\"fa fa-medium${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "medium"   
+  },
+  "medkit": {
+    "prefix": "fa-medkit",
+    "body": "<i class=\"fa fa-medkit${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "medkit"   
+  },
+  "meetup": {
+    "prefix": "fa-meetup",
+    "body": "<i class=\"fa fa-meetup${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "meetup"   
+  },
+  "meh-o": {
+    "prefix": "fa-meh-o",
+    "body": "<i class=\"fa fa-meh-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "meh-o"   
+  },
+  "mercury": {
+    "prefix": "fa-mercury",
+    "body": "<i class=\"fa fa-mercury${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "mercury"   
+  },
+  "microchip": {
+    "prefix": "fa-microchip",
+    "body": "<i class=\"fa fa-microchip${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "microchip"   
+  },
+  "microphone": {
+    "prefix": "fa-microphone",
+    "body": "<i class=\"fa fa-microphone${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "microphone"   
+  },
+  "microphone-slash": {
+    "prefix": "fa-microphone-slash",
+    "body": "<i class=\"fa fa-microphone-slash${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "microphone-slash"   
+  },
+  "minus": {
+    "prefix": "fa-minus",
+    "body": "<i class=\"fa fa-minus${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "minus"   
+  },
+  "minus-circle": {
+    "prefix": "fa-minus-circle",
+    "body": "<i class=\"fa fa-minus-circle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "minus-circle"   
+  },
+  "minus-square": {
+    "prefix": "fa-minus-square",
+    "body": "<i class=\"fa fa-minus-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "minus-square"   
+  },
+  "minus-square-o": {
+    "prefix": "fa-minus-square-o",
+    "body": "<i class=\"fa fa-minus-square-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "minus-square-o"   
+  },
+  "mixcloud": {
+    "prefix": "fa-mixcloud",
+    "body": "<i class=\"fa fa-mixcloud${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "mixcloud"   
+  },
+  "mobile": {
+    "prefix": "fa-mobile",
+    "body": "<i class=\"fa fa-mobile${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "mobile"   
+  },
+  "mobile-phone": {
+    "prefix": "fa-mobile-phone",
+    "body": "<i class=\"fa fa-mobile-phone${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "mobile-phone"   
+  },
+  "modx": {
+    "prefix": "fa-modx",
+    "body": "<i class=\"fa fa-modx${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "modx"   
+  },
+  "money": {
+    "prefix": "fa-money",
+    "body": "<i class=\"fa fa-money${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "money"   
+  },
+  "moon-o": {
+    "prefix": "fa-moon-o",
+    "body": "<i class=\"fa fa-moon-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "moon-o"   
+  },
+  "mortar-board": {
+    "prefix": "fa-mortar-board",
+    "body": "<i class=\"fa fa-mortar-board${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "mortar-board"   
+  },
+  "motorcycle": {
+    "prefix": "fa-motorcycle",
+    "body": "<i class=\"fa fa-motorcycle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "motorcycle"   
+  },
+  "mouse-pointer": {
+    "prefix": "fa-mouse-pointer",
+    "body": "<i class=\"fa fa-mouse-pointer${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "mouse-pointer"   
+  },
+  "music": {
+    "prefix": "fa-music",
+    "body": "<i class=\"fa fa-music${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "music"   
+  },
+  "navicon": {
+    "prefix": "fa-navicon",
+    "body": "<i class=\"fa fa-navicon${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "navicon"   
+  },
+  "neuter": {
+    "prefix": "fa-neuter",
+    "body": "<i class=\"fa fa-neuter${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "neuter"   
+  },
+  "newspaper-o": {
+    "prefix": "fa-newspaper-o",
+    "body": "<i class=\"fa fa-newspaper-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "newspaper-o"   
+  },
+  "object-group": {
+    "prefix": "fa-object-group",
+    "body": "<i class=\"fa fa-object-group${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "object-group"   
+  },
+  "object-ungroup": {
+    "prefix": "fa-object-ungroup",
+    "body": "<i class=\"fa fa-object-ungroup${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "object-ungroup"   
+  },
+  "odnoklassniki": {
+    "prefix": "fa-odnoklassniki",
+    "body": "<i class=\"fa fa-odnoklassniki${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "odnoklassniki"   
+  },
+  "odnoklassniki-square": {
+    "prefix": "fa-odnoklassniki-square",
+    "body": "<i class=\"fa fa-odnoklassniki-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "odnoklassniki-square"   
+  },
+  "opencart": {
+    "prefix": "fa-opencart",
+    "body": "<i class=\"fa fa-opencart${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "opencart"   
+  },
+  "openid": {
+    "prefix": "fa-openid",
+    "body": "<i class=\"fa fa-openid${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "openid"   
+  },
+  "opera": {
+    "prefix": "fa-opera",
+    "body": "<i class=\"fa fa-opera${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "opera"   
+  },
+  "optin-monster": {
+    "prefix": "fa-optin-monster",
+    "body": "<i class=\"fa fa-optin-monster${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "optin-monster"   
+  },
+  "outdent": {
+    "prefix": "fa-outdent",
+    "body": "<i class=\"fa fa-outdent${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "outdent"   
+  },
+  "pagelines": {
+    "prefix": "fa-pagelines",
+    "body": "<i class=\"fa fa-pagelines${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "pagelines"   
+  },
+  "paint-brush": {
+    "prefix": "fa-paint-brush",
+    "body": "<i class=\"fa fa-paint-brush${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "paint-brush"   
+  },
+  "paperclip": {
+    "prefix": "fa-paperclip",
+    "body": "<i class=\"fa fa-paperclip${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "paperclip"   
+  },
+  "paper-plane": {
+    "prefix": "fa-paper-plane",
+    "body": "<i class=\"fa fa-paper-plane${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "paper-plane"   
+  },
+  "paper-plane-o": {
+    "prefix": "fa-paper-plane-o",
+    "body": "<i class=\"fa fa-paper-plane-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "paper-plane-o"   
+  },
+  "paragraph": {
+    "prefix": "fa-paragraph",
+    "body": "<i class=\"fa fa-paragraph${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "paragraph"   
+  },
+  "paste": {
+    "prefix": "fa-paste",
+    "body": "<i class=\"fa fa-paste${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "paste"   
+  },
+  "pause": {
+    "prefix": "fa-pause",
+    "body": "<i class=\"fa fa-pause${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "pause"   
+  },
+  "pause-circle": {
+    "prefix": "fa-pause-circle",
+    "body": "<i class=\"fa fa-pause-circle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "pause-circle"   
+  },
+  "pause-circle-o": {
+    "prefix": "fa-pause-circle-o",
+    "body": "<i class=\"fa fa-pause-circle-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "pause-circle-o"   
+  },
+  "paw": {
+    "prefix": "fa-paw",
+    "body": "<i class=\"fa fa-paw${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "paw"   
+  },
+  "paypal": {
+    "prefix": "fa-paypal",
+    "body": "<i class=\"fa fa-paypal${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "paypal"   
+  },
+  "pencil": {
+    "prefix": "fa-pencil",
+    "body": "<i class=\"fa fa-pencil${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "pencil"   
+  },
+  "pencil-square": {
+    "prefix": "fa-pencil-square",
+    "body": "<i class=\"fa fa-pencil-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "pencil-square"   
+  },
+  "pencil-square-o": {
+    "prefix": "fa-pencil-square-o",
+    "body": "<i class=\"fa fa-pencil-square-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "pencil-square-o"   
+  },
+  "percent": {
+    "prefix": "fa-percent",
+    "body": "<i class=\"fa fa-percent${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "percent"   
+  },
+  "phone": {
+    "prefix": "fa-phone",
+    "body": "<i class=\"fa fa-phone${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "phone"   
+  },
+  "phone-square": {
+    "prefix": "fa-phone-square",
+    "body": "<i class=\"fa fa-phone-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "phone-square"   
+  },
+  "photo": {
+    "prefix": "fa-photo",
+    "body": "<i class=\"fa fa-photo${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "photo"   
+  },
+  "picture-o": {
+    "prefix": "fa-picture-o",
+    "body": "<i class=\"fa fa-picture-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "picture-o"   
+  },
+  "pie-chart": {
+    "prefix": "fa-pie-chart",
+    "body": "<i class=\"fa fa-pie-chart${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "pie-chart"   
+  },
+  "pied-piper": {
+    "prefix": "fa-pied-piper",
+    "body": "<i class=\"fa fa-pied-piper${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "pied-piper"   
+  },
+  "pied-piper-alt": {
+    "prefix": "fa-pied-piper-alt",
+    "body": "<i class=\"fa fa-pied-piper-alt${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "pied-piper-alt"   
+  },
+  "pied-piper-pp": {
+    "prefix": "fa-pied-piper-pp",
+    "body": "<i class=\"fa fa-pied-piper-pp${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "pied-piper-pp"   
+  },
+  "pinterest": {
+    "prefix": "fa-pinterest",
+    "body": "<i class=\"fa fa-pinterest${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "pinterest"   
+  },
+  "pinterest-p": {
+    "prefix": "fa-pinterest-p",
+    "body": "<i class=\"fa fa-pinterest-p${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "pinterest-p"   
+  },
+  "pinterest-square": {
+    "prefix": "fa-pinterest-square",
+    "body": "<i class=\"fa fa-pinterest-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "pinterest-square"   
+  },
+  "plane": {
+    "prefix": "fa-plane",
+    "body": "<i class=\"fa fa-plane${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "plane"   
+  },
+  "play": {
+    "prefix": "fa-play",
+    "body": "<i class=\"fa fa-play${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "play"   
+  },
+  "play-circle": {
+    "prefix": "fa-play-circle",
+    "body": "<i class=\"fa fa-play-circle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "play-circle"   
+  },
+  "play-circle-o": {
+    "prefix": "fa-play-circle-o",
+    "body": "<i class=\"fa fa-play-circle-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "play-circle-o"   
+  },
+  "plug": {
+    "prefix": "fa-plug",
+    "body": "<i class=\"fa fa-plug${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "plug"   
+  },
+  "plus": {
+    "prefix": "fa-plus",
+    "body": "<i class=\"fa fa-plus${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "plus"   
+  },
+  "plus-circle": {
+    "prefix": "fa-plus-circle",
+    "body": "<i class=\"fa fa-plus-circle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "plus-circle"   
+  },
+  "plus-square": {
+    "prefix": "fa-plus-square",
+    "body": "<i class=\"fa fa-plus-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "plus-square"   
+  },
+  "plus-square-o": {
+    "prefix": "fa-plus-square-o",
+    "body": "<i class=\"fa fa-plus-square-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "plus-square-o"   
+  },
+  "podcast": {
+    "prefix": "fa-podcast",
+    "body": "<i class=\"fa fa-podcast${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "podcast"   
+  },
+  "power-off": {
+    "prefix": "fa-power-off",
+    "body": "<i class=\"fa fa-power-off${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "power-off"   
+  },
+  "print": {
+    "prefix": "fa-print",
+    "body": "<i class=\"fa fa-print${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "print"   
+  },
+  "product-hunt": {
+    "prefix": "fa-product-hunt",
+    "body": "<i class=\"fa fa-product-hunt${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "product-hunt"   
+  },
+  "puzzle-piece": {
+    "prefix": "fa-puzzle-piece",
+    "body": "<i class=\"fa fa-puzzle-piece${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "puzzle-piece"   
+  },
+  "qq": {
+    "prefix": "fa-qq",
+    "body": "<i class=\"fa fa-qq${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "qq"   
+  },
+  "qrcode": {
+    "prefix": "fa-qrcode",
+    "body": "<i class=\"fa fa-qrcode${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "qrcode"   
+  },
+  "question": {
+    "prefix": "fa-question",
+    "body": "<i class=\"fa fa-question${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "question"   
+  },
+  "question-circle": {
+    "prefix": "fa-question-circle",
+    "body": "<i class=\"fa fa-question-circle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "question-circle"   
+  },
+  "question-circle-o": {
+    "prefix": "fa-question-circle-o",
+    "body": "<i class=\"fa fa-question-circle-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "question-circle-o"   
+  },
+  "quora": {
+    "prefix": "fa-quora",
+    "body": "<i class=\"fa fa-quora${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "quora"   
+  },
+  "quote-left": {
+    "prefix": "fa-quote-left",
+    "body": "<i class=\"fa fa-quote-left${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "quote-left"   
+  },
+  "quote-right": {
+    "prefix": "fa-quote-right",
+    "body": "<i class=\"fa fa-quote-right${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "quote-right"   
+  },
+  "ra": {
+    "prefix": "fa-ra",
+    "body": "<i class=\"fa fa-ra${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "ra"   
+  },
+  "random": {
+    "prefix": "fa-random",
+    "body": "<i class=\"fa fa-random${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "random"   
+  },
+  "ravelry": {
+    "prefix": "fa-ravelry",
+    "body": "<i class=\"fa fa-ravelry${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "ravelry"   
+  },
+  "rebel": {
+    "prefix": "fa-rebel",
+    "body": "<i class=\"fa fa-rebel${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "rebel"   
+  },
+  "recycle": {
+    "prefix": "fa-recycle",
+    "body": "<i class=\"fa fa-recycle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "recycle"   
+  },
+  "reddit": {
+    "prefix": "fa-reddit",
+    "body": "<i class=\"fa fa-reddit${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "reddit"   
+  },
+  "reddit-alien": {
+    "prefix": "fa-reddit-alien",
+    "body": "<i class=\"fa fa-reddit-alien${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "reddit-alien"   
+  },
+  "reddit-square": {
+    "prefix": "fa-reddit-square",
+    "body": "<i class=\"fa fa-reddit-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "reddit-square"   
+  },
+  "refresh": {
+    "prefix": "fa-refresh",
+    "body": "<i class=\"fa fa-refresh${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "refresh"   
+  },
+  "registered": {
+    "prefix": "fa-registered",
+    "body": "<i class=\"fa fa-registered${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "registered"   
+  },
+  "remove": {
+    "prefix": "fa-remove",
+    "body": "<i class=\"fa fa-remove${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "remove"   
+  },
+  "renren": {
+    "prefix": "fa-renren",
+    "body": "<i class=\"fa fa-renren${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "renren"   
+  },
+  "reorder": {
+    "prefix": "fa-reorder",
+    "body": "<i class=\"fa fa-reorder${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "reorder"   
+  },
+  "repeat": {
+    "prefix": "fa-repeat",
+    "body": "<i class=\"fa fa-repeat${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "repeat"   
+  },
+  "reply": {
+    "prefix": "fa-reply",
+    "body": "<i class=\"fa fa-reply${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "reply"   
+  },
+  "reply-all": {
+    "prefix": "fa-reply-all",
+    "body": "<i class=\"fa fa-reply-all${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "reply-all"   
+  },
+  "resistance": {
+    "prefix": "fa-resistance",
+    "body": "<i class=\"fa fa-resistance${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "resistance"   
+  },
+  "retweet": {
+    "prefix": "fa-retweet",
+    "body": "<i class=\"fa fa-retweet${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "retweet"   
+  },
+  "rmb": {
+    "prefix": "fa-rmb",
+    "body": "<i class=\"fa fa-rmb${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "rmb"   
+  },
+  "road": {
+    "prefix": "fa-road",
+    "body": "<i class=\"fa fa-road${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "road"   
+  },
+  "rocket": {
+    "prefix": "fa-rocket",
+    "body": "<i class=\"fa fa-rocket${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "rocket"   
+  },
+  "rotate-left": {
+    "prefix": "fa-rotate-left",
+    "body": "<i class=\"fa fa-rotate-left${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "rotate-left"   
+  },
+  "rotate-right": {
+    "prefix": "fa-rotate-right",
+    "body": "<i class=\"fa fa-rotate-right${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "rotate-right"   
+  },
+  "rouble": {
+    "prefix": "fa-rouble",
+    "body": "<i class=\"fa fa-rouble${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "rouble"   
+  },
+  "rss": {
+    "prefix": "fa-rss",
+    "body": "<i class=\"fa fa-rss${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "rss"   
+  },
+  "rss-square": {
+    "prefix": "fa-rss-square",
+    "body": "<i class=\"fa fa-rss-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "rss-square"   
+  },
+  "rub": {
+    "prefix": "fa-rub",
+    "body": "<i class=\"fa fa-rub${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "rub"   
+  },
+  "ruble": {
+    "prefix": "fa-ruble",
+    "body": "<i class=\"fa fa-ruble${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "ruble"   
+  },
+  "rupee": {
+    "prefix": "fa-rupee",
+    "body": "<i class=\"fa fa-rupee${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "rupee"   
+  },
+  "s15": {
+    "prefix": "fa-s15",
+    "body": "<i class=\"fa fa-s15${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "s15"   
+  },
+  "safari": {
+    "prefix": "fa-safari",
+    "body": "<i class=\"fa fa-safari${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "safari"   
+  },
+  "save": {
+    "prefix": "fa-save",
+    "body": "<i class=\"fa fa-save${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "save"   
+  },
+  "scissors": {
+    "prefix": "fa-scissors",
+    "body": "<i class=\"fa fa-scissors${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "scissors"   
+  },
+  "scribd": {
+    "prefix": "fa-scribd",
+    "body": "<i class=\"fa fa-scribd${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "scribd"   
+  },
+  "search": {
+    "prefix": "fa-search",
+    "body": "<i class=\"fa fa-search${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "search"   
+  },
+  "search-minus": {
+    "prefix": "fa-search-minus",
+    "body": "<i class=\"fa fa-search-minus${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "search-minus"   
+  },
+  "search-plus": {
+    "prefix": "fa-search-plus",
+    "body": "<i class=\"fa fa-search-plus${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "search-plus"   
+  },
+  "sellsy": {
+    "prefix": "fa-sellsy",
+    "body": "<i class=\"fa fa-sellsy${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sellsy"   
+  },
+  "send": {
+    "prefix": "fa-send",
+    "body": "<i class=\"fa fa-send${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "send"   
+  },
+  "send-o": {
+    "prefix": "fa-send-o",
+    "body": "<i class=\"fa fa-send-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "send-o"   
+  },
+  "server": {
+    "prefix": "fa-server",
+    "body": "<i class=\"fa fa-server${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "server"   
+  },
+  "share": {
+    "prefix": "fa-share",
+    "body": "<i class=\"fa fa-share${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "share"   
+  },
+  "share-alt": {
+    "prefix": "fa-share-alt",
+    "body": "<i class=\"fa fa-share-alt${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "share-alt"   
+  },
+  "share-alt-square": {
+    "prefix": "fa-share-alt-square",
+    "body": "<i class=\"fa fa-share-alt-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "share-alt-square"   
+  },
+  "share-square": {
+    "prefix": "fa-share-square",
+    "body": "<i class=\"fa fa-share-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "share-square"   
+  },
+  "share-square-o": {
+    "prefix": "fa-share-square-o",
+    "body": "<i class=\"fa fa-share-square-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "share-square-o"   
+  },
+  "shekel": {
+    "prefix": "fa-shekel",
+    "body": "<i class=\"fa fa-shekel${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "shekel"   
+  },
+  "sheqel": {
+    "prefix": "fa-sheqel",
+    "body": "<i class=\"fa fa-sheqel${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sheqel"   
+  },
+  "shield": {
+    "prefix": "fa-shield",
+    "body": "<i class=\"fa fa-shield${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "shield"   
+  },
+  "ship": {
+    "prefix": "fa-ship",
+    "body": "<i class=\"fa fa-ship${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "ship"   
+  },
+  "shirtsinbulk": {
+    "prefix": "fa-shirtsinbulk",
+    "body": "<i class=\"fa fa-shirtsinbulk${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "shirtsinbulk"   
+  },
+  "shopping-bag": {
+    "prefix": "fa-shopping-bag",
+    "body": "<i class=\"fa fa-shopping-bag${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "shopping-bag"   
+  },
+  "shopping-basket": {
+    "prefix": "fa-shopping-basket",
+    "body": "<i class=\"fa fa-shopping-basket${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "shopping-basket"   
+  },
+  "shopping-cart": {
+    "prefix": "fa-shopping-cart",
+    "body": "<i class=\"fa fa-shopping-cart${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "shopping-cart"   
+  },
+  "shower": {
+    "prefix": "fa-shower",
+    "body": "<i class=\"fa fa-shower${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "shower"   
+  },
+  "signal": {
+    "prefix": "fa-signal",
+    "body": "<i class=\"fa fa-signal${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "signal"   
+  },
+  "sign-in": {
+    "prefix": "fa-sign-in",
+    "body": "<i class=\"fa fa-sign-in${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sign-in"   
+  },
+  "signing": {
+    "prefix": "fa-signing",
+    "body": "<i class=\"fa fa-signing${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "signing"   
+  },
+  "sign-language": {
+    "prefix": "fa-sign-language",
+    "body": "<i class=\"fa fa-sign-language${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sign-language"   
+  },
+  "sign-out": {
+    "prefix": "fa-sign-out",
+    "body": "<i class=\"fa fa-sign-out${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sign-out"   
+  },
+  "simplybuilt": {
+    "prefix": "fa-simplybuilt",
+    "body": "<i class=\"fa fa-simplybuilt${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "simplybuilt"   
+  },
+  "sitemap": {
+    "prefix": "fa-sitemap",
+    "body": "<i class=\"fa fa-sitemap${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sitemap"   
+  },
+  "skyatlas": {
+    "prefix": "fa-skyatlas",
+    "body": "<i class=\"fa fa-skyatlas${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "skyatlas"   
+  },
+  "skype": {
+    "prefix": "fa-skype",
+    "body": "<i class=\"fa fa-skype${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "skype"   
+  },
+  "slack": {
+    "prefix": "fa-slack",
+    "body": "<i class=\"fa fa-slack${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "slack"   
+  },
+  "sliders": {
+    "prefix": "fa-sliders",
+    "body": "<i class=\"fa fa-sliders${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sliders"   
+  },
+  "slideshare": {
+    "prefix": "fa-slideshare",
+    "body": "<i class=\"fa fa-slideshare${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "slideshare"   
+  },
+  "smile-o": {
+    "prefix": "fa-smile-o",
+    "body": "<i class=\"fa fa-smile-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "smile-o"   
+  },
+  "snapchat": {
+    "prefix": "fa-snapchat",
+    "body": "<i class=\"fa fa-snapchat${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "snapchat"   
+  },
+  "snapchat-ghost": {
+    "prefix": "fa-snapchat-ghost",
+    "body": "<i class=\"fa fa-snapchat-ghost${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "snapchat-ghost"   
+  },
+  "snapchat-square": {
+    "prefix": "fa-snapchat-square",
+    "body": "<i class=\"fa fa-snapchat-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "snapchat-square"   
+  },
+  "snowflake-o": {
+    "prefix": "fa-snowflake-o",
+    "body": "<i class=\"fa fa-snowflake-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "snowflake-o"   
+  },
+  "soccer-ball-o": {
+    "prefix": "fa-soccer-ball-o",
+    "body": "<i class=\"fa fa-soccer-ball-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "soccer-ball-o"   
+  },
+  "sort": {
+    "prefix": "fa-sort",
+    "body": "<i class=\"fa fa-sort${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sort"   
+  },
+  "sort-alpha-asc": {
+    "prefix": "fa-sort-alpha-asc",
+    "body": "<i class=\"fa fa-sort-alpha-asc${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sort-alpha-asc"   
+  },
+  "sort-alpha-desc": {
+    "prefix": "fa-sort-alpha-desc",
+    "body": "<i class=\"fa fa-sort-alpha-desc${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sort-alpha-desc"   
+  },
+  "sort-amount-asc": {
+    "prefix": "fa-sort-amount-asc",
+    "body": "<i class=\"fa fa-sort-amount-asc${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sort-amount-asc"   
+  },
+  "sort-amount-desc": {
+    "prefix": "fa-sort-amount-desc",
+    "body": "<i class=\"fa fa-sort-amount-desc${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sort-amount-desc"   
+  },
+  "sort-asc": {
+    "prefix": "fa-sort-asc",
+    "body": "<i class=\"fa fa-sort-asc${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sort-asc"   
+  },
+  "sort-desc": {
+    "prefix": "fa-sort-desc",
+    "body": "<i class=\"fa fa-sort-desc${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sort-desc"   
+  },
+  "sort-down": {
+    "prefix": "fa-sort-down",
+    "body": "<i class=\"fa fa-sort-down${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sort-down"   
+  },
+  "sort-numeric-asc": {
+    "prefix": "fa-sort-numeric-asc",
+    "body": "<i class=\"fa fa-sort-numeric-asc${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sort-numeric-asc"   
+  },
+  "sort-numeric-desc": {
+    "prefix": "fa-sort-numeric-desc",
+    "body": "<i class=\"fa fa-sort-numeric-desc${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sort-numeric-desc"   
+  },
+  "sort-up": {
+    "prefix": "fa-sort-up",
+    "body": "<i class=\"fa fa-sort-up${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sort-up"   
+  },
+  "soundcloud": {
+    "prefix": "fa-soundcloud",
+    "body": "<i class=\"fa fa-soundcloud${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "soundcloud"   
+  },
+  "space-shuttle": {
+    "prefix": "fa-space-shuttle",
+    "body": "<i class=\"fa fa-space-shuttle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "space-shuttle"   
+  },
+  "spinner": {
+    "prefix": "fa-spinner",
+    "body": "<i class=\"fa fa-spinner${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "spinner"   
+  },
+  "spoon": {
+    "prefix": "fa-spoon",
+    "body": "<i class=\"fa fa-spoon${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "spoon"   
+  },
+  "spotify": {
+    "prefix": "fa-spotify",
+    "body": "<i class=\"fa fa-spotify${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "spotify"   
+  },
+  "square": {
+    "prefix": "fa-square",
+    "body": "<i class=\"fa fa-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "square"   
+  },
+  "square-o": {
+    "prefix": "fa-square-o",
+    "body": "<i class=\"fa fa-square-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "square-o"   
+  },
+  "stack-exchange": {
+    "prefix": "fa-stack-exchange",
+    "body": "<i class=\"fa fa-stack-exchange${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "stack-exchange"   
+  },
+  "stack-overflow": {
+    "prefix": "fa-stack-overflow",
+    "body": "<i class=\"fa fa-stack-overflow${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "stack-overflow"   
+  },
+  "star": {
+    "prefix": "fa-star",
+    "body": "<i class=\"fa fa-star${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "star"   
+  },
+  "star-half": {
+    "prefix": "fa-star-half",
+    "body": "<i class=\"fa fa-star-half${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "star-half"   
+  },
+  "star-half-empty": {
+    "prefix": "fa-star-half-empty",
+    "body": "<i class=\"fa fa-star-half-empty${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "star-half-empty"   
+  },
+  "star-half-full": {
+    "prefix": "fa-star-half-full",
+    "body": "<i class=\"fa fa-star-half-full${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "star-half-full"   
+  },
+  "star-half-o": {
+    "prefix": "fa-star-half-o",
+    "body": "<i class=\"fa fa-star-half-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "star-half-o"   
+  },
+  "star-o": {
+    "prefix": "fa-star-o",
+    "body": "<i class=\"fa fa-star-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "star-o"   
+  },
+  "steam": {
+    "prefix": "fa-steam",
+    "body": "<i class=\"fa fa-steam${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "steam"   
+  },
+  "steam-square": {
+    "prefix": "fa-steam-square",
+    "body": "<i class=\"fa fa-steam-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "steam-square"   
+  },
+  "step-backward": {
+    "prefix": "fa-step-backward",
+    "body": "<i class=\"fa fa-step-backward${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "step-backward"   
+  },
+  "step-forward": {
+    "prefix": "fa-step-forward",
+    "body": "<i class=\"fa fa-step-forward${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "step-forward"   
+  },
+  "stethoscope": {
+    "prefix": "fa-stethoscope",
+    "body": "<i class=\"fa fa-stethoscope${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "stethoscope"   
+  },
+  "sticky-note": {
+    "prefix": "fa-sticky-note",
+    "body": "<i class=\"fa fa-sticky-note${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sticky-note"   
+  },
+  "sticky-note-o": {
+    "prefix": "fa-sticky-note-o",
+    "body": "<i class=\"fa fa-sticky-note-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sticky-note-o"   
+  },
+  "stop": {
+    "prefix": "fa-stop",
+    "body": "<i class=\"fa fa-stop${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "stop"   
+  },
+  "stop-circle": {
+    "prefix": "fa-stop-circle",
+    "body": "<i class=\"fa fa-stop-circle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "stop-circle"   
+  },
+  "stop-circle-o": {
+    "prefix": "fa-stop-circle-o",
+    "body": "<i class=\"fa fa-stop-circle-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "stop-circle-o"   
+  },
+  "street-view": {
+    "prefix": "fa-street-view",
+    "body": "<i class=\"fa fa-street-view${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "street-view"   
+  },
+  "strikethrough": {
+    "prefix": "fa-strikethrough",
+    "body": "<i class=\"fa fa-strikethrough${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "strikethrough"   
+  },
+  "stumbleupon": {
+    "prefix": "fa-stumbleupon",
+    "body": "<i class=\"fa fa-stumbleupon${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "stumbleupon"   
+  },
+  "stumbleupon-circle": {
+    "prefix": "fa-stumbleupon-circle",
+    "body": "<i class=\"fa fa-stumbleupon-circle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "stumbleupon-circle"   
+  },
+  "subscript": {
+    "prefix": "fa-subscript",
+    "body": "<i class=\"fa fa-subscript${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "subscript"   
+  },
+  "subway": {
+    "prefix": "fa-subway",
+    "body": "<i class=\"fa fa-subway${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "subway"   
+  },
+  "suitcase": {
+    "prefix": "fa-suitcase",
+    "body": "<i class=\"fa fa-suitcase${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "suitcase"   
+  },
+  "sun-o": {
+    "prefix": "fa-sun-o",
+    "body": "<i class=\"fa fa-sun-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "sun-o"   
+  },
+  "superpowers": {
+    "prefix": "fa-superpowers",
+    "body": "<i class=\"fa fa-superpowers${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "superpowers"   
+  },
+  "superscript": {
+    "prefix": "fa-superscript",
+    "body": "<i class=\"fa fa-superscript${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "superscript"   
+  },
+  "support": {
+    "prefix": "fa-support",
+    "body": "<i class=\"fa fa-support${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "support"   
+  },
+  "table": {
+    "prefix": "fa-table",
+    "body": "<i class=\"fa fa-table${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "table"   
+  },
+  "tablet": {
+    "prefix": "fa-tablet",
+    "body": "<i class=\"fa fa-tablet${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "tablet"   
+  },
+  "tachometer": {
+    "prefix": "fa-tachometer",
+    "body": "<i class=\"fa fa-tachometer${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "tachometer"   
+  },
+  "tag": {
+    "prefix": "fa-tag",
+    "body": "<i class=\"fa fa-tag${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "tag"   
+  },
+  "tags": {
+    "prefix": "fa-tags",
+    "body": "<i class=\"fa fa-tags${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "tags"   
+  },
+  "tasks": {
+    "prefix": "fa-tasks",
+    "body": "<i class=\"fa fa-tasks${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "tasks"   
+  },
+  "taxi": {
+    "prefix": "fa-taxi",
+    "body": "<i class=\"fa fa-taxi${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "taxi"   
+  },
+  "telegram": {
+    "prefix": "fa-telegram",
+    "body": "<i class=\"fa fa-telegram${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "telegram"   
+  },
+  "television": {
+    "prefix": "fa-television",
+    "body": "<i class=\"fa fa-television${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "television"   
+  },
+  "tencent-weibo": {
+    "prefix": "fa-tencent-weibo",
+    "body": "<i class=\"fa fa-tencent-weibo${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "tencent-weibo"   
+  },
+  "terminal": {
+    "prefix": "fa-terminal",
+    "body": "<i class=\"fa fa-terminal${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "terminal"   
+  },
+  "text-height": {
+    "prefix": "fa-text-height",
+    "body": "<i class=\"fa fa-text-height${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "text-height"   
+  },
+  "text-width": {
+    "prefix": "fa-text-width",
+    "body": "<i class=\"fa fa-text-width${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "text-width"   
+  },
+  "th": {
+    "prefix": "fa-th",
+    "body": "<i class=\"fa fa-th${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "th"   
+  },
+  "themeisle": {
+    "prefix": "fa-themeisle",
+    "body": "<i class=\"fa fa-themeisle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "themeisle"   
+  },
+  "thermometer": {
+    "prefix": "fa-thermometer",
+    "body": "<i class=\"fa fa-thermometer${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "thermometer"   
+  },
+  "thermometer-0": {
+    "prefix": "fa-thermometer-0",
+    "body": "<i class=\"fa fa-thermometer-0${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "thermometer-0"   
+  },
+  "thermometer-1": {
+    "prefix": "fa-thermometer-1",
+    "body": "<i class=\"fa fa-thermometer-1${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "thermometer-1"   
+  },
+  "thermometer-2": {
+    "prefix": "fa-thermometer-2",
+    "body": "<i class=\"fa fa-thermometer-2${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "thermometer-2"   
+  },
+  "thermometer-3": {
+    "prefix": "fa-thermometer-3",
+    "body": "<i class=\"fa fa-thermometer-3${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "thermometer-3"   
+  },
+  "thermometer-4": {
+    "prefix": "fa-thermometer-4",
+    "body": "<i class=\"fa fa-thermometer-4${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "thermometer-4"   
+  },
+  "thermometer-empty": {
+    "prefix": "fa-thermometer-empty",
+    "body": "<i class=\"fa fa-thermometer-empty${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "thermometer-empty"   
+  },
+  "thermometer-full": {
+    "prefix": "fa-thermometer-full",
+    "body": "<i class=\"fa fa-thermometer-full${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "thermometer-full"   
+  },
+  "thermometer-half": {
+    "prefix": "fa-thermometer-half",
+    "body": "<i class=\"fa fa-thermometer-half${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "thermometer-half"   
+  },
+  "thermometer-quarter": {
+    "prefix": "fa-thermometer-quarter",
+    "body": "<i class=\"fa fa-thermometer-quarter${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "thermometer-quarter"   
+  },
+  "thermometer-three-quarters": {
+    "prefix": "fa-thermometer-three-quarters",
+    "body": "<i class=\"fa fa-thermometer-three-quarters${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "thermometer-three-quarters"   
+  },
+  "th-large": {
+    "prefix": "fa-th-large",
+    "body": "<i class=\"fa fa-th-large${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "th-large"   
+  },
+  "th-list": {
+    "prefix": "fa-th-list",
+    "body": "<i class=\"fa fa-th-list${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "th-list"   
+  },
+  "thumbs-down": {
+    "prefix": "fa-thumbs-down",
+    "body": "<i class=\"fa fa-thumbs-down${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "thumbs-down"   
+  },
+  "thumbs-o-down": {
+    "prefix": "fa-thumbs-o-down",
+    "body": "<i class=\"fa fa-thumbs-o-down${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "thumbs-o-down"   
+  },
+  "thumbs-o-up": {
+    "prefix": "fa-thumbs-o-up",
+    "body": "<i class=\"fa fa-thumbs-o-up${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "thumbs-o-up"   
+  },
+  "thumbs-up": {
+    "prefix": "fa-thumbs-up",
+    "body": "<i class=\"fa fa-thumbs-up${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "thumbs-up"   
+  },
+  "thumb-tack": {
+    "prefix": "fa-thumb-tack",
+    "body": "<i class=\"fa fa-thumb-tack${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "thumb-tack"   
+  },
+  "ticket": {
+    "prefix": "fa-ticket",
+    "body": "<i class=\"fa fa-ticket${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "ticket"   
+  },
+  "times": {
+    "prefix": "fa-times",
+    "body": "<i class=\"fa fa-times${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "times"   
+  },
+  "times-circle": {
+    "prefix": "fa-times-circle",
+    "body": "<i class=\"fa fa-times-circle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "times-circle"   
+  },
+  "times-circle-o": {
+    "prefix": "fa-times-circle-o",
+    "body": "<i class=\"fa fa-times-circle-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "times-circle-o"   
+  },
+  "times-rectangle": {
+    "prefix": "fa-times-rectangle",
+    "body": "<i class=\"fa fa-times-rectangle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "times-rectangle"   
+  },
+  "times-rectangle-o": {
+    "prefix": "fa-times-rectangle-o",
+    "body": "<i class=\"fa fa-times-rectangle-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "times-rectangle-o"   
+  },
+  "tint": {
+    "prefix": "fa-tint",
+    "body": "<i class=\"fa fa-tint${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "tint"   
+  },
+  "toggle-down": {
+    "prefix": "fa-toggle-down",
+    "body": "<i class=\"fa fa-toggle-down${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "toggle-down"   
+  },
+  "toggle-left": {
+    "prefix": "fa-toggle-left",
+    "body": "<i class=\"fa fa-toggle-left${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "toggle-left"   
+  },
+  "toggle-off": {
+    "prefix": "fa-toggle-off",
+    "body": "<i class=\"fa fa-toggle-off${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "toggle-off"   
+  },
+  "toggle-on": {
+    "prefix": "fa-toggle-on",
+    "body": "<i class=\"fa fa-toggle-on${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "toggle-on"   
+  },
+  "toggle-right": {
+    "prefix": "fa-toggle-right",
+    "body": "<i class=\"fa fa-toggle-right${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "toggle-right"   
+  },
+  "toggle-up": {
+    "prefix": "fa-toggle-up",
+    "body": "<i class=\"fa fa-toggle-up${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "toggle-up"   
+  },
+  "trademark": {
+    "prefix": "fa-trademark",
+    "body": "<i class=\"fa fa-trademark${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "trademark"   
+  },
+  "train": {
+    "prefix": "fa-train",
+    "body": "<i class=\"fa fa-train${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "train"   
+  },
+  "transgender": {
+    "prefix": "fa-transgender",
+    "body": "<i class=\"fa fa-transgender${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "transgender"   
+  },
+  "transgender-alt": {
+    "prefix": "fa-transgender-alt",
+    "body": "<i class=\"fa fa-transgender-alt${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "transgender-alt"   
+  },
+  "trash": {
+    "prefix": "fa-trash",
+    "body": "<i class=\"fa fa-trash${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "trash"   
+  },
+  "trash-o": {
+    "prefix": "fa-trash-o",
+    "body": "<i class=\"fa fa-trash-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "trash-o"   
+  },
+  "tree": {
+    "prefix": "fa-tree",
+    "body": "<i class=\"fa fa-tree${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "tree"   
+  },
+  "trello": {
+    "prefix": "fa-trello",
+    "body": "<i class=\"fa fa-trello${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "trello"   
+  },
+  "tripadvisor": {
+    "prefix": "fa-tripadvisor",
+    "body": "<i class=\"fa fa-tripadvisor${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "tripadvisor"   
+  },
+  "trophy": {
+    "prefix": "fa-trophy",
+    "body": "<i class=\"fa fa-trophy${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "trophy"   
+  },
+  "truck": {
+    "prefix": "fa-truck",
+    "body": "<i class=\"fa fa-truck${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "truck"   
+  },
+  "try": {
+    "prefix": "fa-try",
+    "body": "<i class=\"fa fa-try${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "try"   
+  },
+  "tty": {
+    "prefix": "fa-tty",
+    "body": "<i class=\"fa fa-tty${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "tty"   
+  },
+  "tumblr": {
+    "prefix": "fa-tumblr",
+    "body": "<i class=\"fa fa-tumblr${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "tumblr"   
+  },
+  "tumblr-square": {
+    "prefix": "fa-tumblr-square",
+    "body": "<i class=\"fa fa-tumblr-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "tumblr-square"   
+  },
+  "turkish-lira": {
+    "prefix": "fa-turkish-lira",
+    "body": "<i class=\"fa fa-turkish-lira${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "turkish-lira"   
+  },
+  "tv": {
+    "prefix": "fa-tv",
+    "body": "<i class=\"fa fa-tv${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "tv"   
+  },
+  "twitch": {
+    "prefix": "fa-twitch",
+    "body": "<i class=\"fa fa-twitch${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "twitch"   
+  },
+  "twitter": {
+    "prefix": "fa-twitter",
+    "body": "<i class=\"fa fa-twitter${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "twitter"   
+  },
+  "twitter-square": {
+    "prefix": "fa-twitter-square",
+    "body": "<i class=\"fa fa-twitter-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "twitter-square"   
+  },
+  "umbrella": {
+    "prefix": "fa-umbrella",
+    "body": "<i class=\"fa fa-umbrella${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "umbrella"   
+  },
+  "underline": {
+    "prefix": "fa-underline",
+    "body": "<i class=\"fa fa-underline${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "underline"   
+  },
+  "undo": {
+    "prefix": "fa-undo",
+    "body": "<i class=\"fa fa-undo${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "undo"   
+  },
+  "universal-access": {
+    "prefix": "fa-universal-access",
+    "body": "<i class=\"fa fa-universal-access${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "universal-access"   
+  },
+  "university": {
+    "prefix": "fa-university",
+    "body": "<i class=\"fa fa-university${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "university"   
+  },
+  "unlink": {
+    "prefix": "fa-unlink",
+    "body": "<i class=\"fa fa-unlink${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "unlink"   
+  },
+  "unlock": {
+    "prefix": "fa-unlock",
+    "body": "<i class=\"fa fa-unlock${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "unlock"   
+  },
+  "unlock-alt": {
+    "prefix": "fa-unlock-alt",
+    "body": "<i class=\"fa fa-unlock-alt${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "unlock-alt"   
+  },
+  "unsorted": {
+    "prefix": "fa-unsorted",
+    "body": "<i class=\"fa fa-unsorted${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "unsorted"   
+  },
+  "upload": {
+    "prefix": "fa-upload",
+    "body": "<i class=\"fa fa-upload${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "upload"   
+  },
+  "usb": {
+    "prefix": "fa-usb",
+    "body": "<i class=\"fa fa-usb${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "usb"   
+  },
+  "usd": {
+    "prefix": "fa-usd",
+    "body": "<i class=\"fa fa-usd${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "usd"   
+  },
+  "user": {
+    "prefix": "fa-user",
+    "body": "<i class=\"fa fa-user${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "user"   
+  },
+  "user-circle": {
+    "prefix": "fa-user-circle",
+    "body": "<i class=\"fa fa-user-circle${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "user-circle"   
+  },
+  "user-circle-o": {
+    "prefix": "fa-user-circle-o",
+    "body": "<i class=\"fa fa-user-circle-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "user-circle-o"   
+  },
+  "user-md": {
+    "prefix": "fa-user-md",
+    "body": "<i class=\"fa fa-user-md${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "user-md"   
+  },
+  "user-o": {
+    "prefix": "fa-user-o",
+    "body": "<i class=\"fa fa-user-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "user-o"   
+  },
+  "user-plus": {
+    "prefix": "fa-user-plus",
+    "body": "<i class=\"fa fa-user-plus${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "user-plus"   
+  },
+  "users": {
+    "prefix": "fa-users",
+    "body": "<i class=\"fa fa-users${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "users"   
+  },
+  "user-secret": {
+    "prefix": "fa-user-secret",
+    "body": "<i class=\"fa fa-user-secret${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "user-secret"   
+  },
+  "user-times": {
+    "prefix": "fa-user-times",
+    "body": "<i class=\"fa fa-user-times${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "user-times"   
+  },
+  "vcard": {
+    "prefix": "fa-vcard",
+    "body": "<i class=\"fa fa-vcard${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "vcard"   
+  },
+  "vcard-o": {
+    "prefix": "fa-vcard-o",
+    "body": "<i class=\"fa fa-vcard-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "vcard-o"   
+  },
+  "venus": {
+    "prefix": "fa-venus",
+    "body": "<i class=\"fa fa-venus${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "venus"   
+  },
+  "venus-double": {
+    "prefix": "fa-venus-double",
+    "body": "<i class=\"fa fa-venus-double${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "venus-double"   
+  },
+  "venus-mars": {
+    "prefix": "fa-venus-mars",
+    "body": "<i class=\"fa fa-venus-mars${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "venus-mars"   
+  },
+  "viacoin": {
+    "prefix": "fa-viacoin",
+    "body": "<i class=\"fa fa-viacoin${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "viacoin"   
+  },
+  "viadeo": {
+    "prefix": "fa-viadeo",
+    "body": "<i class=\"fa fa-viadeo${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "viadeo"   
+  },
+  "viadeo-square": {
+    "prefix": "fa-viadeo-square",
+    "body": "<i class=\"fa fa-viadeo-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "viadeo-square"   
+  },
+  "video-camera": {
+    "prefix": "fa-video-camera",
+    "body": "<i class=\"fa fa-video-camera${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "video-camera"   
+  },
+  "vimeo": {
+    "prefix": "fa-vimeo",
+    "body": "<i class=\"fa fa-vimeo${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "vimeo"   
+  },
+  "vimeo-square": {
+    "prefix": "fa-vimeo-square",
+    "body": "<i class=\"fa fa-vimeo-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "vimeo-square"   
+  },
+  "vine": {
+    "prefix": "fa-vine",
+    "body": "<i class=\"fa fa-vine${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "vine"   
+  },
+  "vk": {
+    "prefix": "fa-vk",
+    "body": "<i class=\"fa fa-vk${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "vk"   
+  },
+  "volume-control-phone": {
+    "prefix": "fa-volume-control-phone",
+    "body": "<i class=\"fa fa-volume-control-phone${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "volume-control-phone"   
+  },
+  "volume-down": {
+    "prefix": "fa-volume-down",
+    "body": "<i class=\"fa fa-volume-down${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "volume-down"   
+  },
+  "volume-off": {
+    "prefix": "fa-volume-off",
+    "body": "<i class=\"fa fa-volume-off${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "volume-off"   
+  },
+  "volume-up": {
+    "prefix": "fa-volume-up",
+    "body": "<i class=\"fa fa-volume-up${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "volume-up"   
+  },
+  "warning": {
+    "prefix": "fa-warning",
+    "body": "<i class=\"fa fa-warning${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "warning"   
+  },
+  "wechat": {
+    "prefix": "fa-wechat",
+    "body": "<i class=\"fa fa-wechat${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "wechat"   
+  },
+  "weibo": {
+    "prefix": "fa-weibo",
+    "body": "<i class=\"fa fa-weibo${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "weibo"   
+  },
+  "weixin": {
+    "prefix": "fa-weixin",
+    "body": "<i class=\"fa fa-weixin${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "weixin"   
+  },
+  "whatsapp": {
+    "prefix": "fa-whatsapp",
+    "body": "<i class=\"fa fa-whatsapp${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "whatsapp"   
+  },
+  "wheelchair": {
+    "prefix": "fa-wheelchair",
+    "body": "<i class=\"fa fa-wheelchair${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "wheelchair"   
+  },
+  "wheelchair-alt": {
+    "prefix": "fa-wheelchair-alt",
+    "body": "<i class=\"fa fa-wheelchair-alt${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "wheelchair-alt"   
+  },
+  "wifi": {
+    "prefix": "fa-wifi",
+    "body": "<i class=\"fa fa-wifi${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "wifi"   
+  },
+  "wikipedia-w": {
+    "prefix": "fa-wikipedia-w",
+    "body": "<i class=\"fa fa-wikipedia-w${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "wikipedia-w"   
+  },
+  "window-close": {
+    "prefix": "fa-window-close",
+    "body": "<i class=\"fa fa-window-close${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "window-close"   
+  },
+  "window-close-o": {
+    "prefix": "fa-window-close-o",
+    "body": "<i class=\"fa fa-window-close-o${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "window-close-o"   
+  },
+  "window-maximize": {
+    "prefix": "fa-window-maximize",
+    "body": "<i class=\"fa fa-window-maximize${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "window-maximize"   
+  },
+  "window-minimize": {
+    "prefix": "fa-window-minimize",
+    "body": "<i class=\"fa fa-window-minimize${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "window-minimize"   
+  },
+  "window-restore": {
+    "prefix": "fa-window-restore",
+    "body": "<i class=\"fa fa-window-restore${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "window-restore"   
+  },
+  "windows": {
+    "prefix": "fa-windows",
+    "body": "<i class=\"fa fa-windows${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "windows"   
+  },
+  "won": {
+    "prefix": "fa-won",
+    "body": "<i class=\"fa fa-won${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "won"   
+  },
+  "wordpress": {
+    "prefix": "fa-wordpress",
+    "body": "<i class=\"fa fa-wordpress${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "wordpress"   
+  },
+  "wpbeginner": {
+    "prefix": "fa-wpbeginner",
+    "body": "<i class=\"fa fa-wpbeginner${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "wpbeginner"   
+  },
+  "wpexplorer": {
+    "prefix": "fa-wpexplorer",
+    "body": "<i class=\"fa fa-wpexplorer${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "wpexplorer"   
+  },
+  "wpforms": {
+    "prefix": "fa-wpforms",
+    "body": "<i class=\"fa fa-wpforms${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "wpforms"   
+  },
+  "wrench": {
+    "prefix": "fa-wrench",
+    "body": "<i class=\"fa fa-wrench${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "wrench"   
+  },
+  "xing": {
+    "prefix": "fa-xing",
+    "body": "<i class=\"fa fa-xing${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "xing"   
+  },
+  "xing-square": {
+    "prefix": "fa-xing-square",
+    "body": "<i class=\"fa fa-xing-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "xing-square"   
+  },
+  "yahoo": {
+    "prefix": "fa-yahoo",
+    "body": "<i class=\"fa fa-yahoo${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "yahoo"   
+  },
+  "yc": {
+    "prefix": "fa-yc",
+    "body": "<i class=\"fa fa-yc${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "yc"   
+  },
+  "y-combinator": {
+    "prefix": "fa-y-combinator",
+    "body": "<i class=\"fa fa-y-combinator${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "y-combinator"   
+  },
+  "y-combinator-square": {
+    "prefix": "fa-y-combinator-square",
+    "body": "<i class=\"fa fa-y-combinator-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "y-combinator-square"   
+  },
+  "yc-square": {
+    "prefix": "fa-yc-square",
+    "body": "<i class=\"fa fa-yc-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "yc-square"   
+  },
+  "yelp": {
+    "prefix": "fa-yelp",
+    "body": "<i class=\"fa fa-yelp${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "yelp"   
+  },
+  "yen": {
+    "prefix": "fa-yen",
+    "body": "<i class=\"fa fa-yen${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "yen"   
+  },
+  "yoast": {
+    "prefix": "fa-yoast",
+    "body": "<i class=\"fa fa-yoast${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "yoast"   
+  },
+  "youtube": {
+    "prefix": "fa-youtube",
+    "body": "<i class=\"fa fa-youtube${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "youtube"   
+  },
+  "youtube-play": {
+    "prefix": "fa-youtube-play",
+    "body": "<i class=\"fa fa-youtube-play${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "youtube-play"   
+  },
+  "youtube-square": {
+    "prefix": "fa-youtube-square",
+    "body": "<i class=\"fa fa-youtube-square${1}\" aria-hidden=\"true\"></i>$0",
+    "description": "youtube-square"   
+  }
+}

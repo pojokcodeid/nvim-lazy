@@ -1,0 +1,12 @@
+{
+    "Progress Bar": {
+        "prefix": "b5-progress",
+        "body": [
+            "<div class=\"progress\">",
+            "    <div class=\"${1|progress-bar,progress-bar progress-bar-striped|}  bg-${2|success,info,success,warning,wardanger}}\" role=\"progressbar\" style=\"width: ${3|25,50,75,100, |}%;\"",
+            "        aria-valuenow=\"${3|25,50,75,100, |}\" aria-valuemin=\"${4:0}\" aria-valuemax=\"${5:100}\" ${6| ,progress-bar-animated}>${6:Description}</div>",
+            "</div>"
+        ],
+        "description": "Progress Bar"
+    }
+}

@@ -1,0 +1,392 @@
+{
+    "csrf": {
+        "description": "Includes a CSRF field for use in forms.",
+        "prefix": "@csrf",
+        "body": [
+            "@csrf$0"
+        ]
+    },
+    "else": {
+        "description": "Control structure for use with if statements.",
+        "prefix": "@else",
+        "body": [
+            "@else$0"
+        ]
+    },
+    "append": {
+        "description": "Appends defined section to an existing one of the same name.",
+        "prefix": "@append",
+        "body": [
+            "@append$0"
+        ]
+    },
+    "overwrite": {
+        "description": "Overwrites a defined section.",
+        "prefix": "@overwrite",
+        "body": [
+            "@overwrite$0"
+        ]
+    },
+    "show": {
+        "description": "Shows and yields immediately a defined section.",
+        "prefix": "@show",
+        "body": [
+            "@show$0"
+        ]
+    },
+    "endsection": {
+        "description": "Close a defined section.",
+        "prefix": "@endsection",
+        "body": [
+            "@endsection$0"
+        ]
+    },
+    "stop": {
+        "description": "Alternative syntax for @endsection.",
+        "prefix": "@stop",
+        "body": [
+            "@stop$0"
+        ]
+    },
+    "parent": {
+        "description": "Appends content a section instead of overwriting.",
+        "prefix": "@parent",
+        "body": [
+            "@parent$0"
+        ]
+    },
+    "elseif": {
+        "description": "Elseif branch used in if statements.",
+        "prefix": "@elseif",
+        "body": [
+            "@elseif(${1:$${2:condition}})$0"
+        ]
+    },
+    "foreach": {
+        "description": "Executes a foreach loop statement.",
+        "prefix": "@foreach",
+        "body": [
+            "@foreach($${1:variable} as $${2:${3:key} => $${4:value}})",
+            "\t$0",
+            "@endforeach"
+        ]
+    },
+    "if": {
+        "description": "If statement.",
+        "prefix": "@if",
+        "body": [
+            "@if(${1:$${2:condition}})",
+            "\t$0",
+            "@endif"
+        ]
+    },
+    "if-else": {
+        "description": "If-else statement.",
+        "prefix": "@if",
+        "body": [
+            "@if(${1:$${2:condition}})",
+            "\t$3",
+            "@else",
+            "\t$0",
+            "@endif"
+        ]
+    },
+    "extends": {
+        "description": "Extends a layout.",
+        "prefix": "@extends",
+        "body": [
+            "@extends('${1:view}')$0"
+        ]
+    },
+    "for": {
+        "description": "For loop.",
+        "prefix": "@for",
+        "body": [
+            "@for($${1:i} = ${2:0}; $${1:i} < ${3:10}; $${1:i}++)",
+            "\t$0",
+            "@endfor"
+        ]
+    },
+    "forelse": {
+        "description": "Executes a foreach loop or displays contents of @empty block if there are no entries.",
+        "prefix": "@forelse",
+        "body": [
+            "@forelse($${1:variable} as $${2:${3:key} => $${4:value}})",
+            "\t$5",
+            "@empty",
+            "\t$0",
+            "@endforelse"
+        ]
+    },
+    "lang": {
+        "description": "Displays a localized string.",
+        "prefix": "@lang",
+        "body": [
+            "@lang('${1:category.line}')$0"
+        ]
+    },
+    "prepend": {
+        "description": "Prepends content to stack.",
+        "prefix": "@prepend",
+        "body": [
+            "@prepend('${1:name}')",
+            "\t$0",
+            "@endprepend"
+        ]
+    },
+    "push": {
+        "description": "Pushes content to stack.",
+        "prefix": "@push",
+        "body": [
+            "@push('${1:name}')",
+            "\t$0",
+            "@endpush"
+        ]
+    },
+    "section": {
+        "description": "Defines a section of content.",
+        "prefix": "@section",
+        "body": [
+            "@section('${1:name}'${2:, '${3:content}'})$0"
+        ]
+    },
+    "section-end": {
+        "description": "Defines a section-end of content.",
+        "prefix": "@section",
+        "body": [
+            "@section('${1:name}')",
+            "\t$0",
+            "@endsection"
+        ]
+    },
+    "stack": {
+        "description": "Renders contents of the stack.",
+        "prefix": "@stack",
+        "body": [
+            "@stack('${1:name}')$0"
+        ]
+    },
+    "unless": {
+        "description": "Shorthand for if-not statement.",
+        "prefix": "@unless",
+        "body": [
+            "@unless(${1:$${2:condition}})",
+            "\t$0",
+            "@endunless"
+        ]
+    },
+    "while": {
+        "description": "While loop.",
+        "prefix": "@while",
+        "body": [
+            "@while(${1:$${2:condition}})",
+            "\t$0",
+            "@endwhile"
+        ]
+    },
+    "yield": {
+        "description": "Displays contents of a given section.",
+        "prefix": "@yield",
+        "body": [
+            "@yield('${1:section}')$0"
+        ]
+    },
+    "php": {
+        "description": "Embeds PHP code.",
+        "prefix": "@php",
+        "body": [
+            "@php",
+            "\t$0",
+            "@endphp"
+        ]
+    },
+    "component": {
+        "description": "Constructs a component.",
+        "prefix": "@component",
+        "body": [
+            "@component('${1:component}')",
+            "\t$0",
+            "@endcomponent"
+        ]
+    },
+    "componentFirst": {
+        "description": "Instruct to load the first view that exists from a given array of possible views for the component.",
+        "prefix": "@component",
+        "body": [
+            "@componentFirst(['${1:custom.component}', '${2:component}'])",
+            "\t$0",
+            "@endcomponent"
+        ]
+    },
+    "slot": {
+        "description": "Injects content into slot variable.",
+        "prefix": "@slot",
+        "body": [
+            "@slot('${1:variable}')",
+            "\t$0",
+            "@endslot"
+        ]
+    },
+    "isset": {
+        "description": "Determines whether a variable is considered to be empty using PHP isset() function.",
+        "prefix": "@isset",
+        "body": [
+            "@isset(${1:$${2:var}})",
+            "\t$0",
+            "@endisset"
+        ]
+    },
+    "verbatim": {
+        "description": "Protects text from being processed as Blade syntax.",
+        "prefix": "@verbatim",
+        "body": [
+            "@verbatim",
+            "\t$0",
+            "@endverbatim"
+        ]
+    },
+    "empty": {
+        "description": "Determines whether a variable is considered to be empty using PHP empty() function.",
+        "prefix": "@empty",
+        "body": [
+            "@empty(${1:$${2:var}})",
+            "\t$0",
+            "@endempty"
+        ]
+    },
+    "continue": {
+        "description": "Continue statement used in loops.",
+        "prefix": "@continue",
+        "body": [
+            "@continue${1:(${2:$${3:condition}})}$0"
+        ]
+    },
+    "break": {
+        "description": "Break statement used in switches and loops.",
+        "prefix": "@break",
+        "body": [
+            "@break${1:(${2:$${3:condition}})}$0"
+        ]
+    },
+    "include": {
+        "description": "Includes a sub-view.",
+        "prefix": "@include",
+        "body": [
+            "@include('${1:view}')$0"
+        ]
+    },
+    "includeIf": {
+        "description": "Includes a view if present.",
+        "prefix": "@include",
+        "body": [
+            "@includeIf('${1:view}'${2:, ['${3:some}' => '${4:data}']})$0"
+        ]
+    },
+    "includeWhen": {
+        "description": "Includes a view if a given boolean expression evaluates to true.",
+        "prefix": "@include",
+        "body": [
+            "@includeWhen(${1:boolean}, '${2:view}'${3:, ['${4:some}' => '${5:data}']})$0"
+        ]
+    },
+    "includeUnless": {
+        "description": "Includes a view if a given boolean expression evaluates to false.",
+        "prefix": "@include",
+        "body": [
+            "@includeUnless(${1:boolean}, '${2:view}'${3:, ['${4:some}' => '${5:data}']})$0"
+        ]
+    },
+    "includeFirst": {
+        "description": "Includes a view the first view that exists from a given array of views.",
+        "prefix": "@include",
+        "body": [
+            "@includeFirst(['${1:custom.view}', '${2:view}']${3:, ['${4:some}' => '${5:data}']})$0"
+        ]
+    },
+    "inject": {
+        "description": "Retrieves a service from the Laravel service container.",
+        "prefix": "@inject",
+        "body": [
+            "@inject('${1:var}', ${2:${3:SomeClass}::class})$0"
+        ]
+    },
+    "can": {
+        "description": "Determines whether user has been authorized to perform an action.",
+        "prefix": "@can",
+        "body": [
+            "@can('${1:update}', $${2:user})",
+            "\t$0",
+            "@endcan"
+        ]
+    },
+    "cannot": {
+        "description": "Determines whether user has not been authorized to perform an action.",
+        "prefix": "@cannot",
+        "body": [
+            "@cannot('${1:update}', $${2:user})",
+            "\t$0",
+            "@endcannot"
+        ]
+    },
+    "auth": {
+        "description": "Determines whether user has authenticated.",
+        "prefix": "@auth",
+        "body": [
+            "@auth${1:('${2:admin}')}",
+            "\t$0",
+            "@endauth"
+        ]
+    },
+    "guest": {
+        "description": "Determines whether user is guest.",
+        "prefix": "@guest",
+        "body": [
+            "@guest",
+            "\t$0",
+            "@endguest"
+        ]
+    },
+    "error": {
+        "description": "Determines whether there is an input error associated with the field.",
+        "prefix": "@error",
+        "body": [
+            "@error('${1:field}')",
+            "\t$0",
+            "@enderror"
+        ]
+    },
+    "method": {
+        "description": "Defines a hidden _method field to spoof HTTP verbs.",
+        "prefix": "@method",
+        "body": [
+            "@method('${1:put}')$0"
+        ]
+    },
+    "each": {
+        "description": "Defines a rendering views for collections.\n\n- The first argument is the view partial to render for each element in the array or collection.\n- The second argument is the array or collection you wish to iterate over\n- Third argument is the variable name that will be assigned to the current iteration within the view.\n- This fourth argument is the view that will be rendered if the given array is empty.",
+        "prefix": "@each",
+        "body": [
+            "@each('${1:view.name}', $${2:jobs}, '${3:job}', '${4:view.empty}')$0"
+        ]
+    },
+    "json": {
+        "description": "Defines a rendering an array to JSON.\n\nThis directive accepts the same arguments as PHP's json_encode function.",
+        "prefix": "@json",
+        "body": [
+            "@json($${1:array})$0"
+        ]
+    },
+    "switch": {
+        "description": "Switch Statements.",
+        "prefix": "@switch",
+        "body": [
+            "@switch($${0:value})",
+            "\t@case(${1:value})",
+            "\t\t${2}",
+            "\t\t@break",
+            "\t$@default",
+            "\t\t${3}",
+            "@endswitch"
+        ]
+    }
+}

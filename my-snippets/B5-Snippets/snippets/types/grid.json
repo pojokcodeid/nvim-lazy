@@ -1,0 +1,29 @@
+{
+    "Bootstrap 5 container": {
+        "prefix": "b5-contain",
+        "body": [
+            "<div class=\"container${1|-fluid, ,-sm,-md,-lg,-xl,-xxl|} ${2|!direction,!justify,!align,!fill,!grow-shrink,!flex-wrap,!flex-order|} ${3|!spacing,!shadow,!color,!font,overflow-hidden|}\">",
+            "\tb5-row${0}",
+            "</div>"
+        ],
+        "description": "Bootstrap 5 container"
+    },
+    "Bootstrap 5 row": {
+        "prefix": "b5-row",
+        "body": [
+            "<div class=\"row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}\">",
+            "\tb5-col${0}",
+            "</div>"
+        ],
+        "description": "Bootstrap 5 row"
+    },
+    "Bootstrap 5 col": {
+        "prefix": "b5-col",
+        "body": [
+            "<div class=\"col${1| ,-1,-2,-3,-4,-5,-6,-sm,-md,-lg,-xl,-xxl|}${2| ,-auto,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12|}\">",
+            "    b5-col${0}",
+            "</div>"
+        ],
+        "description": "Bootstrap 5 col"
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "Bootstrap 5 carousel": {
+        "prefix": "b5-carousel",
+        "body": [
+            "<div id=\"${1:slider1}\" class=\"carousel slide\" data-ride=\"carousel\">",
+            "  <ol class=\"carousel-indicators\">",
+            "    <li data-target=\"#${1:slider1}\" data-slide-to=\"0\" class=\"active\"></li>",
+            "    <li data-target=\"#${1:slider1}\" data-slide-to=\"1\"></li>",
+            "    <li data-target=\"#${1:slider1}\" data-slide-to=\"2\"></li>",
+            "  </ol>",
+            "  <div class=\"carousel-inner\">",
+            "    b5-carousel-item${0}",
+            "  </div>",
+            "  <a class=\"carousel-control-prev\" href=\"#${1:slider1}\" role=\"button\" data-slide=\"prev\">",
+            "    <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>",
+            "    <span class=\"sr-only\">Previous</span>",
+            "  </a>",
+            "  <a class=\"carousel-control-next\" href=\"#${1:slider1}\" role=\"button\" data-slide=\"next\">",
+            "    <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>",
+            "    <span class=\"sr-only\">Next</span>",
+            "  </a>",
+            "</div>",
+            ""
+        ],
+        "description": "Bootstrap 5 carousel"
+    },
+    "Bootstrap 5 carousel item": {
+        "prefix": "b5-carousel-item",
+        "body": [
+            "    <div class=\"${1|carousel-item,carousel-item active|}\">",
+            "      <img src=\"${2|https://images.unsplash.com/photo-1518384491952-3f4731b5f9cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60,https://images.unsplash.com/photo-1580821810660-5486b8e980a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60|}\" class=\"d-block w-100\" alt=\"${3:The developer is an asshole and didn't want to help you, I'm sorry about that.}\">",
+            "    </div>"
+        ],
+        "description": "Bootstrap 5 carousel item"
+    }
+}

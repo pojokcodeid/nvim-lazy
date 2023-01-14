@@ -1,0 +1,19 @@
+{
+    "breadcrumb": {
+        "prefix": "b5-breadcrumb",
+        "body": [
+            "<${1:nav} class=\"breadcrumb\" aria-label=\"breadcrumb\">",
+            "  <ol>",
+            "  <li class=\"${2|breadcrumb-item, breadcrumb-item active|}\"><a href=\"${3:Link}\">${4:Library}</a></li>",
+            "  b5${0}",
+            "  </ol>",
+            "</${1:nav}>"
+        ],
+        "description": "breadcrumb"
+    },
+    "breadcrumb item": {
+        "prefix": "b5-breadcrumb-item",
+        "body": ["<li class=\"${1|breadcrumb-item, breadcrumb-item active|}\"><a href=\"${2:Link}\">${3:Library}</a></li>"],
+        "description": "breadcrumb"
+    }
+}

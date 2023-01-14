@@ -1,0 +1,175 @@
+{
+    "Mail-later.sublime-snippet": {
+        "prefix": "Mail::later",
+        "body": [
+            "Mail::later(${1:5}, '${2:Html.view}', ${3:\\$data}, function (${4:\\$message}) {",
+            "    ${4}->from(${5:'john@johndoe.com'}, ${6:'John Doe'});",
+            "    ${4}->sender(${7:'john@johndoe.com'}, ${8:'John Doe'});",
+            "    ${4}->to(${9:'john@johndoe.com'}, ${10:'John Doe'});",
+            "    ${4}->cc(${11:'john@johndoe.com'}, ${12:'John Doe'});",
+            "    ${4}->bcc(${13:'john@johndoe.com'}, ${14:'John Doe'});",
+            "    ${4}->replyTo(${15:'john@johndoe.com'}, ${16:'John Doe'});",
+            "    ${4}->subject(${17:'Subject'});",
+            "    ${4}->priority(${18:3});",
+            "    ${4}->attach(${19:'pathToFile'});",
+            "});$20"
+        ],
+        "description": "Queue a new e-mail message for sending after (n) seconds."
+    },
+    "Mail-laterOn.sublime-snippet": {
+        "prefix": "Mail::laterOn",
+        "body": [
+            "Mail::queueOn(${1:'queue-name'}, ${2:5}, '${3:Html.view}', ${4:\\$data}, function (${5:\\$message}) {",
+            "    ${5}->from(${6:'john@johndoe.com'}, ${7:'John Doe'});",
+            "    ${5}->sender(${8:'john@johndoe.com'}, ${9:'John Doe'});",
+            "    ${5}->to(${10:'john@johndoe.com'}, ${11:'John Doe'});",
+            "    ${5}->cc(${12:'john@johndoe.com'}, ${13:'John Doe'});",
+            "    ${5}->bcc(${14:'john@johndoe.com'}, ${15:'John Doe'});",
+            "    ${5}->replyTo(${16:'john@johndoe.com'}, ${17:'John Doe'});",
+            "    ${5}->subject(${18:'Subject'});",
+            "    ${5}->priority(${19:3});",
+            "    ${5}->attach(${20:'pathToFile'});",
+            "});$21"
+        ],
+        "description": "Queue a new e-mail message for sending after (n) seconds on the given queue."
+    },
+    "Mail-plain.sublime-snippet": {
+        "prefix": "Mail::plain",
+        "body": [
+            "Mail::plain('${1:plainText.view}', ${2:\\$data}, function (${3:\\$message}) {",
+            "    ${3}->from(${4:'john@johndoe.com'}, ${5:'John Doe'});",
+            "    ${3}->sender(${6:'john@johndoe.com'}, ${7:'John Doe'});",
+            "    ${3}->to(${8:'john@johndoe.com'}, ${9:'John Doe'});",
+            "    ${3}->cc(${10:'john@johndoe.com'}, ${11:'John Doe'});",
+            "    ${3}->bcc(${12:'john@johndoe.com'}, ${13:'John Doe'});",
+            "    ${3}->replyTo(${14:'john@johndoe.com'}, ${15:'John Doe'});",
+            "    ${3}->subject(${16:'Subject'});",
+            "    ${3}->priority(${17:3});",
+            "    ${3}->attach(${18:'pathToFile'});",
+            "});$19"
+        ],
+        "description": "Send a new message when only a plain part."
+    },
+    "Mail-queue.sublime-snippet": {
+        "prefix": "Mail::queue",
+        "body": [
+            "Mail::queue('${1:Html.view}', ${2:\\$data}, function (${3:\\$message}) {",
+            "    ${3}->from(${4:'john@johndoe.com'}, ${5:'John Doe'});",
+            "    ${3}->sender(${6:'john@johndoe.com'}, ${7:'John Doe'});",
+            "    ${3}->to(${8:'john@johndoe.com'}, ${9:'John Doe'});",
+            "    ${3}->cc(${10:'john@johndoe.com'}, ${11:'John Doe'});",
+            "    ${3}->bcc(${12:'john@johndoe.com'}, ${13:'John Doe'});",
+            "    ${3}->replyTo(${14:'john@johndoe.com'}, ${15:'John Doe'});",
+            "    ${3}->subject(${16:'Subject'});",
+            "    ${3}->priority(${17:3});",
+            "    ${3}->attach(${18:'pathToFile'});",
+            "});$19"
+        ],
+        "description": "Queue a new e-mail message for sending."
+    },
+    "Mail-queueOn.sublime-snippet": {
+        "prefix": "Mail::queueOn",
+        "body": [
+            "Mail::queueOn(${1:'queue-name'}, '${2:Html.view}', ${3:\\$data}, function (${4:\\$message}) {",
+            "    ${4}->from(${5:'john@johndoe.com'}, ${6:'John Doe'});",
+            "    ${4}->sender(${7:'john@johndoe.com'}, ${8:'John Doe'});",
+            "    ${4}->to(${9:'john@johndoe.com'}, ${10:'John Doe'});",
+            "    ${4}->cc(${11:'john@johndoe.com'}, ${12:'John Doe'});",
+            "    ${4}->bcc(${13:'john@johndoe.com'}, ${14:'John Doe'});",
+            "    ${4}->replyTo(${15:'john@johndoe.com'}, ${16:'John Doe'});",
+            "    ${4}->subject(${17:'Subject'});",
+            "    ${4}->priority(${18:3});",
+            "    ${4}->attach(${19:'pathToFile'});",
+            "});$20"
+        ],
+        "description": "Queue a new e-mail message for sending on the given queue."
+    },
+    "Mail-raw.sublime-snippet": {
+        "prefix": "Mail::raw",
+        "body": [
+            "Mail::raw('${1:plain text message}', function (${2:\\$message}) {",
+            "    ${2}->from(${3:'john@johndoe.com'}, ${4:'John Doe'});",
+            "    ${2}->sender(${5:'john@johndoe.com'}, ${6:'John Doe'});",
+            "    ${2}->to(${7:'john@johndoe.com'}, ${8:'John Doe'});",
+            "    ${2}->cc(${9:'john@johndoe.com'}, ${10:'John Doe'});",
+            "    ${2}->bcc(${11:'john@johndoe.com'}, ${12:'John Doe'});",
+            "    ${2}->replyTo(${13:'john@johndoe.com'}, ${14:'John Doe'});",
+            "    ${2}->subject(${15:'Subject'});",
+            "    ${2}->priority(${16:3});",
+            "    ${2}->attach(${17:'pathToFile'});",
+            "});$18"
+        ],
+        "description": "Send a new message when only a raw text part."
+    },
+    "Mail-send.sublime-snippet": {
+        "prefix": "Mail::send",
+        "body": [
+            "Mail::send('${1:Html.view}', ${2:\\$data}, function (${3:\\$message}) {",
+            "    ${3}->from(${4:'john@johndoe.com'}, ${5:'John Doe'});",
+            "    ${3}->sender(${6:'john@johndoe.com'}, ${7:'John Doe'});",
+            "    ${3}->to(${8:'john@johndoe.com'}, ${9:'John Doe'});",
+            "    ${3}->cc(${10:'john@johndoe.com'}, ${11:'John Doe'});",
+            "    ${3}->bcc(${12:'john@johndoe.com'}, ${13:'John Doe'});",
+            "    ${3}->replyTo(${14:'john@johndoe.com'}, ${15:'John Doe'});",
+            "    ${3}->subject(${16:'Subject'});",
+            "    ${3}->priority(${17:3});",
+            "    ${3}->attach(${18:'pathToFile'});",
+            "});$19"
+        ],
+        "description": "Send a new message using a view."
+    },
+
+    // 5.3
+
+    "Mail-to": {
+        "prefix": "Mail::to",
+        "body": [
+            "Mail::to(${1:\\$request->user()})->send(new ${2:MailableClass});$3"
+        ],
+        "description": "Mail with Mailable - mailer will automatically use collection 'email' and 'name' properties"
+    },
+    "Mail-to-more": {
+        "prefix": "Mail::to-more",
+        "body": [
+            "Mail::to(${1:\\$request->user()})",
+            "    ->cc(${2:\\$moreUsers})",
+            "    ->bcc(${3:\\$evenMoreUsers})",
+            "    ->send(new ${4:MailableClass});$5"
+        ],
+        "description": "Mail with Mailable - mail to more recipients"
+    },
+    "Mail-queue-mailable": {
+        "prefix": "Mail::queue-mailable",
+        "body": [
+            "Mail::to(${1:\\$request->user()})",
+            "    ->cc(${2:\\$moreUsers})",
+            "    ->bcc(${3:\\$evenMoreUsers})",
+            "    ->queue(new ${4:MailableClass});$5"
+        ],
+        "description": "Mail with Mailable - Queueing A Mail Message"
+    },
+    "Mail-later-mailable": {
+        "prefix": "Mail::later-mailable",
+        "body": [
+            "Mail::to(${1:\\$request->user()})",
+            "    ->cc(${2:\\$moreUsers})",
+            "    ->bcc(${3:\\$evenMoreUsers})",
+            "    ->later(${4:\\$when}, new ${5:MailableClass});$6"
+        ],
+        "description": "Mail with Mailable - Delayed Message Queueing"
+    },
+
+    // Mailable
+
+    "Mailable-build-config": {
+        "prefix": "Mailable::build-config",
+        "body": [
+            "return $this->from('${1:example@example.com}')",
+            "    ->${2:view}('${3:mails.viewName}')",
+            "    ->with([",
+            "            ${4:'orderName' => $this->order->name,}",
+            "     ]);$5"
+        ],
+        "description": "Mailable - Configuring Mailable build()"
+    }
+}

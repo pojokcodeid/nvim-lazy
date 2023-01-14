@@ -1,0 +1,580 @@
+{
+	"Bootstrap 5 container": {
+		"prefix": "b5-contain",
+		"body": [
+			"<div class=\"container${1|-fluid, ,-sm,-md,-lg,-xl,-xxl|}${2| ,overflow-hidden|} ${3|px-1,px-2,px-3,px-4,px-5|} ${4|gy-1,gy-2,gy-3,gy-4,gy-5|}\">",
+			"b5-row${0}",
+			"</div>"
+		],
+		"description": "Bootstrap 5 container"
+	},
+	"Bootstrap 5 row": {
+		"prefix": "b5-row",
+		"body": [
+			"<div class=\"row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,md,lg,xl,xxl|}\">",
+			"b5${0}",
+			"</div>"
+		],
+		"description": "Bootstrap 5 row"
+	},
+	"Bootstrap 5 col": {
+		"prefix": "b5-col",
+		"body": [
+			"  <div class=\"col${1| ,-1,-2,-3,-4,-5,-6,-sm,-md,-lg,-xl,-xxl|}${2| ,-auto,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12|}\">",
+			"    b5${0}",
+			"  </div>"
+		],
+		"description": "Bootstrap 5 col"
+	},
+	"Bootstrap 5 Navbar": {
+		"prefix": "b5-navbar-default",
+		"body": [
+			"<nav class=\"navbar ${1|navbar-expand-lg,navbar-expand- |} ${2|navbar-light bg-light,navbar-dark bg-dark, navbar-dark bg-primary|}\">",
+			"  <div class=\"container-fluid\">",
+			"    <a class=\"navbar-brand\" href=\"${3|#, |}\">",
+			"    <img src=\"${4|https://hansmcmurdy.com/JavaScript-First/logo.svg, |}\" width=\"30\" height=\"30\" alt=\"\" loading=\"lazy\">",
+			"    </a>",
+			"    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"${5|#navbarNavAltMarkup, |}\" aria-controls=\"${5|#navbarNavAltMarkup, |}\"  aria-expanded=\"false\" aria-label=\"Toggle navigation\">",
+			"      <span class=\"navbar-toggler-icon\"></span>",
+			"    </button>",
+			"    <div class=\"collapse navbar-collapse\" id=\"${5|#navbarNavAltMarkup, |}\">",
+			"      <div class=\"navbar-nav\">",
+			"        b5-nl${0}",
+			"      </div>",
+			"    </div>",
+			"  </div>",
+			"</nav>"
+		],
+		"description": "Bootstrap 5 Navbar"
+	},
+	"Bootstrap 5 nav-item": {
+		"prefix": "b5-nav-item",
+		"body": [
+			"<li class=\"${1|nav-item,dropdown-item, |}\">",
+			"    <a class=\"${2|nav-link,nav-link active, |}\" aria-current=\"${3|page, |}\" href=\"${4|#, |}\">${5|Home,About,Blog,Contact, |}</a>",
+			"</li>"
+		],
+		"description": "Bootstrap 5 nav-item"
+	},
+	"Bootstrap 5 navlink": {
+		"prefix": "b5-navlink",
+		"body": [
+			"<a class=\"nav-link\" ${1| aria-disabled=\"false\",disabled tabindex=\"-1\" aria-disabled=\"true\"|} href=\"${2|#, |}\">${3|Home,About,Blog,Contact, |}</a>",
+			""
+		],
+		"description": "Bootstrap 5 navlink"
+	},
+	"Bootstrap 5 nav-dropdown toggle": {
+		"prefix": "b5-navdd-toggle",
+		"body": [
+			"<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"${1|navbarDropdownMenuLink, |}\" role=\"button\" data-toggle=\"dropdown\" aria-expanded=\"false\">",
+			"b5-n${0}",
+			"</a>"
+		],
+		"description": "Bootstrap 5 nav-dropdown toggle"
+	},
+	"Bootstrap 5 nav-dropdown": {
+		"prefix": "b5-navdropdown",
+		"body": [
+			"<ul class=\"dropdown-menu\" aria-labelledby=\"${1|navbarDropdownMenuLink, |}\">",
+			"b5-n${0}",
+			"</ul>"
+		],
+		"description": "Bootstrap 5 nav-dropdown"
+	},
+	"Bootstrap 5 Card": {
+		"prefix": "b5-card",
+		"body": [
+			"<div class=\"card\" style=\"width:${1|18rem;, |}\">",
+			"  <img src=\"${2|https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60, |}\" class=\"card-img-top\" alt=\"...\">",
+			"  <div class=\"card-body\">",
+			"    <h5 class=\"card-title\">${3|Card title, |}</h5>",
+			"    <h6 class=\"card-subtitle ${4|mb-2 text-muted, |} \">${5|Card subtitle, |}</h6>",
+			"    <p class=\"card-text\">${6|Some quick example text to build on the card title and make up the bulk of the card's content., |}</p>",
+			"    b5${0}",
+			"  </div>",
+			"</div>"
+		],
+		"description": "Bootstrap 5 Card"
+	},
+	"Bootstrap 5 Block Quote": {
+		"prefix": "b5-quote",
+		"body": [
+			"    <blockquote class=\"blockquote ${1|mb-0, |}\">",
+			"      <p>${2|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante., | }</p>",
+			"      <footer class=\"blockquote-footer\">Someone famous in <cite title=\"Source Title\">Source Title</cite></footer>",
+			"    </blockquote>"
+		],
+		"description": "Bootstrap 5 Block Quote"
+	},
+	"Link BTN": {
+		"prefix": "b5-btn",
+		"body": [
+			"<a class=\"btn btn-${2|primary,secondary,success,danger,warning,info,light,dark|}\" href=\"${3|#, |}\" role=\"button\">${4| ,Link|}</a>"
+		],
+		"description": "Link BTN"
+	},
+	"BTN-Outline": {
+		"prefix": "b5-btn-o",
+		"body": [
+			"<a class=\"btn btn-outline-${2|primary,secondary,success,danger,warning,info,light,dark|}\" href=\"${3|#, |}\" role=\"button\">${4| ,Link|}</a>"
+		],
+		"description": "Link BTN"
+	},
+	"Button Group": {
+		"prefix": "b5-btn-gp",
+		"body": [
+			"<div class=\"btn-group ${2| ,btn-group-vertical,btn-group-sm,btn-group-lg,h1|} ${3|m,p|}${4|t,r,b,l,x,y|}${5|auto,0,1,2,3,4,5|}\" role=\"group\" aria-label=\"${1:Basic example}\">",
+			"    b5-btn${0}",
+			"</div>"
+		],
+		"description": "Button Group"
+	},
+	"Bootstrap 5 BTN Reveal": {
+		"prefix": "b5-btn-reveal",
+		"body": [
+			"<button class=\"btn btn-primary\" type=\"button\" data-toggle=\"collapse\" data-target=\"#${1|collapseExample, |}\" aria-expanded=\"false\" aria-controls=\"${1|collapseExample, |}\">",
+			"    ${2|Button with data-target, |}",
+			"</button>",
+			"<div class=\"collapse\" id=\"${1|collapseExample, |}\">",
+			"  <div class=\"card card-body\">",
+			"    ${3|Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident., |}",
+			"  </div>",
+			"</div>"
+		],
+		"description": "Bootstrap 5 BTN Reveal"
+	},
+	"Pagination": {
+		"prefix": "b5-pagination",
+		"body": [
+			"<nav aria-label=\"${10:Page navigation example}\">",
+			"  <ul class=\"pagination ${1|pagination-sm,pagination-lg;|}\">",
+			"    <li class=\"page-item\">",
+			"      <a class=\"page-link\" href=\"#\" aria-label=\"Previous\">",
+			"        <span aria-hidden=\"true\">${2|Previous,&laquo;|}</span>",
+			"      </a>",
+			"    </li>",
+			"    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">1</a></li>",
+			"    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a></li>",
+			"    ${0}",
+			"    <li class=\"page-item\">",
+			"      <a class=\"page-link\" href=\"#\" aria-label=\"Next\">",
+			"        <span aria-hidden=\"true\">${3|Next,&raquo;|}</span>",
+			"      </a>",
+			"    </li>",
+			"  </ul>",
+			"</nav>"
+		],
+		"description": "Pagination"
+	},
+	"Utility Text": {
+		"prefix": "b5-txt",
+		"body": [
+			"<${1|div,p,h1|} class=\"text-${2|sm,md,lg,xl|}-${3|left,center,right|} lh-${4|base,1,sm,lg|} font-${5|italic,normal,weight-normal,weight-bold,weight-bolder,weight-light,weight-lighter|} text-${6|lowercase,uppercase,capitalize|} text-${7|decoration-none,decoration-underline,decoration-line-through|} text-${8|reset,break,monospace|}\">",
+			"${9:Left aligned text on all viewport sizes.}",
+			"</${1|div,p,h1|}>"
+		],
+		"description": "Text Utility"
+	},
+	"Utility Borders": {
+		"prefix": "b5-borders",
+		"body": [
+			"<${1|div,p,h1|} class=\"border${1| ,-0,-top,-right,-bottom,-left,-top-0,-right-0,-bottom-0,-left-0|} border-${2|white,primary,secondary,success,danger,warning,info,light,dark|} ${3| ,rounded,rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,rounded-pill|} ${4| ,rounded-sm,rounded-lg|}\">",
+			"${10:Left aligned text on all viewport sizes.}",
+			"</${1|div,p,h1|}>"
+		],
+		"description": "Utility Borders"
+	},
+	"Utility Spacing": {
+		"prefix": "b5-Spacing",
+		"body": [
+			"<${1|div,p,h1|} class=\"${2|m,p|}${3|t,r,b,l,x,y|}${3|auto,0,1,2,3,4,5|} \">",
+			"${0}",
+			"</${1|div,p,h1|}>"
+		],
+		"description": "Utility Spacing"
+	},
+	"Modal-BTN": {
+		"prefix": "b5-modal-btn",
+		"body": [
+			"<button type=\"button\" class=\"btn btn-${1|primary,secondary,success,danger,warning,info,light,dark|}\" data-toggle=\"modal\" data-target=\"#${2:exampleModal}\">",
+			"  ${3:Launch demo modal}",
+			"</button>"
+		],
+		"description": "Modal-Body"
+	},
+	"Modal-body": {
+		"prefix": "b5-modal-body",
+		"body": [
+			"<div class=\"modal fade\" id=\"${1:staticBackdrop}\" data-backdrop=\"static\" data-keyboard=\"false\" tabindex=\"-1\" aria-labelledby=\"${1:staticBackdrop}\" aria-hidden=\"true\">",
+			"  <div class=\"modal-dialog\">",
+			"    <div class=\"modal-content\">",
+			"      <div class=\"modal-header\">",
+			"        <h5 class=\"modal-title\" id=\"${2:staticBackdropLabel}\">${3:Modal title}</h5>",
+			"        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">",
+			"          <span aria-hidden=\"true\">&times;</span>",
+			"        </button>",
+			"      </div>",
+			"      <div class=\"modal-body\">",
+			"        ${0}",
+			"      </div>",
+			"      ${4| ,<div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button></div>|}",
+			"    </div>",
+			"  </div>",
+			"</div>",
+			""
+		],
+		"description": "Modal-Body"
+	},
+	"Modal-Footer": {
+		"prefix": "b5-modal-footer",
+		"body": [
+			"<div class=\"modal fade ${6|modal-sm,modal-lg,modal-xl|}\" id=\"${1:staticBackdrop}\" data-backdrop=\"static\" data-keyboard=\"false\" tabindex=\"-1\" aria-labelledby=\"${1:staticBackdrop}\" aria-hidden=\"true\">",
+			"  <div class=\"modal-dialog ${5|modal-dialog-centered, modal-dialog-scrollable|}\">",
+			"    <div class=\"modal-content\">",
+			"      <div class=\"modal-header\">",
+			"        <h5 class=\"modal-title\" id=\"${2:staticBackdropLabel}\">${3:Modal title}</h5>",
+			"        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">",
+			"          <span aria-hidden=\"true\">&times;</span>",
+			"        </button>",
+			"      </div>",
+			"      <div class=\"modal-body\">",
+			"        ${0}",
+			"      </div>",
+			"      ${4| ,<div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button></div>|}",
+			"    </div>",
+			"  </div>",
+			"</div>",
+			""
+		],
+		"description": "Modal-BTN"
+	},
+	"badge": {
+		"prefix": "b5-badge",
+		"body": [
+			"<span class=\"badge ${1|rounded-pill,secondary,success|} bg-${2|primary,secondary,success,danger,warning,info,light,dark|} ${3| ,text-dark}\">${4:Primary}</span>"
+		],
+		"description": "badge"
+	},
+	"tooltips": {
+		"prefix": "b5-tooltip",
+		"body": [
+			"<button type=\"button\" class=\"btn btn-${1|primary,secondary,success,danger,warning,info,light,dark|}\" data-toggle=\"tooltip\"  data-html=\"${3|false,true|}\" data-placement=\"${2|top,right,bottom,left|}\" title=\"${2:Tooltip on top}\">",
+			"  ${2:Tooltip on top}",
+			"</button>"
+		],
+		"description": "tooltips"
+	},
+	"alert": {
+		"prefix": "b5-alert",
+		"body": [
+			"<div class=\"alert alert-${1|primary,secondary,success,danger,warning,info,light,dark|}\" role=\"alert\">",
+			"  ${2:A simple primary alert—check it out!}",
+			"</div>"
+		],
+		"description": "alert"
+	},
+	"alert big": {
+		"prefix": "b5-alert-big",
+		"body": [
+			"<div class=\"alert alert-${1|primary,secondary,success,danger,warning,info,light,dark|} alert-dismissible fade show\" role=\"alert\">",
+			"<h4 class=\"alert-heading\">$2:Well done!}</h4>",
+			"  <strong>${3:Holy guacamole!}</strong> ",
+			"  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">",
+			"    <span aria-hidden=\"true\">&times;</span>",
+			"  </button>",
+			"</div>"
+		],
+		"description": "alert big"
+	},
+	"breadcumb": {
+		"prefix": "b5-breadcumb",
+		"body": [
+			"<${1:nav} class=\"breadcrumb\" aria-label=\"breadcrumb\">",
+			"  <${2:ol}>",
+			"  <li class=\"${3|breadcrumb-item|, breadcrumb-item active}\"><a href=\"${5}\">${6:Library}</a></li>",
+			"  </${2:ol|}>",
+			"</${1:nav}>"
+		],
+		"description": "breadcumb"
+	},
+	"Progress Bar": {
+		"prefix": "b5-progress",
+		"body": [
+			"<div class=\"progress\">",
+			"    <div class=\"${1|progress-bar,progress-bar progress-bar-striped|}  bg-${2|success,info,success,warning,wardanger}}\" role=\"progressbar\" style=\"width: ${3|25,50,75,100, |}%;\"",
+			"        aria-valuenow=\"${3|25,50,75,100, |}\" aria-valuemin=\"${4:0}\" aria-valuemax=\"${5:100}\" ${6| ,progress-bar-animated}>${6:Description}</div>",
+			"</div>"
+		],
+		"description": "Progress Bar"
+	},
+	"Bootstrap 5 carousel": {
+		"prefix": "b5-carousel",
+		"body": [
+			"<div id=\"${1:slider1}\" class=\"carousel slide\" data-ride=\"carousel\">",
+			"  <ol class=\"carousel-indicators\">",
+			"    <li data-target=\"#${1:slider1}\" data-slide-to=\"0\" class=\"active\"></li>",
+			"    <li data-target=\"#${1:slider1}\" data-slide-to=\"1\"></li>",
+			"    <li data-target=\"#${1:slider1}\" data-slide-to=\"2\"></li>",
+			"  </ol>",
+			"  <div class=\"carousel-inner\">",
+			"    b5-carousel-item${0}",
+			"  </div>",
+			"  <a class=\"carousel-control-prev\" href=\"#${1:slider1}\" role=\"button\" data-slide=\"prev\">",
+			"    <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>",
+			"    <span class=\"sr-only\">Previous</span>",
+			"  </a>",
+			"  <a class=\"carousel-control-next\" href=\"#${1:slider1}\" role=\"button\" data-slide=\"next\">",
+			"    <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>",
+			"    <span class=\"sr-only\">Next</span>",
+			"  </a>",
+			"</div>",
+			""
+		],
+		"description": "Bootstrap 5 carousel"
+	},
+	"Bootstrap 5 carousel item": {
+		"prefix": "b5-carousel-item",
+		"body": [
+			"    <div class=\"${1|carousel-item,carousel-item active|}\">",
+			"      <img src=\"${2|https://images.unsplash.com/photo-1518384491952-3f4731b5f9cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60,https://images.unsplash.com/photo-1580821810660-5486b8e980a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60|}\" class=\"d-block w-100\" alt=\"${3:The developer is an asshole and didn't want to help you, I'm sorry about that.}\">",
+			"    </div>"
+		],
+		"description": "Bootstrap 5 carousel item"
+	},
+	"Bootstrap 5 scripts": {
+		"prefix": "b5-$",
+		"body": [
+			"<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css\" integrity=\"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I\" crossorigin=\"anonymous\">",
+			"<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js\" integrity=\"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/\" crossorigin=\"anonymous\"></script>",
+			"${1|<script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>, |}"
+		],
+		"description": "Adds the cnd for the css scripts and has an option to use popper."
+	},
+	"Offcanvas Scripts": {
+	"prefix": "b5-$-offcanvas-scripts",
+	"body": [
+		"<style>",
+		"    html,body {overflow-x: hidden; /* Prevent scroll on narrow devices */}",
+		"    body {padding-top: 56px;}",
+		"",
+		"    @media (max-width: 991.98px) {",
+		"    .offcanvas-collapse {",
+		"        position: fixed;",
+		"        top: 56px; /* Height of navbar */",
+		"        bottom: 0;",
+		"        left: 100%;",
+		"        width: 100%;",
+		"        padding-right: 1rem;",
+		"        padding-left: 1rem;",
+		"        overflow-y: auto;",
+		"        visibility: hidden;",
+		"        background-color: #343a40;",
+		"        transition: transform .3s ease-in-out, visibility .3s ease-in-out;",
+		"    }",
+		"    .offcanvas-collapse.open {",
+		"        visibility: visible;",
+		"        transform: translateX(-100%);",
+		"    }",
+		"    }",
+		"",
+		"    .nav-scroller {",
+		"    position: relative;",
+		"    z-index: 2;",
+		"    height: 2.75rem;",
+		"    overflow-y: hidden;",
+		"    }",
+		"",
+		"    .nav-scroller .nav {",
+		"    display: flex;",
+		"    flex-wrap: nowrap;",
+		"    padding-bottom: 1rem;",
+		"    margin-top: -1px;",
+		"    overflow-x: auto;",
+		"    color: rgba(255, 255, 255, .75);",
+		"    text-align: center;",
+		"    white-space: nowrap;",
+		"    -webkit-overflow-scrolling: touch;",
+		"    }",
+		"",
+		"    .nav-underline .nav-link {",
+		"    padding-top: .75rem;",
+		"    padding-bottom: .75rem;",
+		"    font-size: .875rem;",
+		"    color: #6c757d;",
+		"    }",
+		"",
+		"    .nav-underline .nav-link:hover {",
+		"    color: #007bff;",
+		"    }",
+		"",
+		"    .nav-underline .active {",
+		"    font-weight: 500;",
+		"    color: #343a40;",
+		"    }",
+		"",
+		"    .text-white-50 { color: rgba(255, 255, 255, .5); }",
+		"",
+		"    .bg-purple { background-color: #6f42c1; }",
+		"</style>",
+		"<script type=\"text/javascript\">",
+		"    (function () {",
+		"      'use strict'",
+		"        document.querySelector('[data-toggle=\"offcanvas\"]').addEventListener('click', function () {",
+		"        document.querySelector('.offcanvas-collapse').classList.toggle('open')",
+		"      })",
+		"    })()",
+		" </script>"
+	],
+	"description": "Offcanvas Scripts"
+	},
+	"Bootstrap 5 HTML Template": {
+		"prefix": "!b5-$",
+		"body": [
+			"<!DOCTYPE html>",
+			"<html lang=\"en\">",
+			"<head>",
+			"  <meta charset=\"UTF-8\">",
+			"  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+			"  <title>${1:Bootstrap Site}</title>",
+			"  <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css\" integrity=\"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I\" crossorigin=\"anonymous\">",
+			"  <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>",
+			"  <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js\" integrity=\"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/\" crossorigin=\"anonymous\"></script>",
+			"</head>",
+			"<body>",
+			"<h1>Hello-Bootstrap</h1>",
+			"</body>",
+			"</html>"
+		],
+		"description": "An HTML Boilerplate with  Bootstrap 5"
+	},
+	"Offcanvas Template": {
+		"prefix": "b5-$-offcanvas",
+		"body": [
+		  "<!doctype html>",
+		  "<html lang=\"en\">",
+		  "   <head>",
+		  "      <meta charset=\"utf-8\">",
+		  "      <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+		  "      <meta name=\"author\" content=\"Hans McMurdy\">",
+		  "      <title>Bootstrap 5 Offcanvas Template · Bootstrap</title>",
+		  "      <meta name=\"title\" content=\"#JavaScriptFirst\">",
+		  "      <meta name=\"description\" content=\"Learn how to code with #JavaScriptFirst: https://github.com/HansUXdev/JavaScript-First\">",
+		  "      <!-- Bootstrap core CSS -->",
+		  "      <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css\" integrity=\"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I\" crossorigin=\"anonymous\">",
+		  "      <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js\" integrity=\"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/\" crossorigin=\"anonymous\"></script>",
+		  "      <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>",
+		  "      <!-- Favicons -->",
+		  "",
+		  "      <meta name=\"theme-color\" content=\"#7952b3\">",
+		  "      <style>",
+		  "         .bd-placeholder-img {",
+		  "            font-size: 1.125rem;",
+		  "            text-anchor: middle;",
+		  "            -webkit-user-select: none;",
+		  "            -moz-user-select: none;",
+		  "            -ms-user-select: none;",
+		  "            user-select: none;",
+		  "         }",
+		  "         @media (min-width: 768px) {",
+		  "            .bd-placeholder-img-lg {",
+		  "             font-size: 3.5rem;",
+		  "            }",
+		  "         }",
+		  "      </style>",
+		  "      <style>",
+		  "            /* Prevent scroll on narrow devices */",
+		  "            html,body {overflow-x: hidden; }",
+		  "            body {padding-top: 56px;}",
+		  "            @media (max-width: 991.98px) {",
+		  "                .offcanvas-collapse {",
+		  "                    position: fixed;",
+		  "                    top: 56px; /* Height of navbar */",
+		  "                    bottom: 0;",
+		  "                    left: 100%;",
+		  "                    width: 100%;",
+		  "                    padding-right: 1rem;",
+		  "                    padding-left: 1rem;",
+		  "                    overflow-y: auto;",
+		  "                    visibility: hidden;",
+		  "                    background-color: #343a40;",
+		  "                    transition: transform .3s ease-in-out, visibility .3s ease-in-out;",
+		  "                }",
+		  "                .offcanvas-collapse.open {",
+		  "                    visibility: visible;",
+		  "                    transform: translateX(-100%);",
+		  "                }",
+		  "            }",
+		  "            .nav-scroller {",
+		  "                position: relative;",
+		  "                z-index: 2;",
+		  "                height: 2.75rem;",
+		  "                overflow-y: hidden;",
+		  "            }",
+		  "            .nav-scroller .nav {",
+		  "                display: flex;",
+		  "                flex-wrap: nowrap;",
+		  "                padding-bottom: 1rem;",
+		  "                margin-top: -1px;",
+		  "                overflow-x: auto;",
+		  "                color: rgba(255, 255, 255, .75);",
+		  "                text-align: center;",
+		  "                white-space: nowrap;",
+		  "                -webkit-overflow-scrolling: touch;",
+		  "            }",
+		  "            .nav-underline .nav-link {",
+		  "                padding-top: .75rem;",
+		  "                padding-bottom: .75rem;",
+		  "                font-size: .875rem;",
+		  "                color: #6c757d;",
+		  "            }",
+		  "            .nav-underline .nav-link:hover {color: #007bff;}",
+		  "            .nav-underline .active {font-weight: 500;color: #343a40;}",
+		  "            .text-white-50 { color: rgba(255, 255, 255, .5); }",
+		  "            .bg-purple { background-color: #6f42c1; }",
+		  "      </style>",
+		  "   </head>",
+		  "   <body class=\"bg-light\">",
+		  "      <nav class=\"navbar navbar-expand-lg fixed-top navbar-dark bg-dark\">",
+		  "         <div class=\"container-fluid\">",
+		  "            <a class=\"navbar-brand\" href=\"#\">Offcanvas navbar</a>",
+		  "            <button class=\"navbar-toggler p-0 border-0\" type=\"button\" data-toggle=\"offcanvas\">",
+		  "            <span class=\"navbar-toggler-icon\"></span>",
+		  "            </button>",
+		  "            <div class=\"navbar-collapse offcanvas-collapse\" id=\"navbarsExampleDefault\">",
+		  "               <ul class=\"navbar-nav mr-auto mb-2 mb-lg-0\">",
+		  "                  <li class=\"nav-item active\">",
+		  "                     <a class=\"nav-link\" aria-current=\"page\" href=\"#\">Home</a>",
+		  "                  </li>",
+		  "                  <li class=\"nav-item\">",
+		  "                     <a class=\"nav-link\" href=\"#\">About</a>",
+		  "                  </li>",
+		  "               </ul>",
+		  "            </div>",
+		  "         </div>",
+		  "      </nav>",
+		  "      ",
+		  "      <main class=\"container\">",
+		  "        <div class=\"d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm\">",
+		  "          <img class=\"mr-3\" src=\"https://hansmcmurdy.com/JavaScript-First/logo.svg\" alt=\"\" width=\"48\" height=\"48\">",
+		  "          <div class=\"lh-1\">",
+		  "            <h6 class=\"mb-0 text-white lh-1\">#JavaScriptFirst</h6>",
+		  "            <small>Learn Modern JavaScript, from an Open Source Book that teaches anyone how to code with JavaScript using the node.js runtime environment rather than a browser and by the end, you will build a server and a website using JavaScript.</small>",
+		  "          </div>",
+		  "        </div>",
+		  "",
+		  "      </main>",
+		  "      <script type=\"text/javascript\">",
+		  "         (function () {",
+		  "           'use strict'",
+		  "             document.querySelector('[data-toggle=\"offcanvas\"]').addEventListener('click', function () {",
+		  "             document.querySelector('.offcanvas-collapse').classList.toggle('open')",
+		  "           })",
+		  "         })()",
+		  "      </script>",
+		  "   </body>",
+		  "</html>"
+		],
+		"description": "Offcanvas Template"
+	}
+}

@@ -1,0 +1,25 @@
+{
+    "Pagination": {
+        "prefix": "b5-pagination",
+        "body": [
+            "<nav aria-label=\"${10:Page navigation example}\">",
+            "  <ul class=\"pagination ${1|pagination-sm,pagination-lg;|}\">",
+            "    <li class=\"page-item\">",
+            "      <a class=\"page-link\" href=\"#\" aria-label=\"Previous\">",
+            "        <span aria-hidden=\"true\">${2|Previous,&laquo;|}</span>",
+            "      </a>",
+            "    </li>",
+            "    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">1</a></li>",
+            "    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a></li>",
+            "    ${0}",
+            "    <li class=\"page-item\">",
+            "      <a class=\"page-link\" href=\"#\" aria-label=\"Next\">",
+            "        <span aria-hidden=\"true\">${3|Next,&raquo;|}</span>",
+            "      </a>",
+            "    </li>",
+            "  </ul>",
+            "</nav>"
+        ],
+        "description": "Pagination"
+    }
+}

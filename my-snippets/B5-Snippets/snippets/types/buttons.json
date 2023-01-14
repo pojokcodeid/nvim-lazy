@@ -1,0 +1,41 @@
+{
+    "Button": {
+        "prefix": "b5-btn",
+        "body": [
+            "<a class=\"btn btn-${1|primary,secondary,success,danger,warning,info,light,dark|} btn-${2|sm,lg|} \" href=\"${3|#, |}\" role=\"button\">${4| ,Link|}</a>"
+        ],
+        "description": "Create a basic button."
+    },
+    "Call to Action Button": {
+        "prefix": "b5-btn-cta",
+        "body": [
+            "<a class=\"btn btn-${1|primary,secondary,success,danger,warning,info,light,dark|} btn-${2|sm,lg|} \" href=\"${3|#, ,tel:123-456-7890,mailto:someone@yoursite.com,bunny.mp4|}\" ${4| ,disabled,dowload|} role=\"button\">${5|Link, ,call,mail|}</a>"
+        ],
+        "description": "Create a CTA Button and drive your customer experience forward. \n Options: \n 1. Call\n 2. Email\n"
+    },
+    "BTN-Outline": {
+        "prefix": "b5-btn-o",
+        "body": [
+            "<a class=\"btn btn-outline-${2|primary,secondary,success,danger,warning,info,light,dark|}\" href=\"${3|#, |}\" role=\"button\">${4| ,Link|}</a>"
+        ],
+        "description": "Link BTN"
+    },
+    "Close Button": {
+        "prefix": "b5-btn-close",
+        "body": [
+            "<button type=\"button\" class=\"close\" ${1| ,disabled|} aria-label=\"Close\">",
+            "  <span aria-hidden=\"true\">&times;</span>",
+            "</button>"
+        ],
+        "description": "Close Button"
+    },
+    "Button Group": {
+        "prefix": "b5-btn-gp",
+        "body": [
+            "<div class=\"btn-group ${2| ,btn-group-vertical,btn-group-sm,btn-group-lg,h1|} ${3|!spacing,!color,!font,!shadow|}\" role=\"group\" aria-label=\"${1:Basic example}\">",
+            "    b5-btn${0}",
+            "</div>"
+        ],
+        "description": "Button Group"
+    }
+}
