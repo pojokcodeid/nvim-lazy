@@ -5,12 +5,12 @@ require("user.keymaps")
 require("user.autocommands")
 require("user.colorscheme")
 require("user.snip")
+require("user.bufferline")
 if onsave then
 	require("user.format_onsave")
 end
 
 -- dipindah ke plugins
 -- require("user.lualine")
--- require("user.bufferline")
 -- require("user.cmp")
 -- require("user.lsp")

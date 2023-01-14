@@ -1,17 +1,17 @@
 return {
-  -- the colorscheme should be available when starting Neovim
-  {
+	-- the colorscheme should be available when starting Neovim
+	{
 		"nvim-lua/plenary.nvim",
 		commit = "4b7e52044bbb84242158d977a50c4cbcd85070c7",
 		event = "BufWinEnter",
 		module = "plenary",
 	},
-  {
-    "folke/tokyonight.nvim",
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
-  },
-  {
+	{
+		"folke/tokyonight.nvim",
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other start plugins
+	},
+	{
 		"goolord/alpha-nvim",
 		commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31",
 		module = "alpha",
@@ -25,22 +25,23 @@ return {
 		commit = "a52f078026b27694d2290e34efa61a6e4a690621",
 		require = { "kyazdani42/nvim-web-devicons", opt = true },
 		event = "BufWinEnter",
-		opts=function()
+		opts = function()
 			require("user.lualine")
 		end,
 	},
-	{"rafamadriz/friendly-snippets"},
-	{"hrsh7th/nvim-cmp", 
-		dependencies ="rafamadriz/friendly-snippets",
-		opts=function()
+	{ "rafamadriz/friendly-snippets" },
+	{
+		"hrsh7th/nvim-cmp",
+		dependencies = "rafamadriz/friendly-snippets",
+		opts = function()
 			require("user.cmp")
 		end,
-  },
+	},
 	{
 		"windwp/nvim-autopairs",
 		commit = "4fc96c8f3df89b6d23e5092d31c866c53a346347",
 		dependencies = "hrsh7th/nvim-cmp",
-		event="VeryLazy",
+		event = "VeryLazy",
 		init = function()
 			require("user.autopairs")
 		end,
@@ -54,8 +55,8 @@ return {
 		end,
 	},
 	-- include treesitter
-	require("plugins.treesitter")
-	,{
+	require("plugins.treesitter"),
+	{
 		"kyazdani42/nvim-web-devicons",
 		commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352",
 		init = function()
@@ -74,11 +75,11 @@ return {
 	{
 		"akinsho/bufferline.nvim",
 		commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4",
-		dependencies = {"kyazdani42/nvim-web-devicons","famiu/bufdelete.nvim"},
+		dependencies = { "kyazdani42/nvim-web-devicons", "famiu/bufdelete.nvim" },
 		event = "VeryLazy",
-		config=function()
-			require("user.bufferline")
-		end,
+		-- config = function()
+		-- 	require("user.bufferline")
+		-- end,
 	},
 	{ "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" },
 	{
@@ -113,9 +114,9 @@ return {
 			require("user.whichkey")
 		end,
 	},
-	-- start programming 
-	{ "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa", dependencies = "hrsh7th/nvim-cmp"},
-  { "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21", dependencies = "hrsh7th/nvim-cmp" },	
+	-- start programming
+	{ "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa", dependencies = "hrsh7th/nvim-cmp" },
+	{ "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21", dependencies = "hrsh7th/nvim-cmp" },
 	{
 		"neovim/nvim-lspconfig",
 		commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda",
@@ -134,7 +135,7 @@ return {
 			"MasonUninstallAll",
 			"MasonLog",
 		},
-    dependencies={"williamboman/mason-lspconfig.nvim"},
+		dependencies = { "williamboman/mason-lspconfig.nvim" },
 		init = function()
 			vim.tbl_map(function(plugin)
 				pcall(require, plugin)
@@ -142,12 +143,10 @@ return {
 		end,
 	},
 	{ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" },
-  { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" },
+	{ "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" },
 	-- include for coding
-	require "plugins.coding"
-
-	-- extra plugins 
-	,{
+	require("plugins.coding"), -- extra plugins
+	{
 		"nvim-telescope/telescope.nvim",
 		commit = "76ea9a898d3307244dce3573392dcf2cc38f340f",
 		dependencies = { { "nvim-lua/plenary.nvim" } },
@@ -156,13 +155,13 @@ return {
 			require("user.telescope")
 		end,
 	},
-	{ "manzeloth/live-server", cmd={"LiveServer"} },
-  { "mg979/vim-visual-multi", event = "BufWinEnter" },
+	{ "manzeloth/live-server", cmd = { "LiveServer" } },
+	{ "mg979/vim-visual-multi", event = "BufWinEnter" },
 	{
 		"windwp/nvim-ts-autotag",
 		dependencies = "nvim-treesitter",
-    init=function()
-			require('nvim-ts-autotag').setup()
+		init = function()
+			require("nvim-ts-autotag").setup()
 		end,
 	},
 	{
@@ -233,7 +232,7 @@ return {
 			require("user.neoscroll")
 		end,
 	},
-  {
+	{
 		"dstein64/nvim-scrollview",
 		event = "BufRead",
 		config = function()
@@ -263,7 +262,7 @@ return {
 			require("user.yanky")
 		end,
 	},
-  { "dstein64/vim-startuptime", cmd="StartupTime" },
+	{ "dstein64/vim-startuptime", cmd = "StartupTime" },
 	{ "p00f/nvim-ts-rainbow", event = "BufWinEnter", dependencies = "nvim-treesitter/nvim-treesitter" },
 	{
 		"lewis6991/gitsigns.nvim",
@@ -274,5 +273,5 @@ return {
 		config = function()
 			require("user.gitsigns")
 		end,
-	}
+	},
 }
