@@ -23,6 +23,7 @@ null_ls.setup({
 		formatting.phpcbf,
 		-- formatting.clang_format,
 		-- diagnostics.flake8
+		-- diagnostics.eslint_d,
 	},
 
 	on_attach = function(client, bufnr)
