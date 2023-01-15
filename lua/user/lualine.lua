@@ -184,6 +184,7 @@ lualine.setup({
 			"Outline",
 			"DressingInput",
 			"toggleterm",
+			"lazy",
 		},
 		always_divide_middle = true,
 	},
