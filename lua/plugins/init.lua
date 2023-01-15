@@ -286,6 +286,7 @@ return {
 					-- can also be a list of 8 characters, see :h wilder#popupmenu_palette_theme() for more details
 					border = 'rounded',
 					max_height = '40%',      -- max height of the palette
+					max_width='40%',
 					min_height = 0,          -- set to the same as 'max_height' for a fixed height window
 					prompt_position = 'top', -- 'top' or 'bottom' to set the location of the prompt
 					reverse = 0,             -- set to 1 to reverse the order of the list, use in combination with 'prompt_position'
