@@ -27,11 +27,13 @@ local settings = {
 }
 
 require("mason").setup(settings)
+-- * buka remark ini jika akan menggunakan list serverrs diatas dan remark config dibawah
 -- require("mason-lspconfig").setup({
 -- 	ensure_installed = servers,
 -- 	automatic_installation = true,
 -- })
--- sementara default terbaca langsung setelah diinstall
+--
+-- * buka remark ini jika ingin menjalankan dengan cara install dan remark config diatas (pilih satu)
 require("mason-lspconfig").setup()
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
