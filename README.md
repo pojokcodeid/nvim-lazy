@@ -112,7 +112,7 @@ git clone https://github.com/pojokcodeid/nvim-lazy.git ~/.config/nvim
 
 ### Config LSP - Cari file nvim/lua/user/lsp/mason.lua
 
-- Tambahkan pada bagian berikut
+- Jalankan dengan commond mode
 
 ```
 :MasonInstall html-lsp css-lsp typescript-language-server
