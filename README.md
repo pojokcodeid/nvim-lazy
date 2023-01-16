@@ -115,19 +115,7 @@ git clone https://github.com/pojokcodeid/nvim-lazy.git ~/.config/nvim
 - Tambahkan pada bagian berikut
 
 ```
-local servers = {
-	"sumneko_lua",
-	"cssls",
-	"html",
-	"tsserver",
-	"pyright",
-	-- "bashls",
-	"jsonls",
-	-- "yamlls",
-	-- "jdtls",
-	"emmet_ls",
-	"intelephense",
-}
+:MasonInstall html-lsp css-lsp typescript-language-server
 ```
 
 - Rujukan Lnguage Support <br>
