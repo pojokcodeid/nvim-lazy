@@ -226,6 +226,27 @@ local mappings = {
 			"Run MVN",
 		},
 	},
+	D = {
+		name = "Debug",
+		b = {
+			function()
+				require("dap").toggle_breakpoint()
+			end,
+			"Toggle Breakpoint",
+		},
+		B = {
+			function()
+				require("dap").clear_breakpoints()
+			end,
+			"Clear Breakpoints",
+		},
+		c = {
+			function()
+				require("dap").continue()
+			end,
+			"Start/Continue",
+		},
+	},
 }
 
 which_key.setup(setup)
