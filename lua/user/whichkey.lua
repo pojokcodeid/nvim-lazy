@@ -121,6 +121,11 @@ local mappings = {
 		end,
 		"Coment line",
 	},
+	["m"] = {
+		name = "Markdown",
+		p = { "<cmd>MarkdownPreview<cr>", "Preview" },
+		s = { "<cmd>MarkdownPreviewStop<cr>", "Stop Preview" },
+	},
 	-- p = {
 	-- 	name = "Packer",
 	-- 	c = { "<cmd>PackerCompile<cr>", "Compile" },

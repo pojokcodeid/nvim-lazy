@@ -24,7 +24,7 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		commit = "a52f078026b27694d2290e34efa61a6e4a690621",
-		require = { "kyazdani42/nvim-web-devicons", opt = true },
+		dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
 		event = "BufWinEnter",
 		opts = function()
 			require("user.lualine")
@@ -131,7 +131,7 @@ return {
 		"neovim/nvim-lspconfig",
 		commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda",
 		event = "BufWinEnter",
-		init = function()
+		config = function()
 			require("user.lsp")
 		end,
 	},
@@ -310,7 +310,7 @@ return {
 	{
 		"lewis6991/gitsigns.nvim",
 		commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2",
-		disable = vim.fn.executable("git") == 0,
+		enabled = vim.fn.executable("git") == 1,
 		ft = "gitcommit",
 		event = "VeryLazy",
 		config = function()
@@ -350,5 +350,16 @@ return {
 			{ "<leader>xx", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
 			{ "<leader>xX", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
 		},
+	},
+	-- for markdown preview
+	-- make sure already install npm and yarn
+	{
+		"iamcco/markdown-preview.nvim",
+		build = "cd app && npm install",
+		init = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+		cmd = { "MarkdownPreview", "MarkdownPreviewStop", "MarkdownPreviewToggle" },
 	},
 }
