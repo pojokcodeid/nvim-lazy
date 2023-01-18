@@ -380,4 +380,12 @@ return {
 			require("user.mason_dap")
 		end,
 	},
+	-- for codeGPT
+	{
+		"jackMort/ChatGPT.nvim",
+		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
+		-- init = function()
+		-- 	require("user.chat_gpt")
+		-- end,
+	},
 }
