@@ -362,25 +362,4 @@ return {
 		ft = { "markdown" },
 		cmd = { "MarkdownPreview", "MarkdownPreviewStop", "MarkdownPreviewToggle" },
 	},
-	-- Start Debuger
-	{
-		"mfussenegger/nvim-dap",
-		enabled = vim.fn.has("win32") == 1,
-	},
-	{
-		"rcarriga/nvim-dap-ui",
-		enabled = vim.fn.has("win32") == 1,
-		dependencies = "mfussenegger/nvim-dap",
-		config = function()
-			require("user.dapui")
-		end,
-	},
-	{
-		"jayp0521/mason-nvim-dap.nvim",
-		enabled = vim.fn.has("win32") == 1,
-		dependencies = "mfussenegger/nvim-dap",
-		config = function()
-			require("user.mason-nvim-dap")
-		end,
-	},
 }
