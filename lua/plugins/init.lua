@@ -362,4 +362,22 @@ return {
 		ft = { "markdown" },
 		cmd = { "MarkdownPreview", "MarkdownPreviewStop", "MarkdownPreviewToggle" },
 	},
+	-- debuging
+	{
+		"mfussenegger/nvim-dap",
+	},
+	{
+		"rcarriga/nvim-dap-ui",
+		dependencies = "mfussenegger/nvim-dap",
+		init = function()
+			require("user.dapui")
+		end,
+	},
+	{
+		"jayp0521/mason-nvim-dap.nvim",
+		dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
+		init = function()
+			require("user.mason_dap")
+		end,
+	},
 }
