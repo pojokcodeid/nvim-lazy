@@ -16,6 +16,7 @@ nvim_tree.setup({
 		enable = true,
 		update_cwd = true,
 	},
+	select_prompts = true,
 	renderer = {
 		root_folder_modifier = ":t",
 		indent_markers = {

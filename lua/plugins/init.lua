@@ -69,7 +69,7 @@ return {
 	{
 		"kyazdani42/nvim-web-devicons",
 		commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352",
-		init = function()
+		config = function()
 			require("user.webdevicons")
 		end,
 	},
