@@ -136,6 +136,10 @@ return {
 		end,
 	},
 	{
+		"williamboman/mason-lspconfig.nvim",
+		lazy = true,
+	},
+	{
 		"williamboman/mason.nvim",
 		commit = "c2002d7a6b5a72ba02388548cfaf420b864fbc12",
 		cmd = {
