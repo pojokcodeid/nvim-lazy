@@ -78,7 +78,7 @@ return {
 		commit = "7282f7de8aedf861fe0162a559fc2b214383c51c",
 		cmd = "NvimTreeToggle",
 		dependencies = "kyazdani42/nvim-web-devicons",
-		config = function()
+		init = function()
 			require("user.nvim-tree")
 		end,
 	},

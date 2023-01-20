@@ -20,7 +20,7 @@
   "live-server": { "branch": "main", "commit": "ecd7c1418823b65dd2bca710587c80afe42c973e" },
   "lualine.nvim": { "branch": "master", "commit": "a52f078026b27694d2290e34efa61a6e4a690621" },
   "markdown-preview.nvim": { "branch": "master", "commit": "9becceee5740b7db6914da87358a183ad11b2049" },
-  "mason-lspconfig.nvim": { "branch": "main", "commit": "e11264c3d198aef24b019e67ac04ac0cf21465ed" },
+  "mason-lspconfig.nvim": { "branch": "main", "commit": "5b388c0de30f1605671ebfb9a20a620cda50ffce" },
   "mason-null-ls.nvim": { "branch": "main", "commit": "93946aef86b1409958c97ee5feaf30bdd1053e24" },
   "mason-nvim-dap.nvim": { "branch": "main", "commit": "a775db8ac7c468fb05fcf67069961dba0d7feb56" },
   "mason.nvim": { "branch": "main", "commit": "c2002d7a6b5a72ba02388548cfaf420b864fbc12" },
