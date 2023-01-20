@@ -399,14 +399,4 @@ return {
 		-- 	require("user.chat_gpt")
 		-- end,
 	},
-	-- LSP Notify
-	{
-		"mrded/nvim-lsp-notify",
-		dependencies = "rcarriga/nvim-notify",
-		config = function()
-			require("lsp-notify").setup({
-				notify = require("notify"),
-			})
-		end,
-	},
 }

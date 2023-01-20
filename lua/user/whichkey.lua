@@ -233,7 +233,7 @@ local mappings = {
 				if is_dap then
 					require("dap").toggle_breakpoint()
 				else
-					vim.notify("DAP Not Support", "error")
+					vim.notify("DAP Not Support", "info")
 				end
 			end,
 			"Toggle Breakpoint",
@@ -243,7 +243,7 @@ local mappings = {
 				if is_dap then
 					require("dap").clear_breakpoints()
 				else
-					vim.notify("DAP Not Support", "error")
+					vim.notify("DAP Not Support", "info")
 				end
 			end,
 			"Clear Breakpoints",
@@ -253,7 +253,7 @@ local mappings = {
 				if is_dap then
 					require("dap").continue()
 				else
-					vim.notify("DAP Not Support", "error")
+					vim.notify("DAP Not Support", "info")
 				end
 			end,
 			"Start/Continue",
