@@ -1,4 +1,7 @@
-local dap, dapui = require("dap"), require("dapui")
+local status_ok, dap, dapui = require("dap"), require("dapui")
+if not status_ok then
+	return
+end
 dap.listeners.after.event_initialized["dapui_config"] = function()
 	dapui.open()
 end

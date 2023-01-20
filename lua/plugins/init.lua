@@ -6,12 +6,14 @@ return {
 		event = "BufWinEnter",
 		module = "plenary",
 	},
+	-- color scheme
 	{
 		"folke/tokyonight.nvim",
 		commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764",
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
 	},
+	-- dashboard
 	{
 		"goolord/alpha-nvim",
 		commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31",
@@ -369,10 +371,12 @@ return {
 	-- debuging
 	{
 		"mfussenegger/nvim-dap",
+		enabled = vim.fn.has("win32") == 0,
 	},
 	{
 		"rcarriga/nvim-dap-ui",
 		dependencies = "mfussenegger/nvim-dap",
+		enabled = vim.fn.has("win32") == 0,
 		init = function()
 			require("user.dapui")
 		end,
@@ -380,6 +384,7 @@ return {
 	{
 		"jayp0521/mason-nvim-dap.nvim",
 		dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
+		enabled = vim.fn.has("win32") == 0,
 		init = function()
 			require("user.mason_dap")
 		end,

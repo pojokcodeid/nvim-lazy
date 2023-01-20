@@ -91,7 +91,7 @@ local trn = ""
 if vim.fn.has("win32") then
 	trn = "pwsh<cr>"
 end
-
+local is_dap = pcall(require, "nvim-dap")
 local mappings2 = {
 	["/"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", "Commet Block" },
 }
@@ -230,19 +230,31 @@ local mappings = {
 		name = "Debug",
 		b = {
 			function()
-				require("dap").toggle_breakpoint()
+				if is_dap then
+					require("dap").toggle_breakpoint()
+				else
+					vim.notify("DAP Not Support", "error")
+				end
 			end,
 			"Toggle Breakpoint",
 		},
 		B = {
 			function()
-				require("dap").clear_breakpoints()
+				if is_dap then
+					require("dap").clear_breakpoints()
+				else
+					vim.notify("DAP Not Support", "error")
+				end
 			end,
 			"Clear Breakpoints",
 		},
 		c = {
 			function()
-				require("dap").continue()
+				if is_dap then
+					require("dap").continue()
+				else
+					vim.notify("DAP Not Support", "error")
+				end
 			end,
 			"Start/Continue",
 		},
