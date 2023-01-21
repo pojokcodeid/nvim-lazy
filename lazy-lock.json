@@ -13,6 +13,7 @@
   "code_runner.nvim": { "branch": "main", "commit": "00d3b82cc4ff0a1e0eabd09bbf125d95490d216f" },
   "dressing.nvim": { "branch": "master", "commit": "4436d6f41e2f6b8ada57588acd1a9f8b3d21453c" },
   "friendly-snippets": { "branch": "main", "commit": "046e4d3491baf664e0eef5231d28beb49333578b" },
+  "github-nvim-theme": { "branch": "main", "commit": "24c8706c9ad26b944f5a76dea999dca8708f252e" },
   "gitsigns.nvim": { "branch": "main", "commit": "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" },
   "impatient.nvim": { "branch": "main", "commit": "b842e16ecc1a700f62adb9802f8355b99b52a5a6" },
   "indent-blankline.nvim": { "branch": "master", "commit": "db7cbcb40cc00fc5d6074d7569fb37197705e7f6" },
