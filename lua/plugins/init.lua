@@ -428,6 +428,7 @@ return {
 	{
 		"Darazaki/indent-o-matic",
 		opt = true,
+		cmd = { "IndentOMatic" },
 		config = function()
 			require("user.indent-o-matic")
 		end,
