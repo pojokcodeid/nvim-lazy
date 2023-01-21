@@ -208,6 +208,13 @@ return {
 			require("user.coderunner")
 		end,
 	},
+	{
+		"is0n/jaq-nvim",
+		event = "CursorHold",
+		config = function()
+			require("user.jaq")
+		end,
+	},
 	-- for color view
 	{
 		"NvChad/nvim-colorizer.lua",
