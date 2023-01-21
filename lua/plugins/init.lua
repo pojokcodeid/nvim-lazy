@@ -22,6 +22,7 @@ return {
 			require("user.alpha")
 		end,
 	},
+	-- line info bootom
 	{
 		"nvim-lualine/lualine.nvim",
 		commit = "a52f078026b27694d2290e34efa61a6e4a690621",
@@ -67,6 +68,7 @@ return {
 			require("user.treesitter")
 		end,
 	},
+	-- for show icon
 	{
 		"kyazdani42/nvim-web-devicons",
 		commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352",
@@ -74,6 +76,7 @@ return {
 			require("user.webdevicons")
 		end,
 	},
+	-- for tree exploler
 	{
 		"kyazdani42/nvim-tree.lua",
 		commit = "7282f7de8aedf861fe0162a559fc2b214383c51c",
@@ -83,6 +86,7 @@ return {
 			require("user.nvim-tree")
 		end,
 	},
+	-- for file tab
 	{
 		"akinsho/bufferline.nvim",
 		commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4",
@@ -93,6 +97,7 @@ return {
 		-- end,
 	},
 	{ "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" },
+	-- for view terminal
 	{
 		"akinsho/toggleterm.nvim",
 		commit = "2a787c426ef00cb3488c11b14f5dcf892bbd0bda",
@@ -110,6 +115,7 @@ return {
 			require("user.impatient")
 		end,
 	},
+	-- styleing indent
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		commit = "db7cbcb40cc00fc5d6074d7569fb37197705e7f6",
@@ -118,6 +124,7 @@ return {
 			require("user.indentline")
 		end,
 	},
+	-- key mapping
 	{
 		"folke/which-key.nvim",
 		event = "BufWinEnter",
@@ -157,10 +164,20 @@ return {
 			end, { "lspconfig", "null-ls" })
 		end,
 	},
+	-- for formater linter
 	{ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" },
 	{ "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" },
+	{
+		"jayp0521/mason-null-ls.nvim",
+		dependencies = "jose-elias-alvarez/null-ls.nvim",
+		event = "BufRead",
+		opts = function()
+			require("user.mason-null-ls")
+		end,
+	},
 	-- include for coding
 	require("plugins.coding"), -- extra plugins
+	-- for search
 	{
 		"nvim-telescope/telescope.nvim",
 		commit = "76ea9a898d3307244dce3573392dcf2cc38f340f",
@@ -170,8 +187,11 @@ return {
 			require("user.telescope")
 		end,
 	},
+	-- for live server html,css,js
 	{ "manzeloth/live-server", cmd = { "LiveServer" } },
+	-- for multi cursor select
 	{ "mg979/vim-visual-multi", event = "BufWinEnter" },
+	-- for auto close tag
 	{
 		"windwp/nvim-ts-autotag",
 		dependencies = "nvim-treesitter/nvim-treesitter",
@@ -179,6 +199,7 @@ return {
 			require("nvim-ts-autotag").setup()
 		end,
 	},
+	-- for auto detection file and run code
 	{
 		"CRAG666/code_runner.nvim",
 		dependencies = "nvim-lua/plenary.nvim",
@@ -187,6 +208,7 @@ return {
 			require("user.coderunner")
 		end,
 	},
+	-- for color view
 	{
 		"NvChad/nvim-colorizer.lua",
 		event = "VeryLazy",
@@ -194,7 +216,9 @@ return {
 			require("user.colorizer")
 		end,
 	},
+	-- for install only java support windows
 	{ "williamboman/nvim-lsp-installer" },
+	-- for winbar icon
 	{
 		"SmiteshP/nvim-navic",
 		dependencies = "neovim/nvim-lspconfig",
@@ -204,6 +228,7 @@ return {
 			require("user.winbar")
 		end,
 	},
+	-- for popup alert
 	{
 		"rcarriga/nvim-notify",
 		event = "BufRead",
@@ -211,6 +236,7 @@ return {
 			vim.notify = require("notify")
 		end,
 	},
+	-- for resize screen
 	{
 		"mrjones2014/smart-splits.nvim",
 		event = "BufWinEnter",
@@ -218,14 +244,7 @@ return {
 			require("user.smartspit")
 		end,
 	},
-	{
-		"jayp0521/mason-null-ls.nvim",
-		dependencies = "jose-elias-alvarez/null-ls.nvim",
-		event = "BufRead",
-		opts = function()
-			require("user.mason-null-ls")
-		end,
-	},
+	-- for popup input
 	{
 		"stevearc/dressing.nvim",
 		event = "BufWinEnter",
@@ -233,6 +252,7 @@ return {
 			require("user.dressing")
 		end,
 	},
+	-- better todo coloring and icon
 	{
 		"folke/todo-comments.nvim",
 		event = "BufRead",
@@ -240,6 +260,7 @@ return {
 			require("todo-comments").setup()
 		end,
 	},
+	-- mini scrollview
 	{
 		"karb94/neoscroll.nvim",
 		event = "WinScrolled",
@@ -254,6 +275,7 @@ return {
 			require("user.nvimscroll")
 		end,
 	},
+	-- auto complite commond mode
 	{
 		"gelguy/wilder.nvim",
 		event = "BufWinEnter",
@@ -304,6 +326,7 @@ return {
 			-- )
 		end,
 	},
+	-- for manage and coloring copy
 	{
 		"gbprod/yanky.nvim",
 		event = "BufRead",
@@ -311,7 +334,9 @@ return {
 			require("user.yanky")
 		end,
 	},
+	-- for check startuptime
 	{ "dstein64/vim-startuptime", cmd = "StartupTime" },
+	-- for coloring pairs
 	{ "p00f/nvim-ts-rainbow", event = "BufWinEnter", dependencies = "nvim-treesitter/nvim-treesitter" },
 	{
 		"lewis6991/gitsigns.nvim",
@@ -398,5 +423,13 @@ return {
 		-- opts = function()
 		-- 	require("user.chat_gpt")
 		-- end,
+	},
+	-- indent detection
+	{
+		"Darazaki/indent-o-matic",
+		opt = true,
+		config = function()
+			require("user.indent-o-matic")
+		end,
 	},
 }
