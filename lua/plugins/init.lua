@@ -13,12 +13,12 @@ return {
 		priority = 1000, -- make sure to load this before all the other start plugins
 	},
 	{
-		"projekt0n/github-nvim-theme",
+		"navarasu/onedark.nvim",
 		init = function()
-			require("github-theme").setup({
-				theme_style = "dark",
-				dark_sidebar = false,
+			require("onedark").setup({
+				style = "darker",
 			})
+			require("onedark").load()
 		end,
 	},
 	-- dashboard
