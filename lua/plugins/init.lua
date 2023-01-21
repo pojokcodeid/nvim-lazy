@@ -44,12 +44,8 @@ return {
 			vim.o.background = "dark" -- or "light" for light mode
 		end,
 	},
-	{
-		"sainnhe/sonokai",
-	},
-	{
-		"EdenEast/nightfox.nvim",
-	},
+	{ "sainnhe/sonokai" },
+	{ "EdenEast/nightfox.nvim" },
 	-- dashboard
 	{
 		"goolord/alpha-nvim",
