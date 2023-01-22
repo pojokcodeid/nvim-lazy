@@ -6,7 +6,7 @@ end
 local lspconfig = require("lspconfig")
 
 -- local servers = { "jsonls", "sumneko_lua","html","cssls","tsserver"}
-local servers = { "jdtls", "dockerls" }
+local servers = { "jdtls", "yamlls" }
 
 lsp_installer.setup({
 	ensure_installed = servers,
@@ -23,3 +23,7 @@ for _, server in pairs(servers) do
 	end
 	lspconfig[server].setup(opts)
 end
+
+lspconfig.yamlls.setup({
+	fletype = { "yaml", "yaml.docker-compose" },
+})

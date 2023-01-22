@@ -185,6 +185,7 @@ lualine.setup({
 			"DressingInput",
 			"toggleterm",
 			"lazy",
+			"mason",
 		},
 		always_divide_middle = true,
 	},
