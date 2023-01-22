@@ -22,6 +22,7 @@ return {
 			require("onedark").load()
 		end,
 	},
+	{ "arcticicestudio/nord-vim" },
 	-- {
 	-- 	"ellisonleao/gruvbox.nvim",
 	-- 	init = function()

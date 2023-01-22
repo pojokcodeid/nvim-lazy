@@ -32,6 +32,7 @@
   "mini.pairs": { "branch": "main", "commit": "fec9aba50912d8c3d92d07d6a77952de84f8d7ad" },
   "mini.surround": { "branch": "main", "commit": "df41f1c009afbb3eef39d979977fb14404576f9b" },
   "neoscroll.nvim": { "branch": "master", "commit": "d7601c26c8a183fa8994ed339e70c2d841253e93" },
+  "nord-vim": { "branch": "main", "commit": "2272dcf8ef7d6c1f13a5a1a86a23906dc0c6b39e" },
   "nui.nvim": { "branch": "main", "commit": "b99e6cb13dc51768abc1c4c8585045a0c0459ef1" },
   "null-ls.nvim": { "branch": "main", "commit": "c0c19f32b614b3921e17886c541c13a72748d450" },
   "nvim-autopairs": { "branch": "master", "commit": "4fc96c8f3df89b6d23e5092d31c866c53a346347" },
