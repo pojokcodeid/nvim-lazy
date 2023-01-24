@@ -88,6 +88,42 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
+local map = function(mode, lhs, rhs, desc)
+	if desc then
+		desc = desc
+	end
+	vim.keymap.set(mode, lhs, rhs, { silent = true, desc = desc, buffer = bufnr, noremap = true })
+end
+-- if pcall(require, "dap") then
+-- modified function keys found with `showkey -a` in the terminal to get key code
+-- run `nvim -V3log +quit` and search through the "Terminal info" in the `log` file for the correct keyname
+if pcall(require, "dap") then
+	map("n", "<F5>", function()
+		require("dap").continue()
+	end, "")
+	map("n", "<F17>", function()
+		require("dap").terminate()
+	end, "") -- Shift+F5
+	map("n", "<F29>", function()
+		require("dap").restart_frame()
+	end, "") -- Control+F5
+	map("n", "<F6>", function()
+		require("dap").pause()
+	end, "")
+	map("n", "<F9>", function()
+		require("dap").toggle_breakpoint()
+	end, "")
+	map("n", "<F10>", function()
+		require("dap").step_over()
+	end, "")
+	map("n", "<F11>", function()
+		require("dap").step_into()
+	end, "")
+	map("n", "<F23>", function()
+		require("dap").step_out()
+	end, "") -- Shift+F11
+end
+
 -- Terminal --
 -- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)

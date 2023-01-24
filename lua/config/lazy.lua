@@ -5,18 +5,20 @@ if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
-vim.g.mapleader=' '
-vim.g.maplocalleader=' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 require("lazy").setup({
 	spec = {
-		{ 
+		{
 			import = "plugins",
-	    },
+		},
 	},
 	defaults = {
 		lazy = true, -- every plugin is lazy-loaded by default
 		version = "*", -- try installing the latest stable version for plugins that support semver
 	},
+	ui = { border = "rounded", browser = "chrome", throttle = 40, custom_keys = { ["<localleader>l"] = false } },
+	change_detection = { enabled = false, notify = false },
 	checker = { enabled = true }, -- automatically check for plugin updates
 	performance = {
 		rtp = {
