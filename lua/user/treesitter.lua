@@ -5,21 +5,21 @@ end
 
 configs.setup({
 	ensure_installed = {
-		"bash",
-		"html",
-		"c",
-		"javascript",
+		-- "bash",
+		-- "html",
+		-- "c",
+		-- "javascript",
 		"json",
 		"lua",
-		"python",
-		"typescript",
-		"tsx",
-		"css",
-		"rust",
-		"java",
-		"yaml",
-		"markdown",
-		"markdown_inline",
+		-- "python",
+		-- "typescript",
+		-- "tsx",
+		-- "css",
+		-- "rust",
+		-- "java",
+		-- "yaml",
+		-- "markdown",
+		-- "markdown_inline",
 	}, -- one of "all" or a list of languages
 	ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
 	highlight = {
