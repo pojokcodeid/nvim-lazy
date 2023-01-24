@@ -91,7 +91,7 @@ local trn = ""
 if vim.fn.has("win32") then
 	trn = "pwsh<cr>"
 end
-local is_dap = pcall(require, "nvim-dap")
+local is_dap = pcall(require, "dap")
 local mappings2 = {
 	["/"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", "Commet Block" },
 }
