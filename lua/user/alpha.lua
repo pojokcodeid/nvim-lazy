@@ -3,8 +3,7 @@ if not status_ok then
 	return
 end
 
-local dashboard = require("alpha.themes.dashboard")
-dashboard.section.header.val = {
+local board = {
 	[[             _       _                    _      ]],
 	[[            (_)     | |                  | |     ]],
 	[[ _ __   ___  _  ___ | | __   ___ ___   __| | ___ ]],
@@ -14,6 +13,14 @@ dashboard.section.header.val = {
 	[[| |        _/ |                                  ]],
 	[[|_|       |__/                                   ]],
 }
+
+local custom_dasboard = require("custom.dashboard")
+if custom_dasboard ~= "" then
+	board = custom_dasboard
+end
+
+local dashboard = require("alpha.themes.dashboard")
+dashboard.section.header.val = board
 dashboard.section.buttons.val = {
 	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
 	dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
