@@ -10,7 +10,3 @@ if onsave then
 	require("user.format_onsave")
 end
 require("user.chat_gpt")
--- dipindah ke plugins
--- require("user.lualine")
--- require("user.cmp")
--- require("user.lsp")
