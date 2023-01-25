@@ -482,4 +482,16 @@ return {
 			require("user.indent-o-matic")
 		end,
 	},
+	-- Lsp Saga
+	{
+		"glepnir/lspsaga.nvim",
+		event = "BufRead",
+		config = function()
+			require("lspsaga").setup({})
+		end,
+		dependencies = { { "kyazdani42/nvim-web-devicons" } },
+		init = function()
+			require("user.lspsaga_config")
+		end,
+	},
 }
