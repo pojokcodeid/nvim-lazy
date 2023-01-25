@@ -20,7 +20,6 @@
   "jaq-nvim": { "branch": "master", "commit": "236296aae555657487d1bb4d066cbde9d79d8cd4" },
   "lazy.nvim": { "branch": "main", "commit": "9b208696e139a404d159963b975a5b90af38439b" },
   "live-server": { "branch": "main", "commit": "ecd7c1418823b65dd2bca710587c80afe42c973e" },
-  "lspsaga.nvim": { "branch": "main", "commit": "ac134041da57f7592a46775f235ed84880bc0b27" },
   "lualine.nvim": { "branch": "master", "commit": "a52f078026b27694d2290e34efa61a6e4a690621" },
   "lunar.nvim": { "branch": "master", "commit": "29eedf78c430ad9acebdcba814d77619edbe2bac" },
   "markdown-preview.nvim": { "branch": "master", "commit": "9becceee5740b7db6914da87358a183ad11b2049" },
