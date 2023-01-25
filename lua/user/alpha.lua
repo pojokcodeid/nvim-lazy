@@ -14,9 +14,14 @@ local board = {
 	[[|_|       |__/                                   ]],
 }
 
-local custom_dasboard = require("custom.dashboard")
-if custom_dasboard ~= "" then
-	board = custom_dasboard
+local data_exists, custom_dasboard = pcall(require, "custom.dashboard")
+if data_exists then
+	if type(custom_dasboard) == "table" then
+		local data_board = custom_dasboard.dashboard
+		if data_board ~= nil then
+			board = data_board
+		end
+	end
 end
 
 local dashboard = require("alpha.themes.dashboard")
