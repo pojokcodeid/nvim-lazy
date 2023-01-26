@@ -15,7 +15,6 @@ return {
 			require("user.tokyonight")
 		end,
 	},
-	{ "lunarvim/lunar.nvim" },
 	{
 		"navarasu/onedark.nvim",
 		init = function()
@@ -23,7 +22,15 @@ return {
 			require("onedark").load()
 		end,
 	},
-	{ "arcticicestudio/nord-vim" },
+	-- { "lunarvim/lunar.nvim" },
+	-- { "arcticicestudio/nord-vim" },
+	-- {
+	-- 	"catppuccin/nvim",
+	-- 	name = "catppuccin",
+	-- 	init = function()
+	-- 		require("user.catppuccin")
+	-- 	end,
+	-- },
 	-- {
 	-- 	"ellisonleao/gruvbox.nvim",
 	-- 	init = function()
@@ -55,6 +62,7 @@ return {
 	-- 		vim.g.material_style = "darker"
 	-- 	end,
 	-- },
+
 	-- dashboard
 	{
 		"goolord/alpha-nvim",
