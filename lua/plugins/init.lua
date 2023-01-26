@@ -291,7 +291,8 @@ return {
 		"rcarriga/nvim-notify",
 		event = "BufRead",
 		config = function()
-			vim.notify = require("notify")
+			-- vim.notify = require("notify")  -- ini jika tidak transparant
+			vim.notify = require("notify").setup({ background_colour = "#000000" })
 		end,
 	},
 	-- for resize screen
