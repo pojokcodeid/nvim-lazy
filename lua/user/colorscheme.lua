@@ -1,9 +1,9 @@
-local colorscheme = "tokyonight"
+-- local colorscheme = "tokyonight"
 -- local colorscheme = "gruvbox"
 -- local colorscheme = "sonokai"
 -- local colorscheme = "nordfox"
 -- local colorscheme = "material"
--- local colorscheme = "onedark"
+local colorscheme = "onedark"
 -- local colorscheme = "lunar"
 -- local colorscheme = "nord"
 
