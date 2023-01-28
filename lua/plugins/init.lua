@@ -292,7 +292,11 @@ return {
 		event = "BufRead",
 		config = function()
 			-- vim.notify = require("notify")  -- ini jika tidak transparant
-			vim.notify = require("notify").setup({ background_colour = "#000000" })
+			local notify = require("notify")
+			-- this for transparency
+			notify.setup({ background_colour = "#000000" })
+			-- this overwrites the vim notify function
+			vim.notify = notify.notify
 		end,
 	},
 	-- for resize screen
@@ -502,6 +506,21 @@ return {
 	-- 	dependencies = { { "kyazdani42/nvim-web-devicons" } },
 	-- 	init = function()
 	-- 		require("user.lspsaga_config")
+	-- 	end,
+	-- },
+	-- Khusus Projek laravel baru di buka
+	-- {
+	-- 	"adalessa/laravel.nvim",
+	-- 	dependencies = {
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 	},
+	-- 	cmd = { "Sail", "Artisan", "Composer" },
+	-- 	keys = {
+	-- 		{ "<leader>pa", ":Artisan<cr>" },
+	-- 	},
+	-- 	config = function()
+	-- 		require("laravel").setup()
+	-- 		require("telescope").load_extension("laravel")
 	-- 	end,
 	-- },
 }
