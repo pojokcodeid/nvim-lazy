@@ -91,7 +91,30 @@ local trn = ""
 if vim.fn.has("win32") then
 	trn = "pwsh<cr>"
 end
+-- for debug
+local debug_key = {}
 local is_dap = pcall(require, "dap")
+
+if is_dap then
+	debug_key = {
+		name = "Debug",
+		t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+		b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
+		c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+		C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
+		d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
+		g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
+		i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
+		o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
+		u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
+		p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
+		r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
+		s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
+		q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
+		U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
+	}
+end
+-- end debug
 local mappings2 = {
 	["/"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", "Commet Block" },
 }
@@ -113,7 +136,7 @@ local mappings = {
 	},
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-	["z"] = { "<cmd>Lazy<cr>", "Lazy" },
+	-- ["z"] = { "<cmd>Lazy<cr>", "Lazy" },
 
 	["/"] = {
 		function()
@@ -227,118 +250,147 @@ local mappings = {
 			"Run MVN",
 		},
 	},
-	D = {
-		name = "Debug",
-		b = {
-			function()
-				if is_dap then
-					require("dap").toggle_breakpoint()
-				else
-					vim.notify("DAP Not Support", "info")
-				end
-			end,
-			"Toggle Breakpoint",
-		},
-		B = {
-			function()
-				if is_dap then
-					require("dap").clear_breakpoints()
-				else
-					vim.notify("DAP Not Support", "info")
-				end
-			end,
-			"Clear Breakpoints",
-		},
-		c = {
-			function()
-				if is_dap then
-					require("dap").continue()
-				else
-					vim.notify("DAP Not Support", "info")
-				end
-			end,
-			"Start/Continue",
-		},
-		i = {
-			function()
-				if is_dap then
-					require("dap").step_into()
-				else
-					vim.notify("DAP Not Support", "info")
-				end
-			end,
-			"Step Into (F11)",
-		},
-		o = {
-			function()
-				if is_dap then
-					require("dap").step_over()
-				else
-					vim.notify("DAP Not Support", "info")
-				end
-			end,
-			"Step Over (F10)",
-		},
-		O = {
-			function()
-				if is_dap then
-					require("dap").step_out()
-				else
-					vim.notify("DAP Not Support", "info")
-				end
-			end,
-			"Step Out (S-F11)",
-		},
-		q = {
-			function()
-				if is_dap then
-					require("dap").close()
-				else
-					vim.notify("DAP Not Support", "info")
-				end
-			end,
-			"Close Session",
-		},
-		Q = {
-			function()
-				if is_dap then
-					require("dap").terminate()
-				else
-					vim.notify("DAP Not Support", "info")
-				end
-			end,
-			"Terminate Session (S-F5)",
-		},
-		p = {
-			function()
-				if is_dap then
-					require("dap").pause()
-				else
-					vim.notify("DAP Not Support", "info")
-				end
-			end,
-			"Pause (F6)",
-		},
-		r = {
-			function()
-				if is_dap then
-					require("dap").restart_frame()
-				else
-					vim.notify("DAP Not Support", "info")
-				end
-			end,
-			"Restart (C-F5)",
-		},
-		R = {
-			function()
-				if is_dap then
-					require("dap").repl.toggle()
-				else
-					vim.notify("DAP Not Support", "info")
-				end
-			end,
-			"Toggle REPL",
-		},
+	-- D = {
+	-- 	name = "Debug",
+	-- 	b = {
+	-- 		function()
+	-- 			if is_dap then
+	-- 				require("dap").toggle_breakpoint()
+	-- 			else
+	-- 				vim.notify("DAP Not Support", "info")
+	-- 			end
+	-- 		end,
+	-- 		"Toggle Breakpoint",
+	-- 	},
+	-- 	B = {
+	-- 		function()
+	-- 			if is_dap then
+	-- 				require("dap").clear_breakpoints()
+	-- 			else
+	-- 				vim.notify("DAP Not Support", "info")
+	-- 			end
+	-- 		end,
+	-- 		"Clear Breakpoints",
+	-- 	},
+	-- 	c = {
+	-- 		function()
+	-- 			if is_dap then
+	-- 				require("dap").continue()
+	-- 			else
+	-- 				vim.notify("DAP Not Support", "info")
+	-- 			end
+	-- 		end,
+	-- 		"Start/Continue",
+	-- 	},
+	-- 	i = {
+	-- 		function()
+	-- 			if is_dap then
+	-- 				require("dap").step_into()
+	-- 			else
+	-- 				vim.notify("DAP Not Support", "info")
+	-- 			end
+	-- 		end,
+	-- 		"Step Into (F11)",
+	-- 	},
+	-- 	o = {
+	-- 		function()
+	-- 			if is_dap then
+	-- 				require("dap").step_over()
+	-- 			else
+	-- 				vim.notify("DAP Not Support", "info")
+	-- 			end
+	-- 		end,
+	-- 		"Step Over (F10)",
+	-- 	},
+	-- 	O = {
+	-- 		function()
+	-- 			if is_dap then
+	-- 				require("dap").step_out()
+	-- 			else
+	-- 				vim.notify("DAP Not Support", "info")
+	-- 			end
+	-- 		end,
+	-- 		"Step Out (S-F11)",
+	-- 	},
+	-- 	q = {
+	-- 		function()
+	-- 			if is_dap then
+	-- 				require("dap").close()
+	-- 			else
+	-- 				vim.notify("DAP Not Support", "info")
+	-- 			end
+	-- 		end,
+	-- 		"Close Session",
+	-- 	},
+	-- 	Q = {
+	-- 		function()
+	-- 			if is_dap then
+	-- 				require("dap").terminate()
+	-- 			else
+	-- 				vim.notify("DAP Not Support", "info")
+	-- 			end
+	-- 		end,
+	-- 		"Terminate Session (S-F5)",
+	-- 	},
+	-- 	p = {
+	-- 		function()
+	-- 			if is_dap then
+	-- 				require("dap").pause()
+	-- 			else
+	-- 				vim.notify("DAP Not Support", "info")
+	-- 			end
+	-- 		end,
+	-- 		"Pause (F6)",
+	-- 	},
+	-- 	r = {
+	-- 		function()
+	-- 			if is_dap then
+	-- 				require("dap").restart_frame()
+	-- 			else
+	-- 				vim.notify("DAP Not Support", "info")
+	-- 			end
+	-- 		end,
+	-- 		"Restart (C-F5)",
+	-- 	},
+	-- 	R = {
+	-- 		function()
+	-- 			if is_dap then
+	-- 				require("dap").repl.toggle()
+	-- 			else
+	-- 				vim.notify("DAP Not Support", "info")
+	-- 			end
+	-- 		end,
+	-- 		"Toggle REPL",
+	-- 	},
+	-- },
+	-- d = {
+	-- 	name = "Debug",
+	-- 	t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+	-- 	b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
+	-- 	c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+	-- 	C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
+	-- 	d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
+	-- 	g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
+	-- 	i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
+	-- 	o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
+	-- 	u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
+	-- 	p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
+	-- 	r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
+	-- 	s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
+	-- 	q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
+	-- 	U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
+	-- },
+	d = debug_key,
+	p = {
+		name = "Plugins",
+		i = { "<cmd>Lazy install<cr>", "Install" },
+		s = { "<cmd>Lazy sync<cr>", "Sync" },
+		S = { "<cmd>Lazy clear<cr>", "Status" },
+		c = { "<cmd>Lazy clean<cr>", "Clean" },
+		u = { "<cmd>Lazy update<cr>", "Update" },
+		p = { "<cmd>Lazy profile<cr>", "Profile" },
+		l = { "<cmd>Lazy log<cr>", "Log" },
+		d = { "<cmd>Lazy debug<cr>", "Debug" },
 	},
 }
 
