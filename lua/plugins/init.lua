@@ -12,7 +12,12 @@ return {
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
-			require("user.tokyonight")
+			local is_transparant = true
+			if is_transparant then
+				require("user.tokyonight_transparant")
+			else
+				require("user.tokyonight")
+			end
 		end,
 	},
 	{
@@ -80,7 +85,14 @@ return {
 		dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
 		event = "BufWinEnter",
 		opts = function()
-			require("user.lualine")
+			local model = 0
+			if model == 1 then
+				require("user.lualine1")
+			elseif model == 2 then
+				require("user.lualine2")
+			else
+				require("user.lualine")
+			end
 		end,
 	},
 	{ "rafamadriz/friendly-snippets" },
