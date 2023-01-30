@@ -240,7 +240,8 @@ return {
 		end,
 	},
 	-- include for coding
-	require("plugins.coding"), -- extra plugins
+	require("plugins.coding"),
+	-- extra plugins
 	-- for search
 	{
 		"nvim-telescope/telescope.nvim",
