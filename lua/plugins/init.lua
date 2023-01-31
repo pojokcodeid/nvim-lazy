@@ -85,7 +85,7 @@ return {
 		dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
 		event = "BufWinEnter",
 		opts = function()
-			local model = 0
+			local model = 2
 			if model == 1 then
 				require("user.lualine1")
 			elseif model == 2 then
