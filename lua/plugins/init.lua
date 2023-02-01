@@ -28,7 +28,7 @@ return {
 		end,
 	},
 	-- { "lunarvim/lunar.nvim" },
-	-- { "arcticicestudio/nord-vim" },
+	{ "arcticicestudio/nord-vim" },
 	-- {
 	-- 	"catppuccin/nvim",
 	-- 	name = "catppuccin",
