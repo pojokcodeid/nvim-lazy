@@ -12,7 +12,7 @@ return {
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
-			local is_transparant = true
+			local is_transparant = false
 			if is_transparant then
 				require("user.tokyonight_transparant")
 			else
@@ -95,7 +95,7 @@ return {
 			end
 		end,
 	},
-	{ "rafamadriz/friendly-snippets" },
+	{ "rafamadriz/friendly-snippets", event = "VeryLazy" },
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = "rafamadriz/friendly-snippets",
@@ -135,6 +135,7 @@ return {
 	{
 		"kyazdani42/nvim-web-devicons",
 		commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352",
+		event = "VeryLazy",
 		config = function()
 			require("user.webdevicons")
 		end,
@@ -160,7 +161,7 @@ return {
 		-- 	require("user.bufferline")
 		-- end,
 	},
-	{ "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" },
+	{ "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56", event = "VeryLazy" },
 	-- for view terminal
 	{
 		"akinsho/toggleterm.nvim",
@@ -171,10 +172,11 @@ return {
 			require("user.toggleterm")
 		end,
 	},
-	{ "ahmedkhalf/project.nvim", commit = "628de7e433dd503e782831fe150bb750e56e55d6" },
+	{ "ahmedkhalf/project.nvim", commit = "628de7e433dd503e782831fe150bb750e56e55d6", event = "VeryLazy" },
 	{
 		"lewis6991/impatient.nvim",
 		commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6",
+		event = "VeryLazy",
 		init = function()
 			require("user.impatient")
 		end,
@@ -197,8 +199,18 @@ return {
 		end,
 	},
 	-- start programming
-	{ "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa", dependencies = "hrsh7th/nvim-cmp" },
-	{ "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21", dependencies = "hrsh7th/nvim-cmp" },
+	{
+		"hrsh7th/cmp-buffer",
+		event = "VeryLazy",
+		commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa",
+		dependencies = "hrsh7th/nvim-cmp",
+	},
+	{
+		"hrsh7th/cmp-nvim-lua",
+		event = "VeryLazy",
+		commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21",
+		dependencies = "hrsh7th/nvim-cmp",
+	},
 	{
 		"neovim/nvim-lspconfig",
 		commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda",
@@ -214,6 +226,7 @@ return {
 	{
 		"williamboman/mason.nvim",
 		commit = "c2002d7a6b5a72ba02388548cfaf420b864fbc12",
+		event = "VeryLazy",
 		cmd = {
 			"Mason",
 			"MasonInstall",
@@ -229,8 +242,8 @@ return {
 		end,
 	},
 	-- for formater linter
-	{ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" },
-	{ "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" },
+	{ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450", event = "VeryLazy" },
+	{ "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42", event = "VeryLazy" },
 	{
 		"jayp0521/mason-null-ls.nvim",
 		dependencies = "jose-elias-alvarez/null-ls.nvim",
@@ -245,6 +258,7 @@ return {
 	-- for search
 	{
 		"nvim-telescope/telescope.nvim",
+		event = "VeryLazy",
 		commit = "76ea9a898d3307244dce3573392dcf2cc38f340f",
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 		cmd = "Telescope",
@@ -253,12 +267,13 @@ return {
 		end,
 	},
 	-- for live server html,css,js
-	{ "manzeloth/live-server", cmd = { "LiveServer" } },
+	{ "manzeloth/live-server", cmd = { "LiveServer" }, event = "VeryLazy" },
 	-- for multi cursor select
 	{ "mg979/vim-visual-multi", event = "BufWinEnter" },
 	-- for auto close tag
 	{
 		"windwp/nvim-ts-autotag",
+		event = "VeryLazy",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		init = function()
 			require("nvim-ts-autotag").setup()
@@ -267,6 +282,7 @@ return {
 	-- for auto detection file and run code
 	{
 		"CRAG666/code_runner.nvim",
+		event = "VeryLazy",
 		dependencies = "nvim-lua/plenary.nvim",
 		cmd = { "RunCode", "RunFile", "RunProject", "RunClose" },
 		config = function()
@@ -289,7 +305,7 @@ return {
 		end,
 	},
 	-- for install only java support windows
-	{ "williamboman/nvim-lsp-installer" },
+	{ "williamboman/nvim-lsp-installer", event = "VeryLazy" },
 	-- for winbar icon
 	{
 		"SmiteshP/nvim-navic",
@@ -412,7 +428,7 @@ return {
 		end,
 	},
 	-- for check startuptime
-	{ "dstein64/vim-startuptime", cmd = "StartupTime" },
+	{ "dstein64/vim-startuptime", cmd = "StartupTime", event = "VeryLazy" },
 	-- for coloring pairs
 	{ "p00f/nvim-ts-rainbow", event = "BufWinEnter", dependencies = "nvim-treesitter/nvim-treesitter" },
 	{
@@ -452,6 +468,7 @@ return {
 	-- better diagnostics list and others
 	{
 		"folke/trouble.nvim",
+		event = "VeryLazy",
 		cmd = { "TroubleToggle", "Trouble" },
 		opts = { use_diagnostic_signs = true },
 		keys = {
@@ -463,6 +480,7 @@ return {
 	-- make sure already install npm and yarn
 	{
 		"iamcco/markdown-preview.nvim",
+		event = "VeryLazy",
 		build = "cd app && npm install",
 		init = function()
 			vim.g.mkdp_filetypes = { "markdown" }
@@ -473,10 +491,12 @@ return {
 	-- debuging
 	{
 		"mfussenegger/nvim-dap",
+		event = "VeryLazy",
 		enabled = vim.fn.has("win32") == 0,
 	},
 	{
 		"rcarriga/nvim-dap-ui",
+		event = "VeryLazy",
 		dependencies = "mfussenegger/nvim-dap",
 		enabled = vim.fn.has("win32") == 0,
 		init = function()
@@ -485,6 +505,7 @@ return {
 	},
 	{
 		"jayp0521/mason-nvim-dap.nvim",
+		event = "VeryLazy",
 		dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
 		enabled = vim.fn.has("win32") == 0,
 		init = function()
@@ -504,6 +525,7 @@ return {
 	-- indent detection
 	{
 		"Darazaki/indent-o-matic",
+		event = "VeryLazy",
 		opt = true,
 		cmd = { "IndentOMatic" },
 		config = function()
