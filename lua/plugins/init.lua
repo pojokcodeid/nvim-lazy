@@ -559,4 +559,11 @@ return {
 	-- 		require("telescope").load_extension("laravel")
 	-- 	end,
 	-- },
+	{
+		"j-hui/fidget.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("fidget").setup()
+		end,
+	},
 }
