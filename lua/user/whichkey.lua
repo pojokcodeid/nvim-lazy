@@ -88,14 +88,14 @@ local opts2 = {
 }
 
 local trn = ""
-if vim.fn.has("win32") then
+if vim.fn.has("win32") == 1 then
 	trn = "pwsh<cr>"
 end
 -- for debug
 local debug_key = {}
-local is_dap = pcall(require, "dap")
+-- local is_dap = pcall(require, "dap")
 
-if is_dap then
+if vim.fn.has("win32") == 0 then
 	debug_key = {
 		name = "Debug",
 		t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
