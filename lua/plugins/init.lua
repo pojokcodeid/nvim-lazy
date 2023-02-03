@@ -498,7 +498,7 @@ return {
 		"rcarriga/nvim-dap-ui",
 		dependencies = "mfussenegger/nvim-dap",
 		enabled = vim.fn.has("win32") == 0,
-		init = function()
+		config = function()
 			require("user.dapui")
 		end,
 	},
