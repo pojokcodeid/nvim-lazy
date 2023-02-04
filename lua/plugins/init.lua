@@ -69,12 +69,36 @@ return {
 
 	-- include treesitter
 	-- require("plugins.treesitter"),
+	-- {
+	-- 	"nvim-treesitter/nvim-treesitter",
+	-- 	commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
+	-- 	run = ":TSUpdate",
+	-- 	event = "BufWinEnter",
+	-- 	opts = function()
+	-- 		require("user.treesitter")
+	-- 	end,
+	-- },
 	{
 		"nvim-treesitter/nvim-treesitter",
-		commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
-		run = ":TSUpdate",
-		event = "BufWinEnter",
-		opts = function()
+		cmd = {
+			"TSBufDisable",
+			"TSBufEnable",
+			"TSBufToggle",
+			"TSDisable",
+			"TSEnable",
+			"TSToggle",
+			"TSInstall",
+			"TSInstallInfo",
+			"TSInstallSync",
+			"TSModuleInfo",
+			"TSUninstall",
+			"TSUpdate",
+			"TSUpdateSync",
+		},
+		build = function()
+			require("nvim-treesitter.install").update({ with_sync = true })()
+		end,
+		config = function()
 			require("user.treesitter")
 		end,
 	},
