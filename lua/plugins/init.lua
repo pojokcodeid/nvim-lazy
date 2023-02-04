@@ -1,7 +1,6 @@
 return {
 	{
 		"nvim-lua/plenary.nvim",
-		commit = "4b7e52044bbb84242158d977a50c4cbcd85070c7",
 		event = "BufWinEnter",
 		module = "plenary",
 	},
@@ -122,7 +121,6 @@ return {
 	},
 	{
 		"windwp/nvim-autopairs",
-		commit = "4fc96c8f3df89b6d23e5092d31c866c53a346347",
 		dependencies = "hrsh7th/nvim-cmp",
 		event = "VeryLazy",
 		init = function()
@@ -131,7 +129,6 @@ return {
 	},
 	{
 		"numToStr/Comment.nvim",
-		commit = "97a188a98b5a3a6f9b1b850799ac078faa17ab67",
 		event = "InsertEnter",
 		init = function()
 			require("user.comment")
@@ -140,7 +137,6 @@ return {
 	-- styleing indent
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		commit = "db7cbcb40cc00fc5d6074d7569fb37197705e7f6",
 		event = "BufRead",
 		init = function()
 			require("user.indentline")
@@ -149,18 +145,15 @@ return {
 	{
 		"hrsh7th/cmp-buffer",
 		event = "VeryLazy",
-		commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa",
 		dependencies = "hrsh7th/nvim-cmp",
 	},
 	{
 		"hrsh7th/cmp-nvim-lua",
 		event = "VeryLazy",
-		commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21",
 		dependencies = "hrsh7th/nvim-cmp",
 	},
 	{
 		"neovim/nvim-lspconfig",
-		commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda",
 		event = "BufWinEnter",
 		config = function()
 			require("user.lsp")
@@ -172,7 +165,6 @@ return {
 	},
 	{
 		"williamboman/mason.nvim",
-		commit = "c2002d7a6b5a72ba02388548cfaf420b864fbc12",
 		event = "VeryLazy",
 		cmd = {
 			"Mason",
@@ -189,8 +181,8 @@ return {
 		end,
 	},
 	-- for formater linter
-	{ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450", event = "VeryLazy" },
-	{ "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42", event = "VeryLazy" },
+	{ "jose-elias-alvarez/null-ls.nvim", event = "VeryLazy" },
+	{ "RRethy/vim-illuminate", event = "VeryLazy" },
 	{
 		"jayp0521/mason-null-ls.nvim",
 		dependencies = "jose-elias-alvarez/null-ls.nvim",
@@ -227,7 +219,6 @@ return {
 	-- dashboard
 	{
 		"goolord/alpha-nvim",
-		commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31",
 		module = "alpha",
 		event = "BufWinEnter",
 		config = function()
@@ -237,7 +228,6 @@ return {
 	-- line info bootom
 	{
 		"nvim-lualine/lualine.nvim",
-		commit = "a52f078026b27694d2290e34efa61a6e4a690621",
 		dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
 		event = "BufWinEnter",
 		opts = function()
@@ -254,7 +244,6 @@ return {
 	-- for show icon
 	{
 		"kyazdani42/nvim-web-devicons",
-		commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352",
 		event = "VeryLazy",
 		config = function()
 			require("user.webdevicons")
@@ -263,7 +252,6 @@ return {
 	-- for tree exploler
 	{
 		"kyazdani42/nvim-tree.lua",
-		commit = "7282f7de8aedf861fe0162a559fc2b214383c51c",
 		event = "BufWinEnter",
 		cmd = "NvimTreeToggle",
 		dependencies = "kyazdani42/nvim-web-devicons",
@@ -274,18 +262,16 @@ return {
 	-- for file tab
 	{
 		"akinsho/bufferline.nvim",
-		commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4",
 		dependencies = { "kyazdani42/nvim-web-devicons", "famiu/bufdelete.nvim" },
 		event = "VeryLazy",
 		-- config = function()
 		-- 	require("user.bufferline")
 		-- end,
 	},
-	{ "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56", event = "VeryLazy" },
+	{ "moll/vim-bbye", event = "VeryLazy" },
 	-- for view terminal
 	{
 		"akinsho/toggleterm.nvim",
-		commit = "2a787c426ef00cb3488c11b14f5dcf892bbd0bda",
 		cmd = "Toggleterm",
 		event = "BufWinEnter",
 		init = function()
@@ -295,7 +281,6 @@ return {
 	-- { "ahmedkhalf/project.nvim", commit = "628de7e433dd503e782831fe150bb750e56e55d6", event = "VeryLazy" },
 	{
 		"lewis6991/impatient.nvim",
-		commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6",
 		event = "VeryLazy",
 		init = function()
 			require("user.impatient")
@@ -316,7 +301,6 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		event = "VeryLazy",
-		commit = "76ea9a898d3307244dce3573392dcf2cc38f340f",
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 		cmd = "Telescope",
 		init = function()
@@ -488,7 +472,6 @@ return {
 	{ "p00f/nvim-ts-rainbow", event = "BufWinEnter", dependencies = "nvim-treesitter/nvim-treesitter" },
 	{
 		"lewis6991/gitsigns.nvim",
-		commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2",
 		enabled = vim.fn.executable("git") == 1,
 		ft = "gitcommit",
 		event = "VeryLazy",
