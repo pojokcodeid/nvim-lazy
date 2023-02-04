@@ -20,15 +20,15 @@ return {
 			end
 		end,
 	},
-	{
-		"navarasu/onedark.nvim",
-		init = function()
-			require("user.onedark")
-			require("onedark").load()
-		end,
-	},
+	-- {
+	-- 	"navarasu/onedark.nvim",
+	-- 	init = function()
+	-- 		require("user.onedark")
+	-- 		require("onedark").load()
+	-- 	end,
+	-- },
 	-- { "lunarvim/lunar.nvim" },
-	{ "arcticicestudio/nord-vim" },
+	-- { "arcticicestudio/nord-vim" },
 	-- {
 	-- 	"catppuccin/nvim",
 	-- 	name = "catppuccin",
@@ -68,37 +68,54 @@ return {
 	-- 	end,
 	-- },
 
-	-- dashboard
+	-- include treesitter
+	-- require("plugins.treesitter"),
 	{
-		"goolord/alpha-nvim",
-		commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31",
-		module = "alpha",
-		event = "BufWinEnter",
-		config = function()
-			require("user.alpha")
-		end,
-	},
-	-- line info bootom
-	{
-		"nvim-lualine/lualine.nvim",
-		commit = "a52f078026b27694d2290e34efa61a6e4a690621",
-		dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
+		"nvim-treesitter/nvim-treesitter",
+		commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
+		run = ":TSUpdate",
 		event = "BufWinEnter",
 		opts = function()
-			local model = 2
-			if model == 1 then
-				require("user.lualine1")
-			elseif model == 2 then
-				require("user.lualine2")
-			else
-				require("user.lualine")
-			end
+			require("user.treesitter")
 		end,
 	},
-	{ "rafamadriz/friendly-snippets", event = "VeryLazy" },
+	-- snippets
+	{
+		"L3MON4D3/LuaSnip",
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+			config = function()
+				require("luasnip.loaders.from_vscode").lazy_load()
+			end,
+		},
+		opts = {
+			history = true,
+			delete_check_events = "TextChanged",
+		},
+      -- stylua: ignore
+      keys = {
+        {
+          "<tab>",
+          function()
+            return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
+          end,
+          expr = true, silent = true, mode = "i",
+        },
+        { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
+        { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
+      },
+	},
+
+	-- auto completion
 	{
 		"hrsh7th/nvim-cmp",
-		dependencies = "rafamadriz/friendly-snippets",
+		event = "InsertEnter",
+		dependencies = {
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"saadparwaiz1/cmp_luasnip",
+		},
 		opts = function()
 			require("user.cmp")
 		end,
@@ -120,67 +137,6 @@ return {
 			require("user.comment")
 		end,
 	},
-	-- include treesitter
-	-- require("plugins.treesitter"),
-	{
-		"nvim-treesitter/nvim-treesitter",
-		commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
-		run = ":TSUpdate",
-		event = "BufWinEnter",
-		opts = function()
-			require("user.treesitter")
-		end,
-	},
-	-- for show icon
-	{
-		"kyazdani42/nvim-web-devicons",
-		commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352",
-		event = "VeryLazy",
-		config = function()
-			require("user.webdevicons")
-		end,
-	},
-	-- for tree exploler
-	{
-		"kyazdani42/nvim-tree.lua",
-		commit = "7282f7de8aedf861fe0162a559fc2b214383c51c",
-		event = "BufWinEnter",
-		cmd = "NvimTreeToggle",
-		dependencies = "kyazdani42/nvim-web-devicons",
-		init = function()
-			require("user.nvim-tree")
-		end,
-	},
-	-- for file tab
-	{
-		"akinsho/bufferline.nvim",
-		commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4",
-		dependencies = { "kyazdani42/nvim-web-devicons", "famiu/bufdelete.nvim" },
-		event = "VeryLazy",
-		-- config = function()
-		-- 	require("user.bufferline")
-		-- end,
-	},
-	{ "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56", event = "VeryLazy" },
-	-- for view terminal
-	{
-		"akinsho/toggleterm.nvim",
-		commit = "2a787c426ef00cb3488c11b14f5dcf892bbd0bda",
-		cmd = "Toggleterm",
-		event = "BufWinEnter",
-		init = function()
-			require("user.toggleterm")
-		end,
-	},
-	{ "ahmedkhalf/project.nvim", commit = "628de7e433dd503e782831fe150bb750e56e55d6", event = "VeryLazy" },
-	{
-		"lewis6991/impatient.nvim",
-		commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6",
-		event = "VeryLazy",
-		init = function()
-			require("user.impatient")
-		end,
-	},
 	-- styleing indent
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -190,15 +146,6 @@ return {
 			require("user.indentline")
 		end,
 	},
-	-- key mapping
-	{
-		"folke/which-key.nvim",
-		event = "BufWinEnter",
-		init = function()
-			require("user.whichkey")
-		end,
-	},
-	-- start programming
 	{
 		"hrsh7th/cmp-buffer",
 		event = "VeryLazy",
@@ -252,8 +199,118 @@ return {
 			require("user.mason-null-ls")
 		end,
 	},
+	-- debuging
+	{
+		"mfussenegger/nvim-dap",
+		event = "VeryLazy",
+		enabled = vim.fn.has("win32") == 0,
+	},
+	{
+		"rcarriga/nvim-dap-ui",
+		dependencies = "mfussenegger/nvim-dap",
+		enabled = vim.fn.has("win32") == 0,
+		config = function()
+			require("user.dapui")
+		end,
+	},
+	{
+		"jayp0521/mason-nvim-dap.nvim",
+		event = "VeryLazy",
+		dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
+		enabled = vim.fn.has("win32") == 0,
+		init = function()
+			require("user.mason_dap")
+		end,
+	},
+	-- for install only java support windows
+	{ "williamboman/nvim-lsp-installer", event = "VeryLazy" },
+	-- dashboard
+	{
+		"goolord/alpha-nvim",
+		commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31",
+		module = "alpha",
+		event = "BufWinEnter",
+		config = function()
+			require("user.alpha")
+		end,
+	},
+	-- line info bootom
+	{
+		"nvim-lualine/lualine.nvim",
+		commit = "a52f078026b27694d2290e34efa61a6e4a690621",
+		dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
+		event = "BufWinEnter",
+		opts = function()
+			local model = 2
+			if model == 1 then
+				require("user.lualine1")
+			elseif model == 2 then
+				require("user.lualine2")
+			else
+				require("user.lualine")
+			end
+		end,
+	},
+	-- for show icon
+	{
+		"kyazdani42/nvim-web-devicons",
+		commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352",
+		event = "VeryLazy",
+		config = function()
+			require("user.webdevicons")
+		end,
+	},
+	-- for tree exploler
+	{
+		"kyazdani42/nvim-tree.lua",
+		commit = "7282f7de8aedf861fe0162a559fc2b214383c51c",
+		event = "BufWinEnter",
+		cmd = "NvimTreeToggle",
+		dependencies = "kyazdani42/nvim-web-devicons",
+		init = function()
+			require("user.nvim-tree")
+		end,
+	},
+	-- for file tab
+	{
+		"akinsho/bufferline.nvim",
+		commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4",
+		dependencies = { "kyazdani42/nvim-web-devicons", "famiu/bufdelete.nvim" },
+		event = "VeryLazy",
+		-- config = function()
+		-- 	require("user.bufferline")
+		-- end,
+	},
+	{ "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56", event = "VeryLazy" },
+	-- for view terminal
+	{
+		"akinsho/toggleterm.nvim",
+		commit = "2a787c426ef00cb3488c11b14f5dcf892bbd0bda",
+		cmd = "Toggleterm",
+		event = "BufWinEnter",
+		init = function()
+			require("user.toggleterm")
+		end,
+	},
+	-- { "ahmedkhalf/project.nvim", commit = "628de7e433dd503e782831fe150bb750e56e55d6", event = "VeryLazy" },
+	{
+		"lewis6991/impatient.nvim",
+		commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6",
+		event = "VeryLazy",
+		init = function()
+			require("user.impatient")
+		end,
+	},
+	-- key mapping
+	{
+		"folke/which-key.nvim",
+		event = "BufWinEnter",
+		init = function()
+			require("user.whichkey")
+		end,
+	},
 	-- include for coding
-	require("plugins.coding"),
+	-- require("plugins.coding"),
 	-- extra plugins
 	-- for search
 	{
@@ -304,8 +361,6 @@ return {
 			require("user.colorizer")
 		end,
 	},
-	-- for install only java support windows
-	{ "williamboman/nvim-lsp-installer", event = "VeryLazy" },
 	-- for winbar icon
 	{
 		"SmiteshP/nvim-navic",
@@ -487,29 +542,6 @@ return {
 		end,
 		ft = { "markdown" },
 		cmd = { "MarkdownPreview", "MarkdownPreviewStop", "MarkdownPreviewToggle" },
-	},
-	-- debuging
-	{
-		"mfussenegger/nvim-dap",
-		event = "VeryLazy",
-		enabled = vim.fn.has("win32") == 0,
-	},
-	{
-		"rcarriga/nvim-dap-ui",
-		dependencies = "mfussenegger/nvim-dap",
-		enabled = vim.fn.has("win32") == 0,
-		config = function()
-			require("user.dapui")
-		end,
-	},
-	{
-		"jayp0521/mason-nvim-dap.nvim",
-		event = "VeryLazy",
-		dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
-		enabled = vim.fn.has("win32") == 0,
-		init = function()
-			require("user.mason_dap")
-		end,
 	},
 	-- for codeGPT
 	{
