@@ -519,7 +519,7 @@ return {
 		end,
 	},
 	-- makes some plugins dot-repeatable like leap
-	{ "tpope/vim-repeat", event = "VeryLazy" },
+	-- { "tpope/vim-repeat", event = "VeryLazy" },
 	-- better diagnostics list and others
 	{
 		"folke/trouble.nvim",
@@ -533,36 +533,36 @@ return {
 	},
 	-- for markdown preview
 	-- make sure already install npm and yarn
-	{
-		"iamcco/markdown-preview.nvim",
-		event = "VeryLazy",
-		build = "cd app && npm install",
-		init = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-		end,
-		ft = { "markdown" },
-		cmd = { "MarkdownPreview", "MarkdownPreviewStop", "MarkdownPreviewToggle" },
-	},
+	-- {
+	-- 	"iamcco/markdown-preview.nvim",
+	-- 	event = "VeryLazy",
+	-- 	build = "cd app && npm install",
+	-- 	init = function()
+	-- 		vim.g.mkdp_filetypes = { "markdown" }
+	-- 	end,
+	-- 	ft = { "markdown" },
+	-- 	cmd = { "MarkdownPreview", "MarkdownPreviewStop", "MarkdownPreviewToggle" },
+	-- },
 	-- for codeGPT
-	{
-		"jackMort/ChatGPT.nvim",
-		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
-		lazy = true,
-		event = "VeryLazy",
-		-- opts = function()
-		-- 	require("user.chat_gpt")
-		-- end,
-	},
+	-- {
+	-- 	"jackMort/ChatGPT.nvim",
+	-- 	dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
+	-- 	lazy = true,
+	-- 	event = "VeryLazy",
+	-- 	-- opts = function()
+	-- 	-- 	require("user.chat_gpt")
+	-- 	-- end,
+	-- },
 	-- indent detection
-	{
-		"Darazaki/indent-o-matic",
-		event = "VeryLazy",
-		opt = true,
-		cmd = { "IndentOMatic" },
-		config = function()
-			require("user.indent-o-matic")
-		end,
-	},
+	-- {
+	-- 	"Darazaki/indent-o-matic",
+	-- 	event = "VeryLazy",
+	-- 	opt = true,
+	-- 	cmd = { "IndentOMatic" },
+	-- 	config = function()
+	-- 		require("user.indent-o-matic")
+	-- 	end,
+	-- },
 	-- Lsp Saga
 	-- {
 	-- 	"glepnir/lspsaga.nvim",
