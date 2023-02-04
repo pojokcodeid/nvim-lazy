@@ -7,7 +7,7 @@ return {
 	-- color scheme
 	{
 		"folke/tokyonight.nvim",
-		commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764",
+		-- commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764",
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
