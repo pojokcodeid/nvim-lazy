@@ -1,3 +1,7 @@
+local build = "powershell ./install.ps1"
+if vim.fn.has("win32") == 0 then
+	build = "./install.sh"
+end
 return {
 	-- plugin ini merupakan penyedia library neovim lua
 	{
@@ -140,21 +144,24 @@ return {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"saadparwaiz1/cmp_luasnip",
+			"hrsh7th/cmp-nvim-lua",
+			{
+				"tzachar/cmp-tabnine",
+				build = build,
+				config = function()
+					require("user.tabnine")
+				end,
+			},
+			{
+				"hrsh7th/cmp-cmdline",
+				config = function()
+					require("user.cmdline")
+				end,
+			},
 		},
 		opts = function()
 			require("user.cmp")
 		end,
-	},
-	-- start cmp & lsp
-	{
-		"hrsh7th/cmp-buffer",
-		event = "VeryLazy",
-		dependencies = "hrsh7th/nvim-cmp",
-	},
-	{
-		"hrsh7th/cmp-nvim-lua",
-		event = "VeryLazy",
-		dependencies = "hrsh7th/nvim-cmp",
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -162,10 +169,6 @@ return {
 		config = function()
 			require("user.lsp")
 		end,
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		lazy = true,
 	},
 	{
 		"williamboman/mason.nvim",
@@ -185,7 +188,6 @@ return {
 		end,
 	},
 	-- for formater linter
-	{ "jose-elias-alvarez/null-ls.nvim", event = "VeryLazy" },
 	{ "RRethy/vim-illuminate", event = "VeryLazy" },
 	{
 		"jayp0521/mason-null-ls.nvim",
@@ -196,11 +198,6 @@ return {
 		end,
 	},
 	-- debuging
-	{
-		"mfussenegger/nvim-dap",
-		event = "VeryLazy",
-		enabled = vim.fn.has("win32") == 0,
-	},
 	{
 		"rcarriga/nvim-dap-ui",
 		dependencies = "mfussenegger/nvim-dap",
@@ -433,57 +430,6 @@ return {
 		event = "BufRead",
 		config = function()
 			require("user.nvimscroll")
-		end,
-	},
-	-- auto complite commond mode
-	{
-		"gelguy/wilder.nvim",
-		event = "BufWinEnter",
-		config = function()
-			local wilder = require("wilder")
-			wilder.setup({ modes = { ":", "/", "?" } })
-			-- *ini popup biasa
-			-- wilder.set_option(
-			-- 	"renderer",
-			-- 	wilder.popupmenu_renderer({
-			-- 		highlighter = wilder.basic_highlighter(),
-			-- 		left = { " ", wilder.popupmenu_devicons() },
-			-- 		right = { " ", wilder.popupmenu_scrollbar() },
-			-- 	})
-			-- )
-
-			-- *ini untuk border rounded
-			wilder.set_option(
-				"renderer",
-				wilder.popupmenu_renderer(wilder.popupmenu_border_theme({
-					highlights = {
-						border = "Normal", -- highlight to use for the border
-					},
-					-- 'single', 'double', 'rounded' or 'solid'
-					-- can also be a list of 8 characters, see :h wilder#popupmenu_border_theme() for more details
-					border = "rounded",
-					left = { " ", wilder.popupmenu_devicons() },
-					right = { " ", wilder.popupmenu_scrollbar() },
-				}))
-			)
-
-			-- *ini untuk popup dialog
-			-- wilder.set_option(
-			-- 	"renderer",
-			-- 	wilder.popupmenu_renderer(wilder.popupmenu_palette_theme({
-			-- 		-- 'single', 'double', 'rounded' or 'solid'
-			-- 		-- can also be a list of 8 characters, see :h wilder#popupmenu_palette_theme() for more details
-			-- 		border = "rounded",
-			-- 		max_height = "40%", -- max height of the palette
-			-- 		max_width = "40%",
-			-- 		min_height = 0, -- set to the same as 'max_height' for a fixed height window
-			-- 		prompt_position = "top", -- 'top' or 'bottom' to set the location of the prompt
-			-- 		reverse = 0, -- set to 1 to reverse the order of the list, use in combination with 'prompt_position'
-			-- 		left = { " ", wilder.popupmenu_devicons() },
-			-- 		right = { " ", wilder.popupmenu_scrollbar() },
-			-- 		pumblend = 20,
-			-- 	}))
-			-- )
 		end,
 	},
 	-- for manage and coloring copy
