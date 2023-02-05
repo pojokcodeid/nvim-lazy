@@ -222,8 +222,8 @@ return {
 		"windwp/nvim-autopairs",
 		commit = "4fc96c8f3df89b6d23e5092d31c866c53a346347",
 		dependencies = "hrsh7th/nvim-cmp",
-		event = "VeryLazy",
-		init = function()
+		event = "InsertEnter",
+		config = function()
 			require("user.autopairs")
 		end,
 	},
