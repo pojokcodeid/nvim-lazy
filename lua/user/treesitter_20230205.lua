@@ -8,7 +8,7 @@ configs.setup({
 		-- "bash",
 		-- "html",
 		-- "c",
-		-- "javascript",
+		"javascript",
 		"json",
 		"lua",
 		-- "python",
