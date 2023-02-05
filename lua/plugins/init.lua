@@ -1,8 +1,8 @@
 return {
+	-- plugin ini merupakan penyedia library neovim lua
 	{
 		"nvim-lua/plenary.nvim",
-		event = "BufWinEnter",
-		module = "plenary",
+		event = "VeryLazy",
 	},
 	-- color scheme
 	{
@@ -78,6 +78,9 @@ return {
 	-- 		require("user.treesitter")
 	-- 	end,
 	-- },
+
+	-- coding start
+	-- coloring code
 	{
 		"nvim-treesitter/nvim-treesitter",
 		cmd = {
@@ -128,7 +131,6 @@ return {
         { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
       },
 	},
-
 	-- auto completion
 	{
 		"hrsh7th/nvim-cmp",
@@ -143,29 +145,7 @@ return {
 			require("user.cmp")
 		end,
 	},
-	{
-		"windwp/nvim-autopairs",
-		dependencies = "hrsh7th/nvim-cmp",
-		event = "VeryLazy",
-		init = function()
-			require("user.autopairs")
-		end,
-	},
-	{
-		"numToStr/Comment.nvim",
-		event = "InsertEnter",
-		init = function()
-			require("user.comment")
-		end,
-	},
-	-- styleing indent
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		event = "BufRead",
-		init = function()
-			require("user.indentline")
-		end,
-	},
+	-- start cmp & lsp
 	{
 		"hrsh7th/cmp-buffer",
 		event = "VeryLazy",
@@ -238,8 +218,42 @@ return {
 			require("user.mason_dap")
 		end,
 	},
-	-- for install only java support windows
+	-- for install lsp tidak support mason
 	{ "williamboman/nvim-lsp-installer", event = "VeryLazy" },
+	-- auto pairs
+	{
+		"windwp/nvim-autopairs",
+		dependencies = "hrsh7th/nvim-cmp",
+		event = "VeryLazy",
+		init = function()
+			require("user.autopairs")
+		end,
+	},
+	-- untuk comment
+	{ "JoosepAlviste/nvim-ts-context-commentstring" },
+	{
+		"numToStr/Comment.nvim",
+		event = "InsertEnter",
+		init = function()
+			require("user.comment")
+		end,
+	},
+	-- better todo coloring and icon
+	{
+		"folke/todo-comments.nvim",
+		event = "BufRead",
+		config = function()
+			require("todo-comments").setup()
+		end,
+	},
+	-- styleing indent
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		event = "BufRead",
+		init = function()
+			require("user.indentline")
+		end,
+	},
 	-- dashboard
 	{
 		"goolord/alpha-nvim",
@@ -292,6 +306,7 @@ return {
 		-- 	require("user.bufferline")
 		-- end,
 	},
+	-- for delete buffers (close files) without closing your windows or messing up your layout.
 	{ "moll/vim-bbye", event = "VeryLazy" },
 	-- for view terminal
 	{
@@ -303,6 +318,7 @@ return {
 		end,
 	},
 	-- { "ahmedkhalf/project.nvim", commit = "628de7e433dd503e782831fe150bb750e56e55d6", event = "VeryLazy" },
+	-- for Speed up loading Lua modules in Neovim to improve startup time.
 	{
 		"lewis6991/impatient.nvim",
 		event = "VeryLazy",
@@ -318,9 +334,6 @@ return {
 			require("user.whichkey")
 		end,
 	},
-	-- include for coding
-	-- require("plugins.coding"),
-	-- extra plugins
 	-- for search
 	{
 		"nvim-telescope/telescope.nvim",
@@ -384,7 +397,6 @@ return {
 		"rcarriga/nvim-notify",
 		event = "BufRead",
 		config = function()
-			-- vim.notify = require("notify")  -- ini jika tidak transparant
 			local notify = require("notify")
 			-- this for transparency
 			notify.setup({ background_colour = "#000000" })
@@ -406,14 +418,6 @@ return {
 		event = "BufWinEnter",
 		config = function()
 			require("user.dressing")
-		end,
-	},
-	-- better todo coloring and icon
-	{
-		"folke/todo-comments.nvim",
-		event = "BufRead",
-		config = function()
-			require("todo-comments").setup()
 		end,
 	},
 	-- mini scrollview
@@ -494,6 +498,7 @@ return {
 	{ "dstein64/vim-startuptime", cmd = "StartupTime", event = "VeryLazy" },
 	-- for coloring pairs
 	{ "p00f/nvim-ts-rainbow", event = "BufWinEnter", dependencies = "nvim-treesitter/nvim-treesitter" },
+	-- for git
 	{
 		"lewis6991/gitsigns.nvim",
 		enabled = vim.fn.executable("git") == 1,
@@ -504,7 +509,7 @@ return {
 		end,
 	},
 
-	-- additional new plugins
+	-- additional plugins
 	-- active indent guide and indent text objects
 	{
 		"echasnovski/mini.indentscope",
@@ -597,6 +602,8 @@ return {
 	-- 		require("telescope").load_extension("laravel")
 	-- 	end,
 	-- },
+
+	-- for loading info
 	{
 		"j-hui/fidget.nvim",
 		event = "VeryLazy",
