@@ -1,11 +1,23 @@
 require("nvim-treesitter.configs").setup({
+	ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
 	highlight = {
 		enable = true,
+		disable = { "css" }, -- list of language that will be disabled
 		additional_vim_regex_highlighting = false,
 	},
 	context_commentstring = {
 		enable = true,
 		enable_autocmd = false,
+		config = {
+			-- Languages that have a single comment style
+			typescript = "// %s",
+			css = "/* %s */",
+			scss = "/* %s */",
+			html = "<!-- %s -->",
+			svelte = "<!-- %s -->",
+			vue = "<!-- %s -->",
+			json = "",
+		},
 	},
 	rainbow = {
 		enable = true,
