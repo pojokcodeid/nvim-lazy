@@ -1,4 +1,8 @@
-require("cmp").setup.cmdline({ "/", "?" }, {
+local status_ok, ncmp = pcall(require, "cmp")
+if not status_ok then
+	return
+end
+ncmp.setup.cmdline({ "/", "?" }, {
 	mapping = require("cmp").mapping.preset.cmdline({
 		["<C-z>"] = {
 			c = function()
@@ -15,7 +19,7 @@ require("cmp").setup.cmdline({ "/", "?" }, {
 	sources = require("cmp").config.sources({ { name = "buffer", keyword_length = 1 } }),
 })
 
-require("cmp").setup.cmdline(":", {
+ncmp.setup.cmdline(":", {
 	mapping = require("cmp").mapping.preset.cmdline({
 		["<C-z>"] = {
 			c = function()

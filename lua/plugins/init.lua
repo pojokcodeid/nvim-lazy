@@ -6,7 +6,7 @@ return {
 	-- plugin ini merupakan penyedia library neovim lua
 	{
 		"nvim-lua/plenary.nvim",
-		event = "VeryLazy",
+		event = "BufRead",
 	},
 	-- color scheme
 	{
@@ -87,6 +87,7 @@ return {
 	-- coloring code
 	{
 		"nvim-treesitter/nvim-treesitter",
+		event = "BufRead",
 		cmd = {
 			"TSBufDisable",
 			"TSBufEnable",
@@ -138,7 +139,7 @@ return {
 	-- auto completion
 	{
 		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
+		event = "BufWinEnter",
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
@@ -148,15 +149,17 @@ return {
 			{
 				"tzachar/cmp-tabnine",
 				build = build,
+				event = "BufWinEnter",
 				config = function()
 					require("user.tabnine")
 				end,
 			},
 			{
 				"hrsh7th/cmp-cmdline",
-				init = function()
-					require("user.cmdline")
-				end,
+				event = "BufWinEnter",
+				-- config = function()
+				-- 	require("user.cmdline")
+				-- end,
 			},
 		},
 		opts = function()
@@ -188,7 +191,7 @@ return {
 		end,
 	},
 	-- for formater linter
-	{ "RRethy/vim-illuminate", event = "VeryLazy" },
+	{ "RRethy/vim-illuminate", event = "BufRead" },
 	{
 		"jayp0521/mason-null-ls.nvim",
 		dependencies = "jose-elias-alvarez/null-ls.nvim",
@@ -228,11 +231,11 @@ return {
 		end,
 	},
 	-- untuk comment
-	{ "JoosepAlviste/nvim-ts-context-commentstring" },
+	{ "JoosepAlviste/nvim-ts-context-commentstring", event = "BufRead" },
 	{
 		"numToStr/Comment.nvim",
-		event = "InsertEnter",
-		init = function()
+		event = "BufRead",
+		config = function()
 			require("user.comment")
 		end,
 	},
@@ -248,7 +251,7 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufRead",
-		init = function()
+		config = function()
 			require("user.indentline")
 		end,
 	},
@@ -298,14 +301,17 @@ return {
 	-- for file tab
 	{
 		"akinsho/bufferline.nvim",
-		dependencies = { "kyazdani42/nvim-web-devicons", "famiu/bufdelete.nvim" },
-		event = "VeryLazy",
+		dependencies = {
+			"kyazdani42/nvim-web-devicons",
+			{ "famiu/bufdelete.nvim", event = "BufRead" },
+		},
+		event = "BufRead",
 		-- config = function()
 		-- 	require("user.bufferline")
 		-- end,
 	},
 	-- for delete buffers (close files) without closing your windows or messing up your layout.
-	{ "moll/vim-bbye", event = "VeryLazy" },
+	{ "moll/vim-bbye", event = "BufRead" },
 	-- for view terminal
 	{
 		"akinsho/toggleterm.nvim",
@@ -319,8 +325,8 @@ return {
 	-- for Speed up loading Lua modules in Neovim to improve startup time.
 	{
 		"lewis6991/impatient.nvim",
-		event = "VeryLazy",
-		init = function()
+		event = "BufRead",
+		config = function()
 			require("user.impatient")
 		end,
 	},
@@ -343,22 +349,22 @@ return {
 		end,
 	},
 	-- for live server html,css,js
-	{ "manzeloth/live-server", cmd = { "LiveServer" }, event = "VeryLazy" },
+	{ "manzeloth/live-server", cmd = { "LiveServer" }, event = "BufRead" },
 	-- for multi cursor select
-	{ "mg979/vim-visual-multi", event = "BufWinEnter" },
+	{ "mg979/vim-visual-multi", event = "BufRead" },
 	-- for auto close tag
 	{
 		"windwp/nvim-ts-autotag",
-		event = "VeryLazy",
+		event = "BufRead",
 		dependencies = "nvim-treesitter/nvim-treesitter",
-		init = function()
+		config = function()
 			require("nvim-ts-autotag").setup()
 		end,
 	},
 	-- for auto detection file and run code
 	{
 		"CRAG666/code_runner.nvim",
-		event = "VeryLazy",
+		event = "BufRead",
 		dependencies = "nvim-lua/plenary.nvim",
 		cmd = { "RunCode", "RunFile", "RunProject", "RunClose" },
 		config = function()
@@ -367,7 +373,7 @@ return {
 	},
 	{
 		"is0n/jaq-nvim",
-		event = "CursorHold",
+		event = "BufRead",
 		config = function()
 			require("user.jaq")
 		end,
@@ -375,7 +381,7 @@ return {
 	-- for color view
 	{
 		"NvChad/nvim-colorizer.lua",
-		event = "VeryLazy",
+		event = "BufRead",
 		opts = function()
 			require("user.colorizer")
 		end,
@@ -421,7 +427,7 @@ return {
 	-- mini scrollview
 	{
 		"karb94/neoscroll.nvim",
-		event = "WinScrolled",
+		event = "BufRead",
 		config = function()
 			require("user.neoscroll")
 		end,
@@ -442,15 +448,15 @@ return {
 		end,
 	},
 	-- for check startuptime
-	{ "dstein64/vim-startuptime", cmd = "StartupTime", event = "VeryLazy" },
+	{ "dstein64/vim-startuptime", cmd = "StartupTime", event = "BufRead" },
 	-- for coloring pairs
-	{ "p00f/nvim-ts-rainbow", event = "BufWinEnter", dependencies = "nvim-treesitter/nvim-treesitter" },
+	{ "p00f/nvim-ts-rainbow", event = "BufRead", dependencies = "nvim-treesitter/nvim-treesitter" },
 	-- for git
 	{
 		"lewis6991/gitsigns.nvim",
 		enabled = vim.fn.executable("git") == 1,
 		ft = "gitcommit",
-		event = "VeryLazy",
+		event = "BufRead",
 		config = function()
 			require("user.gitsigns")
 		end,
@@ -482,7 +488,7 @@ return {
 	-- better diagnostics list and others
 	{
 		"folke/trouble.nvim",
-		event = "VeryLazy",
+		event = "BufRead",
 		cmd = { "TroubleToggle", "Trouble" },
 		opts = { use_diagnostic_signs = true },
 		keys = {
@@ -553,9 +559,26 @@ return {
 	-- for loading info
 	{
 		"j-hui/fidget.nvim",
-		event = "VeryLazy",
+		event = "BufRead",
 		config = function()
 			require("fidget").setup()
 		end,
 	},
+	-- for auto complate commond mode
+	-- {
+	-- 	"gelguy/wilder.nvim",
+	-- 	event = "BufWinEnter",
+	-- 	config = function()
+	-- 		local wilder = require("wilder")
+	-- 		wilder.setup({ modes = { ":", "/", "?" } })
+	-- 		wilder.set_option(
+	-- 			"renderer",
+	-- 			wilder.popupmenu_renderer({
+	-- 				highlighter = wilder.basic_highlighter(),
+	-- 				left = { " ", wilder.popupmenu_devicons() },
+	-- 				right = { " ", wilder.popupmenu_scrollbar() },
+	-- 			})
+	-- 		)
+	-- 	end,
+	-- },
 }
