@@ -1,88 +1,13 @@
-local build = "powershell ./install.ps1"
-if vim.fn.has("win32") == 0 then
-	build = "./install.sh"
-end
+-- local build = "powershell ./install.ps1"
+-- if vim.fn.has("win32") == 0 then
+-- 	build = "./install.sh"
+-- end
 return {
 	-- plugin ini merupakan penyedia library neovim lua
 	{
 		"nvim-lua/plenary.nvim",
-		event = "BufRead",
+		lazy = true,
 	},
-	-- color scheme
-	{
-		"folke/tokyonight.nvim",
-		-- commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764",
-		lazy = true, -- make sure we load this during startup if it is your main colorscheme
-		-- priority = 1000, -- make sure to load this before all the other start plugins
-		config = function()
-			local is_transparant = false
-			if is_transparant then
-				require("user.tokyonight_transparant")
-			else
-				require("user.tokyonight")
-			end
-		end,
-	},
-	-- {
-	-- 	"navarasu/onedark.nvim",
-	-- 	init = function()
-	-- 		require("user.onedark")
-	-- 		require("onedark").load()
-	-- 	end,
-	-- },
-	-- { "lunarvim/lunar.nvim" },
-	-- { "arcticicestudio/nord-vim" },
-	-- {
-	-- 	"catppuccin/nvim",
-	-- 	name = "catppuccin",
-	-- 	init = function()
-	-- 		require("user.catppuccin")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"ellisonleao/gruvbox.nvim",
-	-- 	init = function()
-	-- 		require("gruvbox").setup({
-	-- 			undercurl = true,
-	-- 			underline = true,
-	-- 			bold = true,
-	-- 			italic = true,
-	-- 			strikethrough = true,
-	-- 			invert_selection = false,
-	-- 			invert_signs = false,
-	-- 			invert_tabline = false,
-	-- 			invert_intend_guides = false,
-	-- 			inverse = true, -- invert background for search, diffs, statuslines and errors
-	-- 			contrast = "", -- can be "hard", "soft" or empty string
-	-- 			palette_overrides = {},
-	-- 			overrides = {},
-	-- 			dim_inactive = false,
-	-- 			transparent_mode = false,
-	-- 		})
-	-- 		vim.o.background = "dark" -- or "light" for light mode
-	-- 	end,
-	-- },
-	-- { "sainnhe/sonokai" },
-	-- { "EdenEast/nightfox.nvim" },
-	-- {
-	-- 	"marko-cerovac/material.nvim",
-	-- 	init = function()
-	-- 		vim.g.material_style = "darker"
-	-- 	end,
-	-- },
-
-	-- include treesitter
-	-- require("plugins.treesitter"),
-	-- {
-	-- 	"nvim-treesitter/nvim-treesitter",
-	-- 	commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
-	-- 	run = ":TSUpdate",
-	-- 	event = "BufWinEnter",
-	-- 	opts = function()
-	-- 		require("user.treesitter")
-	-- 	end,
-	-- },
-
 	-- coding start
 	-- coloring code
 	{
@@ -136,59 +61,69 @@ return {
         { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
       },
 	},
-	-- auto completion
-	{
-		"hrsh7th/nvim-cmp",
-		event = "BufWinEnter",
-		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"saadparwaiz1/cmp_luasnip",
-			"hrsh7th/cmp-nvim-lua",
-			{
-				"tzachar/cmp-tabnine",
-				build = build,
-				event = "BufWinEnter",
-				config = function()
-					require("user.tabnine")
-				end,
-			},
-			{
-				"hrsh7th/cmp-cmdline",
-				event = "BufWinEnter",
-				-- config = function()
-				-- 	require("user.cmdline")
-				-- end,
-			},
-		},
-		opts = function()
-			require("user.cmp")
-		end,
-	},
+	-- -- auto completion (dipindah supaya loading lebih cepat)
+	-- {
+	-- 	"hrsh7th/nvim-cmp",
+	-- 	version = false, -- last release is way too old
+	-- 	event = "InsertEnter",
+	-- 	dependencies = {
+	-- 		"hrsh7th/cmp-nvim-lsp",
+	-- 		"hrsh7th/cmp-buffer",
+	-- 		"hrsh7th/cmp-path",
+	-- 		"saadparwaiz1/cmp_luasnip",
+	-- 		"hrsh7th/cmp-nvim-lua",
+	-- 		{
+	-- 			"tzachar/cmp-tabnine",
+	-- 			build = build,
+	-- 			event = "BufWinEnter",
+	-- 			config = function()
+	-- 				require("user.tabnine")
+	-- 			end,
+	-- 		},
+	-- 		-- {
+	-- 		-- 	"hrsh7th/cmp-cmdline",
+	-- 		-- 	event = "BufWinEnter",
+	-- 		-- 	config = function()
+	-- 		-- 		require("user.cmdline")
+	-- 		-- 	end,
+	-- 		-- },
+	-- 	},
+	-- 	opts = function()
+	-- 		require("user.cmp")
+	-- 	end,
+	-- },
+	--
 	{
 		"neovim/nvim-lspconfig",
 		event = "BufWinEnter",
+		dependencies = {
+			"williamboman/mason-lspconfig.nvim",
+		},
 		config = function()
 			require("user.lsp")
 		end,
 	},
+	-- {
+	-- 	"williamboman/mason.nvim",
+	-- 	event = "VeryLazy",
+	-- 	cmd = {
+	-- 		"Mason",
+	-- 		"MasonInstall",
+	-- 		"MasonUninstall",
+	-- 		"MasonUninstallAll",
+	-- 		"MasonLog",
+	-- 	},
+	-- 	dependencies = { "williamboman/mason-lspconfig.nvim" },
+	-- 	init = function()
+	-- 		vim.tbl_map(function(plugin)
+	-- 			pcall(require, plugin)
+	-- 		end, { "lspconfig", "null-ls" })
+	-- 	end,
+	-- },
 	{
 		"williamboman/mason.nvim",
-		event = "VeryLazy",
-		cmd = {
-			"Mason",
-			"MasonInstall",
-			"MasonUninstall",
-			"MasonUninstallAll",
-			"MasonLog",
-		},
-		dependencies = { "williamboman/mason-lspconfig.nvim" },
-		init = function()
-			vim.tbl_map(function(plugin)
-				pcall(require, plugin)
-			end, { "lspconfig", "null-ls" })
-		end,
+		cmd = "Mason",
+		keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
 	},
 	-- for formater linter
 	{ "RRethy/vim-illuminate", event = "BufRead" },
@@ -255,72 +190,6 @@ return {
 			require("user.indentline")
 		end,
 	},
-	-- dashboard
-	{
-		"goolord/alpha-nvim",
-		module = "alpha",
-		event = "BufWinEnter",
-		config = function()
-			require("user.alpha")
-		end,
-	},
-	-- line info bootom
-	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
-		event = "BufWinEnter",
-		opts = function()
-			local model = 2
-			if model == 1 then
-				require("user.lualine1")
-			elseif model == 2 then
-				require("user.lualine2")
-			else
-				require("user.lualine")
-			end
-		end,
-	},
-	-- for show icon
-	{
-		"kyazdani42/nvim-web-devicons",
-		event = "VeryLazy",
-		config = function()
-			require("user.webdevicons")
-		end,
-	},
-	-- for tree exploler
-	{
-		"kyazdani42/nvim-tree.lua",
-		event = "BufWinEnter",
-		cmd = "NvimTreeToggle",
-		dependencies = "kyazdani42/nvim-web-devicons",
-		init = function()
-			require("user.nvim-tree")
-		end,
-	},
-	-- for file tab
-	{
-		"akinsho/bufferline.nvim",
-		dependencies = {
-			"kyazdani42/nvim-web-devicons",
-			{ "famiu/bufdelete.nvim", event = "BufRead" },
-		},
-		event = "BufRead",
-		-- config = function()
-		-- 	require("user.bufferline")
-		-- end,
-	},
-	-- for delete buffers (close files) without closing your windows or messing up your layout.
-	{ "moll/vim-bbye", event = "BufRead" },
-	-- for view terminal
-	{
-		"akinsho/toggleterm.nvim",
-		cmd = "Toggleterm",
-		event = "BufWinEnter",
-		init = function()
-			require("user.toggleterm")
-		end,
-	},
 	-- { "ahmedkhalf/project.nvim", commit = "628de7e433dd503e782831fe150bb750e56e55d6", event = "VeryLazy" },
 	-- for Speed up loading Lua modules in Neovim to improve startup time.
 	{
@@ -328,24 +197,6 @@ return {
 		event = "BufRead",
 		config = function()
 			require("user.impatient")
-		end,
-	},
-	-- key mapping
-	{
-		"folke/which-key.nvim",
-		event = "BufWinEnter",
-		init = function()
-			require("user.whichkey")
-		end,
-	},
-	-- for search
-	{
-		"nvim-telescope/telescope.nvim",
-		event = "VeryLazy",
-		dependencies = { { "nvim-lua/plenary.nvim" } },
-		cmd = "Telescope",
-		init = function()
-			require("user.telescope")
 		end,
 	},
 	-- for live server html,css,js
@@ -365,7 +216,7 @@ return {
 	{
 		"CRAG666/code_runner.nvim",
 		event = "BufRead",
-		dependencies = "nvim-lua/plenary.nvim",
+		-- dependencies = "nvim-lua/plenary.nvim",
 		cmd = { "RunCode", "RunFile", "RunProject", "RunClose" },
 		config = function()
 			require("user.coderunner")
@@ -565,20 +416,20 @@ return {
 		end,
 	},
 	-- for auto complate commond mode
-	-- {
-	-- 	"gelguy/wilder.nvim",
-	-- 	event = "BufWinEnter",
-	-- 	config = function()
-	-- 		local wilder = require("wilder")
-	-- 		wilder.setup({ modes = { ":", "/", "?" } })
-	-- 		wilder.set_option(
-	-- 			"renderer",
-	-- 			wilder.popupmenu_renderer({
-	-- 				highlighter = wilder.basic_highlighter(),
-	-- 				left = { " ", wilder.popupmenu_devicons() },
-	-- 				right = { " ", wilder.popupmenu_scrollbar() },
-	-- 			})
-	-- 		)
-	-- 	end,
-	-- },
+	{
+		"gelguy/wilder.nvim",
+		event = "BufWinEnter",
+		config = function()
+			local wilder = require("wilder")
+			wilder.setup({ modes = { ":", "/", "?" } })
+			wilder.set_option(
+				"renderer",
+				wilder.popupmenu_renderer({
+					highlighter = wilder.basic_highlighter(),
+					left = { " ", wilder.popupmenu_devicons() },
+					right = { " ", wilder.popupmenu_scrollbar() },
+				})
+			)
+		end,
+	},
 }

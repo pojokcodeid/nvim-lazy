@@ -9,4 +9,4 @@ require("user.bufferline")
 if onsave then
 	require("user.format_onsave")
 end
-require("user.chat_gpt")
+-- require("user.chat_gpt")
