@@ -142,7 +142,7 @@ return {
 	-- key mapping
 	{
 		"folke/which-key.nvim",
-		event = "BufWinEnter",
+		event = "VeryLazy",
 		init = function()
 			require("user.whichkey")
 		end,
