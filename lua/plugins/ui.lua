@@ -187,4 +187,13 @@ return {
 	--      { "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true, expr = true, desc = "Scroll backward", mode = {"i", "n", "s"}},
 	--    },
 	-- },
+
+	-- simbol outline
+	{
+		"simrat39/symbols-outline.nvim",
+		event = "BufRead",
+		config = function()
+			require("symbols-outline").setup()
+		end,
+	},
 }

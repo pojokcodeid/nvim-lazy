@@ -392,6 +392,7 @@ local mappings = {
 		l = { "<cmd>Lazy log<cr>", "Log" },
 		d = { "<cmd>Lazy debug<cr>", "Debug" },
 	},
+	["o"] = { "<cmd>SymbolsOutline<cr>", "Symbol Outline" },
 }
 
 which_key.setup(setup)
