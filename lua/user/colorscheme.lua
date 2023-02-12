@@ -1,5 +1,6 @@
 -- local colorscheme = "tokyonight"
-local colorscheme = "gruvbox"
+-- local colorscheme = "gruvbox"
+local colorscheme = "gruvbox-baby"
 -- local colorscheme = "sonokai"
 -- local colorscheme = "nordfox"
 -- local colorscheme = "material"
