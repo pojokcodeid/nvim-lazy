@@ -132,20 +132,18 @@ git clone https://github.com/pojokcodeid/nvim-lazy.git ~/.config/nvim
 - Rujukan Language Support <br>
   https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
 
-## Ubah Dashboard => Cari File nvim/lua/user/alpha.lua
+## Ubah Dashboard => Cari File nvim/lua/custom/dashboard_example.lua , ubah nama file menjadi dashboard.lua
 
 - Edit Bagian ini
 
 ```lua
-dashboard.section.header.val = {
-	[[             _       _                    _      ]],
-	[[            (_)     | |                  | |     ]],
-	[[ _ __   ___  _  ___ | | __   ___ ___   __| | ___ ]],
-	[[| '_ \ / _ \| |/ _ \| |/ /  / __/ _ \ / _` |/ _ \]],
-	[[| |_) | (_) | | (_) |   <  | (_| (_) | (_| |  __/]],
-	[[| .__/ \___/| |\___/|_|\_\  \___\___/ \__,_|\___|]],
-	[[| |        _/ |                                  ]],
-	[[|_|       |__/                                   ]],
+M.dashboard = {
+	[[                               __                ]],
+	[[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
+	[[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
+	[[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
+	[[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
+	[[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
 }
 
 ```
