@@ -132,7 +132,9 @@ git clone https://github.com/pojokcodeid/nvim-lazy.git ~/.config/nvim
 - Rujukan Language Support <br>
   https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
 
-## Ubah Dashboard => Cari File nvim/lua/custom/dashboard_example.lua , ubah nama file menjadi dashboard.lua
+## Ubah Dashboard
+
+### Cari File nvim/lua/custom/dashboard_example.lua , ubah nama file menjadi dashboard.lua
 
 - Edit Bagian ini
 
