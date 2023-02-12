@@ -250,7 +250,7 @@ return {
 	-- for popup alert
 	{
 		"rcarriga/nvim-notify",
-		event = "BufRead",
+		event = "BufWinEnter",
 		config = function()
 			local notify = require("notify")
 			-- this for transparency
@@ -326,7 +326,7 @@ return {
 		},
 		config = function(_, opts)
 			vim.api.nvim_create_autocmd("FileType", {
-				pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+				pattern = { "help", "alpha", "dashboard", "NvimTree", "Trouble", "lazy", "mason" },
 				callback = function()
 					vim.b.miniindentscope_disable = true
 				end,

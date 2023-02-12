@@ -63,6 +63,7 @@ return {
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
+				{ name = "nvim_lua" },
 			}),
 			formatting = {
 				fields = { "kind", "abbr", "menu" },
