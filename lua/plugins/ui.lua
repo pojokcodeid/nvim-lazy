@@ -81,7 +81,12 @@ return {
 		-- event = "BufWinEnter",
 		event = "VimEnter",
 		config = function()
-			require("user.alpha")
+			local is_dashboard = false
+			if is_dashboard then
+				require("user.alpha")
+			else
+				require("user.startify")
+			end
 		end,
 	},
 	-- line info bootom
