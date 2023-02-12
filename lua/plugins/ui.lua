@@ -78,7 +78,8 @@ return {
 	{
 		"goolord/alpha-nvim",
 		module = "alpha",
-		event = "BufWinEnter",
+		-- event = "BufWinEnter",
+		event = "VimEnter",
 		config = function()
 			require("user.alpha")
 		end,
