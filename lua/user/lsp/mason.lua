@@ -4,18 +4,16 @@ local servers = {
 	"html",
 	"tsserver",
 	"pyright",
-	"bashls",
 	"jsonls",
-	"yamlls",
-	"jdtls",
 	"emmet_ls",
-	"intelephense",
-	"marksman",
-	"csharp_ls",
-	"clangd",
-	"dartls",
-	"kotlin_language_server",
 }
+
+local data_exists, custom_lsp = pcall(require, "custom.register_lsp")
+if data_exists then
+	for _, client in pairs(custom_lsp) do
+		table.insert(servers, client)
+	end
+end
 
 local settings = {
 	ui = {
