@@ -11,6 +11,10 @@ local servers = {
 	"emmet_ls",
 	"intelephense",
 	"marksman",
+	"csharp_ls",
+	"clangd",
+	"dartls",
+	"kotlin_language_server",
 }
 
 local settings = {
