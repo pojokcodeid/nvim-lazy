@@ -30,7 +30,7 @@ return {
 	-- 		require("user.catppuccin")
 	-- 	end,
 	-- },
-	{ "luisiacc/gruvbox-baby" },
+	{ "luisiacc/gruvbox-baby", lazy = true },
 	-- {
 	-- 	"ellisonleao/gruvbox.nvim",
 	-- 	init = function()
