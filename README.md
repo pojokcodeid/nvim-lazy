@@ -123,25 +123,10 @@ git clone https://github.com/pojokcodeid/nvim-lazy.git ~/.config/nvim
 
 ### Comfig Treesitter Cari file nvim/lua/user/treesitter.lua
 
-- Tambahkan Pada Bagian berikut
+- Jalankan Code Berikut pada command
 
 ```lua
-ensure_installed = {
-		"bash",
-		"c",
-		"javascript",
-		"json",
-		"lua",
-		"python",
-		"typescript",
-		"tsx",
-		"css",
-		"rust",
-		"java",
-		"yaml",
-		"markdown",
-		"markdown_inline",
-	}, -- one of "all" or a list of languages
+:TSInstall html css javascript ..... dst
 ```
 
 - Rujukan Language Support <br>
