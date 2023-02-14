@@ -77,7 +77,6 @@ return {
 	-- dashboard
 	{
 		"goolord/alpha-nvim",
-		module = "alpha",
 		-- event = "BufWinEnter",
 		event = "VimEnter",
 		config = function()
