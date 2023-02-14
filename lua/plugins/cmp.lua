@@ -83,9 +83,8 @@ return {
 				documentation = cmp.config.window.bordered(),
 			},
 			experimental = {
-				ghost_text = {
-					hl_group = "LspCodeLens",
-				},
+				ghost_text = false,
+				native_menu = false,
 			},
 		}
 	end,
