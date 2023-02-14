@@ -93,8 +93,8 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		-- dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
-		event = "VeryLazy",
-		init = function()
+		event = "BufWinEnter",
+		config = function()
 			local model = 0
 			if model == 1 then
 				require("user.lualine1")
@@ -116,9 +116,9 @@ return {
 	-- for tree exploler
 	{
 		"kyazdani42/nvim-tree.lua",
-		event = "BufWinEnter",
+		-- event = "BufRead",
 		cmd = "NvimTreeToggle",
-		dependencies = "kyazdani42/nvim-web-devicons",
+		-- dependencies = "kyazdani42/nvim-web-devicons",
 		config = function()
 			require("user.nvim-tree")
 		end,
