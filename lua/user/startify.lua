@@ -1,12 +1,24 @@
 local alpha = require("alpha")
 local startify = require("alpha.themes.startify")
-startify.section.header.val = {
+local dash_model = {}
+dash_model = {
 	[[                _      __                __    ]],
 	[[    ___ ___    (____  / /__  _______ ___/ ___  ]],
 	[[   / _ / _ \  / / _ \/  '_/ / __/ _ / _  / -_) ]],
 	[[  / .__\_____/ /\___/_/\_\  \__/\___\_,_/\__/  ]],
 	[[ /_/      |___/                                ]],
 }
+
+local data_exists, custom_dasboard = pcall(require, "custom.dashboard")
+if data_exists then
+	if type(custom_dasboard) == "table" then
+		local board = custom_dasboard.dashboard1
+		if board ~= nil then
+			dash_model = board
+		end
+	end
+end
+startify.section.header.val = dash_model
 startify.section.top_buttons.val = {
 	startify.button("f", "  Find file", ":Telescope find_files <CR>"),
 	startify.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
