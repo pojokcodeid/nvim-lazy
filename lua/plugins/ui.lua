@@ -111,7 +111,7 @@ return {
 	{
 		"kyazdani42/nvim-tree.lua",
 		-- event = "BufRead",
-		cmd = "NvimTreeToggle",
+		cmd = { "NvimTree", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeClose" },
 		-- dependencies = "kyazdani42/nvim-web-devicons",
 		config = function()
 			require("user.nvim-tree")
