@@ -10,21 +10,31 @@ local diagnostics = null_ls.builtins.diagnostics
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
+local sources = {}
+
+local data_exists, data = pcall(require, "custom.null-ls")
+if data_exists then
+	for _, cfg in pairs(data.sources) do
+		table.insert(sources, cfg)
+	end
+end
+
 null_ls.setup({
 	debug = false,
-	sources = {
-		--formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
-		--formatting.prettier,
-		-- formatting.prettierd,
-		-- formatting.black.with({ extra_args = { "--fast" } }),
-		-- formatting.stylua,
-		-- formatting.eslint_d,
-		-- formatting.google_java_format,
-		-- formatting.phpcbf,
-		-- formatting.clang_format,
-		-- diagnostics.flake8
-		-- diagnostics.eslint_d,
-	},
+	sources = sources,
+	--sources = {
+	--formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+	--formatting.prettier,
+	-- formatting.prettierd,
+	-- formatting.black.with({ extra_args = { "--fast" } }),
+	-- formatting.stylua,
+	-- formatting.eslint_d,
+	-- formatting.google_java_format,
+	-- formatting.phpcbf,
+	-- formatting.clang_format,
+	-- diagnostics.flake8
+	-- diagnostics.eslint_d,
+	--},
 
 	-- on_attach = function(client, bufnr)
 	-- 	--if client.resolved_capabilities.document_formatting then
