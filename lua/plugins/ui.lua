@@ -3,8 +3,8 @@ return {
 	{
 		"folke/tokyonight.nvim",
 		-- commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764",
-		lazy = true, -- make sure we load this during startup if it is your main colorscheme
-		-- priority = 1000, -- make sure to load this before all the other start plugins
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
 			local is_transparant = false
 			if is_transparant then
@@ -12,6 +12,7 @@ return {
 			else
 				require("user.tokyonight")
 			end
+			require("user.colorscheme")
 		end,
 	},
 	-- {
@@ -124,10 +125,10 @@ return {
 	},
 	{
 		"akinsho/bufferline.nvim",
-		event = "BufRead",
-		-- config = function()
-		-- 	require("user.bufferline")
-		-- end,
+		event = "BufWinEnter",
+		config = function()
+			require("user.bufferline")
+		end,
 	},
 	-- for delete buffers (close files) without closing your windows or messing up your layout.
 	{ "moll/vim-bbye", event = "BufRead" },
