@@ -2,7 +2,7 @@
 require("user.options")
 require("user.keymaps")
 require("user.autocommands")
-require("user.format_onsave")
+require("user.format")
 -- require("user.colorscheme")
 -- require("user.snip")
 -- require("user.bufferline")
