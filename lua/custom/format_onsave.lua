@@ -1,5 +1,5 @@
 local M = {
-	disable = false,
+	disable = 0, -- 0 ( format jalan)  1 (fromat off)
 }
 
 return M

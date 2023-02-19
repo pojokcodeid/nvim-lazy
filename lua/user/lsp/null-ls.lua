@@ -26,20 +26,20 @@ null_ls.setup({
 		-- diagnostics.eslint_d,
 	},
 
-	on_attach = function(client, bufnr)
-		--if client.resolved_capabilities.document_formatting then
-		--vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format{async=true}")
-		--end
-		if client.supports_method("textDocument/formatting") then
-			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				group = augroup,
-				buffer = bufnr,
-				callback = function()
-					vim.lsp.buf.format({ bufnr = bufnr })
-					-- vim.lsp.buf.formatting_sync()
-				end,
-			})
-		end
-	end,
+	-- on_attach = function(client, bufnr)
+	-- 	--if client.resolved_capabilities.document_formatting then
+	-- 	--vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format{async=true}")
+	-- 	--end
+	-- 	if client.supports_method("textDocument/formatting") then
+	-- 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+	-- 		vim.api.nvim_create_autocmd("BufWritePre", {
+	-- 			group = augroup,
+	-- 			buffer = bufnr,
+	-- 			callback = function()
+	-- 				vim.lsp.buf.format({ bufnr = bufnr })
+	-- 				-- vim.lsp.buf.formatting_sync()
+	-- 			end,
+	-- 		})
+	-- 	end
+	-- end,
 })
