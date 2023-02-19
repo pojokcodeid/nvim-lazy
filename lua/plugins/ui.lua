@@ -12,7 +12,7 @@ return {
 			else
 				require("user.tokyonight")
 			end
-			require("core")
+			-- require("core")
 			require("user.colorscheme")
 		end,
 	},
