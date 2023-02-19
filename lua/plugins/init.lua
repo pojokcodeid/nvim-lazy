@@ -29,7 +29,11 @@ return {
 			"TSUpdateSync",
 		},
 		build = function()
-			require("nvim-treesitter.install").update({ with_sync = true })()
+			local status_ok, ts = pcall(require, "nvim-treesitter.install")
+			if not status_ok then
+				return
+			end
+			ts.update({ with_sync = true })()
 		end,
 		config = function()
 			require("user.treesitter")
