@@ -336,18 +336,18 @@ return {
 		end,
 	},
 	-- makes some plugins dot-repeatable like leap
-	-- { "tpope/vim-repeat", event = "VeryLazy" },
+	{ "tpope/vim-repeat", event = "VeryLazy" },
 	-- better diagnostics list and others
-	-- {
-	-- 	"folke/trouble.nvim",
-	-- 	event = "BufRead",
-	-- 	cmd = { "TroubleToggle", "Trouble" },
-	-- 	opts = { use_diagnostic_signs = true },
-	-- 	keys = {
-	-- 		{ "<leader>xx", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
-	-- 		{ "<leader>xX", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
-	-- 	},
-	-- },
+	{
+		"folke/trouble.nvim",
+		event = "BufRead",
+		cmd = { "TroubleToggle", "Trouble" },
+		opts = { use_diagnostic_signs = true },
+		keys = {
+			{ "<leader>xx", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
+			{ "<leader>xX", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
+		},
+	},
 	-- for markdown preview
 	-- make sure already install npm and yarn
 	-- {

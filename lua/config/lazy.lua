@@ -9,9 +9,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 require("lazy").setup({
 	spec = {
-		{
-			import = "plugins",
-		},
+		{ import = "plugins" },
+		{ import = "custom.plugins" },
 	},
 	defaults = {
 		lazy = true, -- every plugin is lazy-loaded by default
