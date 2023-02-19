@@ -38,12 +38,17 @@ dashboard.section.buttons.val = {
 }
 
 local function footer()
-	-- NOTE: requires the fortune-mod package to work
-	-- local handle = io.popen("fortune")
-	-- local fortune = handle:read("*a")
-	-- handle:close()
-	-- return fortune
-	return "Pojok Code"
+	local footer_text = "Pojok Code"
+	if data_exists then
+		if type(custom_dasboard) == "table" then
+			local data_txt = custom_dasboard.footer
+			if data_txt ~= nil then
+				footer_text = data_txt
+			end
+		end
+	end
+
+	return footer_text
 end
 
 dashboard.section.footer.val = footer()

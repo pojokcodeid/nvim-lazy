@@ -44,7 +44,7 @@
   "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
   "smart-splits.nvim": { "branch": "master", "commit": "b38431f1f68bc43d6bf9d1edb21c2bcb06b1197c" },
   "symbols-outline.nvim": { "branch": "master", "commit": "512791925d57a61c545bc303356e8a8f7869763c" },
-  "telescope.nvim": { "branch": "master", "commit": "ad37745d4d009576eb6f4b9b6b644c3f91e0126b" },
+  "telescope.nvim": { "branch": "master", "commit": "443e5a6802849f9e4611a2d91db01b8a37350524" },
   "todo-comments.nvim": { "branch": "main", "commit": "077c59586d9d0726b0696dc5680eb863f4e04bc5" },
   "toggleterm.nvim": { "branch": "main", "commit": "2a787c426ef00cb3488c11b14f5dcf892bbd0bda" },
   "tokyonight.nvim": { "branch": "main", "commit": "a0abe53df53616d13da327636cb0bcac3ea7f5af" },

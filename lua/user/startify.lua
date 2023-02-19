@@ -41,8 +41,18 @@ startify.nvim_web_devicons.enabled = false
 startify.section.bottom_buttons.val = {
 	startify.button("q", "  Quit NVIM", ":qa<CR>"),
 }
+
+local footer_text = "Pojok Code"
+if data_exists then
+	if type(custom_dasboard) == "table" then
+		local data_txt = custom_dasboard.footer
+		if data_txt ~= nil then
+			footer_text = data_txt
+		end
+	end
+end
 startify.section.footer.val = {
-	{ type = "text", val = "Pojok Code" },
+	{ type = "text", val = footer_text },
 }
 -- ignore filetypes in MRU
 startify.mru_opts.ignore = function(path, ext)
