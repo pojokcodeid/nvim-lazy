@@ -36,7 +36,7 @@
 - Jalankan Script Dibawah pada Powershell
 
 ```
-git clone https://github.com/pojokcodeid/nvim-lazy.git "$env:LOCALAPPDATA\nvim"
+git clone https://github.com/pojokcodeid/nvim-lazy-basic.git "$env:LOCALAPPDATA\nvim"
 nvim
 ```
 
@@ -105,7 +105,7 @@ git --version
 8.  Clone Config
 
 ```bash
-git clone https://github.com/pojokcodeid/nvim-lazy.git ~/.config/nvim
+git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 ```
 
 ## Setting LSP dan Treesitter
