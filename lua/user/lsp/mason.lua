@@ -10,7 +10,7 @@ local servers = {
 
 local data_exists, custom_lsp = pcall(require, "custom.register_lsp")
 if data_exists then
-	for _, client in pairs(custom_lsp) do
+	for _, client in pairs(custom_lsp.lspreg) do
 		table.insert(servers, client)
 	end
 end
