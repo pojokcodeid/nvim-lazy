@@ -112,9 +112,9 @@ return {
 	-- for tree exploler
 	{
 		"kyazdani42/nvim-tree.lua",
-		-- event = "BufRead",
+		event = "BufWinEnter",
 		cmd = { "NvimTree", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeClose" },
-		-- dependencies = "kyazdani42/nvim-web-devicons",
+		dependencies = "kyazdani42/nvim-web-devicons",
 		config = function()
 			require("user.nvim-tree")
 		end,
