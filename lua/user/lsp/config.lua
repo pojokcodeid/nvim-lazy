@@ -9,6 +9,14 @@ local lspconfig = require("lspconfig")
 -- local servers = { "jdtls", "yamlls" }
 local servers = {}
 
+local data_exists, custom_lsp = pcall(require, "custom.lsp_installer")
+if data_exists then
+	for _, client in pairs(custom_lsp.lspinstall) do
+		table.insert(servers, client)
+	end
+end
+
+
 lsp_installer.setup({
 	ensure_installed = servers,
 })
