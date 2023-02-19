@@ -6,7 +6,7 @@ end
 if frmt.disable == 0 then
 	run = 1
 end
-
+print("Ini Jalan")
 if run == 1 then
 	function format_filter(client)
 		local filetype = vim.bo.filetype
