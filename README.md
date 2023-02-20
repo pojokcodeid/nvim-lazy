@@ -141,9 +141,9 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
   │   │   ├── lazy.lua
   │   │   └── options.lua
   │   └── plugin
-  │   ├── dapui.lua
-  │   ├── init.lua
-  │   └── lualine.lua
+  │       ├── dapui.lua
+  │       ├── init.lua
+  │       └── lualine.lua
 ```
 
 | Link                           | Keterangan                                                          |
