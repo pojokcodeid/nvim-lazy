@@ -121,7 +121,9 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 
 # Configurasi
 
-- Struktur File
+- Struktur File <br>
+
+```
   .
   ├── init.lua
   ├── lazy-lock.json
@@ -142,6 +144,7 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
   │   ├── dapui.lua
   │   ├── init.lua
   │   └── lualine.lua
+```
 
 - init.lua (ini pintu masuk untuk config)
 - lazy-lock.json (ini file bawaan lazy plugin manager, jangan diubah)
