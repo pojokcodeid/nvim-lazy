@@ -12,19 +12,9 @@ return {
 	-- coloring code
 	{
 		"nvim-treesitter/nvim-treesitter",
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
 		event = "BufRead",
-		dependencies = {
-			{ "JoosepAlviste/nvim-ts-context-commentstring", event = "BufRead" },
-			{ "p00f/nvim-ts-rainbow", event = "BufRead" },
-			{
-				"windwp/nvim-ts-autotag",
-				event = "BufRead",
-				config = function()
-					require("nvim-ts-autotag").setup()
-				end,
-			},
-		},
 		cmd = {
 			"TSBufDisable",
 			"TSBufEnable",
@@ -188,6 +178,7 @@ return {
 		end,
 	},
 	-- untuk comment
+	{ "JoosepAlviste/nvim-ts-context-commentstring", event = "BufRead" },
 	{
 		"numToStr/Comment.nvim",
 		event = "BufRead",
@@ -225,6 +216,14 @@ return {
 	-- for multi cursor select
 	{ "mg979/vim-visual-multi", event = "BufRead" },
 	-- for auto close tag
+	{
+		"windwp/nvim-ts-autotag",
+		event = "BufRead",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+	},
 	-- for auto detection file and run code
 	{
 		"CRAG666/code_runner.nvim",
@@ -314,6 +313,7 @@ return {
 	-- for check startuptime
 	{ "dstein64/vim-startuptime", cmd = "StartupTime", event = "BufRead" },
 	-- for coloring pairs
+	{ "p00f/nvim-ts-rainbow", event = "BufRead", dependencies = "nvim-treesitter/nvim-treesitter" },
 	-- for git
 	{
 		"lewis6991/gitsigns.nvim",
