@@ -41,7 +41,7 @@
 8. Windows Terminal (Windows) https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=en-id&gl=id
 9. Powershell (windows) https://apps.microsoft.com/store/detail/powershell/9MZ1SNWT0N5D?hl=en-id&gl=id
 
-## Panduan Windows
+# Panduan Windows
 
 - Pastikan sudah menginstall kebutuhan dasar diatas
 - Jalankan Script Dibawah pada Powershell
@@ -51,7 +51,7 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git "$env:LOCALAPPDATA\
 nvim
 ```
 
-## Panduan Linux (Debian Based)
+# Panduan Linux (Debian Based)
 
 1.  Pastikan Acess Administrator
 
@@ -119,9 +119,48 @@ git --version
 git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 ```
 
-## Setting LSP dan Treesitter
+# Configurasi
 
-### Config LSP - Cari file nvim/lua/user/lsp/mason.lua
+- Struktur File
+  .
+  ├── init.lua
+  ├── lazy-lock.json
+  ├── lua
+  │   ├── custom
+  │   │   ├── dashboard.lua
+  │   │   ├── format_onsave.lua
+  │   │   ├── lsp_installer.lua
+  │   │   ├── null-ls.lua
+  │   │   └── register_lsp.lua
+  │   ├── default
+  │   │   ├── autocommands.lua
+  │   │   ├── init.lua
+  │   │   ├── keymaps.lua
+  │   │   ├── lazy.lua
+  │   │   └── options.lua
+  │   └── plugin
+  │   ├── dapui.lua
+  │   ├── init.lua
+  │   └── lualine.lua
+
+- init.lua (ini pintu masuk untuk config)
+- lazy-lock.json (ini file bawaan lazy plugin manager, jangan diubah)
+- lua/custom/dashborad.lua (ini digunkaan untuk custom dashboard)
+- lua/custom/format_onsave.lua (ini digunakan untuk setting ketika save mau di
+  format atau tidak)
+- lua/custom/lsp_installer.lua (ini digunakan untuk install LSP yang tidak
+  support mason)
+- lua/custom/null-ls.lua (ini digunakan untuk registrasi formater dan linter)
+- lua/custom/register_lsp.lua (ini untuk registrasi LSP yang tidak terbaca
+  langsung)
+- lua/default/init.lua (pintu masuk acess config)
+- lua/default/autocommands.lua (ini digunakan untuk custom autocommands)
+- lua/default/keymaps.lua (ini digunakan untuk custom key maps)
+- lua/default/lazy.lua (ini untuk plugin manager, jangan di ubah)
+- lua/default/options.lua (ini digunakan untuk overide default config nvim)
+- lua/plugin/\* (ini digunakan untuk custom plugins, tambah dan override)
+
+## Config LSP
 
 - Jalankan dengan commond mode
 
@@ -129,10 +168,11 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 :MasonInstall html-lsp css-lsp typescript-language-server
 ```
 
+- jika tidak terbaca lspnya tambahkan pada file lua/custom/register_lsp.lua
 - Rujukan Lnguage Support <br>
   https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md
 
-### Comfig Treesitter Cari file nvim/lua/user/treesitter.lua
+## Comfig Treesitter
 
 - Jalankan Code Berikut pada command
 
@@ -145,7 +185,7 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 
 ## Ubah Dashboard
 
-### Cari File nvim/lua/custom/dashboard_example.lua , ubah nama file menjadi dashboard.lua
+### Cari File lua/custom/dashboard.lua
 
 - Edit Bagian ini
 
