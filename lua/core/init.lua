@@ -7,3 +7,7 @@
 -- require("user.snip")
 -- require("user.bufferline")
 -- require("user.chat_gpt")
+require("user.options")
+require("user.keymaps")
+require("user.autocommands")
+require("user.format_onsave")
