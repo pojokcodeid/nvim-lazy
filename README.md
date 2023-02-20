@@ -146,19 +146,21 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
   │   └── lualine.lua
 ```
 
-- init.lua                      |(ini pintu masuk untuk config)                          
-- lazy-lock.json                |(ini file bawaan lazy plugin manager, jangan diubah)                 
-- lua/custom/dashborad.lua      |(ini digunkaan untuk custom dashboard)
-- lua/custom/format_onsave.lua  |(ini digunakan untuk setting ketika save mau di| format atau tidak)
-- lua/custom/lsp_installer.lua  |(ini digunakan untuk install LSP yang tidak| support mason)
-- lua/custom/null-ls.lua        |(ini digunakan untuk registrasi formater dan linter)
-- lua/custom/register_lsp.lua   |(ini untuk registrasi LSP yang tidak terbaca| langsung)
-- lua/default/init.lua          |(pintu masuk acess config)
-- lua/default/autocommands.lua  |(ini digunakan untuk custom autocommands)
-- lua/default/keymaps.lua       |(ini digunakan untuk custom key maps)
-- lua/default/lazy.lua          |(ini untuk plugin manager, jangan di ubah)
-- lua/default/options.lua       |(ini digunakan untuk overide default config nvim)
-- lua/plugin/\*                 |(ini digunakan untuk custom plugins, tambah dan override)
+| init.lua                       | (ini pintu masuk untuk config)                                      |
+|--------------------------------|---------------------------------------------------------------------|
+| lua/custom/dashborad.lua       | (ini digunkaan untuk custom dashboard)                              |
+| lua/custom/format_onsave.lua   | (ini digunakan untuk setting ketika save mau di| format atau tidak) |
+| lua/custom/lsp_installer.lua   | (ini digunakan untuk install LSP yang tidak| support mason)         |
+| lua/custom/null-ls.lua         | (ini digunakan untuk registrasi formater dan linter)                |
+| lua/custom/register_lsp.lua    | (ini untuk registrasi LSP yang tidak terbaca| langsung)             |
+| lua/default/init.lua           | (pintu masuk acess config)                                          |
+| lua/default/autocommands.lua   | (ini digunakan untuk custom autocommands)                           |
+| lua/default/keymaps.lua        | (ini digunakan untuk custom key maps)                               |
+| lua/default/lazy.lua           | (ini untuk plugin manager, jangan di ubah)                          |
+| lua/default/options.lua        | (ini digunakan untuk overide default config nvim)                   |
+| lua/plugin/\*                  | (ini digunakan untuk custom plugins, tambah dan override)           |
+|                                |                                                                     |
+
 
 ## Config LSP
 
