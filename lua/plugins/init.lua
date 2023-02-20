@@ -28,13 +28,13 @@ return {
 			"TSUpdate",
 			"TSUpdateSync",
 		},
-		build = function()
-			local status_ok, ts = pcall(require, "nvim-treesitter.install")
-			if not status_ok then
-				return
-			end
-			ts.update({ with_sync = true })()
-		end,
+		-- build = function()
+		-- 	local status_ok, ts = pcall(require, "nvim-treesitter.install")
+		-- 	if not status_ok then
+		-- 		return
+		-- 	end
+		-- 	ts.update({ with_sync = true })()
+		-- end,
 		-- config = function()
 		-- 	local status_ok, _ = pcall(require, "nvim-treesitter")
 		-- 	if not status_ok then
