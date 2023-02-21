@@ -242,25 +242,26 @@ M.dashboard = {
 - https://youtube.com/playlist?list=PLhzwHCJWMbnvhPy0wqZGVBRUEAgS93iuk
 
 ## List Plugins
-
-- <a href="https://github.com/folke/lazy.nvim">Lazy </a>
-- <a href="https://github.com/nvim-lua/plenary.nvim">Plenary </a>
-- <a href="https://github.com/windwp/nvim-autopairs">Nvim-Autopairs </a>
-- <a href="https://github.com/numToStr/Comment.nvim">Comment.nvim</a>
-- <a href="https://github.com/JoosepAlviste/nvim-ts-context-commentstring">nvim-ts-context-commentstring</a>
-- <a href="https://github.com/nvim-tree/nvim-web-devicons">nvim-web-devicons</a>
-- <a href="https://github.com/nvim-tree/nvim-tree.lua">nvim-tree.lua</a>
-- <a href="https://github.com/akinsho/bufferline.nvim">bufferline.nvim</a>
-- <a href="https://github.com/moll/vim-bbye">vim-bbye</a>
-- <a href="https://github.com/akinsho/toggleterm.nvim">toggleterm.nvim</a>
-- <a href="https://github.com/lewis6991/impatient.nvim">impatient.nvim</a>
-- <a href="https://github.com/lukas-reineke/indent-blankline.nvim">indent-blankline.nvim</a>
-- <a href="https://github.com/goolord/alpha-nvim">alpha-nvim</a>
-- <a href="https://github.com/folke/which-key.nvim">which-key.nvim</a>
-- <a href="https://github.com/folke/tokyonight.nvim">tokyonight.nvim</a>
-- <a href="https://github.com/hrsh7th/nvim-cmp">nvim-cmp</a>
-- <a href="https://github.com/hrsh7th/cmp-buffer">cmp-buffer</a>
-
+<table>
+<tr><td>Link</td><td>Keterangan</td></tr>
+<tr><td>https://github.com/folke/lazy.nvim"</td><td>Lazy</td></tr>
+<tr><td>https://github.com/nvim-lua/plenary.nvim"</td><td>Plenary </td></tr>
+<tr><td>https://github.com/windwp/nvim-autopairs</td><td>>Nvim-Autopairs </td></tr>
+<tr><td>https://github.com/numToStr/Comment.nvim"</td><td>Comment.nvim</td></tr>
+<tr><td>https://github.com/JoosepAlviste/nvim-ts-context-commentstring"</td><td>nvim-ts-context-commentstring</td></tr>
+<tr><td>https://github.com/nvim-tree/nvim-web-devicons"</td><td>nvim-web-devicons</td></tr>
+<tr><td>https://github.com/nvim-tree/nvim-tree.lua"</td><td>nvim-tree.lua</td></tr>
+<tr><td>https://github.com/akinsho/bufferline.nvim"</td><td>bufferline.nvim</td></tr>
+<tr><td>https://github.com/moll/vim-bbye"</td><td>vim-bbye</td></tr>
+<tr><td>https://github.com/akinsho/toggleterm.nvim"</td><td>toggleterm.nvim</td></tr>
+<tr><td>https://github.com/lewis6991/impatient.nvim"</td><td>impatient.nvim</td></tr>
+<tr><td>https://github.com/lukas-reineke/indent-blankline.nvim"</td><td>indent-blankline.nvim</td></tr>
+<tr><td>https://github.com/goolord/alpha-nvim"</td><td>alpha-nvim</td></tr>
+<tr><td>https://github.com/folke/which-key.nvim"</td><td>which-key.nvim</td></tr>
+<tr><td>https://github.com/folke/tokyonight.nvim"</td><td>tokyonight.nvim</td></tr>
+<tr><td>https://github.com/hrsh7th/nvim-cmp"</td><td>nvim-cmp</td></tr>
+<tr><td>https://github.com/hrsh7th/cmp-buffer"</td><td>cmp-buffer</td></tr>
+</table>
 ## key lazygit
 
 <a href="https://github.com/jesseduffield/lazygit/blob/master/docs/keybindings/Keybindings_en.md?fbclid=IwAR3BogewbYeP0PbPY1pewCkq2c3PKua3eHi-00rHpdSdz9gSKrY71Pv10u4" target="_blank">Key Lazygit</a>
