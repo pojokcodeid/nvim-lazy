@@ -1,55 +1,58 @@
-local options = {
-	backspace = vim.opt.backspace + { "nostop" }, -- Don't stop backspace at insert
-	clipboard = "unnamedplus", -- Connection to the system clipboard
-	cmdheight = 0, -- hide command line unless needed
-	completeopt = { "menuone", "noselect" }, -- Options for insert mode completion
-	copyindent = true, -- Copy the previous indentation on autoindenting
-	cursorline = true, -- Highlight the text line of the cursor
-	expandtab = true, -- Enable the use of space in tab
-	fileencoding = "utf-8", -- File content encoding for the buffer
-	fillchars = { eob = " " }, -- Disable `~` on nonexistent lines
-	history = 100, -- Number of commands to remember in a history table
-	ignorecase = true, -- Case insensitive searching
-	laststatus = 3, -- globalstatus
-	lazyredraw = true, -- lazily redraw screen
-	mouse = "a", -- Enable mouse support
-	number = true, -- Show numberline
-	preserveindent = true, -- Preserve indent structure as much as possible
-	pumheight = 10, -- Height of the pop up menu
-	relativenumber = true, -- Show relative numberline
-	scrolloff = 8, -- Number of lines to keep above and below the cursor
-	shiftwidth = 2, -- Number of space inserted for indentation
-	showmode = false, -- Disable showing modes in command line
-	showtabline = 2, -- always display tabline
-	sidescrolloff = 8, -- Number of columns to keep at the sides of the cursor
-	signcolumn = "yes", -- Always show the sign column
-	smartcase = true, -- Case sensitivie searching
-	splitbelow = true, -- Splitting a new window below the current one
-	splitright = true, -- Splitting a new window at the right of the current one
-	swapfile = false, -- Disable use of swapfile for the buffer
-	tabstop = 2, -- Number of space in a tab
-	termguicolors = true, -- Enable 24-bit RGB color in the TUI
-	timeoutlen = 300, -- Length of time to wait for a mapped sequence
-	undofile = true, -- Enable persistent undo
-	updatetime = 300, -- Length of time to wait before triggering the plugin
-	wrap = true, -- Disable wrapping of lines longer than the width of window
-	writebackup = false, -- Disable making a backup before overwriting a file
-	-- minimal number of screen columns either side of cursor if wrap is `false`
-	-- guifont = "monospace:h17", -- the font used in graphical neovim applications
-	-- guifont = "Source_Code_Pro:h17", -- the font used in graphical neovim applications
-	guifont = "Hack_Nerd_Font:h17", -- the font used in graphical neovim applications
-	whichwrap = "bs<>[]hl", -- which "horizontal" keys are allowed to travel to prev/next line            -- which "horizontal" keys are allowed to travel to prev/next line
-}
+-- This file is automatically loaded by plugins.config
 
-for k, v in pairs(options) do
-	vim.opt[k] = v
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+local opt = vim.opt
+opt.autowrite = true -- Enable auto write
+opt.clipboard = "unnamedplus" -- Sync with system clipboard
+opt.completeopt = "menu,menuone,noselect"
+opt.conceallevel = 3 -- Hide * markup for bold and italic
+opt.confirm = true -- Confirm to save changes before exiting modified buffer
+opt.cursorline = true -- Enable highlighting of the current line
+opt.expandtab = true -- Use spaces instead of tabs
+opt.formatoptions = "jcroqlnt" -- tcqj
+opt.grepformat = "%f:%l:%c:%m"
+opt.grepprg = "rg --vimgrep"
+opt.ignorecase = true -- Ignore case
+opt.inccommand = "nosplit" -- preview incremental substitute
+opt.laststatus = 0
+opt.list = true -- Show some invisible characters (tabs...
+opt.mouse = "a" -- Enable mouse mode
+opt.number = true -- Print line number
+opt.pumblend = 10 -- Popup blend
+opt.pumheight = 10 -- Maximum number of entries in a popup
+opt.relativenumber = true -- Relative line numbers
+opt.scrolloff = 4 -- Lines of context
+opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
+opt.shiftround = true -- Round indent
+opt.shiftwidth = 2 -- Size of an indent
+opt.shortmess:append({ W = true, I = true, c = true })
+opt.showmode = false -- Dont show mode since we have a statusline
+opt.sidescrolloff = 8 -- Columns of context
+opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
+opt.smartcase = true -- Don't ignore case with capitals
+opt.smartindent = true -- Insert indents automatically
+opt.spelllang = { "en" }
+opt.splitbelow = true -- Put new windows below current
+opt.splitright = true -- Put new windows right of current
+opt.tabstop = 2 -- Number of spaces tabs count for
+opt.termguicolors = true -- True color support
+opt.timeoutlen = 300
+opt.undofile = true
+opt.undolevels = 10000
+opt.updatetime = 200 -- Save swap file and trigger CursorHold
+opt.wildmode = "longest:full,full" -- Command-line completion mode
+opt.winminwidth = 5 -- Minimum window width
+opt.wrap = false -- Disable line wrap
+
+opt.laststatus = 3 -- globalstatus
+opt.cmdheight = 0 -- hide command line unless needed
+
+if vim.fn.has("nvim-0.9.0") == 1 then
+	opt.splitkeep = "screen"
+	opt.shortmess:append({ C = true })
 end
 
--- vim.opt.shortmess = "ilmnrx"                        -- flags to shorten vim messages, see :help 'shortmess'
--- vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
-vim.opt.shortmess:append("c") -- don't give |ins-completion-menu| messages
-vim.opt.iskeyword:append("-") -- hyphenated words recognized by searches
-vim.opt.formatoptions:remove({ "t", "c", "q", "j" })
-vim.opt.formatoptions = "croql"
--- vim.opt.formatoptions:remove({ "c", "r", "o" }) -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
-vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins from neovim in case vim still in use
+-- Fix markdown indentation settings
+vim.g.markdown_recommended_style = 0
