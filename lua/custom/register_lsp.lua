@@ -2,7 +2,6 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local m = {
 	lspreg = {
-		"bashls",
 		"yamlls",
 		"jdtls",
 		"intelephense",
