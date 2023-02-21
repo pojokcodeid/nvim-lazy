@@ -28,6 +28,11 @@
 ![LARAVEL!](img/laravel.jpeg)
 
 # Panduan Install Dan Konfigurasi NeoVim
+## Content
+<ul>
+<li><a href="## kebutuhan Dasar">Kebutuhan Dasar</a></li>
+<li><a href="# Configurasi">Konfig</a></li>
+</ul>
 
 ## Kebutuhan Dasar
 
