@@ -244,23 +244,23 @@ M.dashboard = {
 ## List Plugins
 <table>
 <tr><td>Link</td><td>Keterangan</td></tr>
-<tr><td>https://github.com/folke/lazy.nvim"</td><td>Lazy</td></tr>
-<tr><td>https://github.com/nvim-lua/plenary.nvim"</td><td>Plenary </td></tr>
-<tr><td>https://github.com/windwp/nvim-autopairs</td><td>>Nvim-Autopairs </td></tr>
-<tr><td>https://github.com/numToStr/Comment.nvim"</td><td>Comment.nvim</td></tr>
-<tr><td>https://github.com/JoosepAlviste/nvim-ts-context-commentstring"</td><td>nvim-ts-context-commentstring</td></tr>
-<tr><td>https://github.com/nvim-tree/nvim-web-devicons"</td><td>nvim-web-devicons</td></tr>
-<tr><td>https://github.com/nvim-tree/nvim-tree.lua"</td><td>nvim-tree.lua</td></tr>
-<tr><td>https://github.com/akinsho/bufferline.nvim"</td><td>bufferline.nvim</td></tr>
-<tr><td>https://github.com/moll/vim-bbye"</td><td>vim-bbye</td></tr>
-<tr><td>https://github.com/akinsho/toggleterm.nvim"</td><td>toggleterm.nvim</td></tr>
-<tr><td>https://github.com/lewis6991/impatient.nvim"</td><td>impatient.nvim</td></tr>
-<tr><td>https://github.com/lukas-reineke/indent-blankline.nvim"</td><td>indent-blankline.nvim</td></tr>
-<tr><td>https://github.com/goolord/alpha-nvim"</td><td>alpha-nvim</td></tr>
-<tr><td>https://github.com/folke/which-key.nvim"</td><td>which-key.nvim</td></tr>
-<tr><td>https://github.com/folke/tokyonight.nvim"</td><td>tokyonight.nvim</td></tr>
-<tr><td>https://github.com/hrsh7th/nvim-cmp"</td><td>nvim-cmp</td></tr>
-<tr><td>https://github.com/hrsh7th/cmp-buffer"</td><td>cmp-buffer</td></tr>
+<tr><td>https://github.com/folke/lazy.nvim</td><td>Lazy</td></tr>
+<tr><td>https://github.com/nvim-lua/plenary.nvim</td><td>Plenary </td></tr>
+<tr><td>https://github.com/windwp/nvim-autopairs</td><td>Nvim-Autopairs </td></tr>
+<tr><td>https://github.com/numToStr/Comment.nvim</td><td>Comment.nvim</td></tr>
+<tr><td>https://github.com/JoosepAlviste/nvim-ts-context-commentstring</td><td>nvim-ts-context-commentstring</td></tr>
+<tr><td>https://github.com/nvim-tree/nvim-web-devicons</td><td>nvim-web-devicons</td></tr>
+<tr><td>https://github.com/nvim-tree/nvim-tree.lua</td><td>nvim-tree.lua</td></tr>
+<tr><td>https://github.com/akinsho/bufferline.nvim</td><td>bufferline.nvim</td></tr>
+<tr><td>https://github.com/moll/vim-bbye</td><td>vim-bbye</td></tr>
+<tr><td>https://github.com/akinsho/toggleterm.nvim</td><td>toggleterm.nvim</td></tr>
+<tr><td>https://github.com/lewis6991/impatient.nvim</td><td>impatient.nvim</td></tr>
+<tr><td>https://github.com/lukas-reineke/indent-blankline.nvim</td><td>indent-blankline.nvim</td></tr>
+<tr><td>https://github.com/goolord/alpha-nvim</td><td>alpha-nvim</td></tr>
+<tr><td>https://github.com/folke/which-key.nvim</td><td>which-key.nvim</td></tr>
+<tr><td>https://github.com/folke/tokyonight.nvim</td><td>tokyonight.nvim</td></tr>
+<tr><td>https://github.com/hrsh7th/nvim-cmp</td><td>nvim-cmp</td></tr>
+<tr><td>https://github.com/hrsh7th/cmp-buffer</td><td>cmp-buffer</td></tr>
 </table>
 ## key lazygit
 
