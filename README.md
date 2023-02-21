@@ -162,13 +162,16 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 | lua/plugin/\*                  | (ini digunakan untuk custom plugins, tambah dan override)           |
 
 ## KeyMap
-- leader = space bar
+- leader  = space bar
+- n       = normal mode
 <table>
 <tr>
+  <td>Mode</td>
 	<td>Key</td>
 	<td>Keterangan</td>
 </tr>
 <tr>
+  <td>n</td>
 	<td>leader</td>
 	<td>Membuka Wich Key</td>
 </tr>
