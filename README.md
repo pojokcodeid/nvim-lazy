@@ -18,14 +18,14 @@
 ## Plugins Manager
 
 ![PlugManaget!](img/plugins_manager.png)
+## Layout
+
+![PlugManaget!](img/coding.png)
+
 
 ## PHP
 
 ![LARAVEL!](img/laravel.jpeg)
-
-## JAVA
-
-![JAVA!](img/Spring_boot_code.jpeg)
 
 # Panduan Install Dan Konfigurasi NeoVim
 
