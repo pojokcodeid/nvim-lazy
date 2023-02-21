@@ -262,6 +262,7 @@ M.dashboard = {
 <tr><td>https://github.com/hrsh7th/nvim-cmp</td><td>nvim-cmp</td></tr>
 <tr><td>https://github.com/hrsh7th/cmp-buffer</td><td>cmp-buffer</td></tr>
 </table>
+
 ## key lazygit
 
 <a href="https://github.com/jesseduffield/lazygit/blob/master/docs/keybindings/Keybindings_en.md?fbclid=IwAR3BogewbYeP0PbPY1pewCkq2c3PKua3eHi-00rHpdSdz9gSKrY71Pv10u4" target="_blank">Key Lazygit</a>
