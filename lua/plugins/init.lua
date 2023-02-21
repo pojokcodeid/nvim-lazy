@@ -176,7 +176,11 @@ return {
 		end,
 	},
 	-- untuk comment
-	{ "JoosepAlviste/nvim-ts-context-commentstring", event = "BufRead" },
+	{
+		"JoosepAlviste/nvim-ts-context-commentstring",
+		event = "BufRead",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+	},
 	{
 		"numToStr/Comment.nvim",
 		event = "BufRead",
@@ -311,7 +315,11 @@ return {
 	-- for check startuptime
 	{ "dstein64/vim-startuptime", cmd = "StartupTime", event = "BufRead" },
 	-- for coloring pairs
-	{ "p00f/nvim-ts-rainbow", event = "BufRead", dependencies = "nvim-treesitter/nvim-treesitter" },
+	{
+		"p00f/nvim-ts-rainbow",
+		event = "BufRead",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+	},
 	-- for git
 	{
 		"lewis6991/gitsigns.nvim",
