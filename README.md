@@ -150,10 +150,10 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 |--------------------------------|---------------------------------------------------------------------|
 | init.lua                       | (ini pintu masuk untuk config)                                      |
 | lua/custom/dashborad.lua       | (ini digunkaan untuk custom dashboard)                              |
-| lua/custom/format_onsave.lua   | (ini digunakan untuk setting ketika save mau di| format atau tidak) |
-| lua/custom/lsp_installer.lua   | (ini digunakan untuk install LSP yang tidak| support mason)         |
+| lua/custom/format_onsave.lua   | (ini digunakan untuk setting ketika save mau di format atau tidak)  |
+| lua/custom/lsp_installer.lua   | (ini digunakan untuk install LSP yang tidak  support mason)         |
 | lua/custom/null-ls.lua         | (ini digunakan untuk registrasi formater dan linter)                |
-| lua/custom/register_lsp.lua    | (ini untuk registrasi LSP yang tidak terbaca| langsung)             |
+| lua/custom/register_lsp.lua    | (ini untuk registrasi LSP yang tidak terbaca  langsung)             |
 | lua/default/init.lua           | (pintu masuk acess config)                                          |
 | lua/default/autocommands.lua   | (ini digunakan untuk custom autocommands)                           |
 | lua/default/keymaps.lua        | (ini digunakan untuk custom key maps)                               |
