@@ -164,6 +164,8 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 ## KeyMap
 - leader  = space bar
 - n       = normal mode
+- i       = insert mode 
+- v       = visual mode
 <table>
 <tr>
   <td>Mode</td>
@@ -174,6 +176,21 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
   <td>n</td>
 	<td>leader</td>
 	<td>Membuka Wich Key</td>
+</tr>
+<tr>
+  <td>n</td>
+	<td>leader + /</td>
+	<td>Comment String</td>
+</tr>
+<tr>
+  <td>n</td>
+	<td>leader + a</td>
+	<td>Alpha dashboard</td>
+</tr>
+<tr>
+  <td>n</td>
+	<td>leader + b</td>
+	<td>Buffer</td>
 </tr>
 </table>
 ## Config LSP
