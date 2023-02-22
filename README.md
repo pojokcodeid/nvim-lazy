@@ -51,7 +51,7 @@
     -   [Custom Sippets](#Custom-Snippets)
 -   [List Plugins](#List-Plugins)
 
-
+## Penjelsan Lebih Detail Silahkan Kunjungi <a href="https://github.com/pojokcodeid/nvim-lazy/wiki/">Wiki</a>
 ## Kebutuhan Dasar
 
 1. Install Neovim 8.0+ https://github.com/neovim/neovim/releases/tag/v0.8.2
