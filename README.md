@@ -409,7 +409,7 @@ map("n", "]h", '<cmd>lua print("Testing")<cr>', "Testing Mapping")
 ```
 ## Custom Plugins
 ### cari file lua/plugin/*
-- masukan semua pligin pada folder tersebut
+- masukan semua plugin pada folder tersebut
 - disable plugins
 ```
 { "folke/trouble.nvim", enabled = false }, -- ini untuk disable plugin
