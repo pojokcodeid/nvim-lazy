@@ -38,6 +38,10 @@
     -   [Config LSP](#Config-LSP)
     -   [Comfig Treesitter](#Comfig-Treesitter)
     -   [Ubah Dashboard](#Ubah-Dashboard)
+    -   [Custom Null-ls](#Custom-Null-ls)
+    -   [Register LSP](#Register-LSP)
+    -   [Whichkey](#Whichkey)
+    -   [Format On Save](#Format-On-Save)
 -   [List Plugins](#List-Plugins)
 
 
@@ -326,9 +330,54 @@ M.dashboard = {
 }
 
 ```
-
 - Link Generate Dasboard
   https://patorjk.com/software/taag/
+
+## Custom Null-ls
+### cari file lua/custom/null-ls.lua
+- tambahkan pada bagian berikut 
+```lua
+local m = {
+	sources = {
+		formatting.stylua, -- tambahkan di bawah sini
+		diagnostics.flake8, -- tambahkan di bawah sini
+	},
+}
+```
+## Register LSP
+### Cari file lua/custom/register_lsp.lua
+- ini dilakukan jika LSP tidak terbaca 
+```lua
+local m = {
+	lspreg = {
+		"yamlls",
+		"jdtls",
+		"intelephense",
+		"marksman",
+		"csharp_ls",
+		"clangd",
+		"dartls",
+		"kotlin_language_server",
+		-- tambahkan di bawah sini setelah melakukan :masoninstall
+	},
+}
+```
+## Whichkey
+### cari file lua/custom/whichkey.lua
+-- file ini digunakan untuk registrasi key mapping 
+```lua
+["k"] = {
+	name = "Example",
+	k = { '<cmd>lua print("Testing")<cr>', "Example" },
+},
+```
+## Format On Save
+### cari file lua/custom/format_onsave.lua
+- lakukan enable atau disable 
+```lua
+local M = {
+	disable = 0, -- 0 ( format jalan)  1 (fromat off)
+}
 
 ## Seting Bahasa Pemprograman
 
