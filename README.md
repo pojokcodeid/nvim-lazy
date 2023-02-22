@@ -1,7 +1,6 @@
 <h1 align="center">Nvim-Lazy</h1>
 
 <p align="center">
-  <img alt="Neovim Minimum Version" src="https://img.shields.io/badge/Neovim-0.8.0+-blueviolet.svg?style=flat-square&logo=Neovim&logoColor=white)](https://github.com/neovim/neovim">
   <a href="https://github.com/pojokcodeid/nvim-lazy/pulse">
     <img src="https://img.shields.io/github/last-commit/pojokcodeid/nvim-lazy?style=for-the-badge&logo=github&color=7dc4e4&logoColor=D9E0EE&labelColor=302D41"/>
   </a>
