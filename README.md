@@ -45,6 +45,7 @@
     -   [Custom Autocommand](#Custom-Autocommand)
     -   [Cutom Default Option](#Cutom-Default-Option)
     -   [Custom Key Mapping](#Custom-Key-Mapping)
+    -   [Custom Plugins](#Custom-Plugins)
 -   [List Plugins](#List-Plugins)
 
 
@@ -406,6 +407,19 @@ end
 -- ini adalah contoh
 map("n", "]h", '<cmd>lua print("Testing")<cr>', "Testing Mapping")
 ```
+## Custom Plugins
+### cari file lua/plugin/*
+- masukan semua pligin pada folder tersebut
+- disable plugins
+```
+{ "folke/trouble.nvim", enabled = false }, -- ini untuk disable plugin
+```
+- tambah plugins
+```
+{"nvim-treesitter/nvim-treesitter"},
+```
+untuk panduan silahkan cek <br>
+https://github.com/folke/lazy.nvim#Examples
 ## Seting Bahasa Pemprograman
 
 - https://youtube.com/playlist?list=PLhzwHCJWMbnvhPy0wqZGVBRUEAgS93iuk
