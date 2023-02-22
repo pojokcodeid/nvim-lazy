@@ -48,6 +48,7 @@
     -   [Cutom Default Option](#Cutom-Default-Option)
     -   [Custom Key Mapping](#Custom-Key-Mapping)
     -   [Custom Plugins](#Custom-Plugins)
+    -   [Custom Sippets](#Custom-Snippets)
 -   [List Plugins](#List-Plugins)
 
 
@@ -422,6 +423,23 @@ map("n", "]h", '<cmd>lua print("Testing")<cr>', "Testing Mapping")
 ```
 untuk panduan silahkan cek <br>
 https://github.com/folke/lazy.nvim#Examples
+## Custom-Snippets
+### Cari File nvim/my-snippet/package.json
+- tambahkan custom snippets pada bagian berikut
+```json
+"contributes": {
+  "snippets": [
+    {
+      "language": "html",
+      "path": "./html/snippets/javascript.json"
+    },
+    {
+      "language": "html",
+      "path": "./html/javascript/javascript.json"
+    },
+  ]
+}
+```
 ## Seting Bahasa Pemprograman
 
 - https://youtube.com/playlist?list=PLhzwHCJWMbnvhPy0wqZGVBRUEAgS93iuk
