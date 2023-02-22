@@ -13,7 +13,6 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		event = "BufRead",
-		priority = 1000,
 		cmd = {
 			"TSBufDisable",
 			"TSBufEnable",

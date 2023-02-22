@@ -9,6 +9,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 require("lazy").setup({
 	spec = {
+		{ "nvim-treesitter/nvim-treesitter" },
 		{ import = "plugins" },
 		{ import = "custom.plugins" },
 	},
