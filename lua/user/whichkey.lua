@@ -396,6 +396,15 @@ local mappings = {
 	["o"] = { "<cmd>SymbolsOutline<cr>", "Symbol Outline" },
 }
 
+local wkey = {}
+local data_exists, key = pcall(require, "custom.whichkey")
+if data_exists then
+	if type(key) == "table" then
+		wkey = key
+	end
+end
+
 which_key.setup(setup)
 which_key.register(mappings, opts)
+which_key.register(wkey, opts)
 which_key.register(mappings2, opts2)
