@@ -204,6 +204,81 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 	<td>leader + b</td>
 	<td>Buffer</td>
 </tr>
+<tr>
+  <td>n</td>
+	<td>leader + c</td>
+	<td>Close Buffer</td>
+</tr>
+<tr>
+  <td>n</td>
+	<td>leader + e</td>
+	<td>Exploler (Nvim Tree)</td>
+</tr>
+<tr>
+  <td>n</td>
+	<td>leader + e</td>
+	<td>Exploler (Nvim Tree)</td>
+</tr>
+<tr>
+  <td>n</td>
+	<td>leader + F</td>
+	<td>Pencarian Text</td>
+</tr>
+<tr>
+  <td>n</td>
+	<td>leader + f</td>
+	<td>Pencarian File</td>
+</tr>
+<tr>
+  <td>n</td>
+	<td>leader + h</td>
+	<td>Tidak ada hilight</td>
+</tr>
+<tr>
+  <td>n</td>
+	<td>leader + o</td>
+	<td>Symbol Outline</td>
+</tr>
+<tr>
+  <td>n</td>
+	<td>leader + q</td>
+	<td>Keluar Neovim</td>
+</tr>
+<tr>
+  <td>n</td>
+	<td>leader + w</td>
+	<td>Simpan File</td>
+</tr>
+<tr>
+  <td>n</td>
+	<td>leader + g</td>
+	<td>git</td>
+</tr>
+<tr>
+  <td>n</td>
+	<td>leader + l</td>
+	<td>LSP</td>
+</tr>
+<tr>
+  <td>n</td>
+	<td>leader + p</td>
+	<td>Plugin (Lazy)</td>
+</tr>
+<tr>
+  <td>n</td>
+	<td>leader + r</td>
+	<td>Run Program</td>
+</tr>
+<tr>
+  <td>n</td>
+	<td>leader + s</td>
+	<td>Pencarian</td>
+</tr>
+<tr>
+  <td>n</td>
+	<td>leader + t</td>
+	<td>Terminal</td>
+</tr>
 </table>
 
 ## Config LSP
