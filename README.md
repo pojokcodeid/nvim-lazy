@@ -29,7 +29,7 @@
 ![LARAVEL!](img/laravel.jpeg)
 
 # Panduan Install Dan Konfigurasi NeoVim
-# Dafyar Isi
+# Daftar Isi
 -   [Kebutuhan Dasar](#Kebutuhan-Dasar)
 -   [Panduan Windows](#Panduan-Windows)
 -   [Panduan Linux Debian Based](#Panduan-Linux-Debian-Based)
