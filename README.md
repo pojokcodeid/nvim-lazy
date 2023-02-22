@@ -32,7 +32,7 @@
 # Table of Contents
 -   [Kebutuhan Dasar](#Kebutuhan-Dasar)
 -   [Panduan Windows](#Panduan-Windows)
--   [Panduan Linux (Debian Based)](#Panduan-Linux-(Debian Based))
+-   [Panduan Linux Debian Based](#Panduan-Linux-Debian Based)
 -   [Configurasi](#Configurasi)
     -   [KeyMap](#KeyMap)
 
@@ -59,7 +59,7 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git "$env:LOCALAPPDATA\
 nvim
 ```
 
-# Panduan Linux (Debian Based)
+# Panduan Linux Debian Based
 
 1.  Pastikan Acess Administrator
 
