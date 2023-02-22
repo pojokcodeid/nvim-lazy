@@ -1,5 +1,4 @@
 return {
-	{ "nvim-treesitter/nvim-treesitter" },
 	-- {
 	-- 	"hrsh7th/cmp-cmdline",
 	-- 	event = "BufWinEnter",
