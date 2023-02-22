@@ -279,6 +279,11 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 	<td>leader + t</td>
 	<td>Terminal</td>
 </tr>
+<tr>
+  <td>v</td>
+	<td>leader + /</td>
+	<td>Comment Blok String</td>
+</tr>
 </table>
 
 ## Config LSP
@@ -349,6 +354,15 @@ M.dashboard = {
 <tr><td>https://github.com/folke/tokyonight.nvim</td><td>tokyonight.nvim</td></tr>
 <tr><td>https://github.com/hrsh7th/nvim-cmp</td><td>nvim-cmp</td></tr>
 <tr><td>https://github.com/hrsh7th/cmp-buffer</td><td>cmp-buffer</td></tr>
+<tr><td>https://github.com/nvim-treesitter/nvim-treesitter</td><td>nvim-treesitter</td></tr>
+<tr><td>https://github.com/L3MON4D3/LuaSnip</td><td>LuaSnip</td></tr>
+<tr><td>https://github.com/windwp/nvim-autopairs</td><td>nvim-autopairs</td></tr>
+<tr><td>https://github.com/hrsh7th/cmp-nvim-lua</td><td>cmp-nvim-lua</td></tr>
+<tr><td>https://github.com/neovim/nvim-lspconfig</td><td>nvim-lspconfig</td></tr>
+<tr><td>https://github.com/williamboman/mason-lspconfig.nvim</td><td>mason-lspconfig.nvim</td></tr>
+<tr><td>https://github.com/williamboman/mason.nvim</td><td>williamboman/mason.nvim</td></tr>
+<tr><td>https://github.com/jose-elias-alvarez/null-ls.nvim</td><td>null-ls.nvim</td></tr>
+<tr><td>https://github.com/jayp0521/mason-null-ls.nvim</td><td>mason-null-ls.nvim</td></tr>
 </table>
 
 ## key lazygit
