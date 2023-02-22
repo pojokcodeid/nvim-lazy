@@ -42,6 +42,9 @@
     -   [Register LSP](#Register-LSP)
     -   [Whichkey](#Whichkey)
     -   [Format On Save](#Format-On-Save)
+    -   [Custom Autocommand](#Custom-Autocommand)
+    -   [Cutom Default Option](#Cutom-Default-Option)
+    -   [Custom Key Mapping](#Custom-Key-Mapping)
 -   [List Plugins](#List-Plugins)
 
 
@@ -378,6 +381,30 @@ local m = {
 local M = {
 	disable = 0, -- 0 ( format jalan)  1 (fromat off)
 }
+```
+## Custom Autocommand
+### cari file lua/default/autocommand.lua
+- Lakukan config sesuai kebutuhan
+## Cutom Default Option
+### cari file lua/default/options.lua
+```
+-- custom oprion disini
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+local opt = vim.opt
+opt.cmdheight = 0
+```
+## Custom Key Mapping
+### cari file lua/dafault/keymaps.lua
+```
+-- custom key maps disini
+local function map(mode, l, r, desc)
+	vim.keymap.set(mode, l, r, { desc = desc })
+end
+-- ini adalah contoh
+map("n", "]h", '<cmd>lua print("Testing")<cr>', "Testing Mapping")
 ```
 ## Seting Bahasa Pemprograman
 
