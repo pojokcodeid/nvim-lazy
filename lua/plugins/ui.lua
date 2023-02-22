@@ -1,5 +1,4 @@
 return {
-	{ "nvim-treesitter/nvim-treesitter" },
 	-- color scheme
 	-- {
 	-- 	"folke/tokyonight.nvim",
