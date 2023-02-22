@@ -2,12 +2,14 @@
 
 <p align="center">
   <img alt="Neovim Minimum Version" src="https://img.shields.io/badge/Neovim-0.8.0+-blueviolet.svg?style=flat-square&logo=Neovim&logoColor=white)](https://github.com/neovim/neovim">
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/CosmicNvim/CosmicNvim?style=flat-square&logo=Github">
-  <a href="#">
-    <img alt="Discord" src="https://img.shields.io/discord/901609359291854899?style=flat-square&logo=Discord">
+  <a href="https://github.com/pojokcodeid/nvim-lazy/pulse">
+    <img src="https://img.shields.io/github/last-commit/jay-babu/mason-nvim-dap.nvim?style=for-the-badge&logo=github&color=7dc4e4&logoColor=D9E0EE&labelColor=302D41"/>
   </a>
-  <a href="#">
-    <img alt="Website" src="https://img.shields.io/website?style=flat-square&up_message=live&label=website&url=https%3A%2F%2Fcosmicnvim.vercel.app%2F">
+  <a href="https://github.com/pojokcodeid/nvim-lazy/releases/latest">
+    <img src="https://img.shields.io/github/v/release/jay-babu/mason-nvim-dap.nvim?style=for-the-badge&logo=gitbook&color=8bd5ca&logoColor=D9E0EE&labelColor=302D41"/>
+  </a>
+  <a href="https://github.com/pojokcodeid/nvim-lazy/stargazers">
+    <img src="https://img.shields.io/github/stars/jay-babu/mason-nvim-dap.nvim?style=for-the-badge&logo=apachespark&color=eed49f&logoColor=D9E0EE&labelColor=302D41"/>
   </a>
 </p>
 
