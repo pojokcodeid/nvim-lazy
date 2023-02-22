@@ -29,12 +29,16 @@
 ![LARAVEL!](img/laravel.jpeg)
 
 # Panduan Install Dan Konfigurasi NeoVim
-# Table of Contents
+# Dafyar Isi
 -   [Kebutuhan Dasar](#Kebutuhan-Dasar)
 -   [Panduan Windows](#Panduan-Windows)
 -   [Panduan Linux Debian Based](#Panduan-Linux-Debian-Based)
 -   [Configurasi](#Configurasi)
     -   [KeyMap](#KeyMap)
+    -   [Config LSP](#Config-LSP)
+    -   [Comfig Treesitter](#Comfig-Treesitter)
+    -   [Ubah Dashboard](#Ubah-Dashboard)
+-   [List Plugins](#List-Plugins)
 
 
 ## Kebutuhan Dasar
@@ -201,6 +205,7 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 	<td>Buffer</td>
 </tr>
 </table>
+
 ## Config LSP
 
 - Jalankan dengan commond mode
