@@ -295,6 +295,11 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 	<td>leader + /</td>
 	<td>Comment Blok String</td>
 </tr>
+<tr>
+  <td>i</td>
+	<td>ctrl + l</td>
+	<td>Live Server</td>
+</tr>
 </table>
 
 ## Config LSP
