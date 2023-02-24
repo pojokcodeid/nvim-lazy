@@ -1,5 +1,8 @@
-<h1 align="center">Nvim-Lazy</h1>
+<div align="center">
 
+# Nvim-Lazy
+![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
+![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
 <p align="center">
   <a href="https://github.com/pojokcodeid/nvim-lazy/pulse">
     <img src="https://img.shields.io/github/last-commit/pojokcodeid/nvim-lazy?style=for-the-badge&logo=github&color=7dc4e4&logoColor=D9E0EE&labelColor=302D41"/>
@@ -13,6 +16,8 @@
   <a href="https://github.com/pojokcodeid/nvim-lazy/blob/main/LICENSE"><img src="https://img.shields.io/github/license/pojokcodeid/nvim-lazy?color=%2361afef&style=for-the-badge"></a>
   <a href="https://github.com/pojokcodeid/nvim-lazy/issues"><img src="https://img.shields.io/github/issues/pojokcodeid/nvim-lazy?color=%23d19a66&style=for-the-badge"></a>
 </p>
+
+</div>
 
 ## HOME
 
