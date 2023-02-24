@@ -369,6 +369,8 @@ local m = {
 	},
 }
 ```
+- untuk acuan silahkan cek : <br>
+https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 ## Whichkey
 ### cari file lua/custom/whichkey.lua
 -- file ini digunakan untuk registrasi key mapping 
