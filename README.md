@@ -148,41 +148,26 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 
 ```
   .
-  ├── init.lua
-  ├── lazy-lock.json
+  ├── init.lua                    * Ini pintu masuk config
+  ├── lazy-lock.json              * Ini file generate dari lazy.nvim
   ├── lua
   │   ├── custom
-  │   │   ├── dashboard.lua
-  │   │   ├── format_onsave.lua
-  │   │   ├── lsp_installer.lua
-  │   │   ├── null-ls.lua
-  │   │   └── register_lsp.lua
+  │   │   ├── dashboard.lua       * Ini untuk custom dashboard
+  │   │   ├── format_onsave.lua   * Ini untuk custom format ketika save
+  │   │   ├── lsp_installer.lua   * Ini untuk config LSP tidak support mason
+  │   │   ├── null-ls.lua         * Ini untuk config linter dan formatter
+  │   │   └── register_lsp.lua    * Ini untuk registrasi LSP install dari mason
   │   ├── default
-  │   │   ├── autocommands.lua
-  │   │   ├── init.lua
-  │   │   ├── keymaps.lua
-  │   │   ├── lazy.lua
-  │   │   └── options.lua
+  │   │   ├── autocommands.lua    * Ini untuk custom auto command
+  │   │   ├── init.lua            * Ini pintu masuk untuk semua config
+  │   │   ├── keymaps.lua         * Ini untuk custom keymaps
+  │   │   ├── lazy.lua            * Ini config plugins manager (jangan diubah)
+  │   │   └── options.lua         * Ini untuk custom config default neovim
   │   └── plugin
-  │       ├── dapui.lua
-  │       ├── init.lua
-  │       └── lualine.lua
+  │       ├── dapui.lua           * Ini contoh plugin
+  │       ├── init.lua            * Ini untuk menambah, disable dan overide plugins
+  │       └── lualine.lua         * Ini contoh plugin
 ```
-
-| Link                           | Keterangan                                                          |
-|--------------------------------|---------------------------------------------------------------------|
-| init.lua                       | (ini pintu masuk untuk config)                                      |
-| lua/custom/dashborad.lua       | (ini digunkaan untuk custom dashboard)                              |
-| lua/custom/format_onsave.lua   | (ini digunakan untuk setting ketika save mau di format atau tidak)  |
-| lua/custom/lsp_installer.lua   | (ini digunakan untuk install LSP yang tidak  support mason)         |
-| lua/custom/null-ls.lua         | (ini digunakan untuk registrasi formater dan linter)                |
-| lua/custom/register_lsp.lua    | (ini untuk registrasi LSP yang tidak terbaca  langsung)             |
-| lua/default/init.lua           | (pintu masuk acess config)                                          |
-| lua/default/autocommands.lua   | (ini digunakan untuk custom autocommands)                           |
-| lua/default/keymaps.lua        | (ini digunakan untuk custom key maps)                               |
-| lua/default/lazy.lua           | (ini untuk plugin manager, jangan di ubah)                          |
-| lua/default/options.lua        | (ini digunakan untuk overide default config nvim)                   |
-| lua/plugin/\*                  | (ini digunakan untuk custom plugins, tambah dan override)           |
 
 ## KeyMap
 - leader  = space bar
