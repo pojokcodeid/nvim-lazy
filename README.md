@@ -351,6 +351,8 @@ local m = {
 	},
 }
 ```
+- Untuk acuan silahkan kunjungi :<br>
+https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 ## Register LSP
 ### Cari file lua/custom/register_lsp.lua
 - ini dilakukan jika LSP tidak terbaca 
