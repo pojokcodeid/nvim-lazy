@@ -99,6 +99,13 @@ bufferline.setup({
 				text_align = "left",
 				padding = 1,
 			},
+			{
+				filetype = "neo-tree",
+				text = "Explorer",
+				highlight = "Directory",
+				text_align = "left",
+				padding = 1,
+			},
 		},
 		show_buffer_icons = true,
 		show_buffer_close_icons = true,
