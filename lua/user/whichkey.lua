@@ -245,7 +245,7 @@ local mappings = {
 		f = { "<cmd>RunFile<CR>", "Run File" },
 		j = { "<cmd>Jaq float<CR>", "Run With Jaq" },
 		p = { "<cmd>RunProject<CR>", "Run Project" },
-		g = { "<cmd>ToggleTerm size=70 direction=float<cr>gradle run<cr>" .. trn, "Run Gradle" },
+		g = { "<cmd>ToggleTerm size=70 direction=float<cr>clear<cr>gradle run<cr>" .. trn, "Run Gradle" },
 		m = {
 			"<cmd>ToggleTerm size=70 direction=float<cr>mvn exec:java -Dexec.mainClass=com.pojokcode.App<cr>",
 			"Run MVN",
