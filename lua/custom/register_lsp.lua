@@ -3,7 +3,6 @@
 local m = {
 	lspreg = {
 		"yamlls",
-		"jdtls",
 		"intelephense",
 		"marksman",
 		"csharp_ls",
