@@ -8,10 +8,29 @@ local servers = {
 	"emmet_ls",
 }
 
+local function idxOf(array, value)
+	for i, v in ipairs(array) do
+		if v == value then
+			return i
+		end
+	end
+	return nil
+end
+
 local data_exists, custom_lsp = pcall(require, "custom.register_lsp")
 if data_exists then
 	for _, client in pairs(custom_lsp.lspreg) do
 		table.insert(servers, client)
+	end
+end
+
+local data_ok, unregis = pcall(require, "custom.register_lsp")
+if data_ok then
+	if unregis.skip_reg ~= nil then
+		for _, unreg in pairs(custom_lsp.skip_reg) do
+			local my_index = idxOf(servers, unreg)
+			table.remove(servers, my_index)
+		end
 	end
 end
 

@@ -11,5 +11,8 @@ local m = {
 		"kotlin_language_server",
 		-- tambahkan di bawah sini setelah melakukan :masoninstall
 	},
+	skipreg = {
+		"jdtls", -- tambahkan di bawah ini
+	},
 }
 return m
