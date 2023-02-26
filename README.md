@@ -22,7 +22,9 @@
 ## HOME
 
 ![home!](img/home.png)
+## Demo
 
+![LARAVEL!](img/demo.gif)
 ## Plugins Manager
 
 ![PlugManaget!](img/plugins_manager.png)
@@ -31,9 +33,6 @@
 ![PlugManaget!](img/coding.png)
 
 
-## PHP
-
-![LARAVEL!](img/laravel.jpeg)
 
 # Panduan Install Dan Konfigurasi NeoVim
 # Daftar Isi
