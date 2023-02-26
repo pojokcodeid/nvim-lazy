@@ -27,7 +27,7 @@ if run == 1 then
   augroup _lsp
        autocmd!
        " autocmd BufWritePre * lua vim.lsp.buf.format{timeout_ms =200, filter=format_filter}
-       autocmd BufWritePre * lua vim.lsp.buf.format{timeout_ms=1000 ,filter=format_filter}
+       autocmd BufWritePre * lua vim.lsp.buf.format{timeout_ms=2000 ,filter=format_filter}
     augroup end
   ]])
 end
