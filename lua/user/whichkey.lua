@@ -243,7 +243,6 @@ local mappings = {
 		},
 		r = { "<cmd>RunCode<CR>", "Run Code" },
 		f = { "<cmd>RunFile<CR>", "Run File" },
-		j = { "<cmd>Jaq float<CR>", "Run With Jaq" },
 		p = { "<cmd>RunProject<CR>", "Run Project" },
 		g = { "<cmd>ToggleTerm size=70 direction=float<cr>clear<cr>gradle run<cr>" .. trn, "Run Gradle" },
 		m = {
@@ -393,7 +392,6 @@ local mappings = {
 		l = { "<cmd>Lazy log<cr>", "Log" },
 		d = { "<cmd>Lazy debug<cr>", "Debug" },
 	},
-	["o"] = { "<cmd>SymbolsOutline<cr>", "Symbol Outline" },
 }
 
 local wkey = {}
