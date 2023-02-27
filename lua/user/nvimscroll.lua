@@ -6,4 +6,4 @@ scrollview.setup({
 	bg = "LightCyan",
 	ctermbg = 160,
 })
-vim.g.scrollview_excluded_filetypes = { "NvimTree", "vista_kind", "Outline" }
+vim.g.scrollview_excluded_filetypes = { "NvimTree", "vista_kind", "Outline", "neo-tree" }

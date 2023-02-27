@@ -1,8 +1,10 @@
 <div align="center">
 
 # Nvim-Lazy
+
 ![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
 ![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
+
 <p align="center">
   <a href="https://github.com/pojokcodeid/nvim-lazy/pulse">
     <img src="https://img.shields.io/github/last-commit/pojokcodeid/nvim-lazy?style=for-the-badge&logo=github&color=7dc4e4&logoColor=D9E0EE&labelColor=302D41"/>
@@ -28,20 +30,27 @@
 ## HOME
 
 ![home!](img/home.png)
+
 ## Demo
 
-![LARAVEL!](img/demo.gif)
+![demo!](img/demo.gif)
+
+## Treesitter dan LSP
+
+![demo!](img/ts_lsp.gif)
+
 ## Plugins Manager
 
 ![PlugManaget!](img/plugins_manager.png)
-## Layout
 
-![PlugManaget!](img/coding.png)
+<!-- ## Layout -->
 
-
+<!-- ![PlugManaget!](img/coding.png) -->
 
 # Panduan Install Dan Konfigurasi NeoVim
+
 ## Kunjungi <a href="https://github.com/pojokcodeid/nvim-lazy/wiki/">Wiki</a>
+
 ## Kebutuhan Dasar
 
 1. Install Neovim 8.0+ https://github.com/neovim/neovim/releases/tag/v0.8.2

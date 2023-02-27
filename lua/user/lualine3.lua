@@ -195,6 +195,7 @@ lualine.setup({
 			"toggleterm",
 			"lazy",
 			"mason",
+			"neo-tree",
 		},
 		always_divide_middle = true,
 	},
