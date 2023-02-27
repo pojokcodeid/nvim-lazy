@@ -29,6 +29,7 @@ return {
 	-- for show icon
 	{
 		"kyazdani42/nvim-web-devicons",
+		dependencies = { "DaikyXendo/nvim-material-icon" },
 		event = "BufRead",
 		config = function()
 			require("user.webdevicons")
