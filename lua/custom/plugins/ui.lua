@@ -15,15 +15,15 @@ return {
 	-- 		require("onedark").load()
 	-- 	end,
 	-- },
-	{
-		"marko-cerovac/material.nvim",
-		config = function()
-			vim.g.material_style = "palenight"
-			require("material").setup({
-				lualine_style = "stealth",
-			})
-		end,
-	},
+	-- {
+	-- 	"marko-cerovac/material.nvim",
+	-- 	config = function()
+	-- 		vim.g.material_style = "palenight"
+	-- 		require("material").setup({
+	-- 			lualine_style = "stealth",
+	-- 		})
+	-- 	end,
+	-- },
 	-- simbol outline
 	{
 		"simrat39/symbols-outline.nvim",
@@ -34,8 +34,8 @@ return {
 	},
 	-- {
 	-- 	"folke/tokyonight.nvim",
-	-- 	-- commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764",
-	-- 	lazy = false, -- make sure we load this during startup if it is your main colorscheme
+	-- 	commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764",
+	-- 	-- lazy = false, -- make sure we load this during startup if it is your main colorscheme
 	-- 	priority = 1000, -- make sure to load this before all the other start plugins
 	-- 	config = function()
 	-- 		local is_transparant = false
@@ -55,7 +55,7 @@ return {
 	-- 		require("onedark").load()
 	-- 	end,
 	-- },
-	-- { "lunarvim/lunar.nvim" },
+	{ "lunarvim/lunar.nvim" },
 	-- -- { "arcticicestudio/nord-vim" },
 	-- {
 	-- 	"catppuccin/nvim",
