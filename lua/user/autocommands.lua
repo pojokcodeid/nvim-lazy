@@ -35,6 +35,13 @@ vim.cmd([[
   augroup end
 ]])
 
+-- for fix error last close buffer
+vim.api.nvim_create_autocmd({ "QuitPre" }, {
+	callback = function()
+		vim.cmd("NvimTreeClose")
+	end,
+})
+
 -- Autoformat
 -- augroup _lsp
 --   autocmd!
