@@ -170,6 +170,11 @@ local lsp_info = {
 	--icon = " ",
 	icon = icons.ui.Gear .. "",
 }
+local lsp_progress = {}
+local data_exists, lspprogress = pcall(require, "lsp-progress")
+if data_exists then
+	lsp_progress = lspprogress.progress
+end
 
 lualine.setup({
 	options = {
@@ -202,7 +207,7 @@ lualine.setup({
 	sections = {
 		lualine_a = { branch },
 		lualine_b = { mode },
-		lualine_c = { diagnostics, lsp_info },
+		lualine_c = { diagnostics, lsp_info, lsp_progress },
 		-- lualine_c = { diagnostics, lsp_info, "lsp_progress" },
 		-- lualine_c = { file_name, lsp_info },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },

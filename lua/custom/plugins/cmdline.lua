@@ -10,7 +10,13 @@ return {
 		event = "BufWinEnter",
 		config = function()
 			vim.opt.lazyredraw = false
-			require("noice").setup()
+			require("noice").setup({
+				lsp = {
+					progress = {
+						enabled = false,
+					},
+				},
+			})
 		end,
 	},
 	{
