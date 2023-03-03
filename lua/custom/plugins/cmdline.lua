@@ -11,6 +11,12 @@ return {
 		config = function()
 			vim.opt.lazyredraw = false
 			require("noice").setup({
+				messages = {
+					enabled = false,
+				},
+				notify = {
+					enabled = false,
+				},
 				lsp = {
 					progress = {
 						enabled = false,
