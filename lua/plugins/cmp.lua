@@ -8,14 +8,6 @@ return {
 		"hrsh7th/cmp-path",
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-nvim-lua",
-		-- {
-		-- 	"hrsh7th/cmp-cmdline",
-		-- 	--event = "BufWinEnter",
-		-- 	event = "VeryLazy",
-		-- 	config = function()
-		-- 		require("user.cmdline")
-		-- 	end,
-		-- },
 	},
 	opts = function()
 		local cmp = require("cmp")
