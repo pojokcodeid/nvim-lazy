@@ -1,0 +1,80 @@
+{
+  "name": "font-awesome-5-codes-html",
+  "displayName": "Font awesome 5 HTML snippets",
+  "description": "Font awesome 5 HTML snippets",
+  "icon": "fontawesome_128px.png",
+  "version": "1.0.1",
+  "publisher": "mrdemonwolf",
+  "license": "See License section in README.md",
+  "homepage": "https://github.com/MrDemonWolf/font-awesome-5-codes-html/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrDemonWolf/font-awesome-5-codes-html.git"
+  },
+  "engines": {
+    "vscode": "^0.10.1"
+  },
+  "galleryBanner": {
+    "color": "#E6E0EA",
+    "theme": "light"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "blade",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "ejs",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "html",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "handlebars",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "latte",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "php",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "plaintext",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "razor",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "tpl",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "twig",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets.json"
+      }
+    ]
+  }
+}

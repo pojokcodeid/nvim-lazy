@@ -1,0 +1,105 @@
+{
+    "name": "laravel-blade-vscode",
+    "displayName": "Laravel Blade",
+    "description": "Snippets, Syntax Highlighting and Formatting for VS Code",
+    "publisher": "amirmarmul",
+    "version": "2.0.4",
+    "author": {
+        "name": "Amir Marmul",
+        "email": "amiruddinmarmul@gmail.com"
+    },
+    "homepage": "https://github.com/amirmarmul/laravel-blade-vscode",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/amirmarmul/laravel-blade-vscode"
+    },
+    "bugs": {
+        "url": "https://github.com/amirmarmul/laravel-blade-vscode/issues"
+    },
+    "icon": "images/icon.png",
+    "engines": {
+        "vscode": "^1.37.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Snippets"
+    ],
+    "keywords": [
+        "laravel",
+        "blade",
+        "snippet",
+        "highlighter",
+        "beautify"
+    ],
+    "activationEvents": [
+        "onLanguage:blade"
+    ],
+    "main": "./dist/extension.js",
+    "contributes": {
+        "languages": [
+            {
+                "id": "blade",
+                "aliases": [
+                    "Blade",
+                    "blade"
+                ],
+                "extensions": [
+                    ".blade.php"
+                ],
+                "configuration": "./src/languages/blade.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "php",
+                "scopeName": "text.html.php.blade",
+                "path": "./src/syntaxes/blade.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "php",
+                "path": "./src/snippets/snippets.json"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Blade Language",
+            "properties": {
+                "blade.format.enable": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Whether to enable/disable formatting."
+                },
+                "blade.newLine": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Insert an empty line at the end of file."
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "yarn run compile",
+        "compile": "tsc -p ./",
+        "lint": "eslint src --ext ts",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.1",
+        "@types/mocha": "^7.0.1",
+        "@types/node": "^12.11.7",
+        "@types/vscode": "^1.37.0",
+        "@typescript-eslint/eslint-plugin": "^2.18.0",
+        "@typescript-eslint/parser": "^2.18.0",
+        "eslint": "^6.8.0",
+        "glob": "^7.1.6",
+        "mocha": "^7.0.1",
+        "typescript": "^3.7.5",
+        "vscode-test": "^1.3.0"
+    },
+    "dependencies": {
+        "js-beautify": "^1.10.3"
+    },
+    "license": "MIT"
+}

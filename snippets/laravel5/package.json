@@ -1,0 +1,148 @@
+{
+    "name": "laravel5-snippets",
+    "displayName": "Laravel Snippets",
+    "description": "Laravel snippets for Visual Studio Code  (Support Laravel 5 and above)",
+    "version": "1.15.0",
+    "publisher": "onecentlin",
+    "author": {
+        "name": "Winnie Lin",
+        "email": "onecentlin@gmail.com",
+        "url": "https://devmanna.blogspot.com"
+    },
+    "homepage": "https://github.com/onecentlin/laravel5-snippets-vscode",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/onecentlin/laravel5-snippets-vscode"
+    },
+    "bugs": {
+        "url": "https://github.com/onecentlin/laravel5-snippets-vscode/issues"
+    },
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "keywords": [
+        "laravel",
+        "snippet",
+        "laravel5",
+        "laravel6",
+        "laravel7",
+        "laravel8",
+        "laravel9"
+    ],
+    "icon": "images/icon.png",
+    "galleryBanner": {
+        "color": "#f66f62",
+        "theme": "dark"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "php",
+                "path": "./snippets/auth.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/cache.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/config.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/console.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/cookie.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/crypt.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/db.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/eloquent.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/event.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/hash.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/helper.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/log.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/mail.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/redirect.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/relation.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/request.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/response.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/route.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/schema.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/session.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/storage.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/view.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/passport.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/str.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/broadcast.json"
+            },
+            {
+                "language": "blade",
+                "path": "./snippets/collective_form_html.json"
+            }
+        ]
+    }
+}

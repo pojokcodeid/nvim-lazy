@@ -3,8 +3,7 @@ if not status_ok then
 	return
 end
 
-local lpath = vim.fn.stdpath("config") .. "/my-snippets"
-
+local lpath = vim.fn.stdpath("config") .. "/snippets"
 
 -- kalau mau di pakai snipetnya baru di buaka remarknya karena bikin berat kalau load terus dan ga di pakai
 

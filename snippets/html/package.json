@@ -1,0 +1,54 @@
+{
+	"name": "html-snippets",
+	"displayName": "HTML/CSS/JavaScript Snippets",
+	"description": "HTML/CSS/JavaScript/Jade/Pug/Less/Sass/Stylus/ES6 Snippets Support",
+	"version": "1.0.6",
+	"publisher": "wscats",
+	"icon": "images/logo.png",
+	"engines": {
+		"vscode": "^1.40.0"
+	},
+	"keywords": [
+		"html",
+		"html5",
+		"css",
+		"css3",
+		"javascript",
+		"typescript",
+		"ES6",
+		"ES7",
+		"snippets"
+	],
+	"author": {
+		"name": "Eno Yao",
+		"email": "kalone.cool@gmail.com",
+		"url": "https://github.com/Wscats"
+	},
+	"galleryBanner": {
+		"color": "#58bc58",
+		"theme": "light"
+	},
+	"categories": [
+		"Programming Languages",
+		"Snippets"
+	],
+	"scripts": {
+		"build": "vsce package"
+	},
+	"contributes": {
+		"snippets": [
+			{
+				"language": "html",
+				"path": "./snippets/javascript.json"
+			},
+			{
+				"language": "html",
+				"path": "./javascript/javascript.json"
+			},
+			{
+				"language": "html",
+				"path": "./javascript/typescript.json"
+			}
+		]
+	}
+}

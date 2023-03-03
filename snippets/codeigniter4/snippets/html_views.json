@@ -1,0 +1,113 @@
+{
+  "Codeigniter4_VIEWS_ENDSECTION": {
+    "prefix": "ci4:views:endSection",
+    "lang": ["html"],
+    "body": ["<?= \\$this->endSection() ;?>$0"],
+    "description": "CodeIgniter 4 - Make end Section in View files"
+  },
+  "Codeigniter4_VIEWS_EXTEND": {
+    "prefix": "ci4:views:extend",
+    "lang": ["html"],
+    "body": ["<?= \\$this->extend('${1:layouts}') ;?>$0"],
+    "description": "CodeIgniter 4 - Using Layouts in Views"
+  },
+  "Codeigniter4_VIEWS_FOREACH": {
+    "prefix": "ci4:views:foreach",
+    "lang": ["html"],
+    "body": [
+      "<?php foreach (${1:\\$items} as ${2:\\$item}) : ?>",
+      "\t<${3:li}><?= ${4:\\$item}['${5:id}'] ?></${3:li}>",
+      "<?php endforeach ?>$0"
+    ],
+    "description": "CodeIgniter 4 - Make foreach in View files"
+  },
+  "Codeigniter4_VIEWS_IF": {
+    "prefix": "ci4:views:if",
+    "lang": ["html"],
+    "body": [
+      "<?php if (${1:condition}) : ?>",
+      "\t${2:<!-- TRUE -->}",
+      "<?php endif ?>$0"
+    ],
+    "description": "CodeIgniter 4 - Make if in View files"
+  },
+  "Codeigniter4_VIEWS_IF_ELSE": {
+    "prefix": "ci4:views:if-else",
+    "lang": ["html"],
+    "body": [
+      "<?php if (${1:condition}) : ?>",
+      "\t${2:<!-- TRUE -->}",
+      "<?php else : ?>",
+      "\t${3:<!-- FALSE -->}",
+      "<?php endif ?>$0"
+    ],
+    "description": "CodeIgniter 4 - Make if else in View files"
+  },
+  "Codeigniter4_VIEWS_IF_ELSEIF": {
+    "prefix": "ci4:views:if-elseif",
+    "lang": ["html"],
+    "body": [
+      "<?php if(${1:condition}) : ?>",
+      "\t${2:<!-- TRUE -->}",
+      "<?php elseif (${3:condition}) : ?>",
+      "\t${4:<!-- FALSE -->}",
+      "<?php endif ?>$0"
+    ],
+    "description": "CodeIgniter 4 - Make if elseif in View files"
+  },
+  "Codeigniter4_VIEWS_IF_ELSEIF_ELSE": {
+    "prefix": "ci4:views:if-elseif-else",
+    "lang": ["html"],
+    "body": [
+      "<?php if(${1:condition}) : ?>",
+      "\t${2:<!-- TRUE 1 -->}",
+      "<?php elseif (${3:condition}) : ?>",
+      "\t${4:<!-- TRUE 2 -->}",
+      "<?php else : ?>",
+      "\t${5:<!-- FALSE -->}",
+      "<?php endif ?>$0"
+    ],
+    "description": "CodeIgniter 4 - make if elseif else in View files"
+  },
+  "Codeigniter4_VIEWS_INCLUDE": {
+    "prefix": "ci4:views:include",
+    "lang": ["html"],
+    "body": ["<?= \\$this->include('${1:sidebar}') ;?>$0"],
+    "description": "CodeIgniter 4 - Including View Partials"
+  },
+  "Codeigniter4_VIEWS_PHP": {
+    "prefix": "ci4:views:php",
+    "lang": ["html"],
+    "body": ["<?php ${1:code} ;?>$0"],
+    "description": "CodeIgniter 4 - Make php tag in View files"
+  },
+  "Codeigniter4_VIEWS_PHP_ECHO": {
+    "prefix": "ci4:views:php-echo",
+    "lang": ["html"],
+    "body": ["<?= ${1:code} ;?>$0"],
+    "description": "CodeIgniter 4 - Make php echo tag in View files"
+  },
+  "Codeigniter4_VIEWS_RENDERSECTION": {
+    "prefix": "ci4:views:renderSection",
+    "lang": ["html"],
+    "body": ["<?= \\$this->renderSection('${1:content}') ;?>$0"],
+    "description": "CodeIgniter 4 - Make render Section in View files"
+  },
+  "Codeigniter4_VIEWS_SECTION": {
+    "prefix": "ci4:views:section",
+    "lang": ["html"],
+    "body": ["<?= \\$this->section('${1:content}') ;?>$0"],
+    "description": "CodeIgniter 4 - Make Section in View files"
+  },
+  "Codeigniter4_VIEWS_SECTION_ENDSECTION": {
+    "prefix": "ci4:views:section-endSection",
+    "lang": ["html"],
+    "body": [
+      "<?= \\$this->section('${1:content}') ;?>",
+      "${2:<!-- CODE HERE -->}",
+      "<?= \\$this->endSection() ;?>",
+      "$0"
+    ],
+    "description": "CodeIgniter 4 - Make Section with end Section in View files"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "Codeigniter4_Model_Config": {
+    "prefix": "ci4:model:config",
+    "lang": ["php"],
+    "body": [
+      "protected \\$table = '${1:tableName}';",
+      "protected \\$primaryKey = '${2:id}';",
+      "",
+      "protected \\$useAutoIncrement = ${3:true};",
+      "",
+      "protected \\$returnType = '${4:array}';",
+      "protected \\$useSoftDeletes = ${5:false};",
+      "",
+      "protected \\$allowedFields = ['${6:name}'];",
+      "",
+      "protected \\$useTimestamps = ${7:true};",
+      "protected \\$createdField = '${8:created_at}';",
+      "protected \\$updatedField = '${9:updated_at}';",
+      "protected \\$useTimestamps = '${10:deleted_at}';",
+      "",
+      "protected \\$validationRules = ${11:[]};",
+      "protected \\$validationMessages = ${12:[]};",
+      "protected \\$skipValidation = ${13:false};",
+      "$0"
+    ],
+    "description": "CodeIgniter 4 - Make Model Configuring"
+  }
+}

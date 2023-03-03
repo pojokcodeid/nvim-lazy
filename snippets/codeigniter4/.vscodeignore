@@ -1,0 +1,7 @@
+.vscode/**
+.vscode-test/**
+.gitignore
+vsc-extension-quickstart.md
+docs/**
+*.ex.json
+*.NOTE.md
