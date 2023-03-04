@@ -1,10 +1,22 @@
+local transparent = false
+local data_exists, custom_ui = pcall(require, "custom.ui")
+if not data_exists then
+	return
+end
+local transparent_mode = custom_ui.transparent_mode
+if transparent_mode ~= nil then
+	if transparent_mode == 1 then
+		transparent = true
+	end
+end
+
 require("catppuccin").setup({
 	flavour = "macchiato", -- latte, frappe, macchiato, mocha
 	background = { -- :h background
 		light = "latte",
 		dark = "macchiato",
 	},
-	transparent_background = true,
+	transparent_background = transparent,
 	show_end_of_buffer = false, -- show the '~' characters after the end of buffers
 	term_colors = false,
 	dim_inactive = {

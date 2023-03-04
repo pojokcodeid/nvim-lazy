@@ -57,9 +57,15 @@ m.section_separators = { left = "", right = " " }
 -- nord
 -- catppuccin
 -- dracula
-m.colorscheme = "sonokai"
+m.colorscheme = "gruvbox-baby"
 -- custom transparent mode
--- support gruvbox-baby, tokyonight, sonokai
+-- only support
+--  gruvbox-baby,
+--  tokyonight,
+--  sonokai,
+--  material
+--  onedark
+--  catppuccin
 -- 0 =off   1= on
-m.transparent_mode = 1
+m.transparent_mode = 0
 return m

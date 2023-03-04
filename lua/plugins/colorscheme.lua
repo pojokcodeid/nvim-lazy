@@ -80,6 +80,14 @@ if data_exists then
 	end
 end
 
+local transparent = false
+local transparent_mode = custom_ui.transparent_mode
+if transparent_mode ~= nil then
+	if transparent_mode == 1 then
+		transparent = true
+	end
+end
+
 return {
 	-- color scheme
 	{ "luisiacc/gruvbox-baby", lazy = true, enabled = gruvbox },
@@ -101,6 +109,9 @@ return {
 			vim.g.material_style = "palenight"
 			require("material").setup({
 				lualine_style = "stealth",
+				disable = {
+					background = transparent,
+				},
 			})
 		end,
 	},
@@ -112,6 +123,10 @@ return {
 			-- Lua
 			require("onedark").setup({
 				style = "darker",
+				transparent = transparent,
+				lualine = {
+					transparent = transparent,
+				},
 			})
 			require("onedark").load()
 		end,
