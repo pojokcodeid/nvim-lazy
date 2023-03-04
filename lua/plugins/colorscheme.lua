@@ -84,7 +84,13 @@ return {
 	-- color scheme
 	{ "luisiacc/gruvbox-baby", lazy = true, enabled = gruvbox },
 	{ "dracula/vim", enabled = dracula },
-	{ "folke/tokyonight.nvim", enabled = tokyonight },
+	{
+		"folke/tokyonight.nvim",
+		enabled = tokyonight,
+		config = function()
+			require("user.tokyonight")
+		end,
+	},
 	{ "arcticicestudio/nord-vim", enabled = nord },
 	{ "sainnhe/sonokai", enabled = sonokai },
 	{ "lunarvim/lunar.nvim", enabled = lunar },

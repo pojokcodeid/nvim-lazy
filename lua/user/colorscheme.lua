@@ -8,6 +8,12 @@ if data_exists then
 		else
 			colorscheme = "gruvbox-baby"
 		end
+		local transparent_mode = custom_ui.transparent_mode
+		if transparent_mode ~= nil then
+			if transparent_mode == 1 then
+				vim.g.gruvbox_baby_transparent_mode = 1
+			end
+		end
 	end
 end
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)

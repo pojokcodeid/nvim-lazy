@@ -31,5 +31,8 @@ m.status_icon = 0
 -- catppuccin
 -- dracula
 m.colorscheme = "gruvbox-baby"
-
+-- custom transparent mode
+-- support gruvbox-baby dan tokyonight
+-- 0 =off   1= on
+m.transparent_mode = 0
 return m
