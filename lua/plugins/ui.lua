@@ -1,6 +1,4 @@
 return {
-	-- color scheme
-	{ "luisiacc/gruvbox-baby", lazy = true },
 	-- dashboard
 	{
 		"goolord/alpha-nvim",
@@ -16,14 +14,7 @@ return {
 		-- dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
 		event = "BufWinEnter",
 		config = function()
-			local model = 0
-			if model == 1 then
-				require("user.lualine1")
-			elseif model == 2 then
-				require("user.lualine2")
-			else
-				require("user.lualine")
-			end
+			require("user.lualine")
 		end,
 	},
 	-- for show icon

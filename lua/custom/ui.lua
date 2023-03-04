@@ -14,4 +14,22 @@ m.lualine_style = 0
 -- 1 = vim icon " "
 -- 2 = vim icon " "
 m.status_icon = 0
+-- custom colorscheme
+-- colorscheme ready :
+
+-- tokyonight
+-- tokyonight-night
+-- tokyonight-storm
+-- tokyonight-day
+-- tokyonight-moon
+-- gruvbox-baby (default)
+-- sonokai
+-- material
+-- onedark
+-- lunar
+-- nord
+-- catppuccin
+-- dracula
+m.colorscheme = "gruvbox-baby"
+
 return m

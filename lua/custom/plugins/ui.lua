@@ -1,6 +1,6 @@
 return {
 	{ "dracula/vim" },
-	{ "luisiacc/gruvbox-baby", enabled = false },
+	{ "luisiacc/gruvbox-baby" },
 	-- { "folke/tokyonight.nvim" },
 	-- { "arcticicestudio/nord-vim" },
 	-- { "sainnhe/sonokai" },
