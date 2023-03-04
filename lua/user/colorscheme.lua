@@ -12,6 +12,7 @@ if data_exists then
 		if transparent_mode ~= nil then
 			if transparent_mode == 1 then
 				vim.g.gruvbox_baby_transparent_mode = 1
+				vim.g.sonokai_transparent_background = 2
 			end
 		end
 	end
