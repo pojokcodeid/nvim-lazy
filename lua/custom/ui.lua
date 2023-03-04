@@ -14,9 +14,36 @@ m.lualine_style = 0
 -- 1 = vim icon " "
 -- 2 = vim icon " "
 m.status_icon = 0
+-- start custom lualine style
+-- contoh style
+--   {
+--     { left = "│", right = "│" },
+--     { left = " ", right = " " },
+--   },
+--   {
+--     { left = " ", right = " " },
+--     { left = " ", right = "" },
+--   },
+--   {
+--     { left = " ", right = " " },
+--     { left = "", right = "" },
+--   },
+--   {
+--     { left = "", right = "" },
+--     { left = "", right = "" },
+--   },
+--   {
+--     { left = " ", right = " " },
+--     { left = "", right = "" },
+--   },
+-- }
+m.custom_lualine = false
+m.component_separators = { left = " ", right = " " }
+m.section_separators = { left = "", right = " " }
+-- end custom lualine style
+
 -- custom colorscheme
 -- colorscheme ready :
-
 -- tokyonight
 -- tokyonight-night
 -- tokyonight-storm
