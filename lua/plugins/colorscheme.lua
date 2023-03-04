@@ -97,7 +97,7 @@ return {
 		config = function()
 			require("dracula").setup({
 				colors = {
-					purple = "#BE6DB7",
+					purple = "#FCC76A",
 				},
 				transparent_bg = transparent,
 			})
