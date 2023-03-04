@@ -47,12 +47,44 @@ local diff = {
 	cond = hide_in_width,
 }
 
+-- for config style
+local component_separators = { left = "", right = "" }
+local section_separators = { left = "", right = "" }
+local icon_mode = ""
+local sts_mode = 0
+
+local data_exists, custom_ui = pcall(require, "custom.ui")
+if data_exists then
+	if type(custom_ui) == "table" then
+		if custom_ui.lualine_style == 1 then
+			component_separators = { left = "", right = "" }
+			section_separators = { left = "", right = "" }
+		elseif custom_ui.lualine_style == 2 then
+			component_separators = { left = "", right = "" }
+			section_separators = { left = " ", right = " " }
+		elseif custom_ui.lualine_style == 3 then
+			component_separators = { left = "", right = "" }
+			section_separators = { left = "", right = "" }
+		end
+
+		if custom_ui.status_icon == 1 then
+			icon_mode = " "
+			sts_mode = 1
+		elseif custom_ui.status_icon == 2 then
+			icon_mode = " "
+			sts_mode = 1
+		end
+	end
+end
+
 local mode = {
 	"mode",
 	fmt = function(str)
-		return "--" .. str .. "--"
-		-- return " " .. str
-		-- return " " .. str
+		if sts_mode == 0 then
+			return "--" .. str .. "--"
+		else
+			return icon_mode .. str
+		end
 	end,
 }
 
@@ -180,15 +212,8 @@ lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = "auto",
-		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
-		-- component_separators = { left = "", right = "" },
-		-- section_separators = { left = "", right = "" },
-		-- component_separators = { left = "", right = "" },
-		-- section_separators = { left = " ", right = " " },
-		-- component_separators = { left = "", right = "" },
-		-- section_separators = { left = "", right = "" },
-
+		component_separators = component_separators,
+		section_separators = section_separators,
 		disabled_filetypes = {
 			"TelescopePrompt",
 			"packer",
