@@ -91,7 +91,18 @@ end
 return {
 	-- color scheme
 	{ "luisiacc/gruvbox-baby", lazy = true, enabled = gruvbox },
-	{ "dracula/vim", enabled = dracula },
+	{
+		"Mofiqul/dracula.nvim",
+		enabled = dracula,
+		config = function()
+			require("dracula").setup({
+				colors = {
+					purple = "#BE6DB7",
+				},
+				transparent_bg = transparent,
+			})
+		end,
+	},
 	{
 		"folke/tokyonight.nvim",
 		enabled = tokyonight,
@@ -99,7 +110,14 @@ return {
 			require("user.tokyonight")
 		end,
 	},
-	{ "arcticicestudio/nord-vim", enabled = nord },
+	{
+		"shaunsingh/nord.nvim",
+		enabled = nord,
+		config = function()
+			vim.g.nord_disable_background = transparent
+			require("nord").set()
+		end,
+	},
 	{ "sainnhe/sonokai", enabled = sonokai },
 	{ "lunarvim/lunar.nvim", enabled = lunar },
 	{

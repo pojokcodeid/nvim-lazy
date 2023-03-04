@@ -57,7 +57,7 @@ m.section_separators = { left = "", right = " " }
 -- nord
 -- catppuccin
 -- dracula
-m.colorscheme = "gruvbox-baby"
+m.colorscheme = "dracula"
 -- custom transparent mode
 -- only support
 --  gruvbox-baby,
@@ -66,6 +66,8 @@ m.colorscheme = "gruvbox-baby"
 --  material
 --  onedark
 --  catppuccin
+--  nord
+--  dracula
 -- 0 =off   1= on
 m.transparent_mode = 0
 return m
