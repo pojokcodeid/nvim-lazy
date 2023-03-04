@@ -51,7 +51,7 @@ tokyonight.setup({
 	on_highlights = function(highlights, colors)
 		highlights.NvimTreeFolderIcon = {
 			bg = colors.none,
-			fg = "#FCC76A",
+			fg = "#e0af68",
 		}
 	end,
 })
