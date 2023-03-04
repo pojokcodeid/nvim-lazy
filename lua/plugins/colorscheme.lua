@@ -98,6 +98,7 @@ return {
 			require("dracula").setup({
 				colors = {
 					purple = "#FCC76A",
+					menu = "#282A36",
 				},
 				transparent_bg = transparent,
 			})
