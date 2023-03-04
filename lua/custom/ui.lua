@@ -57,7 +57,7 @@ m.section_separators = { left = "", right = " " }
 -- nord
 -- catppuccin
 -- dracula
-m.colorscheme = "dracula"
+m.colorscheme = "gruvbox-baby"
 -- custom transparent mode
 -- only support
 --  gruvbox-baby,
