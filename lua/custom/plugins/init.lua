@@ -67,24 +67,9 @@ return {
 			require("user.neoscroll")
 		end,
 	},
-	-- { "ahmedkhalf/project.nvim", commit = "628de7e433dd503e782831fe150bb750e56e55d6", event = "VeryLazy" },	  -- {
-	-- 	"linrongbin16/lsp-progress.nvim",
-	-- 	branch = "main",
-	-- 	event = { "VimEnter" },
-	-- 	config = function()
-	-- 		require("lsp-progress").setup({
-	-- 			format = function(client_messages)
-	-- 				local sign = "" -- nf-fa-gear \uf013
-	-- 				return #client_messages > 0 and (sign .. " " .. table.concat(client_messages, " ")) or sign
-	-- 			end,
-	-- 		})
-	-- 	end,
-	-- -- },
-	-- { "arkav/lualine-lsp-progress", event = "BufRead" },
-	-- { "j-hui/fidget.nvim", enabled = false },
-	--
+
+	-- { "ahmedkhalf/project.nvim", commit = "628de7e433dd503e782831fe150bb750e56e55d6", event = "VeryLazy" },	  --
 	-- additional plugins
-	-- active indent guide and indent text objects
 	-- makes some plugins dot-repeatable like leap
 	-- { "tpope/vim-repeat", event = "VeryLazy" },
 	-- better diagnostics list and others
@@ -118,18 +103,6 @@ return {
 	-- 	cmd = { "IndentOMatic" },
 	-- 	config = function()
 	-- 		require("user.indent-o-matic")
-	-- 	end,
-	-- },
-	-- Lsp Saga
-	-- {
-	-- 	"glepnir/lspsaga.nvim",
-	-- 	event = "BufRead",
-	-- 	config = function()
-	-- 		require("lspsaga").setup({})
-	-- 	end,
-	-- 	dependencies = { { "kyazdani42/nvim-web-devicons" } },
-	-- 	init = function()
-	-- 		require("user.lspsaga_config")
 	-- 	end,
 	-- },
 	-- Khusus Projek laravel baru di buka

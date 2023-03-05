@@ -44,19 +44,18 @@ m.section_separators = { left = "", right = " " }
 
 -- custom colorscheme
 -- colorscheme ready :
--- tokyonight
--- tokyonight-night
--- tokyonight-storm
--- tokyonight-day
--- tokyonight-moon
+-- tokyonight, tokyonight-night, tokyonight-storm, tokyonight-day, tokyonight-moon
 -- gruvbox-baby (default)
--- sonokai
--- material
--- onedark
+-- sonokai, sonokai_atlantis,
+-- sonokai_andromeda,sonokai_shusia,sonokai_maia,sonokai_espresso
+-- material, material_deepocean, material_palenight, material_lighter, material_darker
+-- onedark, onedark_darker, onedark_cool, onedark_deep,onedark_warm,
+-- onedark_warmer, onedark_light
 -- lunar
 -- nord
--- catppuccin
+-- catppuccin, catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 -- dracula
+-- nightfox, dayfox, dawnfox, duskfox, nordfox, terafox, carbonfox
 m.colorscheme = "gruvbox-baby"
 -- custom transparent mode
 -- only support
@@ -68,6 +67,7 @@ m.colorscheme = "gruvbox-baby"
 --  catppuccin
 --  nord
 --  dracula
+--  nightfox
 -- 0 =off   1= on
 m.transparent_mode = 0
 return m
