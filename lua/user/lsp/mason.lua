@@ -27,9 +27,11 @@ end
 local data_ok, unregis = pcall(require, "core.config")
 if data_ok then
 	if unregis.unregister_lsp ~= nil then
-		for _, unreg in pairs(custom_lsp.unregister_lsp) do
+		for _, unreg in pairs(unregis.unregister_lsp) do
 			local my_index = idxOf(servers, unreg)
-			table.remove(servers, my_index)
+			if my_index ~= nil then
+				table.remove(servers, my_index)
+			end
 		end
 	end
 end

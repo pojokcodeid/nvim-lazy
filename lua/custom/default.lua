@@ -113,3 +113,8 @@ vim.g.pcode_whichkey = {
 	},
 	["o"] = { "<cmd>SymbolsOutline<cr>", "Symbol Outline" },
 }
+
+-- https://github.com/CRAG666/code_runner.nvim
+vim.g.pcode_coderunner = {
+	javascript = "node $dir/$fileName",
+}

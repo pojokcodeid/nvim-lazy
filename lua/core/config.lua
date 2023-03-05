@@ -33,6 +33,7 @@ config = {
 	unregister_lsp = opt("unregister_lsp", {}),
 	null_ls_sources = opt("null_ls_sources", {}),
 	whichkey = opt("whichkey", {}),
+	coderunner = opt("coderunner", {}),
 }
 
 return config
