@@ -1,10 +1,8 @@
-local M = {}
-
 -- Untuk Ubah Dashboard
 -- 1. Buka remark dash board dibawah
 -- 2. Ubah dashboard sesuai keinginan dan kebutuhan
 
--- M.dashboard1 = {
+-- vim.g.pcode_dashboard1 = {
 -- 	[[                _      __                __    ]],
 -- 	[[    ___ ___    (____  / /__  _______ ___/ ___  ]],
 -- 	[[   / _ / _ \  / / _ \/  '_/ / __/ _ / _  / -_) ]],
@@ -12,7 +10,7 @@ local M = {}
 -- 	[[ /_/      |___/                                ]],
 -- }
 
--- M.dashboard2 = {
+-- vim.g.pcode_dashboard2 = {
 -- 	[[                               __                ]],
 -- 	[[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
 -- 	[[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
@@ -20,8 +18,6 @@ local M = {}
 -- 	[[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
 -- 	[[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
 -- }
--- M.footer = "PCode"
+-- vim.g.pcode_footer = "PCode"
 
-M.model = 1 -- isi dengan 1 atau 2 untuk model dashboard
-
-return M
+vim.g.pcode_model = 2 -- isi dengan 1 atau 2 untuk model dashboard

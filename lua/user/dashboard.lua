@@ -14,13 +14,11 @@ local board = {
 	[[|_|       |__/                                   ]],
 }
 
-local data_exists, custom_dasboard = pcall(require, "custom.dashboard")
+local data_exists, custom_dasboard = pcall(require, "core.config")
 if data_exists then
-	if type(custom_dasboard) == "table" then
-		local data_board = custom_dasboard.dashboard2
-		if data_board ~= nil then
-			board = data_board
-		end
+	local data_board = custom_dasboard.dashboard2
+	if data_board ~= nil then
+		board = data_board
 	end
 end
 
@@ -40,11 +38,9 @@ dashboard.section.buttons.val = {
 local function footer()
 	local footer_text = "Pojok Code"
 	if data_exists then
-		if type(custom_dasboard) == "table" then
-			local data_txt = custom_dasboard.footer
-			if data_txt ~= nil then
-				footer_text = data_txt
-			end
+		local data_txt = custom_dasboard.footer
+		if data_txt ~= nil then
+			footer_text = data_txt
 		end
 	end
 

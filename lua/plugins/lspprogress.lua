@@ -1,6 +1,6 @@
 local fidget = true
 local lualine = false
-local data_exists, custom_ui = pcall(require, "custom.ui")
+local data_exists, custom_ui = pcall(require, "core.config")
 if data_exists then
 	if type(custom_ui) == "table" then
 		if custom_ui.progress == 1 then

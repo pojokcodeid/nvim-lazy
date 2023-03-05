@@ -4,14 +4,12 @@ if not status_ok then
 end
 local transp = false
 local sidebar = "dark"
-local data_exists, custom_ui = pcall(require, "custom.ui")
+local data_exists, config = pcall(require, "core.config")
 if data_exists then
-	if type(custom_ui) == "table" then
-		local tras = custom_ui.transparent_mode
-		if tras ~= nil and tras == 1 then
-			transp = true
-			sidebar = "transparent"
-		end
+	local tras = config.transparent_mode
+	if tras == 1 then
+		transp = true
+		sidebar = "transparent"
 	end
 end
 tokyonight.setup({

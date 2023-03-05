@@ -4,21 +4,18 @@ local lst_style =
 local lst_material = { "material", "material_deepocean", "material_palenight", "material_lighter", "material_darker" }
 local lst_onedark =
 	{ "onedark", "onedark_darker", "onedark_cool", "onedark_deep,onedark_warm", "onedark_warmer", "onedark_light" }
-local data_exists, custom_ui = pcall(require, "custom.ui")
+local data_exists, config = pcall(require, "core.config")
 if data_exists then
-	if type(custom_ui) == "table" then
-		local color = custom_ui.colorscheme
-		if color ~= nil then
-			colorscheme = color
-		else
-			colorscheme = "gruvbox-baby"
-		end
-		local transparent_mode = custom_ui.transparent_mode
-		if transparent_mode ~= nil then
-			if transparent_mode == 1 then
-				vim.g.gruvbox_baby_transparent_mode = 1
-				vim.g.sonokai_transparent_background = 2
-			end
+	if config.colorscheme ~= nil then
+		colorscheme = config.colorscheme
+	else
+		colorscheme = "gruvbox-baby"
+	end
+	local transparent_mode = config.transparent_mode
+	if transparent_mode ~= nil then
+		if transparent_mode == 1 then
+			vim.g.gruvbox_baby_transparent_mode = 1
+			vim.g.sonokai_transparent_background = 2
 		end
 	end
 end

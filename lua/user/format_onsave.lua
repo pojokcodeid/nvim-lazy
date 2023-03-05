@@ -1,9 +1,9 @@
 local run = 0
-local data_exists, frmt = pcall(require, "custom.format_onsave")
+local data_exists, frmt = pcall(require, "core.config")
 if not data_exists then
 	run = 1
 end
-if frmt.disable == 0 then
+if frmt.format_on_save == 1 then
 	run = 1
 end
 

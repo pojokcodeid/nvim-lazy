@@ -12,19 +12,19 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local sources = {}
 
-local data_exists, data = pcall(require, "custom.null-ls")
+local data_exists, data = pcall(require, "core.config")
 if data_exists then
-	for _, cfg in pairs(data.sources) do
+	for _, cfg in pairs(data.null_ls_sources) do
 		table.insert(sources, cfg)
 	end
 end
 
 local run = 0
-local data_exists, frmt = pcall(require, "custom.format_onsave")
-if not data_exists then
+local ok, frmt = pcall(require, "core.config")
+if not ok then
 	run = 1
 end
-if frmt.disable == 0 then
+if frmt.format_on_save == 1 then
 	run = 1
 end
 

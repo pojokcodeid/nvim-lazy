@@ -9,13 +9,11 @@ dash_model = {
 	[[ /_/      |___/                                ]],
 }
 
-local data_exists, custom_dasboard = pcall(require, "custom.dashboard")
+local data_exists, custom_dasboard = pcall(require, "core.config")
 if data_exists then
-	if type(custom_dasboard) == "table" then
-		local board = custom_dasboard.dashboard1
-		if board ~= nil then
-			dash_model = board
-		end
+	local board = custom_dasboard.dashboard1
+	if board ~= nil then
+		dash_model = board
 	end
 end
 startify.section.header.val = dash_model
@@ -44,11 +42,9 @@ startify.section.bottom_buttons.val = {
 
 local footer_text = "Pojok Code"
 if data_exists then
-	if type(custom_dasboard) == "table" then
-		local data_txt = custom_dasboard.footer
-		if data_txt ~= nil then
-			footer_text = data_txt
-		end
+	local data_txt = custom_dasboard.footer
+	if data_txt ~= nil then
+		footer_text = data_txt
 	end
 end
 startify.section.footer.val = {

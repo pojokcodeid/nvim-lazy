@@ -395,11 +395,9 @@ local mappings = {
 }
 
 local wkey = {}
-local data_exists, key = pcall(require, "custom.whichkey")
+local data_exists, key = pcall(require, "core.config")
 if data_exists then
-	if type(key) == "table" then
-		wkey = key
-	end
+	wkey = key.whichkey
 end
 
 which_key.setup(setup)

@@ -22,10 +22,10 @@ _G.switch = function(param, case_table)
 	return def and def() or nil
 end
 
-local data_exists, custom_ui = pcall(require, "custom.ui")
+local data_exists, config = pcall(require, "core.config")
 if data_exists then
-	if type(custom_ui) == "table" then
-		local color = custom_ui.colorscheme
+	if config.colorscheme ~= nil then
+		local color = config.colorscheme
 		switch(color, {
 			["tokyonight"] = function()
 				gruvbox = false
@@ -206,7 +206,7 @@ if data_exists then
 end
 
 local transparent = false
-local transparent_mode = custom_ui.transparent_mode
+local transparent_mode = config.transparent_mode
 if transparent_mode ~= nil then
 	if transparent_mode == 1 then
 		transparent = true

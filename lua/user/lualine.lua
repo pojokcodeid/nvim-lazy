@@ -53,40 +53,38 @@ local section_separators = { left = "", right = "" }
 local icon_mode = ""
 local sts_mode = 0
 
-local data_exists, custom_ui = pcall(require, "custom.ui")
+local data_exists, custom_ui = pcall(require, "core.config")
 if data_exists then
-	if type(custom_ui) == "table" then
-		local ui_style = custom_ui.lualine_style
-		if ui_style ~= nil then
-			if custom_ui.lualine_style == 1 then
-				component_separators = { left = "", right = "" }
-				section_separators = { left = "", right = "" }
-			elseif custom_ui.lualine_style == 2 then
-				component_separators = { left = "", right = "" }
-				section_separators = { left = " ", right = " " }
-			elseif custom_ui.lualine_style == 3 then
-				component_separators = { left = "", right = "" }
-				section_separators = { left = "", right = "" }
-			end
+	local ui_style = custom_ui.lualine_style
+	if ui_style ~= nil then
+		if custom_ui.lualine_style == 1 then
+			component_separators = { left = "", right = "" }
+			section_separators = { left = "", right = "" }
+		elseif custom_ui.lualine_style == 2 then
+			component_separators = { left = "", right = "" }
+			section_separators = { left = " ", right = " " }
+		elseif custom_ui.lualine_style == 3 then
+			component_separators = { left = "", right = "" }
+			section_separators = { left = "", right = "" }
 		end
-		local ui_icon = custom_ui.status_icon
-		if ui_icon ~= nil then
-			if custom_ui.status_icon == 1 then
-				icon_mode = " "
-				sts_mode = 1
-			elseif custom_ui.status_icon == 2 then
-				icon_mode = " "
-				sts_mode = 1
-			end
+	end
+	local ui_icon = custom_ui.status_icon
+	if ui_icon ~= nil then
+		if custom_ui.status_icon == 1 then
+			icon_mode = " "
+			sts_mode = 1
+		elseif custom_ui.status_icon == 2 then
+			icon_mode = " "
+			sts_mode = 1
 		end
-		local custom_style = custom_ui.custom_lualine
-		if custom_style ~= nil and custom_style == true then
-			local comp = custom_ui.component_separators
-			local section = custom_ui.section_separators
-			if comp ~= nil and section ~= nil then
-				component_separators = comp
-				section_separators = section
-			end
+	end
+	local custom_style = custom_ui.custom_lualine
+	if custom_style ~= nil and custom_style == true then
+		local comp = custom_ui.component_separators
+		local section = custom_ui.section_separators
+		if comp ~= nil and section ~= nil then
+			component_separators = comp
+			section_separators = section
 		end
 	end
 end
