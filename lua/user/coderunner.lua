@@ -4,20 +4,21 @@ if not status_ok then
 end
 
 local rfile = {
-	-- java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
-	-- python = "python3 -u",
-	-- typescript = "deno run",
-	-- rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
-	-- -- cpp="gcc $fileName -lstdc++ -o $fileNameWithoutExt && $fileNameWithoutExt"
-	-- cpp = "g++ $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
-	-- scss = "sass $dir/$fileName $dir/$fileNameWithoutExt.css",
+	java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
+	python = "python3 -u",
+	typescript = "deno run",
+	rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
+	-- cpp="gcc $fileName -lstdc++ -o $fileNameWithoutExt && $fileNameWithoutExt"
+	cpp = "g++ $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
+	scss = "sass $dir/$fileName $dir/$fileNameWithoutExt.css",
+	javascript = "node $dir/$fileName",
 }
 
 local data_exists, runscript = pcall(require, "core.config")
 if data_exists then
 	if runscript.coderunner ~= nil then
+		rfile = vim.tbl_deep_extend("force", runscript.coderunner, rfile)
 	end
-	rfile = runscript.coderunner
 end
 
 code_runner.setup({
