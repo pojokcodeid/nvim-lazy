@@ -13,7 +13,7 @@ end
 
 local data_exists, custom_lsp = pcall(require, "core.config")
 if data_exists then
-	for _, client in pairs(custom_lsp.register_lsp) do
+	for _, client in pairs(custom_lsp.mason_ensure_installed) do
 		table.insert(servers, client)
 	end
 end
