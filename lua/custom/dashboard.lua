@@ -22,4 +22,4 @@
 
 -- 1 startify model
 -- 2 dashboard model
-vim.g.pcode_model = 2 -- isi dengan 1 atau 2 untuk model dashboard
+vim.g.pcode_model = 1 -- isi dengan 1 atau 2 untuk model dashboard

@@ -11,12 +11,24 @@ local diagnostics = null_ls.builtins.diagnostics
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local sources = {}
+local ensure_installed = {}
 
 local data_exists, data = pcall(require, "core.config")
 if data_exists then
 	for _, cfg in pairs(data.null_ls_sources) do
-		table.insert(sources, cfg)
+		sources = vim.tbl_deep_extend("force", cfg, sources)
 	end
+	-- load data null-ls
+	for _, nullls in pairs(data.null_ls_ensure_installed) do
+		table.insert(ensure_installed, nullls)
+	end
+end
+
+local mason_ok, mason_null_ls = pcall(require, "mason-null-ls")
+if mason_ok then
+	mason_null_ls.setup({
+		ensure_installed = ensure_installed,
+	})
 end
 
 local run = 0
@@ -31,6 +43,7 @@ end
 if run == 1 then
 	null_ls.setup({
 		debug = false,
+		ensure_installed = ensure_installed,
 		sources = sources,
 		--sources = {
 		--formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
@@ -66,6 +79,7 @@ if run == 1 then
 else
 	null_ls.setup({
 		debug = false,
+		ensure_installed = ensure_installed,
 		sources = sources,
 	})
 end

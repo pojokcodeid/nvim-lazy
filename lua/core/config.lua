@@ -34,6 +34,8 @@ config = {
 	null_ls_sources = opt("null_ls_sources", {}),
 	whichkey = opt("whichkey", {}),
 	coderunner = opt("coderunner", {}),
+	null_ls_ensure_installed = opt("null_ls_ensure_installed", {}),
+	dap_ensure_installed = opt("dap_ensure_installed", {}),
 }
 
 return config
