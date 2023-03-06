@@ -29,7 +29,7 @@ vim.g.pcode_transparent_mode = 0
 -- 0 disable progress
 -- 1 lualine lsp progress
 -- 2 fidget progress
-vim.g.pcode_progress = 1
+vim.g.pcode_progress = 2
 -- style
 -- 0 =  default
 -- 1 = { left = "", right = "" },
