@@ -105,6 +105,7 @@ vim.g.pcode_null_ls_sources = {
 
 -- dap instal hanya support linux dan mac
 -- https://github.com/jay-babu/mason-nvim-dap.nvim/blob/main/lua/mason-nvim-dap/mappings/source.lua
+-- atau gunakan :MasonInstall
 vim.g.pcode_dap_ensure_installed = {
 	-- "python",
 }
