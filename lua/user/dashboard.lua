@@ -16,7 +16,7 @@ local board = {
 
 local data_exists, custom_dasboard = pcall(require, "core.config")
 if data_exists then
-	local data_board = custom_dasboard.dashboard2
+	local data_board = custom_dasboard.header2
 	if data_board ~= nil then
 		board = data_board
 	end

@@ -11,7 +11,7 @@ dash_model = {
 
 local data_exists, custom_dasboard = pcall(require, "core.config")
 if data_exists then
-	local board = custom_dasboard.dashboard1
+	local board = custom_dasboard.header1
 	if board ~= nil then
 		dash_model = board
 	end

@@ -2,7 +2,7 @@
 -- 1. Buka remark dash board dibawah
 -- 2. Ubah dashboard sesuai keinginan dan kebutuhan
 
--- vim.g.pcode_dashboard1 = {
+-- vim.g.pcode_header1 = {
 -- 	[[                _      __                __    ]],
 -- 	[[    ___ ___    (____  / /__  _______ ___/ ___  ]],
 -- 	[[   / _ / _ \  / / _ \/  '_/ / __/ _ / _  / -_) ]],
@@ -10,7 +10,7 @@
 -- 	[[ /_/      |___/                                ]],
 -- }
 
--- vim.g.pcode_dashboard2 = {
+-- vim.g.pcode_header2 = {
 -- 	[[                               __                ]],
 -- 	[[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
 -- 	[[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
@@ -22,4 +22,4 @@
 
 -- 1 startify model
 -- 2 dashboard model
-vim.g.pcode_model = 2 -- isi dengan 1 atau 2 untuk model dashboard
+vim.g.pcode_model = 1 -- isi dengan 1 atau 2 untuk model dashboard
