@@ -73,19 +73,19 @@ vim.g.pcode_format_on_save = 1
 -- untuk referesi support language kunjungi link dibawah
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 vim.g.pcode_lsp_installer = {
-	"yamlls",
+	-- "yamlls",
 	-- tambahkan di bawah sini setelah melakukan :masoninstall
 }
 -- untuk referesi support language kunjungi link dibawah
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 vim.g.pcode_register_lsp = {
 	"yamlls",
-	"intelephense",
-	"marksman",
-	"csharp_ls",
-	"clangd",
-	"dartls",
-	"kotlin_language_server",
+	-- "intelephense",
+	-- "marksman",
+	-- "csharp_ls",
+	-- "clangd",
+	-- "dartls",
+	-- "kotlin_language_server",
 	-- tambahkan di bawah sini setelah melakukan :masoninstall
 }
 vim.g.pcode_unregister_lsp = {
