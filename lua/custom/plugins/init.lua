@@ -54,7 +54,7 @@ return {
 	-- better todo coloring and icon
 	{
 		"folke/todo-comments.nvim",
-		event = "BufRead",
+		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			require("todo-comments").setup()
 		end,
