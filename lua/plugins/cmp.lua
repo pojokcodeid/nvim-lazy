@@ -1,11 +1,13 @@
 local cmprg = false
 local cmpcalc = false
 local cmptag = false
+local lspghost_text = false
 local data_exists, custom_cmp = pcall(require, "core.config")
 if data_exists then
 	cmprg = custom_cmp.cmprg
 	cmpcalc = custom_cmp.cmpcalc
 	cmptag = custom_cmp.cmptag
+	lspghost_text = custom_cmp.lspghost_text
 end
 return {
 	"hrsh7th/nvim-cmp",
@@ -90,7 +92,7 @@ return {
 				documentation = cmp.config.window.bordered(),
 			},
 			experimental = {
-				ghost_text = true,
+				ghost_text = lspghost_text,
 				native_menu = false,
 			},
 		}

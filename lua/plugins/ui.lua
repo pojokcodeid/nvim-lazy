@@ -32,9 +32,14 @@ return {
 		-- event = "BufWinEnter",
 		cmd = { "NvimTree", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeClose" },
 		-- dependencies = "kyazdani42/nvim-web-devicons",
-		-- config = function()
-		-- 	require("user.nvim-tree")
-		-- end,
+		config = function()
+			local data_exists, treeconfig = pcall(require, "core.config")
+			if data_exists then
+				if treeconfig.loadnvimtree_lazy then
+					require("user.nvim-tree")
+				end
+			end
+		end,
 	},
 	-- for file tab
 	{

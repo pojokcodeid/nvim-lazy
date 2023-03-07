@@ -163,7 +163,7 @@ return {
 	-- for Speed up loading Lua modules in Neovim to improve startup time.
 	{
 		"lewis6991/impatient.nvim",
-		event = "BufRead",
+		event = "VeryLazy",
 		config = function()
 			require("user.impatient")
 		end,
@@ -217,8 +217,26 @@ return {
 	-- for popup alert
 	{
 		"rcarriga/nvim-notify",
-		event = "BufWinEnter",
-		config = function()
+		keys = {
+			{
+				"<leader>un",
+				function()
+					require("notify").dismiss({ silent = true, pending = true })
+				end,
+				desc = "Delete all Notifications",
+			},
+		},
+		opts = {
+			timeout = 3000,
+			max_height = function()
+				return math.floor(vim.o.lines * 0.75)
+			end,
+			max_width = function()
+				return math.floor(vim.o.columns * 0.75)
+			end,
+		},
+		-- event = "BufWinEnter",
+		init = function()
 			local notify = require("notify")
 			-- this for transparency
 			notify.setup({ background_colour = "#000000" })
@@ -237,12 +255,20 @@ return {
 	-- for popup input
 	{
 		"stevearc/dressing.nvim",
-		event = "BufWinEnter",
-		config = function()
-			require("user.dressing")
+		lazy = true,
+		init = function()
+			---@diagnostic disable-next-line: duplicate-set-field
+			vim.ui.select = function(...)
+				require("lazy").load({ plugins = { "dressing.nvim" } })
+				return vim.ui.select(...)
+			end
+			---@diagnostic disable-next-line: duplicate-set-field
+			vim.ui.input = function(...)
+				require("lazy").load({ plugins = { "dressing.nvim" } })
+				return vim.ui.input(...)
+			end
 		end,
-	},
-	-- mini scrollview
+	}, -- mini scrollview
 	{
 		"karb94/neoscroll.nvim",
 		event = "BufRead",
@@ -275,5 +301,6 @@ return {
 			require("user.gitsigns")
 		end,
 	},
-	-- for loading info
+	-- remove duplicate
+	{ "tpope/vim-repeat", event = "VeryLazy" },
 }

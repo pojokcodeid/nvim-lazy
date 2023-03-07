@@ -12,7 +12,7 @@
 -- catppuccin, catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 -- dracula
 -- nightfox, dayfox, dawnfox, duskfox, nordfox, terafox, carbonfox
-vim.g.pcode_colorscheme = "gruvbox-baby"
+vim.g.pcode_colorscheme = "tokyonight"
 
 -- custom transparent mode
 -- only support
@@ -31,7 +31,7 @@ vim.g.pcode_transparent_mode = 0
 -- 0 disable progress
 -- 1 lualine lsp progress
 -- 2 fidget progress
-vim.g.pcode_progress = 1
+vim.g.pcode_progress = 2
 
 -- style
 -- 0 =  default
@@ -85,7 +85,10 @@ vim.g.pcode_lsp_installer = {
 }
 
 -- use for lsp diagnostics virtual text
-vim.g.pcode_lsp_virtualtext = false
+vim.g.pcode_lsp_virtualtext = true
+
+-- use for lsp ghost text config
+vim.g.pcode_lspghost_text = true
 
 -- untuk referesi support language kunjungi link dibawah
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
@@ -145,3 +148,6 @@ vim.g.pcode_coderunner = {
 vim.g.pcode_cmprg = false --https://github.com/lukas-reineke/cmp-rg
 vim.g.pcode_cmpcalc = false --https://github.com/hrsh7th/cmp-calc
 vim.g.pcode_cmptag = false --https://github.com/quangnguyen30192/cmp-nvim-tags
+
+-- load nvim-tree or not
+vim.g.pcode_loadnvimtree_lazy = true

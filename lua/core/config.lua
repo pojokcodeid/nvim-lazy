@@ -40,6 +40,8 @@ config = {
 	cmpcalc = opt("cmpcalc", false),
 	cmptag = opt("cmptag", false),
 	lsp_virtualtext = opt("lsp_virtualtext", false),
+	lspghost_text = opt("lspghost_text", false),
+	loadnvimtree_lazy = opt("loadnvimtree_lazy", false),
 }
 
 return config
