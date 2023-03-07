@@ -13,6 +13,7 @@
 -- dracula
 -- nightfox, dayfox, dawnfox, duskfox, nordfox, terafox, carbonfox
 vim.g.pcode_colorscheme = "gruvbox-baby"
+
 -- custom transparent mode
 -- only support
 --  gruvbox-baby,
@@ -26,21 +27,25 @@ vim.g.pcode_colorscheme = "gruvbox-baby"
 --  nightfox
 -- 0 =off   1= on
 vim.g.pcode_transparent_mode = 0
+
 -- 0 disable progress
 -- 1 lualine lsp progress
 -- 2 fidget progress
-vim.g.pcode_progress = 2
+vim.g.pcode_progress = 1
+
 -- style
 -- 0 =  default
 -- 1 = { left = "", right = "" },
 -- 2 = { left = " ", right = " " },
 -- 3 = { left = "", right = "" },
 vim.g.pcode_lualine_style = 0
+
 -- style status icon
 -- 0 = default
 -- 1 = vim icon " "
 -- 2 = vim icon " "
 vim.g.pcode_status_icon = 0
+
 -- start custom lualine style
 -- contoh style
 --   {
@@ -67,8 +72,10 @@ vim.g.pcode_status_icon = 0
 vim.g.pcode_custom_lualine = false
 vim.g.pcode_component_separators = { left = " ", right = " " }
 vim.g.pcode_section_separators = { left = "", right = " " }
+
 -- 0 ( format jalan)  1 (fromat off)
 vim.g.pcode_format_on_save = 1
+
 -- ini hanya untuk lsp yg tidak support masson
 -- untuk referesi support language kunjungi link dibawah
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
@@ -76,6 +83,10 @@ vim.g.pcode_lsp_installer = {
 	-- "yamlls",
 	-- tambahkan di bawah sini setelah melakukan :masoninstall
 }
+
+-- use for lsp diagnostics virtual text
+vim.g.pcode_lsp_virtualtext = false
+
 -- untuk referesi support language kunjungi link dibawah
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 vim.g.pcode_mason_ensure_installed = { -- sebelumnya register_lsp
@@ -129,3 +140,8 @@ vim.g.pcode_whichkey = {
 vim.g.pcode_coderunner = {
 	go = "go run $fileName",
 }
+
+-- config for optional cmp
+vim.g.pcode_cmprg = false --https://github.com/lukas-reineke/cmp-rg
+vim.g.pcode_cmpcalc = false --https://github.com/hrsh7th/cmp-calc
+vim.g.pcode_cmptag = false --https://github.com/quangnguyen30192/cmp-nvim-tags

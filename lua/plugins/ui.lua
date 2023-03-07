@@ -32,9 +32,9 @@ return {
 		-- event = "BufWinEnter",
 		cmd = { "NvimTree", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeClose" },
 		-- dependencies = "kyazdani42/nvim-web-devicons",
-		config = function()
-			require("user.nvim-tree")
-		end,
+		-- config = function()
+		-- 	require("user.nvim-tree")
+		-- end,
 	},
 	-- for file tab
 	{

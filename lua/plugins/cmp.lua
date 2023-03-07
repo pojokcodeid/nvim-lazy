@@ -1,3 +1,12 @@
+local cmprg = false
+local cmpcalc = false
+local cmptag = false
+local data_exists, custom_cmp = pcall(require, "core.config")
+if data_exists then
+	cmprg = custom_cmp.cmprg
+	cmpcalc = custom_cmp.cmpcalc
+	cmptag = custom_cmp.cmptag
+end
 return {
 	"hrsh7th/nvim-cmp",
 	version = false, -- last release is way too old
@@ -8,6 +17,9 @@ return {
 		"hrsh7th/cmp-path",
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-nvim-lua",
+		{ "lukas-reineke/cmp-rg", enabled = cmprg }, -- experimental
+		{ "hrsh7th/cmp-calc", enabled = cmpcalc }, -- experimental
+		{ "quangnguyen30192/cmp-nvim-tags", enabled = cmptag }, -- experimental
 	},
 	opts = function()
 		local cmp = require("cmp")
@@ -56,6 +68,9 @@ return {
 				{ name = "buffer" },
 				{ name = "path" },
 				{ name = "nvim_lua" },
+				{ name = "rg" }, -- experimental
+				{ name = "calc" }, -- experimental
+				{ name = "tags" }, --experimental
 			}),
 			formatting = {
 				fields = { "kind", "abbr", "menu" },

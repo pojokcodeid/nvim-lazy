@@ -36,6 +36,10 @@ config = {
 	coderunner = opt("coderunner", {}),
 	null_ls_ensure_installed = opt("null_ls_ensure_installed", {}),
 	dap_ensure_installed = opt("dap_ensure_installed", {}),
+	cmprg = opt("cmprg", false),
+	cmpcalc = opt("cmpcalc", false),
+	cmptag = opt("cmptag", false),
+	lsp_virtualtext = opt("lsp_virtualtext", false),
 }
 
 return config
