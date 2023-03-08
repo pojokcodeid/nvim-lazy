@@ -5,8 +5,6 @@ return {
 		"folke/noice.nvim",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-			"nvim-treesitter/nvim-treesitter",
 		},
 		-- event = "BufWinEnter",
 		event = "VeryLazy",
@@ -19,6 +17,12 @@ return {
 			},
 			lsp = {
 				progress = {
+					enabled = false,
+				},
+				hover = {
+					enabled = false,
+				},
+				signature = {
 					enabled = false,
 				},
 			},
@@ -97,7 +101,8 @@ return {
 	},
 	{
 		"hrsh7th/cmp-cmdline",
-		event = "BufWinEnter",
+		-- event = "BufWinEnter",
+		event = "VeryLazy",
 		config = function()
 			local cmp = require("cmp")
 			local mapping = {

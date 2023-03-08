@@ -68,7 +68,7 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
-		event = "BufWinEnter",
+		event = "VeryLazy",
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
 		},
@@ -247,7 +247,7 @@ return {
 	-- for resize screen
 	{
 		"mrjones2014/smart-splits.nvim",
-		event = "BufWinEnter",
+		event = "VeryLazy",
 		config = function()
 			require("user.smartspit")
 		end,

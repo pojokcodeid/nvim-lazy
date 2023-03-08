@@ -12,7 +12,7 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		-- dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
-		event = "BufWinEnter",
+		event = "BufRead",
 		config = function()
 			require("user.lualine")
 		end,
@@ -48,7 +48,7 @@ return {
 	},
 	{
 		"akinsho/bufferline.nvim",
-		event = "BufWinEnter",
+		event = "BufRead",
 		config = function()
 			require("user.bufferline")
 		end,
