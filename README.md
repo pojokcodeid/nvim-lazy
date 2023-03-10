@@ -16,7 +16,12 @@
     <img src="https://img.shields.io/github/stars/pojokcodeid/nvim-lazy?style=for-the-badge&logo=apachespark&color=eed49f&logoColor=D9E0EE&labelColor=302D41"/>
   </a>
   <a href="https://github.com/pojokcodeid/nvim-lazy/blob/main/LICENSE"><img src="https://img.shields.io/github/license/pojokcodeid/nvim-lazy?color=%2361afef&style=for-the-badge"></a>
-  <a href="https://github.com/pojokcodeid/nvim-lazy/issues"><img src="https://img.shields.io/github/issues/pojokcodeid/nvim-lazy?color=%23d19a66&style=for-the-badge"></a>
+  <a href="https://github.com/pojokcodeid/nvim-lazy/issues">
+  <img
+        alt="Issues"
+        src="https://img.shields.io/github/issues-raw/pojokcodeid/nvim-lazy?colorA=363A4f&colorB=F5A97F&logo=github&logoColor=D9E0EE&style=for-the-badge">
+    </a>
+  </a>
   <a href="https://github.com/pojokcodeid/nvim-lazy">
       <img alt="Repo Size" src="https://img.shields.io/github/repo-size/pojokcodeid/nvim-lazy?color=%23DDB6F2&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=D9E0EE&labelColor=302D41" />
     </a>
