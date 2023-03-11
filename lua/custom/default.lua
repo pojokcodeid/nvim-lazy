@@ -110,12 +110,6 @@ vim.g.pcode_unregister_lsp = {
 vim.g.pcode_null_ls_ensure_installed = {
 	"stylua",
 }
-local formatting = {}
-local diagnostics = {}
-vim.g.pcode_null_ls_sources = {
-	formatting.stylua, -- tambahkan di bawah sini
-	diagnostics.flake8, -- tambahkan di bawah sini
-}
 
 -- dap instal hanya support linux dan mac
 -- https://github.com/jay-babu/mason-nvim-dap.nvim/blob/main/lua/mason-nvim-dap/mappings/source.lua

@@ -13,11 +13,15 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local sources = {}
 local ensure_installed = {}
 
+local data_ok, data_sources = pcall(require, "custom.null-ls")
+if data_ok then
+	for _, cfg in pairs(data_sources.sources) do
+		table.insert(sources, cfg)
+	end
+end
+
 local data_exists, data = pcall(require, "core.config")
 if data_exists then
-	for _, cfg in pairs(data.null_ls_sources) do
-		sources = vim.tbl_deep_extend("force", cfg, sources)
-	end
 	-- load data null-ls
 	for _, nullls in pairs(data.null_ls_ensure_installed) do
 		table.insert(ensure_installed, nullls)
