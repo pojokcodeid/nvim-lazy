@@ -8,6 +8,7 @@ return {
 	-- coloring code
 	{
 		"nvim-treesitter/nvim-treesitter",
+		lazy = true,
 		event = "BufRead",
 		cmd = {
 			"TSBufDisable",
@@ -42,6 +43,7 @@ return {
 	-- snippets
 	{
 		"L3MON4D3/LuaSnip",
+		lazy = true,
 		dependencies = {
 			"rafamadriz/friendly-snippets",
 			config = function()
@@ -95,13 +97,15 @@ return {
 	-- },
 	{
 		"williamboman/mason.nvim",
+		lazy = true,
 		cmd = "Mason",
 		keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
 	},
 	-- for formater linter
-	{ "RRethy/vim-illuminate", event = "BufRead" },
+	{ "RRethy/vim-illuminate", event = "BufRead", lazy = true },
 	{
 		"jayp0521/mason-null-ls.nvim",
+		lazy = true,
 		dependencies = "jose-elias-alvarez/null-ls.nvim",
 		event = "BufRead",
 		opts = function()
@@ -128,10 +132,11 @@ return {
 		end,
 	},
 	-- for install lsp tidak support mason
-	{ "williamboman/nvim-lsp-installer", event = "VeryLazy" },
+	{ "williamboman/nvim-lsp-installer", event = "VeryLazy", lazy = true },
 	-- auto pairs
 	{
 		"windwp/nvim-autopairs",
+		lazy = true,
 		commit = "4fc96c8f3df89b6d23e5092d31c866c53a346347",
 		dependencies = "hrsh7th/nvim-cmp",
 		event = "InsertEnter",
@@ -142,6 +147,7 @@ return {
 	-- untuk comment
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
+		lazy = true,
 		event = "BufRead",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 	},

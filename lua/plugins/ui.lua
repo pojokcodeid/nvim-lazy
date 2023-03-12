@@ -29,7 +29,7 @@ return {
 	-- for tree exploler
 	{
 		"kyazdani42/nvim-tree.lua",
-		-- event = "BufWinEnter",
+		event = "InsertEnter",
 		cmd = { "NvimTree", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeClose" },
 		-- dependencies = "kyazdani42/nvim-web-devicons",
 		config = function()
@@ -59,8 +59,8 @@ return {
 	{
 		"akinsho/toggleterm.nvim",
 		cmd = "Toggleterm",
-		event = "BufWinEnter",
-		init = function()
+		event = "VeryLazy",
+		config = function()
 			require("user.toggleterm")
 		end,
 	},
@@ -68,7 +68,7 @@ return {
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
-		init = function()
+		config = function()
 			require("user.whichkey")
 		end,
 	},
