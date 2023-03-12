@@ -9,12 +9,12 @@ return {
 			require("symbols-outline").setup()
 		end,
 	},
-	{
-		"nvim-lualine/lualine.nvim",
-		lazy = true,
-		event = "BufWinEnter",
-		config = function()
-			require("user.lualine")
-		end,
-	},
+	-- {
+	-- 	"nvim-lualine/lualine.nvim",
+	-- 	lazy = true,
+	-- 	event = "BufWinEnter",
+	-- 	config = function()
+	-- 		require("user.lualine")
+	-- 	end,
+	-- },
 }

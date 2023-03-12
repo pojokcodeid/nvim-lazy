@@ -6,8 +6,7 @@ return {
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 		},
-		-- event = "BufWinEnter",
-		event = "VeryLazy",
+		event = "BufWinEnter",
 		opts = {
 			messages = {
 				enabled = false,
@@ -101,7 +100,6 @@ return {
 	},
 	{
 		"hrsh7th/cmp-cmdline",
-		-- event = "BufWinEnter",
 		event = "VeryLazy",
 		config = function()
 			local cmp = require("cmp")
