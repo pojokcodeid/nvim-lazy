@@ -1,10 +1,18 @@
-vim.opt.lazyredraw = false
+-- initial gui app
+local is_neovide = false
+local use_noice = true
+if vim.g.neovide then
+	is_neovide = true
+	use_noice = false
+end
+vim.opt.lazyredraw = is_neovide
 return {
 	{ "gelguy/wilder.nvim", enabled = false },
 	{
 		"folke/noice.nvim",
+		enabled = use_noice,
 		dependencies = {
-			"MunifTanjim/nui.nvim",
+			{ "MunifTanjim/nui.nvim", enabled = use_noice },
 		},
 		event = "BufWinEnter",
 		opts = {
