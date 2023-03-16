@@ -85,7 +85,7 @@ vim.g.pcode_lsp_installer = {
 }
 
 -- use for lsp diagnostics virtual text
-vim.g.pcode_lsp_virtualtext = true
+vim.g.pcode_lsp_virtualtext = false
 
 -- use for lsp ghost text config
 vim.g.pcode_lspghost_text = true
@@ -130,6 +130,11 @@ vim.g.pcode_whichkey = {
 		j = { "<cmd>Jaq float<CR>", "Run With Jaq" },
 	},
 	["o"] = { "<cmd>SymbolsOutline<cr>", "Symbol Outline" },
+	["m"] = {
+		name = "Minimap",
+		c = { "<cmd>lua require('mini.map').close()<cr>", "Minimap Close" },
+		o = { "<cmd>lua require('mini.map').open()<cr>", "Minimap Open" },
+	},
 }
 
 -- https://github.com/CRAG666/code_runner.nvim

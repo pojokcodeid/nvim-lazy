@@ -7,6 +7,7 @@ end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.diagnostic.config({ virtual_lines = false })
 require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
