@@ -1,6 +1,6 @@
 return {
 	"ErichDonGubler/lsp_lines.nvim",
-	event = "VimEnter",
+	event = "BufRead",
 	config = function()
 		require("lsp_lines").setup()
 		vim.api.nvim_create_autocmd("FileType", {
