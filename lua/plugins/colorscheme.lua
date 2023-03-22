@@ -222,8 +222,11 @@ return {
 		config = function()
 			require("dracula").setup({
 				colors = {
-					purple = "#FCC76A",
+					-- purple = "#FCC76A",
 					menu = "#282A36",
+				},
+				overrides = {
+					NvimTreeFolderIcon = { fg = "#FCC76A" },
 				},
 				transparent_bg = transparent,
 			})
