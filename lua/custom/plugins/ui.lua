@@ -17,4 +17,5 @@ return {
 	-- 		require("user.lualine")
 	-- 	end,
 	-- },
+	{ "RRethy/vim-illuminate", event = "BufRead", enabled = false },
 }
