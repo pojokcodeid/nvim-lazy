@@ -276,6 +276,9 @@ return {
 			-- Lua
 			require("onedark").setup({
 				style = onedark_style,
+				highlights = {
+					-- NvimTreeFolderIcon = { fg = "#FCC76A" },
+				},
 				transparent = transparent,
 				lualine = {
 					transparent = transparent,
