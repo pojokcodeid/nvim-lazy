@@ -85,7 +85,7 @@ vim.g.pcode_lsp_installer = {
 }
 
 -- use for lsp diagnostics virtual text
-vim.g.pcode_lsp_virtualtext = false
+vim.g.pcode_lsp_virtualtext = true
 
 -- use for lsp ghost text config
 vim.g.pcode_lspghost_text = true
