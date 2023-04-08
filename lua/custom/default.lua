@@ -12,7 +12,7 @@
 -- catppuccin, catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 -- dracula
 -- nightfox, dayfox, dawnfox, duskfox, nordfox, terafox, carbonfox
-vim.g.pcode_colorscheme = "material_palenight"
+vim.g.pcode_colorscheme = "gruvbox-baby"
 
 -- custom transparent mode
 -- only support
