@@ -1,7 +1,7 @@
 vim.g.codeium_disable_bindings = 1
 return {
 	"Exafunction/codeium.vim",
-	enabled = false,
+	enabled = true,
 	event = "VeryLazy",
 	config = function()
 		-- Change '<C-g>' here to any keycode you like.
