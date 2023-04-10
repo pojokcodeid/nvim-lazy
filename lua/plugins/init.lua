@@ -123,7 +123,7 @@ return {
 		end,
 	},
 	{
-		"jayp0521/mason-nvim-dap.nvim",
+		"jay-babu/mason-nvim-dap.nvim",
 		event = "VeryLazy",
 		dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
 		enabled = vim.fn.has("win32") == 0,
