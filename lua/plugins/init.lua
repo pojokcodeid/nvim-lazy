@@ -142,7 +142,7 @@ return {
 	-- debuging
 	{
 		"rcarriga/nvim-dap-ui",
-		event = "BufWinEnter",
+		event = "BufRead",
 		dependencies = "mfussenegger/nvim-dap",
 		enabled = vim.fn.has("win32") == 0,
 		config = function()
@@ -151,10 +151,10 @@ return {
 	},
 	{
 		"jay-babu/mason-nvim-dap.nvim",
-		event = "VeryLazy",
+		event = "BufRead",
 		dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
 		enabled = vim.fn.has("win32") == 0,
-		init = function()
+		config = function()
 			require("user.mason_dap")
 		end,
 	},

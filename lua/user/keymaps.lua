@@ -97,7 +97,7 @@ end
 -- if pcall(require, "dap") then
 -- modified function keys found with `showkey -a` in the terminal to get key code
 -- run `nvim -V3log +quit` and search through the "Terminal info" in the `log` file for the correct keyname
-if pcall(require, "dap") then
+if vim.fn.has("win32") == 0 then
 	map("n", "<F5>", function()
 		require("dap").continue()
 	end, "")
