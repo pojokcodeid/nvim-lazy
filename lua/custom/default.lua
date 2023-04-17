@@ -88,7 +88,7 @@ vim.g.pcode_lsp_installer = {
 vim.g.pcode_lsp_virtualtext = true
 
 -- use for lsp ghost text config
-vim.g.pcode_lspghost_text = true
+vim.g.pcode_lspghost_text = false
 
 -- untuk referesi support language kunjungi link dibawah
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
