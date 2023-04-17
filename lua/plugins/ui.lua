@@ -58,8 +58,9 @@ return {
 	-- for view terminal
 	{
 		"akinsho/toggleterm.nvim",
-		cmd = "Toggleterm",
-		event = "VeryLazy",
+		lazy = true,
+		cmd = { "ToggleTerm" },
+		event = "BufRead",
 		config = function()
 			require("user.toggleterm")
 		end,
