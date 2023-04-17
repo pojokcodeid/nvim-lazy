@@ -2,7 +2,7 @@ vim.g.codeium_disable_bindings = 1
 return {
 	"Exafunction/codeium.vim",
 	enabled = true,
-	event = "VeryLazy",
+	event = "InsertEnter",
 	config = function()
 		-- Change '<C-g>' here to any keycode you like.
 		vim.keymap.set("i", "<C-g>", function()

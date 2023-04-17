@@ -288,7 +288,7 @@ return {
 	{
 		"lewis6991/impatient.nvim",
 		-- commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6",
-		event = "VeryLazy",
+		event = "BufRead",
 		init = function()
 			require("user.impatient")
 		end,

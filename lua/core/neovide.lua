@@ -7,7 +7,7 @@ if vim.g.neovide then
 	vim.keymap.set("c", "<c-v>", "<C-R>+") -- Paste command mode
 	vim.keymap.set("i", "<c-v>", '<ESC>l"+Pli') -- Paste insert mode
 
-	vim.o.guifont = "CaskaydiaCove_Nerd_Font:h17"
+	vim.o.guifont = "JetBrainsMono_Nerd_Font:h17"
 	vim.g.neovide_padding_top = 0
 	vim.g.neovide_padding_bottom = 0
 	vim.g.neovide_padding_right = 0

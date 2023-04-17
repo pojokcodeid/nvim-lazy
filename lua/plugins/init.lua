@@ -42,15 +42,26 @@ return {
 	},
 	-- snippets
 	{
+		"rafamadriz/friendly-snippets",
+		event = "BufRead",
+		config = function()
+			require("luasnip.loaders.from_vscode").lazy_load()
+			require("user.snippets")
+			require("user.snip")
+		end,
+	},
+	{
 		"L3MON4D3/LuaSnip",
 		lazy = true,
-		dependencies = {
-			"rafamadriz/friendly-snippets",
-			config = function()
-				require("luasnip.loaders.from_vscode").lazy_load()
-				require("user.snippets")
-			end,
-		},
+		event = "BufRead",
+		-- dependencies = {
+		-- 	"rafamadriz/friendly-snippets",
+		-- 	event = "BufRead",
+		-- 	config = function()
+		-- 		require("luasnip.loaders.from_vscode").lazy_load()
+		-- 		require("user.snippets")
+		-- 	end,
+		-- },
 		opts = {
 			history = true,
 			delete_check_events = "TextChanged",
@@ -70,13 +81,13 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
-		event = "VeryLazy",
-		dependencies = {
-			"williamboman/mason-lspconfig.nvim",
-		},
-		config = function()
-			require("user.lsp")
-		end,
+		event = "BufRead",
+		-- dependencies = {
+		-- 	"williamboman/mason-lspconfig.nvim",
+		-- },
+		-- config = function()
+		-- 	require("user.lsp")
+		-- end,
 	},
 	-- {
 	-- 	"williamboman/mason.nvim",
@@ -98,15 +109,31 @@ return {
 	{
 		"williamboman/mason.nvim",
 		lazy = true,
-		cmd = "Mason",
+		event = "BufRead",
+		dependencies = { "williamboman/mason-lspconfig.nvim" },
+		cmd = {
+			"Mason",
+			"MasonInstall",
+			"MasonUninstall",
+			"MasonUninstallAll",
+			"MasonLog",
+		},
 		keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
+		config = function()
+			require("user.lsp")
+		end,
 	},
 	-- for formater linter
 	{ "RRethy/vim-illuminate", event = "BufRead", lazy = true },
 	{
 		"jayp0521/mason-null-ls.nvim",
 		lazy = true,
-		dependencies = "jose-elias-alvarez/null-ls.nvim",
+		dependencies = {
+			"jose-elias-alvarez/null-ls.nvim",
+			config = function()
+				require("user.lsp.null-ls")
+			end,
+		},
 		event = "BufRead",
 		opts = function()
 			require("user.mason-null-ls")
@@ -132,7 +159,14 @@ return {
 		end,
 	},
 	-- for install lsp tidak support mason
-	{ "williamboman/nvim-lsp-installer", event = "VeryLazy", lazy = true },
+	{
+		"williamboman/nvim-lsp-installer",
+		event = "BufRead",
+		lazy = true,
+		config = function()
+			require("user.lsp.config")
+		end,
+	},
 	-- auto pairs
 	{
 		"windwp/nvim-autopairs",
@@ -169,7 +203,7 @@ return {
 	-- for Speed up loading Lua modules in Neovim to improve startup time.
 	{
 		"lewis6991/impatient.nvim",
-		event = "VeryLazy",
+		event = "BufRead",
 		config = function()
 			require("user.impatient")
 		end,
@@ -223,6 +257,7 @@ return {
 	-- for popup alert
 	{
 		"rcarriga/nvim-notify",
+		event = "BufRead",
 		keys = {
 			{
 				"<leader>un",
@@ -242,7 +277,7 @@ return {
 			end,
 		},
 		-- event = "BufWinEnter",
-		init = function()
+		config = function()
 			local notify = require("notify")
 			-- this for transparency
 			notify.setup({ background_colour = "#000000" })
@@ -253,7 +288,7 @@ return {
 	-- for resize screen
 	{
 		"mrjones2014/smart-splits.nvim",
-		event = "VeryLazy",
+		event = "BufRead",
 		config = function()
 			require("user.smartspit")
 		end,
@@ -308,5 +343,5 @@ return {
 		end,
 	},
 	-- remove duplicate
-	{ "tpope/vim-repeat", event = "VeryLazy" },
+	{ "tpope/vim-repeat", event = "BufRead" },
 }
