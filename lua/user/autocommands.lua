@@ -42,6 +42,14 @@ vim.api.nvim_create_autocmd({ "QuitPre" }, {
 	end,
 })
 
+local autocmd = vim.api.nvim_create_autocmd
+autocmd("VimEnter", {
+	pattern = "*",
+	callback = function()
+		vim.opt.statusline = "%#normal# "
+	end,
+})
+
 -- Autoformat
 -- augroup _lsp
 --   autocmd!
