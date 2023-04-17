@@ -60,7 +60,7 @@ return {
 		"akinsho/toggleterm.nvim",
 		lazy = true,
 		cmd = { "ToggleTerm" },
-		event = "BufRead",
+		event = "VeryLazy",
 		config = function()
 			require("user.toggleterm")
 		end,
