@@ -3,6 +3,38 @@ if not status_ok then
 	return
 end
 
+-- config for toggleterm
+
+function _LAZYGIT_TOGGLE()
+	local Terminal = require("toggleterm.terminal").Terminal
+	local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+	lazygit:toggle()
+end
+
+function _NODE_TOGGLE()
+	local Terminal = require("toggleterm.terminal").Terminal
+	local node = Terminal:new({ cmd = "node", hidden = true })
+	node:toggle()
+end
+
+function _NCDU_TOGGLE()
+	local Terminal = require("toggleterm.terminal").Terminal
+	local ncdu = Terminal:new({ cmd = "ncdu", hidden = true })
+	ncdu:toggle()
+end
+
+function _HTOP_TOGGLE()
+	local Terminal = require("toggleterm.terminal").Terminal
+	local htop = Terminal:new({ cmd = "htop", hidden = true })
+	htop:toggle()
+end
+
+function _PYTHON_TOGGLE()
+	local Terminal = require("toggleterm.terminal").Terminal
+	local python = Terminal:new({ cmd = "python", hidden = true })
+	python:toggle()
+end
+
 local setup = {
 	plugins = {
 		marks = true, -- shows a list of your marks on ' and `
