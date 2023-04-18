@@ -44,7 +44,7 @@ vim.g.pcode_lualine_style = 0
 -- 0 = default
 -- 1 = vim icon " "
 -- 2 = vim icon " "
-vim.g.pcode_status_icon = 0
+vim.g.pcode_status_icon = 1
 
 -- start custom lualine style
 -- contoh style
