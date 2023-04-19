@@ -29,7 +29,7 @@ return {
 	-- for tree exploler
 	{
 		"kyazdani42/nvim-tree.lua",
-		event = "InsertEnter",
+		event = "BufRead",
 		cmd = { "NvimTree", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeClose" },
 		-- dependencies = "kyazdani42/nvim-web-devicons",
 		config = function()
