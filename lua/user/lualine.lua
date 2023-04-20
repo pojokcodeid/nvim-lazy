@@ -128,6 +128,10 @@ local progress = function()
 	return chars[index]
 end
 
+local time = function()
+	return " " .. os.date("%R")
+end
+
 local spaces = function()
 	-- return "->| " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 	return icons.ui.Tab .. " " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
@@ -245,12 +249,12 @@ lualine.setup({
 		lualine_a = { branch },
 		lualine_b = { mode },
 		lualine_c = { diagnostics, lsp_info, lsp_progress },
-		-- lualine_c = { diagnostics, lsp_info, "lsp_progress" },
 		-- lualine_c = { file_name, lsp_info },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { diff, spaces, "encoding", filetype },
 		lualine_y = { location },
-		lualine_z = { progress },
+		--[[ 	lualine_z = { progress }, ]]
+		lualine_z = { time },
 	},
 	inactive_sections = {
 		lualine_a = {},
