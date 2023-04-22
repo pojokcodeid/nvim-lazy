@@ -12,7 +12,7 @@
 -- catppuccin, catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 -- dracula
 -- nightfox, dayfox, dawnfox, duskfox, nordfox, terafox, carbonfox
-vim.g.pcode_colorscheme = "material_palenight"
+vim.g.pcode_colorscheme = "tokyonight-moon"
 
 -- custom transparent mode
 -- only support
@@ -69,7 +69,7 @@ vim.g.pcode_status_icon = 1
 --     { left = "", right = "" },
 --   },
 -- }
-vim.g.pcode_custom_lualine = false
+vim.g.pcode_custom_lualine = true
 vim.g.pcode_component_separators = { left = " ", right = " " }
 vim.g.pcode_section_separators = { left = "", right = " " }
 
