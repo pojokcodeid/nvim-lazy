@@ -27,7 +27,7 @@
   "mini.animate": { "branch": "main", "commit": "ca9b687b6da98b48081dc72e27a9657c85cde135" },
   "mini.indentscope": { "branch": "main", "commit": "f60e9b51a6214c73a170ffc5445ce91560981031" },
   "neoscroll.nvim": { "branch": "master", "commit": "d7601c26c8a183fa8994ed339e70c2d841253e93" },
-  "null-ls.nvim": { "branch": "main", "commit": "08bb00c7c2cd58c72e02cf54e4b9cbfe14b03e09" },
+  "null-ls.nvim": { "branch": "main", "commit": "9fa0e8e7abae0a783c6bff6aecb485130e67bac6" },
   "nvim-autopairs": { "branch": "master", "commit": "7747bbae60074acf0b9e3a4c13950be7a2dff444" },
   "nvim-cmp": { "branch": "main", "commit": "768548bf4980fd6d635193a9320545bb46fcb6d8" },
   "nvim-colorizer.lua": { "branch": "master", "commit": "dde3084106a70b9a79d48f426f6d6fec6fd203f7" },
