@@ -209,12 +209,12 @@ return {
 		end,
 	},
 	-- for live server html,css,js
-	{
-		"manzeloth/live-server",
-		cmd = { "LiveServer" },
-		event = "BufRead",
-		build = "npm install -g live-server",
-	},
+	-- {
+	-- "manzeloth/live-server",
+	-- cmd = { "LiveServer" },
+	-- event = "BufRead",
+	-- build = "npm install -g live-server",
+	-- },
 	-- for multi cursor select
 	{ "mg979/vim-visual-multi", event = "BufRead" },
 	-- for auto close tag

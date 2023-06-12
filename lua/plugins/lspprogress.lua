@@ -25,6 +25,7 @@ return {
 	{
 		"j-hui/fidget.nvim",
 		enabled = fidget,
+		tag = "legacy",
 		event = "BufRead",
 		config = function()
 			require("fidget").setup()

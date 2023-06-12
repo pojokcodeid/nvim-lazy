@@ -35,6 +35,12 @@ function _PYTHON_TOGGLE()
 	python:toggle()
 end
 
+function _LIVE_SERVER()
+	local Terminal = require("toggleterm.terminal").Terminal
+	local live_server = Terminal:new({ cmd = "live-server", hidden = true })
+	live_server:toggle()
+end
+
 local setup = {
 	plugins = {
 		marks = true, -- shows a list of your marks on ' and `
@@ -259,6 +265,8 @@ local mappings = {
 
 	t = {
 		name = "Terminal",
+		--l = { "<cmd>lua _LIVE_SERVER()<cr>", "Live Server" },
+		l = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>clear<cr>live-server<cr>", "Live Server" },
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
 		u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
 		t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
