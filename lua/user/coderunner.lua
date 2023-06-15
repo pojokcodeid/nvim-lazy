@@ -6,7 +6,8 @@ end
 local rfile = {
 	java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
 	python = "python3 -u",
-	typescript = "deno run",
+	--typescript = "deno run",
+	typescript = "ts-node $dir/$fileName", -- npm install -g ts-node
 	rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
 	-- cpp="gcc $fileName -lstdc++ -o $fileNameWithoutExt && $fileNameWithoutExt"
 	cpp = "g++ $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",

@@ -31,12 +31,17 @@ bufferline.setup({
 	options = {
 		color_icons = true,
 		numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
-		close_command = function(bufnum)
-			require("bufdelete").bufdelete(bufnum, true)
-		end,
-		right_mouse_command = function(bufnum)
-			require("bufdelete").bufdelete(bufnum, true)
-		end,
+		-- close_command = function(bufnum)
+		-- 	require("bufdelete").bufdelete(bufnum, true)
+		-- end,
+		-- right_mouse_command = function(bufnum)
+		-- 	require("bufdelete").bufdelete(bufnum, true)
+		-- end,
+		close_command = "bdelete! %d",
+		right_mouse_command = "bdelete! %d",
+		left_mouse_command = "buffer %d",
+		middle_mouse_command = nil,
+
 		indicator_icon = nil,
 		indicator = { style = "icon", icon = "▎" },
 		buffer_close_icon = icons.ui.Close,

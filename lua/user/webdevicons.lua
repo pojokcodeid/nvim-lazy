@@ -15,6 +15,12 @@ material_icon.setup({
 			cterm_color = "220",
 			name = "Mjs",
 		},
+		["ts"] = {
+			icon = "󰛦",
+			color = "#30A2FF",
+			cterm_color = "220",
+			name = "ts",
+		},
 	},
 	color_icons = true,
 	default = true,
