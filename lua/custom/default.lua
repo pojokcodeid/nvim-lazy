@@ -12,7 +12,7 @@
 -- catppuccin, catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 -- dracula
 -- nightfox, dayfox, dawnfox, duskfox, nordfox, terafox, carbonfox
-vim.g.pcode_colorscheme = "gruvbox-baby"
+vim.g.pcode_colorscheme = "tokyonight"
 
 -- custom transparent mode
 -- only support
@@ -135,6 +135,7 @@ vim.g.pcode_whichkey = {
 		c = { "<cmd>lua require('mini.map').close()<cr>", "Minimap Close" },
 		o = { "<cmd>lua require('mini.map').open()<cr>", "Minimap Open" },
 	},
+	["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
 }
 
 -- https://github.com/CRAG666/code_runner.nvim
