@@ -17,7 +17,7 @@ return {
 	-- 		require("user.lualine")
 	-- 	end,
 	-- },
-	{ "RRethy/vim-illuminate", event = "BufRead", enabled = true },
+	{ "RRethy/vim-illuminate", event = "InsertEnter", enabled = true },
 	-- { "cpea2506/one_monokai.nvim" },
 	-- { "luisiacc/gruvbox-baby", lazy = true, enabled = false },
 	-- { "projekt0n/github-nvim-theme", version = "v0.0.7" },

@@ -2,7 +2,7 @@ return {
 	-- animations
 	{
 		"echasnovski/mini.animate",
-		event = "BufRead",
+		event = "InsertEnter",
 		opts = function()
 			-- don't use animate when scrolling with the mouse
 			local mouse_scrolled = false

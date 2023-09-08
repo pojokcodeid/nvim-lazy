@@ -43,7 +43,7 @@ return {
 	-- snippets
 	{
 		"rafamadriz/friendly-snippets",
-		event = "BufRead",
+		event = "InsertEnter",
 		config = function()
 			require("luasnip.loaders.from_vscode").lazy_load()
 			require("user.snippets")
@@ -53,7 +53,7 @@ return {
 	{
 		"L3MON4D3/LuaSnip",
 		lazy = true,
-		event = "BufRead",
+		event = "InsertEnter",
 		-- dependencies = {
 		-- 	"rafamadriz/friendly-snippets",
 		-- 	event = "BufRead",
@@ -109,7 +109,7 @@ return {
 	{
 		"williamboman/mason.nvim",
 		lazy = true,
-		event = "BufRead",
+		event = "InsertEnter",
 		dependencies = { "williamboman/mason-lspconfig.nvim" },
 		cmd = {
 			"Mason",
@@ -127,14 +127,14 @@ return {
 	{ "RRethy/vim-illuminate", event = "BufRead", lazy = true },
 	{
 		"jayp0521/mason-null-ls.nvim",
-		lazy = true,
+		-- lazy = true,
 		dependencies = {
 			"jose-elias-alvarez/null-ls.nvim",
 			config = function()
 				require("user.lsp.null-ls")
 			end,
 		},
-		event = "BufRead",
+		event = "InsertEnter",
 		opts = function()
 			require("user.mason-null-ls")
 		end,
@@ -182,12 +182,12 @@ return {
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		lazy = true,
-		event = "BufRead",
+		event = "InsertEnter",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 	},
 	{
 		"numToStr/Comment.nvim",
-		event = "BufRead",
+		event = "InsertEnter",
 		config = function()
 			require("user.comment")
 		end,
@@ -216,11 +216,11 @@ return {
 	-- build = "npm install -g live-server",
 	-- },
 	-- for multi cursor select
-	{ "mg979/vim-visual-multi", event = "BufRead" },
+	{ "mg979/vim-visual-multi", event = "InsertEnter" },
 	-- for auto close tag
 	{
 		"windwp/nvim-ts-autotag",
-		event = "BufRead",
+		event = "InsertEnter",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		config = function()
 			require("nvim-ts-autotag").setup()
@@ -248,7 +248,7 @@ return {
 	{
 		"SmiteshP/nvim-navic",
 		dependencies = "neovim/nvim-lspconfig",
-		event = "BufRead",
+		event = "InsertEnter",
 		config = function()
 			require("user.breadcrumb")
 			require("user.winbar")
@@ -325,7 +325,7 @@ return {
 		end,
 	},
 	-- for check startuptime
-	{ "dstein64/vim-startuptime", cmd = "StartupTime", event = "BufRead" },
+	{ "dstein64/vim-startuptime", cmd = "StartupTime", event = "InsertEnter" },
 	-- for coloring pairs
 	{
 		"p00f/nvim-ts-rainbow",
@@ -343,5 +343,5 @@ return {
 		end,
 	},
 	-- remove duplicate
-	{ "tpope/vim-repeat", event = "BufRead" },
+	{ "tpope/vim-repeat", event = "InsertEnter" },
 }

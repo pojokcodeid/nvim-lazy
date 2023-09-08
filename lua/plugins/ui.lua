@@ -44,7 +44,7 @@ return {
 	-- for file tab
 	{
 		"famiu/bufdelete.nvim",
-		event = "BufRead",
+		event = "InsertEnter",
 	},
 	{
 		"akinsho/bufferline.nvim",
@@ -54,7 +54,7 @@ return {
 		end,
 	},
 	-- for delete buffers (close files) without closing your windows or messing up your layout.
-	{ "moll/vim-bbye", event = "BufRead" },
+	{ "moll/vim-bbye", event = "InsertEnter" },
 	-- for view terminal
 	{
 		"akinsho/toggleterm.nvim",

@@ -39,7 +39,7 @@ return {
 	},
 	{
 		"gbprod/yanky.nvim",
-		event = "BufRead",
+		event = "InsertEnter",
 		config = function()
 			require("user.yanky")
 		end,

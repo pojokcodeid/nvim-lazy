@@ -268,7 +268,7 @@ return {
 	{
 		"moll/vim-bbye",
 		-- commit = "25ef93ac5a87526111f43e5110675032dbcacf56",
-		event = "VeryLazy",
+		event = "InsertEnter",
 	},
 	-- for view terminal
 	{
@@ -322,7 +322,7 @@ return {
 	-- for auto close tag
 	{
 		"windwp/nvim-ts-autotag",
-		event = "VeryLazy",
+		event = "InsertEnter",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		init = function()
 			require("nvim-ts-autotag").setup()
@@ -496,7 +496,7 @@ return {
 	{
 		"echasnovski/mini.indentscope",
 		version = false, -- wait till new 0.7.0 release to put it back on semver
-		event = "BufReadPre",
+		event = "InsertEnter",
 		opts = {
 			-- symbol = "▏",
 			symbol = "│",
