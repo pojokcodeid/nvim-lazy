@@ -21,6 +21,18 @@ material_icon.setup({
 			cterm_color = "220",
 			name = "ts",
 		},
+		["jsx"] = {
+			icon = "",
+			color = "#0FBFCF",
+			cterm_color = "220",
+			name = "jsx",
+		},
+		["svg"] = {
+			icon = "󰜡",
+			color = "#FDB03A",
+			cterm_color = "220",
+			name = "svg",
+		},
 	},
 	color_icons = true,
 	default = true,
