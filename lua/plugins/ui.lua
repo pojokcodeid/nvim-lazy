@@ -12,7 +12,7 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		-- dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
-		event = "BufRead",
+		event = "BufWinEnter",
 		config = function()
 			require("user.lualine")
 		end,
@@ -60,7 +60,7 @@ return {
 		"akinsho/toggleterm.nvim",
 		lazy = true,
 		cmd = { "ToggleTerm" },
-		event = "BufRead",
+		event = "InsertEnter",
 		config = function()
 			require("user.toggleterm")
 		end,

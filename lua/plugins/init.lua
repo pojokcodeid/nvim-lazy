@@ -229,7 +229,7 @@ return {
 	-- for auto detection file and run code
 	{
 		"CRAG666/code_runner.nvim",
-		event = "BufRead",
+		event = "InsertEnter",
 		-- dependencies = "nvim-lua/plenary.nvim",
 		cmd = { "RunCode", "RunFile", "RunProject", "RunClose" },
 		config = function()
@@ -312,7 +312,7 @@ return {
 	}, -- mini scrollview
 	{
 		"karb94/neoscroll.nvim",
-		event = "BufRead",
+		event = "InsertEnter",
 		config = function()
 			require("user.neoscroll")
 		end,
