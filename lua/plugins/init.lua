@@ -203,7 +203,7 @@ return {
 	-- for Speed up loading Lua modules in Neovim to improve startup time.
 	{
 		"lewis6991/impatient.nvim",
-		event = "BufRead",
+		event = "BufWinEnter",
 		config = function()
 			require("user.impatient")
 		end,

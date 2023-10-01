@@ -48,7 +48,7 @@ return {
 	},
 	{
 		"akinsho/bufferline.nvim",
-		event = "BufRead",
+		event = "BufWinEnter",
 		config = function()
 			require("user.bufferline")
 		end,
