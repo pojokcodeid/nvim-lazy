@@ -197,7 +197,8 @@ return {
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufRead",
 		config = function()
-			require("user.indentline")
+			-- require("user.indentline")
+			require("ibl").setup()
 		end,
 	},
 	-- for Speed up loading Lua modules in Neovim to improve startup time.
