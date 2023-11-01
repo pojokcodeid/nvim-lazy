@@ -328,12 +328,14 @@ return {
 	-- for check startuptime
 	{ "dstein64/vim-startuptime", cmd = "StartupTime", event = "InsertEnter" },
 	-- for coloring pairs
-	{
-		"p00f/nvim-ts-rainbow",
-		event = "BufRead",
-		dependencies = "nvim-treesitter/nvim-treesitter",
-	},
+	-- remark 20231101 - menyebabkan error treesitter
+	-- {
+	-- 	"p00f/nvim-ts-rainbow",
+	-- 	event = "BufRead",
+	-- 	dependencies = "nvim-treesitter/nvim-treesitter",
+	-- },
 	-- for git
+	{ "HiPhish/nvim-ts-rainbow2", event = "BufRead", dependencies = "nvim-treesitter/nvim-treesitter" },
 	{
 		"lewis6991/gitsigns.nvim",
 		enabled = vim.fn.executable("git") == 1,

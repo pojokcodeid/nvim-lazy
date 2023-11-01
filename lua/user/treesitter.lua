@@ -10,14 +10,28 @@ configs.setup({
 	ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
 	highlight = {
 		enable = true,
-		disable = function(_, bufnr) return vim.b[bufnr].large_buf end,
+		disable = { "css" }, -- list of language that will be disabled
+		additional_vim_regex_highlighting = false,
 	},
-	context_commentstring = { enable = true, enable_autocmd = false },
+	context_commentstring = {
+		enable = true,
+		enable_autocmd = false,
+		config = {
+			-- Languages that have a single comment style
+			typescript = "// %s",
+			css = "/* %s */",
+			scss = "/* %s */",
+			html = "<!-- %s -->",
+			svelte = "<!-- %s -->",
+			vue = "<!-- %s -->",
+			json = "",
+		},
+	},
 	rainbow = {
 		enable = true,
 		disable = { "html" },
-		extended_mode = false,
-		max_file_lines = nil,
+		equery = 'rainbow-parens',
+		strategy = require('ts-rainbow').strategy.global,
 	},
 	autotag = { enable = true },
 	incremental_selection = { enable = true },
