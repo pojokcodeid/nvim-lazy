@@ -37,7 +37,25 @@ end
 
 function _LIVE_SERVER()
 	local Terminal = require("toggleterm.terminal").Terminal
-	local live_server = Terminal:new({ cmd = "live-server", hidden = true })
+	local live_server = Terminal:new({
+		cmd = "live-server",
+		hidden = true,
+		-- function to run on opening the terminal
+		on_open = function(term)
+			vim.cmd("startinsert!")
+			vim.api.nvim_buf_set_keymap(
+				term.bufnr,
+				"n",
+				"q",
+				"<cmd>ToggleTermToggleAll!<CR>",
+				{ noremap = true, silent = true }
+			)
+		end,
+		-- function to run on closing the terminal
+		on_close = function(term)
+			vim.cmd("startinsert!")
+		end,
+	})
 	live_server:toggle()
 end
 
@@ -266,7 +284,8 @@ local mappings = {
 	t = {
 		name = "Terminal",
 		--l = { "<cmd>lua _LIVE_SERVER()<cr>", "Live Server" },
-		l = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>clear<cr>live-server<cr>", "Live Server" },
+		l = { "<cmd>ToggleTerm direction=tab<cr>" .. trn .. "clear<cr>live-server<cr>", "Live Server" },
+		x = { "<cmd>ToggleTermToggleAll!<cr>", "Close Tab" },
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
 		u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
 		t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
@@ -274,6 +293,7 @@ local mappings = {
 		f = { "<cmd>ToggleTerm direction=float<cr>" .. trn, "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>" .. trn, "Vertical" },
+		s = { "<cmd>ToggleTerm direction=tab<cr>" .. trn, "New Tab" },
 	},
 	r = {
 		name = "Run",
