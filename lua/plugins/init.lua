@@ -258,7 +258,7 @@ return {
 	-- for popup alert
 	{
 		"rcarriga/nvim-notify",
-		event = "BufRead",
+		event = "BufWinEnter",
 		keys = {
 			{
 				"<leader>un",
