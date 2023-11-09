@@ -35,6 +35,12 @@ function _PYTHON_TOGGLE()
 	python:toggle()
 end
 
+function _NEWTAB_TOGGLE()
+	local Terminal = require("toggleterm.terminal").Terminal
+	local pwsh = Terminal:new({ cmd = "pwsh", hidden = true, direction = "tab" })
+	pwsh:toggle()
+end
+
 function _LIVE_SERVER()
 	local Terminal = require("toggleterm.terminal").Terminal
 	local live_server = Terminal:new({
@@ -270,6 +276,7 @@ local mappings = {
 	t = {
 		name = "  Terminal",
 		l = { "<cmd>lua _LIVE_SERVER()<cr>", "Live Server" },
+		P = { "<cmd>lua _NEWTAB_TOGGLE()<cr>", "Power Shell" },
 		-- l = { "<cmd>ToggleTerm direction=tab<cr>live-server<cr>", "Live Server" },
 		x = { "<cmd>ToggleTermToggleAll!<cr>", "Close Tab" },
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
