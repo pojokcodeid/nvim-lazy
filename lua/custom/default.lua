@@ -119,24 +119,24 @@ vim.g.pcode_dap_ensure_installed = {
 }
 
 -- https://github.com/folke/which-key.nvim
-vim.g.pcode_whichkey = {
-	-- contoh penambahan
-	-- ["k"] = {
-	-- 	name = "Example",
-	-- 	k = { '<cmd>lua print("Testing")<cr>', "Example" },
-	-- },
-	-- ["r"] = {
-	-- 	name = "Run",
-	-- 	j = { "<cmd>Jaq float<CR>", "Run With Jaq" },
-	-- },
-	["o"] = { "<cmd>SymbolsOutline<cr>", "Symbol Outline" },
-	["m"] = {
-		name = "Minimap",
-		c = { "<cmd>lua require('mini.map').close()<cr>", "Minimap Close" },
-		o = { "<cmd>lua require('mini.map').open()<cr>", "Minimap Open" },
-	},
-	["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
-}
+-- vim.g.pcode_whichkey = {
+-- contoh penambahan
+-- ["k"] = {
+-- 	name = "Example",
+-- 	k = { '<cmd>lua print("Testing")<cr>', "Example" },
+-- },
+-- ["r"] = {
+-- 	name = "Run",
+-- 	j = { "<cmd>Jaq float<CR>", "Run With Jaq" },
+-- },
+-- ["o"] = { "<cmd>SymbolsOutline<cr>", "Symbol Outline" },
+-- ["m"] = {
+-- 	name = "Minimap",
+-- 	c = { "<cmd>lua require('mini.map').close()<cr>", "Minimap Close" },
+-- 	o = { "<cmd>lua require('mini.map').open()<cr>", "Minimap Open" },
+-- },
+-- ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
+-- }
 
 -- https://github.com/CRAG666/code_runner.nvim
 -- ready default java, python, typescript, javascript, rust, cpp, scss

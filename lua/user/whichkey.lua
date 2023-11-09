@@ -140,7 +140,7 @@ local debug_key = {}
 
 if vim.fn.has("win32") == 0 then
 	debug_key = {
-		name = "Debug",
+		name = "  Debug",
 		t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
 		b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
 		c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
@@ -159,25 +159,25 @@ if vim.fn.has("win32") == 0 then
 end
 -- end debug
 local mappings2 = {
-	["/"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", "Commet Block" },
+	["/"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", "󰆈 Commet Block" },
 }
 local mappings = {
-	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
+	["a"] = { "<cmd>Alpha<cr>", "󰕮 Alpha" },
 	["b"] = {
 		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		"Buffers",
+		" Buffers",
 	},
 	--["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-	["w"] = { "<cmd>w!<CR>", "Save" },
-	["q"] = { "<cmd>q!<CR>", "Quit" },
-	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+	["e"] = { "<cmd>NvimTreeToggle<cr>", "󰙅 Explorer" },
+	["w"] = { "<cmd>w!<CR>", "󰆓 Save" },
+	["q"] = { "<cmd>q!<CR>", "󰿅 Quit" },
+	["c"] = { "<cmd>Bdelete!<CR>", " 󰅗 Close Buffer" },
+	["h"] = { "<cmd>nohlsearch<CR>", "󱪿 No Highlight" },
 	["f"] = {
 		"<cmd>Telescope find_files <CR>",
-		"Find files",
+		" Find files",
 	},
-	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", " Find Text" },
 	-- ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 	-- ["z"] = { "<cmd>Lazy<cr>", "Lazy" },
 
@@ -185,7 +185,7 @@ local mappings = {
 		function()
 			require("Comment.api").toggle.linewise.current()
 		end,
-		"Coment line",
+		"󰆈 Coment line",
 	},
 	-- ["m"] = {
 	-- 	name = "Markdown",
@@ -202,7 +202,7 @@ local mappings = {
 	-- },
 
 	g = {
-		name = "Git",
+		name = "  Git",
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
@@ -225,7 +225,7 @@ local mappings = {
 	},
 
 	l = {
-		name = "LSP",
+		name = "  LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 		d = {
 			"<cmd>Telescope diagnostics bufnr=0<cr>",
@@ -256,7 +256,7 @@ local mappings = {
 		},
 	},
 	s = {
-		name = "Search",
+		name = "  Search",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
@@ -268,7 +268,7 @@ local mappings = {
 	},
 
 	t = {
-		name = "Terminal",
+		name = "  Terminal",
 		l = { "<cmd>lua _LIVE_SERVER()<cr>", "Live Server" },
 		-- l = { "<cmd>ToggleTerm direction=tab<cr>live-server<cr>", "Live Server" },
 		x = { "<cmd>ToggleTermToggleAll!<cr>", "Close Tab" },
@@ -282,7 +282,7 @@ local mappings = {
 		s = { "<cmd>ToggleTerm direction=tab<cr>", "New Tab" },
 	},
 	r = {
-		name = "Run",
+		name = "  Run",
 		s = {
 			'<cmd>autocmd bufwritepost [^_]*.sass,[^_]*.scss  silent exec "!sass %:p %:r.css"<CR>',
 			"Auto Compile Sass",
@@ -428,7 +428,7 @@ local mappings = {
 	-- },
 	d = debug_key,
 	p = {
-		name = "Plugins(Lazy)",
+		name = " 󱑠 Plugins(Lazy)",
 		i = { "<cmd>Lazy install<cr>", "Install" },
 		s = { "<cmd>Lazy sync<cr>", "Sync" },
 		S = { "<cmd>Lazy clear<cr>", "Status" },
