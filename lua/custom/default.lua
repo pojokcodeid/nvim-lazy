@@ -142,6 +142,7 @@ vim.g.pcode_dap_ensure_installed = {
 -- ready default java, python, typescript, javascript, rust, cpp, scss
 vim.g.pcode_coderunner = {
 	go = "go run $fileName",
+	html = "live-server $dir/$fileName",
 }
 
 -- config for optional cmp
