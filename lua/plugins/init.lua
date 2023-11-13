@@ -192,15 +192,42 @@ return {
 			require("user.comment")
 		end,
 	},
-	-- styleing indent
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufRead",
-		config = function()
-			-- require("user.indentline")
-			require("ibl").setup()
-		end,
+		opts = {
+			indent = {
+				char = "│",
+				tab_char = "│",
+			},
+			scope = { enabled = false },
+			exclude = {
+				filetypes = {
+					"help",
+					"alpha",
+					"dashboard",
+					"neo-tree",
+					"Trouble",
+					"trouble",
+					"lazy",
+					"mason",
+					"notify",
+					"toggleterm",
+					"lazyterm",
+				},
+			},
+		},
+		main = "ibl",
 	},
+	-- styleing indent
+	-- {
+	-- 	"lukas-reineke/indent-blankline.nvim",
+	-- 	event = "BufRead",
+	-- 	config = function()
+	-- 		require("user.indentline")
+	-- 		-- require("ibl").setup()
+	-- 	end,
+	-- },
 	-- for Speed up loading Lua modules in Neovim to improve startup time.
 	{
 		"lewis6991/impatient.nvim",
