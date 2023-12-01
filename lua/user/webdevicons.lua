@@ -40,4 +40,18 @@ material_icon.setup({
 
 web_devicons.setup({
 	override = material_icon.get_icons(),
+	override_by_filename = {
+		[".prettierrc"] = {
+			icon = "",
+			color = "#ea5e5e",
+			cterm_color = "167",
+			name = "prettierrc",
+		},
+		[".prettierignore"] = {
+			icon = "",
+			color = "#ea5e5e",
+			cterm_color = "167",
+			name = "prettierignore",
+		},
+	},
 })
