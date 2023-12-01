@@ -33,6 +33,12 @@ material_icon.setup({
 			cterm_color = "220",
 			name = "svg",
 		},
+		["prisma"] = {
+			icon = "",
+			color = "#0FBFCF",
+			cterm_color = "220",
+			name = "prisma",
+		},
 	},
 	color_icons = true,
 	default = true,
@@ -44,14 +50,20 @@ web_devicons.setup({
 		[".prettierrc"] = {
 			icon = "",
 			color = "#ea5e5e",
-			cterm_color = "167",
+			cterm_color = "220",
 			name = "prettierrc",
 		},
 		[".prettierignore"] = {
 			icon = "",
 			color = "#ea5e5e",
-			cterm_color = "167",
+			cterm_color = "220",
 			name = "prettierignore",
+		},
+		[".sequelizerc"] = {
+			icon = "󱙌",
+			color = "#397883",
+			cterm_color = "220",
+			name = "sequelizerc",
 		},
 	},
 })
