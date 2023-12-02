@@ -62,13 +62,13 @@ web_devicons.setup({
 		[".prettierrc"] = {
 			icon = "",
 			color = "#ea5e5e",
-			cterm_color = "220",
+			cterm_color = "240",
 			name = "prettierrc",
 		},
 		[".prettierignore"] = {
 			icon = "",
 			color = "#ea5e5e",
-			cterm_color = "220",
+			cterm_color = "240",
 			name = "prettierignore",
 		},
 		[".sequelizerc"] = {
@@ -100,6 +100,12 @@ web_devicons.setup({
 			color = "#4746a8",
 			cterm_color = "240",
 			name = "eslintrc",
+		},
+		["jest.config.js"] = {
+			icon = "󰙨",
+			color = "#e37575",
+			cterm_color = "220",
+			name = "jestconfig",
 		},
 	},
 })

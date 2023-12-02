@@ -23,8 +23,8 @@ nvim_tree.setup({
 		ignore_dirs = {},
 	},
 	git = {
-		enable = true, -- false dulu karena muncul error
-		ignore = false, -- true dulu karena muncul error
+		enable = false, -- false dulu karena muncul error
+		ignore = true, -- true dulu karena muncul error
 		show_on_dirs = true,
 		show_on_open_dirs = true,
 		timeout = 200,
