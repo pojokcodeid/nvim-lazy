@@ -48,6 +48,10 @@
 
 ![PlugManaget!](img/plugins_manager.png)
 
+## Javascript Project
+
+![PlugManaget!](img/node.png)
+
 <!-- ## Layout -->
 
 <!-- ![PlugManaget!](img/coding.png) -->
