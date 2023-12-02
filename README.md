@@ -62,7 +62,7 @@
 
 ## Kebutuhan Dasar
 
-1. Install Neovim 8.0+ https://github.com/neovim/neovim/releases/tag/stable
+1. Install Neovim 9.0+ https://github.com/neovim/neovim/releases/tag/stable
 2. C++ (windows) Compiler https://www.msys2.org/
 3. GIT https://git-scm.com/download/win
 4. NodeJs https://nodejs.org/en/
