@@ -25,6 +25,13 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-A>", "ggVG", opts)
+keymap("n", "<C-c>", "y", opts)
+keymap("v", "<C-c>", "y", opts)
+keymap("x", "<C-c>", "y", opts)
+keymap("n", "<C-v>", "p", opts)
+keymap("v", "<C-v>", "p", opts)
+keymap("i", "<C-v>", "p", opts)
+keymap("x", "<C-v>", "p", opts)
 
 -- Resize with arrows
 -- keymap("n", "<C-Up>", ":resize -2<CR>", opts)
