@@ -51,6 +51,12 @@ material_icon.setup({
 			cterm_color = "220",
 			name = "map",
 		},
+		["svelte"] = {
+			icon = "",
+			color = "#ef510b",
+			cterm_color = "220",
+			name = "svelte",
+		},
 	},
 	color_icons = true,
 	default = true,
