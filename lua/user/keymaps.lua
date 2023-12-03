@@ -33,8 +33,8 @@ keymap("v", "<C-v>", "p", opts)
 keymap("i", "<C-v>", "p", opts)
 keymap("x", "<C-v>", "p", opts)
 keymap("n", "<C-z>", "u", opts)
-keymap("x", "<C-z>", "u", opts)
-keymap("v", "<C-z>", "u", opts)
+keymap("x", "<C-z>", ":undo<CR>", opts)
+keymap("v", "<C-z>", ":undo<CR>", opts)
 
 -- Resize with arrows
 -- keymap("n", "<C-Up>", ":resize -2<CR>", opts)
