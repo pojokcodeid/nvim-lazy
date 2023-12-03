@@ -57,6 +57,12 @@ material_icon.setup({
 			cterm_color = "220",
 			name = "svelte",
 		},
+		-- ["go"] = {
+		-- 	icon = "󰟓",
+		-- 	color = "#0FBFCF",
+		-- 	cterm_color = "220",
+		-- 	name = "go",
+		-- },
 	},
 	color_icons = true,
 	default = true,
