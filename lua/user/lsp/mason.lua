@@ -83,9 +83,9 @@ require("mason-lspconfig").setup_handlers({
 			is_skip = true
 		end
 		if not is_skip then
-			if server_name == "lua_ls" then
-				server_name = "sumneko_lua"
-			end
+			-- if server_name == "lua_ls" then
+			-- 	server_name = "sumneko_lua"
+			-- end
 			opts = {
 				on_attach = require("user.lsp.handlers").on_attach,
 				capabilities = require("user.lsp.handlers").capabilities,
