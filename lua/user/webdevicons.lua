@@ -57,6 +57,12 @@ material_icon.setup({
 			cterm_color = "220",
 			name = "svelte",
 		},
+		["yaml"] = {
+			icon = "󰰳",
+			color = "#ef510b",
+			cterm_color = "220",
+			name = "yaml",
+		},
 		-- ["go"] = {
 		-- 	icon = "󰟓",
 		-- 	color = "#0FBFCF",
@@ -113,11 +119,23 @@ web_devicons.setup({
 			cterm_color = "240",
 			name = "eslintrc",
 		},
+		[".eslintignore"] = {
+			icon = "󰱺",
+			color = "#4746a8",
+			cterm_color = "240",
+			name = "eslintignore",
+		},
 		["jest.config.js"] = {
 			icon = "󰙨",
 			color = "#e37575",
 			cterm_color = "220",
 			name = "jestconfig",
+		},
+		["cname"] = {
+			icon = "󰖟",
+			color = "#e37575",
+			cterm_color = "220",
+			name = "cname",
 		},
 	},
 })
