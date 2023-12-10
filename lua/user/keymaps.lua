@@ -35,6 +35,8 @@ keymap("x", "<C-v>", "p", opts)
 keymap("n", "<C-z>", "u", opts)
 keymap("x", "<C-z>", ":undo<CR>", opts)
 keymap("v", "<C-z>", ":undo<CR>", opts)
+keymap("n", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
+keymap("v", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
 
 -- Resize with arrows
 -- keymap("n", "<C-Up>", ":resize -2<CR>", opts)
