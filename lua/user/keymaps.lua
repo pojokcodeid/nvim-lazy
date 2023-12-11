@@ -1,5 +1,15 @@
 local opts = { noremap = true, silent = true }
 
+function _LIVE_SERVER()
+	local Terminal = require("toggleterm.terminal").Terminal
+	local live_server = Terminal:new({
+		cmd = "live-server",
+		hidden = true,
+		direction = "tab",
+	})
+	live_server:toggle()
+end
+
 local term_opts = { silent = true }
 
 -- Shorten function name
@@ -33,13 +43,16 @@ keymap("v", "<C-v>", "p", opts)
 keymap("i", "<C-v>", "p", opts)
 keymap("x", "<C-v>", "p", opts)
 keymap("n", "<C-z>", "u", opts)
-keymap("x", "<C-z>", ":undo<CR>", opts)
-keymap("v", "<C-z>", ":undo<CR>", opts)
+keymap("x", "<C-Z>", "<esc><cmd>undo<CR>", opts)
+keymap("v", "<C-Z>", "<esc><cmd>undo<CR>", opts)
+keymap("i", "<C-Z>", "<esc><cmd>undo<CR>", opts)
 keymap("n", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
 keymap("v", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
+keymap("i", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
+keymap("n", "<C-l>", "<esc><cmd>lua _LIVE_SERVER()<cr>", opts)
 
 -- Resize with arrows
--- keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+-- cona
 -- keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 -- keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 -- keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
