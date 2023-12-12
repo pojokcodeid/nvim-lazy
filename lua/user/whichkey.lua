@@ -35,6 +35,12 @@ function _BTOP_TOGGLE()
 	htop:toggle()
 end
 
+function _BTM_TOGGLE()
+	local Terminal = require("toggleterm.terminal").Terminal
+	local htop = Terminal:new({ cmd = "btm", hidden = true })
+	htop:toggle()
+end
+
 function _PYTHON_TOGGLE()
 	local Terminal = require("toggleterm.terminal").Terminal
 	local python = Terminal:new({ cmd = "python", hidden = true })
@@ -288,7 +294,8 @@ local mappings = {
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
 		u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
 		t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-		b = { "<cmd>lua _BTOP_TOGGLE()<cr>", "Btop" },
+		B = { "<cmd>lua _BTOP_TOGGLE()<cr>", "Btop" },
+		b = { "<cmd>lua _BTM_TOGGLE()<cr>", "Boottom" },
 		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
