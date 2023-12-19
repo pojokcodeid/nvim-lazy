@@ -109,6 +109,9 @@ keymap("i", "<C-l>", "<cmd>LiveServer start<cr><cr>", opts)
 keymap("n", "q", "<cmd>q<cr>", opts)
 keymap("x", "<S-Down>", ":'<,'>t'><cr>", opts)
 
+keymap("i", "<C-r>", "<cmd>RunFile<CR>", opts)
+keymap("n", "<C-r>", "<cmd>RunFile<CR>", opts)
+
 -- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
