@@ -12,7 +12,7 @@ local rfile = {
 	-- cpp="gcc $fileName -lstdc++ -o $fileNameWithoutExt && $fileNameWithoutExt"
 	cpp = "g++ $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
 	scss = "sass $dir/$fileName $dir/$fileNameWithoutExt.css",
-	javascript = "node $dir/$fileName",
+	javascript = 'node "$dir/$fileName"',
 }
 
 local data_exists, runscript = pcall(require, "core.config")
