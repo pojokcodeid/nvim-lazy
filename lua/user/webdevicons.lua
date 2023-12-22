@@ -41,7 +41,7 @@ material_icon.setup({
 		},
 		["json"] = {
 			icon = "",
-			color = "#dbb7b7",
+			color = "#ca8984",
 			cterm_color = "220",
 			name = "json",
 		},
@@ -126,7 +126,7 @@ web_devicons.setup({
 			name = "eslintignore",
 		},
 		["jest.config.js"] = {
-			icon = "󰙨",
+			icon = "󰚐",
 			color = "#e37575",
 			cterm_color = "220",
 			name = "jestconfig",

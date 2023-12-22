@@ -52,6 +52,7 @@ keymap("i", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.f
 keymap("i", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>$i<Right><leader>", opts)
 keymap("n", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>$i<Right><leader>", opts)
 keymap("n", "<C-l>", "<esc><cmd>lua _LIVE_SERVER()<cr>", opts)
+keymap("i", "<C-l>", "<esc><cmd>lua _LIVE_SERVER()<cr>", opts)
 
 -- Resize with arrows
 -- cona
@@ -61,7 +62,9 @@ keymap("n", "<C-l>", "<esc><cmd>lua _LIVE_SERVER()<cr>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-Left>", "<Esc>:bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-Right>", "<Esc>:bprevious<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -105,7 +108,6 @@ keymap("n", "<M-j>", "<cmd>m+<cr>", opts)
 keymap("n", "<M-k>", "<cmd>m-2<cr>", opts)
 keymap("i", "<C-s>", "<cmd>w<cr>", opts)
 keymap("n", "<C-s>", "<cmd>w<cr>", opts)
-keymap("i", "<C-l>", "<cmd>LiveServer start<cr><cr>", opts)
 keymap("n", "q", "<cmd>q<cr>", opts)
 keymap("x", "<S-Down>", ":'<,'>t'><cr>", opts)
 
