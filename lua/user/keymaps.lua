@@ -51,8 +51,8 @@ keymap("v", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.f
 keymap("i", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
 keymap("i", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>$i<Right><leader>", opts)
 keymap("n", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>$i<Right><leader>", opts)
-keymap("n", "<C-l>", "<esc><cmd>lua _LIVE_SERVER()<cr>", opts)
-keymap("i", "<C-l>", "<esc><cmd>lua _LIVE_SERVER()<cr>", opts)
+-- keymap("n", "<C-l>", "<esc><cmd>lua _LIVE_SERVER()<cr>", opts)
+-- keymap("i", "<C-l>", "<esc><cmd>lua _LIVE_SERVER()<cr>", opts)
 
 -- Resize with arrows
 -- cona
