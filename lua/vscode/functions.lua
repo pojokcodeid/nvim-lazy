@@ -242,3 +242,24 @@ end
 function Navigation_right()
 	VSCodeNotify("workbench.action.navigateRight")
 end
+
+function Select_all()
+	VSCodeNotify("editor.action.selectAll")
+end
+
+function Copy_clipboard()
+	VSCodeNotify("editor.action.clipboardCopyAction")
+end
+
+function Paste_clipboard()
+	VSCodeNotify("editor.action.clipboardPasteAction")
+end
+
+function Save()
+	VSCodeNotify("workbench.action.files.save")
+	VSCodeNotify("workbench.action.files.saveAll")
+end
+
+function Close()
+	VSCodeNotify("workbench.action.closeActiveEditor")
+end
