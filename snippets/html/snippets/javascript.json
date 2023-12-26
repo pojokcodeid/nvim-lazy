@@ -40,10 +40,10 @@
       "\t\t<meta charset=\"UTF-8\">",
       "\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
       "\t\t<link href=\"$3css/style.css\" rel=\"stylesheet\">",
-      "\t\t<script src=\"$4js/script.js\"></script>",
       "\t</head>",
       "\t<body>",
-      "\t$0",
+      "\t\t$0",
+      "\t\t<script src=\"$4js/script.js\"></script>",
       "\t</body>",
       "</html>"
     ],
