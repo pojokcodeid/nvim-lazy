@@ -1,5 +1,5 @@
-function Center_screen()
-	Cmd("call <SNR>3_reveal('center', 0)")
+function Active_whichkey()
+	VSCodeNotify("whichkey.show")
 end
 
 function Top_screen()

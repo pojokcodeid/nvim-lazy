@@ -6,14 +6,8 @@
 -- c = command mode
 -- o = operator pending mode
 
--- Map("", "L", Move_to_bottom_screen)
--- Map("", "H", Move_to_top_screen)
--- Map("", "<Space>", Trim__save__no_highlight)
 Map({ "n", "x" }, "<Space>", Active_whichkey)
--- Map({ "n", "x" }, "<C-j>", Navigation_down)
--- Map({ "n", "x" }, "<C-k>", Navigation_up)
--- Map({ "n", "x" }, "<C-h>", Navigation_left)
--- Map({ "n", "x" }, "<C-l>", Navigation_right)
+
 Map("", "U", Trim__save__format)
 
 Map("n", "gD", Reveal_definition_aside)
