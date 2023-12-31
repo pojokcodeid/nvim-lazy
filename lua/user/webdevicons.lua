@@ -137,5 +137,35 @@ web_devicons.setup({
 			cterm_color = "220",
 			name = "cname",
 		},
+		[".nvmrc"] = {
+			icon = "󰎙",
+			color = "#93c47d",
+			cterm_color = "220",
+			name = "nvmrc",
+		},
+		[".yarnrc"] = {
+			icon = "",
+			color = "#3d85c6",
+			cterm_color = "240",
+			name = "yarnrc",
+		},
+		[".git-blame-ignore-revs"] = {
+			icon = "󰊢",
+			color = "#F14C28",
+			cterm_color = "220",
+			name = "gitblameignorerevs",
+		},
+		[".mailmap"] = {
+			icon = "󰇮",
+			color = "#a0d0d0",
+			cterm_color = "220",
+			name = "mailmap",
+		},
+		[".vscode-test.js"] = {
+			icon = "󰨞",
+			color = "#206ba3",
+			cterm_color = "220",
+			name = "vscodetest",
+		},
 	},
 })
