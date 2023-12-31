@@ -138,8 +138,8 @@ web_devicons.setup({
 			name = "cname",
 		},
 		[".nvmrc"] = {
-			icon = "󰎙",
-			color = "#93c47d",
+			icon = "",
+			color = "#E8274B",
 			cterm_color = "220",
 			name = "nvmrc",
 		},
@@ -166,6 +166,12 @@ web_devicons.setup({
 			color = "#206ba3",
 			cterm_color = "220",
 			name = "vscodetest",
+		},
+		[".mention-bot"] = {
+			icon = "󰚩",
+			color = "#ffffff",
+			cterm_color = "220",
+			name = "mentionbot",
 		},
 	},
 })
