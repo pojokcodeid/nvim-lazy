@@ -56,11 +56,11 @@
 
 <!-- ![PlugManaget!](img/coding.png) -->
 
-# Panduan Install Dan Konfigurasi NeoVim
+# NeoVim Install & Configuration Guide
 
-## Kunjungi <a href="https://github.com/pojokcodeid/nvim-lazy/wiki/">Wiki</a>
+## Visit <a href="https://github.com/pojokcodeid/nvim-lazy/wiki/">Wiki</a>
 
-## Kebutuhan Dasar
+## Basic Requirement
 
 1. Install Neovim 9.0+ https://github.com/neovim/neovim/releases/tag/stable
 2. C++ (windows) Compiler https://www.msys2.org/
@@ -85,7 +85,7 @@ nvim
 git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 ```
 
-## Terima Kasih
+## Thanks To
 
 https://github.com/LunarVim/Neovim-from-scratch <br>
 https://github.com/AstroNvim/AstroNvim
