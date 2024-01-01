@@ -88,45 +88,157 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 # Shortcut Most-Used
 
 <table>
-<tr><td>:q  or :quit    </td><td>-> untuk keluar dari form</td></tr>
-<tr><td>:w  or :write   </td><td>-> untuk menulis hasil ketik kedalam file (simpan)</td></tr>
-<tr><td>:wq				      </td><td>-> simpan dan keluar</td></tr>
-<tr><td>:q!				      </td><td>-> Keluar dan jangan simpan</td></tr>
-<tr><td>escape		      </td><td>-> normalmode</td></tr>
-<tr><td>i				        </td><td>-> insert mode</td></tr>
-<tr><td>v				        </td><td>-> visual mode yaratnya harus normal mode dulu</td></tr>
-<tr><td>H 				      </td><td>-> kiri</td></tr>
-<tr><td>j 				      </td><td>-> bawah</td></tr>
-<tr><td>k 				      </td><td>-> atas</td></tr>
-<tr><td>l 				      </td><td>-> Kanan</td></tr>
-<tr><td>:ter			      </td><td>-> untuk membuka terminal</td></tr>
-<tr><td>0 atau home		  </td><td>-> memindahkan kursor keawal line</td></tr>
-<tr><td>$ atau end		  </td><td>-> cursor ke end of line</td></tr>
-<tr><td>gg				      </td><td>-> memindahkan kursor ke paling atas</td></tr>
-<tr><td>G				        </td><td>-> memindahkan kursor ke akhir dari halaman</td></tr>
-<tr><td>w				        </td><td>-> memindahkan kursor ke kata berikutnya tanpa sepasi</td></tr>
-<tr><td>3w				      </td><td>-> memindahkan kursor ke 3 kata berikutnya</td></tr>
-<tr><td>b				        </td><td>-> memindahkan kursor ke kata sebelumnya</td></tr>
-<tr><td>3b				      </td><td>-> memindahkan kursor ke 3 kata sebelunya</td></tr>
-<tr><td>(				        </td><td>-> memindahkankursor ke paragraf seblumnya</td></tr>
-<tr><td>)				        </td><td>-> memindahkan kursor ke pararaf berikutnya</td></tr>
-<tr><td>dd				      </td><td>-> menghapus text 1 baris</td></tr>
-<tr><td>dw				      </td><td>-> menghapus 1 kata</td></tr>
-<tr><td>d$				      </td><td>-> menghapus kata sampai akhir line dari posisi cursor</td></tr>
-<tr><td>d0				      </td><td>-> menghapus kata sampai awal line dari psosi cursor</td></tr>
-<tr><td>U				        </td><td>-> untuk undo</td></tr>
-<tr><td>CTRL + r		    </td><td>-> Rendo</td></tr>
-<tr><td>Yp				      </td><td>-> duplicate line code</td></tr>
-<tr><td>yyp				      </td><td>-> sama duplicate line code</td></tr>
-<tr><td>:m+1			      </td><td>-> pindah 1 baris kebawah</td></tr>
-<tr><td>:m-1			      </td><td>-> pindah 1 baris keatas</td></tr>
-<tr><td>d				        </td><td>-> delete file, delete code yang di seleksi dengan view mode</td></tr>
-<tr><td>:e newfolder/newfile.ext    </td><td>-> membuat file baru di folder baru</td></tr>
-<tr><td>:f newfolder/newfile.ext 	</td><td>-> untuk mengcopy file dari file yang terbuka</td></tr>
-<tr><td>bdw				      </td><td>-> menghapus 1 kata</td></tr>
-<tr><td>dw				      </td><td>-> menghapus ke kanan dalam 1 kata pada posisi cursor</td></tr>
+  <tr>
+    <td>:q or :quit</td>
+    <td>to exit the form</td>
+  </tr>
+  <tr>
+    <td>:w or :write</td>
+    <td>to write the typing result into a file (save)</td>
+  </tr>
+  <tr>
+    <td>:wq</td>
+    <td>save and exit</td>
+  </tr>
+  <tr>
+    <td>:q!</td>
+    <td>Exit and do not save</td>
+  </tr>
+  <tr>
+    <td>escape</td>
+    <td>normal mode</td>
+  </tr>
+  <tr>
+    <td>i</td>
+    <td>insert mode</td>
+  </tr>
+  <tr>
+    <td>v</td>
+    <td>visual mode, must be in normal mode first</td>
+  </tr>
+  <tr>
+    <td>h</td>
+    <td>left</td>
+  </tr>
+  <tr>
+    <td>j</td>
+    <td>down</td>
+  </tr>
+  <tr>
+    <td>k</td>
+    <td>up</td>
+  </tr>
+  <tr>
+    <td>l</td>
+    <td>right</td>
+  </tr>
+  <tr>
+    <td>:ter</td>
+    <td>to open the terminal</td>
+  </tr>
+  <tr>
+    <td>0 or home</td>
+    <td>move the cursor to the beginning of the line</td>
+  </tr>
+  <tr>
+    <td>atauend</td>
+    <td>cursor to the end of the line</td>
+  </tr>
+  <tr>
+    <td>gg</td>
+    <td>move the cursor to the top</td>
+  </tr>
+  <tr>
+    <td>G</td>
+    <td>move the cursor to the end of the page</td>
+  </tr>
+  <tr>
+    <td>w</td>
+    <td>move the cursor to the next word with out spaces</td>
+  </tr>
+  <tr>
+    <td>3w</td>
+    <td>move the cursor to the next 3 words</td>
+  </tr>
+  <tr>
+    <td>b</td>
+    <td>move the cursor to the previous word</td>
+  </tr>
+  <tr>
+    <td>3b</td>
+    <td>move the cursor to the previous 3 words</td>
+  </tr>
+  <tr>
+    <td>(</td>
+    <td>move the cursor to the previous paragraph</td>
+  </tr>
+  <tr>
+    <td>)</td>
+    <td>move the cursor to the next paragraph</td>
+  </tr>
+  <tr>
+    <td>dd</td>
+    <td>delete text 1 line</td>
+  </tr>
+  <tr>
+    <td>dw</td>
+    <td>delete 1 word</td>
+  </tr>
+  <tr>
+    <td>d</td>
+    <td>delete words until the end of the line from the cursor position</td>
+  </tr>
+  <tr>
+    <td>d0</td>
+    <td>
+      delete words until the beginning of the line from the cursor position
+    </td>
+  </tr>
+  <tr>
+    <td>U</td>
+    <td>to undo</td>
+  </tr>
+  <tr>
+    <td>CTRL + r</td>
+    <td>Rendo</td>
+  </tr>
+  <tr>
+    <td>Yp</td>
+    <td>duplicate line code</td>
+  </tr>
+  <tr>
+    <td>yyp</td>
+    <td>same duplicate line code</td>
+  </tr>
+  <tr>
+    <td>:m+1</td>
+    <td>move 1 line down</td>
+  </tr>
+  <tr>
+    <td>:m-1</td>
+    <td>move 1 line up</td>
+  </tr>
+  <tr>
+    <td>d</td>
+    <td>delete file, delete code that is selected with view mode</td>
+  </tr>
+  <tr>
+    <td>:e newfolder/newfile.ext</td>
+    <td>create a new file in a new folder</td>
+  </tr>
+  <tr>
+    <td>:f newfolder/newfile.ext</td>
+    <td>to copy the file from the open file</td>
+  </tr>
+  <tr>
+    <td>bdw</td>
+    <td>delete 1 word</td>
+  </tr>
+  <tr>
+    <td>dw</td>
+    <td>delete to the right in 1 word at the cursor position</td>
+  </tr>
 </table>
-
 
 ## Thanks To
 
