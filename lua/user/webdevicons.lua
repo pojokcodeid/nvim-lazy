@@ -173,5 +173,11 @@ web_devicons.setup({
 			cterm_color = "220",
 			name = "mentionbot",
 		},
+		[".project"] = {
+			icon = "󱠒",
+			color = "#5881b1",
+			cterm_color = "220",
+			name = "project",
+		},
 	},
 })
