@@ -94,7 +94,7 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 <tr><td>:q!				      </td><td>-> Keluar dan jangan simpan</td></tr>
 <tr><td>escape		      </td><td>-> normalmode</td></tr>
 <tr><td>i				        </td><td>-> insert mode</td></tr>
-<tr><td>v				        </td><td>-> visual mode yaratnya harus normal mode dulu, ini unutk block dengan panah ke bawah dan tekan d untuk deletenya</td></tr>
+<tr><td>v				        </td><td>-> visual mode yaratnya harus normal mode dulu</td></tr>
 <tr><td>H 				      </td><td>-> kiri</td></tr>
 <tr><td>j 				      </td><td>-> bawah</td></tr>
 <tr><td>k 				      </td><td>-> atas</td></tr>
