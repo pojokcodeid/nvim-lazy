@@ -90,41 +90,41 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 ```text
 :q  or :quit    -> untuk keluar dari form
 :w  or :write   -> untuk menulis hasil ketik kedalam file (simpan)
-:wq				-> simpan dan keluar
-:q!				-> Keluar dan jangan simpan
-escape			-> normalmode
-i				-> insert mode
-v				-> visual mode yaratnya harus normal mode dulu, ini unutk block dengan panah ke bawah dan tekan d untuk deletenya
-H 				-> kiri
-j 				-> bawah
-k 				-> atas
-l 				-> Kanan
-:ter			-> untuk membuka terminal
-0 atau home		-> memindahkan kursor keawal line
-$ atau end		-> cursor ke end of line
-gg				-> memindahkan kursor ke paling atas
-G				-> memindahkan kursor ke akhir dari halaman
-w				-> memindahkan kursor ke kata berikutnya tanpa sepasi
-3w				-> memindahkan kursor ke 3 kata berikutnya
-b				-> memindahkan kursor ke kata sebelumnya
-3b				-> memindahkan kursor ke 3 kata sebelunya
-(				-> memindahkankursor ke paragraf seblumnya
-)				-> memindahkan kursor ke pararaf berikutnya
-dd				-> menghapus text 1 baris
-dw				-> menghapus 1 kata
-d$				-> menghapus kata sampai akhir line dari posisi cursor
-d0				-> menghapus kata sampai awal line dari psosi cursor
-U				-> untuk undo
-CTRL + r		-> Rendo
-Yp				-> duplicate line code
-yyp				-> sama duplicate line code
-:m+1			-> pindah 1 baris kebawah
-:m-1			-> pindah 1 baris keatas
-d				-> delete file, delete code yang di seleksi dengan view mode
+:wq				      -> simpan dan keluar
+:q!				      -> Keluar dan jangan simpan
+escape		      -> normalmode
+i				        -> insert mode
+v				        -> visual mode yaratnya harus normal mode dulu, ini unutk block dengan panah ke bawah dan tekan d untuk deletenya
+H 				      -> kiri
+j 				      -> bawah
+k 				      -> atas
+l 				      -> Kanan
+:ter			      -> untuk membuka terminal
+0 atau home		  -> memindahkan kursor keawal line
+$ atau end		  -> cursor ke end of line
+gg				      -> memindahkan kursor ke paling atas
+G				        -> memindahkan kursor ke akhir dari halaman
+w				        -> memindahkan kursor ke kata berikutnya tanpa sepasi
+3w				      -> memindahkan kursor ke 3 kata berikutnya
+b				        -> memindahkan kursor ke kata sebelumnya
+3b				      -> memindahkan kursor ke 3 kata sebelunya
+(				        -> memindahkankursor ke paragraf seblumnya
+)				        -> memindahkan kursor ke pararaf berikutnya
+dd				      -> menghapus text 1 baris
+dw				      -> menghapus 1 kata
+d$				      -> menghapus kata sampai akhir line dari posisi cursor
+d0				      -> menghapus kata sampai awal line dari psosi cursor
+U				        -> untuk undo
+CTRL + r		    -> Rendo
+Yp				      -> duplicate line code
+yyp				      -> sama duplicate line code
+:m+1			      -> pindah 1 baris kebawah
+:m-1			      -> pindah 1 baris keatas
+d				        -> delete file, delete code yang di seleksi dengan view mode
 :e newfolder/newfile.ext    -> membuat file baru di folder baru
 :f newfolder/newfile.ext 	-> untuk mengcopy file dari file yang terbuka
-bdw				-> menghapus 1 kata
-dw				-> menghapus ke kanan dalam 1 kata pada posisi cursor
+bdw				      -> menghapus 1 kata
+dw				      -> menghapus ke kanan dalam 1 kata pada posisi cursor
 ```
 
 ## Thanks To
