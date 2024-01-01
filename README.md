@@ -90,11 +90,11 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 <table>
   <tr>
     <td>:q or :quit</td>
-    <td>to exit the form</td>
+    <td>exit the form</td>
   </tr>
   <tr>
     <td>:w or :write</td>
-    <td>to write the typing result into a file (save)</td>
+    <td>write the typing result into a file (save)</td>
   </tr>
   <tr>
     <td>:wq</td>
@@ -134,15 +134,15 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
   </tr>
   <tr>
     <td>:ter</td>
-    <td>to open the terminal</td>
+    <td>open the terminal</td>
   </tr>
   <tr>
     <td>0 or home</td>
     <td>move the cursor to the beginning of the line</td>
   </tr>
   <tr>
-    <td>atauend</td>
-    <td>cursor to the end of the line</td>
+    <td>$ or end</td>
+    <td>move the cursor to the end of the line</td>
   </tr>
   <tr>
     <td>gg</td>
@@ -181,11 +181,7 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
     <td>delete text 1 line</td>
   </tr>
   <tr>
-    <td>dw</td>
-    <td>delete 1 word</td>
-  </tr>
-  <tr>
-    <td>d</td>
+    <td>d$</td>
     <td>delete words until the end of the line from the cursor position</td>
   </tr>
   <tr>
@@ -220,7 +216,7 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
   </tr>
   <tr>
     <td>d</td>
-    <td>delete file, delete code that is selected with view mode</td>
+    <td>delete code that is selected with view mode</td>
   </tr>
   <tr>
     <td>:e newfolder/newfile.ext</td>
