@@ -87,45 +87,46 @@ git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 
 # Shortcut Most-Used
 
-```text
-:q  or :quit    -> untuk keluar dari form
-:w  or :write   -> untuk menulis hasil ketik kedalam file (simpan)
-:wq				      -> simpan dan keluar
-:q!				      -> Keluar dan jangan simpan
-escape		      -> normalmode
-i				        -> insert mode
-v				        -> visual mode yaratnya harus normal mode dulu, ini unutk block dengan panah ke bawah dan tekan d untuk deletenya
-H 				      -> kiri
-j 				      -> bawah
-k 				      -> atas
-l 				      -> Kanan
-:ter			      -> untuk membuka terminal
-0 atau home		  -> memindahkan kursor keawal line
-$ atau end		  -> cursor ke end of line
-gg				      -> memindahkan kursor ke paling atas
-G				        -> memindahkan kursor ke akhir dari halaman
-w				        -> memindahkan kursor ke kata berikutnya tanpa sepasi
-3w				      -> memindahkan kursor ke 3 kata berikutnya
-b				        -> memindahkan kursor ke kata sebelumnya
-3b				      -> memindahkan kursor ke 3 kata sebelunya
-(				        -> memindahkankursor ke paragraf seblumnya
-)				        -> memindahkan kursor ke pararaf berikutnya
-dd				      -> menghapus text 1 baris
-dw				      -> menghapus 1 kata
-d$				      -> menghapus kata sampai akhir line dari posisi cursor
-d0				      -> menghapus kata sampai awal line dari psosi cursor
-U				        -> untuk undo
-CTRL + r		    -> Rendo
-Yp				      -> duplicate line code
-yyp				      -> sama duplicate line code
-:m+1			      -> pindah 1 baris kebawah
-:m-1			      -> pindah 1 baris keatas
-d				        -> delete file, delete code yang di seleksi dengan view mode
-:e newfolder/newfile.ext    -> membuat file baru di folder baru
-:f newfolder/newfile.ext 	-> untuk mengcopy file dari file yang terbuka
-bdw				      -> menghapus 1 kata
-dw				      -> menghapus ke kanan dalam 1 kata pada posisi cursor
-```
+<table>
+<tr><td>:q  or :quit    </td><td>-> untuk keluar dari form</td></tr>
+<tr><td>:w  or :write   </td><td>-> untuk menulis hasil ketik kedalam file (simpan)</td></tr>
+<tr><td>:wq				      </td><td>-> simpan dan keluar</td></tr>
+<tr><td>:q!				      </td><td>-> Keluar dan jangan simpan</td></tr>
+<tr><td>escape		      </td><td>-> normalmode</td></tr>
+<tr><td>i				        </td><td>-> insert mode</td></tr>
+<tr><td>v				        </td><td>-> visual mode yaratnya harus normal mode dulu, ini unutk block dengan panah ke bawah dan tekan d untuk deletenya</td></tr>
+<tr><td>H 				      </td><td>-> kiri</td></tr>
+<tr><td>j 				      </td><td>-> bawah</td></tr>
+<tr><td>k 				      </td><td>-> atas</td></tr>
+<tr><td>l 				      </td><td>-> Kanan</td></tr>
+<tr><td>:ter			      </td><td>-> untuk membuka terminal</td></tr>
+<tr><td>0 atau home		  </td><td>-> memindahkan kursor keawal line</td></tr>
+<tr><td>$ atau end		  </td><td>-> cursor ke end of line</td></tr>
+<tr><td>gg				      </td><td>-> memindahkan kursor ke paling atas</td></tr>
+<tr><td>G				        </td><td>-> memindahkan kursor ke akhir dari halaman</td></tr>
+<tr><td>w				        </td><td>-> memindahkan kursor ke kata berikutnya tanpa sepasi</td></tr>
+<tr><td>3w				      </td><td>-> memindahkan kursor ke 3 kata berikutnya</td></tr>
+<tr><td>b				        </td><td>-> memindahkan kursor ke kata sebelumnya</td></tr>
+<tr><td>3b				      </td><td>-> memindahkan kursor ke 3 kata sebelunya</td></tr>
+<tr><td>(				        </td><td>-> memindahkankursor ke paragraf seblumnya</td></tr>
+<tr><td>)				        </td><td>-> memindahkan kursor ke pararaf berikutnya</td></tr>
+<tr><td>dd				      </td><td>-> menghapus text 1 baris</td></tr>
+<tr><td>dw				      </td><td>-> menghapus 1 kata</td></tr>
+<tr><td>d$				      </td><td>-> menghapus kata sampai akhir line dari posisi cursor</td></tr>
+<tr><td>d0				      </td><td>-> menghapus kata sampai awal line dari psosi cursor</td></tr>
+<tr><td>U				        </td><td>-> untuk undo</td></tr>
+<tr><td>CTRL + r		    </td><td>-> Rendo</td></tr>
+<tr><td>Yp				      </td><td>-> duplicate line code</td></tr>
+<tr><td>yyp				      </td><td>-> sama duplicate line code</td></tr>
+<tr><td>:m+1			      </td><td>-> pindah 1 baris kebawah</td></tr>
+<tr><td>:m-1			      </td><td>-> pindah 1 baris keatas</td></tr>
+<tr><td>d				        </td><td>-> delete file, delete code yang di seleksi dengan view mode</td></tr>
+<tr><td>:e newfolder/newfile.ext    </td><td>-> membuat file baru di folder baru</td></tr>
+<tr><td>:f newfolder/newfile.ext 	</td><td>-> untuk mengcopy file dari file yang terbuka</td></tr>
+<tr><td>bdw				      </td><td>-> menghapus 1 kata</td></tr>
+<tr><td>dw				      </td><td>-> menghapus ke kanan dalam 1 kata pada posisi cursor</td></tr>
+</table>
+
 
 ## Thanks To
 
