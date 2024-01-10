@@ -63,6 +63,12 @@ material_icon.setup({
 			cterm_color = "220",
 			name = "yaml",
 		},
+		["vsix"] = {
+			icon = "",
+			color = "#30A2FF",
+			cterm_color = "220",
+			name = "vsix",
+		},
 		-- ["go"] = {
 		-- 	icon = "󰟓",
 		-- 	color = "#0FBFCF",
@@ -82,6 +88,18 @@ web_devicons.setup({
 			color = "#ea5e5e",
 			cterm_color = "240",
 			name = "prettierrc",
+		},
+		[".vscodeignore"] = {
+			icon = "",
+			color = "#30A2FF",
+			cterm_color = "240",
+			name = "vscodeignore",
+		},
+		[".vsixmanifest"] = {
+			icon = "",
+			color = "#30A2FF",
+			cterm_color = "240",
+			name = "vsixmanifest",
 		},
 		[".prettierignore"] = {
 			icon = "",
