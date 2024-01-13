@@ -83,6 +83,12 @@ material_icon.setup({
 web_devicons.setup({
 	override = material_icon.get_icons(),
 	override_by_filename = {
+		[".huskyrc"] = {
+			icon = "󰩃",
+			color = "#ffffff",
+			cterm_color = "240",
+			name = "huskyrc",
+		},
 		[".prettierrc"] = {
 			icon = "",
 			color = "#ea5e5e",
