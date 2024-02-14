@@ -53,6 +53,12 @@ function _NEWTAB_TOGGLE()
 	pwsh:toggle()
 end
 
+function _open_explorer()
+	local Terminal = require("toggleterm.terminal").Terminal
+	local pwsh = Terminal:new({ cmd = "explorer .", hidden = true, direction = "tab" })
+	pwsh:toggle()
+end
+
 function _LIVE_SERVER()
 	local Terminal = require("toggleterm.terminal").Terminal
 	local live_server = Terminal:new({
@@ -156,6 +162,12 @@ end
 local debug_key = {}
 -- local is_dap = pcall(require, "dap")
 
+function _close_buffer()
+	local buf = vim.api.nvim_get_current_buf()
+	--  delete current buffer
+	require("bufdelete").bufdelete(buf, true)
+end
+
 if vim.fn.has("win32") == 0 then
 	debug_key = {
 		name = "  Debug",
@@ -189,7 +201,10 @@ local mappings = {
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "󰙅 Explorer" },
 	["w"] = { "<cmd>w!<CR>", "󰆓 Save" },
 	["q"] = { "<cmd>q!<CR>", "󰿅 Quit" },
-	["c"] = { "<cmd>Bdelete!<CR>", " 󰅗 Close Buffer" },
+	-- ["c"] = { "<cmd>Bdelete!<CR>", "󰅗 Close Buffer" },
+	["k"] = { "<cmd>lua _close_buffer()<CR>", "󰅗 Close Buffer" },
+	-- open exloler and close toggleterm
+	["o"] = { "<cmd>lua _open_explorer()<cr><cmd>lua require('toggleterm').toggle()<cr>", "󱏒 Open Explorer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "󱪿 No Highlight" },
 	["f"] = {
 		"<cmd>Telescope find_files <CR>",

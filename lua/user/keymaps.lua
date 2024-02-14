@@ -10,6 +10,12 @@ function _LIVE_SERVER()
 	live_server:toggle()
 end
 
+function _close_buffer()
+	local buf = vim.api.nvim_get_current_buf()
+	--  delete current buffer
+	require("bufdelete").bufdelete(buf, true)
+end
+
 local term_opts = { silent = true }
 
 -- Shorten function name
@@ -46,6 +52,7 @@ keymap("n", "<C-Z>", "<cmd>undo<CR>", opts)
 keymap("x", "<C-Z>", "<esc><cmd>undo<CR>", opts)
 keymap("v", "<C-Z>", "<esc><cmd>undo<CR>", opts)
 keymap("i", "<C-Z>", "<esc><cmd>undo<CR>", opts)
+-- create comment CTRL + / all mode
 keymap("n", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
 keymap("v", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
 keymap("i", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
@@ -53,6 +60,9 @@ keymap("i", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise.curre
 keymap("n", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>$i<Right><leader>", opts)
 -- keymap("n", "<C-l>", "<esc><cmd>lua _LIVE_SERVER()<cr>", opts)
 -- keymap("i", "<C-l>", "<esc><cmd>lua _LIVE_SERVER()<cr>", opts)
+
+-- ALT + l to open terminal and run live-server
+keymap("n", "<A-l>", "<cmd>terminal<cr>$i<Right>live-server<cr>", opts)
 
 -- Resize with arrows
 -- cona
@@ -113,6 +123,9 @@ keymap("x", "<S-Down>", ":'<,'>t'><cr>", opts)
 
 -- keymap("i", "<C-r>", "<cmd>RunFile<CR>", opts)
 -- keymap("n", "<C-r>", "<cmd>RunFile<CR>", opts)
+
+-- close current buffer
+keymap("n", "<S-t>", "<cmd>lua _close_buffer()<cr>", opts)
 
 -- Visual Block --
 -- Move text up and down
