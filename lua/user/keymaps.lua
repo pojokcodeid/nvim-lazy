@@ -10,7 +10,7 @@ function _LIVE_SERVER()
 	live_server:toggle()
 end
 
-function _close_buffer()
+function _CLOSE_BUFFER()
 	local buf = vim.api.nvim_get_current_buf()
 	--  delete current buffer
 	require("bufdelete").bufdelete(buf, true)
@@ -125,7 +125,7 @@ keymap("x", "<S-Down>", ":'<,'>t'><cr>", opts)
 -- keymap("n", "<C-r>", "<cmd>RunFile<CR>", opts)
 
 -- close current buffer
-keymap("n", "<S-t>", "<cmd>lua _close_buffer()<cr>", opts)
+keymap("n", "<S-t>", "<cmd>lua _CLOSE_BUFFER()<cr>", opts)
 
 -- Visual Block --
 -- Move text up and down
