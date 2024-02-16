@@ -6,8 +6,11 @@ if vim.g.neovide then
 	vim.keymap.set("v", "<c-v>", '"+P') -- Paste visual mode
 	vim.keymap.set("c", "<c-v>", "<C-R>+") -- Paste command mode
 	vim.keymap.set("i", "<c-v>", '<ESC>l"+Pli') -- Paste insert mode
+	vim.keymap.set("n", "<c-/>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>$i<Right><leader>")
+	vim.keymap.set("i", "<c-/>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>$i<Right><leader>")
+	vim.keymap.set("v", "<c-/>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>")
 
-	vim.o.guifont = "JetBrainsMono_Nerd_Font:h15"
+	vim.o.guifont = "Hasklug_Nerd_Font:h15"
 	vim.g.neovide_padding_top = 0
 	vim.g.neovide_padding_bottom = 0
 	vim.g.neovide_padding_right = 0
@@ -16,7 +19,6 @@ if vim.g.neovide then
 	-- config for transparent
 	--vim.g.neovide_transparency = 0.8
 	vim.g.neovide_transparency = 1
-
 	vim.g.neovide_underline_automatic_scaling = false
 	vim.g.neovide_refresh_rate_idle = 5
 	vim.g.neovide_no_idle = true
@@ -30,7 +32,10 @@ if vim.g.neovide then
 	vim.g.neovide_cursor_animate_in_insert_mode = true
 	vim.g.neovide_cursor_vfx_mode = "torpedo"
 
+	vim.opt.linespace = 0
+	vim.g.neovide_scale_factor = 1
 	vim.opt.cmdheight = 0
+	vim.opt.spell = false
 end
 
 -- Allow clipboard copy paste in neovim
