@@ -182,12 +182,17 @@ return {
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		lazy = true,
-		event = "InsertEnter",
+		event = "BufWinEnter",
 		dependencies = "nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("ts_context_commentstring").setup({
+				enable_autocmd = false,
+			})
+		end,
 	},
 	{
 		"numToStr/Comment.nvim",
-		event = "InsertEnter",
+		event = "BufWinEnter",
 		config = function()
 			require("user.comment")
 		end,
@@ -248,7 +253,7 @@ return {
 	-- for auto close tag
 	{
 		"windwp/nvim-ts-autotag",
-		event = "InsertEnter",
+		event = "BufWinEnter",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		config = function()
 			require("nvim-ts-autotag").setup()
