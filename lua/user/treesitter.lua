@@ -30,11 +30,11 @@ configs.setup({
 	-- },
 	rainbow = {
 		enable = true,
-		disable = { "html" },
+		disable = { "html", "jsx" },
 		equery = "rainbow-parens",
 		strategy = require("ts-rainbow").strategy.global,
 	},
-	autotag = { enable = true },
+	-- autotag = { enable = true, enable_rename = true, enable_close = true, enable_close_on_slash = true },
 	incremental_selection = { enable = true },
 	indent = { enable = true, disable = { "python", "css" } },
 	autopairs = {

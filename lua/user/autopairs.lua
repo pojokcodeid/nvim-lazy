@@ -4,6 +4,8 @@ if not status_ok then
 	return
 end
 
+local Rule = require("nvim-autopairs.rule")
+
 npairs.setup({
 	check_ts = true,
 	ts_config = {
@@ -14,7 +16,7 @@ npairs.setup({
 	disable_filetype = { "TelescopePrompt", "spectre_panel" },
 	fast_wrap = {
 		map = "<M-e>",
-		chars = { "{", "[", "(", '"', "'" },
+		chars = { "{", "[", "(", '"', "'", "`" },
 		pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
 		offset = 0, -- Offset from pattern match
 		end_key = "$",
@@ -25,6 +27,14 @@ npairs.setup({
 	},
 })
 
+npairs.add_rules({
+	Rule("/", ">"):with_pair(function(opts)
+		local pair = opts.line:sub(opts.col, opts.col + 1)
+		if (vim.bo.filetype == "jsx" or vim.bo.filetype == "tsx") and pair == "/" then
+			return npairs.esc("/>") .. "<esc>i"
+		end
+	end),
+})
 -- If you want insert `(` after select function or method item
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 local cmp_status_ok, cmp = pcall(require, "cmp")

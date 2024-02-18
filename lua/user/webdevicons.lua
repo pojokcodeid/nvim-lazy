@@ -27,6 +27,12 @@ material_icon.setup({
 			cterm_color = "220",
 			name = "jsx",
 		},
+		["tsx"] = {
+			icon = "",
+			color = "#1354bf",
+			cterm_color = "220",
+			name = "Tsx",
+		},
 		["svg"] = {
 			icon = "󰜡",
 			color = "#FDB03A",
