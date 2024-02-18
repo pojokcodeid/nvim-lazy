@@ -30,7 +30,7 @@ configs.setup({
 	-- },
 	rainbow = {
 		enable = true,
-		disable = { "html", "jsx" },
+		disable = { "html", "tsx" },
 		equery = "rainbow-parens",
 		strategy = require("ts-rainbow").strategy.global,
 	},
