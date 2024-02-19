@@ -17,9 +17,9 @@ local function capabilities()
 		return cmp_nvim_lsp.default_capabilities()
 	end
 
-	local capabilities = vim.lsp.protocol.make_client_capabilities()
-	capabilities.textDocument.completion.completionItem.snippetSupport = true
-	capabilities.textDocument.completion.completionItem.resolveSupport = {
+	local CAPABILITIES = vim.lsp.protocol.make_client_capabilities()
+	CAPABILITIES.textDocument.completion.completionItem.snippetSupport = true
+	CAPABILITIES.textDocument.completion.completionItem.resolveSupport = {
 		properties = {
 			"documentation",
 			"detail",
@@ -27,7 +27,7 @@ local function capabilities()
 		},
 	}
 
-	return capabilities
+	return CAPABILITIES
 end
 
 local function directory_exists(path)
