@@ -75,6 +75,24 @@ material_icon.setup({
 			cterm_color = "220",
 			name = "vsix",
 		},
+		["class"] = {
+			icon = "󰅶",
+			color = "#1e88e5",
+			cterm_color = "220",
+			name = "JavaClass",
+		},
+		["java"] = {
+			icon = "󰅶",
+			color = "#ef510b",
+			cterm_color = "220",
+			name = "JavaFile",
+		},
+		["gradle"] = {
+			icon = "",
+			color = "#9C9C9C",
+			cterm_color = "220",
+			name = "GradleFile",
+		},
 		-- ["go"] = {
 		-- 	icon = "󰟓",
 		-- 	color = "#0FBFCF",
@@ -208,6 +226,12 @@ web_devicons.setup({
 			color = "#5881b1",
 			cterm_color = "220",
 			name = "project",
+		},
+		["gradlew"] = {
+			icon = "",
+			color = "#9C9C9C",
+			cterm_color = "220",
+			name = "gradlewFile",
 		},
 	},
 })
