@@ -233,5 +233,11 @@ web_devicons.setup({
 			cterm_color = "220",
 			name = "gradlewFile",
 		},
+		[".classpath"] = {
+			icon = "󰅶",
+			color = "#9C9C9C",
+			cterm_color = "220",
+			name = "gradlewFile",
+		},
 	},
 })
