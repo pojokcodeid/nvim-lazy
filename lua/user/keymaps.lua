@@ -62,7 +62,7 @@ keymap("n", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise.curre
 -- keymap("i", "<C-l>", "<esc><cmd>lua _LIVE_SERVER()<cr>", opts)
 
 -- ALT + l to open terminal and run live-server
-keymap("n", "<A-l>", "<cmd>terminal<cr>live-server<cr>", opts)
+keymap("n", "<A-l>", "<cmd>terminal live-server<cr>", opts)
 
 -- Resize with arrows
 -- cona

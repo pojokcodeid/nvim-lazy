@@ -302,7 +302,8 @@ local mappings = {
 
 	t = {
 		name = "  Terminal",
-		l = { "<cmd>lua _LIVE_SERVER()<cr>", "Live Server" },
+		-- l = { "<cmd>lua _LIVE_SERVER()<cr>", "Live Server" },
+		l = { "<cmd>terminal live-server<cr>", "Live Server" },
 		P = { "<cmd>lua _NEWTAB_TOGGLE()<cr>", "Power Shell" },
 		-- l = { "<cmd>ToggleTerm direction=tab<cr>live-server<cr>", "Live Server" },
 		x = { "<cmd>ToggleTermToggleAll!<cr>", "Close Tab" },
@@ -327,7 +328,7 @@ local mappings = {
 		r = { "<cmd>RunCode<CR>", "Run Code" },
 		f = { "<cmd>RunFile<CR>", "Run File" },
 		p = { "<cmd>RunProject<CR>", "Run Project" },
-		g = { "<cmd>terminal<cr>gradle run<cr>", "Run Gradle" },
+		g = { "<cmd>terminal gradle run<cr>", "Run Gradle" },
 		m = {
 			"<cmd>ToggleTerm size=70 direction=float<cr>mvn exec:java -Dexec.mainClass=com.pojokcode.App<cr>",
 			"Run MVN",
