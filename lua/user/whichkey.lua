@@ -329,15 +329,15 @@ local mappings = {
 		f = { "<cmd>RunFile<CR>", "Run File" },
 		p = { "<cmd>RunProject<CR>", "Run Project" },
 		g = { "<cmd>terminal gradle run<cr>", "Run Gradle" },
-		-- m = {
-		-- 	"<cmd>terminal mvn package<cr>",
-		-- 	"MVN Build",
-		-- },
 		m = {
-			name = "Maven",
-			b = { "<cmd>terminal mvn package<cr>", "MVN Build" },
-			r = { "<cmd>terminal java -jar target/my-app.jar<cr>", "Run JAR" },
+			"<cmd>terminal mvn package<cr>",
+			"MVN Build",
 		},
+		-- m = {
+		-- 	name = "Maven",
+		-- 	b = { "<cmd>terminal mvn package<cr>", "MVN Build" },
+		-- 	r = { "<cmd>terminal java -jar target/my-app.jar<cr>", "Run JAR" },
+		-- },
 	},
 	-- D = {
 	-- 	name = "Debug",
