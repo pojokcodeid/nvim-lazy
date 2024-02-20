@@ -327,7 +327,7 @@ local mappings = {
 		r = { "<cmd>RunCode<CR>", "Run Code" },
 		f = { "<cmd>RunFile<CR>", "Run File" },
 		p = { "<cmd>RunProject<CR>", "Run Project" },
-		g = { "<cmd>terminal<cr>$i<Right>gradle run<cr>" .. trn, "Run Gradle" },
+		g = { "<cmd>terminal<cr>gradle run<cr>", "Run Gradle" },
 		m = {
 			"<cmd>ToggleTerm size=70 direction=float<cr>mvn exec:java -Dexec.mainClass=com.pojokcode.App<cr>",
 			"Run MVN",
