@@ -115,6 +115,13 @@ local config = {
 
 config["on_attach"] = function(client, bufnr)
 	local _, _ = pcall(vim.lsp.codelens.refresh)
+
+	-- valdation if DAP not installed
+	local dap_status, _ = pcall(require, "nvim-dap")
+	if not dap_status then
+		return
+	end
+
 	require("jdtls.dap").setup_dap_main_class_configs()
 	jdtls.setup_dap({ hotcodereplace = "auto" })
 	require("user.lsp.handlers").on_attach(client, bufnr)
