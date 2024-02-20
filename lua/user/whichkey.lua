@@ -328,7 +328,7 @@ local mappings = {
 		r = { "<cmd>RunCode<CR>", "Run Code" },
 		f = { "<cmd>RunFile<CR>", "Run File" },
 		p = { "<cmd>RunProject<CR>", "Run Project" },
-		g = { "<cmd>terminal gradle run<cr>", "Run Gradle" },
+		g = { "<cmd>terminal<cr>gradle run<cr>", "Run Gradle" },
 		m = {
 			"<cmd>terminal mvn package<cr>",
 			"MVN Build",
