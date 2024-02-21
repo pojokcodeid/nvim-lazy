@@ -28,7 +28,12 @@ return {
 		tag = "legacy",
 		event = "BufRead",
 		config = function()
-			require("fidget").setup()
+			require("fidget").setup({
+				window = {
+					blend = 0,
+					relative = "editor",
+				},
+			})
 		end,
 	},
 	{
