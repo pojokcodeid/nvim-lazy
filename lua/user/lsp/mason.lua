@@ -115,4 +115,106 @@ require("mason-lspconfig").setup_handlers({
 	-- 		},
 	-- 	})
 	-- end,
+	["tsserver"] = function()
+		lspconfig.tsserver.setup({
+			on_attach = require("user.lsp.handlers").on_attach,
+			capabilities = require("user.lsp.handlers").capabilities,
+			-- add cmd
+			cmd = { "typescript-language-server", "--stdio" },
+			-- add file type support
+			filetypes = {
+				"javascript",
+				"javascriptreact",
+				"javascript.jsx",
+				"typescript",
+				"typescriptreact",
+				"typescript.tsx",
+			},
+			-- add dynamic root dir support
+			root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+			init_options = {
+				hostInfo = "neovim",
+			},
+		})
+	end,
+	["emmet_ls"] = function()
+		lspconfig.emmet_ls.setup({
+			on_attach = require("user.lsp.handlers").on_attach,
+			capabilities = require("user.lsp.handlers").capabilities,
+			-- add cmd
+			cmd = { "emmet-ls", "-c", "--stdio" },
+			-- add file type support
+			-- filetypes = {
+			-- 	"javascript",
+			-- 	"javascriptreact",
+			-- 	"javascript.jsx",
+			-- 	"typescript",
+			-- 	"typescriptreact",
+			-- 	"typescript.tsx",
+			-- "astro",
+			-- "css",
+			-- "eruby",
+			-- "html",
+			-- "htmldjango",
+			-- "less",
+			-- "pug",
+			-- "sass",
+			-- "scss",
+			-- "svelte",
+			-- "vue"                                                                                                                   -- },
+			-- add dynamic root dir support
+			root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+		})
+	end,
+	["eslint"] = function()
+		lspconfig.eslint.setup({
+			on_attach = require("user.lsp.handlers").on_attach,
+			capabilities = require("user.lsp.handlers").capabilities,
+			-- add cmd
+			cmd = { "vscode-eslint-language-server", "--stdio" }, -- add file type support
+			filetypes = {
+				"javascript",
+				"javascriptreact",
+				"javascript.jsx",
+				"typescript",
+				"typescriptreact",
+				"typescript.tsx",
+			},
+			-- add dynamic root dir support
+			root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+		})
+	end,
+	["kotlin_language_server"] = function()
+		lspconfig.kotlin_language_server.setup({
+			on_attach = require("user.lsp.handlers").on_attach,
+			capabilities = require("user.lsp.handlers").capabilities,
+			cmd = { "kotlin-language-server" },
+			filetypes = { "kotlin" },
+			root_dir = require("lspconfig.util").root_pattern(
+				"build.gradle.kts",
+				"build.gradle",
+				"settings.gradle",
+				"gradlew",
+				"pom.xml",
+				"build.gradle.kts",
+				"build.kts",
+				".git"
+			),
+		})
+	end,
+	["clangd"] = function()
+		lspconfig.clangd.setup({
+			on_attach = require("user.lsp.handlers").on_attach,
+			capabilities = require("user.lsp.handlers").capabilities,
+			root_dir = require("lspconfig.util").root_pattern(
+				"build",
+				"compile_commands.json",
+				".git",
+				"mvnw",
+				"gradlew",
+				"pom.xml",
+				"build.gradle"
+			) or vim.loop.cwd() or vim.fn.getcwd(),
+		})
+	end,
 })
