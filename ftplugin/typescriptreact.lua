@@ -1,3 +1,26 @@
+local status_ok, configs = pcall(require, "nvim-treesitter.configs")
+if not status_ok then
+	return
+end
+
+configs.setup({
+	ensure_installed = { "typescript", "tsx" }, -- pastikan parser TypeScript terinstal
+	highlight = {
+		enable = true, -- aktifkan highlight berbasis treesitter
+		additional_vim_regex_highlighting = false,
+	},
+	rainbow = {
+		enable = false,
+	},
+	incremental_selection = { enable = true },
+	indent = { enable = true, disable = { "python", "css" } },
+	autopairs = {
+		enable = true,
+	},
+})
+
+require("nvim-ts-autotag").setup()
+
 -- local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 -- if not lspconfig_status_ok then
 -- 	return
@@ -84,26 +107,3 @@
 -- 		root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
 -- 	})
 -- end
-
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
-if not status_ok then
-	return
-end
-
-configs.setup({
-	ensure_installed = { "typescript", "tsx" }, -- pastikan parser TypeScript terinstal
-	highlight = {
-		enable = true, -- aktifkan highlight berbasis treesitter
-		additional_vim_regex_highlighting = false,
-	},
-	rainbow = {
-		enable = false,
-	},
-	incremental_selection = { enable = true },
-	indent = { enable = true, disable = { "python", "css" } },
-	autopairs = {
-		enable = true,
-	},
-})
-
-require("nvim-ts-autotag").setup()
