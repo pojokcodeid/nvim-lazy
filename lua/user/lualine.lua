@@ -72,11 +72,10 @@ if data_exists then
 	if ui_icon ~= nil then
 		if custom_ui.status_icon == 1 then
 			icon_mode = ""
-			sts_mode = 1
 		elseif custom_ui.status_icon == 2 then
 			icon_mode = ""
-			sts_mode = 1
 		end
+		sts_mode = 1
 	end
 	local custom_style = custom_ui.custom_lualine
 	if custom_style ~= nil and custom_style == true then
@@ -119,7 +118,7 @@ local branch = {
 
 local location = {
 	"location",
-	padding = { left = 1 },
+	padding = 1,
 }
 
 -- cool function for progress

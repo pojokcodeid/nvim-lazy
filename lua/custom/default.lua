@@ -75,8 +75,8 @@ vim.g.pcode_custom_lualine = true
 vim.g.pcode_component_separators = { left = " ", right = " " }
 vim.g.pcode_section_separators = { left = "", right = "" }
 -- vim.g.pcode_component_separators = { left = "│", right = "│" }
--- vim.g.pcode_component_separators = { left = " ", right = " " }
--- vim.g.pcode_section_separators = { left = " ", right = " " }
+-- vim.g.pcode_component_separators = { left = "", right = "" }
+-- vim.g.pcode_section_separators = { left = "", right = "" }
 
 -- 0 ( format jalan)  1 (fromat off)
 vim.g.pcode_format_on_save = 1
