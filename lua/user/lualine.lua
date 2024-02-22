@@ -114,7 +114,7 @@ local branch = {
 	icons_enabled = true,
 	--icon = "",
 	icon = icons.git.Branch,
-	padding = { right = 1 },
+	padding = 1,
 }
 
 local location = {
@@ -221,6 +221,7 @@ local lsp_info = {
 	end,
 	--icon = " ",
 	icon = icons.ui.Gear .. "",
+	padding = 1,
 }
 local lsp_progress = {}
 local data_exists, lspprogress = pcall(require, "lsp-progress")
@@ -256,7 +257,8 @@ lualine.setup({
 		lualine_c = { diagnostics, lsp_info, lsp_progress },
 		-- lualine_c = { file_name, lsp_info },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { diff, spaces, "encoding", filetype },
+		-- lualine_x = { diff, spaces, "encoding", filetype },
+		lualine_x = { diff, spaces, filetype },
 		lualine_y = { location },
 		--[[ 	lualine_z = { progress }, ]]
 		lualine_z = { time },
