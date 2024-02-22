@@ -71,10 +71,10 @@ if data_exists then
 	local ui_icon = custom_ui.status_icon
 	if ui_icon ~= nil then
 		if custom_ui.status_icon == 1 then
-			icon_mode = " "
+			icon_mode = ""
 			sts_mode = 1
 		elseif custom_ui.status_icon == 2 then
-			icon_mode = " "
+			icon_mode = ""
 			sts_mode = 1
 		end
 	end
@@ -91,11 +91,14 @@ end
 
 local mode = {
 	"mode",
+	padding = 1,
 	fmt = function(str)
 		if sts_mode == 0 then
-			return "--" .. str .. "--"
+			-- return "--" .. str .. "--"
+			return str
 		else
-			return icon_mode .. str
+			-- return icon_mode .. str
+			return icon_mode
 		end
 	end,
 }
@@ -111,6 +114,7 @@ local branch = {
 	icons_enabled = true,
 	--icon = "",
 	icon = icons.git.Branch,
+	padding = { right = 1 },
 }
 
 local location = {
@@ -245,9 +249,10 @@ lualine.setup({
 		},
 		always_divide_middle = true,
 	},
+
 	sections = {
-		lualine_a = { branch },
-		lualine_b = { mode },
+		lualine_a = { mode },
+		lualine_b = { branch },
 		lualine_c = { diagnostics, lsp_info, lsp_progress },
 		-- lualine_c = { file_name, lsp_info },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
