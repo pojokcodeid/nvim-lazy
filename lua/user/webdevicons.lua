@@ -93,6 +93,12 @@ material_icon.setup({
 			cterm_color = "220",
 			name = "GradleFile",
 		},
+		["mod"] = {
+			icon = "󰟓",
+			color = "#C5362B",
+			cterm_color = "220",
+			name = "gomod",
+		},
 		-- ["go"] = {
 		-- 	icon = "󰟓",
 		-- 	color = "#0FBFCF",
