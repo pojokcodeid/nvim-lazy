@@ -4,12 +4,14 @@ if not status_ok then
 end
 local transp = false
 local sidebar = "dark"
+local hilight = "#292e42"
 local data_exists, config = pcall(require, "core.config")
 if data_exists then
 	local tras = config.transparent_mode
 	if tras == 1 then
 		transp = true
 		sidebar = "transparent"
+		hilight = "#3E4254"
 	end
 end
 tokyonight.setup({
@@ -39,13 +41,15 @@ tokyonight.setup({
 
 	--- You can override specific color groups to use other groups or a hex color
 	--- function will be called with a ColorScheme table
-	---@param colors ColorScheme
-	on_colors = function(colors) end,
+	-- @param colors ColorScheme
+	on_colors = function(colors)
+		colors.bg_highlight = hilight
+	end,
 
 	--- You can override specific highlights to use other groups or a hex color
 	--- function will be called with a Highlights and ColorScheme table
 	--@param highlights Highlights
-	---@param colors ColorScheme
+	-- @param colors ColorScheme
 	on_highlights = function(highlights, colors)
 		highlights.NvimTreeFolderIcon = {
 			bg = colors.none,
