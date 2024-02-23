@@ -214,6 +214,33 @@ if transparent_mode ~= nil then
 end
 
 return {
+	-- transparant config
+	{
+		"xiyaowong/transparent.nvim",
+		event = "BufWinEnter",
+		enabled = transparent,
+		cmd = { "TransparentToggle", "TransparentEnable", "TransparentDisable" },
+		config = function()
+			require("transparent").clear_prefix("BufferLine")
+			require("transparent").clear_prefix("Lualine")
+			require("transparent").setup({
+				extra_groups = {},
+				exclude_groups = {
+					-- disable active selection backgroun
+					"CursorLine",
+					"CursorLineNR",
+					"CursorLineSign",
+					"CursorLineFold",
+					"Pmenu",
+					"PmenuSel",
+					"PmenuSbar",
+					"PmenuThumb",
+					"NormalFloat",
+					"FloatBorder",
+				},
+			})
+		end,
+	},
 	-- color scheme
 	{ "luisiacc/gruvbox-baby", lazy = true, enabled = gruvbox },
 	{

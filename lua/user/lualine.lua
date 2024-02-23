@@ -228,48 +228,191 @@ if data_exists then
 	lsp_progress = lspprogress.progress
 end
 
-lualine.setup({
-	options = {
-		icons_enabled = true,
-		theme = "auto",
-		component_separators = component_separators,
-		section_separators = section_separators,
-		disabled_filetypes = {
-			"TelescopePrompt",
-			"packer",
-			"alpha",
-			"dashboard",
-			"NvimTree",
-			"Outline",
-			"DressingInput",
-			"toggleterm",
-			"lazy",
-			"mason",
-			"neo-tree",
-		},
-		always_divide_middle = true,
-	},
+local transparent_mode = require("core.config").transparent_mode
+if transparent_mode ~= nil then
+	if transparent_mode == 1 then
+		lualine.setup({
+			options = {
+				icons_enabled = true,
+				theme = "auto",
+				component_separators = { left = "", right = "" },
+				section_separators = { left = "", right = "" },
+				disabled_filetypes = {
+					"TelescopePrompt",
+					"packer",
+					"alpha",
+					"dashboard",
+					"NvimTree",
+					"Outline",
+					"DressingInput",
+					"toggleterm",
+					"lazy",
+					"mason",
+					"neo-tree",
+				},
+				always_divide_middle = true,
+			},
 
-	sections = {
-		lualine_a = { mode },
-		lualine_b = { branch },
-		lualine_c = { lsp_info, diagnostics, lsp_progress },
-		-- lualine_c = { file_name, lsp_info },
-		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		-- lualine_x = { diff, spaces, "encoding", filetype },
-		lualine_x = { diff, spaces, filetype },
-		lualine_y = { location },
-		--[[ 	lualine_z = { progress }, ]]
-		lualine_z = { time },
-	},
-	inactive_sections = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = { "filename" },
-		lualine_x = { "location" },
-		lualine_y = {},
-		lualine_z = {},
-	},
-	tabline = {},
-	extensions = {},
-})
+			sections = {
+				lualine_a = {},
+				lualine_b = { mode, branch },
+				lualine_c = { lsp_info, diagnostics, lsp_progress },
+				-- lualine_c = { file_name, lsp_info },
+				-- lualine_x = { "encoding", "fileformat", "filetype" },
+				-- lualine_x = { diff, spaces, "encoding", filetype },
+				lualine_x = { diff, spaces, filetype },
+				lualine_y = { location, time },
+				--[[ 	lualine_z = { progress }, ]]
+				lualine_z = {},
+			},
+			inactive_sections = {
+				lualine_a = {},
+				lualine_b = {},
+				lualine_c = { "filename" },
+				lualine_x = { "location" },
+				lualine_y = {},
+				lualine_z = {},
+			},
+			tabline = {},
+			extensions = {},
+		})
+	else
+		lualine.setup({
+			options = {
+				icons_enabled = true,
+				theme = "auto",
+				component_separators = component_separators,
+				section_separators = section_separators,
+				disabled_filetypes = {
+					"TelescopePrompt",
+					"packer",
+					"alpha",
+					"dashboard",
+					"NvimTree",
+					"Outline",
+					"DressingInput",
+					"toggleterm",
+					"lazy",
+					"mason",
+					"neo-tree",
+				},
+				always_divide_middle = true,
+			},
+
+			sections = {
+				lualine_a = { mode },
+				lualine_b = { branch },
+				lualine_c = { lsp_info, diagnostics, lsp_progress },
+				-- lualine_c = { file_name, lsp_info },
+				-- lualine_x = { "encoding", "fileformat", "filetype" },
+				-- lualine_x = { diff, spaces, "encoding", filetype },
+				lualine_x = { diff, spaces, filetype },
+				lualine_y = { location },
+				--[[ 	lualine_z = { progress }, ]]
+				lualine_z = { time },
+			},
+			inactive_sections = {
+				lualine_a = {},
+				lualine_b = {},
+				lualine_c = { "filename" },
+				lualine_x = { "location" },
+				lualine_y = {},
+				lualine_z = {},
+			},
+			tabline = {},
+			extensions = {},
+		})
+	end
+else
+	lualine.setup({
+		options = {
+			icons_enabled = true,
+			theme = "auto",
+			component_separators = component_separators,
+			section_separators = section_separators,
+			disabled_filetypes = {
+				"TelescopePrompt",
+				"packer",
+				"alpha",
+				"dashboard",
+				"NvimTree",
+				"Outline",
+				"DressingInput",
+				"toggleterm",
+				"lazy",
+				"mason",
+				"neo-tree",
+			},
+			always_divide_middle = true,
+		},
+
+		sections = {
+			lualine_a = { mode },
+			lualine_b = { branch },
+			lualine_c = { lsp_info, diagnostics, lsp_progress },
+			-- lualine_c = { file_name, lsp_info },
+			-- lualine_x = { "encoding", "fileformat", "filetype" },
+			-- lualine_x = { diff, spaces, "encoding", filetype },
+			lualine_x = { diff, spaces, filetype },
+			lualine_y = { location },
+			--[[ 	lualine_z = { progress }, ]]
+			lualine_z = { time },
+		},
+		inactive_sections = {
+			lualine_a = {},
+			lualine_b = {},
+			lualine_c = { "filename" },
+			lualine_x = { "location" },
+			lualine_y = {},
+			lualine_z = {},
+		},
+		tabline = {},
+		extensions = {},
+	})
+end
+
+-- lualine.setup({
+-- 	options = {
+-- 		icons_enabled = true,
+-- 		theme = "auto",
+-- 		component_separators = component_separators,
+-- 		section_separators = section_separators,
+-- 		disabled_filetypes = {
+-- 			"TelescopePrompt",
+-- 			"packer",
+-- 			"alpha",
+-- 			"dashboard",
+-- 			"NvimTree",
+-- 			"Outline",
+-- 			"DressingInput",
+-- 			"toggleterm",
+-- 			"lazy",
+-- 			"mason",
+-- 			"neo-tree",
+-- 		},
+-- 		always_divide_middle = true,
+-- 	},
+--
+-- 	sections = {
+-- 		lualine_a = { mode },
+-- 		lualine_b = { branch },
+-- 		lualine_c = { lsp_info, diagnostics, lsp_progress },
+-- 		-- lualine_c = { file_name, lsp_info },
+-- 		-- lualine_x = { "encoding", "fileformat", "filetype" },
+-- 		-- lualine_x = { diff, spaces, "encoding", filetype },
+-- 		lualine_x = { diff, spaces, filetype },
+-- 		lualine_y = { location },
+-- 		--[[ 	lualine_z = { progress }, ]]
+-- 		lualine_z = { time },
+-- 	},
+-- 	inactive_sections = {
+-- 		lualine_a = {},
+-- 		lualine_b = {},
+-- 		lualine_c = { "filename" },
+-- 		lualine_x = { "location" },
+-- 		lualine_y = {},
+-- 		lualine_z = {},
+-- 	},
+-- 	tabline = {},
+-- 	extensions = {},
+-- })

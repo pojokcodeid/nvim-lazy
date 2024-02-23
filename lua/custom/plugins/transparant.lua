@@ -1,0 +1,25 @@
+return {
+	-- "xiyaowong/transparent.nvim",
+	-- event = "BufWinEnter",
+	-- cmd = { "TransparentToggle", "TransparentEnable", "TransparentDisable" },
+	-- config = function()
+	-- 	require("transparent").clear_prefix("BufferLine")
+	-- 	require("transparent").clear_prefix("Lualine")
+	-- 	require("transparent").setup({
+	-- 		extra_groups = {},
+	-- 		exclude_groups = {
+	-- 			-- disable active selection backgroun
+	-- 			"CursorLine",
+	-- 			"CursorLineNR",
+	-- 			"CursorLineSign",
+	-- 			"CursorLineFold",
+	-- 			"Pmenu",
+	-- 			"PmenuSel",
+	-- 			"PmenuSbar",
+	-- 			"PmenuThumb",
+	-- 			"NormalFloat",
+	-- 			"FloatBorder",
+	-- 		},
+	-- 	})
+	-- end,
+}
