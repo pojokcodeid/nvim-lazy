@@ -51,5 +51,8 @@ tokyonight.setup({
 			bg = colors.none,
 			fg = "#e0af68",
 		}
+		highlights.Underlined = {
+			underline = false,
+		}
 	end,
 })

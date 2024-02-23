@@ -7,8 +7,13 @@ if frmt.format_on_save == 1 then
 	run = 1
 end
 
+local buf_clients = vim.lsp.buf_get_clients()
+if next(buf_clients) == nil then
+	run = 0
+end
+
 if run == 1 then
-	function format_filter(client)
+	function FORMAT_FILTER(client)
 		local filetype = vim.bo.filetype
 		local n = require("null-ls")
 		local s = require("null-ls.sources")
@@ -23,11 +28,12 @@ if run == 1 then
 			return false
 		end
 	end
+
 	vim.cmd([[
   augroup _lsp
        autocmd!
        " autocmd BufWritePre * lua vim.lsp.buf.format{timeout_ms =200, filter=format_filter}
-       autocmd BufWritePre * lua vim.lsp.buf.format{timeout_ms=2000 ,filter=format_filter}
+       autocmd BufWritePre * lua vim.lsp.buf.format{timeout_ms=2000 ,filter=FORMAT_FILTER}
     augroup end
   ]])
 end

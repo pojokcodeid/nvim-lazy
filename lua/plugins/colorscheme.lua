@@ -225,8 +225,18 @@ return {
 					-- purple = "#FCC76A",
 					menu = "#282A36",
 				},
+				italic_comment = true,
 				overrides = {
 					NvimTreeFolderIcon = { fg = "#FCC76A" },
+					CmpItemAbbr = { fg = "#ABB2BF" },
+					CmpItemKind = { fg = "#ABB2BF" },
+					CmpItemAbbrDeprecated = { fg = "#ABB2BF" },
+					CmpItemAbbrMatch = { fg = "#8BE9FD" },
+					htmlLink = { fg = "#BD93F9" },
+					Underlined = { fg = "#8BE9FD" },
+					NvimTreeSpecialFile = { fg = "#FF79C6" },
+					MatchParen = { fg = "#F8F8F2" },
+					SpellBad = { fg = "#FF6E6E" },
 				},
 				transparent_bg = transparent,
 			})

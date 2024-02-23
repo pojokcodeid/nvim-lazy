@@ -113,6 +113,12 @@ material_icon.setup({
 web_devicons.setup({
 	override = material_icon.get_icons(),
 	override_by_filename = {
+		[".htaccess"] = {
+			icon = "󰛓",
+			color = "#C63C17",
+			cterm_color = "240",
+			name = "htaccess",
+		},
 		[".huskyrc"] = {
 			icon = "󰩃",
 			color = "#ffffff",
