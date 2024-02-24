@@ -240,9 +240,9 @@ if data_exists then
 	lsp_progress = lspprogress.progress
 end
 
-local transparent_mode = require("core.config").transparent_mode
-if transparent_mode ~= nil then
-	if transparent_mode == 1 then
+local clear_lualine = require("core.config").clear_lualine
+if clear_lualine ~= nil then
+	if clear_lualine == 1 then
 		lualine.setup({
 			options = {
 				icons_enabled = true,

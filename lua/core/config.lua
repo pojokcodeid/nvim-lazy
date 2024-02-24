@@ -17,6 +17,7 @@ end
 config = {
 	colorscheme = opt("colorscheme", "gruvbox-baby"),
 	transparent_mode = opt("transparent_mode", 0),
+	clear_lualine = opt("clear_lualine", 0),
 	progress = opt("progress", 2),
 	lualine_style = opt("lualine_style", 0),
 	status_icon = opt("status_icon", 0),
