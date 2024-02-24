@@ -71,11 +71,12 @@ if data_exists then
 	local ui_icon = custom_ui.status_icon
 	if ui_icon ~= nil then
 		if custom_ui.status_icon == 1 then
-			icon_mode = ""
+			icon_mode = " "
+			sts_mode = 1
 		elseif custom_ui.status_icon == 2 then
-			icon_mode = ""
+			icon_mode = " "
+			sts_mode = 1
 		end
-		sts_mode = 1
 	end
 	local custom_style = custom_ui.custom_lualine
 	if custom_style ~= nil and custom_style == true then
@@ -92,11 +93,22 @@ local mode = {
 	"mode",
 	padding = 1,
 	fmt = function(str)
+		-- if str == "NORMAL" then
+		-- 	str = "NOR"
+		-- elseif str == "INSERT" then
+		-- 	str = "INS"
+		-- elseif str == "VISUAL" then
+		-- 	str = "VIS"
+		-- elseif str == "COMMAND" then
+		-- 	str = "CMD"
+		-- else
+		-- 	str = str
+		-- end
+
 		if sts_mode == 0 then
 			-- return "--" .. str .. "--"
-			return str
+			return " " .. str
 		else
-			-- return icon_mode .. str
 			return icon_mode
 		end
 	end,

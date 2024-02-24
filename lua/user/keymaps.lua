@@ -16,6 +16,11 @@ function _CLOSE_BUFFER()
 	require("bufdelete").bufdelete(buf, true)
 end
 
+function _OPEN_ALACRITTY()
+	-- open alacritty new windows current directory
+	vim.cmd("silent !alacritty --working-directory " .. vim.fn.getcwd())
+end
+
 local term_opts = { silent = true }
 
 -- Shorten function name
@@ -54,10 +59,15 @@ keymap("v", "<C-Z>", "<esc><cmd>undo<CR>", opts)
 keymap("i", "<C-Z>", "<esc><cmd>undo<CR>", opts)
 -- create comment CTRL + / all mode
 keymap("n", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
+keymap("n", "<C-/>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
 keymap("v", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
+keymap("v", "<C-/>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
 keymap("i", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
+keymap("i", "<C-/>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
 keymap("i", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>i", opts)
+keymap("i", "<C-/>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>i", opts)
 keymap("n", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>i", opts)
+keymap("n", "<C-/>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>i", opts)
 -- keymap("n", "<C-l>", "<esc><cmd>lua _LIVE_SERVER()<cr>", opts)
 -- keymap("i", "<C-l>", "<esc><cmd>lua _LIVE_SERVER()<cr>", opts)
 
@@ -126,6 +136,8 @@ keymap("x", "<S-Down>", ":'<,'>t'><cr>", opts)
 
 -- close current buffer
 keymap("n", "<S-t>", "<cmd>lua _CLOSE_BUFFER()<cr>", opts)
+-- open alacritty terminal
+-- keymap("n", "<A-a>", "<cmd>lua _OPEN_ALACRITTY()<cr>", opts)
 
 -- Visual Block --
 -- Move text up and down

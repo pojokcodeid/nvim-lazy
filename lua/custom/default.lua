@@ -12,7 +12,7 @@
 -- catppuccin, catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 -- dracula
 -- nightfox, dayfox, dawnfox, duskfox, nordfox, terafox, carbonfox
-vim.g.pcode_colorscheme = "gruvbox-baby"
+vim.g.pcode_colorscheme = "tokyonight"
 
 -- custom transparent mode
 -- only support
@@ -44,7 +44,7 @@ vim.g.pcode_lualine_style = 0
 -- 0 = default
 -- 1 = vim icon " "
 -- 2 = vim icon " "
-vim.g.pcode_status_icon = 1
+vim.g.pcode_status_icon = 0
 
 -- start custom lualine style
 -- contoh style

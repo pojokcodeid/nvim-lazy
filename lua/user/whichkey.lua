@@ -69,6 +69,11 @@ function _LIVE_SERVER()
 	live_server:toggle()
 end
 
+function _OPEN_ALACRITTY()
+	-- open alacritty new windows current directory
+	vim.cmd("silent !alacritty --working-directory " .. vim.fn.getcwd())
+end
+
 local setup = {
 	plugins = {
 		marks = true, -- shows a list of your marks on ' and `
@@ -317,6 +322,7 @@ local mappings = {
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 		s = { "<cmd>ToggleTerm direction=tab<cr>", "New Tab" },
+		a = { "<cmd>lua _OPEN_ALACRITTY()<cr>", "Open Alacritty" },
 	},
 	r = {
 		name = "  Run",
