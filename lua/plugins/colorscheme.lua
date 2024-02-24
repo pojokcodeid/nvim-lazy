@@ -228,6 +228,9 @@ return {
 			require("transparent").clear_prefix("Lazy")
 			-- clear prefix for NvimTree
 			require("transparent").clear_prefix("NvimTree")
+			-- clear prefix for NeoTree
+			require("transparent").clear_prefix("NeoTree")
+			-- clear prefix for Lualine
 			require("transparent").clear_prefix("Lualine")
 			require("transparent").setup({
 				extra_groups = {},
@@ -239,12 +242,8 @@ return {
 					"CursorLineFold",
 					-- disable nvimtree CursorLine
 					"NvimTreeCursorLine",
-					-- "Pmenu",
-					-- "PmenuSel",
-					-- "PmenuSbar",
-					-- "PmenuThumb",
-					-- "NormalFloat",
-					-- "FloatBorder",
+					-- disable Neotree CursorLine
+					"NeoTreeCursorLine",
 				},
 			})
 		end,
