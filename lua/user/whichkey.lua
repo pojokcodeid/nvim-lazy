@@ -476,7 +476,7 @@ local mappings = {
 	-- 	U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
 	-- },
 	d = debug_key,
-	p = {
+	z = {
 		name = " 󱑠 Plugins(Lazy)",
 		i = { "<cmd>Lazy install<cr>", "Install" },
 		s = { "<cmd>Lazy sync<cr>", "Sync" },
