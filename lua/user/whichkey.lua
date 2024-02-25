@@ -74,6 +74,16 @@ function _OPEN_ALACRITTY()
 	vim.cmd("silent !alacritty --working-directory " .. vim.fn.getcwd())
 end
 
+function _OPEN_WEZTERM()
+	-- open wezterm new windows current directory
+	vim.cmd("silent !wezterm start --cwd " .. vim.fn.getcwd())
+end
+
+function _OPEN_WEZTERM_TAB()
+	-- open new tab wezterm current directory
+	vim.cmd('silent !wezterm cli spawn --cwd "' .. vim.fn.getcwd() .. '"')
+end
+
 local setup = {
 	plugins = {
 		marks = true, -- shows a list of your marks on ' and `
@@ -323,6 +333,8 @@ local mappings = {
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 		s = { "<cmd>ToggleTerm direction=tab<cr>", "New Tab" },
 		a = { "<cmd>lua _OPEN_ALACRITTY()<cr>", "Open Alacritty" },
+		w = { "<cmd>lua _OPEN_WEZTERM()<cr>", "Open Wezterm" },
+		t = { "<cmd>lua _OPEN_WEZTERM_TAB()<cr>", "Open Tab Wezterm" },
 	},
 	r = {
 		name = "  Run",
