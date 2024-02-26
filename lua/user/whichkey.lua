@@ -175,7 +175,7 @@ if vim.fn.has("win32") == 1 then
 end
 -- for debug
 local debug_key = {}
-local trasparant = {}
+-- local trasparant = {}
 -- local is_dap = pcall(require, "dap")
 
 function _close_buffer()
@@ -184,10 +184,10 @@ function _close_buffer()
 	require("bufdelete").bufdelete(buf, true)
 end
 
-local trans_ok, _ = pcall(require, "transparent")
-if trans_ok then
-	trasparant = { "<cmd>TransparentToggle<cr>", "Toggle Transparency" }
-end
+-- local trans_ok, _ = pcall(require, "transparent")
+-- if trans_ok then
+-- 	trasparant = { "<cmd>TransparentToggle<cr>", "Toggle Transparency" }
+-- end
 
 if vim.fn.has("win32") == 0 then
 	debug_key = {
@@ -213,7 +213,7 @@ local mappings2 = {
 	["/"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", "󰆈 Commet Block" },
 }
 local mappings = {
-	["c"] = trasparant,
+	-- ["c"] = trasparant,
 	["a"] = { "<cmd>Alpha<cr>", "󰕮 Alpha" },
 	["b"] = {
 		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
