@@ -118,7 +118,7 @@ return {
 			"MasonUninstallAll",
 			"MasonLog",
 		},
-		keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
+		-- keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
 		config = function()
 			require("user.lsp")
 		end,
@@ -182,7 +182,8 @@ return {
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		lazy = true,
-		event = "BufWinEnter",
+		-- event = "BufWinEnter",
+		event = "InsertEnter",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		config = function()
 			require("ts_context_commentstring").setup({
@@ -192,7 +193,8 @@ return {
 	},
 	{
 		"numToStr/Comment.nvim",
-		event = "BufWinEnter",
+		-- event = "BufWinEnter",
+		event = "InsertEnter",
 		config = function()
 			require("user.comment")
 		end,
@@ -253,7 +255,8 @@ return {
 	-- for auto close tag
 	{
 		"windwp/nvim-ts-autotag",
-		event = "BufWinEnter",
+		-- event = "BufWinEnter",
+		event = "BufRead",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		config = function()
 			require("nvim-ts-autotag").setup()

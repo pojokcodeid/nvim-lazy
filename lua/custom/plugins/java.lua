@@ -1,1 +1,3 @@
-return { "mfussenegger/nvim-jdtls", event = "BufRead" }
+return {
+	-- { "mfussenegger/nvim-jdtls", event = "BufRead" },
+}

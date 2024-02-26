@@ -17,11 +17,11 @@ function _NODE_TOGGLE()
 	node:toggle()
 end
 
-function _NCDU_TOGGLE()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local ncdu = Terminal:new({ cmd = "ncdu", hidden = true })
-	ncdu:toggle()
-end
+-- function _NCDU_TOGGLE()
+-- 	local Terminal = require("toggleterm.terminal").Terminal
+-- 	local ncdu = Terminal:new({ cmd = "ncdu", hidden = true })
+-- 	ncdu:toggle()
+-- end
 
 function _HTOP_TOGGLE()
 	local Terminal = require("toggleterm.terminal").Terminal
@@ -175,12 +175,18 @@ if vim.fn.has("win32") == 1 then
 end
 -- for debug
 local debug_key = {}
+local trasparant = {}
 -- local is_dap = pcall(require, "dap")
 
 function _close_buffer()
 	local buf = vim.api.nvim_get_current_buf()
 	--  delete current buffer
 	require("bufdelete").bufdelete(buf, true)
+end
+
+local trans_ok, _ = pcall(require, "transparent")
+if trans_ok then
+	trasparant = { "<cmd>TransparentToggle<cr>", "Toggle Transparency" }
 end
 
 if vim.fn.has("win32") == 0 then
@@ -207,6 +213,7 @@ local mappings2 = {
 	["/"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", "󰆈 Commet Block" },
 }
 local mappings = {
+	["c"] = trasparant,
 	["a"] = { "<cmd>Alpha<cr>", "󰕮 Alpha" },
 	["b"] = {
 		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -323,7 +330,7 @@ local mappings = {
 		-- l = { "<cmd>ToggleTerm direction=tab<cr>live-server<cr>", "Live Server" },
 		x = { "<cmd>ToggleTermToggleAll!<cr>", "Close Tab" },
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-		u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
+		-- u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
 		-- t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
 		b = { "<cmd>lua _BTOP_TOGGLE()<cr>", "Btop" },
 		-- B = { "<cmd>lua _BTM_TOGGLE()<cr>", "Boottom" },
