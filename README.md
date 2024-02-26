@@ -89,6 +89,22 @@ nvim
 git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
 ```
 
+# Uninstall
+
+```bash
+# Linux / Macos (unix)
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+
+# Windows CMD
+rd -r ~\AppData\Local\nvim
+rd -r ~\AppData\Local\nvim-data
+
+# Window PowerShell
+rm -Force ~\AppData\Local\nvim
+rm -Force ~\AppData\Local\nvim-data
+```
+
 # Shortcut Most-Used
 
 <table>
