@@ -39,6 +39,8 @@ return {
 					"NvimTreeCursorLine",
 					-- disable Neotree CursorLine
 					"NeoTreeCursorLine",
+					-- disable Telescope active selection background
+					"TelescopeSelection",
 				},
 			})
 			require("transparent").clear_prefix("BufferLine")
