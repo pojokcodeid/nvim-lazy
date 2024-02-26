@@ -57,6 +57,7 @@ return {
 			-- clear prefix for Telescope
 			require("transparent").clear_prefix("Telescope")
 			-- create auto command to set transparent
+			vim.cmd("TransparentDisable")
 			vim.cmd("TransparentEnable")
 		end,
 	},
