@@ -12,7 +12,8 @@ if data_exists then
 		transp = true
 		sidebar = "transparent"
 		-- hilight = "#3E4254"
-		hilight = "#353a56"
+		-- hilight = "#353a56"
+		hilight = "#292e42"
 	end
 end
 tokyonight.setup({
