@@ -4,7 +4,7 @@ local diagnostics = null_ls.builtins.diagnostics
 local m = {
 	sources = {
 		formatting.stylua, -- tambahkan di bawah sini
-		diagnostics.flake8, -- tambahkan di bawah sini
+		--diagnostics.flake8, -- tambahkan di bawah sini
 		--formatting.blade_formatter.with({ filetypes = { "blade", "php" } }),
 	},
 }

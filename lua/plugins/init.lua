@@ -129,7 +129,8 @@ return {
 		"jayp0521/mason-null-ls.nvim",
 		-- lazy = true,
 		dependencies = {
-			"jose-elias-alvarez/null-ls.nvim",
+			-- "jose-elias-alvarez/null-ls.nvim",
+			"nvimtools/none-ls.nvim",
 			config = function()
 				require("user.lsp.null-ls")
 			end,
