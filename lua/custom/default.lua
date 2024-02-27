@@ -27,7 +27,7 @@ vim.g.pcode_colorscheme = "tokyonight"
 --  nightfox
 -- 0 =off   1= on
 vim.g.pcode_transparent_mode = 1
-vim.g.pcode_clear_lualine = 1
+vim.g.pcode_clear_lualine = 0
 -- 0 disable progress
 -- 1 lualine lsp progress
 -- 2 fidget progress
