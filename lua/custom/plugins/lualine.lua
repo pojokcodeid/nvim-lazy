@@ -115,6 +115,15 @@ return {
 				return icons.ui.Tab .. " " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 			end
 
+			local mode = {
+				"mode",
+				padding = 1,
+				separator = { left = "", right = "" },
+				right_padding = 3,
+				fmt = function(str)
+					return " " .. str
+				end,
+			}
 
       -- stylua: ignore
       local colors = {
@@ -187,7 +196,7 @@ return {
 				},
 				sections = {
 					lualine_a = {
-						{ "mode", separator = { left = "" }, right_padding = 3 },
+						mode,
 					},
 					-- lualine_b = { "filename", "branch" },
 					lualine_b = { "branch" },
@@ -195,7 +204,7 @@ return {
 					lualine_x = { diff, spaces, "filetype" },
 					lualine_y = { "progress" },
 					lualine_z = {
-						{ "location", separator = { right = "" }, left_padding = 3 },
+						{ "location", separator = { left = "", right = "" }, left_padding = 3 },
 					},
 				},
 				inactive_sections = {
