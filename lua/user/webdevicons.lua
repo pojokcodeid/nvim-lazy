@@ -113,6 +113,12 @@ material_icon.setup({
 web_devicons.setup({
 	override = material_icon.get_icons(),
 	override_by_filename = {
+		[".eslintrc.cjs"] = {
+			icon = "󰱺",
+			color = "#4930bd",
+			cterm_color = "240",
+			name = "eslintrccjs",
+		},
 		[".htaccess"] = {
 			icon = "󰛓",
 			color = "#C63C17",
