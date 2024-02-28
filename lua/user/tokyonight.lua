@@ -46,6 +46,7 @@ tokyonight.setup({
 	-- @param colors ColorScheme
 	on_colors = function(colors)
 		colors.bg_highlight = hilight
+		colors.bg_statusline = colors.none
 	end,
 
 	--- You can override specific highlights to use other groups or a hex color

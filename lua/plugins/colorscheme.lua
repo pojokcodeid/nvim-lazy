@@ -311,6 +311,7 @@ return {
 		config = function()
 			require("nightfox").setup({
 				options = {
+					terminal_colors = true,
 					transparent = transparent,
 				},
 			})
