@@ -79,9 +79,19 @@ function _OPEN_WEZTERM()
 	vim.cmd("silent !wezterm start --cwd " .. vim.fn.getcwd())
 end
 
+-- get folder name from current directory
+local _get_folder_name = function()
+	return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+end
+
 function _OPEN_WEZTERM_TAB()
 	-- open new tab wezterm current directory
 	vim.cmd('silent !wezterm cli spawn --cwd "' .. vim.fn.getcwd() .. '"')
+end
+
+function _SET_TAB_TITLE()
+	-- set tab title
+	vim.cmd('silent !wezterm cli set-tab-title "' .. _get_folder_name() .. '"')
 end
 
 local setup = {
@@ -342,6 +352,7 @@ local mappings = {
 		a = { "<cmd>lua _OPEN_ALACRITTY()<cr>", "Open Alacritty" },
 		w = { "<cmd>lua _OPEN_WEZTERM()<cr>", "Open Wezterm" },
 		t = { "<cmd>lua _OPEN_WEZTERM_TAB()<cr>", "Open Tab Wezterm" },
+		j = { "<cmd>lua _SET_TAB_TITLE()<cr>", "Set Tab Title" },
 	},
 	r = {
 		name = "  Run",
