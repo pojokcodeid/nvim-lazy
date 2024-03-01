@@ -118,7 +118,7 @@ return {
 			local mode = {
 				"mode",
 				padding = 1,
-				separator = { left = "" },
+				separator = { left = " " },
 				-- right_padding = 3,
 				fmt = function(str)
 					return " " .. str
@@ -166,7 +166,7 @@ return {
 					lualine_x = { diff, spaces, "filetype" },
 					lualine_y = { "progress" },
 					lualine_z = {
-						{ "location", separator = { right = "" }, padding = 1 },
+						{ "location", separator = { right = " " }, padding = 1 },
 					},
 				},
 				inactive_sections = {
