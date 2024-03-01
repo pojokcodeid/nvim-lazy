@@ -29,7 +29,7 @@ material_icon.setup({
 		},
 		["tsx"] = {
 			icon = "",
-			color = "#1354bf",
+			color = "#3699ff",
 			cterm_color = "220",
 			name = "Tsx",
 		},
@@ -113,6 +113,12 @@ material_icon.setup({
 web_devicons.setup({
 	override = material_icon.get_icons(),
 	override_by_filename = {
+		["vite.config.ts"] = {
+			icon = "󰉁",
+			color = "#ffab00",
+			cterm_color = "240",
+			name = "viteconfigts",
+		},
 		[".profile"] = {
 			icon = "󰙄",
 			color = "#9C9C9C",

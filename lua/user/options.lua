@@ -35,7 +35,7 @@ local options = {
 	timeoutlen = 300, -- Length of time to wait for a mapped sequence
 	undofile = true, -- Enable persistent undo
 	updatetime = 300, -- Length of time to wait before triggering the plugin
-	wrap = true, -- Disable wrapping of lines longer than the width of window
+	wrap = false, -- Disable wrapping of lines longer than the width of window
 	writebackup = false, -- Disable making a backup before overwriting a file
 	-- minimal number of screen columns either side of cursor if wrap is `false`
 	-- guifont = "monospace:h17", -- the font used in graphical neovim applications
