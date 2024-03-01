@@ -113,6 +113,18 @@ material_icon.setup({
 web_devicons.setup({
 	override = material_icon.get_icons(),
 	override_by_filename = {
+		[".profile"] = {
+			icon = "󰙄",
+			color = "#9C9C9C",
+			cterm_color = "240",
+			name = "profiledata",
+		},
+		[".eslint_d"] = {
+			icon = "󰱺",
+			color = "#4930bd",
+			cterm_color = "240",
+			name = "eslintd",
+		},
 		[".eslintrc.cjs"] = {
 			icon = "󰱺",
 			color = "#4930bd",
@@ -136,6 +148,12 @@ web_devicons.setup({
 			color = "#ea5e5e",
 			cterm_color = "240",
 			name = "prettierrc",
+		},
+		[".prettierd"] = {
+			icon = "",
+			color = "#ea5e5e",
+			cterm_color = "240",
+			name = "prettierd",
 		},
 		[".vscodeignore"] = {
 			icon = "",
