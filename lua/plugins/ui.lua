@@ -54,7 +54,7 @@ return {
 		end,
 	},
 	-- for delete buffers (close files) without closing your windows or messing up your layout.
-	{ "moll/vim-bbye", event = "InsertEnter" },
+	-- { "moll/vim-bbye", event = "InsertEnter" },
 	-- for view terminal
 	{
 		"akinsho/toggleterm.nvim",

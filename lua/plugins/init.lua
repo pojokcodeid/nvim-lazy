@@ -240,13 +240,13 @@ return {
 	-- 	end,
 	-- },
 	-- for Speed up loading Lua modules in Neovim to improve startup time.
-	{
-		"lewis6991/impatient.nvim",
-		event = "BufWinEnter",
-		config = function()
-			require("user.impatient")
-		end,
-	},
+	-- {
+	-- 	"lewis6991/impatient.nvim",
+	-- 	event = "BufWinEnter",
+	-- 	config = function()
+	-- 		require("user.impatient")
+	-- 	end,
+	-- },
 	-- for live server html,css,js
 	-- {
 	-- "manzeloth/live-server",
@@ -385,5 +385,5 @@ return {
 		end,
 	},
 	-- remove duplicate
-	{ "tpope/vim-repeat", event = "InsertEnter" },
+	-- { "tpope/vim-repeat", event = "InsertEnter" },
 }

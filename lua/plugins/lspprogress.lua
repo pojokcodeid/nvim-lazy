@@ -44,11 +44,15 @@ return {
 		config = function()
 			require("lsp-progress").setup({
 				client_format = function(client_name, spinner, series_messages)
-					return #series_messages > 0 and (spinner .. " " .. table.concat(series_messages, ", ")) or nil
+					return #series_messages > 0
+							and (spinner .. " " .. string.sub(table.concat(series_messages, ", "), 1, 25) .. " ...")
+						or nil
 				end,
 				format = function(client_messages)
 					local sign = ""
-					return #client_messages > 0 and (sign .. " " .. table.concat(client_messages, " ")) or sign
+					return #client_messages > 0
+							and (sign .. " " .. string.sub(table.concat(client_messages, " "), 1, 25) .. " ...")
+						or sign
 				end,
 			})
 		end,

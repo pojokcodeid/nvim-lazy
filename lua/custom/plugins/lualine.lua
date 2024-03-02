@@ -137,6 +137,12 @@ return {
 				end
 			end
 
+			local lsp_progress = {}
+			local data_ok, lspprogress = pcall(require, "lsp-progress")
+			if data_ok then
+				lsp_progress = lspprogress.progress
+			end
+
 			require("lualine").setup({
 				options = {
 					theme = "auto",
@@ -162,7 +168,7 @@ return {
 						mode,
 					},
 					lualine_b = { get_branch },
-					lualine_c = { lsp_info, diagnostics },
+					lualine_c = { lsp_info, diagnostics, lsp_progress },
 					lualine_x = { diff, spaces, "filetype" },
 					lualine_y = { "progress" },
 					lualine_z = {

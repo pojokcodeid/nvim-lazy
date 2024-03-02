@@ -62,3 +62,4 @@ vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins fr
 -- 	"i-ci:ver25-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100",
 -- 	"r:hor50-Cursor/lCursor-blinkwait100-blinkon100-blinkoff100",
 -- }
+vim.loader.enable()

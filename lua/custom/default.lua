@@ -31,7 +31,7 @@ vim.g.pcode_clear_lualine = 0
 -- 0 disable progress
 -- 1 lualine lsp progress
 -- 2 fidget progress
-vim.g.pcode_progress = 2
+vim.g.pcode_progress = 1
 
 -- style
 -- 0 =  default
