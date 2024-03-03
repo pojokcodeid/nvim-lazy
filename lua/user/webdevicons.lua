@@ -99,6 +99,12 @@ material_icon.setup({
 			cterm_color = "220",
 			name = "gomod",
 		},
+		["blade.php"] = {
+			icon = "󰫐",
+			color = "#ef510b",
+			cterm_color = "220",
+			name = "bladephp",
+		},
 		-- ["go"] = {
 		-- 	icon = "󰟓",
 		-- 	color = "#0FBFCF",
@@ -113,6 +119,12 @@ material_icon.setup({
 web_devicons.setup({
 	override = material_icon.get_icons(),
 	override_by_filename = {
+		["artisan"] = {
+			icon = "󰫐",
+			color = "#ef510b",
+			cterm_color = "240",
+			name = "artisan",
+		},
 		["vite.config.ts"] = {
 			icon = "󰉁",
 			color = "#ffab00",
@@ -142,6 +154,12 @@ web_devicons.setup({
 			color = "#C63C17",
 			cterm_color = "240",
 			name = "htaccess",
+		},
+		["pom.xml"] = {
+			icon = "󰛓",
+			color = "#C63C17",
+			cterm_color = "240",
+			name = "pomxml",
 		},
 		[".huskyrc"] = {
 			icon = "󰩃",
