@@ -53,7 +53,7 @@ function _NEWTAB_TOGGLE()
 	pwsh:toggle()
 end
 
-function _open_explorer()
+function _OPEN_EXPLORER()
 	local Terminal = require("toggleterm.terminal").Terminal
 	local pwsh = Terminal:new({ cmd = "explorer .", hidden = true, direction = "tab" })
 	pwsh:toggle()
@@ -179,10 +179,10 @@ local opts2 = {
 	nowait = true, -- use `nowait` when creating keymaps
 }
 
-local trn = ""
-if vim.fn.has("win32") == 1 then
-	trn = "pwsh<cr>"
-end
+-- local trn = ""
+-- if vim.fn.has("win32") == 1 then
+-- 	trn = "pwsh<cr>"
+-- end
 -- for debug
 local debug_key = {}
 -- local trasparant = {}
@@ -236,7 +236,7 @@ local mappings = {
 	-- ["c"] = { "<cmd>Bdelete!<CR>", "󰅗 Close Buffer" },
 	["k"] = { "<cmd>lua _close_buffer()<CR>", "󰅗 Close Buffer" },
 	-- open exloler and close toggleterm
-	["o"] = { "<cmd>lua _open_explorer()<cr><cmd>lua require('toggleterm').toggle()<cr>", "󱏒 Open Explorer" },
+	["o"] = { "<cmd>lua _OPEN_EXPLORER()<cr><cmd>lua require('toggleterm').toggle()<cr>", "󱏒 Open Explorer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "󱪿 No Highlight" },
 	["f"] = {
 		"<cmd>Telescope find_files <CR>",
