@@ -160,6 +160,7 @@ return {
 						"lazy",
 						"mason",
 						"neo-tree",
+						"startuptime",
 					},
 					always_divide_middle = true,
 				},
