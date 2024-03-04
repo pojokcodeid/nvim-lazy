@@ -105,6 +105,24 @@ material_icon.setup({
 			cterm_color = "220",
 			name = "bladephp",
 		},
+		["7z"] = {
+			icon = "",
+			color = "#9C9C9C",
+			cterm_color = "220",
+			name = "7z",
+		},
+		["zip"] = {
+			icon = "",
+			color = "#9C9C9C",
+			cterm_color = "220",
+			name = "zip",
+		},
+		["rar"] = {
+			icon = "",
+			color = "#9C9C9C",
+			cterm_color = "220",
+			name = "rar",
+		},
 		-- ["go"] = {
 		-- 	icon = "󰟓",
 		-- 	color = "#0FBFCF",

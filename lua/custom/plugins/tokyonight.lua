@@ -41,6 +41,7 @@ return {
 				-- @param colors ColorScheme
 				on_colors = function(colors)
 					colors.bg_statusline = colors.none
+					colors.bg_sidebar = colors.none
 				end,
 
 				--- You can override specific highlights to use other groups or a hex color
