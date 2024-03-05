@@ -9,7 +9,7 @@ end
 -- get folder name from current directory
 local _get_folder_name = function()
 	local str = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-	return "My " .. str:lower():gsub("^%l", string.upper)
+	return " 󱧶  " .. str:lower():gsub("^%l", string.upper) .. " "
 end
 
 local term_program = vim.fn.getenv("TERM_PROGRAM")
