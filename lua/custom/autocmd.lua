@@ -16,18 +16,3 @@ local term_program = vim.fn.getenv("TERM_PROGRAM")
 if term_program == "WezTerm" then
 	vim.cmd('silent !wezterm cli set-tab-title "' .. _get_folder_name() .. '"')
 end
-
--- vim.cmd([[
---   function s:MkNonExDir(file, buf)
---     if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
---         let dir=fnamemodify(a:file, ':h')
---         if !isdirectory(dir)
---             call mkdir(dir, 'p')
---         endif
---     endif
---     endfunction
---     augroup BWCCreateDir
---     autocmd!
---     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
---   augroup END
--- ]])

@@ -86,6 +86,9 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-Left>", "<Esc>:bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<S-Right>", "<Esc>:bprevious<CR>", opts)
+-- Reordering Bufferline
+keymap("n", "<S-PageUp>", "<cmd>BufferLineMovePrev<cr>", opts)
+keymap("n", "<S-PageDown>", "<cmd>BufferLineMoveNext<cr>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
