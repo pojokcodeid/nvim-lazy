@@ -10,7 +10,7 @@ return {
 				return
 			end
 			local transp = true
-			local sidebar = "normal" --"dark , transparent, normal"
+			local sidebar = "transparent" --"dark , transparent, normal"
 			tokyonight.setup({
 				-- your configuration comes here
 				-- or leave it empty to use the default settings
@@ -40,8 +40,10 @@ return {
 				--- function will be called with a ColorScheme table
 				-- @param colors ColorScheme
 				on_colors = function(colors)
-					colors.bg_statusline = colors.bg
+					colors.bg_statusline = colors.none
 					colors.bg_sidebar = colors.none
+					colors.bg = colors.none
+					colors.bg_dark = colors.none
 				end,
 
 				--- You can override specific highlights to use other groups or a hex color
