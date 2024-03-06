@@ -133,7 +133,7 @@ return {
 				if vim.b.gitsigns_head ~= nil then
 					return " " .. vim.b.gitsigns_head
 				else
-					return " " .. vim.fn.fnamemodify("null", ":t")
+					return "" .. vim.fn.fnamemodify("", ":t")
 				end
 			end
 
