@@ -37,6 +37,10 @@ return {
 			require("mini.indentscope").setup(opts)
 		end,
 	},
+	{
+		"hrsh7th/cmp-nvim-lua",
+		enabled = false,
+	},
 	-- {
 	-- 	"gbprod/yanky.nvim",
 	-- 	event = "InsertEnter",

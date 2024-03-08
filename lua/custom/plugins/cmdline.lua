@@ -7,7 +7,7 @@ if vim.g.neovide then
 end
 vim.opt.lazyredraw = is_neovide
 return {
-	{ "gelguy/wilder.nvim", enabled = false },
+	{ "gelguy/wilder.nvim", enabled = not use_noice },
 	{
 		"folke/noice.nvim",
 		enabled = use_noice,

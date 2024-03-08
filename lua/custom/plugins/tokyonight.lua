@@ -44,6 +44,7 @@ return {
 					colors.bg_sidebar = colors.none
 					colors.bg = colors.none
 					colors.bg_dark = colors.none
+					colors.terminal_black = colors.none
 				end,
 
 				--- You can override specific highlights to use other groups or a hex color
