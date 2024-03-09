@@ -144,17 +144,17 @@ return {
 			end
       -- stylua: ignore
       local colors = {
-        blue              = '#9ece6a',
-        cyan              = '#bb9af7',
+        blue              = '#50fa7b',
+        cyan              = '#f1fa8c',
         black             = '#1a1b26',
         black_transparant = 'none',
         white             = '#c6c6c6',
         red               = "#ff757f",
-        skyblue_1         = '#7aa2f7',
-        grey              = '#3b4261',
-        yellow            = "#ffc777",
+        skyblue_1         = '#bd93f9',
+        grey              = '#5f6a8e',
+        yellow            = "#ffb86c",
         fg_gutter         = "#3b4261",
-        green1            = "#4fd6be",
+        green1            = "#bd93f9",
       }
 
 			local bubbles_theme = {
