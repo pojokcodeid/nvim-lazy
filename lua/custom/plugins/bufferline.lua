@@ -87,19 +87,19 @@ return {
 			highlights = {
 				background = {
 					fg = { attribute = "fg", highlight = "TabLine" },
-					bg = { attribute = "bg", highlight = "TabLine" },
+					bg = { attribute = "none", highlight = "TabLine" },
 				},
 				buffer_visible = {
 					fg = { attribute = "fg", highlight = "TabLine" },
-					bg = { attribute = "bg", highlight = "TabLine" },
+					bg = { attribute = "none", highlight = "TabLine" },
 				},
 				close_button = {
 					fg = { attribute = "fg", highlight = "TabLine" },
-					bg = { attribute = "bg", highlight = "TabLine" },
+					bg = { attribute = "none", highlight = "TabLine" },
 				},
 				close_button_visible = {
 					fg = { attribute = "fg", highlight = "TabLine" },
-					bg = { attribute = "bg", highlight = "TabLine" },
+					bg = { attribute = "none", highlight = "TabLine" },
 				},
 				tab_selected = {
 					fg = { attribute = "fg", highlight = "Normal" },

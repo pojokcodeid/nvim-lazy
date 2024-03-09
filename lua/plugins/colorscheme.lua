@@ -235,7 +235,7 @@ return {
 				italic_comment = true,
 				lualine_bg_color = colors.bg,
 				overrides = {
-					NvimTreeFolderIcon = { fg = "#FCC76A" },
+					NvimTreeFolderIcon = { fg = "#6776a7" },
 					CmpItemAbbr = { fg = "#ABB2BF" },
 					CmpItemKind = { fg = "#ABB2BF" },
 					CmpItemAbbrDeprecated = { fg = "#ABB2BF" },
@@ -340,9 +340,13 @@ return {
 			require("onedark").setup({
 				term_colors = true,
 				style = onedark_style,
+				colors = {
+					bg_d = "$bg",
+				},
 				highlights = {
 					-- NvimTreeFolderIcon = { fg = "#FCC76A" },
 					BufferLineFill = { bg = "$bg0" },
+					BufferLineUnfocusedFill = { bg = "$bg0" },
 					StatusLine = { fg = "#f8f8f2", bg = "$bg0" },
 					StatusLineTerm = { fg = "#f8f8f2", bg = "$bg0" },
 					illuminatedWord = { bg = "#3b4261" },
