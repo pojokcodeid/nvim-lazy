@@ -44,6 +44,7 @@ end
 return {
 	{
 		"j-hui/fidget.nvim",
+		lazy = true,
 		enabled = fidget,
 		tag = "legacy",
 		event = "BufRead",
@@ -59,6 +60,7 @@ return {
 	{
 		"linrongbin16/lsp-progress.nvim",
 		enabled = lualine,
+		lazy = true,
 		branch = "main",
 		event = { "BufRead" },
 		config = function()

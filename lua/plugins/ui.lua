@@ -3,6 +3,7 @@ return {
 	{
 		"goolord/alpha-nvim",
 		-- event = "BufWinEnter",
+		lazy = true,
 		event = "VimEnter",
 		config = function()
 			require("user.alpha")
@@ -11,6 +12,7 @@ return {
 	-- line info bootom
 	{
 		"nvim-lualine/lualine.nvim",
+		lazy = true,
 		-- dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
 		event = "BufWinEnter",
 		config = function()
@@ -20,6 +22,7 @@ return {
 	-- for show icon
 	{
 		"kyazdani42/nvim-web-devicons",
+		lazy = true,
 		dependencies = { "DaikyXendo/nvim-material-icon" },
 		event = "BufRead",
 		config = function()
@@ -29,6 +32,7 @@ return {
 	-- for tree exploler
 	{
 		"kyazdani42/nvim-tree.lua",
+		lazy = true,
 		event = "BufRead",
 		cmd = { "NvimTree", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeClose" },
 		-- dependencies = "kyazdani42/nvim-web-devicons",
@@ -44,10 +48,12 @@ return {
 	-- for file tab
 	{
 		"famiu/bufdelete.nvim",
+		lazy = true,
 		event = "InsertEnter",
 	},
 	{
 		"akinsho/bufferline.nvim",
+		lazy = true,
 		event = "BufWinEnter",
 		config = function()
 			require("user.bufferline")
@@ -68,6 +74,7 @@ return {
 	-- key mapping
 	{
 		"folke/which-key.nvim",
+		lazy = true,
 		keys = { "<leader>", '"', "'", "`", "c", "v" },
 		event = "VeryLazy",
 		config = function()
@@ -77,6 +84,7 @@ return {
 	-- for search
 	{
 		"nvim-telescope/telescope.nvim",
+		lazy = true,
 		-- event = "BufRead",
 		-- dependencies = { { "nvim-lua/plenary.nvim" } },
 		cmd = "Telescope",

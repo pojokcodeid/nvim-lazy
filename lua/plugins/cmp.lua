@@ -10,28 +10,19 @@ if data_exists then
 	lspghost_text = custom_cmp.lspghost_text
 end
 return {
-	{ "hrsh7th/cmp-nvim-lsp", event = "InsertEnter" },
-	{ "hrsh7th/cmp-buffer", event = "InsertEnter" },
-	{ "hrsh7th/cmp-path", event = "InsertEnter" },
-	{ "saadparwaiz1/cmp_luasnip", event = "InsertEnter" },
-	{ "hrsh7th/cmp-nvim-lua", event = "InsertEnter" },
-	{ "lukas-reineke/cmp-rg", enabled = cmprg }, -- experimental
-	{ "hrsh7th/cmp-calc", enabled = cmpcalc }, -- experimental
-	{ "quangnguyen30192/cmp-nvim-tags", enabled = cmptag }, -- experimental
+	{ "hrsh7th/cmp-nvim-lsp", event = "InsertEnter", lazy = true },
+	{ "hrsh7th/cmp-buffer", event = "InsertEnter", lazy = true },
+	{ "hrsh7th/cmp-path", event = "InsertEnter", lazy = true },
+	{ "saadparwaiz1/cmp_luasnip", event = "InsertEnter", lazy = true },
+	{ "hrsh7th/cmp-nvim-lua", event = "InsertEnter", lazy = true },
+	{ "lukas-reineke/cmp-rg", lazy = true, enabled = cmprg }, -- experimental
+	{ "hrsh7th/cmp-calc", lazy = true, enabled = cmpcalc }, -- experimental
+	{ "quangnguyen30192/cmp-nvim-tags", lazy = true, enabled = cmptag }, -- experimental
 	{
 		"hrsh7th/nvim-cmp",
+		lazy = true,
 		version = false, -- last release is way too old
 		event = "InsertEnter",
-		-- dependencies = {
-		-- 	"hrsh7th/cmp-nvim-lsp",
-		-- 	"hrsh7th/cmp-buffer",
-		-- 	"hrsh7th/cmp-path",
-		-- 	"saadparwaiz1/cmp_luasnip",
-		-- 	"hrsh7th/cmp-nvim-lua",
-		-- 	{ "lukas-reineke/cmp-rg", enabled = cmprg }, -- experimental
-		-- 	{ "hrsh7th/cmp-calc", enabled = cmpcalc }, -- experimental
-		-- 	{ "quangnguyen30192/cmp-nvim-tags", enabled = cmptag }, -- experimental
-		-- },
 		opts = function()
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")

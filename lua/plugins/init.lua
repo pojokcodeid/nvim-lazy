@@ -44,6 +44,7 @@ return {
 	{
 		"rafamadriz/friendly-snippets",
 		event = "InsertEnter",
+		lazy = true,
 		config = function()
 			require("luasnip.loaders.from_vscode").lazy_load()
 			require("user.snippets")
@@ -81,6 +82,7 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
+		lazy = true,
 		event = "BufRead",
 		-- dependencies = {
 		-- 	"williamboman/mason-lspconfig.nvim",
@@ -127,12 +129,13 @@ return {
 	{ "RRethy/vim-illuminate", event = "BufRead", lazy = true },
 	{
 		"jayp0521/mason-null-ls.nvim",
-		-- lazy = true,
+		lazy = true,
 		dependencies = {
 			-- "jose-elias-alvarez/null-ls.nvim",
 			"nvimtools/none-ls.nvim",
 			dependencies = {
 				"nvimtools/none-ls-extras.nvim",
+				lazy = true,
 			},
 			config = function()
 				require("user.lsp.null-ls")
@@ -146,6 +149,7 @@ return {
 	-- debuging
 	{
 		"rcarriga/nvim-dap-ui",
+		lazy = true,
 		event = "BufRead",
 		dependencies = "mfussenegger/nvim-dap",
 		enabled = vim.fn.has("win32") == 0,
@@ -155,6 +159,7 @@ return {
 	},
 	{
 		"jay-babu/mason-nvim-dap.nvim",
+		lazy = true,
 		event = "BufRead",
 		dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
 		enabled = vim.fn.has("win32") == 0,
@@ -199,6 +204,7 @@ return {
 		"numToStr/Comment.nvim",
 		-- event = "BufWinEnter",
 		event = "InsertEnter",
+		lazy = true,
 		config = function()
 			require("user.comment")
 		end,
@@ -206,6 +212,7 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufRead",
+		lazy = true,
 		opts = {
 			indent = {
 				char = "│",
@@ -255,11 +262,12 @@ return {
 	-- build = "npm install -g live-server",
 	-- },
 	-- for multi cursor select
-	{ "mg979/vim-visual-multi", event = "BufWinEnter" },
+	{ "mg979/vim-visual-multi", event = "BufWinEnter", lazy = true },
 	-- for auto close tag
 	{
 		"windwp/nvim-ts-autotag",
 		-- event = "BufWinEnter",
+		lazy = true,
 		event = "BufRead",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		config = function()
@@ -269,6 +277,7 @@ return {
 	-- for auto detection file and run code
 	{
 		"CRAG666/code_runner.nvim",
+		lazy = true,
 		event = "InsertEnter",
 		-- dependencies = "nvim-lua/plenary.nvim",
 		cmd = { "RunCode", "RunFile", "RunProject", "RunClose" },
@@ -279,6 +288,7 @@ return {
 	-- for color view
 	{
 		"NvChad/nvim-colorizer.lua",
+		lazy = true,
 		event = "BufRead",
 		opts = function()
 			require("user.colorizer")
@@ -287,6 +297,7 @@ return {
 	-- for winbar icon
 	{
 		"SmiteshP/nvim-navic",
+		lazy = true,
 		dependencies = "neovim/nvim-lspconfig",
 		event = "InsertEnter",
 		config = function()
@@ -297,6 +308,7 @@ return {
 	-- for popup alert
 	{
 		"rcarriga/nvim-notify",
+		lazy = true,
 		event = "BufWinEnter",
 		keys = {
 			{
@@ -328,6 +340,7 @@ return {
 	-- for resize screen
 	{
 		"mrjones2014/smart-splits.nvim",
+		lazy = true,
 		event = "BufRead",
 		config = function()
 			require("user.smartspit")
@@ -352,6 +365,7 @@ return {
 	}, -- mini scrollview
 	{
 		"karb94/neoscroll.nvim",
+		lazy = true,
 		event = "InsertEnter",
 		config = function()
 			require("user.neoscroll")
@@ -359,13 +373,14 @@ return {
 	},
 	{
 		"dstein64/nvim-scrollview",
+		lazy = true,
 		event = "BufRead",
 		config = function()
 			require("user.nvimscroll")
 		end,
 	},
 	-- for check startuptime
-	{ "dstein64/vim-startuptime", cmd = "StartupTime", event = "InsertEnter" },
+	{ "dstein64/vim-startuptime", lazy = true, cmd = "StartupTime", event = "InsertEnter" },
 	-- for coloring pairs
 	-- remark 20231101 - menyebabkan error treesitter
 	-- {
@@ -374,9 +389,10 @@ return {
 	-- 	dependencies = "nvim-treesitter/nvim-treesitter",
 	-- },
 	-- for git
-	{ "HiPhish/nvim-ts-rainbow2", event = "BufRead", dependencies = "nvim-treesitter/nvim-treesitter" },
+	{ "HiPhish/nvim-ts-rainbow2", lazy = true, event = "BufRead", dependencies = "nvim-treesitter/nvim-treesitter" },
 	{
 		"lewis6991/gitsigns.nvim",
+		lazy = true,
 		enabled = vim.fn.executable("git") == 1,
 		ft = "gitcommit",
 		event = "BufRead",

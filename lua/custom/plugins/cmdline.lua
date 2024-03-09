@@ -10,6 +10,7 @@ return {
 	{ "gelguy/wilder.nvim", enabled = not use_noice },
 	{
 		"folke/noice.nvim",
+		lazy = true,
 		enabled = use_noice,
 		dependencies = {
 			{ "MunifTanjim/nui.nvim", enabled = use_noice },

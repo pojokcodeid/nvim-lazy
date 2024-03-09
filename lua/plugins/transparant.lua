@@ -23,6 +23,7 @@ return {
 	-- transparant config
 	{
 		"xiyaowong/transparent.nvim",
+		lazy = true,
 		enabled = transparent,
 		event = "BufWinEnter",
 		cmd = { "TransparentToggle", "TransparentEnable", "TransparentDisable" },

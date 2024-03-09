@@ -2,6 +2,7 @@ return {
 	-- for auto complate commond mode
 	{
 		"gelguy/wilder.nvim",
+		lazy = true,
 		event = "BufWinEnter",
 		config = function()
 			local wilder = require("wilder")
