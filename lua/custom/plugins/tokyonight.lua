@@ -40,11 +40,11 @@ return {
 				--- function will be called with a ColorScheme table
 				-- @param colors ColorScheme
 				on_colors = function(colors)
-					colors.bg_statusline = colors.none
-					colors.bg_sidebar = colors.none
-					colors.bg = colors.none
-					colors.bg_dark = colors.none
-					colors.terminal_black = colors.none
+					colors.bg_statusline = colors.bg
+					colors.bg_sidebar = colors.bg
+					colors.bg = colors.bg
+					colors.bg_dark = colors.bg
+					colors.terminal_black = colors.bg
 				end,
 
 				--- You can override specific highlights to use other groups or a hex color
@@ -59,7 +59,11 @@ return {
 					highlights.Underlined = {
 						underline = false,
 					}
-					highlights.BufferLineFill = { bg = colors.none }
+					highlights.BufferLineFill = { bg = colors.bg }
+					highlights.NvimTreeWinSeparator = {
+						fg = colors.border,
+						bg = colors.bg_sidebar,
+					}
 				end,
 			})
 		end,
