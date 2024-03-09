@@ -286,11 +286,47 @@ return {
 		"marko-cerovac/material.nvim",
 		enabled = material,
 		config = function()
+			local colors = require("material.colors")
 			vim.g.material_style = material_style
 			require("material").setup({
 				lualine_style = "stealth",
 				disable = {
 					background = transparent,
+				},
+				plugins = { -- Uncomment the plugins that you use to highlight them
+					-- Available plugins:
+					"dap",
+					-- "dashboard",
+					-- "eyeliner",
+					"fidget",
+					-- "flash",
+					-- "gitsigns",
+					-- "harpoon",
+					-- "hop",
+					"illuminate",
+					"indent-blankline",
+					-- "lspsaga",
+					"mini",
+					-- "neogit",
+					-- "neotest",
+					-- "neo-tree",
+					-- "neorg",
+					"noice",
+					"nvim-cmp",
+					"nvim-navic",
+					"nvim-tree",
+					"nvim-web-devicons",
+					-- "rainbow-delimiters",
+					-- "sneak",
+					"telescope",
+					-- "trouble",
+					"which-key",
+					"nvim-notify",
+				},
+				custom_highlights = {
+					BufferLineFill = { bg = colors.bg },
+					StatusLine = { fg = "#f8f8f2", bg = colors.bg },
+					StatusLineTerm = { fg = "#f8f8f2", bg = colors.bg },
 				},
 			})
 		end,
