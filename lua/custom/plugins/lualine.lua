@@ -150,7 +150,7 @@ return {
         black_transparant = 'none',
         white             = '#c6c6c6',
         red               = "#ff757f",
-        skyblue           = '#7aa2f7',
+        skyblue_1         = '#7aa2f7',
         grey              = '#3b4261',
         yellow            = "#ffc777",
         fg_gutter         = "#3b4261",
@@ -159,7 +159,7 @@ return {
 
 			local bubbles_theme = {
 				normal = {
-					a = { fg = colors.black, bg = colors.skyblue },
+					a = { fg = colors.black, bg = colors.skyblue_1 },
 					b = { fg = colors.white, bg = colors.grey },
 					c = { fg = colors.white, bg = colors.black_transparant },
 				},

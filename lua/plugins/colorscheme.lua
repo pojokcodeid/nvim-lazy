@@ -220,13 +220,20 @@ return {
 		"Mofiqul/dracula.nvim",
 		enabled = dracula,
 		config = function()
+			local is_transparent = false
+			local colors = require("dracula").colors()
+			if is_transparent then
+				colors = {
+					bg = "none",
+				}
+			end
 			require("dracula").setup({
 				colors = {
 					-- purple = "#FCC76A",
-					menu = "#282A36",
+					menu = colors.bg,
 				},
 				italic_comment = true,
-				lualine_bg_color = "#282A36",
+				lualine_bg_color = colors.bg,
 				overrides = {
 					NvimTreeFolderIcon = { fg = "#FCC76A" },
 					CmpItemAbbr = { fg = "#ABB2BF" },
@@ -243,11 +250,12 @@ return {
 					IlluminatedWordText = { bg = "#3b4261" },
 					IlluminatedWordRead = { bg = "#3b4261" },
 					IlluminatedWordWrite = { bg = "#3b4261" },
-					StatusLine = { fg = "#f8f8f2", bg = "#282A36" },
-					StatusLineTerm = { fg = "#f8f8f2", bg = "#282A36" },
-					BufferLineFill = { bg = "#282A36" },
+					StatusLine = { fg = "#f8f8f2", bg = colors.bg },
+					StatusLineTerm = { fg = "#f8f8f2", bg = colors.bg },
+					BufferLineFill = { bg = colors.bg },
 				},
 				transparent_bg = transparent,
+				-- transparent_bg = is_transparent,
 			})
 		end,
 	},
