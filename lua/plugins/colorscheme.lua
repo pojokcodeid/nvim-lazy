@@ -338,9 +338,18 @@ return {
 		config = function()
 			-- Lua
 			require("onedark").setup({
+				term_colors = true,
 				style = onedark_style,
 				highlights = {
 					-- NvimTreeFolderIcon = { fg = "#FCC76A" },
+					BufferLineFill = { bg = "$bg0" },
+					StatusLine = { fg = "#f8f8f2", bg = "$bg0" },
+					StatusLineTerm = { fg = "#f8f8f2", bg = "$bg0" },
+					illuminatedWord = { bg = "#3b4261" },
+					illuminatedCurWord = { bg = "#3b4261" },
+					IlluminatedWordText = { bg = "#3b4261" },
+					IlluminatedWordRead = { bg = "#3b4261" },
+					IlluminatedWordWrite = { bg = "#3b4261" },
 				},
 				transparent = transparent,
 				lualine = {
