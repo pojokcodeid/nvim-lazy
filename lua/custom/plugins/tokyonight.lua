@@ -11,6 +11,18 @@ return {
 			end
 			local transp = false
 			local sidebar = "normal" --"dark , transparent, normal"
+			local hilight = "#292e42"
+			local data_exists, config = pcall(require, "core.config")
+			if data_exists then
+				local tras = config.transparent_mode
+				if tras == 1 then
+					transp = true
+					sidebar = "transparent"
+					-- hilight = "#3E4254"
+					-- hilight = "#353a56"
+					hilight = "#292e42"
+				end
+			end
 			tokyonight.setup({
 				-- your configuration comes here
 				-- or leave it empty to use the default settings
@@ -40,11 +52,8 @@ return {
 				--- function will be called with a ColorScheme table
 				-- @param colors ColorScheme
 				on_colors = function(colors)
-					colors.bg_statusline = colors.bg
-					colors.bg_sidebar = colors.bg
-					colors.bg = colors.bg
-					colors.bg_dark = colors.bg
-					colors.terminal_black = colors.bg
+					colors.bg_highlight = hilight
+					colors.bg_statusline = colors.none
 				end,
 
 				--- You can override specific highlights to use other groups or a hex color
@@ -59,10 +68,8 @@ return {
 					highlights.Underlined = {
 						underline = false,
 					}
-					highlights.BufferLineFill = { bg = colors.bg }
 					highlights.NvimTreeWinSeparator = {
 						fg = colors.border,
-						bg = colors.bg_sidebar,
 					}
 				end,
 			})

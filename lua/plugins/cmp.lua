@@ -100,8 +100,17 @@ return {
 					end,
 				},
 				window = {
-					completion = cmp.config.window.bordered(),
-					documentation = cmp.config.window.bordered(),
+					-- completion = cmp.config.window.bordered(),
+					-- documentation = cmp.config.window.bordered(),
+					-- remove border window from cmp
+					completion = {
+						border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+						winhighlight = "Normal:bg,FloatBorder:bg,CursorLine:PmenuSel,Search:None",
+					},
+					documentation = {
+						border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+						winhighlight = "Normal:bg,FloatBorder:bg,CursorLine:PmenuSel,Search:None",
+					},
 				},
 				experimental = {
 					ghost_text = lspghost_text,

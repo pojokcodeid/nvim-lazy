@@ -253,6 +253,7 @@ return {
 					StatusLine = { fg = "#f8f8f2", bg = colors.bg },
 					StatusLineTerm = { fg = "#f8f8f2", bg = colors.bg },
 					BufferLineFill = { bg = colors.bg },
+					Pmenu = { fg = colors.white, bg = colors.bg },
 				},
 				transparent_bg = transparent,
 				-- transparent_bg = is_transparent,
@@ -354,10 +355,53 @@ return {
 					IlluminatedWordText = { bg = "#3b4261" },
 					IlluminatedWordRead = { bg = "#3b4261" },
 					IlluminatedWordWrite = { bg = "#3b4261" },
+					-- overide lualine fill color with bg color
+					LualineNormal = { bg = "$bg0" },
+					-- overide lualine_c fill color with bg color
+					LualineC = { bg = "$bg0" },
+					-- overide lualine_x fill color with bg color
+					LualineX = { bg = "$bg0" },
+					-- overide which-key fill color with bg color
+					WhichKey = { bg = "$bg0" },
+					-- overide which-key fill color with bg color
+					WhichKeySeperator = { bg = "$bg0" },
+					-- overide which-key fill color with bg color
+					WhichKeyDesc = { bg = "$bg0" },
+					-- overide which-key fill color with bg color
+					WhichKeyFloat = { bg = "$bg0" },
+					-- overide which-key fill color with bg color
+					WhichKeyValue = { bg = "$bg0" },
+					-- overide which-key fill color with bg color
+					WhichKeyBorder = { bg = "$bg0" },
+					-- overide Lazy fill color with bg color
+					LazyNormal = { bg = "$bg0" },
+					-- overide lazy background color with bg color
+					LazyBackground = { bg = "$bg0" },
+					-- overide Lazy fill color with bg color
+					LazyH1 = { bg = "$bg0" },
+					-- overide Lazy fill color with bg color
+					LazyH2 = { bg = "$bg0" },
+					-- overide Lazy fill color with bg color
+					LazyH3 = { bg = "$bg0" },
+					-- overide Lazy fill color with bg color
+					LazyH4 = { bg = "$bg0" },
+					-- overide Lazy fill color with bg color
+					LazyH5 = { bg = "$bg0" },
+					-- overide Lazy fill color with bg color
+					LazyH6 = { bg = "$bg0" },
+					-- overide Lazy fill color with bg color
+					LazyButton = { bg = "$bg0" },
+					-- overide Lazy fill color with bg color
+					LazyButtonActive = { bg = "$bg0" },
+					-- overide Lazy fill color with bg color
+					LazySpecial = { bg = "$bg0" },
+					-- overide Lazy fill color with bg color
+					LazyProgress = { bg = "$bg0" },
+					Pmenu = { fg = "$fg", bg = "$bg0" },
 				},
 				transparent = transparent,
 				lualine = {
-					transparent = transparent,
+					transparent = true,
 				},
 			})
 			require("onedark").load()
@@ -435,6 +479,7 @@ return {
 						LazySpecial = { bg = "bg1" },
 						-- overide Lazy fill color with bg color
 						LazyProgress = { bg = "bg1" },
+						Pmenu = { bg = "bg1" },
 					},
 				},
 			})
