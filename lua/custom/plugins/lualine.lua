@@ -157,7 +157,44 @@ return {
         green1            = "#bd93f9",
       }
 
-			local bubbles_theme = {
+			-- check config for theme
+			local set_theme
+			local bubbles_theme = {}
+			local data_exists, config = pcall(require, "core.config")
+			if data_exists then
+				if config.colorscheme ~= nil then
+					local color = config.colorscheme
+					switch(color, {
+						["tokyonight"] = function()
+							set_theme = "auto"
+						end,
+						["tokyonight-night"] = function()
+							set_theme = "auto"
+						end,
+						["tokyonight-storm"] = function()
+							set_theme = "auto"
+						end,
+						["tokyonight-day"] = function()
+							set_theme = "auto"
+						end,
+						["tokyonight-moon"] = function()
+							set_theme = "auto"
+						end,
+						["dracula"] = function()
+							local clr = require("dracula").colors()
+							colors.blue = clr.green
+							colors.black = clr.black
+							colors.cyan = clr.yellow
+							set_theme = bubbles_theme
+						end,
+						default = function()
+							set_theme = "auto"
+						end,
+					})
+				end
+			end
+
+			bubbles_theme = {
 				normal = {
 					a = { fg = colors.black, bg = colors.skyblue_1 },
 					b = { fg = colors.white, bg = colors.grey },
@@ -190,6 +227,11 @@ return {
 					c = { fg = colors.black, bg = colors.black_transparant },
 				},
 			}
+
+			if set_theme == "auto" then
+				bubbles_theme = vim.fn.fnamemodify("auto", ":t")
+			end
+
 			require("lualine").setup({
 				options = {
 					theme = bubbles_theme,
