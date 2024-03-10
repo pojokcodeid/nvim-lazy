@@ -375,10 +375,67 @@ return {
 		"EdenEast/nightfox.nvim",
 		enabled = nightfox,
 		config = function()
+			local palette = require("nightfox.palette").load("nightfox")
+			local Color = require("nightfox.lib.color")
+			local bg = Color.from_hex(palette.bg1)
 			require("nightfox").setup({
 				options = {
 					terminal_colors = true,
 					transparent = transparent,
+				},
+				palettes = {},
+				specs = {},
+				groups = {
+					all = {
+						-- overide bufferline fill color
+						BufferLineFill = { bg = "bg1" },
+						BufferLineUnfocusedFill = { bg = "bg1" },
+						-- overide nvimtree fill color with bg color
+						NvimTreeNormal = { bg = "bg1" },
+						-- overide statusline fill color with bg color
+						StatusLine = { bg = "bg1" },
+						StatusLineTerm = { bg = "bg1" },
+						-- overide lualine fill color with bg color
+						LualineNormal = { bg = "bg1" },
+						-- overide lualine_c fill color with bg color
+						LualineC = { bg = "bg1" },
+						-- overide lualine_x fill color with bg color
+						LualineX = { bg = "bg1" },
+						-- overide which-key fill color with bg color
+						WhichKey = { bg = "bg1" },
+						-- overide which-key fill color with bg color
+						WhichKeySeperator = { bg = "bg1" },
+						-- overide which-key fill color with bg color
+						WhichKeyDesc = { bg = "bg1" },
+						-- overide which-key fill color with bg color
+						WhichKeyFloat = { bg = "bg1" },
+						-- overide which-key fill color with bg color
+						WhichKeyValue = { bg = "bg1" },
+						-- overide which-key fill color with bg color
+						WhichKeyBorder = { bg = "bg1" },
+						-- overide Lazy fill color with bg color
+						LazyNormal = { bg = "bg1" },
+						-- overide Lazy fill color with bg color
+						LazyH1 = { bg = "bg1" },
+						-- overide Lazy fill color with bg color
+						LazyH2 = { bg = "bg1" },
+						-- overide Lazy fill color with bg color
+						LazyH3 = { bg = "bg1" },
+						-- overide Lazy fill color with bg color
+						LazyH4 = { bg = "bg1" },
+						-- overide Lazy fill color with bg color
+						LazyH5 = { bg = "bg1" },
+						-- overide Lazy fill color with bg color
+						LazyH6 = { bg = "bg1" },
+						-- overide Lazy fill color with bg color
+						LazyButton = { bg = "bg1" },
+						-- overide Lazy fill color with bg color
+						LazyButtonActive = { bg = "bg1" },
+						-- overide Lazy fill color with bg color
+						LazySpecial = { bg = "bg1" },
+						-- overide Lazy fill color with bg color
+						LazyProgress = { bg = "bg1" },
+					},
 				},
 			})
 		end,
