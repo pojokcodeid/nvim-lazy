@@ -236,7 +236,7 @@ return {
 				lualine_bg_color = colors.bg,
 				overrides = {
 					Keywords = { fg = colors.cyan, italic = true },
-					Function = { fg = colors.yellow, italic = true },
+					-- Function = { fg = colors.yellow, italic = true },
 					["@keyword"] = { fg = colors.pink, italic = true },
 					["@keyword.function"] = { fg = colors.cyan, italic = true },
 					["@function"] = { fg = colors.green, italic = true },
