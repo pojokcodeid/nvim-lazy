@@ -36,7 +36,7 @@ return {
 					-- comments = { italic = true },
 					comments = { italic = true },
 					keywords = { italic = true },
-					functions = {},
+					functions = { italic = true },
 					variables = {},
 					-- Background styles. Can be "dark", "transparent" or "normal"
 					sidebars = sidebar, -- style for sidebars, see below

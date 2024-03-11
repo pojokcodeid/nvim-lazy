@@ -235,6 +235,11 @@ return {
 				italic_comment = true,
 				lualine_bg_color = colors.bg,
 				overrides = {
+					Keywords = { fg = colors.cyan, italic = true },
+					Function = { fg = colors.yellow, italic = true },
+					["@keyword"] = { fg = colors.pink, italic = true },
+					["@keyword.function"] = { fg = colors.cyan, italic = true },
+					["@function"] = { fg = colors.green, italic = true },
 					NvimTreeFolderIcon = { fg = "#6776a7" },
 					CmpItemAbbr = { fg = "#ABB2BF" },
 					CmpItemKind = { fg = "#ABB2BF" },
