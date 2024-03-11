@@ -106,10 +106,12 @@ return {
 					completion = {
 						border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 						winhighlight = "Normal:bg,FloatBorder:bg,CursorLine:PmenuSel,Search:None",
+						scrollbar = true,
 					},
 					documentation = {
 						border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 						winhighlight = "Normal:bg,FloatBorder:bg,CursorLine:PmenuSel,Search:None",
+						scrollbar = true,
 					},
 				},
 				experimental = {
