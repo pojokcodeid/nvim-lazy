@@ -3,16 +3,39 @@ return {
 	-- priority = 1000, -- Ensure it loads first
 	-- config = function()
 	-- 	require("onedarkpro").setup({
+	-- 		styles = {
+	-- 			types = "NONE",
+	-- 			methods = "NONE",
+	-- 			numbers = "NONE",
+	-- 			strings = "NONE",
+	-- 			comments = "italic",
+	-- 			keywords = "bold,italic",
+	-- 			constants = "NONE",
+	-- 			functions = "italic",
+	-- 			operators = "NONE",
+	-- 			variables = "NONE",
+	-- 			parameters = "NONE",
+	-- 			conditionals = "italic",
+	-- 			virtual_text = "NONE",
+	-- 		},
 	-- 		colors = {
 	-- 			-- red = "#FF0000",
+	-- 			bg_statusline = "#282c34",
 	-- 		},
 	-- 		options = {
 	-- 			cursorline = true,
 	-- 			transparency = false,
+	-- 			terminal_colors = true,
 	-- 		},
 	-- 		highlights = {
 	-- 			-- overide cursor line fill colors
+	-- 			LineNr = { fg = "${fg}" }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+	-- 			CursorLineNr = { fg = "${fg}" }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 	-- 			CursorLine = { bg = "#333842" },
+	-- 			Cursor = { fg = "${bg}", bg = "${fg}" }, -- character under the cursor
+	-- 			lCursor = { fg = "${bg}", bg = "${fg}" }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+	-- 			CursorIM = { fg = "${bg}", bg = "${fg}" }, -- like Cursor, but used when in IME mode |CursorIM|
+	-- 			CursorColumn = { bg = "#333842" }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
 	-- 			-- overide nvimtree folder icon fill color
 	-- 			NvimTreeFolderIcon = { fg = "#6776a7" },
 	-- 			-- overide nvimtree text fill color folder opened
@@ -30,6 +53,7 @@ return {
 	-- 			StatusLineTerm = { fg = "#f8f8f2", bg = "${bg}" },
 	-- 			BufferLineFill = { bg = "${bg}" },
 	-- 			Pmenu = { fg = "${fg}", bg = "${bg}" },
+	-- 			PmenuThumb = { bg = "#3b4261" }, -- Popup menu: Thumb of the scrollbar.
 	-- 			-- overide lualine fill color with bg color
 	-- 			LualineNormal = { bg = "${bg}" },
 	-- 			-- overide lualine_c fill color with bg color

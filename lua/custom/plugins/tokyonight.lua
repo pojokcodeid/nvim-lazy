@@ -71,6 +71,8 @@ return {
 					highlights.NvimTreeWinSeparator = {
 						fg = colors.border,
 					}
+					highlights.BufferLineFill = { bg = colors.bg }
+					highlights.NvimTreeSpecialFile = { fg = colors.purple, underline = false }
 				end,
 			})
 		end,

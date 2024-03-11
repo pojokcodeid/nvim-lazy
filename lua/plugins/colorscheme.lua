@@ -427,60 +427,43 @@ return {
 				options = {
 					terminal_colors = true,
 					transparent = transparent,
+					styles = { -- Style to be applied to different syntax groups
+						comments = "italic", -- Value is any valid attr-list value `:help attr-list`
+						conditionals = "italic",
+						constants = "NONE",
+						functions = "italic",
+						keywords = "bold,italic",
+						numbers = "NONE",
+						operators = "NONE",
+						strings = "NONE",
+						types = "NONE",
+						variables = "NONE",
+					},
 				},
-				palettes = {},
+				palettes = {
+					all = {
+						bg0 = palette.bg1,
+						bg = palette.bg1,
+					},
+				},
 				specs = {},
 				groups = {
 					all = {
 						-- overide bufferline fill color
-						BufferLineFill = { bg = "bg1" },
-						BufferLineUnfocusedFill = { bg = "bg1" },
+						BufferLineFill = { bg = palette.bg1 },
+						BufferLineUnfocusedFill = { bg = palette.bg },
 						-- overide nvimtree fill color with bg color
-						NvimTreeNormal = { bg = "bg1" },
-						-- overide statusline fill color with bg color
-						StatusLine = { bg = "bg1" },
-						StatusLineTerm = { bg = "bg1" },
+						NvimTreeNormal = { bg = palette.bg },
+						NvimTreeWinSeparator = {
+							fg = palette.bg0,
+						},
+						Underlined = { style = "NONE" }, -- overide statusline fill color with bg color
+						StatusLine = { bg = "NONE" },
+						StatusLineTerm = { bg = palette.bg },
 						-- overide lualine fill color with bg color
-						LualineNormal = { bg = "bg1" },
-						-- overide lualine_c fill color with bg color
-						LualineC = { bg = "bg1" },
-						-- overide lualine_x fill color with bg color
-						LualineX = { bg = "bg1" },
-						-- overide which-key fill color with bg color
-						WhichKey = { bg = "bg1" },
-						-- overide which-key fill color with bg color
-						WhichKeySeperator = { bg = "bg1" },
-						-- overide which-key fill color with bg color
-						WhichKeyDesc = { bg = "bg1" },
-						-- overide which-key fill color with bg color
-						WhichKeyFloat = { bg = "bg1" },
-						-- overide which-key fill color with bg color
-						WhichKeyValue = { bg = "bg1" },
-						-- overide which-key fill color with bg color
-						WhichKeyBorder = { bg = "bg1" },
-						-- overide Lazy fill color with bg color
-						LazyNormal = { bg = "bg1" },
-						-- overide Lazy fill color with bg color
-						LazyH1 = { bg = "bg1" },
-						-- overide Lazy fill color with bg color
-						LazyH2 = { bg = "bg1" },
-						-- overide Lazy fill color with bg color
-						LazyH3 = { bg = "bg1" },
-						-- overide Lazy fill color with bg color
-						LazyH4 = { bg = "bg1" },
-						-- overide Lazy fill color with bg color
-						LazyH5 = { bg = "bg1" },
-						-- overide Lazy fill color with bg color
-						LazyH6 = { bg = "bg1" },
-						-- overide Lazy fill color with bg color
-						LazyButton = { bg = "bg1" },
-						-- overide Lazy fill color with bg color
-						LazyButtonActive = { bg = "bg1" },
-						-- overide Lazy fill color with bg color
-						LazySpecial = { bg = "bg1" },
-						-- overide Lazy fill color with bg color
-						LazyProgress = { bg = "bg1" },
-						Pmenu = { bg = "bg1" },
+						LualineNormal = { bg = palette.bg },
+						Pmenu = { bg = "bg3" },
+						PmenuSel = { bg = "bg3" },
 					},
 				},
 			})
