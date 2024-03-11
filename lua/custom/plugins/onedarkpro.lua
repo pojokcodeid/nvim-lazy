@@ -23,13 +23,14 @@ return {
 				colors = {
 					onedark = {
 						green = "#99c379",
-						gray = "#636e84",
+						gray = "#8094b4",
 						red = "#e06c75",
 						purple = "#c678dd",
 						yellow = "#e5c07a",
 						blue = "#61afef",
 						cyan = "#56b6c2",
 						bg_statusline = "#282c34",
+						indentline = "#3b4261",
 					},
 				},
 				options = {
@@ -39,7 +40,7 @@ return {
 				},
 				highlights = {
 					-- overide cursor line fill colors
-					LineNr = { fg = "${fg}" }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+					LineNr = { fg = "#49505E" }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 					CursorLineNr = { fg = "${blue}" }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 					CursorLine = { bg = "#333842" },
 					Cursor = { fg = "${bg}", bg = "${fg}" }, -- character under the cursor
@@ -47,11 +48,17 @@ return {
 					CursorIM = { fg = "${bg}", bg = "${fg}" }, -- like Cursor, but used when in IME mode |CursorIM|
 					CursorColumn = { bg = "#333842" }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
 					-- overide nvimtree folder icon fill color
-					NvimTreeFolderIcon = { fg = "${blue}" },
+					NvimTreeFolderIcon = { fg = "${gray}" },
 					-- overide nvimtree text fill color folder opened
 					NvimTreeOpenedFolderName = { fg = "${blue}" },
 					-- overide nvimtree text fill color root folder
-					NvimTreeRootFolder = { fg = "${blue}" },
+					NvimTreeRootFolder = { fg = "${yellow}" },
+					NvimTreeSpecialFile = { fg = "${yellow}" },
+					NvimTreeWinSeparator = {
+						fg = "#202329",
+					},
+					-- overide indenline fill color
+					IblIndent = { fg = "#3E4450" },
 					-- overide cmp cursorline fill color with #333842
 					PmenuSel = { bg = "#333842" },
 					illuminatedWord = { bg = "#3b4261" },
