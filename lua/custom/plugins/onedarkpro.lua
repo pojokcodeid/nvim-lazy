@@ -24,10 +24,10 @@ return {
 				colors = {
 					onedark = {
 						green = "#99c379",
-						gray = "#abb2bf",
+						gray = "#8094b4",
 						red = "#e06c75",
 						purple = "#c678dd",
-						yellow = "#e5c07b",
+						yellow = "#e5c07a",
 						blue = "#61afef",
 						cyan = "#56b6c2",
 						bg_statusline = "#282c34",
