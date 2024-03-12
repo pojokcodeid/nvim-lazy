@@ -54,9 +54,8 @@ return {
 					-- overide nvimtree text fill color root folder
 					NvimTreeRootFolder = { fg = "${yellow}" },
 					NvimTreeSpecialFile = { fg = "${yellow}" },
-					NvimTreeWinSeparator = {
-						fg = "#202329",
-					},
+					NvimTreeWinSeparator = { fg = "#202329" },
+					NvimTreeIndentMarker = { fg = "#3E4450" },
 					-- overide indenline fill color
 					IblIndent = { fg = "#3E4450" },
 					-- overide cmp cursorline fill color with #333842
