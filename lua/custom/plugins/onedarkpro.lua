@@ -1,4 +1,5 @@
 return {
+	{ "navarasu/onedark.nvim", enabled = false },
 	{ "folke/tokyonight.nvim", enabled = false },
 	{
 		"olimorris/onedarkpro.nvim",
@@ -23,14 +24,15 @@ return {
 				colors = {
 					onedark = {
 						green = "#99c379",
-						gray = "#8094b4",
+						gray = "#abb2bf",
 						red = "#e06c75",
 						purple = "#c678dd",
-						yellow = "#e5c07a",
+						yellow = "#e5c07b",
 						blue = "#61afef",
 						cyan = "#56b6c2",
 						bg_statusline = "#282c34",
 						indentline = "#3b4261",
+						float_bg = "#282c34",
 					},
 				},
 				options = {
