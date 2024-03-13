@@ -240,6 +240,7 @@ return {
 					["@keyword"] = { fg = colors.pink, italic = true },
 					["@keyword.function"] = { fg = colors.cyan, italic = true },
 					["@function"] = { fg = colors.green, italic = true },
+					["@tag.attribute"] = { fg = colors.green, italic = true },
 					NvimTreeFolderIcon = { fg = "#6776a7" },
 					CmpItemAbbr = { fg = "#ABB2BF" },
 					CmpItemKind = { fg = "#ABB2BF" },
@@ -347,10 +348,31 @@ return {
 				term_colors = true,
 				style = onedark_style,
 				colors = {
+					green = "#99c379",
+					gray = "#8094b4",
+					red = "#e06c75",
+					purple = "#c678dd",
+					yellow = "#e5c07a",
+					blue = "#61afef",
+					cyan = "#56b6c2",
 					bg_d = "$bg",
+					bg1 = "#282c34",
+				},
+				code_style = {
+					comments = "italic",
+					keywords = "italic",
+					functions = "none",
+					strings = "none",
+					variables = "none",
 				},
 				highlights = {
+					["@markup.link.url"] = { fg = "$cyan", fmt = "italic" },
+					["@text.uri"] = { fg = "$cyan", fmt = "none" },
+					["@tag"] = { fg = "$red" },
+					["@tag.delimiter"] = { fg = "$gray" },
+					["@tag.attribute"] = { fg = "$yellow", fmt = "italic" },
 					-- NvimTreeFolderIcon = { fg = "#FCC76A" },
+					NvimTreeSpecialFile = { fg = "$yellow", fmt = "italic" },
 					BufferLineFill = { bg = "$bg0" },
 					BufferLineUnfocusedFill = { bg = "$bg0" },
 					StatusLine = { fg = "#f8f8f2", bg = "$bg0" },
@@ -360,7 +382,7 @@ return {
 					IlluminatedWordText = { bg = "#3b4261" },
 					IlluminatedWordRead = { bg = "#3b4261" },
 					IlluminatedWordWrite = { bg = "#3b4261" },
-					PmenuSel = { fg = "$fg", bg = "$bg1" },
+					PmenuSel = { fg = "$fg", bg = "#333842" },
 					-- overide lualine fill color with bg color
 					LualineNormal = { bg = "$bg0" },
 					-- overide lualine_c fill color with bg color
@@ -404,6 +426,11 @@ return {
 					-- -- overide Lazy fill color with bg color
 					-- LazyProgress = { bg = "$bg0" },
 					-- Pmenu = { fg = "$fg", bg = "$bg0" },
+					CursorLine = { bg = "#333842" },
+					Cursor = { fg = "$bg0", bg = "$fg" }, -- character under the cursor
+					lCursor = { fg = "$bg0", bg = "$fg" }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+					CursorIM = { fg = "$bg0", bg = "$fg" }, -- like Cursor, but used when in IME mode |CursorIM|
+					CursorColumn = { bg = "#333842" }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
 				},
 				transparent = transparent,
 				lualine = {
