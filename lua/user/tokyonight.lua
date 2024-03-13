@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 local transp = false
-local sidebar = "dark"
+local sidebar = "normal" --"dark , transparent, normal"
 local hilight = "#292e42"
 local data_exists, config = pcall(require, "core.config")
 if data_exists then
@@ -61,5 +61,10 @@ tokyonight.setup({
 		highlights.Underlined = {
 			underline = false,
 		}
+		highlights.NvimTreeWinSeparator = {
+			fg = colors.border,
+		}
+		highlights.BufferLineFill = { bg = colors.bg }
+		highlights.NvimTreeSpecialFile = { fg = colors.purple, underline = false }
 	end,
 })

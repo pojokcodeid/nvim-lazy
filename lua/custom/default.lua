@@ -5,14 +5,13 @@
 -- sonokai, sonokai_atlantis,
 -- sonokai_andromeda,sonokai_shusia,sonokai_maia,sonokai_espresso
 -- material, material_deepocean, material_palenight, material_lighter, material_darker
--- onedark, onedark_darker, onedark_cool, onedark_deep,onedark_warm,
--- onedark_warmer, onedark_light
+-- onedark
 -- lunar
 -- nord
 -- catppuccin, catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 -- dracula
 -- nightfox, dayfox, dawnfox, duskfox, nordfox, terafox, carbonfox
-vim.g.pcode_colorscheme = "onedark"
+vim.g.pcode_colorscheme = "tokyonight"
 
 -- custom transparent mode
 -- only support

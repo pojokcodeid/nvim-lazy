@@ -366,6 +366,10 @@ return {
 					variables = "none",
 				},
 				highlights = {
+					-- overide indent line fill color
+					NvimTreeNormal = { fg = "$fg", bg = "$bg0" },
+					NvimTreeIndentMarker = { fg = "#3E4450" },
+					IblIndent = { fg = "#3E4450" },
 					["@markup.link.url"] = { fg = "$cyan", fmt = "italic" },
 					["@text.uri"] = { fg = "$cyan", fmt = "none" },
 					["@tag"] = { fg = "$red" },

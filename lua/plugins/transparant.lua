@@ -42,6 +42,8 @@ return {
 					"NeoTreeCursorLine",
 					-- disable Telescope active selection background
 					"TelescopeSelection",
+					-- disable lualine background color
+					"LualineNormal",
 				},
 			})
 			require("transparent").clear_prefix("BufferLine")
@@ -53,15 +55,15 @@ return {
 			require("transparent").clear_prefix("NvimTree")
 			-- clear prefix for NeoTree
 			require("transparent").clear_prefix("NeoTree")
+			-- clear prefix for Telescope
+			require("transparent").clear_prefix("Telescope")
 			if clear_lualine then
 				-- clear prefix for Lualine
 				require("transparent").clear_prefix("Lualine")
+				-- create auto command to set transparent
+				vim.cmd("TransparentDisable")
+				vim.cmd("TransparentEnable")
 			end
-			-- clear prefix for Telescope
-			require("transparent").clear_prefix("Telescope")
-			-- create auto command to set transparent
-			vim.cmd("TransparentDisable")
-			vim.cmd("TransparentEnable")
 		end,
 	},
 }
