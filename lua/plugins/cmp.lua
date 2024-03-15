@@ -105,12 +105,12 @@ return {
 					-- remove border window from cmp
 					completion = {
 						border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-						winhighlight = "Normal:bg,FloatBorder:bg,CursorLine:PmenuSel,Search:None",
+						winhighlight = "Normal:bg,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
 						scrollbar = true,
 					},
 					documentation = {
 						border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-						winhighlight = "Normal:bg,FloatBorder:bg,CursorLine:PmenuSel,Search:None",
+						winhighlight = "Normal:bg,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
 						scrollbar = true,
 					},
 				},

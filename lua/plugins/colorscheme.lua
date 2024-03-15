@@ -366,6 +366,7 @@ return {
 					variables = "none",
 				},
 				highlights = {
+					-- BorderBG = { fg = "#333842" }, -- untuk custom brder color cmp
 					-- overide indent line fill color
 					NvimTreeNormal = { fg = "$fg", bg = "$bg0" },
 					NvimTreeIndentMarker = { fg = "#3E4450" },

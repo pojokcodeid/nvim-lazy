@@ -123,6 +123,18 @@ material_icon.setup({
 			cterm_color = "220",
 			name = "rar",
 		},
+		["cfm"] = {
+			icon = "",
+			color = "#507F89",
+			cterm_color = "220",
+			name = "cfm",
+		},
+		["cfc"] = {
+			icon = "",
+			color = "#507F89",
+			cterm_color = "220",
+			name = "cfc",
+		},
 		-- ["go"] = {
 		-- 	icon = "󰟓",
 		-- 	color = "#0FBFCF",
@@ -316,6 +328,18 @@ web_devicons.setup({
 			color = "#9C9C9C",
 			cterm_color = "220",
 			name = "gradlewFile",
+		},
+		["dockerfile-development"] = {
+			icon = "",
+			color = "#0087c9",
+			cterm_color = "220",
+			name = "gradlewFile-development",
+		},
+		["dockerfile-staging"] = {
+			icon = "",
+			color = "#0087c9",
+			cterm_color = "220",
+			name = "gradlewFile-staging",
 		},
 	},
 })
