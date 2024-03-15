@@ -3,6 +3,7 @@ return {
 	lazy = false, -- make sure we load this during startup if it is your main colorscheme
 	priority = 1000, -- make sure to load this before all the other start plugins
 	config = function()
+		local is_transparent = false
 		local palette = require("github-theme.palette").load("github_dark_dimmed")
 		require("github-theme").setup({
 			options = {
@@ -11,7 +12,7 @@ return {
 				compile_file_suffix = "_compiled", -- Compiled file suffix
 				hide_end_of_buffer = true, -- Hide the '~' character at the end of the buffer for a cleaner look
 				hide_nc_statusline = true, -- Override the underline style for non-active statuslines
-				transparent = false, -- Disable setting background
+				transparent = is_transparent, -- Disable setting background
 				terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
 				dim_inactive = false, -- Non focused panes set to alternative background
 				module_default = true, -- Default enable value for modules
@@ -45,7 +46,8 @@ return {
 			},
 			palettes = {
 				github_dark_dimmed = {
-					bg0 = "bg1",
+					bg0 = is_transparent and "NONE" or "bg1",
+					bg1 = is_transparent and "NONE" or "bg",
 				},
 			},
 			specs = {},
@@ -65,18 +67,18 @@ return {
 				},
 				github_dark_dimmed = {
 					-- As with specs and palettes, a specific style's value will be used over the `all`'s value.
-					NvimTreeNormal = { fg = "fg1", bg = "bg1" },
+					NvimTreeNormal = { fg = "fg1", bg = is_transparent and "NONE" or "bg1" },
 					NvimTreeSpecialFile = { fg = "#faa356", style = "italic" },
-					BufferLineFill = { bg = "bg1" },
-					BufferLineUnfocusedFill = { bg = "bg1" },
-					LualineNormal = { bg = "bg1" },
-					StatusLine = { bg = "bg1" },
-					StatusLineTerm = { bg = "bg1" },
-					Pmenu = { bg = "bg1" },
+					BufferLineFill = { bg = is_transparent and "NONE" or "bg1" },
+					BufferLineUnfocusedFill = { bg = is_transparent and "NONE" or "bg1" },
+					LualineNormal = { bg = is_transparent and "NONE" or "bg1" },
+					StatusLine = { bg = is_transparent and "NONE" or "bg1" },
+					StatusLineTerm = { bg = is_transparent and "NONE" or "bg1" },
+					Pmenu = { bg = is_transparent and "NONE" or "bg1" },
 					PmenuSel = { link = "CursorLine" },
-					WhichKeyFloat = { bg = "bg1" },
-					LazyNormal = { bg = "bg1" },
-					LazyBackground = { bg = "bg1" },
+					WhichKeyFloat = { bg = is_transparent and "NONE" or "bg1" },
+					LazyNormal = { bg = is_transparent and "NONE" or "bg1" },
+					LazyBackground = { bg = is_transparent and "NONE" or "bg1" },
 				},
 			},
 		})
