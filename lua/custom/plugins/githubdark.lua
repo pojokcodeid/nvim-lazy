@@ -65,6 +65,8 @@ return {
 						IlluminatedWordWrite = { bg = "#3b4261" },
 						["@tag.attribute"] = { fg = "#77bdfb", style = "italic" },
 						["@text.uri"] = { fg = palette.const, style = "italic" },
+						-- ["@tag.attribute.html"] = { fg = "#faa356", style = "italic" },
+						-- ["@operator.html"] = { fg = "#faa356" },
 						-- ["@tag"] = { fg = "#fa7970" },
 					},
 					github_dark_high_contrast = {
