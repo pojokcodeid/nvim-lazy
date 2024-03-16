@@ -58,9 +58,9 @@ return {
 					IlluminatedWordText = { bg = "#3b4261" },
 					IlluminatedWordRead = { bg = "#3b4261" },
 					IlluminatedWordWrite = { bg = "#3b4261" },
-					["@tag.attribute"] = { fg = "#faa356", style = "italic" },
+					["@tag.attribute"] = { fg = "#77bdfb", style = "italic" },
 					["@text.uri"] = { fg = palette.const, style = "italic" },
-					["@tag"] = { fg = "#fa7970" },
+					-- ["@tag"] = { fg = "#fa7970" },
 				},
 				github_dark_high_contrast = {
 					NvimTreeSpecialFile = { fg = "#faa356", style = "italic" },
