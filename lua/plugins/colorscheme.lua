@@ -353,6 +353,7 @@ return {
 					red = "#e06c75",
 					purple = "#c678dd",
 					yellow = "#e5c07a",
+					orange = "#d19a66",
 					blue = "#61afef",
 					cyan = "#56b6c2",
 					bg_d = "$bg",
