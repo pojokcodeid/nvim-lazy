@@ -103,7 +103,8 @@ nvim_tree.setup({
 		args = {},
 	},
 	renderer = {
-		root_folder_modifier = ":t",
+		-- root_folder_modifier = ":t",
+		root_folder_label = false,
 		indent_markers = {
 			enable = true,
 			inline_arrows = true,

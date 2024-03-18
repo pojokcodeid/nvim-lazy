@@ -372,6 +372,7 @@ return {
 					NvimTreeNormal = { fg = "$fg", bg = "$bg0" },
 					NvimTreeIndentMarker = { fg = "#3E4450" },
 					IblIndent = { fg = "#3E4450" },
+					NvimTreeFolderIcon = { bg = "NONE", fg = "$blue" },
 					["@markup.link.url"] = { fg = "$cyan", fmt = "italic" },
 					["@text.uri"] = { fg = "$cyan", fmt = "none" },
 					["@tag.delimiter"] = { fg = "$gray" },
