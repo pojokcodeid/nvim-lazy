@@ -211,7 +211,7 @@ return {
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		event = "BufRead",
+		event = "BufWinEnter",
 		lazy = true,
 		opts = {
 			indent = {
