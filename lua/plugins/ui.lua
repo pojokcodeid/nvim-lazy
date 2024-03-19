@@ -93,4 +93,12 @@ return {
 			require("user.telescope")
 		end,
 	},
+	{
+		"karb94/neoscroll.nvim",
+		lazy = true,
+		event = "InsertEnter",
+		config = function()
+			require("user.neoscroll")
+		end,
+	},
 }

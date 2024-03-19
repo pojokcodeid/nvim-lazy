@@ -167,15 +167,6 @@ return {
 			require("user.mason_dap")
 		end,
 	},
-	-- for install lsp tidak support mason
-	{
-		"williamboman/nvim-lsp-installer",
-		event = "BufRead",
-		lazy = true,
-		config = function()
-			require("user.lsp.config")
-		end,
-	},
 	-- auto pairs
 	{
 		"windwp/nvim-autopairs",
@@ -363,14 +354,6 @@ return {
 			end
 		end,
 	}, -- mini scrollview
-	{
-		"karb94/neoscroll.nvim",
-		lazy = true,
-		event = "InsertEnter",
-		config = function()
-			require("user.neoscroll")
-		end,
-	},
 	{
 		"dstein64/nvim-scrollview",
 		lazy = true,

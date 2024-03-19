@@ -139,4 +139,13 @@ return {
 	-- 		})
 	-- 	end,
 	-- },
+	-- for install lsp tidak support mason
+	-- {
+	-- 	"williamboman/nvim-lsp-installer",
+	-- 	event = "BufRead",
+	-- 	lazy = true,
+	-- 	config = function()
+	-- 		require("user.lsp.config")
+	-- 	end,
+	-- },
 }
