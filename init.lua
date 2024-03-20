@@ -2,6 +2,7 @@ if vim.g.vscode then
 	-- config vscode
 	Map = vim.keymap.set
 	Cmd = vim.cmd
+
 	VSCodeNotify = vim.fn.VSCodeNotify
 	VSCodeCall = vim.fn.VSCodeCall
 
