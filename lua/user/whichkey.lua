@@ -94,6 +94,22 @@ function _SET_TAB_TITLE()
 	vim.cmd('silent !wezterm cli set-tab-title "' .. _get_folder_name() .. '"')
 end
 
+function _CLOSE_BUFFER()
+	local buf = vim.api.nvim_get_current_buf()
+	--  delete current buffer
+	require("bufdelete").bufdelete(buf, true)
+end
+
+-- function for close all bufferline
+function _CLOSE_ALL_BUFFER()
+	-- get all buffer
+	local bufs = vim.api.nvim_list_bufs()
+	-- loop through all buffer
+	for _, buf in pairs(bufs) do
+		require("bufdelete").bufdelete(buf, true)
+	end
+end
+
 local setup = {
 	plugins = {
 		marks = true, -- shows a list of your marks on ' and `
@@ -188,12 +204,6 @@ local debug_key = {}
 -- local trasparant = {}
 -- local is_dap = pcall(require, "dap")
 
-function _close_buffer()
-	local buf = vim.api.nvim_get_current_buf()
-	--  delete current buffer
-	require("bufdelete").bufdelete(buf, true)
-end
-
 -- local trans_ok, _ = pcall(require, "transparent")
 -- if trans_ok then
 -- 	trasparant = { "<cmd>TransparentToggle<cr>", "Toggle Transparency" }
@@ -225,16 +235,12 @@ local mappings2 = {
 local mappings = {
 	-- ["c"] = trasparant,
 	["a"] = { "<cmd>Alpha<cr>", "󰕮 Alpha" },
-	["b"] = {
-		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		" Buffers",
-	},
 	--["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "󰙅 Explorer" },
 	["w"] = { "<cmd>w!<CR>", "󰆓 Save" },
 	["q"] = { "<cmd>q!<CR>", "󰿅 Quit" },
 	-- ["c"] = { "<cmd>Bdelete!<CR>", "󰅗 Close Buffer" },
-	["k"] = { "<cmd>lua _close_buffer()<CR>", "󰅗 Close Buffer" },
+	-- ["k"] = { "<cmd>lua _close_buffer()<CR>", "󰅗 Close Buffer" },
 	-- open exloler and close toggleterm
 	["o"] = { "<cmd>lua _OPEN_EXPLORER()<cr><cmd>lua require('toggleterm').toggle()<cr>", "󱏒 Open Explorer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "󱪿 No Highlight" },
@@ -265,6 +271,37 @@ local mappings = {
 	-- 	S = { "<cmd>PackerStatus<cr>", "Status" },
 	-- 	u = { "<cmd>PackerUpdate<cr>", "Update" },
 	-- },
+
+	b = {
+		name = " Buffers",
+		-- show all buffers with telescope
+		b = {
+			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+			"All Buffer",
+		},
+		-- close current active buffer
+		c = { "<cmd>bd!<cr>", "Close current buffer" },
+		-- bufferline close left
+		d = {
+			"<cmd>BufferLineCloseLeft<cr>",
+			"Buffer close left",
+		},
+		-- bufferline close right
+		D = {
+			"<cmd>BufferLineCloseRight<cr>",
+			"Buffer close right",
+		},
+		-- bufferline close others
+		a = {
+			"<cmd>BufferLineCloseOthers<cr>",
+			"Buffer close others",
+		},
+		-- close all bufferline
+		A = {
+			"<cmd>BufferLineCloseOthers<cr><cmd>bd!<cr>",
+			"Buffer close All Buffer",
+		},
+	},
 
 	g = {
 		name = "  Git",
