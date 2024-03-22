@@ -280,7 +280,7 @@ local mappings = {
 			"All Buffer",
 		},
 		-- close current active buffer
-		c = { "<cmd>bd!<cr>", "Close current buffer" },
+		c = { "<cmd>lua _CLOSE_BUFFER()<cr>", "Close current buffer" },
 		-- bufferline close left
 		d = {
 			"<cmd>BufferLineCloseLeft<cr>",

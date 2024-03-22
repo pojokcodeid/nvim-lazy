@@ -9,7 +9,7 @@ local use_icons = true
 -- get folder name from current directory
 local _get_folder_name = function()
 	local str = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-	return " 󱧶 " .. str:lower():gsub("^%l", string.upper) .. " "
+	return " " .. str:lower():gsub("^%l", string.upper) .. " "
 end
 
 local function diagnostics_indicator(num, _, diagnostics, _)
