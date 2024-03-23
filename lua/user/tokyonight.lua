@@ -66,5 +66,6 @@ tokyonight.setup({
 		}
 		highlights.BufferLineFill = { bg = colors.bg }
 		highlights.NvimTreeSpecialFile = { fg = colors.purple, underline = false }
+		highlights["@property"] = { fg = colors.green1, italic = true }
 	end,
 })

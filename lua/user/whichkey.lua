@@ -230,7 +230,7 @@ if vim.fn.has("win32") == 0 then
 end
 -- end debug
 local mappings2 = {
-	["/"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", "󰆈 Commet Block" },
+	["/"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", " 󰆈 Commet Block" },
 }
 local mappings = {
 	-- ["c"] = trasparant,
@@ -304,7 +304,7 @@ local mappings = {
 	},
 
 	g = {
-		name = "  Git",
+		name = " Git",
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
@@ -327,7 +327,7 @@ local mappings = {
 	},
 
 	l = {
-		name = "  LSP",
+		name = " LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 		d = {
 			"<cmd>Telescope diagnostics bufnr=0<cr>",
@@ -358,7 +358,7 @@ local mappings = {
 		},
 	},
 	s = {
-		name = "  Search",
+		name = " Search",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
@@ -370,7 +370,7 @@ local mappings = {
 	},
 
 	t = {
-		name = "  Terminal",
+		name = " Terminal",
 		-- l = { "<cmd>lua _LIVE_SERVER()<cr>", "Live Server" },
 		l = { "<cmd>terminal live-server<cr>", "Live Server" },
 		P = { "<cmd>lua _NEWTAB_TOGGLE()<cr>", "Power Shell" },
@@ -392,7 +392,7 @@ local mappings = {
 		j = { "<cmd>lua _SET_TAB_TITLE()<cr>", "Set Tab Title" },
 	},
 	r = {
-		name = "  Run",
+		name = " Run",
 		l = { "<cmd>edit term://live-server<cr>", "Live Server" },
 		s = {
 			'<cmd>autocmd bufwritepost [^_]*.sass,[^_]*.scss  silent exec "!sass %:p %:r.css"<CR>',
@@ -544,7 +544,7 @@ local mappings = {
 	-- },
 	d = debug_key,
 	z = {
-		name = " 󱑠 Plugins(Lazy)",
+		name = "󱑠 Plugins(Lazy)",
 		i = { "<cmd>Lazy install<cr>", "Install" },
 		s = { "<cmd>Lazy sync<cr>", "Sync" },
 		S = { "<cmd>Lazy clear<cr>", "Status" },
