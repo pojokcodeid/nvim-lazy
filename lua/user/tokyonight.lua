@@ -28,7 +28,7 @@ tokyonight.setup({
 		-- Value is any valid attr-list value for `:help nvim_set_hl`
 		-- comments = { italic = true },
 		comments = { italic = true },
-		keywords = { italic = true },
+		keywords = {},
 		functions = {},
 		variables = {},
 		-- Background styles. Can be "dark", "transparent" or "normal"
@@ -66,6 +66,8 @@ tokyonight.setup({
 		}
 		highlights.BufferLineFill = { bg = colors.bg }
 		highlights.NvimTreeSpecialFile = { fg = colors.purple, underline = false }
-		highlights["@property"] = { fg = colors.green1, italic = true }
+		highlights["@tag.attribute"] = { fg = colors.green1, italic = true }
+		-- highlights["@keyword.function"] = { fg = colors.blue, italic = true }
+		-- highlights["@function"] = { fg = colors.blue, italic = true }
 	end,
 })
