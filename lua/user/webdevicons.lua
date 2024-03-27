@@ -161,6 +161,12 @@ web_devicons.setup({
 			cterm_color = "240",
 			name = "viteconfigts",
 		},
+		[".releaserc"] = {
+			icon = "󰚧",
+			color = "#9C9C9C",
+			cterm_color = "240",
+			name = "releaserc",
+		},
 		[".profile"] = {
 			icon = "󰙄",
 			color = "#9C9C9C",
