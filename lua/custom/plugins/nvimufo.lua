@@ -48,7 +48,23 @@ return {
 			-- provider_selector = function(bufnr, filetype, buftype)
 			-- 	return { "treesitter", "indent" }
 			-- end,
-			open_fold_hl_timeout = 0,
+			open_fold_hl_timeout = 150,
+
+			preview = {
+				win_config = {
+					border = { "", "─", "", "", "", "─", "", "" },
+					-- winhighlight = 'Normal:Normal',
+					-- winhighlight = 'IncSearch:Folded',
+					winhighlight = "Normal:UfoPreviewNormal,FloatBorder:UfoPreviewBorder,CursorLine:UfoPreviewCursorLine",
+					winblend = 0,
+				},
+				mappings = {
+					scrollU = "<C-u>",
+					scrollD = "<C-d>",
+					jumpTop = "[",
+					jumpBot = "]",
+				},
+			},
 			provider_selector = function(_, filetype)
 				return { "treesitter", "indent" }
 			end,
