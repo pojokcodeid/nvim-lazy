@@ -215,7 +215,17 @@ end
 
 return {
 	-- color scheme
-	{ "luisiacc/gruvbox-baby", lazy = true, enabled = gruvbox },
+	{
+		"luisiacc/gruvbox-baby",
+		lazy = true,
+		enabled = gruvbox,
+		config = function()
+			local colors = require("gruvbox-baby.colors").config()
+			vim.g.gruvbox_baby_highlights = {
+				StatusLine = { fg = colors.fg, bg = "NONE" },
+			}
+		end,
+	},
 	{
 		"Mofiqul/dracula.nvim",
 		enabled = dracula,
@@ -368,6 +378,7 @@ return {
 					variables = "none",
 				},
 				highlights = {
+					Search = { fg = "$bg0", bg = "$bg_yellow" },
 					-- BorderBG = { fg = "#333842" }, -- untuk custom brder color cmp
 					-- overide indent line fill color
 					NvimTreeNormal = { fg = "$fg", bg = "$bg0" },

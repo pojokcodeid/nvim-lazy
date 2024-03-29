@@ -41,13 +41,13 @@ return {
 		"hrsh7th/cmp-nvim-lua",
 		enabled = false,
 	},
-	-- {
-	-- 	"gbprod/yanky.nvim",
-	-- 	event = "InsertEnter",
-	-- 	config = function()
-	-- 		require("user.yanky")
-	-- 	end,
-	-- },
+	{
+		"gbprod/yanky.nvim",
+		event = "BufReadPre",
+		config = function()
+			require("user.yanky")
+		end,
+	},
 	-- {
 	-- 	"is0n/jaq-nvim",
 	-- 	event = "BufRead",
