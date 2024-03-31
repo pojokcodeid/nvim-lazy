@@ -24,7 +24,7 @@ return {
 		"kyazdani42/nvim-web-devicons",
 		lazy = true,
 		dependencies = { "DaikyXendo/nvim-material-icon" },
-		event = "BufRead",
+		-- event = "BufRead",
 		config = function()
 			require("user.webdevicons")
 		end,
@@ -33,7 +33,7 @@ return {
 	{
 		"kyazdani42/nvim-tree.lua",
 		lazy = true,
-		event = "BufRead",
+		-- event = "BufRead",
 		cmd = { "NvimTree", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeClose" },
 		-- dependencies = "kyazdani42/nvim-web-devicons",
 		config = function()
@@ -49,7 +49,7 @@ return {
 	{
 		"famiu/bufdelete.nvim",
 		lazy = true,
-		event = "InsertEnter",
+		-- event = "InsertEnter",
 	},
 	{
 		"akinsho/bufferline.nvim",
@@ -66,7 +66,7 @@ return {
 		"akinsho/toggleterm.nvim",
 		lazy = true,
 		cmd = { "ToggleTerm" },
-		event = "InsertEnter",
+		-- event = "InsertEnter",
 		config = function()
 			require("user.toggleterm")
 		end,
@@ -96,7 +96,7 @@ return {
 	{
 		"karb94/neoscroll.nvim",
 		lazy = true,
-		event = "InsertEnter",
+		-- event = "InsertEnter",
 		config = function()
 			require("user.neoscroll")
 		end,

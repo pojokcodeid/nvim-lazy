@@ -378,6 +378,7 @@ return {
 					variables = "none",
 				},
 				highlights = {
+					NoiceCursor = { fg = "$bg0", bg = "$fg" },
 					Search = { fg = "$bg0", bg = "$bg_yellow" },
 					-- BorderBG = { fg = "#333842" }, -- untuk custom brder color cmp
 					-- overide indent line fill color

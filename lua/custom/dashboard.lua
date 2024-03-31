@@ -30,7 +30,7 @@ vim.g.pcode_header1 = {
 -- 	"    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█    ",
 -- }
 
--- vim.g.pcode_footer = "PCode"
+vim.g.pcode_footer = "PCode"
 
 -- 1 startify model
 -- 2 dashboard model

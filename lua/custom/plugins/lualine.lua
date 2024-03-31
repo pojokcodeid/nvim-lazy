@@ -121,7 +121,7 @@ return {
 				separator = { left = " " },
 				-- right_padding = 3,
 				fmt = function(str)
-					return " " .. str
+					return icons.ui.Neovim .. " " .. str
 				end,
 			}
 			local branch = {

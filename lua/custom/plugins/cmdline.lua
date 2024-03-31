@@ -15,7 +15,7 @@ return {
 		dependencies = {
 			{ "MunifTanjim/nui.nvim", enabled = use_noice },
 		},
-		event = "BufWinEnter",
+		-- event = "BufWinEnter",
 		opts = {
 			messages = {
 				enabled = false,
@@ -35,6 +35,9 @@ return {
 				},
 			},
 		},
+		init = function()
+			require("lazy").load({ plugins = { "noice.nvim" } })
+		end,
 		keys = {
 			{
 				"<S-Enter>",

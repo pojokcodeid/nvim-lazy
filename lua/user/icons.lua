@@ -131,6 +131,7 @@ return {
 		TriangleShortArrowLeft = "",
 		TriangleShortArrowRight = "",
 		TriangleShortArrowUp = "",
+		Neovim = "",
 	},
 	diagnostics = {
 		BoldError = "",

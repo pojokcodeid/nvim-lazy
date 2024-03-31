@@ -192,3 +192,8 @@ end
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+vim.keymap.set("n", "<C-Left>", require("smart-splits").resize_left)
+vim.keymap.set("n", "<C-Down>", require("smart-splits").resize_down)
+vim.keymap.set("n", "<C-Up", require("smart-splits").resize_up)
+vim.keymap.set("n", "<C-Right>", require("smart-splits").resize_right)

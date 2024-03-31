@@ -35,20 +35,6 @@ dashboard.section.buttons.val = {
 	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 
-local function footer()
-	local footer_text = "Pojok Code"
-	if data_exists then
-		local data_txt = custom_dasboard.footer
-		if data_txt ~= nil then
-			footer_text = data_txt
-		end
-	end
-
-	return footer_text
-end
-
-dashboard.section.footer.val = footer()
-
 dashboard.section.footer.opts.hl = "Type"
 dashboard.section.header.opts.hl = "Include"
 dashboard.section.buttons.opts.hl = "Keyword"
@@ -56,3 +42,24 @@ dashboard.section.buttons.opts.hl = "Keyword"
 dashboard.opts.opts.noautocmd = true
 -- vim.cmd([[autocmd User AlphaReady echo 'ready']])
 alpha.setup(dashboard.opts)
+
+local footer_text = "Pojok Code"
+if data_exists then
+	local data_txt = custom_dasboard.footer
+	if data_txt ~= nil then
+		footer_text = data_txt
+	end
+end
+
+vim.api.nvim_create_autocmd("User", {
+	pattern = "LazyVimStarted",
+	desc = "Add Alpha dashboard footer",
+	once = true,
+	callback = function()
+		local stats = require("lazy").stats()
+		local ms = math.floor(stats.startuptime * 100 + 0.5) / 100
+		dashboard.section.footer.val =
+			{ footer_text .. " " .. stats.loaded .. "/" .. stats.count .. " plugins  in " .. ms .. "ms" }
+		pcall(vim.cmd.AlphaRedraw)
+	end,
+})

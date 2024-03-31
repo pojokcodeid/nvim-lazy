@@ -47,9 +47,23 @@ if data_exists then
 		footer_text = data_txt
 	end
 end
-startify.section.footer.val = {
-	{ type = "text", val = footer_text },
-}
+
+vim.api.nvim_create_autocmd("User", {
+	pattern = "LazyVimStarted",
+	desc = "Add Alpha dashboard footer",
+	once = true,
+	callback = function()
+		local stats = require("lazy").stats()
+		local ms = math.floor(stats.startuptime * 100 + 0.5) / 100
+		startify.section.footer.val = {
+			{
+				type = "text",
+				val = { footer_text .. " " .. stats.loaded .. "/" .. stats.count .. " plugins  in " .. ms .. "ms" },
+			},
+		}
+		pcall(vim.cmd.AlphaRedraw)
+	end,
+})
 -- ignore filetypes in MRU
 startify.mru_opts.ignore = function(path, ext)
 	return (string.find(path, "COMMIT_EDITMSG")) or (vim.tbl_contains(default_mru_ignore, ext))

@@ -54,7 +54,7 @@ return {
 	{
 		"L3MON4D3/LuaSnip",
 		lazy = true,
-		event = "InsertEnter",
+		-- event = "InsertEnter",
 		-- dependencies = {
 		-- 	"rafamadriz/friendly-snippets",
 		-- 	event = "BufRead",
@@ -111,7 +111,7 @@ return {
 	{
 		"williamboman/mason.nvim",
 		lazy = true,
-		event = "InsertEnter",
+		-- event = "InsertEnter",
 		dependencies = { "williamboman/mason-lspconfig.nvim" },
 		cmd = {
 			"Mason",
@@ -241,7 +241,7 @@ return {
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		lazy = true,
 		-- event = "BufWinEnter",
-		event = "InsertEnter",
+		-- event = "InsertEnter",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		config = function()
 			require("ts_context_commentstring").setup({
@@ -252,7 +252,7 @@ return {
 	{
 		"numToStr/Comment.nvim",
 		-- event = "BufWinEnter",
-		event = "InsertEnter",
+		-- event = "InsertEnter",
 		lazy = true,
 		config = function()
 			require("user.comment")
@@ -327,7 +327,7 @@ return {
 	{
 		"CRAG666/code_runner.nvim",
 		lazy = true,
-		event = "InsertEnter",
+		-- event = "InsertEnter",
 		-- dependencies = "nvim-lua/plenary.nvim",
 		cmd = { "RunCode", "RunFile", "RunProject", "RunClose" },
 		config = function()
@@ -338,7 +338,7 @@ return {
 	{
 		"NvChad/nvim-colorizer.lua",
 		lazy = true,
-		event = "BufRead",
+		event = "BufWinEnter",
 		opts = function()
 			require("user.colorizer")
 		end,
@@ -390,7 +390,7 @@ return {
 	{
 		"mrjones2014/smart-splits.nvim",
 		lazy = true,
-		event = "BufRead",
+		-- event = "BufRead",
 		config = function()
 			require("user.smartspit")
 		end,
@@ -411,17 +411,20 @@ return {
 				return vim.ui.input(...)
 			end
 		end,
+		config = function()
+			require("user.dressing")
+		end,
 	}, -- mini scrollview
 	{
 		"dstein64/nvim-scrollview",
 		lazy = true,
-		event = "BufRead",
+		event = "BufWinEnter",
 		config = function()
 			require("user.nvimscroll")
 		end,
 	},
 	-- for check startuptime
-	{ "dstein64/vim-startuptime", lazy = true, cmd = "StartupTime", event = "InsertEnter" },
+	{ "dstein64/vim-startuptime", lazy = true, cmd = "StartupTime" },
 	-- for coloring pairs
 	-- remark 20231101 - menyebabkan error treesitter
 	-- {
@@ -441,7 +444,7 @@ return {
 		lazy = true,
 		enabled = vim.fn.executable("git") == 1,
 		ft = "gitcommit",
-		event = "BufRead",
+		event = "BufWinEnter",
 		config = function()
 			require("user.gitsigns")
 		end,

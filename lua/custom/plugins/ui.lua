@@ -21,4 +21,6 @@ return {
 	-- { "cpea2506/one_monokai.nvim" },
 	-- { "luisiacc/gruvbox-baby", lazy = true, enabled = false },
 	-- { "projekt0n/github-nvim-theme", version = "v0.0.7" },
+	-- { "stevearc/dressing.nvim", enabled = false },
+	{ "karb94/neoscroll.nvim", enabled = false },
 }
