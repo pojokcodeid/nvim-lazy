@@ -15,7 +15,7 @@ return {
 		dependencies = {
 			{ "MunifTanjim/nui.nvim", enabled = use_noice },
 		},
-		-- event = "BufWinEnter",
+		event = "BufWinEnter",
 		opts = {
 			messages = {
 				enabled = false,
@@ -36,7 +36,13 @@ return {
 			},
 		},
 		init = function()
-			require("lazy").load({ plugins = { "noice.nvim" } })
+			-- load if mode command mode
+			-- vim.api.nvim_create_autocmd("CmdlineEnter", {
+			-- 	callback = function()
+			-- 		require("lazy").load({ plugins = { "noice.nvim" } })
+			-- 	end,
+			-- })
+			-- require("lazy").load({ plugins = { "noice.nvim" } })
 		end,
 		keys = {
 			{
@@ -97,6 +103,7 @@ return {
 	{
 		"hrsh7th/cmp-cmdline",
 		event = "VeryLazy",
+		enabled = use_noice,
 		config = function()
 			local cmp = require("cmp")
 			local mapping = {
