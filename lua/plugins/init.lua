@@ -269,6 +269,12 @@ return {
 			},
 			scope = { enabled = false },
 			exclude = {
+				buftypes = {
+					"nofile",
+					"prompt",
+					"quickfix",
+					"terminal",
+				},
 				filetypes = {
 					"help",
 					"alpha",
@@ -281,6 +287,10 @@ return {
 					"notify",
 					"toggleterm",
 					"lazyterm",
+					"NvimTree",
+					"aerial",
+					"neogitstatus",
+					"startify",
 				},
 			},
 		},

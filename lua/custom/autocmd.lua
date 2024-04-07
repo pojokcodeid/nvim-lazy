@@ -14,7 +14,13 @@ end
 
 local term_program = vim.fn.getenv("TERM_PROGRAM")
 if term_program == "WezTerm" then
-	vim.cmd('silent !wezterm cli set-tab-title "' .. _get_folder_name() .. '"')
+	-- vim.cmd('silent !wezterm cli set-tab-title "' .. _get_folder_name() .. '"')
+	-- create autocmd on insertEnter
+	vim.api.nvim_create_autocmd("BufRead", {
+		group = vim.api.nvim_create_augroup("BufRead", { clear = true }),
+		command = 'silent !wezterm cli set-tab-title "' .. _get_folder_name() .. '"',
+		desc = "Set Folder Name",
+	})
 end
 
 vim.api.nvim_create_autocmd("ExitPre", {
