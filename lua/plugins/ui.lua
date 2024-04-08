@@ -14,7 +14,8 @@ return {
 		"nvim-lualine/lualine.nvim",
 		lazy = true,
 		-- dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
-		event = "BufWinEnter",
+		-- event = "BufWinEnter",
+		event = { "BufRead", "BufNewFile" },
 		config = function()
 			require("user.lualine")
 		end,
@@ -54,7 +55,8 @@ return {
 	{
 		"akinsho/bufferline.nvim",
 		lazy = true,
-		event = "BufWinEnter",
+		-- event = "BufWinEnter",
+		event = { "BufRead", "InsertEnter", "BufNewFile" },
 		config = function()
 			require("user.bufferline")
 		end,

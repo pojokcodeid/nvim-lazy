@@ -1,7 +1,7 @@
 return {
 	{
 		"nvim-lualine/lualine.nvim",
-		event = "BufWinEnter",
+		event = "insertEnter",
 		config = function()
 			local hide_in_width = function()
 				return vim.fn.winwidth(0) > 80
@@ -198,7 +198,7 @@ return {
 				normal = {
 					a = { fg = colors.black, bg = colors.skyblue_1 },
 					b = { fg = colors.white, bg = colors.grey },
-					c = { fg = colors.white, bg = "#393f4a" },
+					c = { fg = colors.white, bg = "none" },
 				},
 
 				insert = {

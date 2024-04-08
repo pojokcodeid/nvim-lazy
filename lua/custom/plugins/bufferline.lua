@@ -1,6 +1,6 @@
 return {
 	"akinsho/bufferline.nvim",
-	event = "VeryLazy",
+	event = { "BufRead", "InsertEnter", "BufNewFile" },
 	config = function()
 		local status_ok, bufferline = pcall(require, "bufferline")
 		if not status_ok then

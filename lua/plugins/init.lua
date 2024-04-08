@@ -260,7 +260,8 @@ return {
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		event = "BufWinEnter",
+		-- event = "BufWinEnter",
+		event = { "BufRead", "InsertEnter", "BufNewFile" },
 		lazy = true,
 		opts = {
 			indent = {
@@ -321,7 +322,7 @@ return {
 	-- build = "npm install -g live-server",
 	-- },
 	-- for multi cursor select
-	{ "mg979/vim-visual-multi", event = "BufWinEnter", lazy = true },
+	{ "mg979/vim-visual-multi", event = { "BufRead", "InsertEnter", "BufNewFile" }, lazy = true },
 	-- for auto close tag
 	{
 		"windwp/nvim-ts-autotag",
@@ -348,7 +349,8 @@ return {
 	{
 		"NvChad/nvim-colorizer.lua",
 		lazy = true,
-		event = "BufWinEnter",
+		-- event = "BufWinEnter",
+		event = { "BufRead", "InsertEnter", "BufNewFile" },
 		opts = function()
 			require("user.colorizer")
 		end,
@@ -400,7 +402,7 @@ return {
 	{
 		"mrjones2014/smart-splits.nvim",
 		lazy = true,
-		-- event = "BufRead",
+		event = { "BufRead", "InsertEnter", "BufNewFile" },
 		config = function()
 			require("user.smartspit")
 		end,
@@ -428,7 +430,8 @@ return {
 	{
 		"dstein64/nvim-scrollview",
 		lazy = true,
-		event = "BufWinEnter",
+		-- event = "BufWinEnter",
+		event = { "BufRead", "InsertEnter", "BufNewFile" },
 		config = function()
 			require("user.nvimscroll")
 		end,
@@ -454,7 +457,8 @@ return {
 		lazy = true,
 		enabled = vim.fn.executable("git") == 1,
 		ft = "gitcommit",
-		event = "BufWinEnter",
+		-- event = "BufWinEnter",
+		event = "BufRead",
 		config = function()
 			require("user.gitsigns")
 		end,
