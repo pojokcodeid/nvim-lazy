@@ -102,8 +102,16 @@ return {
 	},
 	{
 		"hrsh7th/cmp-cmdline",
-		event = "VeryLazy",
+		-- event = "VeryLazy",
 		enabled = use_noice,
+		init = function()
+			-- load if mode command mode
+			vim.api.nvim_create_autocmd("CmdlineEnter", {
+				callback = function()
+					require("lazy").load({ plugins = { "cmp-cmdline" } })
+				end,
+			})
+		end,
 		config = function()
 			local cmp = require("cmp")
 			local mapping = {

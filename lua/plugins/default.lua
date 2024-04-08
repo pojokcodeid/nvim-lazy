@@ -1,4 +1,3 @@
-
 local opts, _ = pcall(require, "user.options")
 if opts then
 	require("user.options")

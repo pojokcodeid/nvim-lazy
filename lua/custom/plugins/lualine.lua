@@ -118,7 +118,7 @@ return {
 			local mode = {
 				"mode",
 				padding = 1,
-				separator = { left = " " },
+				separator = { left = " " },
 				-- right_padding = 3,
 				fmt = function(str)
 					return icons.ui.Neovim .. " " .. str
@@ -198,7 +198,7 @@ return {
 				normal = {
 					a = { fg = colors.black, bg = colors.skyblue_1 },
 					b = { fg = colors.white, bg = colors.grey },
-					c = { fg = colors.white, bg = colors.black_transparant },
+					c = { fg = colors.white, bg = "#393f4a" },
 				},
 
 				insert = {
@@ -224,7 +224,7 @@ return {
 				inactive = {
 					a = { fg = colors.white, bg = colors.black_transparant },
 					b = { fg = colors.white, bg = colors.black_transparant },
-					c = { fg = colors.black, bg = colors.black_transparant },
+					c = { fg = colors.black, bg = "#393f4a" },
 				},
 			}
 
@@ -237,7 +237,7 @@ return {
 					theme = bubbles_theme,
 					-- theme = "auto",
 					component_separators = { left = "", right = "" },
-					section_separators = { left = "", right = "" },
+					section_separators = { left = "", right = "" },
 					disabled_filetypes = {
 						"TelescopePrompt",
 						"packer",
@@ -258,12 +258,12 @@ return {
 					lualine_a = {
 						mode,
 					},
-					lualine_b = { get_branch },
+					lualine_b = { "branch" },
 					lualine_c = { lsp_info, diagnostics, lsp_progress },
 					lualine_x = { diff, spaces, "filetype" },
 					lualine_y = { "progress" },
 					lualine_z = {
-						{ "location", separator = { right = " " }, padding = 1 },
+						{ "location", separator = { right = " " }, padding = { left = 1, right = 1 } },
 					},
 				},
 				inactive_sections = {
