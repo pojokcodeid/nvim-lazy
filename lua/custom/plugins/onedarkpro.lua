@@ -72,6 +72,8 @@ return {
 	-- 				BufferLineFill = { bg = "${bg}" },
 	-- 				["@string.special.url.html"] = { fg = "${green}" },
 	-- 				["@text.uri.html"] = { fg = "${green}" },
+	-- 				["@tag.javascript"] = { fg = "${red}" },
+	-- 				["@constructor.javascript"] = { fg = "${red}" },
 	-- 				Pmenu = { fg = "${fg}", bg = "${bg}" },
 	-- 				PmenuThumb = { bg = "${gray}" }, -- Popup menu: Thumb of the scrollbar.
 	-- 				-- overide lualine fill color with bg color
