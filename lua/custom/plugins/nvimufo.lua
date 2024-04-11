@@ -18,7 +18,7 @@ return {
 					segments = {
 						{ text = { "%s" }, click = "v:lua.ScSa" },
 						{
-							text = { builtin.foldfunc },
+							text = { builtin.foldfunc, " " },
 							condition = { builtin.not_empty, true, builtin.not_empty },
 							click = "v:lua.ScFa",
 						},
@@ -37,12 +37,15 @@ return {
 		vim.o.foldlevelstart = 99
 		vim.o.foldenable = true
 		-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-		vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-
+		-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+		-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep:│,foldclose:]]
+		-- vim.o.fillchars = [[eob: ,fold: ,foldopen:󰛲,foldsep:│,foldclose:󰜄]]
+		vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep:│,foldclose:]]
 		-- these are "extra", change them as you like
 		vim.keymap.set("n", "zR", require("ufo").openAllFolds)
 		vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
 		vim.cmd("highlight FoldColumn guifg=" .. vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("Comment")), "fg"))
+		-- vim.cmd("highlight FoldColumn guifg=" .. vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("IblIndent")), "fg"))
 		-- Option 3: treesitter as a main provider instead
 		-- Only depend on `nvim-treesitter/queries/filetype/folds.scm`,
 		-- performance and stability are better than `foldmethod=nvim_treesitter#foldexpr()`

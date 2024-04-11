@@ -458,6 +458,9 @@ return {
 					-- Visual = { bg = "$orange" },
 					DiffText = { bg = "$orange" },
 					DiffAdd = { bg = "#595d65" },
+					-- UfoPreviewNormal = { fg = "#373d48", bg = "$bg0" },
+					-- UfoPreviewBorder = { fg = "#373d48", bg = "$bg0" },
+					-- UfoPreviewCursorLine = { fg = "#373d48", bg = "$bg0" },
 				},
 				transparent = transparent,
 				lualine = {

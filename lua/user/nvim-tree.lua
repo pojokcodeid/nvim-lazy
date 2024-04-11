@@ -142,7 +142,8 @@ nvim_tree.setup({
 				},
 				git = {
 					deleted = icons.git.FileDeleted,
-					ignored = icons.git.FileIgnored,
+					-- ignored = icons.git.FileIgnored,
+					ignored = "",
 					renamed = icons.git.FileRenamed,
 					staged = icons.git.FileStaged,
 					unmerged = icons.git.FileUnmerged,
