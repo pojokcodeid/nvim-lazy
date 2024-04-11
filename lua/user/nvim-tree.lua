@@ -15,7 +15,10 @@ nvim_tree.setup({
 		git_clean = false,
 		no_buffer = false,
 		custom = { "node_modules", "\\.cache", "\\.git" },
-		exclude = {},
+		exclude = {
+			".gitignore",
+			".prettierignore",
+		},
 	},
 	filesystem_watchers = {
 		enable = true,
