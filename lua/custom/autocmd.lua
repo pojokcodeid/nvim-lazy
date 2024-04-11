@@ -28,3 +28,10 @@ vim.api.nvim_create_autocmd("ExitPre", {
 	command = "set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175,a:ver90",
 	desc = "Set cursor back to beam when leaving Neovim.",
 })
+
+-- config for vim-visual-multi color selection
+vim.g.VM_Mono_hl = "DiffText"
+vim.g.VM_Extend_hl = "DiffAdd"
+-- vim.g.VM_Cursor_hl = "Visual"
+vim.g.VM_Cursor_hl = "DiffText"
+vim.g.VM_Insert_hl = "DiffChange"

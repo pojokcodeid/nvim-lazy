@@ -334,10 +334,6 @@ return {
 				["Select Cursor Down"] = "<M-C-Down>", -- equal CTRL+ALT+DOWN on VSCODE
 				["Select Cursor Up"] = "<M-C-Up>", -- equal CTRL+ALT+UP on VSCODE
 			}
-			vim.g.VM_Mono_hl = "DiffText"
-			vim.g.VM_Extend_hl = "DiffAdd"
-			vim.g.VM_Cursor_hl = "Visual"
-			vim.g.VM_Insert_hl = "DiffChange"
 		end,
 	},
 	-- for auto close tag
