@@ -455,6 +455,8 @@ return {
 					lCursor = { fg = "$bg0", bg = "$fg" }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 					CursorIM = { fg = "$bg0", bg = "$fg" }, -- like Cursor, but used when in IME mode |CursorIM|
 					CursorColumn = { bg = "#333842" }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+					Visual = { bg = "$orange" },
+					DiffText = { bg = "$orange" },
 				},
 				transparent = transparent,
 				lualine = {
