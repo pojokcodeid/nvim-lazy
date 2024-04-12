@@ -143,8 +143,8 @@ return {
 			vim = "indent",
 			python = { "indent" },
 			git = "",
-			javascriptreact = { "treesitter", "indent" },
-			typescriptreact = { "treesitter", "indent" },
+			-- javascriptreact = { "treesitter", "indent" },
+			-- typescriptreact = { "treesitter", "indent" },
 		}
 
 		local function customizeSelector(bufnr)
@@ -201,6 +201,7 @@ return {
 				local import_fold_text = "import ..." -- Teks yang ingin ditampilkan
 				local is_comment = false -- Variabel untuk mengecek apakah ini komentar
 				local is_import = false
+				local is_bracket = false
 
 				-- Memeriksa apakah baris awal dari fold adalah komentar
 				local start_line = vim.api.nvim_buf_get_lines(0, lnum - 1, lnum, false)[1]
@@ -213,6 +214,9 @@ return {
 				end
 				if start_line:find("^%s*import") then
 					is_import = true
+				end
+				if start_line:find("%s*{") then
+					is_bracket = true
 				end
 				if is_comment then
 					local suffix = string.format(" %s ", closed_fold_text)
@@ -311,7 +315,7 @@ return {
 					end
 					table.insert(result, { " ⋯ ", "NonText" })
 					local l = { "javascriptreact", "typescriptreact" }
-					if TABLE_CONTAINS(l, vim.bo.filetype) then
+					if TABLE_CONTAINS(l, vim.bo.filetype) and not is_bracket then
 						table.insert(result, { suffix, "TSPunctBracket" })
 					end
 				end
