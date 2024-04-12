@@ -19,10 +19,12 @@ return {
 						{ text = { "%s" }, click = "v:lua.ScSa" },
 						{
 							text = { builtin.foldfunc, " " },
+							-- text = { builtin.foldfunc },
 							condition = { builtin.not_empty, true, builtin.not_empty },
 							click = "v:lua.ScFa",
 						},
 						{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
+						-- { text = { builtin.lnumfunc }, click = "v:lua.ScLa" },
 					},
 				})
 			end,
@@ -42,16 +44,17 @@ return {
 		-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep:│,foldclose:]]
 		-- vim.o.fillchars = [[eob: ,fold: ,foldopen:󰛲,foldsep:│,foldclose:󰜄]]
 		-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep:│,foldclose:]]
-		vim.opt.fillchars = {
-			vert = "▕", -- alternatives │
-			fold = " ",
-			eob = " ", -- suppress ~ at EndOfBuffer
-			diff = "╱", -- alternatives = ⣿ ░ ─
-			msgsep = "‾",
-			foldopen = "▾",
-			foldsep = "│",
-			foldclose = "▸",
-		}
+		vim.o.fillchars = [[eob: ,fold: ,foldopen:▾,foldsep:│,foldclose:▸]]
+		-- vim.opt.fillchars = {
+		-- 	vert = "▕", -- alternatives │
+		-- 	fold = " ",
+		-- 	eob = " ", -- suppress ~ at EndOfBuffer
+		-- 	diff = "╱", -- alternatives = ⣿ ░ ─
+		-- 	msgsep = "‾",
+		-- 	foldopen = "▾",
+		-- 	foldsep = "│",
+		-- 	foldclose = "▸",
+		-- }
 		-- these are "extra", change them as you like
 		vim.keymap.set("n", "zR", require("ufo").openAllFolds)
 		vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
