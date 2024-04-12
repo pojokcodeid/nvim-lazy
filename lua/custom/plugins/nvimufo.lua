@@ -38,9 +38,20 @@ return {
 		vim.o.foldenable = true
 		-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 		-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+		-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep:│,foldclose:]]
 		-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep:│,foldclose:]]
 		-- vim.o.fillchars = [[eob: ,fold: ,foldopen:󰛲,foldsep:│,foldclose:󰜄]]
-		vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep:│,foldclose:]]
+		-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep:│,foldclose:]]
+		vim.opt.fillchars = {
+			vert = "▕", -- alternatives │
+			fold = " ",
+			eob = " ", -- suppress ~ at EndOfBuffer
+			diff = "╱", -- alternatives = ⣿ ░ ─
+			msgsep = "‾",
+			foldopen = "▾",
+			foldsep = "│",
+			foldclose = "▸",
+		}
 		-- these are "extra", change them as you like
 		vim.keymap.set("n", "zR", require("ufo").openAllFolds)
 		vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
