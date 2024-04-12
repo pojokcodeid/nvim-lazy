@@ -30,6 +30,7 @@ return {
 			end,
 		},
 	},
+	enabled = true,
 	lazy = true,
 	-- event = "BufReadPost",
 	event = { "BufReadPost", "BufRead", "InsertEnter", "BufNewFile" },
@@ -63,18 +64,86 @@ return {
 		-- Option 3: treesitter as a main provider instead
 		-- Only depend on `nvim-treesitter/queries/filetype/folds.scm`,
 		-- performance and stability are better than `foldmethod=nvim_treesitter#foldexpr()`
-		require("ufo").setup({
-			-- provider_selector = function(bufnr, filetype, buftype)
-			-- 	return { "treesitter", "indent" }
-			-- end,
-			open_fold_hl_timeout = 150,
 
+		-- require("ufo").setup({
+		-- 	-- provider_selector = function(bufnr, filetype, buftype)
+		-- 	-- 	return { "treesitter", "indent" }
+		-- 	-- end,
+		-- 	open_fold_hl_timeout = 150,
+		-- 	close_fold_kinds_for_ft = {
+		-- 		default = { "imports", "comment" },
+		-- 		json = { "array" },
+		-- 		c = { "comment", "region" },
+		-- 	},
+		-- 	preview = {
+		-- 		win_config = {
+		-- 			border = { "", "─", "", "", "", "─", "", "" },
+		-- 			-- winhighlight = 'Normal:Normal',
+		-- 			-- winhighlight = 'IncSearch:Folded',
+		-- 			winhighlight = "Normal:UfoPreviewNormal,FloatBorder:UfoPreviewBorder,CursorLine:UfoPreviewCursorLine",
+		-- 			winblend = 0,
+		-- 		},
+		-- 		mappings = {
+		-- 			scrollU = "<C-u>",
+		-- 			scrollD = "<C-d>",
+		-- 			jumpTop = "[",
+		-- 			jumpBot = "]",
+		-- 		},
+		-- 	},
+		-- 	provider_selector = function(_, filetype)
+		-- 		return { "treesitter", "indent" }
+		-- 	end,
+		-- 	fold_virt_text_handler = function(virt_text, lnum, end_lnum, width, truncate)
+		-- 		local result = {}
+		-- 		local _end = end_lnum - 1
+		-- 		local final_text = vim.trim(vim.api.nvim_buf_get_text(0, _end, 0, _end, -1, {})[1])
+		-- 		local suffix = final_text:format(end_lnum - lnum)
+		-- 		local suffix_width = vim.fn.strdisplaywidth(suffix)
+		-- 		local target_width = width - suffix_width
+		-- 		local cur_width = 0
+		-- 		for _, chunk in ipairs(virt_text) do
+		-- 			local chunk_text = chunk[1]
+		-- 			local chunk_width = vim.fn.strdisplaywidth(chunk_text)
+		-- 			if target_width > cur_width + chunk_width then
+		-- 				table.insert(result, chunk)
+		-- 			else
+		-- 				chunk_text = truncate(chunk_text, target_width - cur_width)
+		-- 				local hl_group = chunk[2]
+		-- 				table.insert(result, { chunk_text, hl_group })
+		-- 				chunk_width = vim.fn.strdisplaywidth(chunk_text)
+		-- 				-- str width returned from truncate() may less than 2nd argument, need padding
+		-- 				if cur_width + chunk_width < target_width then
+		-- 					suffix = suffix .. (" "):rep(target_width - cur_width - chunk_width)
+		-- 				end
+		-- 				break
+		-- 			end
+		-- 			cur_width = cur_width + chunk_width
+		-- 		end
+		-- 		table.insert(result, { " ⋯ ", "NonText" })
+		-- 		if vim.bo.filetype ~= "json" then
+		-- 			table.insert(result, { suffix, "TSPunctBracket" })
+		-- 		end
+		-- 		return result
+		-- 	end,
+		-- })
+
+		-- start ini bagian code support comment dan import
+		local ftMap = {
+			vim = "indent",
+			python = { "indent" },
+			git = "",
+		}
+		require("ufo").setup({
+			open_fold_hl_timeout = 150,
+			close_fold_kinds_for_ft = {
+				default = { "imports", "comment" },
+				json = { "array" },
+				c = { "comment", "region" },
+			},
 			preview = {
 				win_config = {
 					border = { "", "─", "", "", "", "─", "", "" },
-					-- winhighlight = 'Normal:Normal',
-					-- winhighlight = 'IncSearch:Folded',
-					winhighlight = "Normal:UfoPreviewNormal,FloatBorder:UfoPreviewBorder,CursorLine:UfoPreviewCursorLine",
+					winhighlight = "Normal:Folded",
 					winblend = 0,
 				},
 				mappings = {
@@ -84,9 +153,14 @@ return {
 					jumpBot = "]",
 				},
 			},
-			provider_selector = function(_, filetype)
-				return { "treesitter", "indent" }
+			provider_selector = function(bufnr, filetype, buftype)
+				-- if you prefer treesitter provider rather than lsp,
+				-- return ftMap[filetype] or {'treesitter', 'indent'}
+				return ftMap[filetype]
+
+				-- refer to ./doc/example.lua for detail
 			end,
+
 			fold_virt_text_handler = function(virt_text, lnum, end_lnum, width, truncate)
 				local result = {}
 				local _end = end_lnum - 1
@@ -114,11 +188,15 @@ return {
 					cur_width = cur_width + chunk_width
 				end
 				table.insert(result, { " ⋯ ", "NonText" })
+				if string.match(virt_text[1][1], "import") then
+					return result
+				end
 				if vim.bo.filetype ~= "json" then
 					table.insert(result, { suffix, "TSPunctBracket" })
 				end
 				return result
 			end,
 		})
+		-- end bagian code support comment dan import
 	end,
 }
