@@ -18,8 +18,8 @@ return {
 					segments = {
 						{ text = { "%s" }, click = "v:lua.ScSa" },
 						{
-							text = { builtin.foldfunc, " " },
-							-- text = { builtin.foldfunc },
+							-- text = { builtin.foldfunc, " " },
+							text = { builtin.foldfunc },
 							condition = { builtin.not_empty, true, builtin.not_empty },
 							click = "v:lua.ScFa",
 						},
