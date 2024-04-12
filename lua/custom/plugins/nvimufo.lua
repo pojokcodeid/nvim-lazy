@@ -114,7 +114,9 @@ return {
 					cur_width = cur_width + chunk_width
 				end
 				table.insert(result, { " ⋯ ", "NonText" })
-				table.insert(result, { suffix, "TSPunctBracket" })
+				if vim.bo.filetype ~= "json" then
+					table.insert(result, { suffix, "TSPunctBracket" })
+				end
 				return result
 			end,
 		})
