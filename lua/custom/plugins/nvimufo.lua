@@ -1,3 +1,13 @@
+function TABLE_CONTAINS(tbl, x)
+	local found = false
+	for _, v in pairs(tbl) do
+		if v == x then
+			found = true
+		end
+	end
+	return found
+end
+
 return {
 	"kevinhwang91/nvim-ufo",
 	dependencies = {
@@ -134,11 +144,31 @@ return {
 			python = { "indent" },
 			git = "",
 		}
+
+		local function customizeSelector(bufnr)
+			local function handleFallbackException(err, providerName)
+				if type(err) == "string" and err:match("UfoFallbackException") then
+					return require("ufo").getFolds(bufnr, providerName)
+				else
+					return require("promise").reject(err)
+				end
+			end
+
+			return require("ufo")
+				.getFolds(bufnr, "lsp")
+				:catch(function(err)
+					return handleFallbackException(err, "treesitter")
+				end)
+				:catch(function(err)
+					return handleFallbackException(err, "indent")
+				end)
+		end
+
 		require("ufo").setup({
 			open_fold_hl_timeout = 150,
 			close_fold_kinds_for_ft = {
 				default = { "imports", "comment" },
-				json = { "array" },
+				-- json = { "array" },
 				c = { "comment", "region" },
 			},
 			preview = {
@@ -156,10 +186,78 @@ return {
 			},
 			provider_selector = function(bufnr, filetype, buftype)
 				-- if you prefer treesitter provider rather than lsp,
+				-- return ftMap[filetype]
 				-- return ftMap[filetype] or {'treesitter', 'indent'}
-				return ftMap[filetype]
+				return ftMap[filetype] or customizeSelector
 
 				-- refer to ./doc/example.lua for detail
+			end,
+
+			fold_virt_text_handler = function(virt_text, lnum, end_lnum, width, truncate)
+				local result = {}
+				local closed_fold_text = "Comments ..." -- Teks yang ingin ditampilkan
+				local import_fold_text = "Import ..." -- Teks yang ingin ditampilkan
+				local is_comment = false -- Variabel untuk mengecek apakah ini komentar
+				local is_import = false
+
+				-- Memeriksa apakah baris awal dari fold adalah komentar
+				local start_line = vim.api.nvim_buf_get_lines(0, lnum - 1, lnum, false)[1]
+				if start_line:find("^%s*%/%*") then -- Regex untuk mengecek komentar javascript
+					is_comment = true
+				elseif start_line:find("^%s*<!--") then
+					is_comment = true
+				elseif start_line:find("^%s*%-%-") then
+					is_comment = true
+				end
+				if start_line:find("^%s*import") then
+					is_import = true
+				end
+				if is_comment then
+					local suffix = string.format(" %s ", closed_fold_text)
+					local target_width = width - vim.fn.strdisplaywidth(suffix)
+					local cur_width = 0
+					for _, chunk in ipairs(virt_text) do
+						local chunk_text = chunk[1]
+						local chunk_width = vim.fn.strdisplaywidth(chunk_text)
+						if target_width > cur_width + chunk_width then
+							table.insert(result, chunk)
+						else
+							chunk_text = truncate(chunk_text, target_width - cur_width)
+							local hl_group = chunk[2]
+							table.insert(result, { chunk_text, hl_group })
+							break
+						end
+						cur_width = cur_width + chunk_width
+					end
+					-- Menambahkan teks 'Comments ...' ke akhir baris yang dilipat
+					table.insert(result, { suffix, "NonText" })
+				elseif is_import then
+					local suffix = string.format(" %s ", import_fold_text)
+					local target_width = width - vim.fn.strdisplaywidth(suffix)
+					local cur_width = 0
+					for _, chunk in ipairs(virt_text) do
+						local chunk_text = chunk[1]
+						local chunk_width = vim.fn.strdisplaywidth(chunk_text)
+						if target_width > cur_width + chunk_width then
+							table.insert(result, chunk)
+						else
+							chunk_text = truncate(chunk_text, target_width - cur_width)
+							local hl_group = chunk[2]
+							table.insert(result, { chunk_text, hl_group })
+							break
+						end
+						cur_width = cur_width + chunk_width
+					end
+					-- Menambahkan teks 'Comments ...' ke akhir baris yang dilipat
+					table.insert(result, { suffix, "NonText" })
+				else
+					-- Jika bukan komentar, tampilkan teks asli
+					for _, chunk in ipairs(virt_text) do
+						table.insert(result, chunk)
+					end
+					table.insert(result, { " ⋯ ", "NonText" })
+				end
+				return result
 			end,
 		})
 		-- end bagian code support comment dan import
