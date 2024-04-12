@@ -143,6 +143,8 @@ return {
 			vim = "indent",
 			python = { "indent" },
 			git = "",
+			javascriptreact = { "treesitter", "indent" },
+			typescriptreact = { "treesitter", "indent" },
 		}
 
 		local function customizeSelector(bufnr)
@@ -195,8 +197,8 @@ return {
 
 			fold_virt_text_handler = function(virt_text, lnum, end_lnum, width, truncate)
 				local result = {}
-				local closed_fold_text = "Comments ..." -- Teks yang ingin ditampilkan
-				local import_fold_text = "Import ..." -- Teks yang ingin ditampilkan
+				local closed_fold_text = "comments ..." -- Teks yang ingin ditampilkan
+				local import_fold_text = "import ..." -- Teks yang ingin ditampilkan
 				local is_comment = false -- Variabel untuk mengecek apakah ini komentar
 				local is_import = false
 
@@ -232,6 +234,7 @@ return {
 					-- Menambahkan teks 'Comments ...' ke akhir baris yang dilipat
 					table.insert(result, { suffix, "NonText" })
 				elseif is_import then
+					--[[
 					local suffix = string.format(" %s ", import_fold_text)
 					local target_width = width - vim.fn.strdisplaywidth(suffix)
 					local cur_width = 0
@@ -250,12 +253,67 @@ return {
 					end
 					-- Menambahkan teks 'Comments ...' ke akhir baris yang dilipat
 					table.insert(result, { suffix, "NonText" })
+					]]
+					--
+
+					local suffix = (" 󰁂 %d "):format(end_lnum - lnum)
+					local sufWidth = vim.fn.strdisplaywidth(suffix)
+					local targetWidth = width - sufWidth
+					local curWidth = 0
+					for _, chunk in ipairs(virt_text) do
+						local chunkText = chunk[1]
+						local chunkWidth = vim.fn.strdisplaywidth(chunkText)
+						if targetWidth > curWidth + chunkWidth then
+							table.insert(result, chunk)
+						else
+							chunkText = truncate(chunkText, targetWidth - curWidth)
+							local hlGroup = chunk[2]
+							table.insert(result, { chunkText, hlGroup })
+							chunkWidth = vim.fn.strdisplaywidth(chunkText)
+							-- str width returned from truncate() may less than 2nd argument, need padding
+							if curWidth + chunkWidth < targetWidth then
+								suffix = suffix .. (" "):rep(targetWidth - curWidth - chunkWidth)
+							end
+							break
+						end
+						curWidth = curWidth + chunkWidth
+					end
+					table.insert(result, { " import⋯ ", "NonText" })
+					table.insert(result, { suffix, "MoreMsg" })
 				else
 					-- Jika bukan komentar, tampilkan teks asli
+					-- for _, chunk in ipairs(virt_text) do
+					-- 	table.insert(result, chunk)
+					-- end
+					local _end = end_lnum - 1
+					local final_text = vim.trim(vim.api.nvim_buf_get_text(0, _end, 0, _end, -1, {})[1])
+					local suffix = final_text:format(end_lnum - lnum)
+					local suffix_width = vim.fn.strdisplaywidth(suffix)
+					local target_width = width - suffix_width
+					local cur_width = 0
 					for _, chunk in ipairs(virt_text) do
-						table.insert(result, chunk)
+						local chunk_text = chunk[1]
+						local chunk_width = vim.fn.strdisplaywidth(chunk_text)
+						if target_width > cur_width + chunk_width then
+							table.insert(result, chunk)
+						else
+							chunk_text = truncate(chunk_text, target_width - cur_width)
+							local hl_group = chunk[2]
+							table.insert(result, { chunk_text, hl_group })
+							chunk_width = vim.fn.strdisplaywidth(chunk_text)
+							-- str width returned from truncate() may less than 2nd argument, need padding
+							if cur_width + chunk_width < target_width then
+								suffix = suffix .. (" "):rep(target_width - cur_width - chunk_width)
+							end
+							break
+						end
+						cur_width = cur_width + chunk_width
 					end
 					table.insert(result, { " ⋯ ", "NonText" })
+					local l = { "javascriptreact", "typescriptreact" }
+					if TABLE_CONTAINS(l, vim.bo.filetype) then
+						table.insert(result, { suffix, "TSPunctBracket" })
+					end
 				end
 				return result
 			end,
