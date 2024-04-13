@@ -11,19 +11,25 @@ material_icon.setup({
 	override = {
 		["mjs"] = {
 			icon = "",
-			color = "#efd81d",
+			color = "#f2c55c",
 			cterm_color = "220",
 			name = "Mjs",
 		},
+		["js"] = {
+			icon = "",
+			color = "#f2c55c",
+			cterm_color = "220",
+			name = "javascript",
+		},
 		["ts"] = {
 			icon = "󰛦",
-			color = "#30A2FF",
+			color = "#548af7",
 			cterm_color = "220",
 			name = "ts",
 		},
 		["jsx"] = {
 			icon = "",
-			color = "#0FBFCF",
+			color = "#61dafb",
 			cterm_color = "220",
 			name = "jsx",
 		},
@@ -47,7 +53,7 @@ material_icon.setup({
 		},
 		["json"] = {
 			icon = "",
-			color = "#ca8984",
+			color = "#f16421",
 			cterm_color = "220",
 			name = "json",
 		},
@@ -129,11 +135,35 @@ material_icon.setup({
 			cterm_color = "220",
 			name = "cfm",
 		},
-		["cfc"] = {
-			icon = "",
-			color = "#507F89",
+		["png"] = {
+			icon = "󰋩",
+			color = "#3574f0",
 			cterm_color = "220",
-			name = "cfc",
+			name = "Png",
+		},
+		["jpg"] = {
+			icon = "󰋩",
+			color = "#3574f0",
+			cterm_color = "220",
+			name = "jpg",
+		},
+		["csv"] = {
+			icon = "",
+			color = "#57965c",
+			cterm_color = "220",
+			name = "csv",
+		},
+		["sql"] = {
+			icon = "",
+			color = "#b589ec",
+			cterm_color = "220",
+			name = "sqlfile",
+		},
+		["md"] = {
+			icon = "",
+			color = "#42a5f5",
+			cterm_color = "220",
+			name = "README_file",
 		},
 		-- ["go"] = {
 		-- 	icon = "󰟓",

@@ -12,9 +12,9 @@ if vim.g.neovide then
 
 	vim.o.guifont = "Hasklug_Nerd_Font:h15"
 	vim.g.neovide_padding_top = 0
-	vim.g.neovide_padding_bottom = 0
-	vim.g.neovide_padding_right = 0
-	vim.g.neovide_padding_left = 0
+	vim.g.neovide_padding_bottom = 1
+	vim.g.neovide_padding_right = 1
+	vim.g.neovide_padding_left = 1
 
 	-- config for transparent
 	--vim.g.neovide_transparency = 0.8

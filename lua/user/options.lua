@@ -39,7 +39,8 @@ local options = {
 	writebackup = false, -- Disable making a backup before overwriting a file
 	-- minimal number of screen columns either side of cursor if wrap is `false`
 	-- guifont = "monospace:h17", -- the font used in graphical neovim applications
-	guifont = "Source Code Pro:h17", -- the font used in graphical neovim applications
+	guifont = "SauceCodePro Nerd Font:h17", -- the font used in graphical neovim applications
+	-- guifont = "Hasklug Nerd Font:h16", -- the font used in graphical neovim applications
 	-- guifont = "Hack Nerd Font:h17", -- the font used in graphical neovim applications
 	whichwrap = "bs<>[]hl", -- which "horizontal" keys are allowed to travel to prev/next line            -- which "horizontal" keys are allowed to travel to prev/next line
 }

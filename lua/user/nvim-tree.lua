@@ -109,7 +109,7 @@ nvim_tree.setup({
 		-- root_folder_modifier = ":t",
 		root_folder_label = false,
 		indent_markers = {
-			enable = false,
+			enable = true,
 			inline_arrows = true,
 			icons = {
 				corner = "└",
@@ -143,7 +143,11 @@ nvim_tree.setup({
 				git = {
 					deleted = icons.git.FileDeleted,
 					-- ignored = icons.git.FileIgnored,
-					ignored = "",
+					-- ignored = "",
+					-- ignored = "",
+					-- ignored = "",
+					ignored = "",
+					-- ignored = icons.git.FileUnstaged,
 					renamed = icons.git.FileRenamed,
 					staged = icons.git.FileStaged,
 					unmerged = icons.git.FileUnmerged,
