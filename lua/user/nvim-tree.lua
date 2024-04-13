@@ -146,6 +146,7 @@ nvim_tree.setup({
 					-- ignored = "",
 					-- ignored = "",
 					-- ignored = "",
+					-- ignored = "",
 					ignored = "",
 					-- ignored = icons.git.FileUnstaged,
 					renamed = icons.git.FileRenamed,
