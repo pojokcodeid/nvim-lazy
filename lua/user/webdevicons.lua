@@ -7,6 +7,11 @@ local material_icon_ok, material_icon = pcall(require, "nvim-material-icon")
 if not material_icon_ok then
 	return
 end
+local prettier_icon = ""
+local term_program = vim.fn.getenv("TERM_PROGRAM")
+if term_program == vim.NIL then
+	prettier_icon = ""
+end
 material_icon.setup({
 	override = {
 		["mjs"] = {
@@ -234,13 +239,13 @@ web_devicons.setup({
 			name = "huskyrc",
 		},
 		[".prettierrc"] = {
-			icon = "",
+			icon = prettier_icon,
 			color = "#ea5e5e",
 			cterm_color = "240",
 			name = "prettierrc",
 		},
 		[".prettierd"] = {
-			icon = "",
+			icon = prettier_icon,
 			color = "#ea5e5e",
 			cterm_color = "240",
 			name = "prettierd",
@@ -258,7 +263,7 @@ web_devicons.setup({
 			name = "vsixmanifest",
 		},
 		[".prettierignore"] = {
-			icon = "",
+			icon = prettier_icon,
 			color = "#ea5e5e",
 			cterm_color = "240",
 			name = "prettierignore",
