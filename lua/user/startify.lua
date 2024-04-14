@@ -20,11 +20,11 @@ startify.section.header.val = dash_model
 startify.section.top_buttons.val = {
 	startify.button("f", "󰈞  Find file", ":Telescope find_files <CR>"),
 	startify.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-	startify.button("p", "  Find project", ":Telescope projects <CR>"),
+	startify.button("p", "󰉋  Find project", ":Telescope projects <CR>"),
 	startify.button("r", "󰦛  Recently used files", ":Telescope oldfiles <CR>"),
 	startify.button("t", "󰊄  Find text", ":Telescope live_grep <CR>"),
 	startify.button("c", "  Configuration", ":e $MYVIMRC <CR>"),
-	startify.button("z", "󰒲 Lazy", ":Lazy<CR>"),
+	startify.button("z", "󰒲  Lazy", ":Lazy<CR>"),
 	-- startify.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 -- disable MRU
