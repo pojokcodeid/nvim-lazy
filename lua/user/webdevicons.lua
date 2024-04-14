@@ -12,19 +12,19 @@ local prettier_icon = ""
 material_icon.setup({
 	override = {
 		["mjs"] = {
-			icon = "󰌞",
+			icon = "",
 			color = "#f2c55c",
 			cterm_color = "220",
 			name = "Mjs",
 		},
 		["js"] = {
-			icon = "󰌞",
+			icon = "",
 			color = "#f2c55c",
 			cterm_color = "220",
 			name = "javascript",
 		},
 		["ts"] = {
-			icon = "󰛦",
+			icon = "",
 			color = "#548af7",
 			cterm_color = "220",
 			name = "ts",
@@ -150,13 +150,13 @@ material_icon.setup({
 			name = "jpg",
 		},
 		["csv"] = {
-			icon = "",
+			icon = "󰈚",
 			color = "#57965c",
 			cterm_color = "220",
 			name = "csv",
 		},
 		["sql"] = {
-			icon = "",
+			icon = "󰆼",
 			color = "#b589ec",
 			cterm_color = "220",
 			name = "sqlfile",
@@ -174,7 +174,7 @@ material_icon.setup({
 			name = "README_file",
 		},
 		["pdf"] = {
-			icon = "",
+			icon = "",
 			color = "#ef510b",
 			cterm_color = "220",
 			name = "pdffile",
