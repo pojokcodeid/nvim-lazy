@@ -7,21 +7,18 @@ local material_icon_ok, material_icon = pcall(require, "nvim-material-icon")
 if not material_icon_ok then
 	return
 end
-local prettier_icon = ""
-local term_program = vim.fn.getenv("TERM_PROGRAM")
-if term_program == vim.NIL then
-	prettier_icon = ""
-end
+
+local prettier_icon = ""
 material_icon.setup({
 	override = {
 		["mjs"] = {
-			icon = "",
+			icon = "󰌞",
 			color = "#f2c55c",
 			cterm_color = "220",
 			name = "Mjs",
 		},
 		["js"] = {
-			icon = "",
+			icon = "󰌞",
 			color = "#f2c55c",
 			cterm_color = "220",
 			name = "javascript",
@@ -170,6 +167,30 @@ material_icon.setup({
 			cterm_color = "220",
 			name = "README_file",
 		},
+		["sh"] = {
+			icon = "",
+			color = "#ef510b",
+			cterm_color = "220",
+			name = "README_file",
+		},
+		["pdf"] = {
+			icon = "",
+			color = "#ef510b",
+			cterm_color = "220",
+			name = "pdffile",
+		},
+		["xlsx"] = {
+			icon = "󱀭",
+			color = "#349C42",
+			cterm_color = "220",
+			name = "xlsxfile",
+		},
+		["xls"] = {
+			icon = "󱀭",
+			color = "#349C42",
+			cterm_color = "220",
+			name = "xlsfile",
+		},
 		-- ["go"] = {
 		-- 	icon = "󰟓",
 		-- 	color = "#0FBFCF",
@@ -195,6 +216,12 @@ web_devicons.setup({
 			color = "#ffab00",
 			cterm_color = "240",
 			name = "viteconfigts",
+		},
+		["vite.config.js"] = {
+			icon = "󰉁",
+			color = "#ffab00",
+			cterm_color = "240",
+			name = "viteconfigjs",
 		},
 		[".releaserc"] = {
 			icon = "󰚧",
@@ -275,7 +302,7 @@ web_devicons.setup({
 			name = "sequelizerc",
 		},
 		["pre-commit"] = {
-			icon = "",
+			icon = "",
 			color = "#75e4b3",
 			cterm_color = "240",
 			name = "pre",
@@ -381,6 +408,30 @@ web_devicons.setup({
 			color = "#0087c9",
 			cterm_color = "220",
 			name = "gradlewFile-staging",
+		},
+		["nodemon.json"] = {
+			icon = "󰇴",
+			color = "#76d04b",
+			cterm_color = "220",
+			name = "nodemonjson",
+		},
+		["webpack.config.js"] = {
+			icon = "󰜫",
+			color = "#8ED6FB",
+			cterm_color = "220",
+			name = "webpackconfigjs",
+		},
+		["package.json"] = {
+			icon = "",
+			color = "#8ED6FB",
+			cterm_color = "220",
+			name = "packagejson",
+		},
+		[".gitignore"] = {
+			icon = "󰊢",
+			color = "#8ED6FB",
+			cterm_color = "220",
+			name = "gitignore",
 		},
 	},
 })

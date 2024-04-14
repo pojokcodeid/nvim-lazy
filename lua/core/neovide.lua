@@ -18,6 +18,7 @@ if vim.g.neovide then
 
 	-- config for transparent
 	--vim.g.neovide_transparency = 0.8
+	vim.g.neovide_hide_mouse_when_typing = false
 	vim.g.neovide_transparency = 1
 	vim.g.neovide_underline_automatic_scaling = false
 	vim.g.neovide_refresh_rate_idle = 5
