@@ -13,7 +13,7 @@ return {
 		-- get folder name from current directory
 		local _get_folder_name = function()
 			local str = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-			return " 󱧶 " .. str:lower():gsub("^%l", string.upper) .. " "
+			return " " .. icons.ui.ProjekFolder .. " " .. str:lower():gsub("^%l", string.upper) .. " "
 		end
 
 		local function diagnostics_indicator(num, _, diagnostics, _)
@@ -53,7 +53,7 @@ return {
 				middle_mouse_command = nil,
 
 				indicator_icon = nil,
-				indicator = { style = "icon", icon = "▎" },
+				indicator = { style = "icon", icon = icons.ui.BoldLineLeft },
 				buffer_close_icon = icons.ui.Close,
 				modified_icon = icons.ui.Circle,
 				close_icon = icons.ui.BoldClose,

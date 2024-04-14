@@ -5,6 +5,8 @@ if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable",
     lazypath })
 end
+
+local icons = require("user.icons").ui
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -24,10 +26,10 @@ require("lazy").setup({
 		throttle = 40,
 		custom_keys = { ["<localleader>l"] = false },
 		icons = {
-			ft = "",
-			lazy = "󰂠 ",
-			loaded = "",
-			not_loaded = "",
+			ft = icons.ft,
+			lazy = icons.Bell .. " ",
+			loaded = icons.CheckCircle,
+			not_loaded = icons.not_loaded,
 		},
 	},
 	change_detection = { enabled = false, notify = false },

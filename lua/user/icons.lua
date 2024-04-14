@@ -51,6 +51,7 @@ return {
 		Repo = "",
 		Octoface = "",
 		Branch = "",
+		Branch2 = "",
 	},
 	ui = {
 		ArrowCircleDown = "",
@@ -133,6 +134,14 @@ return {
 		TriangleShortArrowRight = "",
 		TriangleShortArrowUp = "",
 		Neovim = "",
+		BlankCircle = " ",
+		CheckCircle = " ",
+		DotCircle = " ",
+		Border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+		ProjekFolder = "󱧶",
+		Bell = "󰂠",
+		ft = "",
+		not_loaded = "",
 	},
 	diagnostics = {
 		BoldError = "",
