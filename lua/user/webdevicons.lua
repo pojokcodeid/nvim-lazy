@@ -12,19 +12,19 @@ local prettier_icon = ""
 material_icon.setup({
 	override = {
 		["mjs"] = {
-			icon = "",
+			icon = "󰌞",
 			color = "#f2c55c",
 			cterm_color = "220",
 			name = "Mjs",
 		},
 		["js"] = {
-			icon = "",
+			icon = "󰌞",
 			color = "#f2c55c",
 			cterm_color = "220",
 			name = "javascript",
 		},
 		["ts"] = {
-			icon = "",
+			icon = "󰛦",
 			color = "#548af7",
 			cterm_color = "220",
 			name = "ts",
@@ -422,7 +422,7 @@ web_devicons.setup({
 			name = "webpackconfigjs",
 		},
 		["package.json"] = {
-			icon = "",
+			icon = "󰎙",
 			color = "#8ED6FB",
 			cterm_color = "220",
 			name = "packagejson",
@@ -432,6 +432,18 @@ web_devicons.setup({
 			color = "#8ED6FB",
 			cterm_color = "220",
 			name = "gitignore",
+		},
+		["tsconfig.json"] = {
+			icon = "󰛦",
+			color = "#519aba",
+			cterm_color = "74",
+			name = "TSConfig",
+		},
+		["jsconfig.json"] = {
+			icon = "󰌞",
+			color = "#f2c55c",
+			cterm_color = "220",
+			name = "JSConfig",
 		},
 	},
 })
