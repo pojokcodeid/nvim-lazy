@@ -133,7 +133,7 @@ nvim_tree.setup({
 		dotfiles = false,
 		git_clean = false,
 		no_buffer = false,
-		custom = { "node_modules", "\\.cache" },
+		custom = { "node_modules", "\\.cache", "\\.git" },
 		exclude = {},
 	},
 	filesystem_watchers = {

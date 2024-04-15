@@ -271,6 +271,12 @@ web_devicons.setup({
 			cterm_color = "240",
 			name = "prettierrc",
 		},
+		[".prettierrc.json"] = {
+			icon = prettier_icon,
+			color = "#ea5e5e",
+			cterm_color = "240",
+			name = "prettierrcjson",
+		},
 		[".prettierd"] = {
 			icon = prettier_icon,
 			color = "#ea5e5e",
@@ -325,6 +331,12 @@ web_devicons.setup({
 			cterm_color = "240",
 			name = "eslintrc",
 		},
+		[".eslintrc.js"] = {
+			icon = "󰱺",
+			color = "#4746a8",
+			cterm_color = "240",
+			name = "eslintrcjs",
+		},
 		[".eslintignore"] = {
 			icon = "󰱺",
 			color = "#4746a8",
@@ -360,6 +372,12 @@ web_devicons.setup({
 			color = "#F14C28",
 			cterm_color = "220",
 			name = "gitblameignorerevs",
+		},
+		[".gitmodules"] = {
+			icon = "󰊢",
+			color = "#0c343d",
+			cterm_color = "220",
+			name = "gitmodules",
 		},
 		[".mailmap"] = {
 			icon = "󰇮",
@@ -427,6 +445,12 @@ web_devicons.setup({
 			cterm_color = "220",
 			name = "packagejson",
 		},
+		["package-lock.json"] = {
+			icon = "󰎙",
+			color = "#cc0000",
+			cterm_color = "220",
+			name = "packagelockjson",
+		},
 		[".gitignore"] = {
 			icon = "󰊢",
 			color = "#8ED6FB",
@@ -444,6 +468,12 @@ web_devicons.setup({
 			color = "#f2c55c",
 			cterm_color = "220",
 			name = "JSConfig",
+		},
+		[".gitlab-ci.yml"] = {
+			icon = "",
+			color = "#F14C28",
+			cterm_color = "220",
+			name = "gitlabciyaml",
 		},
 	},
 })
