@@ -26,19 +26,17 @@ if data_ok then
 	end
 end
 
-local icons = require("user.icons").ui
-
 local settings = {
 	ui = {
 		-- border = "none",
-		border = icons.Border,
+		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 		icons = {
 			-- package_installed = "◍",
 			-- package_pending = "◍",
 			-- package_uninstalled = "◍",
-			package_pending = icons.DotCircle,
-			package_installed = icons.CheckCircle,
-			package_uninstalled = icons.BlankCircle,
+			package_pending = " ",
+			package_installed = " ",
+			package_uninstalled = " ",
 		},
 		keymaps = {
 			-- Keymap to expand a server in the UI

@@ -131,9 +131,9 @@ return {
 
 			local get_branch = function()
 				if vim.b.gitsigns_head ~= nil then
-					return icons.git.Branch2 .. " " .. vim.b.gitsigns_head
+					return " " .. vim.b.gitsigns_head
 				else
-					return icons.git.Branch2 .. vim.fn.fnamemodify("", ":t")
+					return "" .. vim.fn.fnamemodify("", ":t")
 				end
 			end
 

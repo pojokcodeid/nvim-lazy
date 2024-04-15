@@ -205,22 +205,17 @@ return {
 
 				-- Memeriksa apakah baris awal dari fold adalah komentar
 				local start_line = vim.api.nvim_buf_get_lines(0, lnum - 1, lnum, false)[1]
-				-- cari comentar dengan awalan /* untuk generaal comment
-				if start_line:find("^%s*%/%*") then
+				if start_line:find("^%s*%/%*") then -- Regex untuk mengecek komentar javascript
 					is_comment = true
-				-- cara commentar dengan awalan <!-- untuk html
 				elseif start_line:find("^%s*<!--") then
 					is_comment = true
-				-- cari comentar dengan awalan -- untuk lua
 				elseif start_line:find("^%s*%-%-") then
 					is_comment = true
 				end
-				-- cek fold yang berawalan import
 				if start_line:find("^%s*import") then
 					is_import = true
 				end
-				-- cek fold dengan akhiran {
-				if start_line:find("%s*{%s*$") then
+				if start_line:find("%s*{") then
 					is_bracket = true
 				end
 				if is_comment then

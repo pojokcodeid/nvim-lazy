@@ -7,18 +7,21 @@ local material_icon_ok, material_icon = pcall(require, "nvim-material-icon")
 if not material_icon_ok then
 	return
 end
-
-local prettier_icon = ""
+local prettier_icon = ""
+local term_program = vim.fn.getenv("TERM_PROGRAM")
+if term_program == vim.NIL then
+	prettier_icon = ""
+end
 material_icon.setup({
 	override = {
 		["mjs"] = {
-			icon = "󰌞",
+			icon = "",
 			color = "#f2c55c",
 			cterm_color = "220",
 			name = "Mjs",
 		},
 		["js"] = {
-			icon = "󰌞",
+			icon = "",
 			color = "#f2c55c",
 			cterm_color = "220",
 			name = "javascript",
@@ -150,13 +153,13 @@ material_icon.setup({
 			name = "jpg",
 		},
 		["csv"] = {
-			icon = "󰈚",
+			icon = "",
 			color = "#57965c",
 			cterm_color = "220",
 			name = "csv",
 		},
 		["sql"] = {
-			icon = "󰆼",
+			icon = "",
 			color = "#b589ec",
 			cterm_color = "220",
 			name = "sqlfile",
@@ -166,30 +169,6 @@ material_icon.setup({
 			color = "#42a5f5",
 			cterm_color = "220",
 			name = "README_file",
-		},
-		["sh"] = {
-			icon = "",
-			color = "#ef510b",
-			cterm_color = "220",
-			name = "README_file",
-		},
-		["pdf"] = {
-			icon = "",
-			color = "#ef510b",
-			cterm_color = "220",
-			name = "pdffile",
-		},
-		["xlsx"] = {
-			icon = "󱀭",
-			color = "#349C42",
-			cterm_color = "220",
-			name = "xlsxfile",
-		},
-		["xls"] = {
-			icon = "󱀭",
-			color = "#349C42",
-			cterm_color = "220",
-			name = "xlsfile",
 		},
 		-- ["go"] = {
 		-- 	icon = "󰟓",
@@ -216,12 +195,6 @@ web_devicons.setup({
 			color = "#ffab00",
 			cterm_color = "240",
 			name = "viteconfigts",
-		},
-		["vite.config.js"] = {
-			icon = "󰉁",
-			color = "#ffab00",
-			cterm_color = "240",
-			name = "viteconfigjs",
 		},
 		[".releaserc"] = {
 			icon = "󰚧",
@@ -271,12 +244,6 @@ web_devicons.setup({
 			cterm_color = "240",
 			name = "prettierrc",
 		},
-		[".prettierrc.json"] = {
-			icon = prettier_icon,
-			color = "#ea5e5e",
-			cterm_color = "240",
-			name = "prettierrcjson",
-		},
 		[".prettierd"] = {
 			icon = prettier_icon,
 			color = "#ea5e5e",
@@ -308,7 +275,7 @@ web_devicons.setup({
 			name = "sequelizerc",
 		},
 		["pre-commit"] = {
-			icon = "",
+			icon = "",
 			color = "#75e4b3",
 			cterm_color = "240",
 			name = "pre",
@@ -330,12 +297,6 @@ web_devicons.setup({
 			color = "#4746a8",
 			cterm_color = "240",
 			name = "eslintrc",
-		},
-		[".eslintrc.js"] = {
-			icon = "󰱺",
-			color = "#4746a8",
-			cterm_color = "240",
-			name = "eslintrcjs",
 		},
 		[".eslintignore"] = {
 			icon = "󰱺",
@@ -372,12 +333,6 @@ web_devicons.setup({
 			color = "#F14C28",
 			cterm_color = "220",
 			name = "gitblameignorerevs",
-		},
-		[".gitmodules"] = {
-			icon = "󰊢",
-			color = "#0c343d",
-			cterm_color = "220",
-			name = "gitmodules",
 		},
 		[".mailmap"] = {
 			icon = "󰇮",
@@ -426,54 +381,6 @@ web_devicons.setup({
 			color = "#0087c9",
 			cterm_color = "220",
 			name = "gradlewFile-staging",
-		},
-		["nodemon.json"] = {
-			icon = "󰇴",
-			color = "#76d04b",
-			cterm_color = "220",
-			name = "nodemonjson",
-		},
-		["webpack.config.js"] = {
-			icon = "󰜫",
-			color = "#8ED6FB",
-			cterm_color = "220",
-			name = "webpackconfigjs",
-		},
-		["package.json"] = {
-			icon = "󰎙",
-			color = "#8ED6FB",
-			cterm_color = "220",
-			name = "packagejson",
-		},
-		["package-lock.json"] = {
-			icon = "󰎙",
-			color = "#cc0000",
-			cterm_color = "220",
-			name = "packagelockjson",
-		},
-		[".gitignore"] = {
-			icon = "󰊢",
-			color = "#8ED6FB",
-			cterm_color = "220",
-			name = "gitignore",
-		},
-		["tsconfig.json"] = {
-			icon = "󰛦",
-			color = "#519aba",
-			cterm_color = "74",
-			name = "TSConfig",
-		},
-		["jsconfig.json"] = {
-			icon = "󰌞",
-			color = "#f2c55c",
-			cterm_color = "220",
-			name = "JSConfig",
-		},
-		[".gitlab-ci.yml"] = {
-			icon = "",
-			color = "#F14C28",
-			cterm_color = "220",
-			name = "gitlabciyaml",
 		},
 	},
 })

@@ -49,7 +49,7 @@ bufferline.setup({
 		middle_mouse_command = nil,
 
 		indicator_icon = nil,
-		indicator = { style = "icon", icon = icons.ui.BoldLineLeft },
+		indicator = { style = "icon", icon = "▎" },
 		buffer_close_icon = icons.ui.Close,
 		modified_icon = icons.ui.Circle,
 		close_icon = icons.ui.BoldClose,

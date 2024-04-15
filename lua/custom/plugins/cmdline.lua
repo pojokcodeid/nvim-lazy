@@ -1,10 +1,10 @@
 -- initial gui app
 local is_neovide = false
 local use_noice = true
--- if vim.g.neovide then
--- 	is_neovide = true
--- 	use_noice = false
--- end
+if vim.g.neovide then
+	is_neovide = true
+	use_noice = false
+end
 vim.opt.lazyredraw = is_neovide
 return {
 	{ "gelguy/wilder.nvim", enabled = not use_noice },

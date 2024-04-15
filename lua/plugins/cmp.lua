@@ -2,7 +2,6 @@ local cmprg = false
 local cmpcalc = false
 local cmptag = false
 local lspghost_text = false
-local icons = require("user.icons").ui
 local data_exists, custom_cmp = pcall(require, "core.config")
 if data_exists then
 	cmprg = custom_cmp.cmprg
@@ -105,12 +104,12 @@ return {
 					-- documentation = cmp.config.window.bordered(),
 					-- remove border window from cmp
 					completion = {
-						border = icons.Border,
+						border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 						winhighlight = "Normal:bg,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
 						scrollbar = true,
 					},
 					documentation = {
-						border = icons.Border,
+						border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 						winhighlight = "Normal:bg,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
 						scrollbar = true,
 					},
