@@ -64,6 +64,15 @@ vim.api.nvim_create_autocmd("User", {
 		pcall(vim.cmd.AlphaRedraw)
 	end,
 })
+
+vim.api.nvim_create_autocmd({ "User" }, {
+	pattern = { "AlphaReady" },
+	callback = function()
+		vim.cmd([[
+      set laststatus=0 | autocmd BufUnload <buffer> set laststatus=3
+    ]])
+	end,
+})
 -- ignore filetypes in MRU
 startify.mru_opts.ignore = function(path, ext)
 	return (string.find(path, "COMMIT_EDITMSG")) or (vim.tbl_contains(default_mru_ignore, ext))

@@ -8,6 +8,14 @@ return {
 			end
 			local icons = require("user.icons")
 
+			local getLeftSubstring = function(word, length)
+				if #word > length then
+					return string.sub(word, 1, length) .. "..."
+				else
+					return word
+				end
+			end
+
 			-- start for lsp
 			local list_registered_providers_names = function(filetype)
 				local s = require("null-ls.sources")
@@ -131,7 +139,7 @@ return {
 
 			local get_branch = function()
 				if vim.b.gitsigns_head ~= nil then
-					return icons.git.Branch2 .. " " .. vim.b.gitsigns_head
+					return icons.git.Branch2 .. " " .. getLeftSubstring(vim.b.gitsigns_head, 6)
 				else
 					return icons.git.Branch2 .. vim.fn.fnamemodify("", ":t")
 				end

@@ -1,21 +1,37 @@
+-- https://luals.github.io/wiki/settings/
 return {
 	settings = {
-
 		Lua = {
+			format = {
+				enable = false,
+			},
 			diagnostics = {
-				globals = { "vim" },
+				globals = { "vim", "spec" },
+			},
+			runtime = {
+				version = "LuaJIT",
+				special = {
+					spec = "require",
+				},
 			},
 			workspace = {
+				checkThirdParty = false,
 				library = {
 					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
 					[vim.fn.stdpath("config") .. "/lua"] = true,
-					[vim.fn.expand("$VIMRUNTIME")] = true,
-					["${3rd}/busted/library"] = true,
-					["${3rd}/luassert/library"] = true,
-					["${3rd}/luv/library"] = true,
 				},
-				maxPreload = 5000,
-				preloadFileSize = 10000,
+			},
+			hint = {
+				enable = false,
+				arrayIndex = "Disable", -- "Enable" | "Auto" | "Disable"
+				await = true,
+				paramName = "Disable", -- "All" | "Literal" | "Disable"
+				paramType = true,
+				semicolon = "All", -- "All" | "SameLine" | "Disable"
+				setType = false,
+			},
+			telemetry = {
+				enable = false,
 			},
 		},
 	},

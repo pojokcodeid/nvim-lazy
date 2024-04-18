@@ -134,7 +134,10 @@ nvim_tree.setup({
 		git_clean = false,
 		no_buffer = false,
 		custom = { "node_modules", "\\.cache", "\\.git" },
-		exclude = {},
+		exclude = {
+			".gitignore",
+			".prettierignore",
+		},
 	},
 	filesystem_watchers = {
 		enable = true,
@@ -146,7 +149,8 @@ nvim_tree.setup({
 		ignore = false,
 		show_on_dirs = true,
 		show_on_open_dirs = true,
-		timeout = 200,
+		disable_for_dirs = {},
+		timeout = 400,
 	},
 	actions = {
 		use_system_clipboard = true,
@@ -201,7 +205,8 @@ nvim_tree.setup({
 		},
 	},
 	notify = {
-		threshold = vim.log.levels.INFO,
+		-- threshold = vim.log.levels.INFO,
+		threshold = vim.log.levels.ERROR,
 	},
 	log = {
 		enable = false,

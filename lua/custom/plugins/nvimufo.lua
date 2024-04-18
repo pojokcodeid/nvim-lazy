@@ -8,6 +8,8 @@ function TABLE_CONTAINS(tbl, x)
 	return found
 end
 
+local icons = require("user.icons").folding
+
 return {
 	"kevinhwang91/nvim-ufo",
 	dependencies = {
@@ -43,7 +45,8 @@ return {
 	enabled = true,
 	lazy = true,
 	-- event = "BufReadPost",
-	event = { "BufReadPost", "BufRead", "InsertEnter", "BufNewFile" },
+	-- event = { "BufReadPost", "BufRead", "InsertEnter", "BufNewFile" },
+	event = "VeryLazy",
 	config = function()
 		vim.o.foldcolumn = "1" -- '0' is not bad
 		vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
@@ -55,17 +58,17 @@ return {
 		-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep:│,foldclose:]]
 		-- vim.o.fillchars = [[eob: ,fold: ,foldopen:󰛲,foldsep:│,foldclose:󰜄]]
 		-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep:│,foldclose:]]
-		vim.o.fillchars = [[eob: ,fold: ,foldopen:▾,foldsep:│,foldclose:▸]]
-		-- vim.opt.fillchars = {
-		-- 	vert = "▕", -- alternatives │
-		-- 	fold = " ",
-		-- 	eob = " ", -- suppress ~ at EndOfBuffer
-		-- 	diff = "╱", -- alternatives = ⣿ ░ ─
-		-- 	msgsep = "‾",
-		-- 	foldopen = "▾",
-		-- 	foldsep = "│",
-		-- 	foldclose = "▸",
-		-- }
+		-- vim.o.fillchars = [[eob: ,fold: ,foldopen:▾,foldsep:│,foldclose:▸]]
+		vim.opt.fillchars = {
+			vert = icons.vert,
+			fold = icons.fold,
+			eob = icons.eob,
+			diff = icons.diff,
+			msgsep = icons.msgsep,
+			foldopen = icons.foldopen,
+			foldsep = icons.foldsep,
+			foldclose = icons.foldclose,
+		}
 		-- these are "extra", change them as you like
 		vim.keymap.set("n", "zR", require("ufo").openAllFolds)
 		vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
@@ -169,9 +172,9 @@ return {
 		require("ufo").setup({
 			open_fold_hl_timeout = 150,
 			close_fold_kinds_for_ft = {
-				default = { "imports", "comment" },
+				-- default = { "imports", "comment" },
 				-- json = { "array" },
-				c = { "comment", "region" },
+				-- c = { "comment", "region" },
 			},
 			preview = {
 				win_config = {

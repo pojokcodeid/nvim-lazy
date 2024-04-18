@@ -1,11 +1,16 @@
 return {
 	kind = {
 		Array = "",
-		Boolean = "",
+		-- Boolean = "",
+		Boolean = "󰨙 ",
 		Class = "",
 		Color = "",
+		Codeium = "󰘦 ",
+		Control = " ",
+		Collapsed = " ",
 		Constant = "",
 		Constructor = "",
+		Copilot = " ",
 		Enum = "",
 		EnumMember = "",
 		Event = "",
@@ -29,6 +34,7 @@ return {
 		Snippet = "",
 		String = "",
 		Struct = "",
+		TabNine = "󰏚 ",
 		Text = "",
 		TypeParameter = "",
 		Unit = "",
@@ -142,6 +148,22 @@ return {
 		Bell = "󰂠",
 		ft = "",
 		not_loaded = "",
+	},
+	folding = {
+		vert = "▕", -- alternatives │
+		fold = " ",
+		eob = " ", -- suppress ~ at EndOfBuffer
+		diff = "╱", -- alternatives = ⣿ ░ ─
+		msgsep = "‾",
+		foldopen = "▾",
+		foldsep = "│",
+		foldclose = "▸",
+		plusBox = "󰜄",
+		plusSircle = "󰐙",
+		plus = "󰐕",
+		minusBox = "󰛲",
+		minusSircle = "󰍷",
+		minus = "󰍴",
 	},
 	diagnostics = {
 		BoldError = "",

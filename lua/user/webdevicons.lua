@@ -137,6 +137,12 @@ material_icon.setup({
 			cterm_color = "220",
 			name = "cfm",
 		},
+		["cfc"] = {
+			icon = "",
+			color = "#507F89",
+			cterm_color = "220",
+			name = "cfc",
+		},
 		["png"] = {
 			icon = "󰋩",
 			color = "#3574f0",
