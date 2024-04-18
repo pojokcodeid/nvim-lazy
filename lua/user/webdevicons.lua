@@ -171,7 +171,7 @@ material_icon.setup({
 			icon = "",
 			color = "#42a5f5",
 			cterm_color = "220",
-			name = "README_file",
+			name = "markdown",
 		},
 		["sh"] = {
 			icon = "",
