@@ -167,6 +167,18 @@ material_icon.setup({
 			cterm_color = "220",
 			name = "sqlfile",
 		},
+		["php"] = {
+			icon = "󰌟",
+			color = "#b589ec",
+			cterm_color = "220",
+			name = "phpfile",
+		},
+		["mp4"] = {
+			icon = "󰈫",
+			color = "#FC6411",
+			cterm_color = "220",
+			name = "mp4file",
+		},
 		["md"] = {
 			icon = "",
 			color = "#42a5f5",

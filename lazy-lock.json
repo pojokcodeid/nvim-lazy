@@ -44,7 +44,7 @@
   "plenary.nvim": { "branch": "master", "commit": "50012918b2fc8357b87cff2a7f7f0446e47da174" },
   "promise-async": { "branch": "main", "commit": "38a4575da9497326badd3995e768b4ccf0bb153e" },
   "smart-splits.nvim": { "branch": "master", "commit": "f6fcb79527872e9330c554915af2ca511c388390" },
-  "statuscol.nvim": { "branch": "main", "commit": "d954893262a57a92e46edd87de67e2b3fe72305e" },
+  "statuscol.nvim": { "branch": "main", "commit": "483b9a596dfd63d541db1aa51ee6ee9a1441c4cc" },
   "telescope.nvim": { "branch": "master", "commit": "d00d9df48c00d8682c14c2b5da78bda7ef06b939" },
   "toggleterm.nvim": { "branch": "main", "commit": "193786e0371e3286d3bc9aa0079da1cd41beaa62" },
   "vim-illuminate": { "branch": "master", "commit": "e522e0dd742a83506db0a72e1ced68c9c130f185" },
