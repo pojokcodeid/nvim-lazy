@@ -12,9 +12,10 @@ return {
 					numbers = "NONE",
 					strings = "NONE",
 					comments = "italic",
-					keywords = "bold,italic",
+					-- keywords = "bold,italic",
+					keywords = "italic",
 					constants = "NONE",
-					functions = "italic",
+					functions = "NONE",
 					operators = "NONE",
 					variables = "NONE",
 					parameters = "NONE",
@@ -35,6 +36,9 @@ return {
 						indentline = "#3b4261",
 						float_bg = "#282c34",
 					},
+				},
+				filetypes = {
+					-- javascript = false,
 				},
 				options = {
 					cursorline = true,
@@ -104,6 +108,8 @@ return {
 					-- -- overide which-key fill color with bg color
 					-- WhichKeyBorder = { bg = "${bg}" },
 					TermCursor = { bg = "${fg}" },
+					TSRainbowRed = { fg = "${orange}" },
+					TSRainbowOrange = { fg = "${red}" },
 				},
 			})
 		end,
