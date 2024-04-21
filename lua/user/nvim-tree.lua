@@ -55,7 +55,7 @@ nvim_tree.setup({
 		root_folder_label = false,
 		indent_width = 2,
 		indent_markers = {
-			enable = false,
+			enable = true,
 			inline_arrows = true,
 			icons = {
 				corner = "└",
@@ -80,8 +80,10 @@ nvim_tree.setup({
 				symlink = icons.ui.FileSymlink,
 				bookmark = icons.ui.BookMark,
 				folder = {
-					arrow_closed = icons.ui.TriangleShortArrowRight,
-					arrow_open = icons.ui.TriangleShortArrowDown,
+					-- arrow_closed = icons.ui.TriangleShortArrowRight,
+					arrow_closed = icons.ui.ChevronShortRight,
+					-- arrow_open = icons.ui.TriangleShortArrowDown,
+					arrow_open = icons.ui.ChevronShortDown,
 					default = icons.ui.Folder,
 					open = icons.ui.FolderOpen,
 					empty = icons.ui.EmptyFolder,

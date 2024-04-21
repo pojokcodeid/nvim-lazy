@@ -354,6 +354,7 @@ return {
 		priority = 1000,
 		config = function()
 			-- Lua
+			local util = require("onedark.util")
 			require("onedark").setup({
 				term_colors = true,
 				style = onedark_style,
@@ -383,7 +384,7 @@ return {
 					-- BorderBG = { fg = "#333842" }, -- untuk custom brder color cmp
 					-- overide indent line fill color
 					NvimTreeNormal = { fg = "$fg", bg = "$bg0" },
-					NvimTreeIndentMarker = { fg = "#3E4450" },
+					NvimTreeIndentMarker = { fg = "#515661" },
 					-- NvimTreeGitIgnored = { fg = "$gray", bg = "NONE" },
 					IblIndent = { fg = "#3E4450" },
 					-- NvimTreeFolderIcon = { bg = "NONE", fg = "$blue" },

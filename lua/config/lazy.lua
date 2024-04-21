@@ -21,6 +21,7 @@ require("lazy").setup({
 		version = "*", -- try installing the latest stable version for plugins that support semver
 	},
 	ui = {
+		backdrop = 100,
 		border = "rounded",
 		browser = "chrome",
 		throttle = 40,

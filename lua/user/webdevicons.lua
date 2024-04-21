@@ -155,6 +155,12 @@ material_icon.setup({
 			cterm_color = "220",
 			name = "jpg",
 		},
+		["jpeg"] = {
+			icon = "󰥶",
+			color = "#88C057",
+			cterm_color = "220",
+			name = "jpeg",
+		},
 		["csv"] = {
 			icon = "󰈚",
 			color = "#57965c",
@@ -492,6 +498,12 @@ web_devicons.setup({
 			color = "#F14C28",
 			cterm_color = "220",
 			name = "gitlabciyaml",
+		},
+		[".env_example"] = {
+			icon = "",
+			color = "#faf743",
+			cterm_color = "227",
+			name = "Envexample",
 		},
 	},
 })
