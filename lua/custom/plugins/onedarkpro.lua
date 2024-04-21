@@ -4,7 +4,7 @@ return {
 		"olimorris/onedarkpro.nvim",
 		priority = 1000, -- Ensure it loads first
 		config = function()
-			local is_transparent = true
+			local is_transparent = false
 			require("onedarkpro").setup({
 				styles = {
 					types = "NONE",
