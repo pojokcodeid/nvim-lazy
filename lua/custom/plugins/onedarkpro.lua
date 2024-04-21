@@ -4,7 +4,7 @@ return {
 		"olimorris/onedarkpro.nvim",
 		priority = 1000, -- Ensure it loads first
 		config = function()
-			local is_transparent = false
+			local is_transparent = true
 			require("onedarkpro").setup({
 				styles = {
 					types = "NONE",
@@ -41,9 +41,11 @@ return {
 					-- javascript = false,
 				},
 				options = {
-					cursorline = true,
-					transparency = is_transparent,
-					terminal_colors = true,
+					cursorline = false, -- Use cursorline highlighting?
+					transparency = is_transparent, -- Use a transparent background?
+					terminal_colors = true, -- Use the theme's colors for Neovim's :terminal?
+					lualine_transparency = is_transparent, -- Center bar transparency?
+					highlight_inactive_windows = false, -- When the window is out of focus, change the normal background?
 				},
 				highlights = {
 					-- overide cursor line fill colors
@@ -107,6 +109,7 @@ return {
 					-- WhichKeyValue = { bg = "${bg}" },
 					-- -- overide which-key fill color with bg color
 					-- WhichKeyBorder = { bg = "${bg}" },
+					-- Folded = { bg = "NONE", fg = "${fg}" }, -- line used for closed folds
 					TermCursor = { bg = "${fg}" },
 					TSRainbowRed = { fg = "${orange}" },
 					TSRainbowOrange = { fg = "${red}" },
