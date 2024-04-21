@@ -103,6 +103,7 @@ return {
 					-- WhichKeyValue = { bg = "${bg}" },
 					-- -- overide which-key fill color with bg color
 					-- WhichKeyBorder = { bg = "${bg}" },
+					TermCursor = { bg = "${fg}" },
 				},
 			})
 		end,
