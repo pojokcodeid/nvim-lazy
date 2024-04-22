@@ -13,7 +13,6 @@
   "codeium.vim": { "branch": "main", "commit": "76790ba8d1b8b3287f72366ea5f55c1d76e6114e" },
   "dressing.nvim": { "branch": "master", "commit": "42d767b04c50a6966c9633e3968bc65c0c2f2bfc" },
   "friendly-snippets": { "branch": "main", "commit": "ea068f1becd91bcd4591fceb6420d4335e2e14d3" },
-  "github-nvim-theme": { "branch": "main", "commit": "7e08e9cbf6da64b151f708a3e7e9f43447ae0171" },
   "gitsigns.nvim": { "branch": "main", "commit": "52f8da33cc0cadbf1164c4a91c8bfd6895533d67" },
   "indent-blankline.nvim": { "branch": "master", "commit": "3d08501caef2329aba5121b753e903904088f7e6" },
   "lazy.nvim": { "branch": "main", "commit": "bef521ac89c8d423f9d092e37b58e8af0c099309" },

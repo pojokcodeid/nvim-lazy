@@ -86,7 +86,9 @@ return {
 					["@variable.builtin"] = { fg = "${red}", style = "NONE" },
 					["@variable.member"] = "${cyan}",
 					["@variable.parameter"] = "${red}",
-					["@property"] = { fg = "${cyan}" }, -- similar to `@field`
+					-- ["@property.javascript"] = { fg = "${cyan}" }, -- similar to `@field`
+					["@lsp.type.parameter"] = { fg = "${fg}" },
+					["@field.lua"] = { fg = "${gray}" },
 					NvimTreeGitDirty = { fg = "${yellow}" },
 					Pmenu = { fg = "${fg}", bg = "${bg}" },
 					PmenuThumb = { bg = "${gray}" }, -- Popup menu: Thumb of the scrollbar.
@@ -111,8 +113,8 @@ return {
 					-- WhichKeyBorder = { bg = "${bg}" },
 					-- Folded = { bg = "NONE", fg = "${fg}" }, -- line used for closed folds
 					TermCursor = { bg = "${fg}" },
-					TSRainbowRed = { fg = "${orange}" },
-					TSRainbowOrange = { fg = "${red}" },
+					TSRainbowRed = { fg = "${cyan}" },
+					TSRainbowCyan = { fg = "${red}" },
 				},
 			})
 		end,
