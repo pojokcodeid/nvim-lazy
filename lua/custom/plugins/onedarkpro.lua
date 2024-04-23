@@ -41,7 +41,7 @@ return {
 					-- javascript = false,
 				},
 				options = {
-					cursorline = false, -- Use cursorline highlighting?
+					cursorline = true, -- Use cursorline highlighting?
 					transparency = is_transparent, -- Use a transparent background?
 					terminal_colors = true, -- Use the theme's colors for Neovim's :terminal?
 					lualine_transparency = is_transparent, -- Center bar transparency?
@@ -82,13 +82,14 @@ return {
 					["@tag.javascript"] = { fg = "${red}" },
 					["@tag.attribute"] = { fg = "${orange}", style = "italic" },
 					["@constructor.javascript"] = { fg = "${red}" },
-					["@variable"] = { fg = "${fg}", style = "NONE" }, -- various variable names
+					-- ["@variable"] = { fg = "${fg}", style = "NONE" }, -- various variable names
 					["@variable.builtin"] = { fg = "${red}", style = "NONE" },
 					["@variable.member"] = "${cyan}",
 					["@variable.parameter"] = "${red}",
 					-- ["@property.javascript"] = { fg = "${cyan}" }, -- similar to `@field`
 					["@lsp.type.parameter"] = { fg = "${fg}" },
-					["@field.lua"] = { fg = "${gray}" },
+					["@lsp.type.property.lua"] = { fg = "${red}" },
+					["@lsp.type.variable.lua"] = { fg = "${fg}" },
 					NvimTreeGitDirty = { fg = "${yellow}" },
 					Pmenu = { fg = "${fg}", bg = "${bg}" },
 					PmenuThumb = { bg = "${gray}" }, -- Popup menu: Thumb of the scrollbar.

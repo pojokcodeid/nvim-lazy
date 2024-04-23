@@ -17,14 +17,14 @@ return {
 		-- event = "BufWinEnter",
 		event = { "BufRead", "BufNewFile" },
 		config = function()
-			require("user.lualine")
+			require("user.lualine_cfg")
 		end,
 	},
 	-- for show icon
 	{
 		"kyazdani42/nvim-web-devicons",
 		lazy = true,
-		dependencies = { "DaikyXendo/nvim-material-icon" },
+		dependencies = { "pojokcodeid/nvim-material-icon" },
 		-- event = "BufRead",
 		config = function()
 			require("user.webdevicons")

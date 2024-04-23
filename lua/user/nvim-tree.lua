@@ -207,8 +207,8 @@ nvim_tree.setup({
 		},
 	},
 	notify = {
-		-- threshold = vim.log.levels.INFO,
-		threshold = vim.log.levels.ERROR,
+		threshold = vim.log.levels.INFO,
+		-- threshold = vim.log.levels.ERROR,
 	},
 	log = {
 		enable = false,
