@@ -35,7 +35,7 @@ return {
 		"kyazdani42/nvim-tree.lua",
 		lazy = true,
 		-- event = "BufRead",
-		cmd = { "NvimTree", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeClose" },
+		cmd = { "NvimTree", "NvimTreeOpen", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeClose" },
 		-- dependencies = "kyazdani42/nvim-web-devicons",
 		config = function()
 			local data_exists, treeconfig = pcall(require, "core.config")

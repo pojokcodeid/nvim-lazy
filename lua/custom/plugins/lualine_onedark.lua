@@ -150,8 +150,8 @@ return {
 			if data_ok then
 				lsp_progress = lspprogress.progress
 			end
-      -- stylua: ignore
-      local is_transparat=true
+	     -- stylua: ignore
+	    local is_transparat=true
 			local colors = require("onedarkpro.helpers").get_colors("onedark")
 
 			local onedark = {

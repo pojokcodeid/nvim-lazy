@@ -61,7 +61,7 @@ return {
 					-- overide nvimtree text fill color folder opened
 					NvimTreeOpenedFolderName = { fg = "${blue}" },
 					-- overide nvimtree text fill color root folder
-					NvimTreeRootFolder = { fg = "${yellow}" },
+					NvimTreeRootFolder = { fg = "${blue}" },
 					NvimTreeSpecialFile = { fg = "${orange}" },
 					NvimTreeWinSeparator = { fg = "#202329" },
 					NvimTreeIndentMarker = { fg = "#3E4450" },

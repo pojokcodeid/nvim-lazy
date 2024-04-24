@@ -47,3 +47,27 @@ vim.g.VM_Extend_hl = "DiffAdd"
 -- vim.g.VM_Cursor_hl = "Visual"
 vim.g.VM_Cursor_hl = "DiffText"
 vim.g.VM_Insert_hl = "DiffChange"
+
+-- NvimTree automatically resize the floating window when neovim's window size changes
+-- local tree_api = require("nvim-tree")
+-- local tree_view = require("nvim-tree.view")
+--
+-- vim.api.nvim_create_augroup("NvimTreeResize", {
+-- 	clear = true,
+-- })
+--
+-- vim.api.nvim_create_autocmd({ "VimResized" }, {
+-- 	group = "NvimTreeResize",
+-- 	callback = function()
+-- 		if tree_view.is_visible() then
+-- 			tree_view.close()
+-- 			tree_api.open()
+-- 		end
+-- 	end,
+-- })
+
+-- auto open file if creation
+local api = require("nvim-tree.api")
+api.events.subscribe(api.events.Event.FileCreated, function(file)
+	vim.cmd("edit " .. file.fname)
+end)
