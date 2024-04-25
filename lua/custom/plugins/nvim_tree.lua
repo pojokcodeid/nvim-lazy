@@ -2,7 +2,7 @@ return {
 	{
 		"kyazdani42/nvim-tree.lua",
 		lazy = true,
-		-- event = "BufRead",
+		event = "VeryLazy",
 		cmd = { "NvimTree", "NvimTreeOpen", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeClose" },
 		-- dependencies = "kyazdani42/nvim-web-devicons",
 		config = function()
@@ -19,7 +19,7 @@ return {
 						return
 					end
 
-					local HEIGHT_RATIO = 0.8 -- You can change this
+					local HEIGHT_RATIO = 0.9 -- You can change this
 					local WIDTH_RATIO = 0.5 -- You can change this too
 
 					local icons = require("user.icons")
@@ -269,6 +269,11 @@ return {
 					})
 				end
 			end
+			-- auto open file if creation
+			local api = require("nvim-tree.api")
+			api.events.subscribe(api.events.Event.FileCreated, function(file)
+				vim.cmd("edit " .. file.fname)
+			end)
 		end,
 	},
 }

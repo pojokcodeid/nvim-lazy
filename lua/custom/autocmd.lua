@@ -65,9 +65,3 @@ vim.g.VM_Insert_hl = "DiffChange"
 -- 		end
 -- 	end,
 -- })
-
--- auto open file if creation
-local api = require("nvim-tree.api")
-api.events.subscribe(api.events.Event.FileCreated, function(file)
-	vim.cmd("edit " .. file.fname)
-end)
