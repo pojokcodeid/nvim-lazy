@@ -89,7 +89,7 @@ return {
 					-- ["@property.javascript"] = { fg = "${cyan}" }, -- similar to `@field`
 					["@lsp.type.parameter"] = { fg = "${fg}" },
 					["@lsp.type.property.lua"] = { fg = "${red}" },
-					["@lsp.type.variable.lua"] = { fg = "${fg}" },
+					["@lsp.type.variable"] = { fg = "${fg}" },
 					NvimTreeGitDirty = { fg = "${yellow}" },
 					Pmenu = { fg = "${fg}", bg = "${bg}" },
 					PmenuThumb = { bg = "${gray}" }, -- Popup menu: Thumb of the scrollbar.
