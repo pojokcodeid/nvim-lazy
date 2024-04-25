@@ -151,48 +151,52 @@ return {
 				lsp_progress = lspprogress.progress
 			end
 	     -- stylua: ignore
-	    local is_transparat=true
-			local colors = require("onedarkpro.helpers").get_colors("onedark")
+	    local onedark=vim.fn.fnamemodify("auto", ":t")
+			local is_transparat = true
+			local status_ok, onedarkpro = pcall(require, "onedarkpro.helpers")
+			if status_ok then
+				local colors = onedarkpro.get_colors("onedark")
 
-			local onedark = {
-				normal = {
-					a = { bg = colors.green, fg = colors.bg },
-					b = { bg = colors.fg_gutter, fg = colors.green },
-					c = {
-						bg = is_transparat and colors.none or colors.bg_statusline,
-						fg = colors.fg,
+				onedark = {
+					normal = {
+						a = { bg = colors.green, fg = colors.bg },
+						b = { bg = colors.fg_gutter, fg = colors.green },
+						c = {
+							bg = is_transparat and colors.none or colors.bg_statusline,
+							fg = colors.fg,
+						},
 					},
-				},
 
-				insert = {
-					a = { bg = colors.blue, fg = colors.bg },
-					b = { bg = colors.fg_gutter, fg = colors.blue },
-				},
-				visual = {
-					a = { bg = colors.yellow, fg = colors.bg },
-					b = { bg = colors.fg_gutter, fg = colors.yellow },
-				},
-				replace = {
-					a = { bg = colors.red, fg = colors.bg },
-					b = { bg = colors.fg_gutter, fg = colors.red },
-				},
-				command = {
-					a = { bg = colors.purple, fg = colors.bg },
-					b = { bg = colors.fg_gutter, fg = colors.purple },
-				},
-				terminal = {
-					a = { bg = colors.cyan, fg = colors.bg },
-					b = { bg = colors.fg_gutter, fg = colors.cyan },
-				},
-				inactive = {
-					a = { bg = colors.bg, fg = colors.blue },
-					b = { bg = colors.bg, fg = colors.fg_gutter_inactive, gui = "bold" },
-					c = {
-						bg = is_transparat and colors.none or colors.bg,
-						fg = colors.fg_gutter_inactive,
+					insert = {
+						a = { bg = colors.blue, fg = colors.bg },
+						b = { bg = colors.fg_gutter, fg = colors.blue },
 					},
-				},
-			}
+					visual = {
+						a = { bg = colors.yellow, fg = colors.bg },
+						b = { bg = colors.fg_gutter, fg = colors.yellow },
+					},
+					replace = {
+						a = { bg = colors.red, fg = colors.bg },
+						b = { bg = colors.fg_gutter, fg = colors.red },
+					},
+					command = {
+						a = { bg = colors.purple, fg = colors.bg },
+						b = { bg = colors.fg_gutter, fg = colors.purple },
+					},
+					terminal = {
+						a = { bg = colors.cyan, fg = colors.bg },
+						b = { bg = colors.fg_gutter, fg = colors.cyan },
+					},
+					inactive = {
+						a = { bg = colors.bg, fg = colors.blue },
+						b = { bg = colors.bg, fg = colors.fg_gutter_inactive, gui = "bold" },
+						c = {
+							bg = is_transparat and colors.none or colors.bg,
+							fg = colors.fg_gutter_inactive,
+						},
+					},
+				}
+			end
 
 			require("lualine").setup({
 				options = {
