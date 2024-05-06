@@ -4,7 +4,7 @@ return {
 		"olimorris/onedarkpro.nvim",
 		priority = 1000, -- Ensure it loads first
 		config = function()
-			local is_transparent = false
+			local is_transparent = true
 			require("onedarkpro").setup({
 				styles = {
 					types = "NONE",
@@ -116,6 +116,8 @@ return {
 					TermCursor = { bg = "${fg}" },
 					TSRainbowRed = { fg = "${cyan}" },
 					TSRainbowCyan = { fg = "${red}" },
+					NonText = { fg = "${fg}", bg = is_transparent and "NONE" or "#30333d" },
+					MiniIndentscopeSymbol = { fg = "${cyan}" },
 				},
 			})
 		end,
