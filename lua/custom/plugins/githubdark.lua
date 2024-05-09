@@ -65,10 +65,13 @@ return {
 	-- 					IlluminatedWordWrite = { bg = "#3b4261" },
 	-- 					["@tag.attribute"] = { fg = "#77bdfb", style = "italic" },
 	-- 					["@text.uri"] = { fg = palette.const, style = "italic" },
+	-- 					["@keyword.return"] = { fg = "#fa7970", style = "italic" },
 	-- 					-- ["@tag.attribute.html"] = { fg = "#faa356", style = "italic" },
 	-- 					-- ["@operator.html"] = { fg = "#faa356" },
 	-- 					-- ["@tag.html"] = { fg = "#fa7970" },
 	-- 					-- ["@tag.delimiter.html"] = { fg = "#faa356" },
+	-- 					["@tag.javascript"] = { fg = "#faa356" },
+	-- 					["@tag.tsx"] = { fg = "#faa356" },
 	-- 				},
 	-- 				github_dark_high_contrast = {
 	-- 					NvimTreeSpecialFile = { fg = "#faa356", style = "italic" },
@@ -77,6 +80,7 @@ return {
 	-- 					-- As with specs and palettes, a specific style's value will be used over the `all`'s value.
 	-- 					NvimTreeNormal = { fg = "fg1", bg = is_transparent and "NONE" or "bg1" },
 	-- 					NvimTreeSpecialFile = { fg = "#faa356", style = "italic" },
+	-- 					NvimTreeIndentMarker = { fg = "#3E4450" },
 	-- 					BufferLineFill = { bg = is_transparent and "NONE" or "bg1" },
 	-- 					BufferLineUnfocusedFill = { bg = is_transparent and "NONE" or "bg1" },
 	-- 					LualineNormal = { bg = is_transparent and "NONE" or "bg1" },
@@ -87,6 +91,7 @@ return {
 	-- 					WhichKeyFloat = { bg = is_transparent and "NONE" or "bg1" },
 	-- 					LazyNormal = { bg = is_transparent and "NONE" or "bg1" },
 	-- 					LazyBackground = { bg = is_transparent and "NONE" or "bg1" },
+	-- 					NormalSB = { fg = "fg1", bg = "bg1" }, -- normal text
 	-- 				},
 	-- 			},
 	-- 		})

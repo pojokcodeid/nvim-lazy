@@ -18,7 +18,7 @@ if data_exists then
 end
 startify.section.header.val = dash_model
 startify.section.top_buttons.val = {
-	startify.button("f", "󰈞  Find file", ":Telescope find_files <CR>"),
+	startify.button("F", "󰈞  Find file", ":Telescope find_files <CR>"),
 	startify.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
 	startify.button("p", "󰉋  Find project", ":Telescope projects <CR>"),
 	startify.button("r", "󰦛  Recently used files", ":Telescope oldfiles <CR>"),
