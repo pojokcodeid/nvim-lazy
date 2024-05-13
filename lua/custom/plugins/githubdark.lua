@@ -8,7 +8,7 @@ return {
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
-			local is_transparent = false
+			local is_transparent = true
 			local palette = require("github-theme.palette").load("github_dark_dimmed")
 			require("github-theme").setup({
 				options = {
@@ -70,8 +70,15 @@ return {
 						-- ["@operator.html"] = { fg = "#faa356" },
 						-- ["@tag.html"] = { fg = "#fa7970" },
 						-- ["@tag.delimiter.html"] = { fg = "#faa356" },
-						["@tag.javascript"] = { fg = "#faa356" },
-						["@tag.tsx"] = { fg = "#faa356" },
+						-- ["@tag.javascript"] = { fg = "#faa356" },
+						-- ["@tag.javascript"] = { fg = "#8ddb8c" },
+						-- ["@tag.tsx"] = { fg = "#8ddb8c" },
+						-- ["@tag.delimiter.javascript"] = { fg = "fg1" },
+						-- ["@tag.tsx"] = { fg = "#faa356" },
+						["@lsp.type.parameter"] = { fg = "#faa356" },
+						["@property.lua"] = { fg = "#91cbff", bg = is_transparent and "NONE" or "bg1" },
+						["@lsp.type.property.lua"] = { fg = "fg1", bg = is_transparent and "NONE" or "bg1" },
+						["@lsp.type.variable.lua"] = { fg = "#91cbff", bg = is_transparent and "NONE" or "bg1" },
 					},
 					github_dark_high_contrast = {
 						NvimTreeSpecialFile = { fg = "#faa356", style = "italic" },
@@ -94,9 +101,6 @@ return {
 						NormalSB = { fg = "fg1", bg = is_transparent and "NONE" or "bg1" }, -- normal text
 						NormalFloat = { fg = "fg1", bg = is_transparent and "NONE" or "bg1" },
 						IblIndent = { fg = "#3E4450" },
-						["@property.lua"] = { fg = "#91cbff", bg = is_transparent and "NONE" or "bg1" },
-						["@lsp.type.property.lua"] = { fg = "fg1", bg = is_transparent and "NONE" or "bg1" },
-						["@lsp.type.variable.lua"] = { fg = "#91cbff", bg = is_transparent and "NONE" or "bg1" },
 					},
 				},
 			})
