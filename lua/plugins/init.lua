@@ -63,26 +63,26 @@ return {
       { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
     },
 	},
-	{
-		"neovim/nvim-lspconfig",
-		lazy = true,
-		event = "BufRead",
-	},
-	{
-		"williamboman/mason.nvim",
-		lazy = true,
-		dependencies = { "williamboman/mason-lspconfig.nvim" },
-		cmd = {
-			"Mason",
-			"MasonInstall",
-			"MasonUninstall",
-			"MasonUninstallAll",
-			"MasonLog",
-		},
-		config = function()
-			require("user.lsp")
-		end,
-	},
+	-- {
+	-- 	"neovim/nvim-lspconfig",
+	-- 	lazy = true,
+	-- 	event = "BufRead",
+	-- },
+	-- {
+	-- 	"williamboman/mason.nvim",
+	-- 	lazy = true,
+	-- 	dependencies = { "williamboman/mason-lspconfig.nvim" },
+	-- 	cmd = {
+	-- 		"Mason",
+	-- 		"MasonInstall",
+	-- 		"MasonUninstall",
+	-- 		"MasonUninstallAll",
+	-- 		"MasonLog",
+	-- 	},
+	-- 	config = function()
+	-- 		require("user.lsp")
+	-- 	end,
+	-- },
 	-- for formater linter
 	{
 		"RRethy/vim-illuminate",
@@ -142,24 +142,24 @@ return {
 			})
 		end,
 	},
-	{
-		"jayp0521/mason-null-ls.nvim",
-		lazy = true,
-		dependencies = {
-			"nvimtools/none-ls.nvim",
-			dependencies = {
-				"nvimtools/none-ls-extras.nvim",
-				lazy = true,
-			},
-			config = function()
-				require("user.lsp.null-ls")
-			end,
-		},
-		event = "InsertEnter",
-		opts = function()
-			require("user.mason-null-ls")
-		end,
-	},
+	-- {
+	-- 	"jayp0521/mason-null-ls.nvim",
+	-- 	lazy = true,
+	-- 	dependencies = {
+	-- 		"nvimtools/none-ls.nvim",
+	-- 		dependencies = {
+	-- 			"nvimtools/none-ls-extras.nvim",
+	-- 			lazy = true,
+	-- 		},
+	-- 		config = function()
+	-- 			require("user.lsp.null-ls")
+	-- 		end,
+	-- 	},
+	-- 	event = "InsertEnter",
+	-- 	opts = function()
+	-- 		require("user.mason-null-ls")
+	-- 	end,
+	-- },
 	-- debuging
 	{
 		"rcarriga/nvim-dap-ui",
