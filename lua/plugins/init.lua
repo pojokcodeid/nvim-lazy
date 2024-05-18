@@ -261,6 +261,7 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		-- event = "BufWinEnter",
+		version = "3.5.4",
 		event = { "BufRead", "InsertEnter", "BufNewFile" },
 		lazy = true,
 		opts = {
@@ -480,12 +481,12 @@ return {
 	-- 	dependencies = "nvim-treesitter/nvim-treesitter",
 	-- },
 	-- for git
-	{
-		"HiPhish/nvim-ts-rainbow2",
-		lazy = true,
-		event = "BufRead",
-		dependencies = "nvim-treesitter/nvim-treesitter",
-	},
+	-- {
+	-- 	"HiPhish/nvim-ts-rainbow2",
+	-- 	lazy = true,
+	-- 	event = "BufRead",
+	-- 	dependencies = "nvim-treesitter/nvim-treesitter",
+	-- },
 	{
 		"lewis6991/gitsigns.nvim",
 		lazy = true,

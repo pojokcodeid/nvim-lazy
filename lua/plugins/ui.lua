@@ -52,15 +52,15 @@ return {
 		lazy = true,
 		-- event = "InsertEnter",
 	},
-	{
-		"akinsho/bufferline.nvim",
-		lazy = true,
-		-- event = "BufWinEnter",
-		event = { "BufRead", "InsertEnter", "BufNewFile" },
-		config = function()
-			require("user.bufferline")
-		end,
-	},
+	-- {
+	-- 	"akinsho/bufferline.nvim",
+	-- 	lazy = true,
+	-- 	-- event = "BufWinEnter",
+	-- 	event = { "BufRead", "InsertEnter", "BufNewFile" },
+	-- 	config = function()
+	-- 		require("user.bufferline")
+	-- 	end,
+	-- },
 	-- for delete buffers (close files) without closing your windows or messing up your layout.
 	-- { "moll/vim-bbye", event = "InsertEnter" },
 	-- for view terminal
