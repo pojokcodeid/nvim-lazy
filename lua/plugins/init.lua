@@ -4,7 +4,6 @@ return {
 		"nvim-lua/plenary.nvim",
 		lazy = true,
 	},
-	-- coding start
 	-- coloring code
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -54,28 +53,12 @@ return {
 	{
 		"L3MON4D3/LuaSnip",
 		lazy = true,
-		-- event = "InsertEnter",
-		-- dependencies = {
-		-- 	"rafamadriz/friendly-snippets",
-		-- 	event = "BufRead",
-		-- 	config = function()
-		-- 		require("luasnip.loaders.from_vscode").lazy_load()
-		-- 		require("user.snippets")
-		-- 	end,
-		-- },
 		opts = {
 			history = true,
 			delete_check_events = "TextChanged",
 		},
     -- stylua: ignore
     keys = {
-      -- {
-      --   "<tab>",
-      --   function()
-      --     return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
-      --   end,
-      --   expr = true, silent = true, mode = "i",
-      -- },
       { "<tab>",   function() require("luasnip").jump(1) end,  mode = "s" },
       { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
     },
@@ -84,34 +67,10 @@ return {
 		"neovim/nvim-lspconfig",
 		lazy = true,
 		event = "BufRead",
-		-- dependencies = {
-		-- 	"williamboman/mason-lspconfig.nvim",
-		-- },
-		-- config = function()
-		-- 	require("user.lsp")
-		-- end,
 	},
-	-- {
-	-- 	"williamboman/mason.nvim",
-	-- 	event = "VeryLazy",
-	-- 	cmd = {
-	-- 		"Mason",
-	-- 		"MasonInstall",
-	-- 		"MasonUninstall",
-	-- 		"MasonUninstallAll",
-	-- 		"MasonLog",
-	-- 	},
-	-- 	dependencies = { "williamboman/mason-lspconfig.nvim" },
-	-- 	init = function()
-	-- 		vim.tbl_map(function(plugin)
-	-- 			pcall(require, plugin)
-	-- 		end, { "lspconfig", "null-ls" })
-	-- 	end,
-	-- },
 	{
 		"williamboman/mason.nvim",
 		lazy = true,
-		-- event = "InsertEnter",
 		dependencies = { "williamboman/mason-lspconfig.nvim" },
 		cmd = {
 			"Mason",
@@ -120,7 +79,6 @@ return {
 			"MasonUninstallAll",
 			"MasonLog",
 		},
-		-- keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
 		config = function()
 			require("user.lsp")
 		end,
@@ -137,7 +95,6 @@ return {
 			end
 			illuminate.configure({
 				options = {
-					-- providers: provider used to get references in the buffer, ordered by priority
 					providers = {
 						"lsp",
 						"treesitter",
@@ -189,7 +146,6 @@ return {
 		"jayp0521/mason-null-ls.nvim",
 		lazy = true,
 		dependencies = {
-			-- "jose-elias-alvarez/null-ls.nvim",
 			"nvimtools/none-ls.nvim",
 			dependencies = {
 				"nvimtools/none-ls-extras.nvim",
@@ -240,8 +196,6 @@ return {
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		lazy = true,
-		-- event = "BufWinEnter",
-		-- event = "InsertEnter",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		config = function()
 			require("ts_context_commentstring").setup({
@@ -251,8 +205,6 @@ return {
 	},
 	{
 		"numToStr/Comment.nvim",
-		-- event = "BufWinEnter",
-		-- event = "InsertEnter",
 		lazy = true,
 		config = function()
 			require("user.comment")
@@ -260,7 +212,7 @@ return {
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		-- event = "BufWinEnter",
+		version = "3.5.4",
 		event = { "BufRead", "InsertEnter", "BufNewFile" },
 		lazy = true,
 		opts = {
@@ -297,30 +249,6 @@ return {
 		},
 		main = "ibl",
 	},
-	-- styleing indent
-	-- {
-	-- 	"lukas-reineke/indent-blankline.nvim",
-	-- 	event = "BufRead",
-	-- 	config = function()
-	-- 		require("user.indentline")
-	-- 		-- require("ibl").setup()
-	-- 	end,
-	-- },
-	-- for Speed up loading Lua modules in Neovim to improve startup time.
-	-- {
-	-- 	"lewis6991/impatient.nvim",
-	-- 	event = "BufWinEnter",
-	-- 	config = function()
-	-- 		require("user.impatient")
-	-- 	end,
-	-- },
-	-- for live server html,css,js
-	-- {
-	-- "manzeloth/live-server",
-	-- cmd = { "LiveServer" },
-	-- event = "BufRead",
-	-- build = "npm install -g live-server",
-	-- },
 	-- for multi cursor select
 	{
 		"mg979/vim-visual-multi",
@@ -339,7 +267,6 @@ return {
 	-- for auto close tag
 	{
 		"windwp/nvim-ts-autotag",
-		-- event = "BufWinEnter",
 		lazy = true,
 		event = "BufRead",
 		dependencies = "nvim-treesitter/nvim-treesitter",
@@ -351,8 +278,6 @@ return {
 	{
 		"CRAG666/code_runner.nvim",
 		lazy = true,
-		-- event = "InsertEnter",
-		-- dependencies = "nvim-lua/plenary.nvim",
 		cmd = { "RunCode", "RunFile", "RunProject", "RunClose" },
 		config = function()
 			require("user.coderunner")
@@ -362,11 +287,7 @@ return {
 	{
 		"NvChad/nvim-colorizer.lua",
 		lazy = true,
-		-- event = "BufWinEnter",
 		event = { "BufRead", "InsertEnter", "BufNewFile" },
-		-- opts = function()
-		-- 	require("user.colorizer")
-		-- end,
 		opts = {
 			user_default_options = {
 				RGB = true, -- #RGB hex codes
@@ -472,20 +393,12 @@ return {
 	},
 	-- for check startuptime
 	{ "dstein64/vim-startuptime", lazy = true, cmd = "StartupTime" },
-	-- for coloring pairs
-	-- remark 20231101 - menyebabkan error treesitter
 	-- {
-	-- 	"p00f/nvim-ts-rainbow",
+	-- 	"HiPhish/nvim-ts-rainbow2",
+	-- 	lazy = true,
 	-- 	event = "BufRead",
 	-- 	dependencies = "nvim-treesitter/nvim-treesitter",
 	-- },
-	-- for git
-	{
-		"HiPhish/nvim-ts-rainbow2",
-		lazy = true,
-		event = "BufRead",
-		dependencies = "nvim-treesitter/nvim-treesitter",
-	},
 	{
 		"lewis6991/gitsigns.nvim",
 		lazy = true,
@@ -497,6 +410,4 @@ return {
 			require("user.gitsigns")
 		end,
 	},
-	-- remove duplicate
-	-- { "tpope/vim-repeat", event = "InsertEnter" },
 }

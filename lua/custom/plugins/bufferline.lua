@@ -1,5 +1,6 @@
 return {
 	"akinsho/bufferline.nvim",
+	branch = "main",
 	event = { "BufRead", "InsertEnter", "BufNewFile" },
 	config = function()
 		local status_ok, bufferline = pcall(require, "bufferline")

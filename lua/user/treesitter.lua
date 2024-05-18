@@ -28,11 +28,16 @@ configs.setup({
 	-- json = "",
 	-- },
 	-- },
+	-- rainbow = {
+	-- 	enable = true,
+	-- 	disable = { "html", "tsx" },
+	-- 	equery = "rainbow-parens",
+	-- 	strategy = require("ts-rainbow").strategy.global,
+	-- },
 	rainbow = {
-		enable = true,
-		disable = { "html", "tsx" },
-		equery = "rainbow-parens",
-		strategy = require("ts-rainbow").strategy.global,
+		enable = false,
+		extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
+		max_file_lines = 1000, -- Do not enable for files with more than 1000 lines, int
 	},
 	-- autotag = { enable = true, enable_rename = true, enable_close = true, enable_close_on_slash = true },
 	incremental_selection = { enable = true },

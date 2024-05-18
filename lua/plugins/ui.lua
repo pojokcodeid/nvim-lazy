@@ -2,7 +2,6 @@ return {
 	-- dashboard
 	{
 		"goolord/alpha-nvim",
-		-- event = "BufWinEnter",
 		lazy = true,
 		event = "VimEnter",
 		config = function()
@@ -13,8 +12,6 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		lazy = true,
-		-- dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
-		-- event = "BufWinEnter",
 		event = { "BufRead", "BufNewFile" },
 		config = function()
 			require("user.lualine_cfg")
@@ -25,7 +22,6 @@ return {
 		"kyazdani42/nvim-web-devicons",
 		lazy = true,
 		dependencies = { "pojokcodeid/nvim-material-icon" },
-		-- event = "BufRead",
 		config = function()
 			require("user.webdevicons")
 		end,
@@ -34,9 +30,7 @@ return {
 	{
 		"kyazdani42/nvim-tree.lua",
 		lazy = true,
-		-- event = "BufRead",
 		cmd = { "NvimTree", "NvimTreeOpen", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeClose" },
-		-- dependencies = "kyazdani42/nvim-web-devicons",
 		config = function()
 			local data_exists, treeconfig = pcall(require, "core.config")
 			if data_exists then
@@ -50,25 +44,21 @@ return {
 	{
 		"famiu/bufdelete.nvim",
 		lazy = true,
-		-- event = "InsertEnter",
 	},
 	{
 		"akinsho/bufferline.nvim",
 		lazy = true,
-		-- event = "BufWinEnter",
+		branch = "main",
 		event = { "BufRead", "InsertEnter", "BufNewFile" },
 		config = function()
 			require("user.bufferline")
 		end,
 	},
-	-- for delete buffers (close files) without closing your windows or messing up your layout.
-	-- { "moll/vim-bbye", event = "InsertEnter" },
 	-- for view terminal
 	{
 		"akinsho/toggleterm.nvim",
 		lazy = true,
 		cmd = { "ToggleTerm" },
-		-- event = "InsertEnter",
 		config = function()
 			require("user.toggleterm")
 		end,
@@ -87,8 +77,6 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		lazy = true,
-		-- event = "BufRead",
-		-- dependencies = { { "nvim-lua/plenary.nvim" } },
 		cmd = "Telescope",
 		version = false, -- telescope did only one release, so use HEAD for now
 		config = function()

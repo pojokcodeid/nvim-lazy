@@ -20,6 +20,7 @@ return {
 	{
 		"folke/noice.nvim",
 		lazy = true,
+		enabled = true,
 		dependencies = {
 			{ "MunifTanjim/nui.nvim" },
 		},

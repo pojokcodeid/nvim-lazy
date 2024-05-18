@@ -10,7 +10,7 @@ local rfile = {
 	typescript = "ts-node $dir/$fileName", -- npm install -g ts-node
 	rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
 	-- cpp="gcc $fileName -lstdc++ -o $fileNameWithoutExt && $fileNameWithoutExt"
-	cpp = "g++ $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
+	cpp = "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
 	scss = "sass $dir/$fileName $dir/$fileNameWithoutExt.css",
 	javascript = 'node "$dir/$fileName"',
 }

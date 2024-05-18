@@ -19,11 +19,6 @@ M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
 M.setup = function()
 	local signs = {
-
-		-- { name = "DiagnosticSignError", text = "" },
-		-- { name = "DiagnosticSignWarn", text = "" },
-		-- { name = "DiagnosticSignHint", text = "" },
-		-- { name = "DiagnosticSignInfo", text = "" },
 		{ name = "DiagnosticSignError", text = icons.diagnostics.Error },
 		{ name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
 		{ name = "DiagnosticSignHint", text = icons.diagnostics.Hint },
@@ -97,12 +92,13 @@ M.on_attach = function(client, bufnr)
 		client.server_capabilities.documentFormattingProvider = false
 	end
 
-	if client.name == "sumneko_lua" then
+	if client.name == "lua_ls" then
 		client.server_capabilities.documentFormattingProvider = false
 	end
 
 	if client.supports_method("textDocument/inlayHint") then
-		vim.lsp.inlay_hint.enable(bufnr, true)
+		-- vim.lsp.inlay_hint.enable(bufnr, true)
+		vim.lsp.inlay_hint.enable(true)
 	end
 
 	lsp_keymaps(bufnr)
