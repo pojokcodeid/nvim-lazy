@@ -147,7 +147,6 @@ return {
 	{
 		"windwp/nvim-autopairs",
 		lazy = true,
-		-- commit = "4fc96c8f3df89b6d23e5092d31c866c53a346347",
 		dependencies = "hrsh7th/nvim-cmp",
 		event = "InsertEnter",
 		config = function()
@@ -286,7 +285,6 @@ return {
 	{
 		"rcarriga/nvim-notify",
 		lazy = true,
-		-- event = "BufWinEnter",
 		event = "VeryLazy",
 		keys = {
 			{
@@ -347,7 +345,6 @@ return {
 	{
 		"dstein64/nvim-scrollview",
 		lazy = true,
-		-- event = "BufWinEnter",
 		event = { "BufRead", "InsertEnter", "BufNewFile" },
 		config = function()
 			require("user.nvimscroll")
@@ -366,7 +363,6 @@ return {
 		lazy = true,
 		enabled = vim.fn.executable("git") == 1,
 		ft = "gitcommit",
-		-- event = "BufWinEnter",
 		event = "BufRead",
 		config = function()
 			require("user.gitsigns")

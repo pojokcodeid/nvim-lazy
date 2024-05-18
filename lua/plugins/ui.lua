@@ -86,7 +86,6 @@ return {
 	{
 		"karb94/neoscroll.nvim",
 		lazy = true,
-		-- event = "InsertEnter",
 		config = function()
 			require("user.neoscroll")
 		end,
