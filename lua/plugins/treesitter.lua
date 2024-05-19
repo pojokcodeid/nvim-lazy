@@ -3,11 +3,6 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = {
 			{
-				"pojokcodeid/nvim-ts-rainbow2",
-				lazy = true,
-				event = "BufRead",
-			},
-			{
 				"JoosepAlviste/nvim-ts-context-commentstring",
 				lazy = true,
 				config = function()
@@ -80,12 +75,6 @@ return {
 				},
 				autopairs = {
 					enable = true,
-				},
-				rainbow = {
-					enable = true,
-					disable = { "html", "tsx" },
-					equery = "rainbow-parens",
-					strategy = require("ts-rainbow").strategy.global,
 				},
 			}
 		end,
