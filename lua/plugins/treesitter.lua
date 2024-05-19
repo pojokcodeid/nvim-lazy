@@ -3,6 +3,11 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = {
 			{
+				"pojokcodeid/nvim-ts-rainbow2",
+				lazy = true,
+				event = "BufRead",
+			},
+			{
 				"JoosepAlviste/nvim-ts-context-commentstring",
 				lazy = true,
 				config = function()
@@ -61,18 +66,29 @@ return {
 			"TSInstallFromGrammar",
 		},
 		event = { "BufRead", "VeryLazy" },
-		opts = {
-			highlight = { enable = true },
-			indent = { enable = true },
-			ensure_installed = {
-				"lua",
-				"vim",
-				"vimdoc",
-			},
-			incremental_selection = {
-				enable = true,
-			},
-		},
+		opts = function()
+			return {
+				highlight = { enable = true },
+				indent = { enable = true },
+				ensure_installed = {
+					"lua",
+					"vim",
+					"vimdoc",
+				},
+				incremental_selection = {
+					enable = true,
+				},
+				autopairs = {
+					enable = true,
+				},
+				rainbow = {
+					enable = true,
+					disable = { "html", "tsx" },
+					equery = "rainbow-parens",
+					strategy = require("ts-rainbow").strategy.global,
+				},
+			}
+		end,
 		config = function(_, opts)
 			if type(opts.ensure_installed) == "table" then
 				---@type table<string, boolean>
