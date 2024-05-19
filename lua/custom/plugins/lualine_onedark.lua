@@ -60,7 +60,8 @@ return {
 	-- 				local msg = "LS Inactive"
 	-- 				local buf_ft = vim.bo.filetype
 	-- 				-- start register
-	-- 				local buf_clients = vim.lsp.get_clients()
+	-- 				local buf_clients = {}
+	--				buf_clients = vim.lsp.get_clients({ bufnr = 0 })
 	-- 				local buf_client_names = {}
 	-- 				if next(buf_clients) == nil then
 	-- 					-- TODO: clean up this if statement
