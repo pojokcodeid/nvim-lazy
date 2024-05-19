@@ -47,7 +47,10 @@ return {
 
 			local linter_list_registered = function(filetype)
 				local registered_providers = list_registered_providers_names(filetype)
-				local providers_for_methods = vim.tbl_flatten(vim.tbl_map(function(m)
+				-- local providers_for_methods = vim.tbl_flatten(vim.tbl_map(function(m)
+				-- 	return registered_providers[m] or {}
+				-- end, alternative_methods))
+				local providers_for_methods = vim.iter(vim.tbl_map(function(m)
 					return registered_providers[m] or {}
 				end, alternative_methods))
 
@@ -59,9 +62,8 @@ return {
 				function()
 					local msg = "LS Inactive"
 					local buf_ft = vim.bo.filetype
-					local clients = vim.lsp.get_active_clients()
 					-- start register
-					local buf_clients = vim.lsp.buf_get_clients()
+					local buf_clients = vim.lsp.get_clients()
 					local buf_client_names = {}
 					if next(buf_clients) == nil then
 						-- TODO: clean up this if statement
@@ -120,7 +122,7 @@ return {
 
 			local spaces = function()
 				-- return " " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
-				return icons.ui.Tab .. " " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+				return icons.ui.Tab .. " " .. vim.api.nvim_get_option_value(0, "shiftwidth")
 			end
 
 			local mode = {
@@ -151,7 +153,8 @@ return {
 				lsp_progress = lspprogress.progress
 			end
 	     -- stylua: ignore
-	    local github=vim.fn.fnamemodify("auto", ":t")
+	    -- local github=vim.fn.fnamemodify("auto", ":t")
+	    local github={}
 			local status_ok, _ = pcall(require, "github-theme")
 			if status_ok then
 				local C = require("github-theme.lib.color")
@@ -192,7 +195,7 @@ return {
 
 			require("lualine").setup({
 				options = {
-					theme = github,
+					theme = github or "auto",
 					-- theme = "auto",
 					component_separators = { left = "", right = "" },
 					section_separators = { left = "", right = "" },

@@ -17,12 +17,6 @@ function _NODE_TOGGLE()
 	node:toggle()
 end
 
--- function _NCDU_TOGGLE()
--- 	local Terminal = require("toggleterm.terminal").Terminal
--- 	local ncdu = Terminal:new({ cmd = "ncdu", hidden = true })
--- 	ncdu:toggle()
--- end
-
 function _HTOP_TOGGLE()
 	local Terminal = require("toggleterm.terminal").Terminal
 	local htop = Terminal:new({ cmd = "htop", hidden = true })
@@ -176,7 +170,6 @@ local setup = {
 		i = { "j", "k" },
 		v = { "j", "k" },
 	},
-	-- disable the WhichKey popup for certain buf types and file types.
 	-- Disabled by default for Telescope
 	disable = {
 		buftypes = {},
@@ -202,19 +195,8 @@ local opts2 = {
 	nowait = true, -- use `nowait` when creating keymaps
 }
 
--- local trn = ""
--- if vim.fn.has("win32") == 1 then
--- 	trn = "pwsh<cr>"
--- end
 -- for debug
 local debug_key = {}
--- local trasparant = {}
--- local is_dap = pcall(require, "dap")
-
--- local trans_ok, _ = pcall(require, "transparent")
--- if trans_ok then
--- 	trasparant = { "<cmd>TransparentToggle<cr>", "Toggle Transparency" }
--- end
 
 if vim.fn.has("win32") == 0 then
 	debug_key = {
@@ -240,14 +222,10 @@ local mappings2 = {
 	["/"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", " 󰆈 Commet Block" },
 }
 local mappings = {
-	-- ["c"] = trasparant,
 	["a"] = { "<cmd>Alpha<cr>", "󰕮 Alpha" },
-	--["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["e"] = { "<cmd>NvimTreeToggle<cr><cr>", "󰙅 Explorer" },
 	["w"] = { "<cmd>w!<CR>", "󰆓 Save" },
 	["q"] = { "<cmd>q!<CR>", "󰿅 Quit" },
-	-- ["c"] = { "<cmd>Bdelete!<CR>", "󰅗 Close Buffer" },
-	-- ["k"] = { "<cmd>lua _close_buffer()<CR>", "󰅗 Close Buffer" },
 	-- open exloler and close toggleterm
 	["o"] = { "<cmd>lua _OPEN_EXPLORER()<cr><cmd>lua require('toggleterm').toggle()<cr>", "󱏒 Open Explorer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "󱪿 No Highlight" },
@@ -256,29 +234,12 @@ local mappings = {
 		" Find files",
 	},
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", " Find Text" },
-	-- ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-	-- ["z"] = { "<cmd>Lazy<cr>", "Lazy" },
-
 	["/"] = {
 		function()
 			require("Comment.api").toggle.linewise.current()
 		end,
 		"󰆈 Coment line",
 	},
-	-- ["m"] = {
-	-- 	name = "Markdown",
-	-- 	p = { "<cmd>MarkdownPreview<cr>", "Preview" },
-	-- 	s = { "<cmd>MarkdownPreviewStop<cr>", "Stop Preview" },
-	-- },
-	-- p = {
-	-- 	name = "Packer",
-	-- 	c = { "<cmd>PackerCompile<cr>", "Compile" },
-	-- 	i = { "<cmd>PackerInstall<cr>", "Install" },
-	-- 	s = { "<cmd>PackerSync<cr>", "Sync" },
-	-- 	S = { "<cmd>PackerStatus<cr>", "Status" },
-	-- 	u = { "<cmd>PackerUpdate<cr>", "Update" },
-	-- },
-
 	b = {
 		name = "  Buffers",
 		-- show all buffers with telescope
@@ -378,16 +339,11 @@ local mappings = {
 
 	t = {
 		name = "  Terminal",
-		-- l = { "<cmd>lua _LIVE_SERVER()<cr>", "Live Server" },
 		l = { "<cmd>terminal live-server<cr>", "Live Server" },
 		P = { "<cmd>lua _NEWTAB_TOGGLE()<cr>", "Power Shell" },
-		-- l = { "<cmd>ToggleTerm direction=tab<cr>live-server<cr>", "Live Server" },
 		x = { "<cmd>ToggleTermToggleAll!<cr>", "Close Tab" },
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-		-- u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-		-- t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
 		b = { "<cmd>lua _BTOP_TOGGLE()<cr>", "Btop" },
-		-- B = { "<cmd>lua _BTM_TOGGLE()<cr>", "Boottom" },
 		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
@@ -413,142 +369,7 @@ local mappings = {
 			"<cmd>terminal mvn package<cr>",
 			"MVN Build",
 		},
-		-- m = {
-		-- 	name = "Maven",
-		-- 	b = { "<cmd>terminal mvn package<cr>", "MVN Build" },
-		-- 	r = { "<cmd>terminal java -jar target/my-app.jar<cr>", "Run JAR" },
-		-- },
 	},
-	-- D = {
-	-- 	name = "Debug",
-	-- 	b = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").toggle_breakpoint()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Toggle Breakpoint",
-	-- 	},
-	-- 	B = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").clear_breakpoints()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Clear Breakpoints",
-	-- 	},
-	-- 	c = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").continue()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Start/Continue",
-	-- 	},
-	-- 	i = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").step_into()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Step Into (F11)",
-	-- 	},
-	-- 	o = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").step_over()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Step Over (F10)",
-	-- 	},
-	-- 	O = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").step_out()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Step Out (S-F11)",
-	-- 	},
-	-- 	q = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").close()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Close Session",
-	-- 	},
-	-- 	Q = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").terminate()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Terminate Session (S-F5)",
-	-- 	},
-	-- 	p = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").pause()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Pause (F6)",
-	-- 	},
-	-- 	r = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").restart_frame()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Restart (C-F5)",
-	-- 	},
-	-- 	R = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").repl.toggle()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Toggle REPL",
-	-- 	},
-	-- },
-	-- d = {
-	-- 	name = "Debug",
-	-- 	t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
-	-- 	b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
-	-- 	c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
-	-- 	C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
-	-- 	d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
-	-- 	g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
-	-- 	i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
-	-- 	o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
-	-- 	u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
-	-- 	p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
-	-- 	r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
-	-- 	s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
-	-- 	q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
-	-- 	U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
-	-- },
 	d = debug_key,
 	z = {
 		name = " 󱑠 Plugins(Lazy)",
