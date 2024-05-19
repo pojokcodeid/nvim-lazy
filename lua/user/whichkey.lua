@@ -5,103 +5,9 @@ end
 
 -- config for toggleterm
 
-function _LAZYGIT_TOGGLE()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
-	lazygit:toggle()
-end
-
-function _NODE_TOGGLE()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local node = Terminal:new({ cmd = "node", hidden = true })
-	node:toggle()
-end
-
-function _HTOP_TOGGLE()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local htop = Terminal:new({ cmd = "htop", hidden = true })
-	htop:toggle()
-end
-
-function _BTOP_TOGGLE()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local htop = Terminal:new({ cmd = "btop", hidden = true })
-	htop:toggle()
-end
-
-function _BTM_TOGGLE()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local htop = Terminal:new({ cmd = "btm", hidden = true })
-	htop:toggle()
-end
-
-function _PYTHON_TOGGLE()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local python = Terminal:new({ cmd = "python", hidden = true })
-	python:toggle()
-end
-
-function _NEWTAB_TOGGLE()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local pwsh = Terminal:new({ cmd = "pwsh", hidden = true, direction = "tab" })
-	pwsh:toggle()
-end
-
-function _OPEN_EXPLORER()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local pwsh = Terminal:new({ cmd = "explorer .", hidden = true, direction = "tab" })
-	pwsh:toggle()
-end
-
-function _LIVE_SERVER()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local live_server = Terminal:new({
-		cmd = "live-server",
-		hidden = true,
-		direction = "tab",
-	})
-	live_server:toggle()
-end
-
-function _OPEN_ALACRITTY()
-	-- open alacritty new windows current directory
-	vim.cmd("silent !alacritty --working-directory " .. vim.fn.getcwd())
-end
-
-function _OPEN_WEZTERM()
-	-- open wezterm new windows current directory
-	vim.cmd("silent !wezterm start --cwd " .. vim.fn.getcwd())
-end
-
--- get folder name from current directory
-local _get_folder_name = function()
-	return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-end
-
-function _OPEN_WEZTERM_TAB()
-	-- open new tab wezterm current directory
-	vim.cmd('silent !wezterm cli spawn --cwd "' .. vim.fn.getcwd() .. '"')
-end
-
 function _SET_TAB_TITLE()
 	-- set tab title
-	vim.cmd('silent !wezterm cli set-tab-title "' .. _get_folder_name() .. '"')
-end
-
-function _CLOSE_BUFFER()
-	local buf = vim.api.nvim_get_current_buf()
-	--  delete current buffer
-	require("bufdelete").bufdelete(buf, true)
-end
-
--- function for close all bufferline
-function _CLOSE_ALL_BUFFER()
-	-- get all buffer
-	local bufs = vim.api.nvim_list_bufs()
-	-- loop through all buffer
-	for _, buf in pairs(bufs) do
-		require("bufdelete").bufdelete(buf, true)
-	end
+	vim.cmd('silent !wezterm cli set-tab-title "' .. require("user.utils")._get_folder_name() .. '"')
 end
 
 local icons = require("user.icons")
@@ -227,7 +133,10 @@ local mappings = {
 	["w"] = { "<cmd>w!<CR>", "󰆓 Save" },
 	["q"] = { "<cmd>q!<CR>", "󰿅 Quit" },
 	-- open exloler and close toggleterm
-	["o"] = { "<cmd>lua _OPEN_EXPLORER()<cr><cmd>lua require('toggleterm').toggle()<cr>", "󱏒 Open Explorer" },
+	["o"] = {
+		"<cmd>lua require('user.utils')._OPEN_EXPLORER()<cr>",
+		"󱏒 Open Explorer",
+	},
 	["h"] = { "<cmd>nohlsearch<CR>", "󱪿 No Highlight" },
 	["f"] = {
 		"<cmd>Telescope find_files <CR>",
@@ -248,7 +157,7 @@ local mappings = {
 			"All Buffer",
 		},
 		-- close current active buffer
-		c = { "<cmd>lua _CLOSE_BUFFER()<cr>", "Close current buffer" },
+		c = { "<cmd>lua require('user.utils').bufremove()<cr>", "Close current buffer" },
 		-- bufferline close left
 		d = {
 			"<cmd>BufferLineCloseLeft<cr>",
@@ -273,7 +182,7 @@ local mappings = {
 
 	g = {
 		name = "  Git",
-		g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+		g = { "<cmd>lua require('user.utils')._LAZYGIT_TOGGLE()<CR>", "Lazygit" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
 		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -340,18 +249,18 @@ local mappings = {
 	t = {
 		name = "  Terminal",
 		l = { "<cmd>terminal live-server<cr>", "Live Server" },
-		P = { "<cmd>lua _NEWTAB_TOGGLE()<cr>", "Power Shell" },
+		P = { "<cmd>lua require('user.utils')._NEWTAB_TOGGLE()<cr>", "Power Shell" },
 		x = { "<cmd>ToggleTermToggleAll!<cr>", "Close Tab" },
-		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-		b = { "<cmd>lua _BTOP_TOGGLE()<cr>", "Btop" },
-		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
+		n = { "<cmd>lua require('user.utils')._NODE_TOGGLE()<cr>", "Node" },
+		b = { "<cmd>lua require('user.utils')._BTOP_TOGGLE()<cr>", "Btop" },
+		p = { "<cmd>lua require('user.utils')._PYTHON_TOGGLE()<cr>", "Python" },
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 		s = { "<cmd>ToggleTerm direction=tab<cr>", "New Tab" },
-		a = { "<cmd>lua _OPEN_ALACRITTY()<cr>", "Open Alacritty" },
-		w = { "<cmd>lua _OPEN_WEZTERM()<cr>", "Open Wezterm" },
-		t = { "<cmd>lua _OPEN_WEZTERM_TAB()<cr>", "Open Tab Wezterm" },
+		a = { "<cmd>lua require('user.utils')._OPEN_ALACRITTY()<cr>", "Open Alacritty" },
+		w = { "<cmd>lua require('user.utils')._OPEN_WEZTERM()<cr>", "Open Wezterm" },
+		t = { "<cmd>lua require('user.utils')._OPEN_WEZTERM_TAB()<cr>", "Open Tab Wezterm" },
 		j = { "<cmd>lua _SET_TAB_TITLE()<cr>", "Set Tab Title" },
 	},
 	r = {
