@@ -223,7 +223,7 @@ local mappings2 = {
 }
 local mappings = {
 	["a"] = { "<cmd>Alpha<cr>", "󰕮 Alpha" },
-	["e"] = { "<cmd>NvimTreeToggle<cr><cr>", "󰙅 Explorer" },
+	["e"] = { "<cmd>NvimTreeToggle<cr>", "󰙅 Explorer" },
 	["w"] = { "<cmd>w!<CR>", "󰆓 Save" },
 	["q"] = { "<cmd>q!<CR>", "󰿅 Quit" },
 	-- open exloler and close toggleterm
