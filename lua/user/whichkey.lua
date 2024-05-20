@@ -5,109 +5,9 @@ end
 
 -- config for toggleterm
 
-function _LAZYGIT_TOGGLE()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
-	lazygit:toggle()
-end
-
-function _NODE_TOGGLE()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local node = Terminal:new({ cmd = "node", hidden = true })
-	node:toggle()
-end
-
--- function _NCDU_TOGGLE()
--- 	local Terminal = require("toggleterm.terminal").Terminal
--- 	local ncdu = Terminal:new({ cmd = "ncdu", hidden = true })
--- 	ncdu:toggle()
--- end
-
-function _HTOP_TOGGLE()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local htop = Terminal:new({ cmd = "htop", hidden = true })
-	htop:toggle()
-end
-
-function _BTOP_TOGGLE()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local htop = Terminal:new({ cmd = "btop", hidden = true })
-	htop:toggle()
-end
-
-function _BTM_TOGGLE()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local htop = Terminal:new({ cmd = "btm", hidden = true })
-	htop:toggle()
-end
-
-function _PYTHON_TOGGLE()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local python = Terminal:new({ cmd = "python", hidden = true })
-	python:toggle()
-end
-
-function _NEWTAB_TOGGLE()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local pwsh = Terminal:new({ cmd = "pwsh", hidden = true, direction = "tab" })
-	pwsh:toggle()
-end
-
-function _OPEN_EXPLORER()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local pwsh = Terminal:new({ cmd = "explorer .", hidden = true, direction = "tab" })
-	pwsh:toggle()
-end
-
-function _LIVE_SERVER()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local live_server = Terminal:new({
-		cmd = "live-server",
-		hidden = true,
-		direction = "tab",
-	})
-	live_server:toggle()
-end
-
-function _OPEN_ALACRITTY()
-	-- open alacritty new windows current directory
-	vim.cmd("silent !alacritty --working-directory " .. vim.fn.getcwd())
-end
-
-function _OPEN_WEZTERM()
-	-- open wezterm new windows current directory
-	vim.cmd("silent !wezterm start --cwd " .. vim.fn.getcwd())
-end
-
--- get folder name from current directory
-local _get_folder_name = function()
-	return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-end
-
-function _OPEN_WEZTERM_TAB()
-	-- open new tab wezterm current directory
-	vim.cmd('silent !wezterm cli spawn --cwd "' .. vim.fn.getcwd() .. '"')
-end
-
 function _SET_TAB_TITLE()
 	-- set tab title
-	vim.cmd('silent !wezterm cli set-tab-title "' .. _get_folder_name() .. '"')
-end
-
-function _CLOSE_BUFFER()
-	local buf = vim.api.nvim_get_current_buf()
-	--  delete current buffer
-	require("bufdelete").bufdelete(buf, true)
-end
-
--- function for close all bufferline
-function _CLOSE_ALL_BUFFER()
-	-- get all buffer
-	local bufs = vim.api.nvim_list_bufs()
-	-- loop through all buffer
-	for _, buf in pairs(bufs) do
-		require("bufdelete").bufdelete(buf, true)
-	end
+	vim.cmd('silent !wezterm cli set-tab-title "' .. require("user.utils")._get_folder_name() .. '"')
 end
 
 local icons = require("user.icons")
@@ -176,7 +76,6 @@ local setup = {
 		i = { "j", "k" },
 		v = { "j", "k" },
 	},
-	-- disable the WhichKey popup for certain buf types and file types.
 	-- Disabled by default for Telescope
 	disable = {
 		buftypes = {},
@@ -202,19 +101,8 @@ local opts2 = {
 	nowait = true, -- use `nowait` when creating keymaps
 }
 
--- local trn = ""
--- if vim.fn.has("win32") == 1 then
--- 	trn = "pwsh<cr>"
--- end
 -- for debug
 local debug_key = {}
--- local trasparant = {}
--- local is_dap = pcall(require, "dap")
-
--- local trans_ok, _ = pcall(require, "transparent")
--- if trans_ok then
--- 	trasparant = { "<cmd>TransparentToggle<cr>", "Toggle Transparency" }
--- end
 
 if vim.fn.has("win32") == 0 then
 	debug_key = {
@@ -240,45 +128,27 @@ local mappings2 = {
 	["/"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", " 󰆈 Commet Block" },
 }
 local mappings = {
-	-- ["c"] = trasparant,
 	["a"] = { "<cmd>Alpha<cr>", "󰕮 Alpha" },
-	--["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-	["e"] = { "<cmd>NvimTreeToggle<cr><cr>", "󰙅 Explorer" },
+	["e"] = { "<cmd>NvimTreeToggle<cr>", "󰙅 Explorer" },
 	["w"] = { "<cmd>w!<CR>", "󰆓 Save" },
 	["q"] = { "<cmd>q!<CR>", "󰿅 Quit" },
-	-- ["c"] = { "<cmd>Bdelete!<CR>", "󰅗 Close Buffer" },
-	-- ["k"] = { "<cmd>lua _close_buffer()<CR>", "󰅗 Close Buffer" },
 	-- open exloler and close toggleterm
-	["o"] = { "<cmd>lua _OPEN_EXPLORER()<cr><cmd>lua require('toggleterm').toggle()<cr>", "󱏒 Open Explorer" },
+	["o"] = {
+		"<cmd>lua require('user.utils')._OPEN_EXPLORER()<cr>",
+		"󱏒 Open Explorer",
+	},
 	["h"] = { "<cmd>nohlsearch<CR>", "󱪿 No Highlight" },
 	["f"] = {
 		"<cmd>Telescope find_files <CR>",
 		" Find files",
 	},
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", " Find Text" },
-	-- ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-	-- ["z"] = { "<cmd>Lazy<cr>", "Lazy" },
-
 	["/"] = {
 		function()
 			require("Comment.api").toggle.linewise.current()
 		end,
 		"󰆈 Coment line",
 	},
-	-- ["m"] = {
-	-- 	name = "Markdown",
-	-- 	p = { "<cmd>MarkdownPreview<cr>", "Preview" },
-	-- 	s = { "<cmd>MarkdownPreviewStop<cr>", "Stop Preview" },
-	-- },
-	-- p = {
-	-- 	name = "Packer",
-	-- 	c = { "<cmd>PackerCompile<cr>", "Compile" },
-	-- 	i = { "<cmd>PackerInstall<cr>", "Install" },
-	-- 	s = { "<cmd>PackerSync<cr>", "Sync" },
-	-- 	S = { "<cmd>PackerStatus<cr>", "Status" },
-	-- 	u = { "<cmd>PackerUpdate<cr>", "Update" },
-	-- },
-
 	b = {
 		name = "  Buffers",
 		-- show all buffers with telescope
@@ -287,7 +157,7 @@ local mappings = {
 			"All Buffer",
 		},
 		-- close current active buffer
-		c = { "<cmd>lua _CLOSE_BUFFER()<cr>", "Close current buffer" },
+		c = { "<cmd>lua require('user.utils').bufremove()<cr>", "Close current buffer" },
 		-- bufferline close left
 		d = {
 			"<cmd>BufferLineCloseLeft<cr>",
@@ -312,7 +182,7 @@ local mappings = {
 
 	g = {
 		name = "  Git",
-		g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+		g = { "<cmd>lua require('user.utils')._LAZYGIT_TOGGLE()<CR>", "Lazygit" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
 		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -378,24 +248,19 @@ local mappings = {
 
 	t = {
 		name = "  Terminal",
-		-- l = { "<cmd>lua _LIVE_SERVER()<cr>", "Live Server" },
 		l = { "<cmd>terminal live-server<cr>", "Live Server" },
-		P = { "<cmd>lua _NEWTAB_TOGGLE()<cr>", "Power Shell" },
-		-- l = { "<cmd>ToggleTerm direction=tab<cr>live-server<cr>", "Live Server" },
+		P = { "<cmd>lua require('user.utils')._NEWTAB_TOGGLE()<cr>", "Power Shell" },
 		x = { "<cmd>ToggleTermToggleAll!<cr>", "Close Tab" },
-		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-		-- u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-		-- t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-		b = { "<cmd>lua _BTOP_TOGGLE()<cr>", "Btop" },
-		-- B = { "<cmd>lua _BTM_TOGGLE()<cr>", "Boottom" },
-		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
+		n = { "<cmd>lua require('user.utils')._NODE_TOGGLE()<cr>", "Node" },
+		b = { "<cmd>lua require('user.utils')._BTOP_TOGGLE()<cr>", "Btop" },
+		p = { "<cmd>lua require('user.utils')._PYTHON_TOGGLE()<cr>", "Python" },
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 		s = { "<cmd>ToggleTerm direction=tab<cr>", "New Tab" },
-		a = { "<cmd>lua _OPEN_ALACRITTY()<cr>", "Open Alacritty" },
-		w = { "<cmd>lua _OPEN_WEZTERM()<cr>", "Open Wezterm" },
-		t = { "<cmd>lua _OPEN_WEZTERM_TAB()<cr>", "Open Tab Wezterm" },
+		a = { "<cmd>lua require('user.utils')._OPEN_ALACRITTY()<cr>", "Open Alacritty" },
+		w = { "<cmd>lua require('user.utils')._OPEN_WEZTERM()<cr>", "Open Wezterm" },
+		t = { "<cmd>lua require('user.utils')._OPEN_WEZTERM_TAB()<cr>", "Open Tab Wezterm" },
 		j = { "<cmd>lua _SET_TAB_TITLE()<cr>", "Set Tab Title" },
 	},
 	r = {
@@ -413,142 +278,7 @@ local mappings = {
 			"<cmd>terminal mvn package<cr>",
 			"MVN Build",
 		},
-		-- m = {
-		-- 	name = "Maven",
-		-- 	b = { "<cmd>terminal mvn package<cr>", "MVN Build" },
-		-- 	r = { "<cmd>terminal java -jar target/my-app.jar<cr>", "Run JAR" },
-		-- },
 	},
-	-- D = {
-	-- 	name = "Debug",
-	-- 	b = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").toggle_breakpoint()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Toggle Breakpoint",
-	-- 	},
-	-- 	B = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").clear_breakpoints()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Clear Breakpoints",
-	-- 	},
-	-- 	c = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").continue()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Start/Continue",
-	-- 	},
-	-- 	i = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").step_into()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Step Into (F11)",
-	-- 	},
-	-- 	o = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").step_over()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Step Over (F10)",
-	-- 	},
-	-- 	O = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").step_out()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Step Out (S-F11)",
-	-- 	},
-	-- 	q = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").close()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Close Session",
-	-- 	},
-	-- 	Q = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").terminate()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Terminate Session (S-F5)",
-	-- 	},
-	-- 	p = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").pause()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Pause (F6)",
-	-- 	},
-	-- 	r = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").restart_frame()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Restart (C-F5)",
-	-- 	},
-	-- 	R = {
-	-- 		function()
-	-- 			if is_dap then
-	-- 				require("dap").repl.toggle()
-	-- 			else
-	-- 				vim.notify("DAP Not Support", "info")
-	-- 			end
-	-- 		end,
-	-- 		"Toggle REPL",
-	-- 	},
-	-- },
-	-- d = {
-	-- 	name = "Debug",
-	-- 	t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
-	-- 	b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
-	-- 	c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
-	-- 	C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
-	-- 	d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
-	-- 	g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
-	-- 	i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
-	-- 	o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
-	-- 	u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
-	-- 	p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
-	-- 	r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
-	-- 	s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
-	-- 	q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
-	-- 	U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
-	-- },
 	d = debug_key,
 	z = {
 		name = " 󱑠 Plugins(Lazy)",
