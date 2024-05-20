@@ -1,7 +1,7 @@
 return {
 	{
 		"nvim-lualine/lualine.nvim",
-		event = "InsertEnter",
+		event = { "InsertEnter", "BufRead", "BufNewFile" },
 		config = function()
 			local hide_in_width = function()
 				return vim.fn.winwidth(0) > 80
@@ -87,7 +87,6 @@ return {
 					local msg = table.concat(unique_client_names, ", ")
 					return msg
 				end,
-				--icon = " ",
 				icon = icons.ui.Gear .. "",
 				padding = 1,
 			}
@@ -96,7 +95,6 @@ return {
 				"diagnostics",
 				sources = { "nvim_diagnostic" },
 				sections = { "error", "warn" },
-				-- symbols = { error = " ", warn = " " },
 				symbols = {
 					error = icons.diagnostics.BoldError .. " ",
 					warn = icons.diagnostics.BoldWarning .. " ",
@@ -109,17 +107,15 @@ return {
 			local diff = {
 				"diff",
 				colored = true,
-				-- symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
 				symbols = {
 					added = icons.git.LineAdded .. " ",
 					modified = icons.git.LineModified .. " ",
 					removed = icons.git.LineRemoved .. " ",
-				}, -- changes diff symbols
+				},
 				cond = hide_in_width,
 			}
 
 			local spaces = function()
-				-- return " " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 				return icons.ui.Tab .. " " .. vim.api.nvim_get_option_value(0, "shiftwidth")
 			end
 
@@ -127,14 +123,9 @@ return {
 				"mode",
 				padding = 1,
 				separator = { left = " " },
-				-- right_padding = 3,
 				fmt = function(str)
 					return icons.ui.Neovim .. " " .. str
 				end,
-			}
-			local branch = {
-				"branch",
-				padding = 1,
 			}
 
 			local get_branch = function()
@@ -150,20 +141,19 @@ return {
 			if data_ok then
 				lsp_progress = lspprogress.progress
 			end
-	     -- stylua: ignore
-	     local colors = {
-	       blue              = '#50fa7b',
-	       cyan              = '#f1fa8c',
-	       black             = '#1a1b26',
-	       black_transparant = 'none',
-	       white             = '#c6c6c6',
-	       red               = "#ff757f",
-	       skyblue_1         = '#bd93f9',
-	       grey              = '#5f6a8e',
-	       yellow            = "#ffb86c",
-	       fg_gutter         = "#3b4261",
-	       green1            = "#bd93f9",
-	     }
+			local colors = {
+				blue = "#50fa7b",
+				cyan = "#f1fa8c",
+				black = "#1a1b26",
+				black_transparant = "none",
+				white = "#c6c6c6",
+				red = "#ff757f",
+				skyblue_1 = "#bd93f9",
+				grey = "#5f6a8e",
+				yellow = "#ffb86c",
+				fg_gutter = "#3b4261",
+				green1 = "#bd93f9",
+			}
 
 			-- check config for theme
 			local set_theme
@@ -243,7 +233,6 @@ return {
 			require("lualine").setup({
 				options = {
 					theme = bubbles_theme,
-					-- theme = "auto",
 					component_separators = { left = "", right = "" },
 					section_separators = { left = "", right = "" },
 					disabled_filetypes = {

@@ -8,15 +8,6 @@ return {
 			require("user.alpha")
 		end,
 	},
-	-- line info bootom
-	{
-		"nvim-lualine/lualine.nvim",
-		lazy = true,
-		event = { "BufRead", "BufNewFile" },
-		config = function()
-			require("user.lualine_cfg")
-		end,
-	},
 	-- key mapping
 	{
 		"folke/which-key.nvim",

@@ -336,7 +336,7 @@ return {
 					"nvim-navic",
 					"nvim-tree",
 					"nvim-web-devicons",
-					-- "rainbow-delimiters",
+					"rainbow-delimiters",
 					-- "sneak",
 					"telescope",
 					-- "trouble",
@@ -347,6 +347,7 @@ return {
 					BufferLineFill = { bg = colors.bg },
 					StatusLine = { fg = "#f8f8f2", bg = colors.bg },
 					StatusLineTerm = { fg = "#f8f8f2", bg = colors.bg },
+					WinBarNC = { fg = colors.fg, bg = colors.bg },
 				},
 			})
 		end,
@@ -467,6 +468,7 @@ return {
 					-- UfoPreviewNormal = { fg = "#373d48", bg = "$bg0" },
 					-- UfoPreviewBorder = { fg = "#373d48", bg = "$bg0" },
 					-- UfoPreviewCursorLine = { fg = "#373d48", bg = "$bg0" },
+					WinBarNC = { fg = "$fg", bg = "NONE" },
 				},
 				transparent = transparent,
 				lualine = {
