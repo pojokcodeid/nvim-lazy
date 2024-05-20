@@ -268,8 +268,8 @@ return {
 						mode,
 					},
 					lualine_b = { get_branch },
-					lualine_c = { lsp_info, diagnostics, lsp_progress },
-					lualine_x = { treesitter, diff, spaces, "filetype" },
+					lualine_c = { diff, lsp_info, lsp_progress },
+					lualine_x = { treesitter, diagnostics, spaces, "filetype" },
 					lualine_y = { "progress" },
 					lualine_z = {
 						{ "location", separator = { right = " " }, padding = 1 },
