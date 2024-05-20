@@ -18,7 +18,7 @@ return {
 
 			local treesitter = {
 				function()
-					return icons.ui.Tree
+					return icons.ui.Paint .. " TS"
 				end,
 				color = function()
 					local buf = vim.api.nvim_get_current_buf()
@@ -69,7 +69,7 @@ return {
 
 			local lsp_info = {
 				function()
-					local msg = "LS Inactive"
+					local msg = "LSP Inactive"
 					local buf_ft = vim.bo.filetype
 					-- start register
 					local buf_clients = {}
@@ -269,7 +269,7 @@ return {
 					},
 					lualine_b = { get_branch },
 					lualine_c = { diff, lsp_info, lsp_progress },
-					lualine_x = { treesitter, diagnostics, spaces, "filetype" },
+					lualine_x = { diagnostics, treesitter, spaces, "filetype" },
 					lualine_y = { "progress" },
 					lualine_z = {
 						{ "location", separator = { right = " " }, padding = 1 },

@@ -152,6 +152,7 @@ return {
 		Bell = "󰂠",
 		ft = "",
 		not_loaded = "",
+		Paint = "",
 	},
 	folding = {
 		vert = "▕", -- alternatives │
