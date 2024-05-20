@@ -16,6 +16,18 @@ return {
 				end
 			end
 
+			local treesitter = {
+				function()
+					return icons.ui.Tree
+				end,
+				color = function()
+					local buf = vim.api.nvim_get_current_buf()
+					local ts = vim.treesitter.highlighter.active[buf]
+					return { fg = ts and not vim.tbl_isempty(ts) and "#50fa7b" or "#FF5555" }
+				end,
+				cond = hide_in_width,
+			}
+
 			-- start for lsp
 			local list_registered_providers_names = function(filetype)
 				local s = require("null-ls.sources")
@@ -257,7 +269,7 @@ return {
 					},
 					lualine_b = { get_branch },
 					lualine_c = { lsp_info, diagnostics, lsp_progress },
-					lualine_x = { diff, spaces, "filetype" },
+					lualine_x = { treesitter, diff, spaces, "filetype" },
 					lualine_y = { "progress" },
 					lualine_z = {
 						{ "location", separator = { right = " " }, padding = 1 },
