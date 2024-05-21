@@ -43,10 +43,10 @@ return {
 				color_icons = true,
 				numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
 				close_command = function(bufnum)
-					require("user.utils").bufremove(bufnum)
+					require("user.utils.bufferline").bufremove(bufnum)
 				end,
 				right_mouse_command = function(bufnum)
-					require("user.utils").bufremove(bufnum)
+					require("user.utils.bufferline").bufremove(bufnum)
 				end,
 				-- close_command = "bdelete! %d",
 				-- right_mouse_command = "bdelete! %d",
