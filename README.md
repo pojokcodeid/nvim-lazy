@@ -67,7 +67,7 @@
 ## Basic Requirement
 
 2. Install Neovim 0.95+ https://github.com/neovim/neovim/releases/tag/stable
-3. C++ https://www.mingw-w64.org/downloads/
+3. C++ https://www.msys2.org/
 4. GIT https://git-scm.com/download/win
 5. NodeJs https://nodejs.org/en/
 6. Ripgrep https://github.com/BurntSushi/ripgrep
