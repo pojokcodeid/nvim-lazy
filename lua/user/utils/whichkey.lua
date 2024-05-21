@@ -141,7 +141,7 @@ M.mappings = {
 			"All Buffer",
 		},
 		-- close current active buffer
-		c = { "<cmd>lua require('user.utils.whichkey').bufremove()<cr>", "Close current buffer" },
+		c = { "<cmd>lua require('user.utils.bufferline').bufremove()<cr>", "Close current buffer" },
 		-- bufferline close left
 		d = {
 			"<cmd>BufferLineCloseLeft<cr>",
