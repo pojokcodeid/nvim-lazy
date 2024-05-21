@@ -26,7 +26,6 @@ vim.g.pcode_colorscheme = "dracula"
 --  nightfox
 -- 0 =off   1= on
 vim.g.pcode_transparent_mode = 0
-vim.g.pcode_clear_lualine = 0
 -- 0 disable progress
 -- 1 lualine lsp progress
 -- 2 fidget progress
@@ -101,6 +100,3 @@ vim.g.pcode_coderunner = {
 vim.g.pcode_cmprg = false --https://github.com/lukas-reineke/cmp-rg
 vim.g.pcode_cmpcalc = false --https://github.com/hrsh7th/cmp-calc
 vim.g.pcode_cmptag = false --https://github.com/quangnguyen30192/cmp-nvim-tags
-
--- load nvim-tree or not
-vim.g.pcode_loadnvimtree_lazy = true

@@ -1,14 +1,14 @@
 local transparent = false
 local clear_lualine = false
 
-local transparent_mode = vim.g.pcode_transparent_mode
+local transparent_mode = vim.g.pcode_transparent_mode or 0
 if transparent_mode ~= nil then
 	if transparent_mode == 1 then
 		transparent = true
 	end
 end
 
-local clear_line = vim.g.pcode_clear_lualine
+local clear_line = vim.g.pcode_clear_lualine or 0
 if clear_line ~= nil then
 	if clear_line == 1 then
 		clear_lualine = true

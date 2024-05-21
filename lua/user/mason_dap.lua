@@ -1,5 +1,6 @@
 local sources = {}
-for _, nullls in pairs(vim.g.pcode_dap_ensure_installed) do
+local dap_data = vim.g.pcode_dap_ensure_installed or {}
+for _, nullls in pairs(dap_data) do
 	table.insert(sources, nullls)
 end
 require("mason").setup()

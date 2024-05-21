@@ -1,7 +1,7 @@
-local cmprg = vim.g.pcode_cmprg
-local cmpcalc = vim.g.pcode_cmpcalc
-local cmptag = vim.g.pcode_cmptag
-local lspghost_text = vim.g.pcode_lspghost_text
+local cmprg = vim.g.pcode_cmprg or false
+local cmpcalc = vim.g.pcode_cmpcalc or false
+local cmptag = vim.g.pcode_cmptag or false
+local lspghost_text = vim.g.pcode_lspghost_text or false
 local icons = require("user.icons").ui
 return {
 	{ "hrsh7th/cmp-nvim-lsp", event = "InsertEnter", lazy = true },

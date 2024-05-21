@@ -21,7 +21,8 @@ if data_ok then
 end
 
 -- load data null-ls
-for _, nullls in pairs(vim.g.pcode_null_ls_ensure_installed) do
+local nullls_data = vim.g.pcode_null_ls_ensure_installed or {}
+for _, nullls in pairs(nullls_data) do
 	table.insert(ensure_installed, nullls)
 end
 
@@ -33,7 +34,7 @@ if mason_ok then
 end
 
 local run = 0
-local frmt = vim.g.pcode_format_on_save
+local frmt = vim.g.pcode_format_on_save or 0
 if frmt == 1 then
 	run = 1
 end

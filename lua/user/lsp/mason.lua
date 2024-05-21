@@ -11,11 +11,12 @@ local function idxOf(array, value)
 	return nil
 end
 
-for _, client in pairs(vim.g.pcode_mason_ensure_installed) do
+local mason_install = vim.g.pcode_mason_ensure_installed or {}
+for _, client in pairs(mason_install) do
 	table.insert(servers, client)
 end
 
-local unregis_lsp = vim.g.pcode_unregister_lsp
+local unregis_lsp = vim.g.pcode_unregister_lsp or {}
 local icons = vim.g.pcode_icons.ui
 
 local settings = {

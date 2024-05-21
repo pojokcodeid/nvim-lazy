@@ -22,7 +22,7 @@ _G.switch = function(param, case_table)
 	return def and def() or nil
 end
 
-local color = vim.g.pcode_colorscheme
+local color = vim.g.pcode_colorscheme or "gruvbox-baby"
 switch(color, {
 	["tokyonight"] = function()
 		gruvbox = false
@@ -201,7 +201,7 @@ switch(color, {
 })
 
 local transparent = false
-local transparent_mode = vim.g.pcode_transparent_mode
+local transparent_mode = vim.g.pcode_transparent_mode or 0
 if transparent_mode ~= nil then
 	if transparent_mode == 1 then
 		transparent = true

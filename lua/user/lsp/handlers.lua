@@ -5,7 +5,7 @@ if not status_cmp_ok then
 	return
 end
 
-local lspvitualtext = vim.g.pcode_lsp_virtualtext
+local lspvitualtext = vim.g.pcode_lsp_virtualtext or false
 local icons = vim.g.pcode_icons
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()

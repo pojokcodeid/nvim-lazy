@@ -1,5 +1,5 @@
 local run = 0
-local frmt = vim.g.pcode_format_on_save
+local frmt = vim.g.pcode_format_on_save or 0
 if frmt == 1 then
 	run = 1
 else
