@@ -3,6 +3,14 @@ return {
 		"neovim/nvim-lspconfig",
 		lazy = true,
 		event = "BufRead",
+		cmd = {
+			"LspInfo",
+			"LspInstall",
+			"LspUninstall",
+		},
+		config = function()
+			require("lspconfig.ui.windows").default_options.border = "rounded"
+		end,
 	},
 	{
 		"williamboman/mason.nvim",

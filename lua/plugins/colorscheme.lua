@@ -268,6 +268,7 @@ return {
 					BufferLineFill = { bg = colors.bg },
 					Pmenu = { fg = colors.fg, bg = colors.bg },
 					WinBarNC = { fg = colors.fg, bg = colors.bg },
+					LspInfoBorder = { fg = colors.fg },
 				},
 				transparent_bg = transparent,
 				-- transparent_bg = is_transparent,
