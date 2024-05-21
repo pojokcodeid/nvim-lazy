@@ -37,7 +37,7 @@ return {
 				lazy = true,
 			},
 			config = function()
-				require("user.lsp.null-ls")
+				require("user.lsp.null-lscfg")
 			end,
 		},
 		event = "InsertEnter",

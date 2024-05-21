@@ -1,24 +1,24 @@
 local opts = { noremap = true, silent = true }
 
 function _LIVE_SERVER()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local live_server = Terminal:new({
-		cmd = "live-server",
-		hidden = true,
-		direction = "tab",
-	})
-	live_server:toggle()
+  local Terminal = require("toggleterm.terminal").Terminal
+  local live_server = Terminal:new {
+    cmd = "live-server",
+    hidden = true,
+    direction = "tab",
+  }
+  live_server:toggle()
 end
 
 function _CLOSE_BUFFER()
-	local buf = vim.api.nvim_get_current_buf()
-	--  delete current buffer
-	require("bufdelete").bufdelete(buf, true)
+  local buf = vim.api.nvim_get_current_buf()
+  --  delete current buffer
+  require("bufdelete").bufdelete(buf, true)
 end
 
 function _OPEN_ALACRITTY()
-	-- open alacritty new windows current directory
-	vim.cmd("silent !alacritty --working-directory " .. vim.fn.getcwd())
+  -- open alacritty new windows current directory
+  vim.cmd("silent !alacritty --working-directory " .. vim.fn.getcwd())
 end
 
 local term_opts = { silent = true }
@@ -151,39 +151,39 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 local map = function(mode, lhs, rhs, desc)
-	if desc then
-		desc = desc
-	end
-	vim.keymap.set(mode, lhs, rhs, { silent = true, desc = desc, buffer = bufnr, noremap = true })
+  if desc then
+    desc = desc
+  end
+  vim.keymap.set(mode, lhs, rhs, { silent = true, desc = desc, buffer = 0, noremap = true })
 end
 -- if pcall(require, "dap") then
 -- modified function keys found with `showkey -a` in the terminal to get key code
 -- run `nvim -V3log +quit` and search through the "Terminal info" in the `log` file for the correct keyname
-if vim.fn.has("win32") == 0 then
-	map("n", "<F5>", function()
-		require("dap").continue()
-	end, "")
-	map("n", "<F17>", function()
-		require("dap").terminate()
-	end, "") -- Shift+F5
-	map("n", "<F29>", function()
-		require("dap").restart_frame()
-	end, "") -- Control+F5
-	map("n", "<F6>", function()
-		require("dap").pause()
-	end, "")
-	map("n", "<F9>", function()
-		require("dap").toggle_breakpoint()
-	end, "")
-	map("n", "<F10>", function()
-		require("dap").step_over()
-	end, "")
-	map("n", "<F11>", function()
-		require("dap").step_into()
-	end, "")
-	map("n", "<F23>", function()
-		require("dap").step_out()
-	end, "") -- Shift+F11
+if vim.fn.has "win32" == 0 then
+  map("n", "<F5>", function()
+    require("dap").continue()
+  end, "")
+  map("n", "<F17>", function()
+    require("dap").terminate()
+  end, "") -- Shift+F5
+  map("n", "<F29>", function()
+    require("dap").restart_frame()
+  end, "") -- Control+F5
+  map("n", "<F6>", function()
+    require("dap").pause()
+  end, "")
+  map("n", "<F9>", function()
+    require("dap").toggle_breakpoint()
+  end, "")
+  map("n", "<F10>", function()
+    require("dap").step_over()
+  end, "")
+  map("n", "<F11>", function()
+    require("dap").step_into()
+  end, "")
+  map("n", "<F23>", function()
+    require("dap").step_out()
+  end, "") -- Shift+F11
 end
 
 -- Terminal --

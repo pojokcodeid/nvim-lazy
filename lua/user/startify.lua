@@ -23,7 +23,6 @@ startify.section.top_buttons.val = {
 	startify.button("t", "󰊄  Find text", ":Telescope live_grep <CR>"),
 	startify.button("c", "  Configuration", ":e $MYVIMRC <CR>"),
 	startify.button("z", "󰒲  Lazy", ":Lazy<CR>"),
-	-- startify.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 -- disable MRU
 startify.section.mru.val = { { type = "padding", val = 4 } }
@@ -70,6 +69,7 @@ vim.api.nvim_create_autocmd({ "User" }, {
 	end,
 })
 -- ignore filetypes in MRU
+local default_mru_ignore = {}
 startify.mru_opts.ignore = function(path, ext)
 	return (string.find(path, "COMMIT_EDITMSG")) or (vim.tbl_contains(default_mru_ignore, ext))
 end
