@@ -19,7 +19,7 @@ return {
 			local colors = component.colors
 
 			-- check config for theme
-			local set_theme
+			local set_theme = "auto"
 			local bubbles_theme
 			local data_exists, config = pcall(require, "core.config")
 			if data_exists then
@@ -46,7 +46,7 @@ return {
 							colors.blue = clr.green
 							colors.black = clr.black
 							colors.cyan = clr.yellow
-							set_theme = bubbles_theme
+							set_theme = "bubbles_theme"
 						end,
 						default = function()
 							set_theme = "auto"
