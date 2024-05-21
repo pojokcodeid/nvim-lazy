@@ -20,23 +20,15 @@ end
 
 local fidget = true
 local lualine = false
-local data_exists, custom_ui = pcall(require, "core.config")
-if data_exists then
-	if type(custom_ui) == "table" then
-		if custom_ui.progress == 1 then
-			fidget = false
-			lualine = true
-		elseif custom_ui.progress == 2 then
-			fidget = true
-			lualine = false
-		elseif custom_ui.progress == 0 then
-			fidget = false
-			lualine = false
-		else
-			fidget = true
-			lualine = false
-		end
-	end
+if vim.g.pcode_progress == 1 then
+	fidget = false
+	lualine = true
+elseif vim.g.pcode_progress == 2 then
+	fidget = true
+	lualine = false
+elseif vim.g.pcode_progress == 0 then
+	fidget = false
+	lualine = false
 else
 	fidget = true
 	lualine = false

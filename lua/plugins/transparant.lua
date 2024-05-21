@@ -1,18 +1,14 @@
 local transparent = false
 local clear_lualine = false
-local data_exists, config = pcall(require, "core.config")
-if not data_exists then
-	return
-end
 
-local transparent_mode = config.transparent_mode
+local transparent_mode = vim.g.pcode_transparent_mode
 if transparent_mode ~= nil then
 	if transparent_mode == 1 then
 		transparent = true
 	end
 end
 
-local clear_line = config.clear_lualine
+local clear_line = vim.g.pcode_clear_lualine
 if clear_line ~= nil then
 	if clear_line == 1 then
 		clear_lualine = true

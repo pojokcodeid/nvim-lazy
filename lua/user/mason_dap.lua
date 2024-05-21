@@ -1,9 +1,6 @@
 local sources = {}
-local data_exists, data = pcall(require, "core.config")
-if data_exists then
-	for _, nullls in pairs(data.dap_ensure_installed) do
-		table.insert(sources, nullls)
-	end
+for _, nullls in pairs(vim.g.pcode_dap_ensure_installed) do
+	table.insert(sources, nullls)
 end
 require("mason").setup()
 require("mason-nvim-dap").setup({

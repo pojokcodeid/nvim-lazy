@@ -1,4 +1,4 @@
-local transparent_mode = require("core.config").transparent_mode
+local transparent_mode = vim.g.pcode_transparent_mode
 if transparent_mode ~= nil then
 	if transparent_mode == 1 then
 		vim.cmd("TransparentDisable")
