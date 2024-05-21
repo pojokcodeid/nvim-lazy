@@ -92,7 +92,7 @@ end
 
 function M._SET_TAB_TITLE()
 	-- set tab title
-	vim.cmd('silent !wezterm cli set-tab-title "' .. _get_folder_name() .. '"')
+	vim.cmd('silent !wezterm cli set-tab-title "' .. M._get_folder_name() .. '"')
 end
 
 function M._CLOSE_BUFFER()
