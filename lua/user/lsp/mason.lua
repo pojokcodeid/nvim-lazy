@@ -11,31 +11,18 @@ local function idxOf(array, value)
 	return nil
 end
 
-local data_exists, custom_lsp = pcall(require, "core.config")
-if data_exists then
-	for _, client in pairs(custom_lsp.mason_ensure_installed) do
-		table.insert(servers, client)
-	end
+for _, client in pairs(vim.g.pcode_mason_ensure_installed) do
+	table.insert(servers, client)
 end
 
-local unregis_lsp = {}
-local data_ok, unregis = pcall(require, "core.config")
-if data_ok then
-	if unregis.unregister_lsp ~= nil then
-		unregis_lsp = unregis.unregister_lsp
-	end
-end
-
-local icons = require("user.icons").ui
+local unregis_lsp = vim.g.pcode_unregister_lsp
+local icons = vim.g.pcode_icons.ui
 
 local settings = {
 	ui = {
 		-- border = "none",
 		border = icons.Border,
 		icons = {
-			-- package_installed = "◍",
-			-- package_pending = "◍",
-			-- package_uninstalled = "◍",
 			package_pending = icons.DotCircle,
 			package_installed = icons.CheckCircle,
 			package_uninstalled = icons.BlankCircle,

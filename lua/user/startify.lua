@@ -9,13 +9,11 @@ dash_model = {
 	[[ /_/      |___/                                ]],
 }
 
-local data_exists, custom_dasboard = pcall(require, "core.config")
-if data_exists then
-	local board = custom_dasboard.header1
-	if board ~= nil then
-		dash_model = board
-	end
+local board = vim.g.pcode_header1
+if board ~= nil then
+	dash_model = board
 end
+
 startify.section.header.val = dash_model
 startify.section.top_buttons.val = {
 	startify.button("F", "󰈞  Find file", ":Telescope find_files <CR>"),
@@ -41,11 +39,9 @@ startify.section.bottom_buttons.val = {
 }
 
 local footer_text = "Pojok Code"
-if data_exists then
-	local data_txt = custom_dasboard.footer
-	if data_txt ~= nil then
-		footer_text = data_txt
-	end
+local data_txt = vim.g.pcode_footer
+if data_txt ~= nil then
+	footer_text = data_txt
 end
 
 vim.api.nvim_create_autocmd("User", {

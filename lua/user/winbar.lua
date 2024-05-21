@@ -1,5 +1,5 @@
 local active = true
-local icons = require("user.icons")
+local icons = vim.g.pcode_icons
 local excludes = function()
 	return vim.tbl_contains({
 		"help",

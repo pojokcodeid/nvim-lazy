@@ -21,39 +21,34 @@ return {
 			-- check config for theme
 			local set_theme = "auto"
 			local bubbles_theme
-			local data_exists, config = pcall(require, "core.config")
-			if data_exists then
-				if config.colorscheme ~= nil then
-					local color = config.colorscheme
-					switch(color, {
-						["tokyonight"] = function()
-							set_theme = "auto"
-						end,
-						["tokyonight-night"] = function()
-							set_theme = "auto"
-						end,
-						["tokyonight-storm"] = function()
-							set_theme = "auto"
-						end,
-						["tokyonight-day"] = function()
-							set_theme = "auto"
-						end,
-						["tokyonight-moon"] = function()
-							set_theme = "auto"
-						end,
-						["dracula"] = function()
-							local clr = require("dracula").colors()
-							colors.blue = clr.green
-							colors.black = clr.black
-							colors.cyan = clr.yellow
-							set_theme = "bubbles_theme"
-						end,
-						default = function()
-							set_theme = "auto"
-						end,
-					})
-				end
-			end
+			local color = vim.g.pcode_colorscheme
+			switch(color, {
+				["tokyonight"] = function()
+					set_theme = "auto"
+				end,
+				["tokyonight-night"] = function()
+					set_theme = "auto"
+				end,
+				["tokyonight-storm"] = function()
+					set_theme = "auto"
+				end,
+				["tokyonight-day"] = function()
+					set_theme = "auto"
+				end,
+				["tokyonight-moon"] = function()
+					set_theme = "auto"
+				end,
+				["dracula"] = function()
+					local clr = require("dracula").colors()
+					colors.blue = clr.green
+					colors.black = clr.black
+					colors.cyan = clr.yellow
+					set_theme = "bubbles_theme"
+				end,
+				default = function()
+					set_theme = "auto"
+				end,
+			})
 
 			bubbles_theme = component.bubbles_theme(colors)
 			if set_theme == "auto" then

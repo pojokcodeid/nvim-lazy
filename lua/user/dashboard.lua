@@ -14,12 +14,9 @@ local board = {
 	[[|_|       |__/                                   ]],
 }
 
-local data_exists, custom_dasboard = pcall(require, "core.config")
-if data_exists then
-	local data_board = custom_dasboard.header2
-	if data_board ~= nil then
-		board = data_board
-	end
+local data_board = vim.g.pcode_header2
+if data_board ~= nil then
+	board = data_board
 end
 
 local dashboard = require("alpha.themes.dashboard")
@@ -44,11 +41,9 @@ dashboard.opts.opts.noautocmd = true
 alpha.setup(dashboard.opts)
 
 local footer_text = "Pojok Code"
-if data_exists then
-	local data_txt = custom_dasboard.footer
-	if data_txt ~= nil then
-		footer_text = data_txt
-	end
+local data_txt = vim.g.pcode_footer
+if data_txt ~= nil then
+	footer_text = data_txt
 end
 
 vim.api.nvim_create_autocmd("User", {

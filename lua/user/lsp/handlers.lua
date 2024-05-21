@@ -5,13 +5,8 @@ if not status_cmp_ok then
 	return
 end
 
-local lspvitualtext = false
-local data_exists, lspconfig = pcall(require, "core.config")
-if data_exists then
-	lspvitualtext = lspconfig.lsp_virtualtext
-end
-
-local icons = require("user.icons")
+local lspvitualtext = vim.g.pcode_lsp_virtualtext
+local icons = vim.g.pcode_icons
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true

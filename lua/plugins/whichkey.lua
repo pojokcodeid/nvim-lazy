@@ -4,7 +4,7 @@ return {
 	keys = { "<leader>", '"', "'", "`", "c", "v" },
 	event = "VeryLazy",
 	opts = function()
-		local icons = require("user.icons")
+		local icons = vim.g.pcode_icons
 		return {
 			plugins = {
 				marks = false, -- shows a list of your marks on ' and `
@@ -95,12 +95,7 @@ return {
 			nowait = true, -- use `nowait` when creating keymaps
 		}
 
-		local wkey = {}
-		local data_exists, key = pcall(require, "core.config")
-		if data_exists then
-			wkey = key.whichkey
-		end
-
+		local wkey = vim.g.pcode_whichkey
 		local which_key = require("which-key")
 		which_key.setup(opts)
 		which_key.register(require("user.utils.whichkey").mappings, opt)

@@ -8,7 +8,7 @@ return {
 			return
 		end
 
-		local icons = require("user.icons")
+		local icons = vim.g.pcode_icons
 		local use_icons = true
 
 		-- get folder name from current directory

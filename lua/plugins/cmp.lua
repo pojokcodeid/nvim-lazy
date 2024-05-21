@@ -1,15 +1,9 @@
-local cmprg = false
-local cmpcalc = false
-local cmptag = false
-local lspghost_text = false
-local icons = require("user.icons").ui
-local data_exists, custom_cmp = pcall(require, "core.config")
-if data_exists then
-	cmprg = custom_cmp.cmprg
-	cmpcalc = custom_cmp.cmpcalc
-	cmptag = custom_cmp.cmptag
-	lspghost_text = custom_cmp.lspghost_text
-end
+local cmprg = vim.g.pcode_cmprg
+local cmpcalc = vim.g.pcode_cmpcalc
+local cmptag = vim.g.pcode_cmptag
+local lspghost_text = vim.g.pcode_lspghost_text
+local icons = vim.g.pcode_icons.ui
+
 return {
 	{ "hrsh7th/cmp-nvim-lsp", event = "InsertEnter", lazy = true },
 	{ "hrsh7th/cmp-buffer", event = "InsertEnter", lazy = true },
@@ -90,7 +84,7 @@ return {
 				formatting = {
 					fields = { "kind", "abbr", "menu" },
 					format = function(entry, vim_item)
-						vim_item.kind = string.format("%s", require("user.icons")["kind"][vim_item.kind])
+						vim_item.kind = string.format("%s", vim.g.pcode_icons["kind"][vim_item.kind])
 						vim_item.menu = ({
 							nvim_lsp = "(LSP)",
 							luasnip = "(Snippet)",

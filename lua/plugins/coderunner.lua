@@ -1,21 +1,17 @@
+--typescript = "deno run",
+-- cpp="gcc $fileName -lstdc++ -o $fileNameWithoutExt && $fileNameWithoutExt"
 local rfile = {
 	java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
 	python = "python3 -u",
-	--typescript = "deno run",
-	typescript = "ts-node $dir/$fileName", -- npm install -g ts-node
+	typescript = "ts-node $dir/$fileName",
 	rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
-	-- cpp="gcc $fileName -lstdc++ -o $fileNameWithoutExt && $fileNameWithoutExt"
 	cpp = "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
 	scss = "sass $dir/$fileName $dir/$fileNameWithoutExt.css",
 	javascript = 'node "$dir/$fileName"',
 }
 
-local data_exists, runscript = pcall(require, "core.config")
-if data_exists then
-	if runscript.coderunner ~= nil then
-		rfile = vim.tbl_deep_extend("force", runscript.coderunner, rfile)
-	end
-end
+local runscript = vim.g.pcode_coderunner
+rfile = vim.tbl_deep_extend("force", runscript, rfile)
 return {
 	"CRAG666/code_runner.nvim",
 	lazy = true,

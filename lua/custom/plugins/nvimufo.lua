@@ -8,7 +8,7 @@ function TABLE_CONTAINS(tbl, x)
 	return found
 end
 
-local icons = require("user.icons").folding
+local icons = vim.g.pcode_icons.folding
 
 return {
 	"kevinhwang91/nvim-ufo",

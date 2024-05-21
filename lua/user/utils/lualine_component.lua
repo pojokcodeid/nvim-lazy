@@ -1,7 +1,7 @@
 local hide_in_width = function()
 	return vim.fn.winwidth(0) > 75
 end
-local icons = require("user.icons")
+local icons = vim.g.pcode_icons
 local formatter = require("user.utils.formatter")
 local linter = require("user.utils.linter")
 

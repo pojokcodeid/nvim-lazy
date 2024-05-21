@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 
-local ico = require("user.icons")
+local ico = vim.g.pcode_icons
 local icons = ico.kind
 
 navic.setup({

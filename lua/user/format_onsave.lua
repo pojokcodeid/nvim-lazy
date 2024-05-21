@@ -1,13 +1,12 @@
 local run = 0
-local data_exists, frmt = pcall(require, "core.config")
-if not data_exists then
+local frmt = vim.g.pcode_format_on_save
+if frmt == 1 then
 	run = 1
-end
-if frmt.format_on_save == 1 then
-	run = 1
+else
+	run = 0
 end
 
-local buf_clients = vim.lsp.buf_get_clients()
+local buf_clients = vim.lsp.get_clients()
 if next(buf_clients) == nil then
 	run = 0
 end

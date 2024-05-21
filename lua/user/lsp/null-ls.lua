@@ -20,12 +20,9 @@ if data_ok then
 	end
 end
 
-local data_exists, data = pcall(require, "core.config")
-if data_exists then
-	-- load data null-ls
-	for _, nullls in pairs(data.null_ls_ensure_installed) do
-		table.insert(ensure_installed, nullls)
-	end
+-- load data null-ls
+for _, nullls in pairs(vim.g.pcode_null_ls_ensure_installed) do
+	table.insert(ensure_installed, nullls)
 end
 
 local mason_ok, mason_null_ls = pcall(require, "mason-null-ls")
@@ -36,11 +33,8 @@ if mason_ok then
 end
 
 local run = 0
-local ok, frmt = pcall(require, "core.config")
-if not ok then
-	run = 1
-end
-if frmt.format_on_save == 1 then
+local frmt = vim.g.pcode_format_on_save
+if frmt == 1 then
 	run = 1
 end
 

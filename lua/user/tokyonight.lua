@@ -5,17 +5,15 @@ end
 local transp = false
 local sidebar = "normal" --"dark , transparent, normal"
 local hilight = "#292e42"
-local data_exists, config = pcall(require, "core.config")
-if data_exists then
-	local tras = config.transparent_mode
-	if tras == 1 then
-		transp = true
-		sidebar = "transparent"
-		-- hilight = "#3E4254"
-		-- hilight = "#353a56"
-		hilight = "#292e42"
-	end
+local tras = vim.g.pcode_transparent_mode
+if tras == 1 then
+	transp = true
+	sidebar = "transparent"
+	-- hilight = "#3E4254"
+	-- hilight = "#353a56"
+	hilight = "#292e42"
 end
+
 tokyonight.setup({
 	-- your configuration comes here
 	-- or leave it empty to use the default settings

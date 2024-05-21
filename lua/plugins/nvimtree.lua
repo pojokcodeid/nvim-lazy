@@ -1,4 +1,4 @@
-local icons = require("user.icons")
+local icons = vim.g.pcode_icons
 return {
 	"kyazdani42/nvim-tree.lua",
 	lazy = true,

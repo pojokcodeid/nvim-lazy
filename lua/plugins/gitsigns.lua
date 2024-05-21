@@ -1,4 +1,4 @@
-local icons = require("user.icons")
+local icons = vim.g.pcode_icons
 return {
 	"lewis6991/gitsigns.nvim",
 	lazy = true,
