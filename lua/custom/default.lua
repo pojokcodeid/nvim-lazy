@@ -1,4 +1,3 @@
-vim.g.pcode_icons = require("user.icons")
 -- custom colorscheme
 -- colorscheme ready :
 -- tokyonight, tokyonight-night, tokyonight-storm, tokyonight-day, tokyonight-moon

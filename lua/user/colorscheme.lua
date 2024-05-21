@@ -1,4 +1,4 @@
-local colorscheme = vim.g.pcode_colorscheme
+local colorscheme = "gruvbox_baby"
 local lst_style = {
 	"sonokai",
 	"sonokai_atlantis",
@@ -22,6 +22,10 @@ local lst_onedark = {
 	"onedark_warmer",
 	"onedark_light",
 }
+
+if vim.g.pcode_colorscheme ~= nil then
+	colorscheme = vim.g.pcode_colorscheme
+end
 
 local transparent_mode = vim.g.pcode_transparent_mode
 if transparent_mode ~= nil then
