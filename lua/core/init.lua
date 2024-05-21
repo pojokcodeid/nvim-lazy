@@ -1,3 +1,4 @@
+require("core.config")
 require("custom.default")
 require("custom.dashboard")
 require("config.lazy")
