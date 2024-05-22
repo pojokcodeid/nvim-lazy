@@ -18,7 +18,7 @@ return {
     end
 
     local function diagnostics_indicator(num, _, diagnostics, _)
-      local result = {}
+      local result
       local symbols = {
         error = icons.diagnostics.Error,
         warning = icons.diagnostics.Warning,

@@ -4,18 +4,6 @@ return {
     event = { "InsertEnter", "BufRead", "BufNewFile" },
     config = function()
       local component = require "user.utils.lualine_component"
-      local treesitter = component.treesitter
-      local lsp_info = component.lsp_info
-      local diagnostics = component.diagnostics
-      local diff = component.diff
-      local spaces = component.spaces
-      local mode = component.mode
-      local get_branch = component.get_branch
-      local lsp_progress = {}
-      local data_ok, lspprogress = pcall(require, "lsp-progress")
-      if data_ok then
-        lsp_progress = lspprogress.progress
-      end
       local colors = component.colors
 
       -- check config for theme
@@ -55,50 +43,22 @@ return {
         bubbles_theme = vim.fn.fnamemodify("auto", ":t")
       end
 
+      local gettheme = require "user.utils.lualine_template"
+      local theme_option = vim.g.pcode_lualinetheme or "rounded"
+      local theme = gettheme.rounded(bubbles_theme)
+      if theme_option == "rounded" then
+        theme = gettheme.rounded(bubbles_theme)
+      elseif theme_option == "square" then
+        theme = gettheme.square(bubbles_theme)
+      elseif theme_option == "default" then
+        theme = {}
+      end
       require("lualine").setup {
-        options = {
-          theme = bubbles_theme,
-          component_separators = { left = "", right = "" },
-          section_separators = { left = "", right = "" },
-          disabled_filetypes = {
-            "TelescopePrompt",
-            "packer",
-            "alpha",
-            "dashboard",
-            "NvimTree",
-            "Outline",
-            "DressingInput",
-            "toggleterm",
-            "lazy",
-            "mason",
-            "neo-tree",
-            "startuptime",
-            "crunner",
-          },
-          always_divide_middle = true,
-        },
-        sections = {
-          lualine_a = {
-            mode,
-          },
-          lualine_b = { get_branch },
-          lualine_c = { diff, lsp_info, lsp_progress },
-          lualine_x = { diagnostics, spaces, treesitter, "filetype" },
-          lualine_y = { "progress" },
-          lualine_z = {
-            { "location", separator = { right = " " }, padding = 1 },
-          },
-        },
-        inactive_sections = {
-          lualine_a = { "filename" },
-          lualine_b = {},
-          lualine_c = {},
-          lualine_x = {},
-          lualine_y = {},
-          lualine_z = { "location" },
-        },
-        tabline = {},
-        extensions = {},
+        options = theme.options,
+        sections = theme.sections,
+        inactive_sections = theme.inactive_sections,
+        tabline = theme.tabline,
+        extensions = theme.extensions,
       }
     end,
   },
