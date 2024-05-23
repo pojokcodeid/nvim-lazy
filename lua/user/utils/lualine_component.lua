@@ -129,6 +129,22 @@ return {
       return icons.ui.Neovim .. " " .. str
     end,
   },
+  mode_roundedall = {
+    "mode",
+    padding = 1,
+    separator = { left = " ", right = "" },
+    fmt = function(str)
+      return icons.ui.Neovim .. " " .. str
+    end,
+  },
+  mode_triangle = {
+    "mode",
+    padding = 1,
+    separator = { left = " ", right = "" },
+    fmt = function(str)
+      return icons.ui.Neovim .. " " .. str
+    end,
+  },
 
   mode_square = {
     "mode",

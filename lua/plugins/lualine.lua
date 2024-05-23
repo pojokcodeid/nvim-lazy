@@ -48,8 +48,12 @@ return {
       local theme = gettheme.rounded(bubbles_theme)
       if theme_option == "rounded" then
         theme = gettheme.rounded(bubbles_theme)
+      elseif theme_option == "roundedall" then
+        theme = gettheme.roundedall(bubbles_theme)
       elseif theme_option == "square" then
         theme = gettheme.square(bubbles_theme)
+      elseif theme_option == "triangle" then
+        theme = gettheme.triangle(bubbles_theme)
       elseif theme_option == "default" then
         theme = {}
       end

@@ -27,9 +27,11 @@ vim.g.pcode_colorscheme = "dracula"
 -- 0 =off   1= on
 vim.g.pcode_transparent_mode = 0
 -- rounded
+-- roundedall
 -- square
+-- triangle
 -- default
-vim.g.pcode_lualinetheme = "rounded"
+vim.g.pcode_lualinetheme = "roundedall"
 -- 0 disable progress
 -- 1 lualine lsp progress
 -- 2 fidget progress
