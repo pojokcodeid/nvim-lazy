@@ -33,7 +33,7 @@ vim.g.pcode_transparent_mode = 0
 -- parallelogram
 -- transparent
 -- default
-vim.g.pcode_lualinetheme = "parallelogram"
+vim.g.pcode_lualinetheme = "roundedall"
 -- 0 disable progress
 -- 1 lualine lsp progress
 -- 2 fidget progress

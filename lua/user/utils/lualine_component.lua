@@ -163,6 +163,16 @@ return {
     end,
   },
 
+  path = {
+    "filename",
+    file_status = true,
+    path = 1,
+    fmt = function(str)
+      return "[" .. str .. "]"
+    end,
+    cond = hide_in_width,
+  },
+
   -- git branch info
   get_branch = function()
     if vim.b.gitsigns_head ~= nil then
