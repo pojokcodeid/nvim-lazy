@@ -148,7 +148,7 @@ return {
   mode_parallelogram = {
     "mode",
     padding = 1,
-    separator = { left = " ", right = "" },
+    separator = { left = " ", right = "" },
     fmt = function(str)
       return icons.ui.Neovim .. " " .. str
     end,

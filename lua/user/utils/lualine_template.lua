@@ -153,7 +153,7 @@ M.parallelogram = function(colorscheme)
       lualine_x = { diagnostics, spaces, treesitter, "filetype" },
       lualine_y = { "progress" },
       lualine_z = {
-        { "location", separator = { right = " ", left = "" }, padding = 1 },
+        { "location", separator = { right = " ", left = "" }, padding = 1 },
       },
     },
     inactive_sections = {
