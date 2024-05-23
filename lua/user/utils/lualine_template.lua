@@ -98,6 +98,7 @@ M.roundedall = function(colorscheme)
     extensions = {},
   }
 end
+
 M.triangle = function(colorscheme)
   local mode = component.mode_triangle
   return {
@@ -133,6 +134,41 @@ M.triangle = function(colorscheme)
   }
 end
 
+M.parallelogram = function(colorscheme)
+  local mode = component.mode_parallelogram
+  return {
+    options = {
+      theme = colorscheme,
+      component_separators = { left = "", right = "" },
+      section_separators = { left = "", right = "" },
+      disabled_filetypes = M.filetype,
+      always_divide_middle = true,
+    },
+    sections = {
+      lualine_a = {
+        mode,
+      },
+      lualine_b = { get_branch },
+      lualine_c = { diff, lsp_info, lsp_progress },
+      lualine_x = { diagnostics, spaces, treesitter, "filetype" },
+      lualine_y = { "progress" },
+      lualine_z = {
+        { "location", separator = { right = " ", left = "" }, padding = 1 },
+      },
+    },
+    inactive_sections = {
+      lualine_a = { "filename" },
+      lualine_b = {},
+      lualine_c = {},
+      lualine_x = {},
+      lualine_y = {},
+      lualine_z = { "location" },
+    },
+    tabline = {},
+    extensions = {},
+  }
+end
+
 M.square = function(colorscheme)
   local mode = component.mode_square
   return {
@@ -152,7 +188,7 @@ M.square = function(colorscheme)
       lualine_x = { diagnostics, spaces, treesitter, "filetype" },
       lualine_y = { "progress" },
       lualine_z = {
-        { "location", separator = { right = "" }, padding = 1 },
+        { "location", separator = { right = " " }, padding = 1 },
       },
     },
     inactive_sections = {

@@ -52,8 +52,12 @@ return {
         theme = gettheme.roundedall(bubbles_theme)
       elseif theme_option == "square" then
         theme = gettheme.square(bubbles_theme)
+      elseif theme_option == "transparent" then
+        theme = gettheme.square(component.transparent(colors))
       elseif theme_option == "triangle" then
         theme = gettheme.triangle(bubbles_theme)
+      elseif theme_option == "parallelogram" then
+        theme = gettheme.parallelogram(bubbles_theme)
       elseif theme_option == "default" then
         theme = {}
       end

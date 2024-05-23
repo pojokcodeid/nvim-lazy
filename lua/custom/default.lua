@@ -30,8 +30,10 @@ vim.g.pcode_transparent_mode = 0
 -- roundedall
 -- square
 -- triangle
+-- parallelogram
+-- transparent
 -- default
-vim.g.pcode_lualinetheme = "roundedall"
+vim.g.pcode_lualinetheme = "transparent"
 -- 0 disable progress
 -- 1 lualine lsp progress
 -- 2 fidget progress

@@ -145,11 +145,19 @@ return {
       return icons.ui.Neovim .. " " .. str
     end,
   },
+  mode_parallelogram = {
+    "mode",
+    padding = 1,
+    separator = { left = " ", right = "" },
+    fmt = function(str)
+      return icons.ui.Neovim .. " " .. str
+    end,
+  },
 
   mode_square = {
     "mode",
     padding = 1,
-    separator = { left = "" },
+    separator = { left = " " },
     fmt = function(str)
       return icons.ui.Neovim .. " " .. str
     end,
@@ -207,6 +215,41 @@ return {
       terminal = {
         a = { bg = colors.green1, fg = colors.black },
         b = { bg = colors.fg_gutter, fg = colors.green1 },
+      },
+      inactive = {
+        a = { fg = colors.white, bg = colors.black_transparant },
+        b = { fg = colors.white, bg = colors.black_transparant },
+        c = { fg = colors.black, bg = colors.black_transparant },
+      },
+    }
+  end,
+  transparent = function(colors)
+    return {
+      normal = {
+        a = { fg = colors.skyblue_1, bg = colors.black_transparant },
+        b = { fg = colors.white, bg = colors.black_transparant },
+        c = { fg = colors.white, bg = colors.black_transparant },
+      },
+
+      insert = {
+        a = { fg = colors.blue, bg = colors.black_transparant },
+        b = { fg = colors.white, bg = colors.black_transparant },
+      },
+      visual = {
+        a = { fg = colors.cyan, bg = colors.black_transparant },
+        b = { fg = colors.white, bg = colors.black_transparant },
+      },
+      replace = {
+        a = { bg = colors.black_transparant, fg = colors.red },
+        b = { bg = colors.black_transparant, fg = colors.white },
+      },
+      command = {
+        a = { bg = colors.black_transparant, fg = colors.yellow },
+        b = { bg = colors.black_transparant, fg = colors.white },
+      },
+      terminal = {
+        a = { bg = colors.black_transparant, fg = colors.green1 },
+        b = { bg = colors.black_transparant, fg = colors.white },
       },
       inactive = {
         a = { fg = colors.white, bg = colors.black_transparant },
