@@ -92,6 +92,10 @@ return {
         always_show_bufferline = true,
       },
       highlights = {
+        fill = {
+          fg = { attribute = "fg", highlight = "TabLine" },
+          bg = { attribute = "none", highlight = "TabLine" },
+        },
         background = {
           fg = { attribute = "fg", highlight = "TabLine" },
           bg = { attribute = "none", highlight = "TabLine" },
