@@ -11,7 +11,6 @@ local nightfox = false
 
 local sonokai_style = "default"
 local material_style = "oceanic"
-local onedark_style = "dark"
 
 _G.switch = function(param, case_table)
   local case = case_table[param]
@@ -22,116 +21,45 @@ _G.switch = function(param, case_table)
   return def and def() or nil
 end
 
+_G.substring = function(text, key)
+  local index, _ = string.find(text, key)
+  if index then
+    return true
+  else
+    return false
+  end
+end
+
+_G.extract = function(text)
+  local result = {}
+  for substring in string.gmatch(text, "[^_]+") do
+    table.insert(result, substring)
+  end
+  return result
+end
+
 local color = vim.g.pcode_colorscheme or "gruvbox-baby"
-switch(color, {
-  ["tokyonight"] = function()
-    gruvbox = false
-    tokyonight = true
-  end,
-  ["tokyonight-night"] = function()
-    gruvbox = false
-    tokyonight = true
-  end,
-  ["tokyonight-storm"] = function()
-    gruvbox = false
-    tokyonight = true
-  end,
-  ["tokyonight-day"] = function()
-    gruvbox = false
-    tokyonight = true
-  end,
-  ["tokyonight-moon"] = function()
-    gruvbox = false
-    tokyonight = true
-  end,
-  ["sonokai"] = function()
-    gruvbox = false
-    sonokai = true
-    sonokai_style = "default"
-  end,
-  ["sonokai_atlantis"] = function()
-    gruvbox = false
-    sonokai = true
-    sonokai_style = "atlantis"
-  end,
-  ["sonokai_andromeda"] = function()
-    gruvbox = false
-    sonokai = true
-    sonokai_style = "andromeda"
-  end,
-  ["sonokai_shusia"] = function()
-    gruvbox = false
-    sonokai = true
-    sonokai_style = "shusia"
-  end,
-  ["sonokai_maia"] = function()
-    gruvbox = false
-    sonokai = true
-    sonokai_style = "maia"
-  end,
-  ["sonokai_espresso"] = function()
-    gruvbox = false
-    sonokai = true
-    sonokai_style = "espresso"
-  end,
-  ["material"] = function()
-    gruvbox = false
-    material = true
-  end,
-  ["material_deepocean"] = function()
-    gruvbox = false
-    material = true
+if substring(tostring(color), "tokyonight") then
+  gruvbox = false
+  tokyonight = true
+elseif substring(tostring(color), "sonokai") then
+  gruvbox = false
+  sonokai = true
+  sonokai_style = extract(color)[2] or "default"
+elseif substring(tostring(color), "material") then
+  gruvbox = false
+  material = true
+  local materialstyle = extract(color)[2] or "oceanic"
+  if materialstyle == "deepocean" then
     material_style = "deep ocean"
-  end,
-  ["material_palenight"] = function()
-    gruvbox = false
-    material = true
-    material_style = "palenight"
-  end,
-  ["material_lighter"] = function()
-    gruvbox = false
-    material = true
-    material_style = "lighter"
-  end,
-  ["material_darker"] = function()
-    gruvbox = false
-    material = true
-    material_style = "darker"
-  end,
-  ["onedark"] = function()
-    gruvbox = false
-    onedark = true
-  end,
-  ["onedark_darker"] = function()
-    gruvbox = false
-    onedark = true
-    onedark_style = "darker"
-  end,
-  ["onedark_cool"] = function()
-    gruvbox = false
-    onedark = true
-    onedark_style = "cool"
-  end,
-  ["onedark_deep"] = function()
-    gruvbox = false
-    onedark = true
-    onedark_style = "deep"
-  end,
-  ["onedark_warm"] = function()
-    gruvbox = false
-    onedark = true
-    onedark_style = "warm"
-  end,
-  ["onedark_warmer"] = function()
-    gruvbox = false
-    onedark = true
-    onedark_style = "warmer"
-  end,
-  ["onedark_light"] = function()
-    gruvbox = false
-    onedark = true
-    onedark_style = "light"
-  end,
+  else
+    material_style = materialstyle
+  end
+elseif substring(tostring(color), "onedark") then
+  gruvbox = false
+  onedark = true
+end
+switch(color, {
   ["lunar"] = function()
     gruvbox = false
     lunar = true
@@ -391,132 +319,6 @@ return {
       }
     end,
   },
-  -- {
-  --   "navarasu/onedark.nvim",
-  --   enabled = onedark,
-  --   priority = 1000,
-  --   config = function()
-  --     -- Lua
-  --     local util = require "onedark.util"
-  --     require("onedark").setup {
-  --       term_colors = true,
-  --       style = onedark_style,
-  --       colors = {
-  --         bg0 = "#1e222a",
-  --         green = "#98c379",
-  --         gray = "#abb2bf",
-  --         red = "#e06c75",
-  --         purple = "#c678dd",
-  --         yellow = "#e5c07b",
-  --         orange = "#d19a66",
-  --         blue = "#61afef",
-  --         cyan = "#56b6c2",
-  --         bg_d = "$bg",
-  --         bg1 = "#1e222a",
-  --       },
-  --       code_style = {
-  --         comments = "italic",
-  --         keywords = "italic",
-  --         functions = "none",
-  --         strings = "none",
-  --         variables = "none",
-  --       },
-  --       highlights = {
-  --         NoiceCursor = { fg = "$bg0", bg = "$fg" },
-  --         Search = { fg = "$bg0", bg = "$bg_yellow" },
-  --         -- BorderBG = { fg = "#333842" }, -- untuk custom brder color cmp
-  --         -- overide indent line fill color
-  --         NvimTreeNormal = { fg = "$fg", bg = "$bg0" },
-  --         NvimTreeIndentMarker = { fg = "#515661" },
-  --         -- NvimTreeGitIgnored = { fg = "$gray", bg = "NONE" },
-  --         IblIndent = { fg = "#3E4450" },
-  --         -- NvimTreeFolderIcon = { bg = "NONE", fg = "$blue" },
-  --         ["@markup.link.url"] = { fg = "$cyan", fmt = "italic" },
-  --         ["@text.uri"] = { fg = "$cyan", fmt = "none" },
-  --         ["@tag.delimiter"] = { fg = "$gray" },
-  --         ["@tag.html"] = { fg = "$red" },
-  --         ["@tag.attribute"] = { fg = "$orange", fmt = "italic" },
-  --         ["@tag.javascript"] = { fg = "$red" },
-  --         ["@constructor.javascript"] = { fg = "$red" },
-  --         ["@tag.tsx"] = { fg = "$yellow" },
-  --         ["@constructor.tsx"] = { fg = "$yellow" },
-  --         -- NvimTreeFolderIcon = { fg = "#FCC76A" },
-  --         NvimTreeSpecialFile = { fg = "$yellow", fmt = "italic" },
-  --         BufferLineFill = { bg = "$bg0" },
-  --         BufferLineUnfocusedFill = { bg = "$bg0" },
-  --         StatusLine = { fg = "#f8f8f2", bg = "$bg0" },
-  --         StatusLineTerm = { fg = "#f8f8f2", bg = "$bg0" },
-  --         illuminatedWord = { bg = "#3b4261" },
-  --         illuminatedCurWord = { bg = "#3b4261" },
-  --         IlluminatedWordText = { bg = "#3b4261" },
-  --         IlluminatedWordRead = { bg = "#3b4261" },
-  --         IlluminatedWordWrite = { bg = "#3b4261" },
-  --         PmenuSel = { fg = "$fg", bg = "#333842" },
-  --         -- overide lualine fill color with bg color
-  --         LualineNormal = { bg = "$bg0" },
-  --         -- overide lualine_c fill color with bg color
-  --         LualineC = { bg = "$bg0" },
-  --         -- overide lualine_x fill color with bg color
-  --         LualineX = { bg = "$bg0" },
-  --         -- overide which-key fill color with bg color
-  --         WhichKey = { bg = "$bg0" },
-  --         -- overide which-key fill color with bg color
-  --         WhichKeySeperator = { bg = "$bg0" },
-  --         -- overide which-key fill color with bg color
-  --         WhichKeyDesc = { bg = "$bg0" },
-  --         -- overide which-key fill color with bg color
-  --         WhichKeyFloat = { bg = "$bg0" },
-  --         -- overide which-key fill color with bg color
-  --         WhichKeyValue = { bg = "$bg0" },
-  --         -- overide which-key fill color with bg color
-  --         WhichKeyBorder = { bg = "$bg0" },
-  --         -- overide Lazy fill color with bg color
-  --         -- LazyNormal = { bg = "$bg0" },
-  --         -- -- overide lazy background color with bg color
-  --         -- LazyBackground = { bg = "$bg0" },
-  --         -- -- overide Lazy fill color with bg color
-  --         -- LazyH1 = { bg = "$bg0" },
-  --         -- -- overide Lazy fill color with bg color
-  --         -- LazyH2 = { bg = "$bg0" },
-  --         -- -- overide Lazy fill color with bg color
-  --         -- LazyH3 = { bg = "$bg0" },
-  --         -- -- overide Lazy fill color with bg color
-  --         -- LazyH4 = { bg = "$bg0" },
-  --         -- -- overide Lazy fill color with bg color
-  --         -- LazyH5 = { bg = "$bg0" },
-  --         -- -- overide Lazy fill color with bg color
-  --         -- LazyH6 = { bg = "$bg0" },
-  --         -- -- overide Lazy fill color with bg color
-  --         -- LazyButton = { bg = "$bg0" },
-  --         -- -- overide Lazy fill color with bg color
-  --         -- LazyButtonActive = { bg = "$bg0" },
-  --         -- -- overide Lazy fill color with bg color
-  --         -- LazySpecial = { bg = "$bg0" },
-  --         -- -- overide Lazy fill color with bg color
-  --         -- LazyProgress = { bg = "$bg0" },
-  --         -- Pmenu = { fg = "$fg", bg = "$bg0" },
-  --         CursorLine = { bg = "#333842" },
-  --         Cursor = { fg = "$bg0", bg = "$fg" }, -- character under the cursor
-  --         lCursor = { fg = "$bg0", bg = "$fg" }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
-  --         CursorIM = { fg = "$bg0", bg = "$fg" }, -- like Cursor, but used when in IME mode |CursorIM|
-  --         CursorColumn = { bg = "#333842" }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-  --         -- Visual = { bg = "$orange" },
-  --         DiffText = { bg = "$orange" },
-  --         DiffAdd = { bg = "#595d65" },
-  --         MiniIndentscopeSymbol = { fg = "$cyan", nocombine = true },
-  --         -- UfoPreviewNormal = { fg = "#373d48", bg = "$bg0" },
-  --         -- UfoPreviewBorder = { fg = "#373d48", bg = "$bg0" },
-  --         -- UfoPreviewCursorLine = { fg = "#373d48", bg = "$bg0" },
-  --         WinBarNC = { fg = "$fg", bg = "NONE" },
-  --       },
-  --       transparent = transparent,
-  --       lualine = {
-  --         transparent = true,
-  --       },
-  --     }
-  --     require("onedark").load()
-  --   end,
-  -- },
   {
     "olimorris/onedarkpro.nvim",
     priority = 1000, -- Ensure it loads first
@@ -541,6 +343,7 @@ return {
           tags = "italic",
         },
         colors = {
+          bg_statusline = "#282c34",
           onedark = {
             green = "#99c379",
             gray = "#8094b4",
@@ -549,9 +352,11 @@ return {
             yellow = "#e5c07a",
             blue = "#61afef",
             cyan = "#56b6c2",
-            bg_statusline = "#282c34",
             indentline = "#3b4261",
             float_bg = "#282c34",
+          },
+          onedark_dark = {
+            bg_statusline = "#000",
           },
         },
         options = {
@@ -626,6 +431,10 @@ return {
           -- -- overide which-key fill color with bg color
           -- WhichKeyBorder = { bg = "${bg}" },
           LspInfoBorder = { fg = "${fg}" },
+          NormalFloat = { fg = "${fg}", bg = is_transparent and "NONE" or "${bg}" },
+          Normal = { fg = "${fg}", bg = is_transparent and "NONE" or "${bg}" },
+          NormalNC = { fg = "${fg}", bg = is_transparent and "NONE" or "${bg}" },
+          FloatBorder = { fg = "${fg}", bg = is_transparent and "NONE" or "${bg}" },
         },
       }
     end,
