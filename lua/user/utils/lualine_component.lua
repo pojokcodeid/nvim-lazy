@@ -31,7 +31,8 @@ return {
   -- treesitter info
   treesitter = {
     function()
-      return icons.ui.Paint .. " TS"
+      -- return icons.ui.Paint .. " TS"
+      return icons.ui.Tree
     end,
     color = function()
       local buf = vim.api.nvim_get_current_buf()
