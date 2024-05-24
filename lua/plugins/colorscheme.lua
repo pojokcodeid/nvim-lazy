@@ -1,4 +1,4 @@
-local gruvbox = true
+local gruvbox = false
 local dracula = false
 local tokyonight = false
 local nord = false
@@ -40,14 +40,11 @@ end
 
 local color = vim.g.pcode_colorscheme or "gruvbox-baby"
 if substring(tostring(color), "tokyonight") then
-  gruvbox = false
   tokyonight = true
 elseif substring(tostring(color), "sonokai") then
-  gruvbox = false
   sonokai = true
   sonokai_style = extract(color)[2] or "default"
 elseif substring(tostring(color), "material") then
-  gruvbox = false
   material = true
   local materialstyle = extract(color)[2] or "oceanic"
   if materialstyle == "deepocean" then
@@ -56,68 +53,52 @@ elseif substring(tostring(color), "material") then
     material_style = materialstyle
   end
 elseif substring(tostring(color), "onedark") then
-  gruvbox = false
   onedark = true
 end
 switch(color, {
   ["lunar"] = function()
-    gruvbox = false
     lunar = true
   end,
   ["nord"] = function()
-    gruvbox = false
     nord = true
   end,
   ["catppuccin"] = function()
-    gruvbox = false
     catppuccin = true
   end,
   ["catppuccin-latte"] = function()
-    gruvbox = false
     catppuccin = true
   end,
   ["catppuccin-frappe"] = function()
-    gruvbox = false
     catppuccin = true
   end,
   ["catppuccin-macchiato"] = function()
-    gruvbox = false
     catppuccin = true
   end,
   ["catppuccin-mocha"] = function()
-    gruvbox = false
     catppuccin = true
   end,
   ["dracula"] = function()
-    gruvbox = false
     dracula = true
   end,
   ["nightfox"] = function()
-    gruvbox = false
     nightfox = true
   end,
   ["dayfox"] = function()
-    gruvbox = false
     nightfox = true
   end,
   ["dawnfox"] = function()
-    gruvbox = false
     nightfox = true
   end,
   ["duskfox"] = function()
-    gruvbox = false
     nightfox = true
   end,
   ["nordfox"] = function()
-    gruvbox = false
     nightfox = true
   end,
   ["terafox"] = function()
-    gruvbox = false
     nightfox = true
   end,
   ["carbonfox"] = function()
-    gruvbox = false
     nightfox = true
   end,
   ["gruvbox-baby"] = function()
@@ -151,6 +132,16 @@ return {
         BufferLineFillNC = { bg = colors.bg },
         BufferLineUnfocusedFill = { bg = colors.bg },
         TabLine = { bg = colors.bg, fg = colors.fg },
+        NvimTreeNormal = { bg = colors.bg, fg = colors.fg },
+        NvimTreeNormalNC = { bg = colors.bg, fg = colors.fg },
+        NvimTreeWinSeparator = { fg = colors.fg },
+        Pmenu = { fg = colors.fg, bg = colors.bg },
+        WhichKeyFloat = { fg = colors.fg, bg = colors.bg },
+        WhichKeyBorder = { fg = colors.fg, bg = colors.bg },
+        NormalFloat = { fg = colors.fg, bg = colors.bg },
+        NormalNC = { fg = colors.fg, bg = colors.bg },
+        FloatBorder = { fg = colors.fg, bg = colors.bg },
+        LspInfoBorder = { fg = colors.fg, bg = colors.bg },
       }
     end,
   },
