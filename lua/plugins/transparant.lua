@@ -25,7 +25,18 @@ return {
     cmd = { "TransparentToggle", "TransparentEnable", "TransparentDisable" },
     config = function()
       require("transparent").setup {
-        extra_groups = {},
+        extra_groups = {
+          "Normal",
+          "NormalNC",
+          "NormalFloat",
+          "FloatBorder",
+          "Comment",
+          "Folded",
+          "GitSignsAdd",
+          "GitSignsDelete",
+          "GitSignsChange",
+          "FoldColumn",
+        },
         exclude_groups = {
           -- disable active selection backgroun
           "CursorLine",
@@ -53,6 +64,7 @@ return {
       require("transparent").clear_prefix "NeoTree"
       -- clear prefix for Telescope
       require("transparent").clear_prefix "Telescope"
+      require("transparent").clear_prefix "mason"
       if clear_lualine then
         -- clear prefix for Lualine
         require("transparent").clear_prefix "Lualine"

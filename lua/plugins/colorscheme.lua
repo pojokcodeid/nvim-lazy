@@ -1,16 +1,4 @@
-local gruvbox = false
-local dracula = false
-local tokyonight = false
-local nord = false
-local sonokai = false
-local lunar = false
-local material = false
-local onedark = false
-local catppuccin = false
 local nightfox = false
-
-local sonokai_style = "default"
-local material_style = "oceanic"
 
 _G.switch = function(param, case_table)
   local case = case_table[param]
@@ -39,47 +27,9 @@ _G.extract = function(text)
 end
 
 local color = vim.g.pcode_colorscheme or "gruvbox-baby"
-if substring(tostring(color), "tokyonight") then
-  tokyonight = true
-elseif substring(tostring(color), "sonokai") then
-  sonokai = true
-  sonokai_style = extract(color)[2] or "default"
-elseif substring(tostring(color), "material") then
-  material = true
-  local materialstyle = extract(color)[2] or "oceanic"
-  if materialstyle == "deepocean" then
-    material_style = "deep ocean"
-  else
-    material_style = materialstyle
-  end
-elseif substring(tostring(color), "onedark") then
-  onedark = true
-end
+local materialstyle = extract(color)[2] or "oceanic"
+local material_style = (materialstyle == "deepocean") and "deep ocean" or materialstyle
 switch(color, {
-  ["lunar"] = function()
-    lunar = true
-  end,
-  ["nord"] = function()
-    nord = true
-  end,
-  ["catppuccin"] = function()
-    catppuccin = true
-  end,
-  ["catppuccin-latte"] = function()
-    catppuccin = true
-  end,
-  ["catppuccin-frappe"] = function()
-    catppuccin = true
-  end,
-  ["catppuccin-macchiato"] = function()
-    catppuccin = true
-  end,
-  ["catppuccin-mocha"] = function()
-    catppuccin = true
-  end,
-  ["dracula"] = function()
-    dracula = true
-  end,
   ["nightfox"] = function()
     nightfox = true
   end,
@@ -101,28 +51,23 @@ switch(color, {
   ["carbonfox"] = function()
     nightfox = true
   end,
-  ["gruvbox-baby"] = function()
-    gruvbox = true
-  end,
-  default = function()
-    gruvbox = true
-  end,
+  default = function() end,
 })
 
-local transparent = false
+-- local transparent = false
 local transparent_mode = vim.g.pcode_transparent_mode or 0
-if transparent_mode ~= nil then
-  if transparent_mode == 1 then
-    transparent = true
-  end
-end
+-- if transparent_mode ~= nil then
+--   if transparent_mode == 1 then
+--     transparent = true
+--   end
+-- end
 
 return {
   -- color scheme
   {
     "luisiacc/gruvbox-baby",
     lazy = true,
-    enabled = gruvbox,
+    enabled = (color == "gruvbox-baby") and true or false,
     config = function()
       local colors = require("gruvbox-baby.colors").config()
       vim.g.gruvbox_baby_highlights = {
@@ -143,19 +88,14 @@ return {
         FloatBorder = { fg = colors.fg, bg = colors.bg },
         LspInfoBorder = { fg = colors.fg, bg = colors.bg },
       }
+      vim.g.gruvbox_baby_transparent_mode = transparent_mode
     end,
   },
   {
     "Mofiqul/dracula.nvim",
-    enabled = dracula,
+    enabled = (color == "dracula") and true or false,
     config = function()
-      local is_transparent = false
       local colors = require("dracula").colors()
-      if is_transparent then
-        colors = {
-          bg = "none",
-        }
-      end
       require("dracula").setup {
         colors = {
           -- purple = "#FCC76A",
@@ -194,23 +134,22 @@ return {
           WinBarNC = { fg = colors.fg, bg = colors.bg },
           LspInfoBorder = { fg = colors.fg },
         },
-        transparent_bg = transparent,
-        -- transparent_bg = is_transparent,
+        transparent_bg = (transparent_mode == 1) and true or false,
       }
     end,
   },
   {
     "folke/tokyonight.nvim",
-    enabled = tokyonight,
+    enabled = substring(tostring(color), "tokyonight") and true or false,
     config = function()
       require "user.tokyonight"
     end,
   },
   {
     "shaunsingh/nord.nvim",
-    enabled = nord,
+    enabled = (color == "nord") and true or false,
     config = function()
-      vim.g.nord_disable_background = transparent
+      vim.g.nord_disable_background = (transparent_mode == 1) and true or false
       require("nord").set()
       local nord = require "nord.colors"
       vim.api.nvim_create_autocmd("ColorScheme", {
@@ -226,7 +165,7 @@ return {
   },
   {
     "sainnhe/sonokai",
-    enabled = sonokai,
+    enabled = substring(tostring(color), "sonokai") and true or false,
     config = function()
       vim.api.nvim_create_autocmd("ColorScheme", {
         group = vim.api.nvim_create_augroup("custom_highlights_sonokai", {}),
@@ -255,21 +194,21 @@ return {
           set_hl("LspInfoNormal", palette.fg, palette.bg0)
         end,
       })
-      vim.g.sonokai_style = sonokai_style
-      vim.g.sonokai_transparent_background = 2
+      vim.g.sonokai_style = extract(color)[2] or "default"
+      vim.g.sonokai_transparent_background = (transparent_mode == 1) and 2 or 0
     end,
   },
-  { "lunarvim/lunar.nvim", enabled = lunar },
+  { "lunarvim/lunar.nvim", enabled = (color == "lunar") and true or false },
   {
     "marko-cerovac/material.nvim",
-    enabled = material,
+    enabled = substring(tostring(color), "material") and true or false,
     config = function()
       local colors = require "material.colors"
       vim.g.material_style = material_style
       require("material").setup {
         lualine_style = "stealth",
         disable = {
-          background = transparent,
+          background = (transparent_mode == 1) and true or false,
         },
         plugins = { -- Uncomment the plugins that you use to highlight them
           -- Available plugins:
@@ -306,6 +245,7 @@ return {
           StatusLine = { fg = "#f8f8f2", bg = colors.bg },
           StatusLineTerm = { fg = "#f8f8f2", bg = colors.bg },
           WinBarNC = { fg = colors.fg, bg = colors.bg },
+          CursorLine = { bg = "#333842" },
         },
       }
     end,
@@ -313,9 +253,9 @@ return {
   {
     "olimorris/onedarkpro.nvim",
     priority = 1000, -- Ensure it loads first
-    enabled = onedark,
+    enabled = substring(tostring(color), "onedark") and true or false,
     config = function()
-      local is_transparent = false
+      local is_transparent = (transparent_mode == 1) and true or false
       require("onedarkpro").setup {
         styles = {
           types = "NONE",
@@ -432,10 +372,11 @@ return {
   },
   {
     "catppuccin/nvim",
-    enabled = catppuccin,
+    enabled = substring(tostring(color), "catppuccin") and true or false,
     name = "catppuccin",
     priority = 1000,
     config = function()
+      local transparent = (transparent_mode == 1) and true or false
       require("catppuccin").setup {
         flavour = "auto", -- latte, frappe, macchiato, mocha
         background = { -- :h background
@@ -516,7 +457,7 @@ return {
       require("nightfox").setup {
         options = {
           terminal_colors = true,
-          transparent = transparent,
+          transparent = (transparent_mode == 1) and true or false,
           styles = { -- Style to be applied to different syntax groups
             comments = "italic", -- Value is any valid attr-list value `:help attr-list`
             conditionals = "italic",
