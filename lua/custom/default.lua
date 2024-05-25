@@ -13,17 +13,6 @@
 -- nightfox, dayfox, dawnfox, duskfox, nordfox, terafox, carbonfox
 vim.g.pcode_colorscheme = "dracula"
 
--- custom transparent mode
--- only support
---  gruvbox-baby,
---  tokyonight,
---  sonokai,
---  material
---  onedark
---  catppuccin
---  nord
---  dracula
---  nightfox
 -- 0 =off   1= on
 vim.g.pcode_transparent_mode = 0
 -- rounded
