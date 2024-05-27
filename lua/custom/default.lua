@@ -13,7 +13,7 @@
 -- nightfox, dayfox, dawnfox, duskfox, nordfox, terafox, carbonfox
 -- github_dark, github_dark_default, github_dark_colorblind, github_dark_dimmed
 -- solarized-osaka
-vim.g.pcode_colorscheme = "solarized-osaka"
+vim.g.pcode_colorscheme = "dracula"
 
 -- 0 =off   1= on
 vim.g.pcode_transparent_mode = 0

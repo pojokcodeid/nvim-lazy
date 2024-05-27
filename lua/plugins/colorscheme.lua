@@ -135,6 +135,9 @@ return {
           Pmenu = { fg = colors.fg, bg = colors.bg },
           WinBarNC = { fg = colors.fg, bg = colors.bg },
           LspInfoBorder = { fg = colors.fg },
+          LspReferenceText = { bg = "#3b4261" },
+          LspReferenceRead = { bg = "#3b4261" },
+          LspReferenceWrite = { bg = "#3b4261" },
         },
         transparent_bg = (transparent_mode == 1) and true or false,
       }
