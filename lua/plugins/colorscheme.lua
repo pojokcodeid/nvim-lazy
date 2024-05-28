@@ -682,7 +682,9 @@ return {
       vim.api.nvim_create_autocmd("ColorScheme", {
         pattern = "*",
         callback = function()
+          local hi = vim.api.nvim_set_hl
           -- vim.api.nvim_set_hl(0, "BorderBG", { fg = "#4c4c4c" })
+          -- hi(0, "@property.json", { fg = "#9876AA" })
         end,
       })
     end,
