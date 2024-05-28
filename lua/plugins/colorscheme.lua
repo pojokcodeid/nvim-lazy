@@ -672,4 +672,11 @@ return {
       require("solarized-osaka").setup(opts)
     end,
   },
+  {
+    "pojokcodeid/darcula-dark.nvim",
+    enabled = (color == "darcula-dark") and true or false,
+    priority = 1000,
+    lazy = false,
+    config = function() end,
+  },
 }
