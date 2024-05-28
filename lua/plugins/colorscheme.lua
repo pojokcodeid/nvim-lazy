@@ -580,11 +580,12 @@ return {
             -- ["@tag.delimiter.html"] = { fg = "#faa356" },
             -- ["@tag.javascript"] = { fg = "#faa356" },
             -- ["@tag.javascript"] = { fg = "#8ddb8c" },
+            ["@tag.builtin.javascript"] = { fg = "#8ddb8c" },
             -- ["@tag.tsx"] = { fg = "#8ddb8c" },
             ["@string.special.url"] = { fg = palette.const, style = "italic" },
             ["@tag.delimiter.javascript"] = { fg = "fg1" },
             ["@tag.tsx"] = { fg = "#faa356" },
-            ["@lsp.type.parameter"] = { fg = "#faa356" },
+            ["@lsp.type.parameter"] = { fg = "#91cbff" },
             ["@property.lua"] = { fg = "#91cbff", bg = is_transparent and "NONE" or "bg1" },
             ["@lsp.type.property.lua"] = { fg = "fg1", bg = is_transparent and "NONE" or "bg1" },
             ["@lsp.type.variable.lua"] = { fg = "#91cbff", bg = is_transparent and "NONE" or "bg1" },
@@ -677,6 +678,13 @@ return {
     enabled = (color == "darcula-dark") and true or false,
     priority = 1000,
     lazy = false,
-    config = function() end,
+    config = function()
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        pattern = "*",
+        callback = function()
+          -- vim.api.nvim_set_hl(0, "BorderBG", { fg = "#4c4c4c" })
+        end,
+      })
+    end,
   },
 }
