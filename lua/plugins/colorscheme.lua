@@ -682,9 +682,9 @@ return {
       vim.api.nvim_create_autocmd("ColorScheme", {
         pattern = "*",
         callback = function()
+          local colors = require("darcula").colors()
           local hi = vim.api.nvim_set_hl
-          -- vim.api.nvim_set_hl(0, "BorderBG", { fg = "#4c4c4c" })
-          -- hi(0, "@property.json", { fg = "#9876AA" })
+          hi(0, "@property.json", { fg = colors.lavender })
         end,
       })
     end,
