@@ -679,6 +679,11 @@ return {
     priority = 1000,
     lazy = false,
     config = function()
+      require("darcula").setup {
+        colors = {
+          lavender = "#9876AA",
+        },
+      }
       vim.api.nvim_create_autocmd("ColorScheme", {
         pattern = "*",
         callback = function()
