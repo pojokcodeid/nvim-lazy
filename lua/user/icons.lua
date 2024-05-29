@@ -58,6 +58,7 @@ return {
     Octoface = "",
     Branch = "",
     Branch2 = "",
+    Branch3 = "󰘬",
     NoBranch = "󱓌",
   },
   ui = {
