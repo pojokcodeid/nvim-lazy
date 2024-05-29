@@ -690,6 +690,8 @@ return {
           local colors = require("darcula").colors()
           local hi = vim.api.nvim_set_hl
           hi(0, "@property.json", { fg = colors.lavender })
+          hi(0, "NoiceCmdlinePopupBorder", { fg = colors.medium_gray })
+          hi(0, "NoiceCmdlinePopupBorderSearch", { fg = colors.pale_taupe })
         end,
       })
     end,
