@@ -27,6 +27,14 @@ local unique_list = function(list)
   return result
 end
 
+local mode_map = {
+  ["NORMAL"] = "N",
+  ["INSERT"] = "I",
+  ["VISUAL"] = "V",
+  ["REPLACE"] = "R",
+  ["COMMAND"] = "C",
+}
+
 return {
   -- treesitter info
   treesitter = {
@@ -127,7 +135,17 @@ return {
     padding = 1,
     separator = { left = " " },
     fmt = function(str)
-      return icons.ui.Neovim .. " " .. str
+      if vim.g.pcode_show_mode == 1 then
+        return icons.ui.Neovim .. " " .. (mode_map[str] or str)
+      elseif vim.g.pcode_show_mode == 2 then
+        return icons.ui.Neovim
+      elseif vim.g.pcode_show_mode == 3 then
+        return (mode_map[str] or str)
+      elseif vim.g.pcode_show_mode == 4 then
+        return nil
+      else
+        return icons.ui.Neovim .. " " .. str
+      end
     end,
   },
   mode_roundedall = {
@@ -135,7 +153,17 @@ return {
     padding = 1,
     separator = { left = " ", right = "" },
     fmt = function(str)
-      return icons.ui.Neovim .. " " .. str
+      if vim.g.pcode_show_mode == 1 then
+        return icons.ui.Neovim .. " " .. (mode_map[str] or str)
+      elseif vim.g.pcode_show_mode == 2 then
+        return icons.ui.Neovim
+      elseif vim.g.pcode_show_mode == 3 then
+        return (mode_map[str] or str)
+      elseif vim.g.pcode_show_mode == 4 then
+        return nil
+      else
+        return icons.ui.Neovim .. " " .. str
+      end
     end,
   },
   mode_triangle = {
@@ -143,7 +171,17 @@ return {
     padding = 1,
     separator = { left = " ", right = "" },
     fmt = function(str)
-      return icons.ui.Neovim .. " " .. str
+      if vim.g.pcode_show_mode == 1 then
+        return icons.ui.Neovim .. " " .. (mode_map[str] or str)
+      elseif vim.g.pcode_show_mode == 2 then
+        return icons.ui.Neovim
+      elseif vim.g.pcode_show_mode == 3 then
+        return (mode_map[str] or str)
+      elseif vim.g.pcode_show_mode == 4 then
+        return nil
+      else
+        return icons.ui.Neovim .. " " .. str
+      end
     end,
   },
   mode_parallelogram = {
@@ -151,7 +189,17 @@ return {
     padding = 1,
     separator = { left = " ", right = "" },
     fmt = function(str)
-      return icons.ui.Neovim .. " " .. str
+      if vim.g.pcode_show_mode == 1 then
+        return icons.ui.Neovim .. " " .. (mode_map[str] or str)
+      elseif vim.g.pcode_show_mode == 2 then
+        return icons.ui.Neovim
+      elseif vim.g.pcode_show_mode == 3 then
+        return (mode_map[str] or str)
+      elseif vim.g.pcode_show_mode == 4 then
+        return nil
+      else
+        return icons.ui.Neovim .. " " .. str
+      end
     end,
   },
 
@@ -160,7 +208,17 @@ return {
     padding = 1,
     separator = { left = " " },
     fmt = function(str)
-      return icons.ui.Neovim .. " " .. str
+      if vim.g.pcode_show_mode == 1 then
+        return icons.ui.Neovim .. " " .. (mode_map[str] or str)
+      elseif vim.g.pcode_show_mode == 2 then
+        return icons.ui.Neovim
+      elseif vim.g.pcode_show_mode == 3 then
+        return (mode_map[str] or str)
+      elseif vim.g.pcode_show_mode == 4 then
+        return nil
+      else
+        return icons.ui.Neovim .. " " .. str
+      end
     end,
   },
 

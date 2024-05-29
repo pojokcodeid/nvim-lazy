@@ -31,6 +31,13 @@ vim.g.pcode_lualinetheme = "roundedall"
 -- 2 fidget progress
 vim.g.pcode_progress = 1
 
+-- 0 = on full text mode info,
+-- 1 = on initial mode + logo
+-- 2 = logo only
+-- 3 = initial only
+-- 4 = off
+vim.g.pcode_show_mode = 3
+
 -- 1 ( format jalan)  0 (fromat off)
 vim.g.pcode_format_on_save = 1
 
