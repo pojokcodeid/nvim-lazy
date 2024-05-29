@@ -237,7 +237,7 @@ return {
     if vim.b.gitsigns_head ~= nil then
       return icons.git.Branch2 .. " " .. getLeftSubstring(vim.b.gitsigns_head, 6)
     else
-      return icons.git.Branch2 .. vim.fn.fnamemodify("", ":t")
+      return icons.git.NoBranch .. vim.fn.fnamemodify("", ":t")
     end
   end,
 
