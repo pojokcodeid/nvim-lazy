@@ -33,6 +33,7 @@ local mode_map = {
   ["VISUAL"] = "V",
   ["REPLACE"] = "R",
   ["COMMAND"] = "C",
+  ["O-PENDING"] = "O",
 }
 
 return {
