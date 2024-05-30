@@ -27,6 +27,7 @@ M.filetype = {
   "neo-tree",
   "startuptime",
   "crunner",
+  "lspinfo",
 }
 
 M.rounded = function(colorscheme)
