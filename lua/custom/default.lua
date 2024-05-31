@@ -15,7 +15,7 @@
 -- solarized-osaka
 -- darcula-dark
 -- juliana
-vim.g.pcode_colorscheme = "juliana"
+vim.g.pcode_colorscheme = "darcula-dark"
 
 -- 0 =off   1= on
 vim.g.pcode_transparent_mode = 0
