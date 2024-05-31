@@ -108,3 +108,7 @@ vim.g.pcode_coderunner = {
 vim.g.pcode_cmprg = false --https://github.com/lukas-reineke/cmp-rg
 vim.g.pcode_cmpcalc = false --https://github.com/hrsh7th/cmp-calc
 vim.g.pcode_cmptag = false --https://github.com/quangnguyen30192/cmp-nvim-tags
+
+-- 0 = normal
+-- 1 = float
+vim.g.pcode_nvimtree_isfloat = 0
