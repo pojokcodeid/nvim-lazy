@@ -1,44 +1,44 @@
 local transparent_mode = vim.g.pcode_transparent_mode or 0
 if transparent_mode ~= nil then
-	if transparent_mode == 1 then
-		vim.cmd("TransparentDisable")
-		vim.cmd("TransparentEnable")
-	end
+  if transparent_mode == 1 then
+    vim.cmd "TransparentDisable"
+    vim.cmd "TransparentEnable"
+  end
 end
 
 -- get folder name from current directory
 local _get_folder_name = function()
-	local str = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-	return " " .. str:lower():gsub("^%l", string.upper) .. " "
+  local str = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+  return " " .. str:lower():gsub("^%l", string.upper) .. " "
 end
 
-local term_program = vim.fn.getenv("TERM_PROGRAM")
+local term_program = vim.fn.getenv "TERM_PROGRAM"
 if term_program == "WezTerm" then
-	-- vim.cmd('silent !wezterm cli set-tab-title "' .. _get_folder_name() .. '"')
-	-- create autocmd on insertEnter
-	vim.api.nvim_create_autocmd("BufRead", {
-		group = vim.api.nvim_create_augroup("BufRead", { clear = true }),
-		command = 'silent !wezterm cli set-tab-title "' .. _get_folder_name() .. '"',
-		desc = "Set Folder Name",
-	})
+  -- vim.cmd('silent !wezterm cli set-tab-title "' .. _get_folder_name() .. '"')
+  -- create autocmd on insertEnter
+  vim.api.nvim_create_autocmd("BufRead", {
+    group = vim.api.nvim_create_augroup("BufRead", { clear = true }),
+    command = 'silent !wezterm cli set-tab-title "' .. _get_folder_name() .. '"',
+    desc = "Set Folder Name",
+  })
 end
 
 vim.api.nvim_create_autocmd("ExitPre", {
-	group = vim.api.nvim_create_augroup("Exit", { clear = true }),
-	command = "set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175,a:ver90",
-	desc = "Set cursor back to beam when leaving Neovim.",
+  group = vim.api.nvim_create_augroup("Exit", { clear = true }),
+  command = "set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175,a:ver90",
+  desc = "Set cursor back to beam when leaving Neovim.",
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = {
-		"NvimTree",
-		"lazy",
-		"mason",
-	},
-	callback = function()
-		require("ufo").detach()
-		vim.opt_local.foldenable = false
-	end,
+  pattern = {
+    "NvimTree",
+    "lazy",
+    "mason",
+  },
+  callback = function()
+    require("ufo").detach()
+    vim.opt_local.foldenable = false
+  end,
 })
 
 -- config for vim-visual-multi color selection

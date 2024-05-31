@@ -23,28 +23,6 @@ return {
     respect_buf_cwd = false,
     on_attach = "default",
     select_prompts = false,
-    -- view = {
-    --   adaptive_size = false,
-    --   centralize_selection = true,
-    --   width = 30,
-    --   side = "left",
-    --   preserve_window_proportions = false,
-    --   number = false,
-    --   relativenumber = false,
-    --   signcolumn = "yes",
-    --   float = {
-    --     enable = false,
-    --     quit_on_focus_loss = true,
-    --     open_win_config = {
-    --       relative = "editor",
-    --       border = "rounded",
-    --       width = 30,
-    --       height = 30,
-    --       row = 1,
-    --       col = 1,
-    --     },
-    --   },
-    -- },
     view = set_view,
     renderer = {
       add_trailing = false,
@@ -232,5 +210,9 @@ return {
   },
   config = function(_, opts)
     require("nvim-tree").setup(opts)
+    local api = require "nvim-tree.api"
+    api.events.subscribe(api.events.Event.FileCreated, function(file)
+      vim.cmd("edit " .. file.fname)
+    end)
   end,
 }
