@@ -111,4 +111,10 @@ vim.g.pcode_cmptag = false --https://github.com/quangnguyen30192/cmp-nvim-tags
 
 -- 0 = normal
 -- 1 = float
-vim.g.pcode_nvimtree_isfloat = 1
+vim.g.pcode_nvimtree_isfloat = 0
+
+vim.g.pcode_tailwindcolorizer = true
+vim.g.pcode_codeium = true
+vim.g.pcode_nvimufo = true
+vim.g.pcode_indentscope = true
+vim.g.pvode_minianimate = true

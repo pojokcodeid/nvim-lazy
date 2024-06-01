@@ -29,17 +29,6 @@ vim.api.nvim_create_autocmd("ExitPre", {
   desc = "Set cursor back to beam when leaving Neovim.",
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = {
-    "NvimTree",
-    "lazy",
-    "mason",
-  },
-  callback = function()
-    require("ufo").detach()
-    vim.opt_local.foldenable = false
-  end,
-})
 
 -- config for vim-visual-multi color selection
 vim.g.VM_Mono_hl = "DiffText"
