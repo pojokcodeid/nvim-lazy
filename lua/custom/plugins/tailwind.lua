@@ -17,7 +17,11 @@ return {
       local format_kinds = opts.formatting.format
       opts.formatting.format = function(entry, item)
         format_kinds(entry, item) -- add icons
-        return require("tailwindcss-colorizer-cmp").formatter(entry, item)
+        local lspkind = require("tailwindcss-colorizer-cmp").formatter(entry, item)
+        if lspkind.kind == "XX" then
+          lspkind.kind = " "
+        end
+        return lspkind
       end
     end,
   },
