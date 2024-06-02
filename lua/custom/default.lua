@@ -118,3 +118,5 @@ vim.g.pcode_codeium = true
 vim.g.pcode_nvimufo = true
 vim.g.pcode_indentscope = true
 vim.g.pvode_minianimate = true
+
+vim.g.pcode_disable_cmpdoc = false
