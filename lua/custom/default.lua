@@ -15,7 +15,7 @@
 -- solarized-osaka
 -- darcula-dark
 -- juliana
-vim.g.pcode_colorscheme = "juliana"
+vim.g.pcode_colorscheme = "darcula-dark"
 
 -- 0 =off   1= on
 vim.g.pcode_transparent_mode = 0
@@ -108,10 +108,10 @@ vim.g.pcode_coderunner = {
 -- 1 = float
 vim.g.pcode_nvimtree_isfloat = 0
 
-vim.g.pcode_tailwindcolorizer = true
-vim.g.pcode_codeium = true
-vim.g.pcode_nvimufo = true
-vim.g.pcode_indentscope = true
-vim.g.pvode_minianimate = true
+vim.g.pcode_tailwindcolorizer = false
+vim.g.pcode_codeium = false
+vim.g.pcode_nvimufo = false
+vim.g.pcode_indentscope = false
+vim.g.pvode_minianimate = false
 
 vim.g.pcode_disable_cmpdoc = false
