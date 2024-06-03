@@ -1,6 +1,3 @@
-local cmprg = vim.g.pcode_cmprg or false
-local cmpcalc = vim.g.pcode_cmpcalc or false
-local cmptag = vim.g.pcode_cmptag or false
 local lspghost_text = vim.g.pcode_lspghost_text or false
 local icons = require("user.icons").ui
 local cmp_documentation = {
@@ -15,9 +12,6 @@ return {
   { "hrsh7th/cmp-path", event = "InsertEnter", lazy = true },
   { "saadparwaiz1/cmp_luasnip", event = "InsertEnter", lazy = true },
   { "hrsh7th/cmp-nvim-lua", event = "InsertEnter", lazy = true },
-  { "lukas-reineke/cmp-rg", lazy = true, enabled = cmprg }, -- experimental
-  { "hrsh7th/cmp-calc", lazy = true, enabled = cmpcalc }, -- experimental
-  { "quangnguyen30192/cmp-nvim-tags", lazy = true, enabled = cmptag }, -- experimental
   {
     "hrsh7th/nvim-cmp",
     lazy = true,
@@ -82,9 +76,6 @@ return {
           { name = "buffer" },
           { name = "path" },
           { name = "nvim_lua" },
-          { name = "rg" }, -- experimental
-          { name = "calc" }, -- experimental
-          { name = "tags" }, --experimental
         },
         formatting = {
           fields = { "kind", "abbr", "menu" },
