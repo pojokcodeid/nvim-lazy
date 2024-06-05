@@ -51,6 +51,35 @@ return {
     cond = hide_in_width,
   },
 
+  codeium = {
+    function()
+      if vim.g.pcode_codeium then
+        local codeium = all_trim(vim.api.nvim_call_function("codeium#GetStatusString", {}))
+        if codeium then
+          -- return " " .. all_trim(codeium)
+          if codeium == "OFF" then
+            return icons.kind.CopilotOff
+          else
+            return icons.kind.Copilot
+          end
+        else
+          return ""
+        end
+      else
+        return ""
+      end
+    end,
+    color = function()
+      if vim.g.pcode_codeium then
+        local codeium = all_trim(vim.api.nvim_call_function("codeium#GetStatusString", {}))
+        return { fg = codeium == "OFF" and "#3E4452" or "#50fa7b" }
+      else
+        return {}
+      end
+    end,
+    cond = hide_in_width,
+  },
+
   -- Lsp info
   lsp_info = {
     function()

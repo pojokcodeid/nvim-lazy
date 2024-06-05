@@ -3,8 +3,9 @@ if vim.g.pcode_codeium then
   M.codeium = {
     "Exafunction/codeium.vim",
     enabled = true,
-    -- event = "BufEnter",
-    event = "InsertEnter",
+    version = "1.8.37",
+    event = "BufWinEnter",
+    -- event = "InsertEnter",
     config = function()
       vim.g.codeium_disable_bindings = 1
       -- Change '<C-g>' here to any keycode you like.

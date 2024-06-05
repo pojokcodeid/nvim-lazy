@@ -12,6 +12,7 @@ local data_ok, lspprogress = pcall(require, "lsp-progress")
 if data_ok then
   lsp_progress = lspprogress.progress
 end
+local codeium = component.codeium
 
 M.filetype = {
   "TelescopePrompt",
@@ -46,7 +47,7 @@ M.rounded = function(colorscheme)
       },
       lualine_b = { get_branch },
       lualine_c = { diff, lsp_info, lsp_progress },
-      lualine_x = { diagnostics, spaces, treesitter, "filetype" },
+      lualine_x = { diagnostics, spaces, codeium, treesitter, "filetype" },
       lualine_y = { "progress" },
       lualine_z = {
         { "location", separator = { right = " " }, padding = 1 },
@@ -81,7 +82,7 @@ M.roundedall = function(colorscheme)
       },
       lualine_b = { get_branch },
       lualine_c = { diff, lsp_info, lsp_progress },
-      lualine_x = { diagnostics, spaces, treesitter, "filetype" },
+      lualine_x = { diagnostics, spaces, codeium, treesitter, "filetype" },
       lualine_y = { "progress" },
       lualine_z = {
         { "location", separator = { right = " ", left = "" }, padding = 1 },
@@ -116,7 +117,7 @@ M.triangle = function(colorscheme)
       },
       lualine_b = { get_branch },
       lualine_c = { diff, lsp_info, lsp_progress },
-      lualine_x = { diagnostics, spaces, treesitter, "filetype" },
+      lualine_x = { diagnostics, spaces, codeium, treesitter, "filetype" },
       lualine_y = { "progress" },
       lualine_z = {
         { "location", separator = { right = " ", left = "" }, padding = 1 },
@@ -151,7 +152,7 @@ M.parallelogram = function(colorscheme)
       },
       lualine_b = { get_branch },
       lualine_c = { diff, lsp_info, lsp_progress },
-      lualine_x = { diagnostics, spaces, treesitter, "filetype" },
+      lualine_x = { diagnostics, spaces, codeium, treesitter, "filetype" },
       lualine_y = { "progress" },
       lualine_z = {
         { "location", separator = { right = " ", left = "" }, padding = 1 },
@@ -186,7 +187,7 @@ M.square = function(colorscheme)
       },
       lualine_b = { get_branch },
       lualine_c = { diff, lsp_info, lsp_progress },
-      lualine_x = { diagnostics, spaces, treesitter, "filetype" },
+      lualine_x = { diagnostics, spaces, codeium, treesitter, "filetype" },
       lualine_y = { "progress" },
       lualine_z = {
         { "location", separator = { right = " " }, padding = 1 },

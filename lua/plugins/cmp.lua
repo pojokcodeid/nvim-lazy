@@ -86,6 +86,7 @@ return {
               luasnip = "(Snippet)",
               buffer = "(Buffer)",
               path = "(Path)",
+              codeium = "(Codeium)",
             })[entry.source.name]
             return vim_item
           end,
