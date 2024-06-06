@@ -121,3 +121,4 @@ vim.g.pcode_indentscope = true
 vim.g.pvode_minianimate = false
 
 vim.g.pcode_disable_cmpdoc = false
+vim.g.pcode_adaptive_color_icon = true

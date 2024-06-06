@@ -9,7 +9,9 @@ if vim.g.pcode_codeium_nvim then
           "Exafunction/codeium.nvim",
           cmd = "Codeium",
           build = ":Codeium Auth",
-          opts = {},
+          opts = {
+            enable_chat = true,
+          },
         },
       },
       --@param opts cmp.ConfigSchema
