@@ -6,8 +6,8 @@ if vim.g.vscode then
   VSCodeNotify = vim.fn.VSCodeNotify
   VSCodeCall = vim.fn.VSCodeCall
 
-  require "vscode.functions"
-  require "vscode.mappings"
+  require "_vscode.functions"
+  require "_vscode.mappings"
 else
   -- config neovim
   require "core"
