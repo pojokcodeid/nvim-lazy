@@ -56,7 +56,11 @@ return {
       if vim.g.pcode_codeium then
         local codeium = all_trim(vim.api.nvim_call_function("codeium#GetStatusString", {}))
         if codeium then
-          return icons.kind.Codeium
+          if codeium == "OFF" then
+            return icons.kind.CopilotOff
+          else
+            return icons.kind.Copilot
+          end
         else
           return ""
         end
