@@ -6,7 +6,6 @@
 -- sonokai_andromeda,sonokai_shusia,sonokai_maia,sonokai_espresso
 -- material, material_deepocean, material_palenight, material_lighter, material_darker
 -- onedark, onedark_vivid, onedark_dark
--- lunar
 -- nord
 -- catppuccin, catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 -- dracula
