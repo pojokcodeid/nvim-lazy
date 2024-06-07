@@ -4,11 +4,11 @@ vim.cmd [[
     autocmd!
     autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
     autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200})
-    autocmd BufWinEnter * :set formatoptions=croql
-    autocmd BufWinEnter * :set textwidth=80
-    autocmd BufWinEnter * :set colorcolumn=+1
-    autocmd BufWinEnter * :set nolazyredraw
-    autocmd BufWinEnter * :hi ColorColumn guibg=#1B243000 ctermbg=246
+    " autocmd BufWinEnter * :set formatoptions=croql
+    " autocmd BufWinEnter * :set textwidth=80
+    " autocmd BufWinEnter * :set colorcolumn=+1
+    " autocmd BufWinEnter * :set nolazyredraw
+    " autocmd BufWinEnter * :hi ColorColumn guibg=#1B243000 ctermbg=246
     autocmd FileType qf set nobuflisted
   augroup end
 
