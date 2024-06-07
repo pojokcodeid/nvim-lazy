@@ -277,7 +277,9 @@ M.mappings = {
   },
 }
 
-table.insert(M.mappings, { ["c"] = { ":call codeium#Chat()<cr>", "󰭹 Codeium Chat" } })
+if vim.g.pcode_codeium then
+  table.insert(M.mappings, { ["c"] = { ":call codeium#Chat()<cr>", "󰭹 Codeium Chat" } })
+end
 
 M.mappings2 = {
   ["/"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", " 󰆈 Commet Block" },
