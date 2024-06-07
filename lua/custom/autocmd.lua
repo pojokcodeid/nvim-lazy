@@ -29,7 +29,6 @@ vim.api.nvim_create_autocmd("ExitPre", {
   desc = "Set cursor back to beam when leaving Neovim.",
 })
 
-
 -- config for vim-visual-multi color selection
 vim.g.VM_Mono_hl = "DiffText"
 vim.g.VM_Extend_hl = "DiffAdd"
@@ -53,4 +52,16 @@ vim.g.VM_Insert_hl = "DiffChange"
 -- 			tree_api.open()
 -- 		end
 -- 	end,
+-- })
+
+-- Mengatur colum color max 80 caracter
+-- vim.api.nvim_create_autocmd("BufWinEnter", {
+--   pattern = "*",
+--   callback = function()
+--     vim.opt.formatoptions = "croql"
+--     vim.opt.textwidth = 80
+--     vim.opt.colorcolumn = "+1"
+--     vim.opt.lazyredraw = false
+--     vim.cmd "hi ColorColumn guibg=#1B2430 ctermbg=246"
+--   end,
 -- })
