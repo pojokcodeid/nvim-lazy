@@ -119,7 +119,7 @@ vim.g.pcode_nvimufo = false
 -- https://github.com/echasnovski/mini.indentscope
 vim.g.pcode_indentscope = true
 -- https://github.com/echasnovski/mini.animate
-vim.g.pvode_minianimate = false
+vim.g.pcode_minianimate = false
 
 vim.g.pcode_disable_cmpdoc = false
 vim.g.pcode_adaptive_color_icon = true
