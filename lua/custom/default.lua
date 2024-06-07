@@ -41,6 +41,7 @@ vim.g.pcode_show_mode = 3
 
 -- 1 ( format jalan)  0 (fromat off)
 vim.g.pcode_format_on_save = 1
+vim.g.pcode_format_timeout_ms = 5000
 
 -- ini hanya untuk lsp yg tidak support masson
 -- untuk referesi support language kunjungi link dibawah
