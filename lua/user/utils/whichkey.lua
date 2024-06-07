@@ -126,7 +126,8 @@ M.mappings = {
     "<cmd>Telescope find_files <CR>",
     " Find files",
   },
-  ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", " Find Text" },
+  -- ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", " Find Text" },
+  ["F"] = { "<cmd>Telescope live_grep<cr>", " Find Text" },
   ["/"] = {
     function()
       require("Comment.api").toggle.linewise.current()

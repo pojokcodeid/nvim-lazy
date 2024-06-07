@@ -123,3 +123,12 @@ vim.g.pvode_minianimate = false
 
 vim.g.pcode_disable_cmpdoc = false
 vim.g.pcode_adaptive_color_icon = true
+vim.g.pcode_columnline = true
+
+---@alias telescope_themes
+---| "cursor"   # see `telescope.themes.get_cursor()`
+---| "dropdown" # see `telescope.themes.get_dropdown()`
+---| "ivy"      # see `telescope.themes.get_ivy()`
+---| "center"   # retain the default telescope theme
+vim.g.pcode_telscope_theme_find_file = "center"
+vim.g.pcode_telscope_theme_live_grep = "dropdown"
