@@ -18,6 +18,21 @@ if (color == "darcula-dark") and true or false then
           local colors = require("darcula").colors()
           local hi = vim.api.nvim_set_hl
           hi(0, "@property.json", { fg = colors.lavender })
+          -- telescope
+          hi(0, "TelescopePromptBorder", { fg = colors.medium_gray })
+          hi(0, "TelescopeResultsBorder", { fg = colors.medium_gray })
+          hi(0, "TelescopePreviewBorder", { fg = colors.medium_gray })
+          hi(0, "TelescopeSelection", { bg = colors.dark_charcoal_gray })
+          hi(0, "TelescopeMultiSelection", { bg = colors.dark_charcoal_gray })
+          hi(0, "TelescopeNormal", { bg = colors.dark })
+          hi(0, "TelescopeMatching", { fg = colors.olive_green })
+          hi(0, "TelescopePromptPrefix", { fg = colors.red })
+          hi(0, "TelescopeResultsDiffDelete", { fg = colors.red })
+          hi(0, "TelescopeResultsDiffChange", { fg = colors.bright_cyan })
+          hi(0, "TelescopeResultsDiffAdd", { fg = colors.olive_green })
+          hi(0, "TelescopePromptNormal", { bg = color.dark, fg = color.grey })
+          hi(0, "TelescopePromptPrefix", { bg = color.dark, fg = color.red })
+          hi(0, "TelescopeResultsTitle", { bg = colors.olive_green, fg = colors.very_dark_gray })
         end,
       })
     end,
