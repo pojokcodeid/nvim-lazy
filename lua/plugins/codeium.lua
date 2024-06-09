@@ -3,8 +3,7 @@ if vim.g.pcode_codeium then
   M.codeium = {
     "Exafunction/codeium.vim",
     enabled = true,
-    -- version = "1.8.37",
-    commit = "289eb724e5d6fab2263e94a1ad6e54afebefafb2",
+    version = "1.8.37",
     event = "BufWinEnter",
     -- event = "InsertEnter",
     config = function()
