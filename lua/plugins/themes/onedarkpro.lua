@@ -118,6 +118,7 @@ if substring(tostring(color), "onedark") and true or false then
           Normal = { fg = "${fg}", bg = is_transparent and "NONE" or "${bg}" },
           NormalNC = { fg = "${fg}", bg = is_transparent and "NONE" or "${bg}" },
           FloatBorder = { fg = "${fg}", bg = is_transparent and "NONE" or "${bg}" },
+          NonText = { bg = "NONE", fg = "#3E4450" },
         },
       }
     end,
