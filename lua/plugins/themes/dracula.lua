@@ -20,6 +20,7 @@ if (color == "dracula") and true or false then
           ["@keyword"] = { fg = colors.pink, italic = true },
           ["@keyword.function"] = { fg = colors.cyan, italic = true },
           ["@function"] = { fg = colors.green, italic = true },
+          ["@tag.attribute"] = { fg = colors.green, italic = true },
           ["@tag.builtin.javascript"] = { fg = colors.pink },
           ["@tag.delimiter.javascript"] = { fg = colors.fg },
           ["@type.javascript"] = { fg = colors.fg },

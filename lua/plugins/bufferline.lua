@@ -81,6 +81,13 @@ return {
             text_align = "left",
             padding = 1,
           },
+          {
+            filetype = "dbui",
+            text = "",
+            highlight = "Directory",
+            text_align = "left",
+            padding = 1,
+          },
         },
         show_buffer_icons = true,
         show_buffer_close_icons = true,
