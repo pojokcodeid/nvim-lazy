@@ -31,6 +31,7 @@ M.filetype = {
   "lspinfo",
   "mysql",
   "dbui",
+  "dbout",
 }
 
 M.rounded = function(colorscheme)
