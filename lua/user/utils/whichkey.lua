@@ -282,6 +282,29 @@ if vim.g.pcode_codeium then
   table.insert(M.mappings, { ["c"] = { ":call codeium#Chat()<cr>", "󰭹 Codeium Chat" } })
 end
 
+if vim.g.pcode_database then
+  table.insert(M.mappings, {
+    ["D"] = {
+      name = " 󰆼 DBUI",
+      d = { "<cmd>NvimTreeClose<cr><cmd>tabnew<cr><bar><bar><cmd>DBUI<cr>", "󰆼 DBUI Toggle" },
+      q = {
+        "<cmd>DBUIClose<cr><cmd>BufferLineCloseOthers<cr><cmd>bd!<cr><cmd>lua require('user.utils.bufferline').bufremove()<cr><cmd>Alpha<cr>",
+        "󰅙 DBUI Close",
+      },
+    },
+  })
+  -- table.insert(
+  --   M.mappings,
+  --   { ["D"] = { "<cmd>NvimTreeClose<cr><cmd>tabnew<cr><bar><bar><cmd>DBUI<cr>", "󰆼 DBUI Toggle" } }
+  -- )
+  -- table.insert(M.mappings, {
+  --   ["x"] = {
+  --     "<cmd>DBUIClose<cr><cmd>lua require('user.utils.bufferline').bufremove()<cr><cmd>Alpha<cr>",
+  --     "󰆼 DBUI Toggle",
+  --   },
+  -- })
+end
+
 M.mappings2 = {
   ["/"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", " 󰆈 Commet Block" },
 }

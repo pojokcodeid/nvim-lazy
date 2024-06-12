@@ -6,7 +6,7 @@ elseif substring(tostring(colorscheme), "material") then
   colorscheme = "material"
 end
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
-  return
+local ok, _ = pcall(vim.cmd.colorscheme, colorscheme)
+if not ok then
+  require "notify"("Colorscheme '" .. colorscheme .. "' not found!", "error")
 end

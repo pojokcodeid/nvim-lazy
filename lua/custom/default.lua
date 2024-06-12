@@ -133,3 +133,5 @@ vim.g.pcode_columnline = true
 ---| "center"   # retain the default telescope theme
 vim.g.pcode_telescope_theme_find_file = "center"
 vim.g.pcode_telescope_theme_live_grep = "dropdown"
+-- https://github.com/kristijanhusak/vim-dadbod-ui
+vim.g.pcode_database = true
