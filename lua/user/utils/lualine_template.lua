@@ -29,6 +29,8 @@ M.filetype = {
   "startuptime",
   "crunner",
   "lspinfo",
+  "mysql",
+  "dbui",
 }
 
 M.rounded = function(colorscheme)
