@@ -135,3 +135,8 @@ vim.g.pcode_telescope_theme_find_file = "center"
 vim.g.pcode_telescope_theme_live_grep = "dropdown"
 -- https://github.com/kristijanhusak/vim-dadbod-ui
 vim.g.pcode_database = false
+
+-- https://github.com/nvim-neotest/neotest-jest
+vim.g.pcode_jest = true
+vim.g.pcode_jest_command = "npm test -- "
+vim.g.pcode_jest_config = "jest.config.mjs"

@@ -1,5 +1,5 @@
 -- autocmd BufWinEnter * :set formatoptions-=cro
-vim.cmd [[
+vim.cmd([[
   augroup _general_settings
     autocmd!
     autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
@@ -56,12 +56,12 @@ vim.cmd [[
     autocmd!
     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
   augroup END
-]]
+]])
 
 -- for fix error last close buffer
 vim.api.nvim_create_autocmd({ "QuitPre" }, {
   callback = function()
-    vim.cmd "NvimTreeClose"
+    vim.cmd("NvimTreeClose")
   end,
 })
 
@@ -74,7 +74,7 @@ autocmd("VimEnter", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "help", "alpha", "dashboard", "NvimTree", "Trouble", "lazy", "mason" },
+  pattern = { "help", "alpha", "dashboard", "NvimTree", "Trouble", "lazy", "mason", "neotest-summary" },
   callback = function()
     vim.b.miniindentscope_disable = true
   end,
