@@ -64,3 +64,14 @@ vim.opt.runtimepath:remove "/usr/share/vim/vimfiles" -- separate vim plugins fro
 -- 	"r:hor50-Cursor/lCursor-blinkwait100-blinkon100-blinkoff100",
 -- }
 vim.loader.enable()
+
+-- Disable statusline in dashboard
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "dbout", "dbui" },
+  callback = function()
+    local opt = vim.opt
+    opt.number = false -- Print line number
+    opt.preserveindent = false -- Preserve indent structure as much as possible
+    opt.relativenumber = false
+  end,
+})
