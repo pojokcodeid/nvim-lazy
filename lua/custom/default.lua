@@ -140,3 +140,4 @@ pcode.database = false
 pcode.jest = true
 pcode.jest_command = "npm test -- "
 pcode.jest_config = "jest.config.mjs"
+pcode.refactoring = false
