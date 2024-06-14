@@ -25,7 +25,7 @@ _G.extract = function(text)
 end
 
 _G.all_trim = function(s)
-  return s:match "^%s*(.-)%s*$"
+  return s:match("^%s*(.-)%s*$")
 end
 
 return {}

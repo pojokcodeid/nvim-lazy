@@ -8,7 +8,7 @@ local lspconfig = require("lspconfig")
 -- local servers = { "jsonls", "sumneko_lua","html","cssls","tsserver"}
 -- local servers = { "jdtls", "yamlls" }
 local servers = {}
-local installer = vim.g.pcode_lsp_installer or {}
+local installer = pcode.lsp_installer or {}
 for _, client in pairs(installer) do
 	table.insert(servers, client)
 end

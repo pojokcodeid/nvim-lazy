@@ -278,11 +278,11 @@ M.mappings = {
   },
 }
 
-if vim.g.pcode_codeium then
+if pcode.codeium then
   table.insert(M.mappings, { ["c"] = { ":call codeium#Chat()<cr>", "󰭹 Codeium Chat" } })
 end
 
-if vim.g.pcode_database then
+if pcode.database then
   table.insert(M.mappings, {
     ["D"] = {
       name = " 󰆼 DBUI",

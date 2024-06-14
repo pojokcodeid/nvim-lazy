@@ -95,7 +95,7 @@ return {
 			nowait = true, -- use `nowait` when creating keymaps
 		}
 
-		local wkey = vim.g.pcode_whichkey or {}
+		local wkey = pcode.whichkey or {}
 		local which_key = require("which-key")
 		which_key.setup(opts)
 		which_key.register(require("user.utils.whichkey").mappings, opt)

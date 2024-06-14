@@ -10,15 +10,15 @@ return {
     local live_grep = {
       only_sort_text = true,
     }
-    if vim.g.pcode_telescope_theme_find_file and vim.g.pcode_telescope_theme_find_file ~= "center" then
+    if pcode.telescope_theme_find_file and pcode.telescope_theme_find_file ~= "center" then
       find_files = {
-        theme = vim.g.pcode_telescope_theme_find_file,
+        theme = pcode.telescope_theme_find_file,
         hidden = true,
       }
     end
-    if vim.g.pcode_telescope_theme_live_grep and vim.g.pcode_telescope_theme_live_grep ~= "center" then
+    if pcode.telescope_theme_live_grep and pcode.telescope_theme_live_grep ~= "center" then
       live_grep = {
-        theme = vim.g.pcode_telescope_theme_live_grep,
+        theme = pcode.telescope_theme_live_grep,
         only_sort_text = true,
       }
     end

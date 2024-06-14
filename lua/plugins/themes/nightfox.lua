@@ -1,6 +1,6 @@
 local nightfox = false
-local color = vim.g.pcode_colorscheme or "gruvbox-baby"
-local transparent_mode = vim.g.pcode_transparent_mode or 0
+local color = pcode.colorscheme or "gruvbox-baby"
+local transparent_mode = pcode.transparent_mode or 0
 switch(color, {
   ["nightfox"] = function()
     nightfox = true

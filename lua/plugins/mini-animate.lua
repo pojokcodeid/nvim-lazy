@@ -1,10 +1,10 @@
-if not vim.g.neovide and vim.g.pcode_minianimate and true or false then
+if not vim.g.neovide and pcode.minianimate and true or false then
   return {
     -- animations
     {
       "echasnovski/mini.animate",
       event = "BufRead",
-      enabled = not vim.g.neovide and vim.g.pcode_minianimate and true or false,
+      enabled = not vim.g.neovide and pcode.minianimate and true or false,
       opts = function()
         -- don't use animate when scrolling with the mouse
         local mouse_scrolled = false

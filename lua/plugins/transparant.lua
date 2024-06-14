@@ -1,7 +1,7 @@
 local transparent = false
 local clear_lualine = false
 
-local transparent_mode = vim.g.pcode_transparent_mode or 0
+local transparent_mode = pcode.transparent_mode or 0
 if transparent_mode ~= nil then
   if transparent_mode == 1 then
     transparent = true

@@ -1,5 +1,5 @@
 local M = {}
-if vim.g.pcode_tailwindcolorizer then
+if pcode.tailwindcolorizer then
   M.tailwind = {
     {
       "NvChad/nvim-colorizer.lua",

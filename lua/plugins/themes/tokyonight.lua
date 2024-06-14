@@ -1,5 +1,5 @@
-local color = vim.g.pcode_colorscheme or "gruvbox-baby"
-local transparent_mode = vim.g.pcode_transparent_mode or 0
+local color = pcode.colorscheme or "gruvbox-baby"
+local transparent_mode = pcode.transparent_mode or 0
 
 if substring(tostring(color), "tokyonight") and true or false then
   return {
@@ -14,7 +14,7 @@ if substring(tostring(color), "tokyonight") and true or false then
       local transp = false
       local sidebar = "normal" --"dark , transparent, normal"
       local hilight = "#292e42"
-      local tras = vim.g.pcode_transparent_mode or 0
+      local tras = pcode.transparent_mode or 0
       if tras == 1 then
         transp = true
         sidebar = "transparent"

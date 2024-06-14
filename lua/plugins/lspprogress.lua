@@ -20,13 +20,13 @@ end
 
 local fidget = true
 local lualine = false
-if vim.g.pcode_progress == 1 then
+if pcode.progress == 1 then
   fidget = false
   lualine = true
-elseif vim.g.pcode_progress == 2 then
+elseif pcode.progress == 2 then
   fidget = true
   lualine = false
-elseif vim.g.pcode_progress == 0 then
+elseif pcode.progress == 0 then
   fidget = false
   lualine = false
 else

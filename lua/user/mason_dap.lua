@@ -1,5 +1,5 @@
 local sources = {}
-local dap_data = vim.g.pcode_dap_ensure_installed or {}
+local dap_data = pcode.dap_ensure_installed or {}
 for _, nullls in pairs(dap_data) do
 	table.insert(sources, nullls)
 end

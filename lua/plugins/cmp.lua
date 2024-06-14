@@ -1,4 +1,4 @@
-local lspghost_text = vim.g.pcode_lspghost_text or false
+local lspghost_text = pcode.lspghost_text or false
 local icons = require("user.icons").ui
 local cmp_documentation = {
   border = icons.Border,
@@ -100,7 +100,7 @@ return {
             winhighlight = "Normal:bg,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
             scrollbar = true,
           },
-          documentation = vim.g.pcode_disable_cmpdoc and cmp.config.disable or cmp_documentation,
+          documentation = pcode.disable_cmpdoc and cmp.config.disable or cmp_documentation,
         },
         experimental = {
           ghost_text = lspghost_text,

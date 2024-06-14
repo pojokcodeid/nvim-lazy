@@ -1,5 +1,5 @@
-local color = vim.g.pcode_colorscheme or "gruvbox-baby"
-local transparent_mode = vim.g.pcode_transparent_mode or 0
+local color = pcode.colorscheme or "gruvbox-baby"
+local transparent_mode = pcode.transparent_mode or 0
 
 if substring(tostring(color), "catppuccin") and true or false then
   return {

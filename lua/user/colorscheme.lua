@@ -1,4 +1,4 @@
-local colorscheme = vim.g.pcode_colorscheme or "gruvbox-baby"
+local colorscheme = pcode.colorscheme or "gruvbox-baby"
 
 if substring(tostring(colorscheme), "sonokai") then
   colorscheme = "sonokai"

@@ -1,11 +1,12 @@
-require "custom.default"
-require "custom.dashboard"
-require "config.lazy_lib"
-require "user.colorscheme"
-require "user.keymaps"
-require "core.neovide"
-require "custom.autocmd"
-require "custom.keymaps"
+_G.pcode = _G.pcode or {}
+require("custom.default")
+require("custom.dashboard")
+require("config.lazy_lib")
+require("user.colorscheme")
+require("user.keymaps")
+require("core.neovide")
+require("custom.autocmd")
+require("custom.keymaps")
 -- require("user.snip")
 -- require("user.nvim-tree")
 -- require("user.options")

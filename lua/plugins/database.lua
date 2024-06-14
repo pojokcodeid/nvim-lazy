@@ -1,5 +1,5 @@
 local M = {}
-if vim.g.pcode_database then
+if pcode.database then
   return {
     "kristijanhusak/vim-dadbod-ui",
     dependencies = {

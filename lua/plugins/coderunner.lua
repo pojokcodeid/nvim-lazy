@@ -10,7 +10,7 @@ local rfile = {
 	javascript = 'node "$dir/$fileName"',
 }
 
-local runscript = vim.g.pcode_coderunner or {}
+local runscript = pcode.coderunner or {}
 rfile = vim.tbl_deep_extend("force", runscript, rfile)
 return {
 	"CRAG666/code_runner.nvim",

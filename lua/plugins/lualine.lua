@@ -9,7 +9,7 @@ return {
       -- check config for theme
       local set_theme = "auto"
       local bubbles_theme
-      local color = vim.g.pcode_colorscheme
+      local color = pcode.colorscheme
       switch(color, {
         ["tokyonight"] = function()
           set_theme = "auto"
@@ -44,7 +44,7 @@ return {
       end
 
       local gettheme = require "user.utils.lualine_template"
-      local theme_option = vim.g.pcode_lualinetheme or "rounded"
+      local theme_option = pcode.lualinetheme or "rounded"
       local theme = gettheme.rounded(bubbles_theme)
       if theme_option == "rounded" then
         theme = gettheme.rounded(bubbles_theme)

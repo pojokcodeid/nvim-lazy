@@ -5,7 +5,7 @@ end
 local transp = false
 local sidebar = "normal" --"dark , transparent, normal"
 local hilight = "#292e42"
-local tras = vim.g.pcode_transparent_mode or 0
+local tras = pcode.transparent_mode or 0
 if tras == 1 then
 	transp = true
 	sidebar = "transparent"

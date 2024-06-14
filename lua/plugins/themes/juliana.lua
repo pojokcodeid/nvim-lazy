@@ -1,4 +1,4 @@
-local color = vim.g.pcode_colorscheme or "gruvbox-baby"
+local color = pcode.colorscheme or "gruvbox-baby"
 
 if (color == "juliana") and true or false then
   return {

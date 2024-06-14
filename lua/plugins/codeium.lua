@@ -1,5 +1,5 @@
 local M = {}
-if vim.g.pcode_codeium then
+if pcode.codeium then
   M.codeium = {
     "Exafunction/codeium.vim",
     enabled = true,

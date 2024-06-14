@@ -1,6 +1,6 @@
 local M = {}
-local config_file = vim.g.pcode_jest_config or "jest.config.ts"
-if vim.g.pcode_jest then
+local config_file = pcode.jest_config or "jest.config.ts"
+if pcode.jest then
   M = {
     {
       "nvim-neotest/neotest",
@@ -12,7 +12,7 @@ if vim.g.pcode_jest then
       opts = {
         adapters = {
           ["neotest-jest"] = {
-            jestCommand = vim.g.pcode_jest_command or "npm test -- ",
+            jestCommand = pcode.jest_command or "npm test -- ",
             jestConfigFile = function()
               local file = vim.fn.expand("%:p")
               if string.find(file, "/packages/") then

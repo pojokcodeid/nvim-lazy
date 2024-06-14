@@ -1,5 +1,5 @@
 local M = {}
-if vim.g.pcode_columnline then
+if pcode.columnline then
   M = {
     {
       "lukas-reineke/virt-column.nvim",

@@ -1,4 +1,4 @@
-if vim.g.pcode_codeium_nvim then
+if pcode.codeium_nvim then
   return {
     -- codeium cmp source
     {

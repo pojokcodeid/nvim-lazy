@@ -14,10 +14,10 @@
 -- solarized-osaka
 -- darcula-dark
 -- juliana
-vim.g.pcode_colorscheme = "darcula-dark"
+pcode.colorscheme = "darcula-dark"
 
 -- 0 =off   1= on
-vim.g.pcode_transparent_mode = 0
+pcode.transparent_mode = 0
 -- rounded
 -- roundedall
 -- square
@@ -25,40 +25,40 @@ vim.g.pcode_transparent_mode = 0
 -- parallelogram
 -- transparent
 -- default
-vim.g.pcode_lualinetheme = "roundedall"
+pcode.lualinetheme = "roundedall"
 -- 0 disable progress
 -- 1 lualine lsp progress
 -- 2 fidget progress
-vim.g.pcode_progress = 1
+pcode.progress = 1
 
 -- 0 = on full text mode info,
 -- 1 = on initial mode + logo
 -- 2 = logo only
 -- 3 = initial only
 -- 4 = off
-vim.g.pcode_show_mode = 3
+pcode.show_mode = 3
 
 -- 1 ( format jalan)  0 (fromat off)
-vim.g.pcode_format_on_save = 1
-vim.g.pcode_format_timeout_ms = 5000
+pcode.format_on_save = 1
+pcode.format_timeout_ms = 5000
 
 -- ini hanya untuk lsp yg tidak support masson
 -- untuk referesi support language kunjungi link dibawah
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-vim.g.pcode_lsp_installer = {
+pcode.lsp_installer = {
   -- "yamlls",
   -- tambahkan di bawah sini setelah melakukan :masoninstall
 }
 
 -- use for lsp diagnostics virtual text
-vim.g.pcode_lsp_virtualtext = true
+pcode.lsp_virtualtext = true
 
 -- use for lsp ghost text config
-vim.g.pcode_lspghost_text = false
+pcode.lspghost_text = false
 
 -- untuk referesi support language kunjungi link dibawah
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-vim.g.pcode_mason_ensure_installed = { -- sebelumnya register_lsp
+pcode.mason_ensure_installed = { -- sebelumnya register_lsp
   -- "yamlls",
   -- "intelephense",
   -- "marksman",
@@ -68,24 +68,24 @@ vim.g.pcode_mason_ensure_installed = { -- sebelumnya register_lsp
   -- "kotlin_language_server",
   -- tambahkan di bawah sini setelah melakukan :masoninstall
 }
-vim.g.pcode_unregister_lsp = {
+pcode.unregister_lsp = {
   "jdtls", -- tambahkan di bawah ini
 }
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
-vim.g.pcode_null_ls_ensure_installed = {
+pcode.null_ls_ensure_installed = {
   "stylua",
 }
 
 -- dap instal hanya support linux dan mac
 -- https://github.com/jay-babu/mason-nvim-dap.nvim/blob/main/lua/mason-nvim-dap/mappings/source.lua
 -- atau gunakan :MasonInstall
-vim.g.pcode_dap_ensure_installed = {
+pcode.dap_ensure_installed = {
   -- "python",
 }
 
 -- https://github.com/folke/which-key.nvim
-vim.g.pcode_whichkey = {
+pcode.whichkey = {
   -- contoh penambahan
   ["k"] = {
     name = "Example",
@@ -99,44 +99,44 @@ vim.g.pcode_whichkey = {
 
 -- https://github.com/CRAG666/code_runner.nvim
 -- ready default java, python, typescript, javascript, rust, cpp, scss
-vim.g.pcode_coderunner = {
+pcode.coderunner = {
   go = "go run $fileName",
   html = "live-server $dir/$fileName",
 }
 
 -- 0 = normal
 -- 1 = float
-vim.g.pcode_nvimtree_isfloat = 0
+pcode.nvimtree_isfloat = 0
 
-vim.g.pcode_tailwindcolorizer = false
+pcode.tailwindcolorizer = false
 -- https://github.com/Exafunction/codeium.vim
-vim.g.pcode_codeium = false
+pcode.codeium = false
 -- https://github.com/Exafunction/codeium.nvim
-vim.g.pcode_codeium_nvim = true
+pcode.codeium_nvim = true
 -- https://github.com/kevinhwang91/nvim-ufo
-vim.g.pcode_nvimufo = false
+pcode.nvimufo = false
 -- https://github.com/echasnovski/mini.indentscope
-vim.g.pcode_indentscope = true
+pcode.indentscope = true
 -- https://github.com/echasnovski/mini.animate
-vim.g.pcode_minianimate = false
+pcode.minianimate = false
 
-vim.g.pcode_disable_cmpdoc = false
+pcode.disable_cmpdoc = false
 -- https://github.com/rachartier/tiny-devicons-auto-colors.nvim
-vim.g.pcode_adaptive_color_icon = true
+pcode.adaptive_color_icon = true
 -- https://github.com/lukas-reineke/virt-column.nvim
-vim.g.pcode_columnline = true
+pcode.columnline = true
 
 ---@alias telescope_themes
 ---| "cursor"   # see `telescope.themes.get_cursor()`
 ---| "dropdown" # see `telescope.themes.get_dropdown()`
 ---| "ivy"      # see `telescope.themes.get_ivy()`
 ---| "center"   # retain the default telescope theme
-vim.g.pcode_telescope_theme_find_file = "center"
-vim.g.pcode_telescope_theme_live_grep = "dropdown"
+pcode.telescope_theme_find_file = "center"
+pcode.telescope_theme_live_grep = "dropdown"
 -- https://github.com/kristijanhusak/vim-dadbod-ui
-vim.g.pcode_database = false
+pcode.database = false
 
 -- https://github.com/nvim-neotest/neotest-jest
-vim.g.pcode_jest = true
-vim.g.pcode_jest_command = "npm test -- "
-vim.g.pcode_jest_config = "jest.config.mjs"
+pcode.jest = true
+pcode.jest_command = "npm test -- "
+pcode.jest_config = "jest.config.mjs"

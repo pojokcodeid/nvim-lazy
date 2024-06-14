@@ -12,7 +12,7 @@ local icons = vim.g.pcode_icons.folding
 
 local M = {}
 
-if vim.g.pcode_nvimufo then
+if pcode.nvimufo then
   M.ufo = {
     "kevinhwang91/nvim-ufo",
     dependencies = {

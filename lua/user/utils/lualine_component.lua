@@ -53,7 +53,7 @@ return {
 
   codeium = {
     function()
-      if vim.g.pcode_codeium then
+      if pcode.codeium then
         local codeium = all_trim(vim.api.nvim_call_function("codeium#GetStatusString", {}))
         if codeium then
           if codeium == "OFF" then
@@ -69,7 +69,7 @@ return {
       end
     end,
     color = function()
-      if vim.g.pcode_codeium then
+      if pcode.codeium then
         local codeium = all_trim(vim.api.nvim_call_function("codeium#GetStatusString", {}))
         return { fg = codeium == "OFF" and "#3E4452" or "#50fa7b" }
       else
@@ -164,13 +164,13 @@ return {
     padding = 1,
     separator = { left = " " },
     fmt = function(str)
-      if vim.g.pcode_show_mode == 1 then
+      if pcode.show_mode == 1 then
         return icons.ui.Neovim .. " " .. (mode_map[str] or str)
-      elseif vim.g.pcode_show_mode == 2 then
+      elseif pcode.show_mode == 2 then
         return icons.ui.Neovim
-      elseif vim.g.pcode_show_mode == 3 then
+      elseif pcode.show_mode == 3 then
         return (mode_map[str] or str)
-      elseif vim.g.pcode_show_mode == 4 then
+      elseif pcode.show_mode == 4 then
         return nil
       else
         return icons.ui.Neovim .. " " .. str
@@ -182,13 +182,13 @@ return {
     padding = 1,
     separator = { left = " ", right = "" },
     fmt = function(str)
-      if vim.g.pcode_show_mode == 1 then
+      if pcode.show_mode == 1 then
         return icons.ui.Neovim .. " " .. (mode_map[str] or str)
-      elseif vim.g.pcode_show_mode == 2 then
+      elseif pcode.show_mode == 2 then
         return icons.ui.Neovim
-      elseif vim.g.pcode_show_mode == 3 then
+      elseif pcode.show_mode == 3 then
         return (mode_map[str] or str)
-      elseif vim.g.pcode_show_mode == 4 then
+      elseif pcode.show_mode == 4 then
         return nil
       else
         return icons.ui.Neovim .. " " .. str
@@ -200,13 +200,13 @@ return {
     padding = 1,
     separator = { left = " ", right = "" },
     fmt = function(str)
-      if vim.g.pcode_show_mode == 1 then
+      if pcode.show_mode == 1 then
         return icons.ui.Neovim .. " " .. (mode_map[str] or str)
-      elseif vim.g.pcode_show_mode == 2 then
+      elseif pcode.show_mode == 2 then
         return icons.ui.Neovim
-      elseif vim.g.pcode_show_mode == 3 then
+      elseif pcode.show_mode == 3 then
         return (mode_map[str] or str)
-      elseif vim.g.pcode_show_mode == 4 then
+      elseif pcode.show_mode == 4 then
         return nil
       else
         return icons.ui.Neovim .. " " .. str
@@ -218,13 +218,13 @@ return {
     padding = 1,
     separator = { left = " ", right = "" },
     fmt = function(str)
-      if vim.g.pcode_show_mode == 1 then
+      if pcode.show_mode == 1 then
         return icons.ui.Neovim .. " " .. (mode_map[str] or str)
-      elseif vim.g.pcode_show_mode == 2 then
+      elseif pcode.show_mode == 2 then
         return icons.ui.Neovim
-      elseif vim.g.pcode_show_mode == 3 then
+      elseif pcode.show_mode == 3 then
         return (mode_map[str] or str)
-      elseif vim.g.pcode_show_mode == 4 then
+      elseif pcode.show_mode == 4 then
         return nil
       else
         return icons.ui.Neovim .. " " .. str
@@ -237,13 +237,13 @@ return {
     padding = 1,
     separator = { left = " " },
     fmt = function(str)
-      if vim.g.pcode_show_mode == 1 then
+      if pcode.show_mode == 1 then
         return icons.ui.Neovim .. " " .. (mode_map[str] or str)
-      elseif vim.g.pcode_show_mode == 2 then
+      elseif pcode.show_mode == 2 then
         return icons.ui.Neovim
-      elseif vim.g.pcode_show_mode == 3 then
+      elseif pcode.show_mode == 3 then
         return (mode_map[str] or str)
-      elseif vim.g.pcode_show_mode == 4 then
+      elseif pcode.show_mode == 4 then
         return nil
       else
         return icons.ui.Neovim .. " " .. str
