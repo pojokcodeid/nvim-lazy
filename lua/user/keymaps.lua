@@ -65,8 +65,52 @@ keymap("v", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.f
 keymap("v", "<C-/>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
 keymap("i", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
 keymap("i", "<C-/>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
-keymap("i", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>i", opts)
-keymap("i", "<C-/>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>i", opts)
+keymap("i", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr><right>i", opts)
+keymap("i", "<C-/>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr><right>i", opts)
+
+-- case spesial file
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "javascript", "typescript" },
+  callback = function()
+    keymap(
+      "i",
+      "<C-_>",
+      "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>i<right><right><Space>",
+      opts
+    )
+    keymap(
+      "i",
+      "<C-/>",
+      "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>i<right><right><Space>",
+      opts
+    )
+  end,
+})
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "lua", "html", "javascriptreact" },
+  callback = function()
+    keymap(
+      "i",
+      "<C-_>",
+      "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr><right>i<right><right><right><Space>",
+      opts
+    )
+    keymap(
+      "i",
+      "<C-/>",
+      "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr><right>i<right><right><right><Space>",
+      opts
+    )
+  end,
+})
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "javascriptreact" },
+  callback = function()
+    keymap("i", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>i", opts)
+    keymap("i", "<C-/>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>i", opts)
+  end,
+})
+
 keymap("n", "<C-_>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>i", opts)
 keymap("n", "<C-/>", "<esc><cmd>lua require('Comment.api').toggle.linewise.current()<cr>i", opts)
 -- keymap("n", "<C-l>", "<esc><cmd>lua _LIVE_SERVER()<cr>", opts)

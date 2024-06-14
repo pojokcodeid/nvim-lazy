@@ -15,9 +15,10 @@
 -- darcula-dark
 -- juliana
 pcode.colorscheme = "darcula-dark"
-
 -- 0 =off   1= on
 pcode.transparent_mode = 0
+
+-- https://github.com/nvim-lualine/lualine.nvim
 -- rounded
 -- roundedall
 -- square
@@ -30,7 +31,6 @@ pcode.lualinetheme = "roundedall"
 -- 1 lualine lsp progress
 -- 2 fidget progress
 pcode.progress = 1
-
 -- 0 = on full text mode info,
 -- 1 = on initial mode + logo
 -- 2 = logo only
@@ -61,11 +61,6 @@ pcode.lspghost_text = false
 pcode.mason_ensure_installed = { -- sebelumnya register_lsp
   -- "yamlls",
   -- "intelephense",
-  -- "marksman",
-  -- "csharp_ls",
-  -- "clangd",
-  -- "dartls",
-  -- "kotlin_language_server",
   -- tambahkan di bawah sini setelah melakukan :masoninstall
 }
 pcode.unregister_lsp = {
@@ -104,28 +99,39 @@ pcode.coderunner = {
   html = "live-server $dir/$fileName",
 }
 
+-- https://github.com/nvim-tree/nvim-tree.lua
 -- 0 = normal
 -- 1 = float
 pcode.nvimtree_isfloat = 0
 
+-- https://github.com/roobert/tailwindcss-colorizer-cmp.nvim
 pcode.tailwindcolorizer = false
+
 -- https://github.com/Exafunction/codeium.vim
 pcode.codeium = false
+
 -- https://github.com/Exafunction/codeium.nvim
 pcode.codeium_nvim = true
+
 -- https://github.com/kevinhwang91/nvim-ufo
 pcode.nvimufo = false
+
 -- https://github.com/echasnovski/mini.indentscope
 pcode.indentscope = true
+
 -- https://github.com/echasnovski/mini.animate
 pcode.minianimate = false
 
+-- https://github.com/hrsh7th/nvim-cmp
 pcode.disable_cmpdoc = false
+
 -- https://github.com/rachartier/tiny-devicons-auto-colors.nvim
 pcode.adaptive_color_icon = true
+
 -- https://github.com/lukas-reineke/virt-column.nvim
 pcode.columnline = true
 
+-- https://github.com/nvim-telescope/telescope.nvim
 ---@alias telescope_themes
 ---| "cursor"   # see `telescope.themes.get_cursor()`
 ---| "dropdown" # see `telescope.themes.get_dropdown()`
@@ -133,6 +139,7 @@ pcode.columnline = true
 ---| "center"   # retain the default telescope theme
 pcode.telescope_theme_find_file = "center"
 pcode.telescope_theme_live_grep = "dropdown"
+
 -- https://github.com/kristijanhusak/vim-dadbod-ui
 pcode.database = false
 
@@ -140,5 +147,9 @@ pcode.database = false
 pcode.jest = false
 pcode.jest_command = "npm test -- "
 pcode.jest_config = "jest.config.mjs"
+
+-- https://github.com/rest-nvim/rest.nvim
+pcode.rest_client = true
+
 -- https://github.com/ThePrimeagen/refactoring.nvim
 pcode.refactoring = false
