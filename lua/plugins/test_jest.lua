@@ -75,7 +75,7 @@ if vim.g.pcode_jest then
       end,
     -- stylua: ignore
     keys = {
-      { "<leader>T","",desc=" Test"},
+      { "<leader>T","",desc="  Test"},
       { "<leader>Tt", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run File" },
       { "<leader>Tr", function() require("neotest").run.run() end, desc = "Run Nearest" },
       { "<leader>TT", function() require("neotest").run.run(vim.loop.cwd()) end, desc = "Run All Test Files" },

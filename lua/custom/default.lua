@@ -92,7 +92,7 @@ vim.g.pcode_whichkey = {
     k = { '<cmd>lua print("Testing")<cr>', "Example" },
   },
   ["r"] = {
-    name = "Run",
+    name = "  Run",
     j = { "<cmd>Jaq float<CR>", "Run With Jaq" },
   },
 }
