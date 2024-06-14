@@ -19,7 +19,7 @@ if data_board ~= nil then
   board = data_board
 end
 
-local dashboard = require "alpha.themes.dashboard"
+local dashboard = require("alpha.themes.dashboard")
 dashboard.section.header.val = board
 dashboard.section.buttons.val = {
   dashboard.button("F", "󰈞  Find file", ":Telescope find_files <CR>"),
@@ -62,8 +62,8 @@ vim.api.nvim_create_autocmd("User", {
 vim.api.nvim_create_autocmd({ "User" }, {
   pattern = { "AlphaReady" },
   callback = function()
-    vim.cmd [[
+    vim.cmd([[
       set laststatus=0 | autocmd BufUnload <buffer> set laststatus=3
-    ]]
+    ]])
   end,
 })

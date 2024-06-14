@@ -1,265 +1,265 @@
 function Active_whichkey()
-	VSCodeNotify("whichkey.show")
+  VSCodeNotify("whichkey.show")
 end
 
 function Top_screen()
-	Cmd("call <SNR>3_reveal('top', 0)")
+  Cmd("call <SNR>3_reveal('top', 0)")
 end
 
 function Bottom_screen()
-	Cmd("call <SNR>3_reveal('bottom', 0)")
+  Cmd("call <SNR>3_reveal('bottom', 0)")
 end
 
 function Move_to_top_screen()
-	Cmd("call <SNR>3_moveCursor('top')")
+  Cmd("call <SNR>3_moveCursor('top')")
 end
 
 function Move_to_bottom_screen()
-	Cmd("call <SNR>3_moveCursor('bottom')")
+  Cmd("call <SNR>3_moveCursor('bottom')")
 end
 
 function Scroll_line_down()
-	VSCodeCall("scrollLineDown")
+  VSCodeCall("scrollLineDown")
 end
 
 function Scroll_line_up()
-	VSCodeCall("scrollLineUp")
+  VSCodeCall("scrollLineUp")
 end
 
 function Vscode_ctrl_d()
-	VSCodeNotify("vscode-neovim.ctrl-d")
+  VSCodeNotify("vscode-neovim.ctrl-d")
 end
 
 function Vscode_ctrl_u()
-	VSCodeNotify("vscode-neovim.ctrl-u")
+  VSCodeNotify("vscode-neovim.ctrl-u")
 end
 
 function Move_to_bottom_screen__center_screen()
-	Move_to_bottom_screen()
-	Center_screen()
+  Move_to_bottom_screen()
+  Center_screen()
 end
 
 function Move_to_top_screen__center_screen()
-	Move_to_top_screen()
-	Center_screen()
+  Move_to_top_screen()
+  Center_screen()
 end
 
 function Trim_trailing_whitespace()
-	VSCodeCall("editor.action.trimTrailingWhitespace")
+  VSCodeCall("editor.action.trimTrailingWhitespace")
 end
 
 function Save()
-	VSCodeCall("workbench.action.files.save")
+  VSCodeCall("workbench.action.files.save")
 end
 
 function Save_no_format()
-	VSCodeCall("workbench.action.files.saveWithoutFormatting")
+  VSCodeCall("workbench.action.files.saveWithoutFormatting")
 end
 
 function Trim__save__no_format()
-	Trim_trailing_whitespace()
-	Save_no_format()
+  Trim_trailing_whitespace()
+  Save_no_format()
 end
 
 function Trim__save__no_highlight()
-	Trim_trailing_whitespace()
-	Save()
-	Remove_highlighting()
+  Trim_trailing_whitespace()
+  Save()
+  Remove_highlighting()
 end
 
 function Format()
-	VSCodeCall("editor.action.formatDocument")
-	print("formatted!")
+  VSCodeCall("editor.action.formatDocument")
+  print("formatted!")
 end
 
 function Trim__save__format()
-	Trim_trailing_whitespace()
-	Format()
-	Save()
+  Trim_trailing_whitespace()
+  Format()
+  Save()
 end
 
 function Reveal_definition_aside()
-	VSCodeNotify("editor.action.revealDefinitionAside")
+  VSCodeNotify("editor.action.revealDefinitionAside")
 end
 
 function Go_to_implementation()
-	VSCodeNotify("editor.action.goToImplementation")
+  VSCodeNotify("editor.action.goToImplementation")
 end
 
 function Go_to_reference()
-	VSCodeNotify("editor.action.goToReferences")
+  VSCodeNotify("editor.action.goToReferences")
 end
 
 function Rename_symbol()
-	VSCodeNotify("editor.action.rename")
+  VSCodeNotify("editor.action.rename")
 end
 
 function Outdent()
-	---@diagnostic disable-next-line: unused-local
-	for i = 1, vim.v.count1 do
-		VSCodeNotify("editor.action.outdentLines")
-	end
+  ---@diagnostic disable-next-line: unused-local
+  for i = 1, vim.v.count1 do
+    VSCodeNotify("editor.action.outdentLines")
+  end
 end
 
 function Indent()
-	---@diagnostic disable-next-line: unused-local
-	for i = 1, vim.v.count1 do
-		VSCodeNotify("editor.action.indentLines")
-	end
+  ---@diagnostic disable-next-line: unused-local
+  for i = 1, vim.v.count1 do
+    VSCodeNotify("editor.action.indentLines")
+  end
 end
 
 function Outdent_vis()
-	VSCodeNotify("editor.action.outdentLines", false)
+  VSCodeNotify("editor.action.outdentLines", false)
 end
 
 function Indent_vis()
-	VSCodeNotify("editor.action.indentLines", false)
+  VSCodeNotify("editor.action.indentLines", false)
 end
 
 function Comment()
-	VSCodeNotify("editor.action.commentLine")
+  VSCodeNotify("editor.action.commentLine")
 end
 
 function Convert_to_spaces()
-	VSCodeNotify("editor.action.indentationToSpaces")
+  VSCodeNotify("editor.action.indentationToSpaces")
 end
 
 function Convert_to_tabs()
-	VSCodeNotify("editor.action.indentationToTabs")
+  VSCodeNotify("editor.action.indentationToTabs")
 end
 
 function Indent_with_spaces()
-	VSCodeNotify("editor.action.indentUsingSpaces")
+  VSCodeNotify("editor.action.indentUsingSpaces")
 end
 
 function Indent_with_tabs()
-	VSCodeNotify("editor.action.indentUsingTabs")
+  VSCodeNotify("editor.action.indentUsingTabs")
 end
 
 function CloseEditor()
-	VSCodeNotify("workbench.action.closeActiveEditor")
+  VSCodeNotify("workbench.action.closeActiveEditor")
 end
 
 function UndoCloseEditor()
-	VSCodeNotify("workbench.action.reopenClosedEditor")
+  VSCodeNotify("workbench.action.reopenClosedEditor")
 end
 
 function Git_stage_file()
-	Trim_trailing_whitespace()
-	Save()
-	VSCodeNotify("git.stage")
+  Trim_trailing_whitespace()
+  Save()
+  VSCodeNotify("git.stage")
 end
 
 function Git_unstage_file()
-	Save()
-	VSCodeNotify("git.unstage")
+  Save()
+  VSCodeNotify("git.unstage")
 end
 
 function Git_revert_change()
-	VSCodeNotify("git.revertSelectedRanges")
+  VSCodeNotify("git.revertSelectedRanges")
 end
 
 function Git_stage_change()
-	VSCodeNotify("git.stageSelectedRanges")
+  VSCodeNotify("git.stageSelectedRanges")
 end
 
 function Git_unstage_change()
-	VSCodeNotify("git.unstageSelectedRanges")
+  VSCodeNotify("git.unstageSelectedRanges")
 end
 
 function Git_open_changes()
-	VSCodeNotify("git.openChange")
+  VSCodeNotify("git.openChange")
 end
 
 function Git_open_all_changes()
-	VSCodeNotify("git.openAllChanges")
+  VSCodeNotify("git.openAllChanges")
 end
 
 function Accept_merge_both()
-	VSCodeNotify("merge-conflict.accept.both")
+  VSCodeNotify("merge-conflict.accept.both")
 end
 
 function Accept_merge_all_both()
-	VSCodeNotify("merge-conflict.accept.all-both")
+  VSCodeNotify("merge-conflict.accept.all-both")
 end
 
 function Accept_merge_current()
-	VSCodeNotify("merge-conflict.accept.current")
+  VSCodeNotify("merge-conflict.accept.current")
 end
 
 function Accept_merge_all_current()
-	VSCodeNotify("merge-conflict.accept.all-current")
+  VSCodeNotify("merge-conflict.accept.all-current")
 end
 
 function Accept_merge_incoming()
-	VSCodeNotify("merge-conflict.accept.incoming")
+  VSCodeNotify("merge-conflict.accept.incoming")
 end
 
 function Accept_merge_all_incoming()
-	VSCodeNotify("merge-conflict.accept.all-incoming")
+  VSCodeNotify("merge-conflict.accept.all-incoming")
 end
 
 function Accept_merge_selection()
-	VSCodeNotify("merge-conflict.accept.selection")
+  VSCodeNotify("merge-conflict.accept.selection")
 end
 
 function Codesnap()
-	VSCodeNotify("codesnap.start", true)
+  VSCodeNotify("codesnap.start", true)
 end
 
 function Comment_vis()
-	VSCodeNotify("editor.action.commentLine", false)
+  VSCodeNotify("editor.action.commentLine", false)
 end
 
 function Toggle_breakpoint()
-	VSCodeNotify("editor.debug.action.toggleBreakpoint")
+  VSCodeNotify("editor.debug.action.toggleBreakpoint")
 end
 
 function Copy_path()
-	VSCodeNotify("copyFilePath")
+  VSCodeNotify("copyFilePath")
 end
 
 function Copy_relative_path()
-	VSCodeNotify("copyRelativeFilePath")
+  VSCodeNotify("copyRelativeFilePath")
 end
 
 function Active_whichkey()
-	VSCodeNotify("whichkey.show")
+  VSCodeNotify("whichkey.show")
 end
 
 function Navigation_down()
-	VSCodeNotify("workbench.action.navigateDown")
+  VSCodeNotify("workbench.action.navigateDown")
 end
 
 function Navigation_up()
-	VSCodeNotify("workbench.action.navigateUp")
+  VSCodeNotify("workbench.action.navigateUp")
 end
 
 function Navigation_left()
-	VSCodeNotify("workbench.action.navigateLeft")
+  VSCodeNotify("workbench.action.navigateLeft")
 end
 
 function Navigation_right()
-	VSCodeNotify("workbench.action.navigateRight")
+  VSCodeNotify("workbench.action.navigateRight")
 end
 
 function Select_all()
-	VSCodeNotify("editor.action.selectAll")
+  VSCodeNotify("editor.action.selectAll")
 end
 
 function Copy_clipboard()
-	VSCodeNotify("editor.action.clipboardCopyAction")
+  VSCodeNotify("editor.action.clipboardCopyAction")
 end
 
 function Paste_clipboard()
-	VSCodeNotify("editor.action.clipboardPasteAction")
+  VSCodeNotify("editor.action.clipboardPasteAction")
 end
 
 function Save()
-	VSCodeNotify("workbench.action.files.save")
-	VSCodeNotify("workbench.action.files.saveAll")
+  VSCodeNotify("workbench.action.files.save")
+  VSCodeNotify("workbench.action.files.saveAll")
 end
 
 function Close()
-	VSCodeNotify("workbench.action.closeActiveEditor")
+  VSCodeNotify("workbench.action.closeActiveEditor")
 end

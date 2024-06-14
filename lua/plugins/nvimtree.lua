@@ -210,7 +210,7 @@ return {
   },
   config = function(_, opts)
     require("nvim-tree").setup(opts)
-    local api = require "nvim-tree.api"
+    local api = require("nvim-tree.api")
     api.events.subscribe(api.events.Event.FileCreated, function(file)
       vim.cmd("edit " .. file.fname)
     end)

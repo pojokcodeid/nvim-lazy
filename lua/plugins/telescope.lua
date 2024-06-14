@@ -22,7 +22,7 @@ return {
         only_sort_text = true,
       }
     end
-    local actions = require "telescope.actions"
+    local actions = require("telescope.actions")
     vim.g.theme_switcher_loaded = true
     return {
       defaults = {

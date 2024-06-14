@@ -6,7 +6,7 @@ return {
     {
       "<leader>un",
       function()
-        require("notify").dismiss { silent = true, pending = true }
+        require("notify").dismiss({ silent = true, pending = true })
       end,
       desc = "Delete all Notifications",
     },
@@ -22,10 +22,10 @@ return {
   },
   -- event = "BufWinEnter",
   config = function()
-    local notify = require "notify"
+    local notify = require("notify")
     -- this for transparency
     -- notify.setup { background_colour = "#000000", render = "compact" }
-    notify.setup { render = "compact" }
+    notify.setup({ render = "compact" })
     -- this overwrites the vim notify function
     vim.notify = notify.notify
   end,

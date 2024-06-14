@@ -1,8 +1,8 @@
 local transparent_mode = pcode.transparent_mode or 0
 if transparent_mode ~= nil then
   if transparent_mode == 1 then
-    vim.cmd "TransparentDisable"
-    vim.cmd "TransparentEnable"
+    vim.cmd("TransparentDisable")
+    vim.cmd("TransparentEnable")
   end
 end
 
@@ -12,7 +12,7 @@ local _get_folder_name = function()
   return " " .. str:lower():gsub("^%l", string.upper) .. " "
 end
 
-local term_program = vim.fn.getenv "TERM_PROGRAM"
+local term_program = vim.fn.getenv("TERM_PROGRAM")
 if term_program == "WezTerm" then
   -- vim.cmd('silent !wezterm cli set-tab-title "' .. _get_folder_name() .. '"')
   -- create autocmd on insertEnter

@@ -5,7 +5,7 @@ return {
     lazy = true,
     event = "VimEnter",
     config = function()
-      require "user.alpha"
+      require("user.alpha")
     end,
   },
 }

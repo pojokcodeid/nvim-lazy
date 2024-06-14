@@ -20,8 +20,8 @@ if pcode.nvimufo then
       {
         "luukvbaal/statuscol.nvim",
         config = function()
-          local builtin = require "statuscol.builtin"
-          require("statuscol").setup {
+          local builtin = require("statuscol.builtin")
+          require("statuscol").setup({
             setopt = true,
             relculright = true,
             segments = {
@@ -33,7 +33,7 @@ if pcode.nvimufo then
               },
               { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
             },
-          }
+          })
         end,
       },
     },
@@ -65,7 +65,7 @@ if pcode.nvimufo then
       -- these are "extra", change them as you like
       vim.keymap.set("n", "zR", require("ufo").openAllFolds)
       vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
-      vim.cmd("highlight FoldColumn guifg=" .. vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID "Comment"), "fg"))
+      vim.cmd("highlight FoldColumn guifg=" .. vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("Comment")), "fg"))
       -- start ini bagian code support comment dan import
       local ftMap = {
         vim = "indent",
@@ -75,7 +75,7 @@ if pcode.nvimufo then
 
       local function customizeSelector(bufnr)
         local function handleFallbackException(err, providerName)
-          if type(err) == "string" and err:match "UfoFallbackException" then
+          if type(err) == "string" and err:match("UfoFallbackException") then
             return require("ufo").getFolds(bufnr, providerName)
           else
             return require("promise").reject(err)
@@ -92,7 +92,7 @@ if pcode.nvimufo then
           end)
       end
 
-      require("ufo").setup {
+      require("ufo").setup({
         open_fold_hl_timeout = 150,
         close_fold_kinds_for_ft = {
           -- default = { "imports", "comment" },
@@ -127,21 +127,21 @@ if pcode.nvimufo then
           -- Memeriksa apakah baris awal dari fold adalah komentar
           local start_line = vim.api.nvim_buf_get_lines(0, lnum - 1, lnum, false)[1]
           -- cari comentar dengan awalan /* untuk generaal comment
-          if start_line:find "^%s*%/%*" then
+          if start_line:find("^%s*%/%*") then
             is_comment = true
           -- cara commentar dengan awalan <!-- untuk html
-          elseif start_line:find "^%s*<!--" then
+          elseif start_line:find("^%s*<!--") then
             is_comment = true
           -- cari comentar dengan awalan -- untuk lua
-          elseif start_line:find "^%s*%-%-" then
+          elseif start_line:find("^%s*%-%-") then
             is_comment = true
           end
           -- cek fold yang berawalan import
-          if start_line:find "^%s*import" then
+          if start_line:find("^%s*import") then
             is_import = true
           end
           -- cek fold dengan akhiran {
-          if start_line:find "%s*{%s*$" then
+          if start_line:find("%s*{%s*$") then
             is_bracket = true
           end
           if is_comment then
@@ -221,7 +221,7 @@ if pcode.nvimufo then
           end
           return result
         end,
-      }
+      })
       -- end bagian code support comment dan import
       vim.api.nvim_create_autocmd("FileType", {
         pattern = {

@@ -38,7 +38,7 @@ return {
 
     vim.opt.termguicolors = true
 
-    bufferline.setup {
+    bufferline.setup({
       options = {
         color_icons = true,
         numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
@@ -174,6 +174,6 @@ return {
           bg = { attribute = "bg", highlight = "Normal" },
         },
       },
-    }
+    })
   end,
 }

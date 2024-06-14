@@ -1,4 +1,4 @@
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   -- bootstrap lazy.nvim
   -- stylua: ignore
@@ -15,8 +15,8 @@ local icons = require("user.icons").ui
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.diagnostic.config { virtual_lines = false }
-require("lazy").setup {
+vim.diagnostic.config({ virtual_lines = false })
+require("lazy").setup({
   spec = {
     { import = "plugins.themes" },
     { import = "plugins" },
@@ -57,4 +57,4 @@ require("lazy").setup {
       },
     },
   },
-}
+})

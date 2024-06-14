@@ -1,9 +1,9 @@
 local hide_in_width = function()
   return vim.fn.winwidth(0) > 75
 end
-local icons = require "user.icons"
-local formatter = require "user.utils.formatter"
-local linter = require "user.utils.linter"
+local icons = require("user.icons")
+local formatter = require("user.utils.formatter")
+local linter = require("user.utils.linter")
 
 local getLeftSubstring = function(word, length)
   if #word > length then
@@ -86,7 +86,7 @@ return {
       local buf_ft = vim.bo.filetype
       -- start register
       local buf_clients = {}
-      buf_clients = vim.lsp.get_clients { bufnr = 0 }
+      buf_clients = vim.lsp.get_clients({ bufnr = 0 })
       local buf_client_names = {}
       if next(buf_clients) == nil then
         -- TODO: clean up this if statement

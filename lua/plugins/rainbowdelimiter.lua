@@ -4,7 +4,7 @@ return {
   event = "BufRead",
   config = function()
     -- Modul ini berisi beberapa definisi default
-    local rainbow_delimiters = require "rainbow-delimiters"
+    local rainbow_delimiters = require("rainbow-delimiters")
     vim.g.rainbow_delimiters = {
       strategy = {
         [""] = rainbow_delimiters.strategy["global"],

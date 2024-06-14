@@ -1,5 +1,5 @@
-local alpha = require "alpha"
-local startify = require "alpha.themes.startify"
+local alpha = require("alpha")
+local startify = require("alpha.themes.startify")
 local dash_model = {}
 dash_model = {
   [[                _      __                __    ]],
@@ -63,9 +63,9 @@ vim.api.nvim_create_autocmd("User", {
 vim.api.nvim_create_autocmd({ "User" }, {
   pattern = { "AlphaReady" },
   callback = function()
-    vim.cmd [[
+    vim.cmd([[
       set laststatus=0 | autocmd BufUnload <buffer> set laststatus=3
-    ]]
+    ]])
   end,
 })
 -- ignore filetypes in MRU

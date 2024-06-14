@@ -7,12 +7,12 @@ if pcode.columnline then
       opts = {},
       config = function()
         local icons = vim.g.pcode_icons
-        require("virt-column").overwrite {
+        require("virt-column").overwrite({
           exclude = {
             filetypes = { "help", "text", "markdown" },
           },
           char = icons.ui.LineMiddle,
-        }
+        })
         -- Mengatur colum color max 80 caracter
         vim.api.nvim_create_autocmd("BufWinEnter", {
           pattern = "*",

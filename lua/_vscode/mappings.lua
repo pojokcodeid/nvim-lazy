@@ -47,7 +47,7 @@ Map({ "n", "v" }, "zj", Git_stage_change)
 -- Map({ "n", "v" }, "zb", Vscode_ctrl_u)
 
 vim.api.nvim_exec(
-	[[
+  [[
     " THEME CHANGER
     function! SetCursorLineNrColorInsert(mode)
         " Insert mode: blue
@@ -70,5 +70,5 @@ vim.api.nvim_exec(
         autocmd ModeChanged [vV\x16]*:* call VSCodeNotify('nvim-theme.normal')
     augroup END
 ]],
-	false
+  false
 )

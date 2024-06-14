@@ -1,6 +1,6 @@
 local opts, _ = pcall(require, "user.options")
 if opts then
-  require "user.options"
+  require("user.options")
 end
 -- local key, _ = pcall(require, "user.keymaps")
 -- if key then
@@ -8,11 +8,11 @@ end
 -- end
 local cmd, _ = pcall(require, "user.autocommands")
 if cmd then
-  require "user.autocommands"
+  require("user.autocommands")
 end
 local onsave, _ = pcall(require, "user.format_onsave")
 if onsave then
-  require "user.format_onsave"
+  require("user.format_onsave")
 end
-vim.g.pcode_icons = require "user.icons"
+vim.g.pcode_icons = require("user.icons")
 return {}

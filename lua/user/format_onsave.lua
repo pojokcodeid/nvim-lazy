@@ -14,25 +14,25 @@ end
 if run == 1 then
   function FORMAT_FILTER(client)
     local filetype = vim.bo.filetype
-    local n = require "null-ls"
-    local s = require "null-ls.sources"
+    local n = require("null-ls")
+    local s = require("null-ls.sources")
     local method = n.methods.FORMATTING
     local available_formatters = s.get_available(filetype, method)
 
     if #available_formatters > 0 then
       return client.name == "null-ls"
-    elseif client.supports_method "textDocument/formatting" then
+    elseif client.supports_method("textDocument/formatting") then
       return true
     else
       return false
     end
   end
 
-  vim.cmd [[
+  vim.cmd([[
   augroup _lsp
        autocmd!
        " autocmd BufWritePre * lua vim.lsp.buf.format{timeout_ms =200, filter=format_filter}
        autocmd BufWritePre * lua vim.lsp.buf.format{timeout_ms=pcode.format_timeout_ms or 5000 ,filter=FORMAT_FILTER}
     augroup end
-  ]]
+  ]])
 end

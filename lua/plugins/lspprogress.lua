@@ -41,12 +41,12 @@ if fidget then
     tag = "legacy",
     event = "BufRead",
     config = function()
-      require("fidget").setup {
+      require("fidget").setup({
         window = {
           blend = 0,
           relative = "editor",
         },
-      }
+      })
     end,
   }
 elseif lualine then
@@ -57,7 +57,7 @@ elseif lualine then
     branch = "main",
     event = { "BufRead" },
     config = function()
-      require("lsp-progress").setup {
+      require("lsp-progress").setup({
         client_format = function(client_name, spinner, series_messages)
           return #series_messages > 0
               and (spinner .. " " .. ambilKataDariKiri(table.concat(series_messages, ", "), 4) .. "...")
@@ -69,7 +69,7 @@ elseif lualine then
               and (sign .. " " .. ambilKataDariKiri(table.concat(client_messages, " "), 4) .. "...")
             or sign
         end,
-      }
+      })
     end,
   }
 else

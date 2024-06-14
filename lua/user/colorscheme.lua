@@ -8,5 +8,5 @@ end
 
 local ok, _ = pcall(vim.cmd.colorscheme, colorscheme)
 if not ok then
-  require "notify"("Colorscheme '" .. colorscheme .. "' not found!", "error")
+  require("notify")("Colorscheme '" .. colorscheme .. "' not found!", "error")
 end

@@ -3,7 +3,7 @@ return {
     "nvim-lualine/lualine.nvim",
     event = { "InsertEnter", "BufRead", "BufNewFile" },
     config = function()
-      local component = require "user.utils.lualine_component"
+      local component = require("user.utils.lualine_component")
       local colors = component.colors
 
       -- check config for theme
@@ -43,7 +43,7 @@ return {
         bubbles_theme = vim.fn.fnamemodify("auto", ":t")
       end
 
-      local gettheme = require "user.utils.lualine_template"
+      local gettheme = require("user.utils.lualine_template")
       local theme_option = pcode.lualinetheme or "rounded"
       local theme = gettheme.rounded(bubbles_theme)
       if theme_option == "rounded" then
@@ -61,13 +61,13 @@ return {
       elseif theme_option == "default" then
         theme = {}
       end
-      require("lualine").setup {
+      require("lualine").setup({
         options = theme.options,
         sections = theme.sections,
         inactive_sections = theme.inactive_sections,
         tabline = theme.tabline,
         extensions = theme.extensions,
-      }
+      })
     end,
   },
 }

@@ -1,6 +1,6 @@
 local M = {}
 
-local component = require "user.utils.lualine_component"
+local component = require("user.utils.lualine_component")
 local treesitter = component.treesitter
 local lsp_info = component.lsp_info
 local diagnostics = component.diagnostics

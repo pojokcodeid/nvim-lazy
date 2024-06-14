@@ -25,7 +25,7 @@ if transparent then
       event = "BufWinEnter",
       cmd = { "TransparentToggle", "TransparentEnable", "TransparentDisable" },
       config = function()
-        require("transparent").setup {
+        require("transparent").setup({
           extra_groups = {
             "Normal",
             "NormalNC",
@@ -53,25 +53,25 @@ if transparent then
             -- disable lualine background color
             "LualineNormal",
           },
-        }
-        require("transparent").clear_prefix "BufferLine"
+        })
+        require("transparent").clear_prefix("BufferLine")
         -- clear prefix for which-key
-        require("transparent").clear_prefix "WhichKey"
+        require("transparent").clear_prefix("WhichKey")
         -- clear prefix for lazy.nvim
-        require("transparent").clear_prefix "Lazy"
+        require("transparent").clear_prefix("Lazy")
         -- clear prefix for NvimTree
-        require("transparent").clear_prefix "NvimTree"
+        require("transparent").clear_prefix("NvimTree")
         -- clear prefix for NeoTree
-        require("transparent").clear_prefix "NeoTree"
+        require("transparent").clear_prefix("NeoTree")
         -- clear prefix for Telescope
-        require("transparent").clear_prefix "Telescope"
-        require("transparent").clear_prefix "mason"
+        require("transparent").clear_prefix("Telescope")
+        require("transparent").clear_prefix("mason")
         if clear_lualine then
           -- clear prefix for Lualine
-          require("transparent").clear_prefix "Lualine"
+          require("transparent").clear_prefix("Lualine")
           -- create auto command to set transparent
-          vim.cmd "TransparentDisable"
-          vim.cmd "TransparentEnable"
+          vim.cmd("TransparentDisable")
+          vim.cmd("TransparentEnable")
         end
       end,
     },

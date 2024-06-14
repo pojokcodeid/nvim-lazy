@@ -18,12 +18,12 @@ return {
     version = false, -- last release is way too old
     event = "InsertEnter",
     opts = function()
-      local cmp = require "cmp"
-      local luasnip = require "luasnip"
+      local cmp = require("cmp")
+      local luasnip = require("luasnip")
 
       local check_backspace = function()
-        local col = vim.fn.col "." - 1
-        return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+        local col = vim.fn.col(".") - 1
+        return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
       end
 
       return {
@@ -35,12 +35,12 @@ return {
             require("luasnip").lsp_expand(args.body)
           end,
         },
-        mapping = cmp.mapping.preset.insert {
+        mapping = cmp.mapping.preset.insert({
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm { select = true }, -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
           ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
@@ -69,14 +69,14 @@ return {
             "i",
             "s",
           }),
-        },
-        sources = cmp.config.sources {
+        }),
+        sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "buffer" },
           { name = "path" },
           { name = "nvim_lua" },
-        },
+        }),
         formatting = {
           fields = { "kind", "abbr", "menu" },
           format = function(entry, vim_item)

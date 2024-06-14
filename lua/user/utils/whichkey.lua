@@ -3,7 +3,7 @@ local M = {}
 -- for debug
 local debug_key = {}
 
-if vim.fn.has "win32" == 0 then
+if vim.fn.has("win32") == 0 then
   debug_key = {
     name = "  Debug",
     t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
@@ -26,47 +26,47 @@ end
 
 function M._LAZYGIT_TOGGLE()
   local Terminal = require("toggleterm.terminal").Terminal
-  local lazygit = Terminal:new { cmd = "lazygit", hidden = true }
+  local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
   lazygit:toggle()
 end
 
 function M._NODE_TOGGLE()
   local Terminal = require("toggleterm.terminal").Terminal
-  local node = Terminal:new { cmd = "node", hidden = true }
+  local node = Terminal:new({ cmd = "node", hidden = true })
   node:toggle()
 end
 
 function M._BTOP_TOGGLE()
   local Terminal = require("toggleterm.terminal").Terminal
-  local htop = Terminal:new { cmd = "btop", hidden = true }
+  local htop = Terminal:new({ cmd = "btop", hidden = true })
   htop:toggle()
 end
 
 function M._PYTHON_TOGGLE()
   local Terminal = require("toggleterm.terminal").Terminal
-  local python = Terminal:new { cmd = "python", hidden = true }
+  local python = Terminal:new({ cmd = "python", hidden = true })
   python:toggle()
 end
 
 function M._NEWTAB_TOGGLE()
   local Terminal = require("toggleterm.terminal").Terminal
-  local pwsh = Terminal:new { cmd = "pwsh", hidden = true, direction = "tab" }
+  local pwsh = Terminal:new({ cmd = "pwsh", hidden = true, direction = "tab" })
   pwsh:toggle()
 end
 
 function M._OPEN_EXPLORER()
   local Terminal = require("toggleterm.terminal").Terminal
-  local pwsh = Terminal:new { cmd = "explorer .", hidden = true, direction = "tab" }
+  local pwsh = Terminal:new({ cmd = "explorer .", hidden = true, direction = "tab" })
   pwsh:toggle()
 end
 
 function M._LIVE_SERVER()
   local Terminal = require("toggleterm.terminal").Terminal
-  local live_server = Terminal:new {
+  local live_server = Terminal:new({
     cmd = "live-server",
     hidden = true,
     direction = "tab",
-  }
+  })
   live_server:toggle()
 end
 

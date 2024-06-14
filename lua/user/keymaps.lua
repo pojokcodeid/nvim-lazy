@@ -2,11 +2,11 @@ local opts = { noremap = true, silent = true }
 
 function _LIVE_SERVER()
   local Terminal = require("toggleterm.terminal").Terminal
-  local live_server = Terminal:new {
+  local live_server = Terminal:new({
     cmd = "live-server",
     hidden = true,
     direction = "tab",
-  }
+  })
   live_server:toggle()
 end
 
@@ -159,7 +159,7 @@ end
 -- if pcall(require, "dap") then
 -- modified function keys found with `showkey -a` in the terminal to get key code
 -- run `nvim -V3log +quit` and search through the "Terminal info" in the `log` file for the correct keyname
-if vim.fn.has "win32" == 0 then
+if vim.fn.has("win32") == 0 then
   map("n", "<F5>", function()
     require("dap").continue()
   end, "")

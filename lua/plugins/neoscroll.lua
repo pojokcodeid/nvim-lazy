@@ -3,6 +3,6 @@ return {
   event = "VeryLazy",
   lazy = true,
   config = function()
-    require("neoscroll").setup {}
+    require("neoscroll").setup({})
   end,
 }
