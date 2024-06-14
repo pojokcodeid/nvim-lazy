@@ -88,7 +88,7 @@ pcode.dap_ensure_installed = {
 pcode.whichkey = {
   -- contoh penambahan
   ["k"] = {
-    name = "Example",
+    name = " Example",
     k = { '<cmd>lua print("Testing")<cr>', "Example" },
   },
   ["r"] = {

@@ -282,19 +282,19 @@ if pcode.codeium then
   table.insert(M.mappings, { ["c"] = { ":call codeium#Chat()<cr>", "󰭹 Codeium Chat" } })
 end
 
-if pcode.database then
-  table.insert(M.mappings, {
-    ["D"] = {
-      name = " 󰆼 DBUI",
-      -- d = { "<cmd>NvimTreeClose<cr><cmd>tabnew<cr><bar><bar><cmd>DBUI<cr>", "󰆼 DBUI Open" },
-      d = { "<cmd>Alpha<cr><cmd>NvimTreeClose<cr><cmd>DBUI<cr>", "󰆼 DBUI Open" },
-      q = {
-        "<cmd>DBUIClose<cr><cmd>BufferLineCloseOthers<cr><cmd>bd!<cr><cmd>lua require('user.utils.bufferline').bufremove()<cr><cmd>Alpha<cr>",
-        "󰅙 DBUI Close",
-      },
-    },
-  })
-end
+-- if pcode.database then
+--   table.insert(M.mappings, {
+--     ["D"] = {
+--       name = " 󰆼 DBUI",
+--       -- d = { "<cmd>NvimTreeClose<cr><cmd>tabnew<cr><bar><bar><cmd>DBUI<cr>", "󰆼 DBUI Open" },
+--       d = { "<cmd>Alpha<cr><cmd>NvimTreeClose<cr><cmd>DBUI<cr>", "󰆼 DBUI Open" },
+--       q = {
+--         "<cmd>DBUIClose<cr><cmd>BufferLineCloseOthers<cr><cmd>bd!<cr><cmd>lua require('user.utils.bufferline').bufremove()<cr><cmd>Alpha<cr>",
+--         "󰅙 DBUI Close",
+--       },
+--     },
+--   })
+-- end
 
 M.mappings2 = {
   ["/"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", " 󰆈 Commet Block" },

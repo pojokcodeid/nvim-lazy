@@ -46,6 +46,15 @@ if pcode.database then
       "DBUIRenameBuffer",
       "DBUILastQueryInfo",
     },
+    -- stylua: ignore
+    keys = {
+      { "<leader>D", "", desc = " 󰆼 DBUI" },
+      { "<leader>Dd", "<cmd>Alpha<cr><cmd>NvimTreeClose<cr><cmd>DBUI<cr>", desc = "󰆼 DBUI Open" },
+      { "<leader>Dq",
+        "<cmd>DBUIClose<cr><cmd>BufferLineCloseOthers<cr><cmd>bd!<cr><cmd>lua require('user.utils.bufferline').bufremove()<cr><cmd>Alpha<cr>",
+        desc = "󰅙 DBUI Close",
+      },
+    },
   }
 end
 
