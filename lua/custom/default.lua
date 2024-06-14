@@ -137,7 +137,8 @@ pcode.telescope_theme_live_grep = "dropdown"
 pcode.database = false
 
 -- https://github.com/nvim-neotest/neotest-jest
-pcode.jest = true
+pcode.jest = false
 pcode.jest_command = "npm test -- "
 pcode.jest_config = "jest.config.mjs"
+-- https://github.com/ThePrimeagen/refactoring.nvim
 pcode.refactoring = false
