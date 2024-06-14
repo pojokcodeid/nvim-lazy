@@ -1,11 +1,3 @@
-local map_opts = { silent = true, noremap = true }
-local merge = function(tableA, tableB, ...)
-  return vim.tbl_deep_extend("force", tableA, tableB, ...)
-end
-local nmap = function(lhs, rhs, opts)
-  opts = opts or {}
-  vim.keymap.set("n", lhs, rhs, merge(map_opts, opts))
-end
 local M = {}
 if pcode.rest_client then
   M = {
@@ -16,13 +8,16 @@ if pcode.rest_client then
       "nvim-lua/plenary.nvim",
     },
     config = function()
-      local rest_nvim = require("rest-nvim")
-      rest_nvim.setup()
-
-      nmap("<Leader>rh", rest_nvim.run, { desc = "Run http request under cursor" })
-      nmap("<Leader>rH", rest_nvim.last, { desc = "Run last http request" })
+      require("rest-nvim").setup()
     end,
     ft = "http",
+    keys = function()
+      local rest_nvim = require("rest-nvim")
+      return {
+        { "<Leader>rh", rest_nvim.run, desc = "Run http request under cursor" },
+        { "<Leader>rH", rest_nvim.last, desc = "Run last http request" },
+      }
+    end,
   }
 end
 return M
