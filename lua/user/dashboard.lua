@@ -14,7 +14,7 @@ local board = {
   [[|_|       |__/                                   ]],
 }
 
-local data_board = vim.g.pcode_header2
+local data_board = pcode.header2
 if data_board ~= nil then
   board = data_board
 end
@@ -41,7 +41,7 @@ dashboard.opts.opts.noautocmd = true
 alpha.setup(dashboard.opts)
 
 local footer_text = "Pojok Code"
-local data_txt = vim.g.pcode_footer
+local data_txt = pcode.footer
 if data_txt ~= nil then
   footer_text = data_txt
 end

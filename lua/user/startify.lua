@@ -9,7 +9,7 @@ dash_model = {
   [[ /_/      |___/                                ]],
 }
 
-local board = vim.g.pcode_header1
+local board = pcode.header1
 if board ~= nil then
   dash_model = board
 end
@@ -38,7 +38,7 @@ startify.section.bottom_buttons.val = {
 }
 
 local footer_text = "Pojok Code"
-local data_txt = vim.g.pcode_footer
+local data_txt = pcode.footer
 if data_txt ~= nil then
   footer_text = data_txt
 end

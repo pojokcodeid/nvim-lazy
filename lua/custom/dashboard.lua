@@ -2,7 +2,7 @@
 -- 1. Buka remark dash board dibawah
 -- 2. Ubah dashboard sesuai keinginan dan kebutuhan
 
-vim.g.pcode_header1 = {
+pcode.header1 = {
   [[                _      __                __    ]],
   [[    ___ ___    (____  / /__  _______ ___/ ___  ]],
   [[   / _ / _ \  / / _ \/  '_/ / __/ _ / _  / -_) ]],
@@ -10,7 +10,7 @@ vim.g.pcode_header1 = {
   [[ /_/      |___/                                ]],
 }
 
--- vim.g.pcode_header2 = {
+-- pcode.header2 = {
 -- 	[[                               __                ]],
 -- 	[[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
 -- 	[[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
@@ -18,7 +18,7 @@ vim.g.pcode_header1 = {
 -- 	[[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
 -- 	[[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
 -- }
--- vim.g.pcode_header1 = {
+-- pcode.header1 = {
 -- 	"           ▄ ▄                   ",
 -- 	"       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",
 -- 	"       █ ▄ █▄█ ▄▄▄ █ █▄█ █ █     ",
@@ -30,8 +30,8 @@ vim.g.pcode_header1 = {
 -- 	"    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█    ",
 -- }
 
-vim.g.pcode_footer = "PCode"
+pcode.footer = "PCode"
 
 -- 1 startify model
 -- 2 dashboard model
-vim.g.pcode_model = 1 -- isi dengan 1 atau 2 untuk model dashboard
+pcode.model = 1 -- isi dengan 1 atau 2 untuk model dashboard

@@ -1,4 +1,4 @@
-local model = vim.g.pcode_model
+local model = pcode.model
 if model ~= nil then
   if model == 1 then
     require("user.startify")
