@@ -14,7 +14,7 @@
 -- solarized-osaka
 -- darcula-dark
 -- juliana
-pcode.colorscheme = "darcula-dark"
+pcode.colorscheme = "dracula"
 -- 0 =off   1= on
 pcode.transparent_mode = 0
 
@@ -82,10 +82,6 @@ pcode.dap_ensure_installed = {
 -- https://github.com/folke/which-key.nvim
 pcode.whichkey = {
   -- contoh penambahan
-  ["k"] = {
-    name = " Example",
-    k = { '<cmd>lua print("Testing")<cr>', "Example" },
-  },
   ["r"] = {
     name = "  Run",
     j = { "<cmd>Jaq float<CR>", "Run With Jaq" },
