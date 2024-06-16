@@ -22,7 +22,7 @@ if vim.fn.has("win32") == 0 then
     U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
   }
 end
--- end debug
+--  end debug
 
 function M._LAZYGIT_TOGGLE()
   local Terminal = require("toggleterm.terminal").Terminal
