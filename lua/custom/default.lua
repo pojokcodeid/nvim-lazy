@@ -149,3 +149,6 @@ pcode.rest_client = true
 
 -- https://github.com/ThePrimeagen/refactoring.nvim
 pcode.refactoring = false
+
+-- https://github.com/mfussenegger/nvim-dap
+pcode.nvim_dap = true

@@ -1,5 +1,5 @@
 local M = {}
-if vim.fn.has("win32") == 0 then
+if vim.fn.has("win32") == 0 and pcode.nvim_dap then
   M = {
     {
       "rcarriga/nvim-dap-ui",

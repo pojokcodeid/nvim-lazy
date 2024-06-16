@@ -3,7 +3,7 @@ local M = {}
 -- for debug
 local debug_key = {}
 
-if vim.fn.has("win32") == 0 then
+if vim.fn.has("win32") == 0 and pcode.nvim_dap then
   debug_key = {
     name = "  Debug",
     t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
