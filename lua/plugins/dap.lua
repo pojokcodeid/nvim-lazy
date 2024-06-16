@@ -8,6 +8,12 @@ if vim.fn.has("win32") == 0 then
       dependencies = {
         { "mfussenegger/nvim-dap", lazy = true },
         { "nvim-neotest/nvim-nio", lazy = true },
+        {
+          "theHamsta/nvim-dap-virtual-text",
+          opts = {
+            virt_text_win_col = 80,
+          },
+        },
       },
       enabled = vim.fn.has("win32") == 0,
       config = function()
