@@ -7,7 +7,6 @@ if pcode.nvim_dap_php then
     dependencies = {
       { "mfussenegger/nvim-dap", lazy = true },
       { "nvim-neotest/nvim-nio", lazy = true },
-      { "theHamsta/nvim-dap-virtual-text", lazy = true },
       {
         "xdebug/vscode-php-debug",
         version = "1.x",
