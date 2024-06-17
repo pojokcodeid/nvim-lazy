@@ -1,29 +1,5 @@
 local M = {}
 
--- for debug
-local debug_key = {}
-
-if vim.fn.has("win32") == 0 and pcode.nvim_dap then
-  debug_key = {
-    name = "  Debug",
-    t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
-    b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
-    c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
-    C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
-    d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
-    g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
-    i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
-    o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
-    u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
-    p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
-    r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
-    s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
-    q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
-    U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
-  }
-end
---  end debug
-
 function M._LAZYGIT_TOGGLE()
   local Terminal = require("toggleterm.terminal").Terminal
   local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
@@ -264,7 +240,6 @@ M.mappings = {
       "MVN Build",
     },
   },
-  d = debug_key,
   z = {
     name = " 󱑠 Plugins(Lazy)",
     i = { "<cmd>Lazy install<cr>", "Install" },

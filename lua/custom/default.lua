@@ -151,4 +151,5 @@ pcode.rest_client = true
 pcode.refactoring = false
 
 -- https://github.com/mfussenegger/nvim-dap
-pcode.nvim_dap = true
+pcode.nvim_dap = false -- not support for windows os
+pcode.nvim_dap_javascript = true
