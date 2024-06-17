@@ -6,7 +6,8 @@ if pcode.codeium then
     -- for fix notwork new version
     -- https://github.com/Exafunction/codeium.vim/issues/376#issuecomment-2159643405
     -- version = "1.8.37",
-    event = "BufWinEnter",
+    -- event = "BufWinEnter",
+    event = "BufEnter",
     -- event = "InsertEnter",
     config = function()
       vim.g.codeium_disable_bindings = 1
