@@ -154,3 +154,6 @@ pcode.refactoring = false
 pcode.nvim_dap = false -- not support for windows os
 pcode.nvim_dap_javascript = false
 pcode.nvim_dap_php = false
+
+-- https://github.com/olimorris/neotest-phpunit
+pcode.phpunit = true
