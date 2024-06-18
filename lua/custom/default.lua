@@ -150,13 +150,16 @@ pcode.nvim_dap = false -- not support for windows os (auto config mason-nvim-dap
 pcode.nvim_dap_javascript = false
 pcode.nvim_dap_php = false
 pcode.nvim_dap_python = false
+pcode.nvim_dap_go = true
 
 -- https://github.com/olimorris/neotest-phpunit
 pcode.phpunit = false
 -- https://github.com/nvim-neotest/neotest-python
 -- https://docs.pytest.org/en/7.1.x/getting-started.html
-pcode.pytest = true
+pcode.pytest = false
 -- https://github.com/nvim-neotest/neotest-jest
 pcode.jest = false
 pcode.jest_command = "npm test -- "
 pcode.jest_config = "jest.config.mjs"
+-- https://github.com/fredrikaverpil/neotest-golang
+pcode.gotest = true
