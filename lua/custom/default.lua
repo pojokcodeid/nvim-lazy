@@ -156,4 +156,4 @@ pcode.nvim_dap_javascript = false
 pcode.nvim_dap_php = false
 
 -- https://github.com/olimorris/neotest-phpunit
-pcode.phpunit = true
+pcode.phpunit = false
