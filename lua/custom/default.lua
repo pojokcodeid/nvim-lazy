@@ -151,9 +151,10 @@ pcode.rest_client = true
 pcode.refactoring = false
 
 -- https://github.com/mfussenegger/nvim-dap
-pcode.nvim_dap = false -- not support for windows os
+pcode.nvim_dap = false -- not support for windows os (auto config mason-nvim-dap)
 pcode.nvim_dap_javascript = false
 pcode.nvim_dap_php = false
+pcode.nvim_dap_python = false
 
 -- https://github.com/olimorris/neotest-phpunit
 pcode.phpunit = false
