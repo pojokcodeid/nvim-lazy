@@ -136,19 +136,14 @@ pcode.columnline = true
 pcode.telescope_theme_find_file = "center"
 pcode.telescope_theme_live_grep = "dropdown"
 
+-- https://github.com/ThePrimeagen/refactoring.nvim
+pcode.refactoring = false
+
 -- https://github.com/kristijanhusak/vim-dadbod-ui
 pcode.database = false
 
--- https://github.com/nvim-neotest/neotest-jest
-pcode.jest = false
-pcode.jest_command = "npm test -- "
-pcode.jest_config = "jest.config.mjs"
-
 -- https://github.com/rest-nvim/rest.nvim
 pcode.rest_client = true
-
--- https://github.com/ThePrimeagen/refactoring.nvim
-pcode.refactoring = false
 
 -- https://github.com/mfussenegger/nvim-dap
 pcode.nvim_dap = false -- not support for windows os (auto config mason-nvim-dap)
@@ -158,3 +153,10 @@ pcode.nvim_dap_python = false
 
 -- https://github.com/olimorris/neotest-phpunit
 pcode.phpunit = false
+-- https://github.com/nvim-neotest/neotest-python
+-- https://docs.pytest.org/en/7.1.x/getting-started.html
+pcode.pytest = true
+-- https://github.com/nvim-neotest/neotest-jest
+pcode.jest = false
+pcode.jest_command = "npm test -- "
+pcode.jest_config = "jest.config.mjs"
