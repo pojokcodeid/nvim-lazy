@@ -78,7 +78,6 @@ pcode.null_ls_ensure_installed = {
 -- atau gunakan :MasonInstall
 pcode.dap_ensure_installed = {
   -- "python",
-  "codelldb",
 }
 
 -- https://github.com/folke/which-key.nvim
