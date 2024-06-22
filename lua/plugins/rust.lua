@@ -1,5 +1,5 @@
 local M = {}
-if pcode.acive_rust_config then
+if pcode.active_rust_config then
   M = {
     {
       "rust-lang/rust.vim",

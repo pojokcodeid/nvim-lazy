@@ -28,9 +28,18 @@ _G.all_trim = function(s)
   return s:match("^%s*(.-)%s*$")
 end
 
-if pcode.acive_rust_config then
+-- run if rust config true
+if pcode.active_rust_config then
   table.insert(pcode.mason_ensure_installed, "rust_analyzer")
   table.insert(pcode.unregister_lsp, "rust_analyzer")
   table.insert(pcode.treesitter_ensure_installed, "rust")
+end
+-- run if javascript config true
+if pcode.active_javascript_config.status then
+  local lst_ts = { "html", "javascript", "typescript", "tsx", "css", "json", "jsonc" }
+  for _, ts in pairs(lst_ts) do
+    table.insert(pcode.treesitter_ensure_installed, ts)
+  end
+  table.insert(pcode.mason_ensure_installed, "tsserver")
 end
 return {}

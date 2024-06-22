@@ -158,11 +158,12 @@ pcode.phpunit = false
 -- https://github.com/nvim-neotest/neotest-python
 -- https://docs.pytest.org/en/7.1.x/getting-started.html
 pcode.pytest = false
--- https://github.com/nvim-neotest/neotest-jest
-pcode.jest = false
-pcode.jest_command = "npm test -- "
-pcode.jest_config = "jest.config.mjs"
 -- https://github.com/fredrikaverpil/neotest-golang
 pcode.gotest = false
 
-pcode.acive_rust_config = true
+pcode.active_rust_config = false
+pcode.active_javascript_config = {
+  status = true,
+  jest_command = "npm test -- ",
+  jest_config = "jest.config.mjs",
+}
