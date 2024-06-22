@@ -53,6 +53,11 @@ if pcode.active_python_config then
   M = {
     -- https://github.com/nvim-neotest/neotest-python
     -- https://docs.pytest.org/en/7.1.x/getting-started.html
+    -- (di bawah ini untuk linux)
+    -- python3 -m venv my-virtual-env
+    -- sudo python3 -m venv my-virtual-env
+    -- . ./my-virtual-env/bin/activate
+    -- sudo apt-get install python3-pytest
     {
       "nvim-neotest/neotest",
       dependencies = {
