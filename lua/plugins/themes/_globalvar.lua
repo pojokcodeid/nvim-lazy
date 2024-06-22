@@ -31,5 +31,6 @@ end
 if pcode.acive_rust_config then
   table.insert(pcode.mason_ensure_installed, "rust_analyzer")
   table.insert(pcode.unregister_lsp, "rust_analyzer")
+  table.insert(pcode.treesitter_ensure_installed, "rust")
 end
 return {}
