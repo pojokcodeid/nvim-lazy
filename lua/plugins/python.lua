@@ -53,7 +53,14 @@ if pcode.active_python_config then
   M = {
     -- https://github.com/nvim-neotest/neotest-python
     -- https://docs.pytest.org/en/7.1.x/getting-started.html
-    -- (di bawah ini untuk linux)
+    -- (ini untuk windows)*********************************************
+    -- https://stackoverflow.com/questions/17737203/python-and-virtualenv-on-windows
+    -- pip install virtualenv
+    -- python -m virtualenv demoEnv
+    -- demoEnv\Scripts\activate
+    -- deactivate
+    -- (di bawah ini untuk
+    -- linux)***********************************************************
     -- python3 -m venv my-virtual-env
     -- sudo python3 -m venv my-virtual-env
     -- . ./my-virtual-env/bin/activate
