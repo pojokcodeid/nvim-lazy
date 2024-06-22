@@ -148,13 +148,9 @@ pcode.rest_client = true
 
 -- https://github.com/mfussenegger/nvim-dap
 pcode.nvim_dap = false -- not support for windows os (auto config mason-nvim-dap)
-pcode.nvim_dap_javascript = false
-pcode.nvim_dap_php = false
 pcode.nvim_dap_python = false
 pcode.nvim_dap_go = false
 
--- https://github.com/olimorris/neotest-phpunit
-pcode.phpunit = false
 -- https://github.com/nvim-neotest/neotest-python
 -- https://docs.pytest.org/en/7.1.x/getting-started.html
 pcode.pytest = false
@@ -163,7 +159,8 @@ pcode.gotest = false
 
 pcode.active_rust_config = false
 pcode.active_javascript_config = {
-  status = true,
+  status = false,
   jest_command = "npm test -- ",
   jest_config = "jest.config.mjs",
 }
+pcode.active_php_config = true

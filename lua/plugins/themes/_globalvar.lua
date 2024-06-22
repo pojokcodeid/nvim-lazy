@@ -42,4 +42,14 @@ if pcode.active_javascript_config.status then
   end
   table.insert(pcode.mason_ensure_installed, "tsserver")
 end
+-- run if php config true
+if pcode.active_php_config then
+  local lst_ts = { "php", "phpdoc" }
+  for _, ts in pairs(lst_ts) do
+    table.insert(pcode.treesitter_ensure_installed, ts)
+  end
+  table.insert(pcode.mason_ensure_installed, "intelephense")
+  table.insert(pcode.null_ls_ensure_installed, "phpcbf")
+  table.insert(pcode.null_ls_ensure_installed, "phpcs")
+end
 return {}
