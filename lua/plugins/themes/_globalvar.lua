@@ -70,5 +70,8 @@ if pcode.active_python_config then
   table.insert(pcode.mason_ensure_installed, "pyright")
   table.insert(pcode.null_ls_ensure_installed, "flake8")
   table.insert(pcode.null_ls_ensure_installed, "black")
+  if vim.fn.has("win32") == 0 then
+    pcode.nvim_dap = true
+  end
 end
 return {}

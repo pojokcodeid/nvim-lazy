@@ -4,6 +4,7 @@ if pcode.active_python_config then
     {
       "mfussenegger/nvim-dap",
       event = "BufReadPre",
+      enabled = vim.fn.has("win32") == 1,
       dependencies = {
         "rcarriga/nvim-dap-ui",
         "theHamsta/nvim-dap-virtual-text",
