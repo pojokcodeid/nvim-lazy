@@ -1,8 +1,12 @@
 --typescript = "deno run",
 -- cpp="gcc $fileName -lstdc++ -o $fileNameWithoutExt && $fileNameWithoutExt"
+local pyrun = "python -u"
+if vim.fn.has("win32") == 0 then
+  pyrun = "python3 -u"
+end
 local rfile = {
   java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
-  python = "python -u",
+  python = pyrun,
   typescript = "ts-node $dir/$fileName",
   rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
   cpp = "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
