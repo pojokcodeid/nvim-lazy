@@ -4,6 +4,21 @@ local M = {}
 if pcode.active_cpp_config then
   M = {
     {
+      "jay-babu/mason-nvim-dap.nvim",
+      dependencies = {
+        "mfussenegger/nvim-dap",
+      },
+      ft = "cpp",
+      config = function()
+        require("mason-nvim-dap").setup({
+          automatic_installation = true,
+          automatic_setup = true,
+          handlers = {},
+          ensure_installed = { "codelldb" },
+        })
+      end,
+    },
+    {
       "nvim-neotest/neotest",
       event = "VeryLazy",
       dependencies = {
