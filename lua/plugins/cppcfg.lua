@@ -5,7 +5,7 @@ if pcode.active_cpp_config then
   M = {
     {
       "nvim-neotest/neotest",
-      event = "VeryLazy",
+      ft = { "cpp" },
       dependencies = {
         "nvim-treesitter/nvim-treesitter",
         "nvim-neotest/nvim-nio",
