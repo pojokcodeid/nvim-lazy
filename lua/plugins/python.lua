@@ -72,7 +72,7 @@ if pcode.active_python_config then
               dap = { justMyCode = false },
               args = { "--log-level", "DEBUG" },
               runner = "pytest",
-              python = "python",
+              python = vim.fn.has("win32") == 0 and "python3" or "python",
             }),
           },
         })
