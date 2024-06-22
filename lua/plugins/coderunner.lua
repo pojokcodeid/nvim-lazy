@@ -2,7 +2,7 @@
 -- cpp="gcc $fileName -lstdc++ -o $fileNameWithoutExt && $fileNameWithoutExt"
 local rfile = {
   java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
-  python = "python3 -u",
+  python = "python -u",
   typescript = "ts-node $dir/$fileName",
   rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
   cpp = "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",

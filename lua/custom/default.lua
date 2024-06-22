@@ -148,12 +148,8 @@ pcode.rest_client = true
 
 -- https://github.com/mfussenegger/nvim-dap
 pcode.nvim_dap = false -- not support for windows os (auto config mason-nvim-dap)
-pcode.nvim_dap_python = false
 
--- https://github.com/nvim-neotest/neotest-python
--- https://docs.pytest.org/en/7.1.x/getting-started.html
-pcode.pytest = false
-
+-- conefig special support test & dap
 pcode.active_rust_config = false
 pcode.active_javascript_config = {
   status = false,
@@ -161,4 +157,5 @@ pcode.active_javascript_config = {
   jest_config = "jest.config.mjs",
 }
 pcode.active_php_config = false
-pcode.active_golang_config = true
+pcode.active_golang_config = false
+pcode.active_python_config = true
