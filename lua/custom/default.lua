@@ -60,7 +60,6 @@ pcode.lspghost_text = false
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 pcode.mason_ensure_installed = { -- sebelumnya register_lsp
   -- "yamlls",
-  -- "intelephense",
   -- tambahkan di bawah sini setelah melakukan :masoninstall
 }
 pcode.unregister_lsp = {
@@ -163,3 +162,5 @@ pcode.jest_command = "npm test -- "
 pcode.jest_config = "jest.config.mjs"
 -- https://github.com/fredrikaverpil/neotest-golang
 pcode.gotest = false
+
+pcode.acive_rust_config = false

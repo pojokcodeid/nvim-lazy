@@ -28,4 +28,8 @@ _G.all_trim = function(s)
   return s:match("^%s*(.-)%s*$")
 end
 
+if pcode.acive_rust_config then
+  table.insert(pcode.mason_ensure_installed, "rust_analyzer")
+  table.insert(pcode.unregister_lsp, "rust_analyzer")
+end
 return {}
