@@ -136,11 +136,11 @@ if pcode.active_php_config then
     {
       "mfussenegger/nvim-lint",
       events = { "BufWritePost", "BufReadPost", "InsertLeave" },
-      opts = {
-        linters_by_ft = {
-          php = { "phpcs" },
-        },
-      },
+      opts = function(_, opts)
+        opts.linters_by_ft = opts.linters_by_ft or {}
+        opts.linters_by_ft.php = { "phpcs" }
+        return opts
+      end,
       config = function(_, opts)
         require("lint").linters_by_ft = opts.linters_by_ft
       end,
