@@ -58,31 +58,31 @@ if pcode.active_java_config.active then
       },
       config = function()
         require("user.dapui")
-        local dap = require("dap")
-        local util = require("jdtls.util")
-        dap.adapters.java = function(callback)
-          util.execute_command({ command = "vscode.java.startDebugSession" }, function(err0, port)
-            if err0 ~= nil then
-              return
-            end
-            callback({ type = "server", host = "127.0.0.1", port = port })
-          end)
-        end
-        dap.configurations.java = {
-          {
-            type = "java",
-            request = "launch",
-            name = "Debug Java",
-            program = "${file}",
-            args = {},
-            cwd = vim.fn.getcwd(),
-            stopOnEntry = false,
-            console = "integratedTerminal",
-            internalConsoleOptions = "neverOpen",
-            sourceMaps = true,
-            outDir = "${workspaceFolder}/out",
-          },
-        }
+        -- local dap = require("dap")
+        -- local util = require("jdtls.util")
+        -- dap.adapters.java = function(callback)
+        --   util.execute_command({ command = "vscode.java.startDebugSession" }, function(err0, port)
+        --     if err0 ~= nil then
+        --       return
+        --     end
+        --     callback({ type = "server", host = "127.0.0.1", port = port })
+        --   end)
+        -- end
+        -- dap.configurations.java = {
+        --   {
+        --     type = "java",
+        --     request = "launch",
+        --     name = "Debug Java",
+        --     program = "${file}",
+        --     args = {},
+        --     cwd = vim.fn.getcwd(),
+        --     stopOnEntry = false,
+        --     console = "integratedTerminal",
+        --     internalConsoleOptions = "neverOpen",
+        --     sourceMaps = true,
+        --     outDir = "${workspaceFolder}/out",
+        --   },
+        -- }
       end,
       keys = {
         { "<leader>d", "", desc = "  Debug" },
