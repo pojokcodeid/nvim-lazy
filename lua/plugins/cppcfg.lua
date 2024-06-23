@@ -4,6 +4,15 @@ local M = {}
 if pcode.active_cpp_config then
   M = {
     {
+      "nvimtools/none-ls.nvim",
+      optional = true,
+      opts = function(_, opts)
+        local nls = require("null-ls")
+        opts.sources = opts.sources or {}
+        table.insert(opts.sources, nls.builtins.formatting.clang_format.with({ filetypes = { "cpp", "c" } }))
+      end,
+    },
+    {
       "nvim-neotest/neotest",
       ft = { "cpp" },
       dependencies = {

@@ -83,4 +83,12 @@ if pcode.active_cpp_config then
   table.insert(pcode.dap_ensure_installed, "codelldb")
   pcode.nvim_dap = true
 end
+-- run if java config true
+if pcode.active_java_config then
+  table.insert(pcode.treesitter_ensure_installed, "java")
+  table.insert(pcode.mason_ensure_installed, "jdtls")
+  table.insert(pcode.dap_ensure_installed, "javadbg")
+  table.insert(pcode.dap_ensure_installed, "javatest")
+  table.insert(pcode.unregister_lsp, "jdtls")
+end
 return {}
