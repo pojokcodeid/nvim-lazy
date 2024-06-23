@@ -43,6 +43,30 @@ if pcode.active_cpp_config then
         { "<leader>rc", "<cmd>terminal<cr>g++ --debug main.cpp -o main<cr>", desc = "Compile Debug main.cpp" },
       },
     },
+    {
+      "stevearc/conform.nvim",
+      event = { "BufReadPre", "BufNewFile" },
+      opts = function(_, opts)
+        opts.formatters_by_ft = opts.formatters_by_ft or {}
+        opts.formatters_by_ft.cpp = { "clang-format" }
+        opts.format_on_save = {
+          timeout_ms = 500,
+          lsp_fallback = true,
+        }
+        return opts
+      end,
+      config = function(_, opts)
+        local conform = require("conform")
+        conform.setup(opts)
+        vim.keymap.set({ "n", "v" }, "<leader>lF", function()
+          conform.format({
+            lsp_fallback = true,
+            async = false,
+            timeout_ms = 500,
+          })
+        end, { desc = "Format file or range (in visual mode)" })
+      end,
+    },
   }
 end
 return M

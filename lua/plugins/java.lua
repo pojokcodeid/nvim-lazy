@@ -49,18 +49,18 @@ if pcode.active_java_config.active then
     {
       "stevearc/conform.nvim",
       event = { "BufReadPre", "BufNewFile" },
-      config = function()
+      opts = function(_, opts)
+        opts.formatters_by_ft = opts.formatters_by_ft or {}
+        opts.formatters_by_ft.java = { "google-java-format" }
+        opts.format_on_save = {
+          timeout_ms = 500,
+          lsp_fallback = true,
+        }
+        return opts
+      end,
+      config = function(_, opts)
         local conform = require("conform")
-        conform.setup({
-          formatters_by_ft = {
-            java = { "google-java-format" },
-          },
-          format_on_save = {
-            -- These options will be passed to conform.format()
-            timeout_ms = 500,
-            lsp_fallback = true,
-          },
-        })
+        conform.setup(opts)
         vim.keymap.set({ "n", "v" }, "<leader>lF", function()
           conform.format({
             lsp_fallback = true,
