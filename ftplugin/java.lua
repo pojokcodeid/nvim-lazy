@@ -70,7 +70,10 @@ vim.list_extend(bundles, vim.split(vim.fn.glob(mason_path .. "packages/java-test
 vim.list_extend(
   bundles,
   vim.split(
-    vim.fn.glob(mason_path .. "packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"),
+    vim.fn.glob(
+      vim.fn.stdpath("data")
+        .. "/lazy/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
+    ),
     "\n"
   )
 )
