@@ -52,7 +52,7 @@ if pcode.active_cpp_config then
         opts.formatters_by_ft.cpp = { "clang-format" }
         if psave == 1 then
           opts.format_on_save = {
-            timeout_ms = 500,
+            timeout_ms = pcode.format_timeout_ms or 500,
             lsp_fallback = true,
           }
         end
