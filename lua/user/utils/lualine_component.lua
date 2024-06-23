@@ -106,6 +106,24 @@ return {
       local supported_formatters = formatter.list_registered(buf_ft)
       vim.list_extend(buf_client_names, supported_formatters)
 
+      -- add conform.nvim
+      local status, conform = pcall(require, "conform")
+      if status then
+        local formatters = conform.list_formatters_for_buffer()
+        if formatters and #formatters > 0 then
+          vim.list_extend(buf_client_names, formatters)
+        else
+          -- check if lspformat
+          local lsp_format = require("conform.lsp_format")
+          local bufnr = vim.api.nvim_get_current_buf()
+          local lsp_clients = lsp_format.get_format_clients({ bufnr = bufnr })
+
+          if not vim.tbl_isempty(lsp_clients) then
+            table.insert(buf_client_names, "LSP Formatter")
+          end
+        end
+      end
+
       -- add linter
       local supported_linters = linter.linter_list_registered(buf_ft)
       vim.list_extend(buf_client_names, supported_linters)

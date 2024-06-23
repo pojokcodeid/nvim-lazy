@@ -46,6 +46,30 @@ if pcode.active_java_config.active then
         { "<Leader>TS", function() require("neotest").run.stop() end, desc = "Stop" },
       },
     },
+    {
+      "stevearc/conform.nvim",
+      event = { "BufReadPre", "BufNewFile" },
+      config = function()
+        local conform = require("conform")
+        conform.setup({
+          formatters_by_ft = {
+            java = { "google-java-format" },
+          },
+          format_on_save = {
+            -- These options will be passed to conform.format()
+            timeout_ms = 500,
+            lsp_fallback = true,
+          },
+        })
+        vim.keymap.set({ "n", "v" }, "<leader>lF", function()
+          conform.format({
+            lsp_fallback = true,
+            async = false,
+            timeout_ms = 500,
+          })
+        end, { desc = "Format file or range (in visual mode)" })
+      end,
+    },
   }
 end
 return M
