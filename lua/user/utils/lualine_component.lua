@@ -112,7 +112,7 @@ return {
         local formatters = conform.list_formatters_for_buffer()
         if formatters and #formatters > 0 then
           vim.list_extend(buf_client_names, formatters)
-        else
+        elseif supported_formatters and #supported_formatters == 0 then
           -- check if lspformat
           local lsp_format = require("conform.lsp_format")
           local bufnr = vim.api.nvim_get_current_buf()
