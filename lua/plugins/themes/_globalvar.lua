@@ -51,8 +51,6 @@ if pcode.active_php_config then
     table.insert(pcode.treesitter_ensure_installed, ts)
   end
   table.insert(pcode.mason_ensure_installed, "intelephense")
-  table.insert(pcode.null_ls_ensure_installed, "phpcbf")
-  table.insert(pcode.null_ls_ensure_installed, "phpcs")
 end
 -- run if golang config true
 if pcode.active_golang_config then
