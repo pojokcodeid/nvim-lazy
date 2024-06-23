@@ -50,12 +50,15 @@ if pcode.active_java_config.active then
       "stevearc/conform.nvim",
       event = { "BufReadPre", "BufNewFile" },
       opts = function(_, opts)
+        local psave = pcode.format_on_save or 0
         opts.formatters_by_ft = opts.formatters_by_ft or {}
         opts.formatters_by_ft.java = { "google-java-format" }
-        opts.format_on_save = {
-          timeout_ms = 500,
-          lsp_fallback = true,
-        }
+        if psave == 1 then
+          opts.format_on_save = {
+            timeout_ms = pcode.format_timeout_ms or 500,
+            lsp_fallback = true,
+          }
+        end
         return opts
       end,
       config = function(_, opts)

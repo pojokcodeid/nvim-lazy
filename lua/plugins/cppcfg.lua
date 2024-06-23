@@ -47,12 +47,15 @@ if pcode.active_cpp_config then
       "stevearc/conform.nvim",
       event = { "BufReadPre", "BufNewFile" },
       opts = function(_, opts)
+        local psave = pcode.format_on_save or 0
         opts.formatters_by_ft = opts.formatters_by_ft or {}
         opts.formatters_by_ft.cpp = { "clang-format" }
-        opts.format_on_save = {
-          timeout_ms = 500,
-          lsp_fallback = true,
-        }
+        if psave == 1 then
+          opts.format_on_save = {
+            timeout_ms = 500,
+            lsp_fallback = true,
+          }
+        end
         return opts
       end,
       config = function(_, opts)
