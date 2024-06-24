@@ -128,6 +128,9 @@ pcode.adaptive_color_icon = true
 -- https://github.com/lukas-reineke/virt-column.nvim
 pcode.columnline = true
 
+-- https://github.com/okuuva/auto-save.nvim
+pcode.auto_save = true
+
 -- https://github.com/nvim-telescope/telescope.nvim
 ---@alias telescope_themes
 ---| "cursor"   # see `telescope.themes.get_cursor()`
