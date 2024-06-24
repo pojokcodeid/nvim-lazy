@@ -35,7 +35,7 @@ if pcode.active_rust_config then
   table.insert(pcode.treesitter_ensure_installed, "rust")
 end
 -- run if javascript config true
-if pcode.active_javascript_config.status then
+if pcode.active_javascript_config.active then
   local lst_ts = { "html", "javascript", "typescript", "tsx", "css", "json", "jsonc" }
   for _, ts in pairs(lst_ts) do
     table.insert(pcode.treesitter_ensure_installed, ts)
@@ -43,6 +43,7 @@ if pcode.active_javascript_config.status then
   for _, lsp in pairs({ "html", "cssls", "emmet_ls", "eslint", "jsonls", "tsserver" }) do
     table.insert(pcode.mason_ensure_installed, lsp)
   end
+  table.insert(pcode.null_ls_ensure_installed, "prettier")
 end
 -- run if php config true
 if pcode.active_php_config then
@@ -84,7 +85,7 @@ if pcode.active_cpp_config then
   pcode.nvim_dap = true
 end
 -- run if java config true
-if pcode.active_java_config then
+if pcode.active_java_config.active then
   table.insert(pcode.treesitter_ensure_installed, "java")
   table.insert(pcode.mason_ensure_installed, "jdtls")
   table.insert(pcode.dap_ensure_installed, "javadbg")

@@ -152,11 +152,11 @@ pcode.nvim_dap = false -- not support for windows os (auto config mason-nvim-dap
 -- conefig special support test & dap
 pcode.active_rust_config = false
 pcode.active_javascript_config = {
-  status = false,
+  active = true,
   jest_command = "npm test -- ",
   jest_config = "jest.config.mjs",
 }
-pcode.active_php_config = true
+pcode.active_php_config = false
 pcode.active_golang_config = false
 pcode.active_python_config = false
 pcode.active_cpp_config = false
