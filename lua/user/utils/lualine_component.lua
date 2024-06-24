@@ -122,6 +122,8 @@ return {
             table.insert(buf_client_names, "lsp_fmt")
           end
         end
+      elseif not status and supported_formatters and #supported_formatters == 0 then
+        table.insert(buf_client_names, "lsp_fmt")
       end
 
       -- add linter

@@ -10,9 +10,9 @@ local cmd, _ = pcall(require, "user.autocommands")
 if cmd then
   require("user.autocommands")
 end
-local onsave, _ = pcall(require, "user.format_onsave")
-if onsave then
-  require("user.format_onsave")
-end
+-- local onsave, _ = pcall(require, "user.format_onsave")
+-- if onsave then
+--   require("user.format_onsave")
+-- end
 vim.g.pcode_icons = require("user.icons")
 return {}

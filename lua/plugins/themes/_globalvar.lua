@@ -28,6 +28,15 @@ _G.all_trim = function(s)
   return s:match("^%s*(.-)%s*$")
 end
 
+_G.idxOf = function(array, value)
+  for i, v in ipairs(array) do
+    if v == value then
+      return i
+    end
+  end
+  return nil
+end
+
 -- run if rust config true
 if pcode.active_rust_config then
   table.insert(pcode.mason_ensure_installed, "rust_analyzer")

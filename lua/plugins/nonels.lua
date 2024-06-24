@@ -32,8 +32,17 @@ return {
           debug = false,
           sources = sources,
           on_attach = function(client, bufnr)
-            if client.supports_method("textDocument/formatting") then
-              vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+            local filetype = vim.bo.filetype
+            local n = require("null-ls")
+            local s = require("null-ls.sources")
+            local method = n.methods.FORMATTING
+            local available_formatters = s.get_available(filetype, method)
+
+            if
+              (#available_formatters > 0 and client.name == "null-ls")
+              or client.supports_method("textDocument/formatting")
+            then
               vim.api.nvim_create_autocmd("BufWritePre", {
                 group = augroup,
                 buffer = bufnr,
@@ -41,10 +50,24 @@ return {
                   vim.lsp.buf.format({ bufnr = bufnr, timeout_ms = pcode.format_timeout_ms or 5000 })
                 end,
               })
+            else
+              vim.api.nvim_create_autocmd("BufWritePre", {
+                group = augroup,
+                buffer = bufnr,
+                callback = function()
+                  vim.lsp.buf.format({ bufnr = bufnr, timeout_ms = pcode.format_timeout_ms or 5000, filter = nil })
+                end,
+              })
             end
           end,
         }
       else
+        vim.schedule(function()
+          pcall(function()
+            vim.api.nvim_clear_autocmds({ group = "LspFormatting" })
+          end)
+        end)
+
         return {
           debug = false,
           sources = sources,
