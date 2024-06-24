@@ -108,7 +108,7 @@ return {
 
       -- add conform.nvim
       local status, conform = pcall(require, "conform")
-      if status then
+      if status and supported_formatters and #supported_formatters == 0 then
         local formatters = conform.list_formatters_for_buffer()
         if formatters and #formatters > 0 then
           vim.list_extend(buf_client_names, formatters)

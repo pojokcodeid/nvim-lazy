@@ -52,7 +52,7 @@ if pcode.active_java_config.active then
       opts = function(_, opts)
         local psave = pcode.format_on_save or 0
         opts.formatters_by_ft = opts.formatters_by_ft or {}
-        opts.formatters_by_ft.java = { "google-java-format" }
+        opts.formatters_by_ft.java = { "lsp_fmt" }
         if psave == 1 then
           opts.format_on_save = {
             timeout_ms = pcode.format_timeout_ms or 500,
@@ -68,7 +68,7 @@ if pcode.active_java_config.active then
           conform.format({
             lsp_fallback = true,
             async = false,
-            timeout_ms = 500,
+            timeout_ms = pcode.format_timeout_ms or 500,
           })
         end, { desc = "Format file or range (in visual mode)" })
       end,

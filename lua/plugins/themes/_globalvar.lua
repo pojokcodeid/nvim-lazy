@@ -79,6 +79,7 @@ if pcode.active_cpp_config then
   table.insert(pcode.treesitter_ensure_installed, "cpp")
   table.insert(pcode.treesitter_ensure_installed, "c")
   table.insert(pcode.mason_ensure_installed, "clangd")
+  table.insert(pcode.null_ls_ensure_installed, "clang_format")
   table.insert(pcode.dap_ensure_installed, "codelldb")
   pcode.nvim_dap = true
 end
