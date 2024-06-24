@@ -119,7 +119,7 @@ return {
           local lsp_clients = lsp_format.get_format_clients({ bufnr = bufnr })
 
           if not vim.tbl_isempty(lsp_clients) then
-            table.insert(buf_client_names, "LSP Formatter")
+            table.insert(buf_client_names, "lsp_fmt")
           end
         end
       end

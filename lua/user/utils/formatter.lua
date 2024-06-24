@@ -7,4 +7,10 @@ M.list_registered = function(filetype)
   return registered_providers[method] or {}
 end
 
+M.list_registered_all = function()
+  local registered_providers = require("user.utils.lsp").list_all_registerd()
+  local method = null_ls.methods.FORMATTING
+  return registered_providers[method] or {}
+end
+
 return M

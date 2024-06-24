@@ -1,0 +1,27 @@
+-- local compare = {
+--   ["prettier"] = "prettier",
+--   ["stylua"] = "stylua",
+-- }
+--
+-- local unique_list = function(list)
+--   local seen = {}
+--   local result = {}
+--
+--   for _, val in ipairs(list) do
+--     if not seen[val] then
+--       table.insert(result, val)
+--       seen[val] = true
+--     end
+--   end
+--
+--   return result
+-- end
+--
+-- local formatter = require("user.utils.formatter").list_registered_all()
+-- local unique_client_names = unique_list(formatter)
+-- for _, value in ipairs(unique_client_names) do
+--   local out = compare[value]
+--   if out ~= nil then
+--     print(out)
+--   end
+-- end
