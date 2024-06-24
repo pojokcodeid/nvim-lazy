@@ -128,24 +128,6 @@ return {
       local supported_linters = linter.linter_list_registered(buf_ft)
       vim.list_extend(buf_client_names, supported_linters)
 
-      -- add nvim-lint
-      local lint_s, lint = pcall(require, "lint")
-      if lint_s then
-        for ft_k, ft_v in pairs(lint.linters_by_ft) do
-          if type(ft_v) == "table" then
-            for _, lntr in ipairs(ft_v) do
-              if buf_ft == ft_k then
-                table.insert(buf_client_names, lntr)
-              end
-            end
-          elseif type(ft_v) == "string" then
-            if buf_ft == ft_k then
-              table.insert(buf_client_names, ft_v)
-            end
-          end
-        end
-      end
-
       -- decomple
       -- local unique_client_names = vim.fn.uniq(buf_client_names)
       local unique_client_names = unique_list(buf_client_names)

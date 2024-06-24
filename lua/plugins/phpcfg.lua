@@ -106,45 +106,6 @@ if pcode.active_php_config then
         { "<Leader>TS", function() require("neotest").run.stop() end, desc = "Stop" },
       },
     },
-    {
-      "stevearc/conform.nvim",
-      event = { "BufReadPre", "BufNewFile" },
-      opts = function(_, opts)
-        local psave = pcode.format_on_save or 0
-        opts.formatters_by_ft = opts.formatters_by_ft or {}
-        opts.formatters_by_ft.php = { "php-cs-fixer" }
-        if psave == 1 then
-          opts.format_on_save = {
-            timeout_ms = pcode.format_timeout_ms or 500,
-            lsp_fallback = true,
-          }
-        end
-        return opts
-      end,
-      config = function(_, opts)
-        local conform = require("conform")
-        conform.setup(opts)
-        vim.keymap.set({ "n", "v" }, "<leader>lF", function()
-          conform.format({
-            lsp_fallback = true,
-            async = false,
-            timeout_ms = pcode.format_timeout_ms or 500,
-          })
-        end, { desc = "Format file or range (in visual mode)" })
-      end,
-    },
-    {
-      "mfussenegger/nvim-lint",
-      events = { "BufWritePost", "BufReadPost", "InsertLeave" },
-      opts = function(_, opts)
-        opts.linters_by_ft = opts.linters_by_ft or {}
-        opts.linters_by_ft.php = { "phpcs" }
-        return opts
-      end,
-      config = function(_, opts)
-        require("lint").linters_by_ft = opts.linters_by_ft
-      end,
-    },
   }
 end
 
