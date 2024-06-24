@@ -30,7 +30,6 @@
   "neotest-phpunit": { "branch": "main", "commit": "baae8dfa0a3aaacd9f0bb6845d6348f5bcdc48bb" },
   "noice.nvim": { "branch": "main", "commit": "8f1d9966762e62fa8788e5fb1a5f6a86784221d9" },
   "none-ls-extras.nvim": { "branch": "main", "commit": "336e84b9e43c0effb735b08798ffac382920053b" },
-  "none-ls-php.nvim": { "branch": "main", "commit": "50e40656f8ae6f28dd901b2d2d511d4af5b64842" },
   "none-ls.nvim": { "branch": "main", "commit": "f1b438ab1709cf9d8875843559d20265013ac755" },
   "nui.nvim": { "branch": "main", "commit": "a0fd35fcbb4cb479366f1dc5f20145fd718a3733" },
   "nvim-autopairs": { "branch": "master", "commit": "c15de7e7981f1111642e7e53799e1211d4606cb9" },

@@ -107,9 +107,6 @@ if pcode.active_php_config then
       },
     },
     {
-      "gbprod/none-ls-php.nvim",
-    },
-    {
       "mfussenegger/nvim-lint",
       opts = function(_, opts)
         opts.linters_by_ft = opts.linters_by_ft or {}
