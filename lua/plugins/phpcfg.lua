@@ -128,7 +128,7 @@ if pcode.active_php_config then
           conform.format({
             lsp_fallback = true,
             async = false,
-            timeout_ms = 500,
+            timeout_ms = pcode.format_timeout_ms or 500,
           })
         end, { desc = "Format file or range (in visual mode)" })
       end,
