@@ -38,7 +38,7 @@ return {
                 group = augroup,
                 buffer = bufnr,
                 callback = function()
-                  vim.lsp.buf.format({ bufnr = bufnr })
+                  vim.lsp.buf.format({ bufnr = bufnr, timeout_ms = pcode.format_timeout_ms or 5000 })
                 end,
               })
             end

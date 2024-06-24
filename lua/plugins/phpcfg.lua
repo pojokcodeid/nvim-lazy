@@ -106,6 +106,19 @@ if pcode.active_php_config then
         { "<Leader>TS", function() require("neotest").run.stop() end, desc = "Stop" },
       },
     },
+    {
+      "gbprod/none-ls-php.nvim",
+    },
+    {
+      "mfussenegger/nvim-lint",
+      opts = function(_, opts)
+        opts.linters_by_ft = opts.linters_by_ft or {}
+        opts.linters_by_ft.php = { "phpcs" }
+      end,
+      config = function(_, opts)
+        require("lint").linters_by_ft = opts.linters_by_ft
+      end,
+    },
   }
 end
 
