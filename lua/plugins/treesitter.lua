@@ -2,6 +2,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
+      { "nvim-treesitter/nvim-treesitter-context" },
       {
         "JoosepAlviste/nvim-ts-context-commentstring",
         lazy = true,
