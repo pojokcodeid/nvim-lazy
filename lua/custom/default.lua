@@ -131,6 +131,9 @@ pcode.columnline = true
 -- https://github.com/okuuva/auto-save.nvim
 pcode.auto_save = true
 
+-- https://github.com/folke/todo-comments.nvim
+pcode.todo_comment = true
+
 -- https://github.com/nvim-telescope/telescope.nvim
 ---@alias telescope_themes
 ---| "cursor"   # see `telescope.themes.get_cursor()`

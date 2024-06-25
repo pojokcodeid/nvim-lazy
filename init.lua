@@ -1,3 +1,4 @@
+-- PERF fully optimized
 if vim.g.vscode then
   -- config vscode
   Map = vim.keymap.set

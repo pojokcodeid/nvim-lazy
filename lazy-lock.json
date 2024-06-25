@@ -59,6 +59,7 @@
   "smart-splits.nvim": { "branch": "master", "commit": "66fda3a601a5b4c679656f15eb6ddd613c8d3216" },
   "telescope.nvim": { "branch": "master", "commit": "f2bfde705ac752c52544d5cfa8b0aee0a766c1ed" },
   "tiny-devicons-auto-colors.nvim": { "branch": "main", "commit": "9be4af5b1bc1f26a11206ed7ce8bf44312e7941a" },
+  "todo-comments.nvim": { "branch": "main", "commit": "a7e39ae9e74f2c8c6dc4eea6d40c3971ae84752d" },
   "toggleterm.nvim": { "branch": "main", "commit": "fee58a0473fd92b28c34f8f724e4918b15ba30a3" },
   "vim-illuminate": { "branch": "master", "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa" },
   "vim-startuptime": { "branch": "master", "commit": "97a88e688482a09c3c4b777d07b509b328a5ec29" },
