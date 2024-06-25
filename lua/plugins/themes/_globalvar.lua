@@ -99,7 +99,8 @@ end
 if pcode.active_java_config.active then
   table.insert(pcode.treesitter_ensure_installed, "java")
   table.insert(pcode.mason_ensure_installed, "jdtls")
-  table.insert(pcode.dap_ensure_installed, "javadbg")
-  table.insert(pcode.unregister_lsp, "jdtls")
+  table.insert(pcode.null_ls_ensure_installed, "google_java_format")
+  -- table.insert(pcode.dap_ensure_installed, "javadbg")
+  -- table.insert(pcode.unregister_lsp, "jdtls")
 end
 return {}

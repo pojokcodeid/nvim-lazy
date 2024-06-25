@@ -65,7 +65,7 @@ pcode.mason_ensure_installed = { -- sebelumnya register_lsp
   -- tambahkan di bawah sini setelah melakukan :masoninstall
 }
 pcode.unregister_lsp = {
-  "jdtls", -- tambahkan di bawah ini
+  -- "jdtls", -- tambahkan di bawah ini
 }
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
@@ -129,7 +129,7 @@ pcode.adaptive_color_icon = true
 pcode.columnline = true
 
 -- https://github.com/okuuva/auto-save.nvim
-pcode.auto_save = true
+pcode.auto_save = false
 
 -- https://github.com/folke/todo-comments.nvim
 pcode.todo_comment = false
@@ -162,11 +162,11 @@ pcode.active_javascript_config = {
   jest_command = "npm test -- ",
   jest_config = "jest.config.mjs",
 }
-pcode.active_php_config = true
+pcode.active_php_config = false
 pcode.active_golang_config = false
 pcode.active_python_config = false
 pcode.active_cpp_config = false
 pcode.active_java_config = {
-  active = false,
+  active = true,
   project = "gradle", -- gradle or maven
 }
