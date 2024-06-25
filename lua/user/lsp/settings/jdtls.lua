@@ -1,4 +1,5 @@
 return {
+  cmd = { "jdtls" },
   filetypes = { "java" },
   root_dir = require("lspconfig.util").root_pattern(
     -- Single-module projects
