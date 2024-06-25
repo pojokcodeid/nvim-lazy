@@ -167,6 +167,6 @@ pcode.active_golang_config = false
 pcode.active_python_config = false
 pcode.active_cpp_config = false
 pcode.active_java_config = {
-  active = true,
+  active = false,
   project = "gradle", -- gradle or maven
 }
