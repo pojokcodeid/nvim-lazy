@@ -25,3 +25,12 @@ require("custom.keymaps")
 -- vim.cmd("colorscheme onedark")
 -- vim.cmd("colorscheme github_dark_dimmed")
 -- vim.cmd("colorscheme github_dark_high_contrast")
+
+-- local mason_reg = require("mason-registry")
+-- for _, pkg in pairs(mason_reg.get_installed_packages()) do
+--   for _, type in pairs(pkg.spec.categories) do
+--     if type == "LSP" and pkg.spec.name == "jdtls" then
+--       print("JDTLS READY")
+--     end
+--   end
+-- end

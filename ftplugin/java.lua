@@ -143,3 +143,38 @@
 -- vim.cmd(
 --   [[command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)]]
 -- )
+
+local mason_reg = require("mason-registry")
+for _, pkg in pairs(mason_reg.get_installed_packages()) do
+  for _, type in pairs(pkg.spec.categories) do
+    if type == "LSP" and pkg.spec.name == "jdtls" then
+      local ok, lspconfig = pcall(require, "lspconfig")
+      if not ok then
+        return
+      end
+
+      lspconfig.jdtls.setup({
+        cmd = {
+          "jdtls",
+          "-configuration",
+          vim.fn.expand("$HOME") .. "/.cache/jdtls/config",
+          "-data",
+          vim.fn.expand("$HOME") .. "/.cache/jdtls/workspace",
+        },
+        filetypes = { "java" },
+        root_dir = require("lspconfig.util").root_pattern(
+          -- Single-module projects
+          {
+            "build.xml", -- Ant
+            "pom.xml", -- Maven
+            "settings.gradle", -- Gradle
+            "settings.gradle.kts", -- Gradle
+          },
+          -- Multi-module projects
+          { "build.gradle", "build.gradle.kts" }
+        ) or vim.fn.getcwd(),
+        singe_file_support = true,
+      })
+    end
+  end
+end
