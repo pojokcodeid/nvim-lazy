@@ -1,11 +1,3 @@
-local ts_list = {
-  "lua",
-  "vim",
-  "vimdoc",
-}
-for _, ts in pairs(pcode.treesitter_ensure_installed or {}) do
-  table.insert(ts_list, ts)
-end
 return {
   {
     "nvim-treesitter/nvim-treesitter",
@@ -73,7 +65,7 @@ return {
       return {
         highlight = { enable = true },
         indent = { enable = true },
-        ensure_installed = ts_list,
+        ensure_installed = {},
         incremental_selection = {
           enable = true,
         },

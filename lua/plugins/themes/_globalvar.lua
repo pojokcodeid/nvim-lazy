@@ -56,7 +56,7 @@ if pcode.active_javascript_config.active then
 end
 -- run if php config true
 if pcode.active_php_config then
-  local lst_ts = { "php", "phpdoc" }
+  local lst_ts = { "html", "php_only", "php", "bash", "blade" }
   for _, ts in pairs(lst_ts) do
     table.insert(pcode.treesitter_ensure_installed, ts)
   end

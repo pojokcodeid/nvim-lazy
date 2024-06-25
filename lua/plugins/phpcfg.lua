@@ -116,6 +116,24 @@ if pcode.active_php_config then
         require("lint").linters_by_ft = opts.linters_by_ft
       end,
     },
+    {
+      "adalessa/laravel.nvim",
+      dependencies = {
+        "nvim-telescope/telescope.nvim",
+        -- "tpope/vim-dotenv",
+        "MunifTanjim/nui.nvim",
+        "nvimtools/none-ls.nvim",
+      },
+      cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
+      keys = {
+        { "<leader>L", "", desc = " 󰫐 Laravel" },
+        { "<leader>La", ":Laravel artisan<cr>", desc = "Artisan" },
+        { "<leader>Lr", ":Laravel routes<cr>", desc = "Routes" },
+        { "<leader>Lm", ":Laravel related<cr>", desc = "Related" },
+      },
+      event = { "VeryLazy" },
+      config = true,
+    },
   }
 end
 

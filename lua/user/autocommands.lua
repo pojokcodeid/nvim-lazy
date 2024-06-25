@@ -80,6 +80,12 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.filetype.add({
+  pattern = {
+    [".*%.blade%.php"] = "blade",
+  },
+})
+
 -- Autoformat
 -- augroup _lsp
 --   autocmd!

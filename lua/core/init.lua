@@ -1,4 +1,9 @@
 _G.pcode = _G.pcode or {}
+vim.filetype.add({
+  pattern = {
+    [".*%.blade%.php"] = "blade",
+  },
+})
 require("custom.default")
 require("custom.dashboard")
 require("config.lazy_lib")
