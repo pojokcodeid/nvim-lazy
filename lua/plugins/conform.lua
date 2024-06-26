@@ -2,16 +2,17 @@ return {
   "stevearc/conform.nvim",
   enabled = pcode.disable_null_ls or false,
   event = { "BufReadPre", "BufNewFile" },
-  opts = function()
+  opts = function(_, opts)
     local mason_reg = require("mason-registry")
 
-    local formatters = {}
-    local formatters_by_ft = {}
+    opts.formatters = opts.formatters or {}
+    opts.formatters_by_ft = opts.formatters_by_ft or {}
 
     -- add diff langue vs filetype
     local keymap = {
       ["c++"] = "cpp",
       ["c#"] = "cs",
+      ["jsx"] = "javascriptreact",
     }
 
     -- add dif conform vs mason
@@ -28,6 +29,14 @@ return {
       ["xmlformatter"] = "xmlformat",
     }
 
+    -- add new mapping filetype
+    local addnew = {
+      ["jsonc"] = "prettier",
+      ["json"] = "prettier",
+      ["typescriptreact"] = "prettier",
+    }
+
+    -- add ignore filetype
     local ignore = {
       ["php"] = "tlint",
     }
@@ -47,7 +56,7 @@ return {
             -- that quieries the configured mason install path
             local prefix = vim.fn.stdpath("data") .. "/mason/bin/"
 
-            formatters[pkg.spec.name] = {
+            opts.formatters[pkg.spec.name] = {
               command = prefix .. bin,
               args = { "$FILENAME" },
               stdin = true,
@@ -55,9 +64,11 @@ return {
             }
           end
 
+          -- local listtest = {}
           -- finally add the formatter to it's compatible filetype(s)
           for _, ft in pairs(pkg.spec.languages) do
             local ftl = string.lower(ft)
+            -- register only ready installed package
             local ready = mason_reg.get_package(pkg.spec.name):is_installed()
             if ready then
               if keymap[ftl] ~= nil then
@@ -66,12 +77,26 @@ return {
               if name_map[pkg.spec.name] ~= nil then
                 pkg.spec.name = name_map[pkg.spec.name]
               end
+
+              -- if substring(pkg.spec.name, "prettier") then
+              --   table.insert(listtest, ftl)
+              -- end
+
+              -- add new mapping language
+              for key, value in pairs(addnew) do
+                if value == pkg.spec.name then
+                  opts.formatters_by_ft[key] = opts.formatters_by_ft[key] or {}
+                  table.insert(opts.formatters_by_ft[key], pkg.spec.name)
+                end
+              end
+
               if ignore[ftl] ~= pkg.spec.name then
-                formatters_by_ft[ftl] = formatters_by_ft[ftl] or {}
-                table.insert(formatters_by_ft[ftl], pkg.spec.name)
+                opts.formatters_by_ft[ftl] = opts.formatters_by_ft[ftl] or {}
+                table.insert(opts.formatters_by_ft[ftl], pkg.spec.name)
               end
             end
           end
+          -- print(table.concat(listtest, ","))
         end
       end
     end
@@ -83,13 +108,13 @@ return {
           lsp_fallback = true,
           timeout_ms = pcode.format_timeout_ms or 5000,
         },
-        formatters = formatters,
-        formatters_by_ft = formatters_by_ft,
+        formatters = opts.formatters,
+        formatters_by_ft = opts.formatters_by_ft,
       }
     else
       return {
-        formatters = formatters,
-        formatters_by_ft = formatters_by_ft,
+        formatters = opts.formatters,
+        formatters_by_ft = opts.formatters_by_ft,
       }
     end
   end,
