@@ -76,14 +76,22 @@ return {
       end
     end
 
-    return {
-      format_on_save = {
-        lsp_fallback = true,
-        timeout_ms = pcode.format_timeout_ms or 5000,
-      },
-      formatters = formatters,
-      formatters_by_ft = formatters_by_ft,
-    }
+    local onsave = pcode.format_on_save or false
+    if onsave then
+      return {
+        format_on_save = {
+          lsp_fallback = true,
+          timeout_ms = pcode.format_timeout_ms or 5000,
+        },
+        formatters = formatters,
+        formatters_by_ft = formatters_by_ft,
+      }
+    else
+      return {
+        formatters = formatters,
+        formatters_by_ft = formatters_by_ft,
+      }
+    end
   end,
   config = function(_, opts)
     local conform = require("conform")
