@@ -131,6 +131,11 @@ M.on_attach = function(client, bufnr)
   end
 
   local on_save = pcode.format_on_save or false
+  -- disable if conform active
+  local status, _ = pcall(require, "conform")
+  if status then
+    on_save = false
+  end
   lsp_keymaps(bufnr, on_save)
   local status_ok, illuminate = pcall(require, "illuminate")
   if not status_ok then

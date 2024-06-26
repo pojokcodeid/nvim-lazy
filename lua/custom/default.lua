@@ -45,7 +45,7 @@ pcode.format_timeout_ms = 5000
 -- https://github.com/mfussenegger/nvim-lint
 -- https://github.com/stevearc/conform.nvim
 -- use conform and nvim-lint if set true
-pcode.disable_null_ls = false
+pcode.disable_null_ls = true
 
 pcode.treesitter_ensure_installed = {}
 

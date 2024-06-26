@@ -28,6 +28,10 @@ return {
       ["xmlformatter"] = "xmlformat",
     }
 
+    local ignore = {
+      ["php"] = "tlint",
+    }
+
     for _, pkg in pairs(mason_reg.get_installed_packages()) do
       for _, type in pairs(pkg.spec.categories) do
         -- only act upon a formatter
@@ -62,8 +66,10 @@ return {
               if name_map[pkg.spec.name] ~= nil then
                 pkg.spec.name = name_map[pkg.spec.name]
               end
-              formatters_by_ft[ftl] = formatters_by_ft[ftl] or {}
-              table.insert(formatters_by_ft[ftl], pkg.spec.name)
+              if ignore[ftl] ~= pkg.spec.name then
+                formatters_by_ft[ftl] = formatters_by_ft[ftl] or {}
+                table.insert(formatters_by_ft[ftl], pkg.spec.name)
+              end
             end
           end
         end
