@@ -42,6 +42,11 @@ pcode.show_mode = 3
 pcode.format_on_save = 1
 pcode.format_timeout_ms = 5000
 
+-- https://github.com/mfussenegger/nvim-lint
+-- https://github.com/stevearc/conform.nvim
+-- use conform and nvim-lint if set true
+pcode.disable_null_ls = false
+
 pcode.treesitter_ensure_installed = {}
 
 -- ini hanya untuk lsp yg tidak support masson
