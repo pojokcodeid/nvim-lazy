@@ -48,7 +48,7 @@ pcode.format_timeout_ms = 5000
 pcode.disable_null_ls = true
 
 pcode.treesitter_ensure_installed = {}
-
+pcode.tscontext = false
 -- ini hanya untuk lsp yg tidak support masson
 -- untuk referesi support language kunjungi link dibawah
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
