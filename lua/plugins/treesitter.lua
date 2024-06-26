@@ -3,6 +3,10 @@ return {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
       {
+        "nvim-treesitter/nvim-treesitter-context",
+        enabled = pcode.tscontext or false,
+      },
+      {
         "JoosepAlviste/nvim-ts-context-commentstring",
         lazy = true,
         config = function()
@@ -181,9 +185,5 @@ return {
     config = function(_, opts)
       require("illuminate").configure(opts)
     end,
-  },
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    enabled = pcode.tscontext or false,
   },
 }
