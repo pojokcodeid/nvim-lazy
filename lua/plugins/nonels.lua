@@ -2,6 +2,7 @@ return {
   {
     "nvimtools/none-ls.nvim",
     lazy = true,
+    enabled = false,
     dependencies = {
       {
         "jayp0521/mason-null-ls.nvim",
