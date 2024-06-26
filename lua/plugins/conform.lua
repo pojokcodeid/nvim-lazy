@@ -15,7 +15,7 @@ return {
       ["jsx"] = "javascriptreact",
     }
 
-    -- add dif conform vs mason
+    -- add diff conform vs mason
     local name_map = {
       ["cmakelang"] = "cmake_format",
       ["deno"] = "deno_fmt",
