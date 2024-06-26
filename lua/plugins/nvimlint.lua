@@ -13,7 +13,7 @@ return {
       ["c#"] = "cs",
     }
 
-    -- add dif conform vs mason
+    -- add dif nvim-lint vs mason
     local name_map = {
       ["actionlint"] = "actionlint",
       ["ansible_lint"] = "ansible_lint",
@@ -70,9 +70,9 @@ return {
 
     for _, pkg in pairs(mason_reg.get_installed_packages()) do
       for _, type in pairs(pkg.spec.categories) do
-        -- only act upon a formatter
+        -- only act upon a Linter
         if type == "Linter" then
-          -- finally add the formatter to it's compatible filetype(s)
+          -- finally add the linter to it's compatible filetype(s)
           for _, ft in pairs(pkg.spec.languages) do
             local ftl = string.lower(ft)
             local ready = mason_reg.get_package(pkg.spec.name):is_installed()
