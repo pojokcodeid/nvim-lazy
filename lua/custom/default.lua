@@ -45,7 +45,7 @@ pcode.format_timeout_ms = 5000
 -- https://github.com/mfussenegger/nvim-lint
 -- https://github.com/stevearc/conform.nvim
 -- use conform and nvim-lint if set true
-pcode.disable_null_ls = true
+pcode.disable_null_ls = false
 
 pcode.treesitter_ensure_installed = {}
 pcode.tscontext = false
@@ -158,7 +158,7 @@ pcode.database = false
 pcode.rest_client = true
 
 -- https://github.com/mfussenegger/nvim-dap
-pcode.nvim_dap = false -- not support for windows os (auto config mason-nvim-dap)
+pcode.nvim_dap = true -- not support for windows os (auto config mason-nvim-dap)
 
 -- conefig special support test & dap
 pcode.active_rust_config = false

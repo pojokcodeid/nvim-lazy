@@ -1,5 +1,5 @@
 local M = {}
-if vim.fn.has("win32") == 0 and pcode.nvim_dap then
+if pcode.nvim_dap then
   M = {
     {
       "rcarriga/nvim-dap-ui",
@@ -15,9 +15,38 @@ if vim.fn.has("win32") == 0 and pcode.nvim_dap then
           },
         },
       },
-      enabled = vim.fn.has("win32") == 0,
+      -- enabled = vim.fn.has("win32") == 0,
       config = function()
         require("user.dapui")
+        -- add diff langue vs filetype
+        local keymap = {
+          ["c++"] = "cpp",
+          ["c#"] = "cs",
+          ["jsx"] = "javascriptreact",
+        }
+
+        local mason_reg = require("mason-registry")
+        local opts = {}
+        for _, pkg in pairs(mason_reg.get_installed_packages()) do
+          for _, type in pairs(pkg.spec.categories) do
+            if type == "DAP" then
+              for _, ft in pairs(pkg.spec.languages) do
+                local ftl = string.lower(ft)
+                local ready = mason_reg.get_package(pkg.spec.name):is_installed()
+                if ready then
+                  if keymap[ftl] ~= nil then
+                    ftl = keymap[ftl]
+                    local require_ok, conf_opts = pcall(require, "user.dap.settings." .. ftl)
+                    if require_ok then
+                      opts = vim.tbl_deep_extend("force", conf_opts, opts)
+                    end
+                    require("dap").dapters[ftl] = opts
+                  end
+                end
+              end
+            end
+          end
+        end
       end,
       keys = {
         { "<leader>d", "", desc = "  Debug" },
@@ -42,7 +71,7 @@ if vim.fn.has("win32") == 0 and pcode.nvim_dap then
       lazy = true,
       event = "BufRead",
       dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
-      enabled = vim.fn.has("win32") == 0,
+      -- enabled = vim.fn.has("win32") == 0,
       config = function()
         require("user.mason_dap")
       end,
