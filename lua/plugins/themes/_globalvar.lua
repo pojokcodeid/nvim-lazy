@@ -62,7 +62,7 @@ if pcode.active_php_config then
   end
   table.insert(pcode.mason_ensure_installed, "intelephense")
   table.insert(pcode.mason_ensure_installed, "stimulus_ls")
-  table.insert(pcode.null_ls_ensure_installed, "phpcbf")
+  table.insert(pcode.null_ls_ensure_installed, "php-cs-fixer")
   table.insert(pcode.null_ls_ensure_installed, "blade_formatter")
   table.insert(pcode.null_ls_ensure_installed, "phpcs")
 end
