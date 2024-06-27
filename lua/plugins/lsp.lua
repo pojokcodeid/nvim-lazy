@@ -103,32 +103,32 @@ return {
             require("lspconfig")[server_name].setup(option)
           end
         end,
-        ["jdtls"] = function()
-          require("lspconfig").jdtls.setup({
-            on_attach = require("user.lsp.handlers").on_attach,
-            capabilities = require("user.lsp.handlers").capabilities,
-            cmd = {
-              "jdtls",
-              "-configuration",
-              vim.fn.expand("$HOME") .. "/.cache/jdtls/config",
-              "-data",
-              vim.fn.expand("$HOME") .. "/.cache/jdtls/workspace",
-            },
-            filetypes = { "java" },
-            root_dir = require("lspconfig.util").root_pattern(
-              -- Single-module projects
-              {
-                "build.xml", -- Ant
-                "pom.xml", -- Maven
-                "settings.gradle", -- Gradle
-                "settings.gradle.kts", -- Gradle
-              },
-              -- Multi-module projects
-              { "build.gradle", "build.gradle.kts" }
-            ) or vim.fn.getcwd(),
-            singe_file_support = true,
-          })
-        end,
+        -- ["jdtls"] = function()
+        --   require("lspconfig").jdtls.setup({
+        --     on_attach = require("user.lsp.handlers").on_attach,
+        --     capabilities = require("user.lsp.handlers").capabilities,
+        --     cmd = {
+        --       "jdtls",
+        --       "-configuration",
+        --       vim.fn.expand("$HOME") .. "/.cache/jdtls/config",
+        --       "-data",
+        --       vim.fn.expand("$HOME") .. "/.cache/jdtls/workspace",
+        --     },
+        --     filetypes = { "java" },
+        --     root_dir = require("lspconfig.util").root_pattern(
+        --       -- Single-module projects
+        --       {
+        --         "build.xml", -- Ant
+        --         "pom.xml", -- Maven
+        --         "settings.gradle", -- Gradle
+        --         "settings.gradle.kts", -- Gradle
+        --       },
+        --       -- Multi-module projects
+        --       { "build.gradle", "build.gradle.kts" }
+        --     ) or vim.fn.getcwd(),
+        --     singe_file_support = true,
+        --   })
+        -- end,
       })
       require("user.lsp.handlers").setup()
     end,
