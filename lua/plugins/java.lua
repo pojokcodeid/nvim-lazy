@@ -21,7 +21,9 @@ if pcode.active_java_config.active then
       "williamboman/mason-lspconfig.nvim",
       opts = function(_, opts)
         opts.skip_config = opts.skip_config or {}
-        vim.list_extend(opts.skip_config, { "jdtls" })
+        if pcode.active_java_config.use_nvim_jdtls or false then
+          vim.list_extend(opts.skip_config, { "jdtls" })
+        end
       end,
     },
     {
