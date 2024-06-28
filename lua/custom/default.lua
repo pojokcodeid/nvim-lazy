@@ -70,7 +70,7 @@ pcode.mason_ensure_installed = { -- sebelumnya register_lsp
   -- tambahkan di bawah sini setelah melakukan :masoninstall
 }
 pcode.unregister_lsp = {
-  "jdtls", -- tambahkan di bawah ini
+  -- "jdtls", -- tambahkan di bawah ini
 }
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
@@ -174,4 +174,5 @@ pcode.active_cpp_config = false
 pcode.active_java_config = {
   active = true,
   project = "gradle", -- gradle or maven
+  -- use_nvim_jdtls = false, -- mfussenegger/nvim-jdtls
 }
