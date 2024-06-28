@@ -62,22 +62,20 @@ return {
         end,
       },
     },
-    opts = function(_, opts)
-      opts.skip_config = opts.skip_config or {}
-      opts.ensure_installed = opts.ensure_installed or {}
+    opts = function()
       local servers = { "lua_ls" }
       local mason_install = pcode.mason_ensure_installed or {}
-      local unregis_lsp = pcode.unregister_lsp or {}
       vim.list_extend(servers, mason_install)
-      vim.list_extend(opts.ensure_installed, servers)
-      vim.list_extend(opts.skip_config, unregis_lsp)
-      opts.automatic_installation = true
-      return opts
+      return {
+        ensure_installed = servers,
+        automatic_installation = true,
+      }
     end,
     config = function(_, opts)
       require("mason-lspconfig").setup(opts)
 
       local option = {}
+      local unregis_lsp = pcode.unregister_lsp or {}
       require("mason-lspconfig").setup_handlers({
         function(server_name) -- default handler (optional)
           local capabilities = require("user.lsp.handlers").capabilities
@@ -85,7 +83,7 @@ return {
             capabilities.offsetEncoding = { "utf-16" }
           end
           local is_skip = false
-          local my_index = idxOf(opts.skip_config, server_name)
+          local my_index = idxOf(unregis_lsp, server_name)
           if my_index ~= nil then
             is_skip = true
           end
