@@ -195,16 +195,16 @@ if pcode.active_java_config.active then
         vim.list_extend(opts.ensure_installed, { "jdtls" })
       end,
     },
-    {
-      "stevearc/conform.nvim",
-      event = "VeryLazy",
-      opts = function(_, opts)
-        local package = "lsp_fmt"
-        require("user.utils.masoncfg").try_install("java-debug-adapter")
-        require("user.utils.masoncfg").try_install("java-test")
-        opts.formatters_by_ft.java = { package }
-      end,
-    },
+    -- {
+    --   "stevearc/conform.nvim",
+    --   event = "VeryLazy",
+    --   opts = function(_, opts)
+    --     local package = "lsp_fmt"
+    --     require("user.utils.masoncfg").try_install("java-debug-adapter")
+    --     require("user.utils.masoncfg").try_install("java-test")
+    --     opts.formatters_by_ft.java = { package }
+    --   end,
+    -- },
     {
       "nvim-neotest/neotest",
       dependencies = {
