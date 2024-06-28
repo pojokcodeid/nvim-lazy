@@ -18,6 +18,13 @@ end
 if pcode.active_java_config.active then
   M = {
     {
+      "williamboman/mason-lspconfig.nvim",
+      opts = function(_, opts)
+        opts.skip_config = opts.skip_config or {}
+        vim.list_extend(opts.skip_config, { "jdtls" })
+      end,
+    },
+    {
       "mfussenegger/nvim-jdtls",
       ft = java_filetypes,
       enabled = pcode.active_java_config.use_nvim_jdtls or false,
@@ -248,7 +255,7 @@ if pcode.active_java_config.active then
       },
     },
     {
-      "simrat39/symbols-outline.nvim",
+      "rockerBOO/symbols-outline.nvim",
       cmd = "SymbolsOutline",
       config = function()
         require("symbols-outline").setup({
