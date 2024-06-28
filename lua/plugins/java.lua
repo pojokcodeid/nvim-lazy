@@ -200,8 +200,8 @@ if pcode.active_java_config.active then
       event = "VeryLazy",
       opts = function(_, opts)
         local package = "lsp_fmt"
-        require("user.utils.mason").try_install("java-debug-adapter")
-        require("user.utils.mason").try_install("java-test")
+        require("user.utils.masoncfg").try_install("java-debug-adapter")
+        require("user.utils.masoncfg").try_install("java-test")
         opts.formatters_by_ft.java = { package }
       end,
     },
