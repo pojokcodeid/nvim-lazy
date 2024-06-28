@@ -101,14 +101,14 @@ if pcode.active_python_config then
   end
 end
 -- run if cpp config true
-if pcode.active_cpp_config then
-  -- table.insert(pcode.treesitter_ensure_installed, "cpp")
-  -- table.insert(pcode.treesitter_ensure_installed, "c")
-  -- table.insert(pcode.mason_ensure_installed, "clangd")
-  -- table.insert(pcode.null_ls_ensure_installed, "clang_format")
-  -- table.insert(pcode.dap_ensure_installed, "codelldb")
-  pcode.nvim_dap = true
-end
+-- if pcode.active_cpp_config then
+-- table.insert(pcode.treesitter_ensure_installed, "cpp")
+-- table.insert(pcode.treesitter_ensure_installed, "c")
+-- table.insert(pcode.mason_ensure_installed, "clangd")
+-- table.insert(pcode.null_ls_ensure_installed, "clang_format")
+-- table.insert(pcode.dap_ensure_installed, "codelldb")
+-- pcode.nvim_dap = true
+-- end
 -- run if java config true
 -- if pcode.active_java_config.active and pcode.active_java_config.use_nvim_jdtls then
 -- table.insert(pcode.treesitter_ensure_installed, "java")

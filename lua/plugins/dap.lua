@@ -1,5 +1,5 @@
 local M = {}
-if pcode.nvim_dap then
+if pcode.nvim_dap or pcode.active_cpp_config then
   M = {
     {
       "rcarriga/nvim-dap-ui",
