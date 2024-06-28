@@ -4,12 +4,36 @@ local M = {}
 if pcode.active_cpp_config then
   M = {
     {
-      "nvimtools/none-ls.nvim",
-      optional = true,
+      "nvim-treesitter/nvim-treesitter",
       opts = function(_, opts)
-        local nls = require("null-ls")
-        opts.sources = opts.sources or {}
-        table.insert(opts.sources, nls.builtins.formatting.clang_format.with({ filetypes = { "cpp", "c" } }))
+        opts.ensure_installed = opts.ensure_installed or {}
+        vim.list_extend(opts.ensure_installed, { "cpp", "c" })
+      end,
+    },
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = function(_, opts)
+        opts.ensure_installed = opts.ensure_installed or {}
+        vim.list_extend(opts.ensure_installed, { "clangd" })
+        require("user.utils.masoncfg").try_install("clang-format")
+      end,
+    },
+    {
+      "jay-babu/mason-nvim-dap.nvim",
+      event = "VeryLazy",
+      opts = function(_, opts)
+        opts.ensure_installed = opts.ensure_installed or {}
+        vim.list_extend(opts.ensure_installed, { "codelldb" })
+      end,
+    },
+    {
+      "stevearc/conform.nvim",
+      event = "VeryLazy",
+      opts = function(_, opts)
+        local package = "clang-format"
+        require("user.utils.masoncfg").try_install(package)
+        opts.formatters_by_ft.cpp = { package }
+        opts.formatters_by_ft.c = { package }
       end,
     },
     {

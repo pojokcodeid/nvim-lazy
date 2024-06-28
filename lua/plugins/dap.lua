@@ -42,38 +42,25 @@ if pcode.nvim_dap then
       lazy = true,
       event = "BufRead",
       dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
-      -- enabled = vim.fn.has("win32") == 0,
-      config = function()
-        require("user.mason_dap")
-        -- add diff langue vs filetype
-        local keymap = {
-          ["c++"] = "cpp",
-          ["c#"] = "cs",
-          ["jsx"] = "javascriptreact",
-        }
+      opts = function(_, opts)
+        local dap_data = pcode.dap_ensure_installed or {}
+        opts.ensure_installed = opts.ensure_installed or {}
+        vim.list_extend(opts.ensure_installed, dap_data)
+        opts.automatic_setup = true
+        opts.handlers = {
+          function(config)
+            -- all sources with no handler get passed here
 
-        local mason_reg = require("mason-registry")
-        local opts = {}
-        for _, pkg in pairs(mason_reg.get_installed_packages()) do
-          for _, type in pairs(pkg.spec.categories) do
-            if type == "DAP" then
-              for _, ft in pairs(pkg.spec.languages) do
-                local ftl = string.lower(ft)
-                local ready = mason_reg.get_package(pkg.spec.name):is_installed()
-                if ready then
-                  if keymap[ftl] ~= nil then
-                    ftl = keymap[ftl]
-                    local require_ok, conf_opts = pcall(require, "user.dap.settings." .. ftl)
-                    if require_ok then
-                      opts = vim.tbl_deep_extend("force", conf_opts, opts)
-                    end
-                    require("dap").dapters[ftl] = opts
-                  end
-                end
-              end
-            end
-          end
-        end
+            -- Keep original functionality
+            require("mason-nvim-dap").default_setup(config)
+          end,
+        }
+        return opts
+      end,
+      -- enabled = vim.fn.has("win32") == 0,
+      config = function(_, opts)
+        require("mason").setup()
+        require("mason-nvim-dap").setup(opts)
       end,
     },
   }
