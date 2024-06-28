@@ -123,6 +123,7 @@ if pcode.active_python_config then
         local package = "black"
         require("user.utils.masoncfg").try_install("flake8")
         require("user.utils.masoncfg").try_install("black")
+        require("user.utils.masoncfg").try_install("debugpy")
         opts.formatters_by_ft.python = { package }
       end,
     },
