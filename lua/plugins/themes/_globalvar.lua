@@ -37,6 +37,20 @@ _G.idxOf = function(array, value)
   return nil
 end
 
+_G.unique_list = function(list)
+  local seen = {}
+  local result = {}
+
+  for _, val in ipairs(list) do
+    if not seen[val] then
+      table.insert(result, val)
+      seen[val] = true
+    end
+  end
+
+  return result
+end
+
 -- run if rust config true
 if pcode.active_rust_config then
   table.insert(pcode.mason_ensure_installed, "rust_analyzer")
