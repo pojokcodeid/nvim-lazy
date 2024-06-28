@@ -6,6 +6,7 @@ return {
     dependencies = {
       {
         "jayp0521/mason-null-ls.nvim",
+        event = "VeryLazy",
         opts = {
           ensure_installed = pcode.null_ls_ensure_installed or {},
           automatic_setup = true,

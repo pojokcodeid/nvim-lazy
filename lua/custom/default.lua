@@ -45,7 +45,7 @@ pcode.format_timeout_ms = 5000
 -- https://github.com/mfussenegger/nvim-lint
 -- https://github.com/stevearc/conform.nvim
 -- use conform and nvim-lint if set true
-pcode.disable_null_ls = false
+pcode.disable_null_ls = true
 
 pcode.treesitter_ensure_installed = {}
 pcode.tscontext = false
@@ -70,7 +70,7 @@ pcode.mason_ensure_installed = { -- sebelumnya register_lsp
   -- tambahkan di bawah sini setelah melakukan :masoninstall
 }
 pcode.unregister_lsp = {
-  -- "jdtls", -- tambahkan di bawah ini
+  "jdtls", -- tambahkan di bawah ini
 }
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
@@ -172,6 +172,6 @@ pcode.active_golang_config = false
 pcode.active_python_config = false
 pcode.active_cpp_config = false
 pcode.active_java_config = {
-  active = false,
+  active = true,
   project = "gradle", -- gradle or maven
 }

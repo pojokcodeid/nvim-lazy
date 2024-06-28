@@ -1,11 +1,11 @@
 return {
   {
     "williamboman/mason-lspconfig.nvim",
+    event = "VeryLazy",
     dependencies = {
       {
         "neovim/nvim-lspconfig",
         lazy = true,
-        event = "BufRead",
         cmd = {
           "LspInfo",
           "LspInstall",
@@ -62,7 +62,6 @@ return {
         end,
       },
     },
-    event = "BufReadPre",
     opts = function()
       local servers = { "lua_ls" }
       local mason_install = pcode.mason_ensure_installed or {}
