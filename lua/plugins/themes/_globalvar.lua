@@ -110,11 +110,11 @@ if pcode.active_cpp_config then
   pcode.nvim_dap = true
 end
 -- run if java config true
--- if pcode.active_java_config.active then
--- table.insert(pcode.treesitter_ensure_installed, "java")
--- table.insert(pcode.mason_ensure_installed, "jdtls")
--- table.insert(pcode.null_ls_ensure_installed, "google_java_format")
--- table.insert(pcode.dap_ensure_installed, "javadbg")
--- table.insert(pcode.unregister_lsp, "jdtls")
--- end
+if pcode.active_java_config.active and pcode.active_java_config.use_nvim_jdtls then
+  -- table.insert(pcode.treesitter_ensure_installed, "java")
+  -- table.insert(pcode.mason_ensure_installed, "jdtls")
+  -- table.insert(pcode.null_ls_ensure_installed, "google_java_format")
+  -- table.insert(pcode.dap_ensure_installed, "javadbg")
+  table.insert(pcode.unregister_lsp, "jdtls")
+end
 return {}

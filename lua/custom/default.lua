@@ -174,5 +174,5 @@ pcode.active_cpp_config = false
 pcode.active_java_config = {
   active = true,
   project = "gradle", -- gradle or maven
-  -- use_nvim_jdtls = false, -- mfussenegger/nvim-jdtls
+  use_nvim_jdtls = true, -- mfussenegger/nvim-jdtls
 }
