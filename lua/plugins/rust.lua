@@ -2,6 +2,36 @@ local M = {}
 if pcode.active_rust_config then
   M = {
     {
+      "nvim-treesitter/nvim-treesitter",
+      opts = function(_, opts)
+        opts.ensure_installed = opts.ensure_installed or {}
+        vim.list_extend(opts.ensure_installed, { "rust" })
+      end,
+    },
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = function(_, opts)
+        opts.skip_config = opts.skip_config or {}
+        opts.ensure_installed = opts.ensure_installed or {}
+        vim.list_extend(opts.ensure_installed, { "rust_analyzer" })
+        vim.list_extend(opts.skip_config, { "rust_analyzer" })
+      end,
+    },
+    {
+      "stevearc/conform.nvim",
+      event = "VeryLazy",
+      opts = function(_, opts)
+        local package = "ast-grep"
+        require("user.utils.masoncfg").try_install(package)
+        opts.formatters_by_ft.rust = { package }
+      end,
+    },
+    -- disable none-ls
+    {
+      "nvimtools/none-ls.nvim",
+      enabled = false,
+    },
+    {
       "rust-lang/rust.vim",
       ft = "rust",
       init = function()

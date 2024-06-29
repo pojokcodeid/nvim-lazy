@@ -161,9 +161,9 @@ pcode.rest_client = true
 pcode.nvim_dap = true -- not support for windows os (auto config mason-nvim-dap)
 
 -- conefig special support test & dap
-pcode.active_rust_config = false
+pcode.active_rust_config = true
 pcode.active_javascript_config = {
-  active = true,
+  active = false,
   jest_command = "npm test -- ",
   jest_config = "jest.config.mjs",
 }

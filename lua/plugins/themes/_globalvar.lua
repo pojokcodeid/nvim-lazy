@@ -52,11 +52,11 @@ _G.unique_list = function(list)
 end
 
 -- run if rust config true
-if pcode.active_rust_config then
-  table.insert(pcode.mason_ensure_installed, "rust_analyzer")
-  table.insert(pcode.unregister_lsp, "rust_analyzer")
-  table.insert(pcode.treesitter_ensure_installed, "rust")
-end
+-- if pcode.active_rust_config then
+-- table.insert(pcode.mason_ensure_installed, "rust_analyzer")
+-- table.insert(pcode.unregister_lsp, "rust_analyzer")
+-- table.insert(pcode.treesitter_ensure_installed, "rust")
+-- end
 -- run if javascript config true
 -- if pcode.active_javascript_config.active then
 -- local lst_ts = { "html", "javascript", "typescript", "tsx", "css", "json", "jsonc" }
