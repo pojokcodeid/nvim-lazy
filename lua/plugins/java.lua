@@ -4,29 +4,29 @@ if pcode.active_java_config.active then
     -- {
     --   "mfussenegger/nvim-jdtls",
     -- },
-    {
-      "nvim-treesitter/nvim-treesitter",
-      opts = function(_, opts)
-        opts.ensure_installed = opts.ensure_installed or {}
-        vim.list_extend(opts.ensure_installed, { "java" })
-      end,
-    },
-    {
-      "williamboman/mason-lspconfig.nvim",
-      opts = function(_, opts)
-        opts.ensure_installed = opts.ensure_installed or {}
-        vim.list_extend(opts.ensure_installed, { "jdtls" })
-      end,
-    },
-    {
-      "stevearc/conform.nvim",
-      event = "VeryLazy",
-      opts = function(_, opts)
-        local package="google-java-format"
-        require("user.utils.mason").try_install(package)
-        opts.formatters_by_ft.java = { package }
-      end,
-    },
+    -- {
+    --   "nvim-treesitter/nvim-treesitter",
+    --   opts = function(_, opts)
+    --     opts.ensure_installed = opts.ensure_installed or {}
+    --     vim.list_extend(opts.ensure_installed, { "java" })
+    --   end,
+    -- },
+    -- {
+    --   "williamboman/mason-lspconfig.nvim",
+    --   opts = function(_, opts)
+    --     opts.ensure_installed = opts.ensure_installed or {}
+    --     vim.list_extend(opts.ensure_installed, { "jdtls" })
+    --   end,
+    -- },
+    -- {
+    --   "stevearc/conform.nvim",
+    --   event = "VeryLazy",
+    --   opts = function(_, opts)
+    --     local package="google-java-format"
+    --     require("user.utils.mason").try_install(package)
+    --     opts.formatters_by_ft.java = { package }
+    --   end,
+    -- },
     {
       "nvim-neotest/neotest",
       dependencies = {
