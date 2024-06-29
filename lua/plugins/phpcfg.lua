@@ -2,6 +2,39 @@ local M = {}
 if pcode.active_php_config then
   M = {
     {
+      "nvim-treesitter/nvim-treesitter",
+      opts = function(_, opts)
+        opts.ensure_installed = opts.ensure_installed or {}
+        vim.list_extend(opts.ensure_installed, { "html", "php_only", "php", "bash", "blade" })
+      end,
+    },
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = function(_, opts)
+        opts.ensure_installed = opts.ensure_installed or {}
+        vim.list_extend(opts.ensure_installed, { "intelephense", "stimulus_ls" })
+      end,
+    },
+    {
+      "stevearc/conform.nvim",
+      event = "VeryLazy",
+      opts = function(_, opts)
+        local package = "php-cs-fixer"
+        require("user.utils.masoncfg").try_install(package)
+        require("user.utils.masoncfg").try_install("blade-formatter")
+        opts.formatters_by_ft.php = { "easy-coding-standard" }
+        opts.formatters_by_ft.blade = { "blade-formatter" }
+      end,
+    },
+    {
+      "mfussenegger/nvim-lint",
+      opts = function(_, opts)
+        opts.linters_by_ft = opts.linters_by_ft or {}
+        require("user.utils.masoncfg").try_install("phpcs")
+        opts.linters_by_ft.php = { "phpcs" }
+      end,
+    },
+    {
       "rcarriga/nvim-dap-ui",
       lazy = true,
       event = "BufRead",

@@ -69,17 +69,17 @@ if pcode.active_javascript_config.active then
   table.insert(pcode.null_ls_ensure_installed, "prettier")
 end
 -- run if php config true
-if pcode.active_php_config then
-  local lst_ts = { "html", "php_only", "php", "bash", "blade" }
-  for _, ts in pairs(lst_ts) do
-    table.insert(pcode.treesitter_ensure_installed, ts)
-  end
-  table.insert(pcode.mason_ensure_installed, "intelephense")
-  table.insert(pcode.mason_ensure_installed, "stimulus_ls")
-  table.insert(pcode.null_ls_ensure_installed, "php-cs-fixer")
-  table.insert(pcode.null_ls_ensure_installed, "blade_formatter")
-  table.insert(pcode.null_ls_ensure_installed, "phpcs")
-end
+-- if pcode.active_php_config then
+-- local lst_ts = { "html", "php_only", "php", "bash", "blade" }
+-- for _, ts in pairs(lst_ts) do
+--   table.insert(pcode.treesitter_ensure_installed, ts)
+-- end
+-- table.insert(pcode.mason_ensure_installed, "intelephense")
+-- table.insert(pcode.mason_ensure_installed, "stimulus_ls")
+-- table.insert(pcode.null_ls_ensure_installed, "php-cs-fixer")
+-- table.insert(pcode.null_ls_ensure_installed, "blade_formatter")
+-- table.insert(pcode.null_ls_ensure_installed, "phpcs")
+-- end
 -- run if golang config true
 -- if pcode.active_golang_config then
 -- local lst_ts = { "go", "gomod", "gosum", "gotmpl", "gowork" }
