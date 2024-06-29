@@ -37,20 +37,6 @@ _G.idxOf = function(array, value)
   return nil
 end
 
-_G.unique_list = function(list)
-  local seen = {}
-  local result = {}
-
-  for _, val in ipairs(list) do
-    if not seen[val] then
-      table.insert(result, val)
-      seen[val] = true
-    end
-  end
-
-  return result
-end
-
 -- run if rust config true
 if pcode.active_rust_config then
   table.insert(pcode.mason_ensure_installed, "rust_analyzer")
@@ -76,7 +62,7 @@ if pcode.active_php_config then
   end
   table.insert(pcode.mason_ensure_installed, "intelephense")
   table.insert(pcode.mason_ensure_installed, "stimulus_ls")
-  table.insert(pcode.null_ls_ensure_installed, "php-cs-fixer")
+  table.insert(pcode.null_ls_ensure_installed, "phpcbf")
   table.insert(pcode.null_ls_ensure_installed, "blade_formatter")
   table.insert(pcode.null_ls_ensure_installed, "phpcs")
 end
@@ -110,11 +96,11 @@ if pcode.active_cpp_config then
   pcode.nvim_dap = true
 end
 -- run if java config true
--- if pcode.active_java_config.active then
--- table.insert(pcode.treesitter_ensure_installed, "java")
--- table.insert(pcode.mason_ensure_installed, "jdtls")
--- table.insert(pcode.null_ls_ensure_installed, "google_java_format")
--- table.insert(pcode.dap_ensure_installed, "javadbg")
--- table.insert(pcode.unregister_lsp, "jdtls")
--- end
+if pcode.active_java_config.active then
+  table.insert(pcode.treesitter_ensure_installed, "java")
+  table.insert(pcode.mason_ensure_installed, "jdtls")
+  table.insert(pcode.null_ls_ensure_installed, "google_java_format")
+  -- table.insert(pcode.dap_ensure_installed, "javadbg")
+  -- table.insert(pcode.unregister_lsp, "jdtls")
+end
 return {}

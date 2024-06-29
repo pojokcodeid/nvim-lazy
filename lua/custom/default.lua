@@ -38,17 +38,12 @@ pcode.progress = 1
 -- 4 = off
 pcode.show_mode = 3
 
--- true or false
-pcode.format_on_save = true
+-- 1 ( format jalan)  0 (fromat off)
+pcode.format_on_save = 1
 pcode.format_timeout_ms = 5000
 
--- https://github.com/mfussenegger/nvim-lint
--- https://github.com/stevearc/conform.nvim
--- use conform and nvim-lint if set true
-pcode.disable_null_ls = true
-
 pcode.treesitter_ensure_installed = {}
-pcode.tscontext = false
+
 -- ini hanya untuk lsp yg tidak support masson
 -- untuk referesi support language kunjungi link dibawah
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
@@ -70,7 +65,7 @@ pcode.mason_ensure_installed = { -- sebelumnya register_lsp
   -- tambahkan di bawah sini setelah melakukan :masoninstall
 }
 pcode.unregister_lsp = {
-  "jdtls", -- tambahkan di bawah ini
+  -- "jdtls", -- tambahkan di bawah ini
 }
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
@@ -158,7 +153,7 @@ pcode.database = false
 pcode.rest_client = true
 
 -- https://github.com/mfussenegger/nvim-dap
-pcode.nvim_dap = true -- not support for windows os (auto config mason-nvim-dap)
+pcode.nvim_dap = false -- not support for windows os (auto config mason-nvim-dap)
 
 -- conefig special support test & dap
 pcode.active_rust_config = false
@@ -172,6 +167,6 @@ pcode.active_golang_config = false
 pcode.active_python_config = false
 pcode.active_cpp_config = false
 pcode.active_java_config = {
-  active = true,
+  active = false,
   project = "gradle", -- gradle or maven
 }

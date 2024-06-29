@@ -1,5 +1,5 @@
 local M = {}
-if pcode.nvim_dap then
+if vim.fn.has("win32") == 0 and pcode.nvim_dap then
   M = {
     {
       "rcarriga/nvim-dap-ui",
@@ -15,7 +15,7 @@ if pcode.nvim_dap then
           },
         },
       },
-      -- enabled = vim.fn.has("win32") == 0,
+      enabled = vim.fn.has("win32") == 0,
       config = function()
         require("user.dapui")
       end,
@@ -42,7 +42,7 @@ if pcode.nvim_dap then
       lazy = true,
       event = "BufRead",
       dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
-      -- enabled = vim.fn.has("win32") == 0,
+      enabled = vim.fn.has("win32") == 0,
       config = function()
         require("user.mason_dap")
       end,
