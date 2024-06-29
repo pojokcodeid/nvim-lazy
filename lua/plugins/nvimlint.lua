@@ -68,6 +68,11 @@ return {
     local addnew = {
       ["typescriptreact"] = "eslint_d",
       ["javascriptreact"] = "eslint_d",
+      ["javascript.jsx"] = "eslint_d",
+      ["typescript.tsx"] = "eslint_d",
+      ["vue"] = "eslint_d",
+      ["sevelte"] = "eslint_d",
+      ["astro"] = "eslint_d",
     }
 
     local ignore = {
