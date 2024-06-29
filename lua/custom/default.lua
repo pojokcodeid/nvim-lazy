@@ -176,4 +176,4 @@ pcode.active_java_config = {
   project = "gradle", -- gradle or maven
   use_nvim_jdtls = true, -- mfussenegger/nvim-jdtls
 }
-pcode.active_deno = false
+pcode.active_deno_config = false
