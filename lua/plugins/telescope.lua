@@ -9,6 +9,9 @@ return {
     }
     local live_grep = {
       only_sort_text = true,
+      additional_args = function()
+        return { "--multiline" }
+      end,
     }
     if pcode.telescope_theme_find_file and pcode.telescope_theme_find_file ~= "center" then
       find_files = {
@@ -20,6 +23,9 @@ return {
       live_grep = {
         theme = pcode.telescope_theme_live_grep,
         only_sort_text = true,
+        additional_args = function()
+          return { "--multiline" }
+        end,
       }
     end
     local actions = require("telescope.actions")

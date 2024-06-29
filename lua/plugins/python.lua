@@ -102,6 +102,31 @@ if pcode.active_python_config then
         { "<Leader>TS", function() require("neotest").run.stop() end, desc = "Stop" },
       },
     },
+    {
+      "nvim-treesitter/nvim-treesitter",
+      opts = function(_, opts)
+        opts.ensure_installed = opts.ensure_installed or {}
+        vim.list_extend(opts.ensure_installed, { "python" })
+      end,
+    },
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = function(_, opts)
+        opts.ensure_installed = opts.ensure_installed or {}
+        vim.list_extend(opts.ensure_installed, { "pyright" })
+      end,
+    },
+    {
+      "stevearc/conform.nvim",
+      event = "VeryLazy",
+      opts = function(_, opts)
+        local package = "black"
+        require("user.utils.masoncfg").try_install("flake8")
+        require("user.utils.masoncfg").try_install("black")
+        require("user.utils.masoncfg").try_install("debugpy")
+        opts.formatters_by_ft.python = { package }
+      end,
+    },
   }
   if vim.fn.has("win32") ~= 0 then
     table.insert(M, nvim_dap)

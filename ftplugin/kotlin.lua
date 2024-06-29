@@ -1,7 +1,7 @@
-vim.opt_local.expandtab = true
-vim.opt_local.shiftwidth = 4
-vim.opt_local.tabstop = 4
-vim.opt_local.softtabstop = 4
+-- vim.opt_local.expandtab = true
+-- vim.opt_local.shiftwidth = 4
+-- vim.opt_local.tabstop = 4
+-- vim.opt_local.softtabstop = 4
 
 -- local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 -- if not status_ok then
