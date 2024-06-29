@@ -4,6 +4,37 @@ local M = {}
 if pcode.active_golang_config then
   M = {
     {
+      "nvim-treesitter/nvim-treesitter",
+      opts = function(_, opts)
+        opts.ensure_installed = opts.ensure_installed or {}
+        vim.list_extend(opts.ensure_installed, { "go", "gomod", "gosum", "gotmpl", "gowork" })
+      end,
+    },
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = function(_, opts)
+        opts.ensure_installed = opts.ensure_installed or {}
+        vim.list_extend(opts.ensure_installed, { "gopls" })
+      end,
+    },
+    {
+      "stevearc/conform.nvim",
+      event = "VeryLazy",
+      opts = function(_, opts)
+        local package = "gofumpt"
+        require("user.utils.masoncfg").try_install(package)
+        opts.formatters_by_ft.python = { package }
+      end,
+    },
+    {
+      "mfussenegger/nvim-lint",
+      opts = function(_, opts)
+        opts.linters_by_ft = opts.linters_by_ft or {}
+        require("user.utils.masoncfg").try_install("ast-grep")
+        opts.linters_by_ft.php = { "ast-grep" }
+      end,
+    },
+    {
       "nvim-neotest/neotest",
       event = "VeryLazy",
       dependencies = {
