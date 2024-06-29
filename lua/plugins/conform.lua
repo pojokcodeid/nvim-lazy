@@ -1,5 +1,5 @@
 local M = {}
-local disable =  pcode.disable_null_ls or false
+local disable = pcode.disable_null_ls or false
 if require("user.utils.cfgstatus").cheack() then
   disable = true
 end
@@ -44,6 +44,7 @@ if disable then
       -- add ignore filetype
       local ignore = {
         ["php"] = "tlint",
+        ["lua"] = "ast-grep",
       }
 
       for _, pkg in pairs(mason_reg.get_installed_packages()) do
