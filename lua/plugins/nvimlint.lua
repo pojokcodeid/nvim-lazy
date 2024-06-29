@@ -64,10 +64,17 @@ return {
       ["yamllint"] = "yamllint",
     }
 
+    -- add new mapping filetype
+    local addnew = {
+      ["typescriptreact"] = "eslint_d",
+      ["javascriptreact"] = "eslint_d",
+    }
+
     local ignore = {
       ["php"] = "tlint",
     }
 
+    -- local listtest = {}
     for _, pkg in pairs(mason_reg.get_installed_packages()) do
       for _, type in pairs(pkg.spec.categories) do
         -- only act upon a Linter
@@ -80,9 +87,23 @@ return {
               if keymap[ftl] ~= nil then
                 ftl = keymap[ftl]
               end
+
+              -- if substring(pkg.spec.name, "eslint") then
+              --   table.insert(listtest, ftl)
+              -- end
+
               if name_map[pkg.spec.name] ~= nil then
                 pkg.spec.name = name_map[pkg.spec.name]
               end
+
+              -- add new mapping language
+              for key, value in pairs(addnew) do
+                if value == pkg.spec.name then
+                  opts.linters_by_ft[key] = opts.linters_by_ft[key] or {}
+                  table.insert(opts.linters_by_ft[key], pkg.spec.name)
+                end
+              end
+
               if ignore[ftl] ~= pkg.spec.name then
                 opts.linters_by_ft[ftl] = opts.linters_by_ft[ftl] or {}
                 table.insert(opts.linters_by_ft[ftl], pkg.spec.name)
@@ -92,6 +113,7 @@ return {
         end
       end
     end
+    -- print(table.concat(listtest, ","))
   end,
   config = function(_, opts)
     require("lint").linters_by_ft = opts.linters_by_ft

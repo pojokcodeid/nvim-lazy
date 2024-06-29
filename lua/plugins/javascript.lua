@@ -13,7 +13,7 @@ if pcode.active_javascript_config.active then
       "williamboman/mason-lspconfig.nvim",
       opts = function(_, opts)
         opts.ensure_installed = opts.ensure_installed or {}
-        vim.list_extend(opts.ensure_installed, { "html", "cssls", "emmet_ls", "jsonls", "tsserver" })
+        vim.list_extend(opts.ensure_installed, { "html", "eslint", "cssls", "emmet_ls", "jsonls", "tsserver" })
       end,
     },
     {
@@ -30,7 +30,7 @@ if pcode.active_javascript_config.active then
       opts = function(_, opts)
         opts.linters_by_ft = opts.linters_by_ft or {}
         require("user.utils.masoncfg").try_install("eslint_d")
-        opts.linters_by_ft.javascript = { "eslint" }
+        opts.linters_by_ft.javascript = { "eslint_d" }
       end,
     },
     {
