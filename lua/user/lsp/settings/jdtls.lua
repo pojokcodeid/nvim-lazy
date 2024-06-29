@@ -2,9 +2,9 @@ return {
   cmd = {
     "jdtls",
     "-configuration",
-    vim.fn.expand("$HOME") .. "/.cache/jdtls/config",
+    vim.fn.stdpath("cache") .. "/jdtls/config",
     "-data",
-    vim.fn.expand("$HOME") .. "/.cache/jdtls/workspace",
+    vim.fn.stdpath("cache") .. "/jdtls/workspace",
   },
   filetypes = { "java" },
   root_dir = require("lspconfig.util").root_pattern(
