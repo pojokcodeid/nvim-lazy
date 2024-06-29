@@ -1,5 +1,5 @@
 local M = {}
-if pcode.nvim_dap or pcode.active_cpp_config then
+if pcode.nvim_dap then
   M = {
     {
       "rcarriga/nvim-dap-ui",
@@ -42,25 +42,9 @@ if pcode.nvim_dap or pcode.active_cpp_config then
       lazy = true,
       event = "BufRead",
       dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
-      opts = function(_, opts)
-        local dap_data = pcode.dap_ensure_installed or {}
-        opts.ensure_installed = opts.ensure_installed or {}
-        vim.list_extend(opts.ensure_installed, dap_data)
-        opts.automatic_setup = true
-        opts.handlers = {
-          function(config)
-            -- all sources with no handler get passed here
-
-            -- Keep original functionality
-            require("mason-nvim-dap").default_setup(config)
-          end,
-        }
-        return opts
-      end,
       -- enabled = vim.fn.has("win32") == 0,
-      config = function(_, opts)
-        require("mason").setup()
-        require("mason-nvim-dap").setup(opts)
+      config = function()
+        require("user.mason_dap")
       end,
     },
   }
