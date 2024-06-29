@@ -28,6 +28,7 @@
   "mini.indentscope": { "branch": "main", "commit": "56d42be090e8fcc68eda69cfe55af8c5e562300e" },
   "neoscroll.nvim": { "branch": "master", "commit": "a731f66f1d39ec6175fd201c5bf849e54abda99c" },
   "neotest": { "branch": "master", "commit": "f30bab1faef13d47f3905e065215c96a42d075ad" },
+  "neotest-gtest": { "branch": "main", "commit": "b44c8afc26cea75ffc80617ce07b4e745a56e589" },
   "neotest-java": { "branch": "main", "commit": "320f31c71b183f2c584198f33f93542fd0e5a768" },
   "noice.nvim": { "branch": "main", "commit": "03c6a75661e68012e30b0ed81f050358b1e2233c" },
   "nui.nvim": { "branch": "main", "commit": "a0fd35fcbb4cb479366f1dc5f20145fd718a3733" },
