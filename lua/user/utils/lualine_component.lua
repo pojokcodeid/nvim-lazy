@@ -93,7 +93,8 @@ return {
         if type(msg) == "boolean" or #msg == 0 then
           return "LSP Inactive"
         end
-        return msg
+        -- return msg
+        table.insert(buf_client_names, msg)
       end
       -- add client
       for _, client in pairs(buf_clients) do
