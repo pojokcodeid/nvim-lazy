@@ -20,6 +20,7 @@ if pcode.active_javascript_config.active then
       "stevearc/conform.nvim",
       event = "VeryLazy",
       opts = function(_, opts)
+        opts.formatters_by_ft = opts.formatters_by_ft or {}
         local package = "prettier"
         require("user.utils.masoncfg").try_install(package)
         opts.formatters_by_ft.javascript = { package }
