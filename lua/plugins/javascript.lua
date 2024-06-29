@@ -1,7 +1,38 @@
 local M = {}
 local config_file = pcode.active_javascript_config.jest_config or "jest.config.ts"
-if pcode.active_javascript_config.status then
+if pcode.active_javascript_config.active then
   M = {
+    {
+      "nvim-treesitter/nvim-treesitter",
+      opts = function(_, opts)
+        opts.ensure_installed = opts.ensure_installed or {}
+        vim.list_extend(opts.ensure_installed, { "html", "javascript", "typescript", "tsx", "css", "json", "jsonc" })
+      end,
+    },
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = function(_, opts)
+        opts.ensure_installed = opts.ensure_installed or {}
+        vim.list_extend(opts.ensure_installed, { "html", "cssls", "emmet_ls", "jsonls", "tsserver" })
+      end,
+    },
+    {
+      "stevearc/conform.nvim",
+      event = "VeryLazy",
+      opts = function(_, opts)
+        local package = "prettier"
+        require("user.utils.masoncfg").try_install(package)
+        opts.formatters_by_ft.javascript = { package }
+      end,
+    },
+    {
+      "mfussenegger/nvim-lint",
+      opts = function(_, opts)
+        opts.linters_by_ft = opts.linters_by_ft or {}
+        require("user.utils.masoncfg").try_install("eslint_d")
+        opts.linters_by_ft.javascript = { "eslint" }
+      end,
+    },
     {
       "nvim-neotest/neotest",
       dependencies = {

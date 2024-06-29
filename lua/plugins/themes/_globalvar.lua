@@ -58,16 +58,16 @@ if pcode.active_rust_config then
   table.insert(pcode.treesitter_ensure_installed, "rust")
 end
 -- run if javascript config true
-if pcode.active_javascript_config.active then
-  local lst_ts = { "html", "javascript", "typescript", "tsx", "css", "json", "jsonc" }
-  for _, ts in pairs(lst_ts) do
-    table.insert(pcode.treesitter_ensure_installed, ts)
-  end
-  for _, lsp in pairs({ "html", "cssls", "emmet_ls", "eslint", "jsonls", "tsserver" }) do
-    table.insert(pcode.mason_ensure_installed, lsp)
-  end
-  table.insert(pcode.null_ls_ensure_installed, "prettier")
-end
+-- if pcode.active_javascript_config.active then
+-- local lst_ts = { "html", "javascript", "typescript", "tsx", "css", "json", "jsonc" }
+-- for _, ts in pairs(lst_ts) do
+--   table.insert(pcode.treesitter_ensure_installed, ts)
+-- end
+-- for _, lsp in pairs({ "html", "cssls", "emmet_ls", "eslint", "jsonls", "tsserver" }) do
+--   table.insert(pcode.mason_ensure_installed, lsp)
+-- end
+-- table.insert(pcode.null_ls_ensure_installed, "prettier")
+-- end
 -- run if php config true
 -- if pcode.active_php_config then
 -- local lst_ts = { "html", "php_only", "php", "bash", "blade" }
