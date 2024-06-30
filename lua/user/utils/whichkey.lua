@@ -226,7 +226,7 @@ M.mappings = {
   },
   r = {
     name = "  Run",
-    l = { "<cmd>edit term://live-server<cr>", "Live Server" },
+    -- l = { "<cmd>edit term://live-server<cr>", "Live Server" },
     s = {
       '<cmd>autocmd bufwritepost [^_]*.sass,[^_]*.scss  silent exec "!sass %:p %:r.css"<CR>',
       "Auto Compile Sass",
