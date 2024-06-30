@@ -105,15 +105,21 @@ if pcode.active_kotlin_config or false then
         { "<leader>ds", "<cmd>lua require'dap'.continue()<cr>", desc = "Start" },
         { "<leader>dq", "<cmd>lua require'dap'.close()<cr>", desc = "Quit" },
         { "<leader>dU", "<cmd>lua require'dapui'.toggle({reset = true})<cr>", desc = "Toggle UI" },
-        -- setting cek 
+        -- setting cek
         -- https://stackoverflow.com/questions/9356543/logging-while-testing-through-gradle
         { "<leader>T", "", desc = " Test" },
         { "<leader>Ta", "<cmd>terminal ./gradlew test<cr>", desc = "Run All" },
         {
           "<leader>Tu",
           function()
-            local current_word = vim.fn.expand("<cword>")
-            vim.cmd("terminal ./gradlew test --tests *." .. current_word)
+            -- local current_word = vim.fn.expand("<cword>")
+            local current_word = ""
+            local input = vim.fn.getline(".")
+            current_word = all_trim((input:gsub("class", "")):gsub("{", "")) -- hilangkan bagian class
+            current_word = current_word:gsub("fun", "")
+            current_word = current_word:gsub("%(%)", "")
+            current_word = current_word:gsub("{", "")
+            vim.cmd("terminal ./gradlew test --tests *." .. all_trim(current_word))
           end,
           desc = "Run Under Cursor",
         },
