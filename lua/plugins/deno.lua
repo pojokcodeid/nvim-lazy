@@ -122,8 +122,24 @@ if pcode.active_deno_config or false then
         {
           "<leader>Tu",
           function()
-            local current_word = vim.fn.expand("<cword>")
-            vim.cmd("terminal deno test --filter " .. current_word)
+            -- local current_word = vim.fn.expand("<cword>")
+            local extracted_text = ""
+            local input = vim.fn.getline(".")
+            local contains_double_quotes = input:match('"')
+            local contains_single_quotes = input:match("'")
+            if contains_double_quotes then
+              -- process jika ada double quote
+              input = input:gsub('"', "'")
+              local start_index, end_index = input:find("'([^']*)'") -- Mencari teks di dalam tanda petik satu
+              extracted_text = input:sub(start_index, end_index)
+            elseif contains_single_quotes then
+              input = input:gsub('"', "'")
+              local start_index, end_index = input:find("'([^']*)'") -- Mencari teks di dalam tanda petik satu
+              extracted_text = input:sub(start_index, end_index)
+            else
+              extracted_text = (input:gsub("Deno.test%(function", "")):gsub("%(%) %{", "")
+            end
+            vim.cmd("terminal deno test --filter " .. extracted_text)
           end,
           desc = "Run Under Cursor",
         },
