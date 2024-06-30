@@ -1,5 +1,9 @@
 local M = {}
-if not (pcode.disable_null_ls or false) then
+local disable = pcode.disable_null_ls or false
+if not require("user.utils.cfgstatus").cheack() then
+  disable = true
+end
+if disable then
   M = {
     {
       "nvimtools/none-ls.nvim",

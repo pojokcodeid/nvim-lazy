@@ -45,6 +45,7 @@ if disable then
       local ignore = {
         ["php"] = "tlint",
         ["lua"] = "ast-grep",
+        ["kotlin"] = "ktlint",
       }
 
       for _, pkg in pairs(mason_reg.get_installed_packages()) do
@@ -70,7 +71,7 @@ if disable then
               }
             end
 
-            -- local listtest = {}
+            local listtest = {}
             -- finally add the formatter to it's compatible filetype(s)
             for _, ft in pairs(pkg.spec.languages) do
               local ftl = string.lower(ft)
@@ -84,9 +85,9 @@ if disable then
                   pkg.spec.name = name_map[pkg.spec.name]
                 end
 
-                -- if substring(pkg.spec.name, "prettier") then
-                --   table.insert(listtest, ftl)
-                -- end
+                if substring(pkg.spec.name, "ktfmt") then
+                  table.insert(listtest, ftl)
+                end
 
                 -- add new mapping language
                 for key, value in pairs(addnew) do
@@ -102,7 +103,7 @@ if disable then
                 end
               end
             end
-            -- print(table.concat(listtest, ","))
+            print(table.concat(listtest, ","))
           end
         end
       end

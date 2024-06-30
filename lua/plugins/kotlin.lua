@@ -108,7 +108,7 @@ if pcode.active_kotlin_config or false then
         -- setting cek
         -- https://stackoverflow.com/questions/9356543/logging-while-testing-through-gradle
         { "<leader>T", "", desc = " Test" },
-        { "<leader>Ta", "<cmd>terminal ./gradlew test<cr>", desc = "Run All" },
+        { "<leader>Ta", "<cmd>terminal gradle test<cr>", desc = "Run All" },
         {
           "<leader>Tu",
           function()
@@ -119,7 +119,8 @@ if pcode.active_kotlin_config or false then
             current_word = current_word:gsub("fun", "")
             current_word = current_word:gsub("%(%)", "")
             current_word = current_word:gsub("{", "")
-            vim.cmd("terminal ./gradlew test --tests *." .. all_trim(current_word))
+            current_word = current_word:gsub("@Test", "")
+            vim.cmd("terminal gradle test --tests *." .. all_trim(current_word))
           end,
           desc = "Run Under Cursor",
         },
