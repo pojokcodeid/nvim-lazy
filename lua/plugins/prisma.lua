@@ -47,6 +47,13 @@ if pcode.active_prisma_config then
           end,
           desc = "Migrate",
         },
+        {
+          "<leader>ps",
+          function()
+            vim.cmd("terminal npx prisma studio")
+          end,
+          desc = "Prisma Studio",
+        },
       },
     },
   }
