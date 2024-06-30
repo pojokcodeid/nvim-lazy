@@ -20,6 +20,8 @@ M.cheack = function()
     sts = true
   elseif pcode.active_kotlin_config or false then
     sts = true
+  elseif pcode.active_prisma_config or false then
+    sts = true
   end
   return sts
 end

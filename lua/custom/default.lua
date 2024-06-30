@@ -45,7 +45,7 @@ pcode.format_timeout_ms = 5000
 -- https://github.com/mfussenegger/nvim-lint
 -- https://github.com/stevearc/conform.nvim
 -- use conform and nvim-lint if set true
-pcode.disable_null_ls = false
+pcode.disable_null_ls = true
 
 pcode.treesitter_ensure_installed = {}
 pcode.tscontext = false
@@ -167,6 +167,7 @@ pcode.active_javascript_config = {
   jest_command = "npm test -- ",
   jest_config = "jest.config.mjs",
 }
+pcode.active_prisma_config = true
 pcode.active_php_config = false
 pcode.active_golang_config = false
 pcode.active_python_config = false
