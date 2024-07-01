@@ -52,7 +52,7 @@ if pcode.active_prisma_config then
           function()
             vim.cmd("terminal npx prisma studio")
           end,
-          desc = "Prisma Studio",
+          desc = "npx prisma Studio",
         },
       },
     },
