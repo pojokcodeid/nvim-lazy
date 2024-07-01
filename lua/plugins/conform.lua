@@ -6,12 +6,14 @@ end
 if disable then
   M = {
     "stevearc/conform.nvim",
-    event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile", "VeryLazy" },
     opts = function(_, opts)
       local mason_reg = require("mason-registry")
 
       opts.formatters = opts.formatters or {}
       opts.formatters_by_ft = opts.formatters_by_ft or {}
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, pcode.null_ls_ensure_installed or {})
 
       -- add diff langue vs filetype
       local keymap = {
@@ -111,6 +113,7 @@ if disable then
       local onsave = pcode.format_on_save or false
       if onsave then
         return {
+          ensure_installed = opts.ensure_installed,
           format_on_save = {
             lsp_fallback = true,
             timeout_ms = pcode.format_timeout_ms or 5000,
@@ -120,12 +123,16 @@ if disable then
         }
       else
         return {
+          ensure_installed = opts.ensure_installed,
           formatters = opts.formatters,
           formatters_by_ft = opts.formatters_by_ft,
         }
       end
     end,
     config = function(_, opts)
+      for _, value in pairs(opts.ensure_installed) do
+        require("user.utils.masoncfg").try_install(value)
+      end
       local conform = require("conform")
       conform.setup(opts)
       vim.keymap.set({ "n", "v" }, "<leader>lF", function()
