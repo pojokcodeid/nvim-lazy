@@ -19,6 +19,7 @@ if (color == "darcula-dark") and true or false then
           local hi = vim.api.nvim_set_hl
           hi(0, "@property.json", { fg = colors.lavender })
           hi(0, "@property.jsonc", { fg = colors.lavender })
+          hi(0, "LineNr", { ctermfg = 11, fg = colors._39 })
           -- hi(0, "@variable.member.sql", { fg = colors.olive_green })
           -- telescope
           hi(0, "TelescopePromptBorder", { fg = colors.medium_gray })
