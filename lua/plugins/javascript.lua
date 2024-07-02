@@ -26,14 +26,14 @@ if pcode.active_javascript_config.active then
         opts.formatters_by_ft.javascript = { package }
       end,
     },
-    {
-      "mfussenegger/nvim-lint",
-      opts = function(_, opts)
-        opts.linters_by_ft = opts.linters_by_ft or {}
-        require("user.utils.masoncfg").try_install("eslint_d")
-        opts.linters_by_ft.javascript = { "eslint_d" }
-      end,
-    },
+    -- {
+    --   "mfussenegger/nvim-lint",
+    --   opts = function(_, opts)
+    --     opts.linters_by_ft = opts.linters_by_ft or {}
+    --     require("user.utils.masoncfg").try_install("eslint_d")
+    --     opts.linters_by_ft.javascript = { "eslint_d" }
+    --   end,
+    -- },
     {
       "nvim-neotest/neotest",
       dependencies = {

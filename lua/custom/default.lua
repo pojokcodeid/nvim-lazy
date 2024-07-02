@@ -14,7 +14,7 @@
 -- solarized-osaka
 -- darcula-dark
 -- juliana
-pcode.colorscheme = "dracula"
+pcode.colorscheme = "darcula-dark"
 -- 0 =off   1= on
 pcode.transparent_mode = 0
 
