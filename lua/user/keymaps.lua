@@ -13,7 +13,7 @@ end
 function _CLOSE_BUFFER()
   local buf = vim.api.nvim_get_current_buf()
   --  delete current buffer
-  require("bufdelete").bufdelete(buf, true)
+  require("user.utils.bufferline").bufremove(buf)
 end
 
 function _OPEN_ALACRITTY()
