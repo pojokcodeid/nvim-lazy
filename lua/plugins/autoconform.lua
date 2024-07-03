@@ -46,15 +46,15 @@ if disable then
         },
         -- add new mapping to conform
         add_new = {
-          -- ["jsonc"] = "prettier",
-          -- ["json"] = "prettier",
-          -- ["typescriptreact"] = "prettier",
+          -- ["jsonc"] = {"prettier"},
+          -- ["json"] = {"prettier"},
+          -- ["typescriptreact"] = {"prettier"},
         },
         -- disable register mason to conform
         ignore = {
-          -- ["php"] = "tlint",
-          -- ["lua"] = "ast-grep",
-          -- ["kotlin"] = "ktlint",
+          -- ["php"] = {"tlint"},
+          -- ["lua"] = {"ast-grep"},
+          -- ["kotlin"] = {"ktlint"},
         },
       })
       -- other conform config
