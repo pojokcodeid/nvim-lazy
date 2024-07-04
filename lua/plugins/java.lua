@@ -75,11 +75,12 @@ if pcode.active_java_config.active then
         }
       end,
       config = function(_, opts)
-        vim.opt_local.shiftwidth = 4
-        vim.opt_local.tabstop = 4
-        vim.opt_local.softtabstop = 4
-        vim.opt_local.ts = 4
-        vim.opt_local.expandtab = true
+        local opt = vim.opt
+        opt.shiftwidth = 4
+        opt.tabstop = 4
+        opt.softtabstop = 4
+        opt.ts = 4
+        opt.expandtab = true
 
         local mason_registry = require("mason-registry")
         local bundles = {} ---@type string[]
