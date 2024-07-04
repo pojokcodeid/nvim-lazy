@@ -11,52 +11,17 @@ if disable then
       "stevearc/conform.nvim",
     },
     event = "VeryLazy",
-    config = function()
-      require("auto-conform").setup({
-        -- formatters config conform
-        formatters = {
-          -- yamlfix = {
-          --   -- Change where to find the command
-          --   command = "local/path/yamlfix",
-          --   -- Adds environment args to the yamlfix formatter
-          --   env = {
-          --     YAMLFIX_SEQUENCE_STYLE = "block_style",
-          --   },
-          -- },
-        },
-        -- formatters_by_ft conform
-        formatters_by_ft = {
-          lua = { "stylua" },
-        },
-        -- install mason formatter
-        ensure_installed = {
-          "prettier",
-        },
-        -- mapping masson language vs filetype
-        lang_maps = {
-          -- ["c++"] = "cpp",
-          -- ["c#"] = "cs",
-          -- ["jsx"] = "javascriptreact",
-        },
-        -- mappings conform name vs masonn name if not same
-        name_maps = {
-          -- ["cmakelang"] = "cmake_format",
-          -- ["deno"] = "deno_fmt",
-          -- ["elm-format"] = "elm_format",
-        },
-        -- add new mapping to conform
-        add_new = {
-          -- ["jsonc"] = {"prettier"},
-          -- ["json"] = {"prettier"},
-          -- ["typescriptreact"] = {"prettier"},
-        },
-        -- disable register mason to conform
-        ignore = {
-          -- ["php"] = {"tlint"},
-          -- ["lua"] = {"ast-grep"},
-          -- ["kotlin"] = {"ktlint"},
-        },
-      })
+    opts = function(_, opts)
+      opts.formatters = opts.formatters or {}
+      opts.formatters_by_ft = opts.formatters_by_ft or {}
+      opts.ensure_installed = opts.ensure_installed or {}
+      opts.lang_maps = opts.lang_maps or {}
+      opts.name_maps = opts.name_maps or {}
+      opts.add_new = opts.add_new or {}
+      opts.ignore = opts.ignore or {}
+    end,
+    config = function(_, opts)
+      require("auto-conform").setup(opts)
       -- other conform config
       local conform = require("conform")
       conform.setup({

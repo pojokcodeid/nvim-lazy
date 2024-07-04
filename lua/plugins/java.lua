@@ -138,6 +138,7 @@ if pcode.active_java_config.active then
             if client and client.name == "jdtls" then
               local wk = require("which-key")
               wk.register({
+                ["<leader>c"] = { name = "+code" },
                 ["<leader>cx"] = { name = "+extract" },
                 ["<leader>cxv"] = { require("jdtls").extract_variable_all, "Extract Variable" },
                 ["<leader>cxc"] = { require("jdtls").extract_constant, "Extract Constant" },
@@ -167,15 +168,15 @@ if pcode.active_java_config.active then
                 require("jdtls.dap").setup_dap_main_class_configs(opts.dap_main)
 
                 -- Java Test require Java debugger to work
-                if opts.test and mason_registry.is_installed("java-test") then
-                  -- custom keymaps for Java test runner (not yet compatible with neotest)
-                  wk.register({
-                    ["<leader>t"] = { name = "+test" },
-                    ["<leader>tt"] = { require("jdtls.dap").test_class, "Run All Test" },
-                    ["<leader>tr"] = { require("jdtls.dap").test_nearest_method, "Run Nearest Test" },
-                    ["<leader>tT"] = { require("jdtls.dap").pick_test, "Run Test" },
-                  }, { mode = "n", buffer = args.buf })
-                end
+                -- if opts.test and mason_registry.is_installed("java-test") then
+                --   -- custom keymaps for Java test runner (not yet compatible with neotest)
+                --   wk.register({
+                --     ["<leader>t"] = { name = "+test" },
+                --     ["<leader>tt"] = { require("jdtls.dap").test_class, "Run All Test" },
+                --     ["<leader>tr"] = { require("jdtls.dap").test_nearest_method, "Run Nearest Test" },
+                --     ["<leader>tT"] = { require("jdtls.dap").pick_test, "Run Test" },
+                --   }, { mode = "n", buffer = args.buf })
+                -- end
               end
 
               -- User can set additional keymaps in opts.on_attach
@@ -205,13 +206,11 @@ if pcode.active_java_config.active then
       end,
     },
     {
-      "stevearc/conform.nvim",
+      "pojokcodeid/auto-conform.nvim",
       event = "VeryLazy",
       opts = function(_, opts)
-        local package = "lsp_fmt"
-        require("user.utils.masoncfg").try_install("java-debug-adapter")
-        require("user.utils.masoncfg").try_install("java-test")
-        opts.formatters_by_ft.java = { package }
+        vim.list_extend(opts.ensure_installed, { "java-debug-adapter", "java-test" })
+        opts.formatters_by_ft.java = { "lsp_fmt" }
       end,
     },
     {
