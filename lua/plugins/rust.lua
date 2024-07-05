@@ -18,11 +18,11 @@ if pcode.active_rust_config then
       end,
     },
     {
-      "stevearc/conform.nvim",
+      "pojokcodeid/auto-conform.nvim",
       event = "VeryLazy",
       opts = function(_, opts)
         local package = "ast-grep"
-        require("user.utils.masoncfg").try_install(package)
+        vim.list_extend(opts.ensure_installed, { package })
         opts.formatters_by_ft.rust = { package }
       end,
     },

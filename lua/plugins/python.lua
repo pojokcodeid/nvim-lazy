@@ -117,14 +117,11 @@ if pcode.active_python_config then
       end,
     },
     {
-      "stevearc/conform.nvim",
+      "pojokcodeid/auto-conform.nvim",
       event = "VeryLazy",
       opts = function(_, opts)
-        local package = "black"
-        require("user.utils.masoncfg").try_install("flake8")
-        require("user.utils.masoncfg").try_install("black")
-        require("user.utils.masoncfg").try_install("debugpy")
-        opts.formatters_by_ft.python = { package }
+        vim.list_extend(opts.ensure_installed, { "flake8", "black", "debugpy" })
+        opts.formatters_by_ft.python = { "black" }
       end,
     },
   }

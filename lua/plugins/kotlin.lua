@@ -17,21 +17,21 @@ if pcode.active_kotlin_config or false then
       end,
     },
     {
-      "stevearc/conform.nvim",
+      "pojokcodeid/auto-conform.nvim",
       event = "VeryLazy",
       opts = function(_, opts)
         opts.formatters_by_ft = opts.formatters_by_ft or {}
         local package = "ktfmt"
-        require("user.utils.masoncfg").try_install(package)
+        vim.list_extend(opts.ensure_installed, { package })
         opts.formatters_by_ft.kotlin = { package }
       end,
     },
     {
-      "mfussenegger/nvim-lint",
+      "pojokcodeid/auto-lint.nvim",
       optional = true,
       opts = function(_, opts)
         opts.linters_by_ft = opts.linters_by_ft or {}
-        require("user.utils.masoncfg").try_install("ktlint")
+        vim.list_extend(opts.ensure_installed, { "ktlint" })
         opts.linters_by_ft.kotlin = { "ktlint" }
       end,
     },

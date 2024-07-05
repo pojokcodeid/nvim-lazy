@@ -16,20 +16,20 @@ if pcode.active_deno_config or false then
       end,
     },
     {
-      "stevearc/conform.nvim",
+      "pojokcodeid/auto-conform.nvim",
       event = "VeryLazy",
       opts = function(_, opts)
         opts.formatters_by_ft = opts.formatters_by_ft or {}
         local package = "prettier"
-        require("user.utils.masoncfg").try_install(package)
+        vim.list_extend(opts.ensure_installed, { package })
         opts.formatters_by_ft.javascript = { package }
       end,
     },
     {
-      "mfussenegger/nvim-lint",
+      "pojokcodeid/auto-lint.nvim",
       opts = function(_, opts)
         opts.linters_by_ft = opts.linters_by_ft or {}
-        require("user.utils.masoncfg").try_install("eslint_d")
+        vim.list_extend(opts.ensure_installed, { "eslint_d" })
         opts.linters_by_ft.javascript = { "eslint_d" }
       end,
     },

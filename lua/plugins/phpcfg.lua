@@ -16,12 +16,10 @@ if pcode.active_php_config then
       end,
     },
     {
-      "stevearc/conform.nvim",
+      "pojokcodeid/auto-conform.nvim",
       event = "VeryLazy",
       opts = function(_, opts)
-        local package = "php-cs-fixer"
-        require("user.utils.masoncfg").try_install(package)
-        require("user.utils.masoncfg").try_install("blade-formatter")
+        vim.list_extend(opts.ensure_installed, { "php-cs-fixer", "blade-formatter" })
         opts.formatters_by_ft.php = { "easy-coding-standard" }
         opts.formatters_by_ft.blade = { "blade-formatter" }
       end,

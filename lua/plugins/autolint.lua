@@ -10,27 +10,15 @@ if disable then
       "mfussenegger/nvim-lint",
     },
     event = "VeryLazy",
-    config = function()
-      require("auto-lint").setup({
-        map_lang = {
-          -- ["c++"] = "cpp",
-          -- ["c#"] = "cs",
-        },
-        map_name = {
-          -- ["actionlint"] = "actionlint",
-          -- ["ansible_lint"] = "ansible_lint",
-        },
-        add_new = {
-          -- ["typescriptreact"] = { "eslint_d" },
-          -- ["javascriptreact"] = { "eslint_d" },
-        },
-        ignore = {
-          -- ["php"] = { "tlint" },
-        },
-        ensure_installed = {
-          -- "eslint_d",
-        },
-      })
+    opts = function(_, opts)
+      opts.map_lang = opts.map_lang or {}
+      opts.map_name = opts.map_name or {}
+      opts.add_new = opts.add_new or {}
+      opts.ignore = opts.ignore or {}
+      opts.ensure_installed = opts.ensure_installed or {}
+    end,
+    config = function(_, opts)
+      require("auto-lint").setup(opts)
     end,
   }
 end

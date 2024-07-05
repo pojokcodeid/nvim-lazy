@@ -18,19 +18,19 @@ if pcode.active_golang_config then
       end,
     },
     {
-      "stevearc/conform.nvim",
+      "pojokcodeid/auto-conform.nvim",
       event = "VeryLazy",
       opts = function(_, opts)
         local package = "gofumpt"
-        require("user.utils.masoncfg").try_install(package)
+        vim.list_extend(opts.ensure_installed, { package })
         opts.formatters_by_ft.python = { package }
       end,
     },
     {
-      "mfussenegger/nvim-lint",
+      "pojokcodeid/auto-lint.nvim",
       opts = function(_, opts)
         opts.linters_by_ft = opts.linters_by_ft or {}
-        require("user.utils.masoncfg").try_install("ast-grep")
+        vim.list_extend(opts.ensure_installed, { "ast-grep" })
         opts.linters_by_ft.php = { "ast-grep" }
       end,
     },

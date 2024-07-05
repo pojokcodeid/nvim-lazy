@@ -17,12 +17,12 @@ if pcode.active_javascript_config.active then
       end,
     },
     {
-      "stevearc/conform.nvim",
+      "pojokcodeid/auto-conform.nvim",
       event = "VeryLazy",
       opts = function(_, opts)
         opts.formatters_by_ft = opts.formatters_by_ft or {}
         local package = "prettier"
-        require("user.utils.masoncfg").try_install(package)
+        vim.list_extend(opts.ensure_installed, { package })
         opts.formatters_by_ft.javascript = { package }
       end,
     },
