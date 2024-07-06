@@ -1,7 +1,7 @@
 return {
   {
     "williamboman/mason-lspconfig.nvim",
-    event = "VeryLazy",
+    event = { "VeryLazy", "BufReadPre", "BufNewFile", "BufRead" },
     dependencies = {
       {
         "neovim/nvim-lspconfig",
