@@ -1,4 +1,4 @@
--- local icons = vim.g.pcode_icons
+-- local icons = pcode.icons
 -- local HEIGHT_RATIO = 0.9 -- You can change this
 -- local WIDTH_RATIO = 0.5 -- You can change this too
 return {

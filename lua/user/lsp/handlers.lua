@@ -6,7 +6,7 @@ if not status_cmp_ok then
 end
 
 local lspvitualtext = pcode.lsp_virtualtext or false
-local icons = vim.g.pcode_icons
+local icons = pcode.icons
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true

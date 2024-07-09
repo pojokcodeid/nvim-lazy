@@ -1,4 +1,4 @@
-local icons = vim.g.pcode_icons
+local icons = pcode.icons
 if pcode.indentscope and true or false then
   return {
     "echasnovski/mini.indentscope",

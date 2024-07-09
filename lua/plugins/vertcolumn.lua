@@ -6,7 +6,7 @@ if pcode.columnline then
       event = "BufRead",
       opts = {},
       config = function()
-        local icons = vim.g.pcode_icons
+        local icons = pcode.icons
         require("virt-column").overwrite({
           exclude = {
             filetypes = { "help", "text", "markdown" },

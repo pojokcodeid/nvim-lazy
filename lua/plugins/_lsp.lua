@@ -26,7 +26,7 @@ return {
           "MasonLog",
         },
         opts = function()
-          local icons = vim.g.pcode_icons.ui
+          local icons = pcode.icons.ui
           return {
             ui = {
               -- border = "none",

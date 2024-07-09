@@ -1,4 +1,4 @@
-local icons = vim.g.pcode_icons
+local icons = pcode.icons
 return {
   --- masukan plugin tambahan disini
   -- {

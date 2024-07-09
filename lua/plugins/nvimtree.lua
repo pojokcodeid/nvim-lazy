@@ -1,4 +1,4 @@
-local icons = vim.g.pcode_icons
+local icons = pcode.icons
 local set_view = {}
 if pcode.nvimtree_isfloat == 1 then
   set_view = require("user.utils.nvimtree").float

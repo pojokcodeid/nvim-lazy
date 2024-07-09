@@ -4,7 +4,7 @@ return {
   keys = { "<leader>", '"', "'", "`", "c", "v" },
   event = "VeryLazy",
   opts = function()
-    local icons = vim.g.pcode_icons
+    local icons = pcode.icons
     return {
       plugins = {
         marks = false, -- shows a list of your marks on ' and `

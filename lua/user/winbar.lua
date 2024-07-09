@@ -1,5 +1,5 @@
 local active = true
-local icons = vim.g.pcode_icons
+local icons = pcode.icons
 local excludes = function()
   return vim.tbl_contains({
     "help",
@@ -138,20 +138,18 @@ local get_winbar = function()
 end
 
 vim.api.nvim_create_augroup("_winbar", {})
-if vim.fn.has("nvim-0.8") == 1 then
-  vim.api.nvim_create_autocmd(
-    { "CursorHoldI", "CursorHold", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost", "TabClosed" },
-    {
-      group = "_winbar",
-      callback = function()
-        if active then
-          local status_ok, _ = pcall(vim.api.nvim_buf_get_var, 0, "lsp_floating_window")
-          if not status_ok then
-            -- TODO:
-            get_winbar()
-          end
+vim.api.nvim_create_autocmd(
+  { "CursorHoldI", "CursorHold", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost", "TabClosed" },
+  {
+    group = "_winbar",
+    callback = function()
+      if active then
+        local status_ok, _ = pcall(vim.api.nvim_buf_get_var, 0, "lsp_floating_window")
+        if not status_ok then
+          -- TODO:
+          get_winbar()
         end
-      end,
-    }
-  )
-end
+      end
+    end,
+  }
+)

@@ -17,7 +17,7 @@
 -- end
 --
 -- local unregis_lsp = pcode.unregister_lsp or {}
--- local icons = vim.g.pcode_icons.ui
+-- local icons = pcode.icons.ui
 --
 -- local settings = {
 --   ui = {

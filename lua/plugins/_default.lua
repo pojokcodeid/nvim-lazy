@@ -14,5 +14,5 @@ end
 -- if onsave then
 --   require("user.format_onsave")
 -- end
-vim.g.pcode_icons = require("user.icons")
+pcode.icons = require("user.icons")
 return {}
