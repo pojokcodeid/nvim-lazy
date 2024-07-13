@@ -186,8 +186,8 @@ return {
       },
     },
     notify = {
-      threshold = vim.log.levels.INFO,
-      -- threshold = vim.log.levels.ERROR,
+      -- threshold = vim.log.levels.INFO,
+      threshold = vim.log.levels.ERROR,
     },
     log = {
       enable = false,
@@ -207,6 +207,9 @@ return {
       cmd = nil,
       args = {},
     },
+  },
+  keys = {
+    { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "󰙅 Explorer" },
   },
   config = function(_, opts)
     require("nvim-tree").setup(opts)

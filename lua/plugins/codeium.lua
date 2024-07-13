@@ -31,6 +31,9 @@ if pcode.codeium then
         return vim.fn["codeium#Clear"]()
       end, { expr = true, silent = true })
     end,
+    keys = {
+      { "<leader>c", ":call codeium#Chat()<cr>", desc = "󰭹 Codeium Chat", mode = "n" },
+    },
   }
 else
   M.codeium = {}

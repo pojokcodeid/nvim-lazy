@@ -35,6 +35,7 @@ return {
         -- ["<tab>"] = "TAB",
       },
       icons = {
+        rules = false,
         breadcrumb = icons.ui.DoubleChevronRight, -- symbol used in the command line area that shows your active key combo
         separator = icons.ui.BoldArrowRight, -- symbol used between a key and it's label
         group = icons.ui.Plus, -- symbol prepended to a group
@@ -43,12 +44,21 @@ return {
         scroll_down = "<c-d>", -- binding to scroll down inside the popup
         scroll_up = "<c-u>", -- binding to scroll up inside the popup
       },
-      window = {
-        border = "rounded", -- none, single, double, shadow
-        position = "bottom", -- bottom, top
-        margin = { 1, 1, 1, 1 }, -- extra window margin [top, right, bottom, left]
-        padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-        winblend = 0,
+      win = {
+        -- width = 1,
+        -- height = { min = 4, max = 25 },
+        -- col = 0,
+        row = -1,
+        border = "single", -- none, single, double, shadow
+        padding = { 1, 2 }, -- extra window padding [top/bottom, right/left]
+        title = true,
+        title_pos = "center",
+        zindex = 1000,
+        -- Additional vim.wo and vim.bo options
+        bo = {},
+        wo = {
+          -- winblend = 10, -- value between 0-100 0 for fully opaque and 100 for fully transparent
+        },
       },
       layout = {
         height = { min = 4, max = 25 }, -- min and max height of the columns
@@ -77,29 +87,92 @@ return {
     }
   end,
   config = function(_, opts)
-    local opt = {
-      mode = "n", -- NORMAL mode
-      prefix = "<leader>",
-      buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-      silent = true, -- use `silent` when creating keymaps
-      noremap = true, -- use `noremap` when creating keymaps
-      nowait = true, -- use `nowait` when creating keymaps
-    }
-
-    local opt2 = {
-      mode = "v", -- NORMAL mode
-      prefix = "<leader>",
-      buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-      silent = true, -- use `silent` when creating keymaps
-      noremap = true, -- use `noremap` when creating keymaps
-      nowait = true, -- use `nowait` when creating keymaps
-    }
-
-    local wkey = pcode.whichkey or {}
+    -- local opt = {
+    --   mode = "n", -- NORMAL mode
+    --   prefix = "<leader>",
+    --   buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+    --   silent = true, -- use `silent` when creating keymaps
+    --   noremap = true, -- use `noremap` when creating keymaps
+    --   nowait = true, -- use `nowait` when creating keymaps
+    -- }
+    --
+    -- local opt2 = {
+    --   mode = "v", -- NORMAL mode
+    --   prefix = "<leader>",
+    --   buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+    --   silent = true, -- use `silent` when creating keymaps
+    --   noremap = true, -- use `noremap` when creating keymaps
+    --   nowait = true, -- use `nowait` when creating keymaps
+    -- }
+    --
+    -- local wkey = pcode.whichkey or {}
     local which_key = require("which-key")
     which_key.setup(opts)
-    which_key.register(require("user.utils.whichkey").mappings, opt)
-    which_key.register(wkey, opt)
-    which_key.register(require("user.utils.whichkey").mappings2, opt2)
+    which_key.add({
+      { "<leader>a", "<cmd>Alpha<cr>", desc = "󰕮 Alpha", mode = "n" },
+      { "<leader>w", "<cmd>w!<CR>", desc = "󰆓 Save", mode = "n" },
+      { "<leader>q", "<cmd>q!<CR>", desc = "󰿅 Quit", mode = "n" },
+      {
+        "<leader>o",
+        function()
+          require("user.utils.whichkey")._OPEN_EXPLORER()
+        end,
+        desc = "󱏒 Open Explorer",
+        mode = "n",
+      },
+      { "<leader>h", "<cmd>nohlsearch<CR>", desc = "󱪿 No Highlight", mode = "n" },
+      { "<leader>f", "<cmd>Telescope find_files<CR>", desc = " Find files", mode = "n" },
+      { "<leader>F", "<cmd>Telescope live_grep<cr>", desc = " Find Text", mode = "n" },
+      { "<leader>b", "", desc = "  Buffers", mode = "n" },
+      {
+        "<leader>bb",
+        function()
+          require("telescope.builtin").buffers(require("telescope.themes").get_dropdown({ previewer = false }))
+        end,
+        desc = "All Buffer",
+        mode = "n",
+      },
+      {
+        "<leader>bc",
+        function()
+          require("user.utils.bufferline").bufremove()
+        end,
+        desc = "Close current buffer",
+        mode = "n",
+      },
+      {
+        "<leader>bd",
+        "<cmd>BufferLineCloseLeft<cr>",
+        desc = "Close Buffer Left",
+        mode = "n",
+      },
+      {
+        "<leader>bD",
+        "<cmd>BufferLineCloseRight<cr>",
+        desc = "Close Buffer Right",
+        mode = "n",
+      },
+      {
+        "<leader>ba",
+        "<cmd>BufferLineCloseOthers<cr>",
+        desc = "Close Buffer Other",
+        mode = "n",
+      },
+      {
+        "<leader>bA",
+        "<cmd>BufferLineCloseOthers<cr><cmd>bd!<cr>",
+        desc = "Close Buffer All",
+        mode = "n",
+      },
+      { "<leader>z", "", desc = " 󱑠 Plugins(Lazy)", mode = "n" },
+      { "<leader>zi", "<cmd>Lazy install<cr>", desc = "Install", mode = "n" },
+      { "<leader>zs", "<cmd>Lazy sync<cr>", desc = "Sync", mode = "n" },
+      { "<leader>zS", "<cmd>Lazy clear<cr>", desc = "Status", mode = "n" },
+      { "<leader>zc", "<cmd>Lazy clean<cr>", desc = "Clean", mode = "n" },
+      { "<leader>zu", "<cmd>Lazy update<cr>", desc = "Update", mode = "n" },
+      { "<leader>zp", "<cmd>Lazy profile<cr>", desc = "Profile", mode = "n" },
+      { "<leader>zl", "<cmd>Lazy log<cr>", desc = "Log", mode = "n" },
+      { "<leader>zd", "<cmd>Lazy debug<cr>", desc = "Debug", mode = "n" },
+    })
   end,
 }

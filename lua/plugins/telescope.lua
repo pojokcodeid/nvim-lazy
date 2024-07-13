@@ -188,4 +188,15 @@ return {
       end
     end)
   end,
+  keys = {
+    { "<leader>s", "", desc = "  Search", mode = "n" },
+    { "<leader>sb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch", mode = "n" },
+    { "<leader>sc", "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme", mode = "n" },
+    { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Find Help", mode = "n" },
+    { "<leader>sM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages", mode = "n" },
+    { "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Open Recent File", mode = "n" },
+    { "<leader>sR", "<cmd>Telescope registers<cr>", desc = "Registers", mode = "n" },
+    { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps", mode = "n" },
+    { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands", mode = "n" },
+  },
 }

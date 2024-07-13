@@ -72,4 +72,90 @@ return {
   config = function(_, opts)
     require("gitsigns").setup(opts)
   end,
+  keys = {
+    { "<leader>g", "", desc = "  Git" },
+    {
+      "<leader>gg",
+      function()
+        require("user.utils.whichkey")._LAZYGIT_TOGGLE()
+      end,
+      desc = "Lazygit",
+    },
+    {
+      "<leader>gj",
+      function()
+        require("gitsigns").next_hunk()
+      end,
+      desc = "Next Hunk",
+    },
+    {
+      "<leader>gk",
+      function()
+        require("gitsigns").prev_hunk()
+      end,
+      desc = "Prev Hunk",
+    },
+    {
+      "<leader>gl",
+      function()
+        require("gitsigns").blame_line()
+      end,
+      desc = "Blame",
+    },
+    {
+      "<leader>gp",
+      function()
+        require("gitsigns").preview_hunk()
+      end,
+      desc = "Preview Hunk",
+    },
+    {
+      "<leader>gr",
+      function()
+        require("gitsigns").reset_hunk()
+      end,
+      desc = "Reset Hunk",
+    },
+    {
+      "<leader>gR",
+      function()
+        require("gitsigns").reset_buffer()
+      end,
+      desc = "Reset Buffer",
+    },
+    {
+      "<leader>gs",
+      function()
+        require("gitsigns").stage_hunk()
+      end,
+      desc = "Stage Hunge",
+    },
+    {
+      "<leader>gu",
+      function()
+        require("gitsigns").undo_stage_hunk()
+      end,
+      desc = "Undo Stage Hunge",
+    },
+    {
+      "<leader>go",
+      "<cmd>Telescope git_status<cr>",
+      desc = "Opened Changed File",
+    },
+    {
+      "<leader>gb",
+      "<cmd>Telescope git_branches<cr>",
+      desc = "Checkout Branch",
+    },
+    {
+      "<leader>gc",
+      "<cmd>Telescope git_commits<cr>",
+      desc = "Checkout Commit",
+    },
+    {
+      "<leader>gd",
+      "<cmd>Gitsigns diffthis HEAD<cr>",
+      desc = "Diff",
+    },
+  },
 }

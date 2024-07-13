@@ -46,4 +46,26 @@ return {
     end
     vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
   end,
+  keys = {
+    { "<leader>t", "", desc = "  Terminal", mode = "n" },
+    { "<leader>tl", "<cmd>terminal live-server<cr>", desc = "Live Server", mode = "n" },
+    { "<leader>tP", "<cmd>lua require('user.utils.whichkey')._NEWTAB_TOGGLE()<cr>", desc = "Power Shell", mode = "n" },
+    { "<leader>tx", "<cmd>ToggleTermToggleAll!<cr>", desc = "Close Tab", mode = "n" },
+    { "<leader>tn", "<cmd>lua require('user.utils.whichkey')._NODE_TOGGLE()<cr>", desc = "Node", mode = "n" },
+    { "<leader>tb", "<cmd>lua require('user.utils.whichkey')._BTOP_TOGGLE()<cr>", desc = "Btop", mode = "n" },
+    { "<leader>tp", "<cmd>lua require('user.utils.whichkey')._PYTHON_TOGGLE()<cr>", desc = "Python", mode = "n" },
+    { "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", desc = "Float", mode = "n" },
+    { "<leader>th", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "Horizontal", mode = "n" },
+    { "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "Vertical", mode = "n" },
+    { "<leader>ts", "<cmd>ToggleTerm direction=tab<cr>", desc = "New Tab", mode = "n" },
+    { "<leader>ta", "<cmd>lua require('user.utils.whichkey')._OPEN_ALACRITTY()<cr>", desc = "Open Alacritty", mode = "n" },
+    { "<leader>tw", "<cmd>lua require('user.utils.whichkey')._OPEN_WEZTERM()<cr>", desc = "Open Wezterm", mode = "n" },
+    {
+      "<leader>tt",
+      "<cmd>lua require('user.utils.whichkey')._OPEN_WEZTERM_TAB()<cr>",
+      desc = "Open Tab Wezterm",
+      mode = "n",
+    },
+    { "<leader>tj", "<cmd>lua _SET_TAB_TITLE()<cr>", desc = "Set Tab Title", mode = "n" },
+  },
 }

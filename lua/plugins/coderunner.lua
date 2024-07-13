@@ -55,4 +55,18 @@ return {
   config = function(_, opts)
     require("code_runner").setup(opts)
   end,
+  keys = {
+    { "<leader>r", "", desc = "  Run", mode = "n" },
+    {
+      "<leader>rs",
+      '<cmd>autocmd bufwritepost [^_]*.sass,[^_]*.scss  silent exec "!sass %:p %:r.css"<CR>',
+      desc = "Auto Compile Sass",
+      mode = "n",
+    },
+    { "<leader>rr", "<cmd>RunCode<CR>", desc = "Run Code", mode = "n" },
+    { "<leader>rf", "<cmd>RunFile<CR>", desc = "Run File", mode = "n" },
+    { "<leader>rp", "<cmd>RunProject<CR>", desc = "Run Project", mode = "n" },
+    { "<leader>rg", "<cmd>terminal<cr>gradle run<cr>", desc = "Run Gradle", mode = "n" },
+    { "<leader>rm", "<cmd>terminal mvn package<cr>", desc = "MVN Build", mode = "n" },
+  },
 }
