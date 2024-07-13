@@ -123,47 +123,6 @@ return {
       { "<leader>h", "<cmd>nohlsearch<CR>", desc = "󱪿 No Highlight", mode = "n" },
       { "<leader>f", "<cmd>Telescope find_files<CR>", desc = " Find files", mode = "n" },
       { "<leader>F", "<cmd>Telescope live_grep<cr>", desc = " Find Text", mode = "n" },
-      { "<leader>b", "", desc = "  Buffers", mode = "n" },
-      {
-        "<leader>bb",
-        function()
-          require("telescope.builtin").buffers(require("telescope.themes").get_dropdown({ previewer = false }))
-        end,
-        desc = "All Buffer",
-        mode = "n",
-      },
-      {
-        "<leader>bc",
-        function()
-          require("user.utils.bufferline").bufremove()
-        end,
-        desc = "Close current buffer",
-        mode = "n",
-      },
-      {
-        "<leader>bd",
-        "<cmd>BufferLineCloseLeft<cr>",
-        desc = "Close Buffer Left",
-        mode = "n",
-      },
-      {
-        "<leader>bD",
-        "<cmd>BufferLineCloseRight<cr>",
-        desc = "Close Buffer Right",
-        mode = "n",
-      },
-      {
-        "<leader>ba",
-        "<cmd>BufferLineCloseOthers<cr>",
-        desc = "Close Buffer Other",
-        mode = "n",
-      },
-      {
-        "<leader>bA",
-        "<cmd>BufferLineCloseOthers<cr><cmd>bd!<cr>",
-        desc = "Close Buffer All",
-        mode = "n",
-      },
       { "<leader>z", "", desc = " 󱑠 Plugins(Lazy)", mode = "n" },
       { "<leader>zi", "<cmd>Lazy install<cr>", desc = "Install", mode = "n" },
       { "<leader>zs", "<cmd>Lazy sync<cr>", desc = "Sync", mode = "n" },
