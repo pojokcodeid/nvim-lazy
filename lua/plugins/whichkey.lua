@@ -133,5 +133,6 @@ return {
       { "<leader>zl", "<cmd>Lazy log<cr>", desc = "Log", mode = "n" },
       { "<leader>zd", "<cmd>Lazy debug<cr>", desc = "Debug", mode = "n" },
     })
+    which_key.add(pcode.whichkey or {})
   end,
 }

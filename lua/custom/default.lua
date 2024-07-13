@@ -88,10 +88,8 @@ pcode.dap_ensure_installed = {
 -- https://github.com/folke/which-key.nvim
 pcode.whichkey = {
   -- contoh penambahan
-  ["r"] = {
-    name = "  Run",
-    j = { "<cmd>Jaq float<CR>", "Run With Jaq" },
-  },
+  { "<leader>r", "", desc = "  Run", mode = "n" },
+  { "<leader>rx", "<cmd>Jaq float<CR>", desc = "Run With Jaq", mode = "n" },
 }
 
 -- https://github.com/CRAG666/code_runner.nvim
