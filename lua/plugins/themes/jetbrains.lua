@@ -10,6 +10,7 @@ if (color == "darcula-dark") and true or false then
       require("darcula").setup({
         colors = {
           lavender = "#9876AA",
+          statusline = "NONE",
         },
       })
       vim.api.nvim_create_autocmd("ColorScheme", {

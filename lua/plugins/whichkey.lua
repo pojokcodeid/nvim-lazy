@@ -27,22 +27,58 @@ return {
       }, -- add operators that will trigger motion and text object completion
       -- to enable all native operators, set the preset / operators plugin above
       -- operators = { gc = "Comments" },
-      key_labels = {
-        -- override the label used to display some keys. It doesn't effect WK in any other way.
-        -- For example:
-        -- ["<space>"] = "SPC",
-        -- ["<cr>"] = "RET",
-        -- ["<tab>"] = "TAB",
+      replace = {
+        key = {
+          function(key)
+            return require("which-key.view").format(key)
+          end,
+          -- { "<Space>", "SPC" },
+        },
+        desc = {
+          { "<Plug>%((.*)%)", "%1" },
+          { "^%+", "" },
+          { "<[cC]md>", "" },
+          { "<[cC][rR]>", "" },
+          { "<[sS]ilent>", "" },
+          { "^lua%s+", "" },
+          { "^call%s+", "" },
+          { "^:%s*", "" },
+        },
       },
       icons = {
         rules = false,
         breadcrumb = icons.ui.DoubleChevronRight, -- symbol used in the command line area that shows your active key combo
         separator = icons.ui.BoldArrowRight, -- symbol used between a key and it's label
         group = icons.ui.Plus, -- symbol prepended to a group
-      },
-      popup_mappings = {
-        scroll_down = "<c-d>", -- binding to scroll down inside the popup
-        scroll_up = "<c-u>", -- binding to scroll up inside the popup
+        keys = {
+          Up = " ",
+          Down = " ",
+          Left = " ",
+          Right = " ",
+          C = "󰘴 ",
+          M = "󰘵 ",
+          S = "󰘶 ",
+          CR = "󰌑 ",
+          Esc = "󱊷 ",
+          ScrollWheelDown = "󱕐 ",
+          ScrollWheelUp = "󱕑 ",
+          NL = "󰌑 ",
+          BS = "⌫ ",
+          Space = "󱁐 ",
+          Tab = "󰌒 ",
+          F1 = "󱊫",
+          F2 = "󱊬",
+          F3 = "󱊭",
+          F4 = "󱊮",
+          F5 = "󱊯",
+          F6 = "󱊰",
+          F7 = "󱊱",
+          F8 = "󱊲",
+          F9 = "󱊳",
+          F10 = "󱊴",
+          F11 = "󱊵",
+          F12 = "󱊶",
+        },
       },
       win = {
         -- width = 1,
@@ -66,46 +102,19 @@ return {
         spacing = 3, -- spacing between columns
         align = "left", -- align columns left, center or right
       },
-      ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
-      hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
       show_help = true, -- show help message on the command line when the popup is visible
       show_keys = true, -- show the currently pressed key and its label as a message in the command line
       triggers = "auto", -- automatically setup triggers
-      -- triggers = {"<leader>"} -- or specify a list manually
-      triggers_blacklist = {
-        -- list of mode / prefixes that should never be hooked by WhichKey
-        -- this is mostly relevant for key maps that start with a native binding
-        -- most people should not need to change this
-        i = { "j", "k" },
-        v = { "j", "k" },
-      },
       -- Disabled by default for Telescope
       disable = {
         buftypes = {},
         filetypes = { "TelescopePrompt" },
       },
+      ---@type false | "classic" | "modern" | "helix"
+      preset = "classic",
     }
   end,
   config = function(_, opts)
-    -- local opt = {
-    --   mode = "n", -- NORMAL mode
-    --   prefix = "<leader>",
-    --   buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-    --   silent = true, -- use `silent` when creating keymaps
-    --   noremap = true, -- use `noremap` when creating keymaps
-    --   nowait = true, -- use `nowait` when creating keymaps
-    -- }
-    --
-    -- local opt2 = {
-    --   mode = "v", -- NORMAL mode
-    --   prefix = "<leader>",
-    --   buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-    --   silent = true, -- use `silent` when creating keymaps
-    --   noremap = true, -- use `noremap` when creating keymaps
-    --   nowait = true, -- use `nowait` when creating keymaps
-    -- }
-    --
-    -- local wkey = pcode.whichkey or {}
     local which_key = require("which-key")
     which_key.setup(opts)
     which_key.add({
