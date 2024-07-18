@@ -165,6 +165,10 @@ return {
           fg = { attribute = "bg", highlight = "TabLine" },
           bg = { attribute = "bg", highlight = "TabLine" },
         },
+        trunc_marker = {
+          fg = { attribute = "fg", highlight = "TabLine" },
+          bg = { attribute = "none", highlight = "TabLine" },
+        },
         separator_selected = {
           fg = { attribute = "bg", highlight = "Normal" },
           bg = { attribute = "bg", highlight = "Normal" },
