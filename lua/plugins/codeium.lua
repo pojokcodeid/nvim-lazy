@@ -7,8 +7,9 @@ if pcode.codeium then
     -- https://github.com/Exafunction/codeium.vim/issues/376#issuecomment-2159643405
     -- version = "1.8.37",
     -- event = "BufWinEnter",
-    event = "BufEnter",
+    -- event = "BufEnter",
     -- event = "InsertEnter",
+    event = { "VeryLazy", "BufReadPre", "BufNewFile", "BufRead" },
     config = function()
       vim.g.codeium_disable_bindings = 1
       -- Change '<C-g>' here to any keycode you like.
