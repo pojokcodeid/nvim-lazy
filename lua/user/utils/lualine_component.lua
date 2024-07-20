@@ -329,7 +329,7 @@ return {
     return {
       normal = {
         a = { fg = colors.black, bg = colors.skyblue_1 },
-        b = { fg = colors.white, bg = colors.grey },
+        b = { fg = colors.skyblue_1, bg = colors.grey },
         c = { fg = colors.white, bg = colors.black_transparant },
       },
 

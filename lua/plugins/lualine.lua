@@ -33,6 +33,36 @@ return {
           colors.cyan = clr.yellow
           set_theme = "bubbles_theme"
         end,
+        ["Eva-Dark"] = function()
+          colors.skyblue_1 = "#56B7C3"
+          colors.grey = "#3b4261"
+          colors.blue = "#98C379"
+          colors.cyan = "#B0B7C3"
+          colors.yellow = "#EF973A"
+          colors.green1 = "#6495EE"
+          colors.red = "#E06C75"
+          set_theme = "bubbles_theme"
+        end,
+        ["Eva-Dark-Italic"] = function()
+          colors.skyblue_1 = "#598DEF"
+          colors.grey = "#3b4261"
+          colors.blue = "#98C379"
+          colors.cyan = "#B0B7C3"
+          colors.yellow = "#EF973A"
+          colors.green1 = "#56B7C3"
+          colors.red = "#E06C75"
+          set_theme = "bubbles_theme"
+        end,
+        ["Eva-Dark-Bold"] = function()
+          colors.skyblue_1 = "#598DEF"
+          colors.grey = "#3b4261"
+          colors.blue = "#98C379"
+          colors.cyan = "#B0B7C3"
+          colors.yellow = "#EF973A"
+          colors.green1 = "#56B7C3"
+          colors.red = "#E06C75"
+          set_theme = "bubbles_theme"
+        end,
         default = function()
           set_theme = "auto"
         end,
