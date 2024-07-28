@@ -177,6 +177,10 @@ return {
           fg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
           bg = { attribute = "bg", highlight = "Normal" },
         },
+        indicator_visible = {
+          fg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
+          bg = { attribute = "bg", highlight = "Normal" },
+        },
       },
     })
   end,
