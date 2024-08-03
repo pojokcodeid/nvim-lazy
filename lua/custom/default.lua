@@ -15,7 +15,7 @@
 -- darcula-dark
 -- juliana
 -- Eva-Dark, Eva-Dark-Italic, Eva-Dark-Bold
-pcode.colorscheme = "dracula"
+pcode.colorscheme = "Eva-Dark-Italic"
 -- 0 =off   1= on
 pcode.transparent_mode = 0
 
@@ -154,7 +154,7 @@ pcode.refactoring = false
 pcode.database = false
 
 -- https://github.com/rest-nvim/rest.nvim
-pcode.rest_client = true
+pcode.rest_client = false
 
 -- https://github.com/mfussenegger/nvim-dap
 pcode.nvim_dap = true -- not support for windows os (auto config mason-nvim-dap)

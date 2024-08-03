@@ -30,6 +30,11 @@ if substring(tostring(clr), "Eva") and true or false then
           hi(0, "NvimTreeGitMergeIcon", { bg = color.dark, fg = color.git.diffModified })
           hi(0, "NvimTreeGitStagedIcon", { bg = color.dark, fg = color.git.stagedModified })
           hi(0, "MiniIndentscopeSymbol", { bg = color.dark, fg = color.parameter })
+          -- cursor
+          -- hi(0, "Cursor", { bg = "#838FA7", fg = "#838FA7" })
+          hi(0, "CursorColumn", { bg = color.dark, fg = "#838FA7" })
+          hi(0, "TermCursor", { bg = "#838FA7", fg = color.dark })
+          hi(0, "TermCursorNC", { bg = "#838FA7", fg = color.dark })
         end,
       })
     end,
