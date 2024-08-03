@@ -33,8 +33,8 @@ if substring(tostring(clr), "Eva") and true or false then
           -- cursor
           -- hi(0, "Cursor", { bg = "#838FA7", fg = "#838FA7" })
           hi(0, "CursorColumn", { bg = color.dark, fg = "#838FA7" })
-          hi(0, "TermCursor", { bg = "#838FA7", fg = color.dark })
-          hi(0, "TermCursorNC", { bg = "#838FA7", fg = color.dark })
+          hi(0, "TermCursor", { bg = "#FF9070", fg = color.dark })
+          hi(0, "TermCursorNC", { bg = "#FF9070", fg = color.dark })
         end,
       })
     end,
