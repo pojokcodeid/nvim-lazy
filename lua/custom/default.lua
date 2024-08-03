@@ -15,7 +15,7 @@
 -- darcula-dark
 -- juliana
 -- Eva-Dark, Eva-Dark-Italic, Eva-Dark-Bold
-pcode.colorscheme = "Eva-Dark-Italic"
+pcode.colorscheme = "dracula"
 -- 0 =off   1= on
 pcode.transparent_mode = 0
 
