@@ -12,9 +12,11 @@ if substring(tostring(clr), "Eva") and true or false then
         callback = function()
           local hi = vim.api.nvim_set_hl
           -- hi(0, "LspInfoBorder", { fg = "#2F3F5C" })
-          hi(0, "LspInfoBorder", { fg = "#598DEF" })
+          -- hi(0, "LspInfoBorder", { fg = "#598DEF" })
+          hi(0, "LspInfoBorder", { fg = "#8A97C3" })
           -- hi(0, "FloatBorder", { fg = "#2F3F5C" })
-          hi(0, "FloatBorder", { fg = "#598DEF" })
+          -- hi(0, "FloatBorder", { fg = "#598DEF" })
+          hi(0, "FloatBorder", { fg = "#8A97C3" })
           hi(0, "StatusLine", { bg = color.background })
           hi(0, "StatusLineNC", { bg = color.background })
           hi(0, "WinBar", { bg = color.background })
