@@ -1,10 +1,10 @@
-local icons = pcode.icons
 local set_view = {}
 if pcode.nvimtree_isfloat == 1 then
   set_view = require("user.utils.nvimtree").float
 else
   set_view = require("user.utils.nvimtree").normal
 end
+--[[ local icons = pcode.icons
 return {
   "kyazdani42/nvim-tree.lua",
   lazy = true,
@@ -211,6 +211,101 @@ return {
   keys = {
     { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "󰙅 Explorer" },
   },
+  config = function(_, opts)
+    require("nvim-tree").setup(opts)
+    local api = require("nvim-tree.api")
+    api.events.subscribe(api.events.Event.FileCreated, function(file)
+      vim.cmd("edit " .. file.fname)
+    end)
+  end,
+}
+ ]]
+ 
+return {
+  "nvim-tree/nvim-tree.lua",
+  cmd = { "NvimTreeFindFileToggle", "NvimTree", "NvimTreeOpen", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeClose" },
+  keys = {
+    { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "󰙅 Explorer" },
+  },
+  opts = function()
+    local icons = pcode.icons
+    return {
+      filters = { dotfiles = false },
+      disable_netrw = true,
+      hijack_cursor = true,
+      sync_root_with_cwd = true,
+      update_focused_file = {
+        enable = true,
+        update_root = false,
+      },
+      view = set_view,
+      renderer = {
+        root_folder_label = false,
+        highlight_git = true,
+        -- indent_markers = { enable = true },
+        indent_markers = {
+          enable = true,
+          inline_arrows = true,
+          icons = {
+            corner = "└",
+            edge = "│",
+            item = "│",
+            none = " ",
+          },
+        },
+        icons = {
+          webdev_colors = true,
+          git_placement = "before",
+          padding = " ",
+          symlink_arrow = " ➛ ",
+          show = {
+            file = true,
+            folder = true,
+            folder_arrow = true,
+            git = true,
+          },
+          glyphs = {
+            default = icons.ui.Text,
+            symlink = icons.ui.FileSymlink,
+            bookmark = icons.ui.BookMark,
+            folder = {
+              -- arrow_closed = icons.ui.TriangleShortArrowRight,
+              arrow_closed = icons.ui.ChevronShortRight,
+              -- arrow_open = icons.ui.TriangleShortArrowDown,
+              arrow_open = icons.ui.ChevronShortDown,
+              default = icons.ui.Folder,
+              open = icons.ui.FolderOpen,
+              empty = icons.ui.EmptyFolder,
+              empty_open = icons.ui.EmptyFolderOpen,
+              symlink = icons.ui.FolderSymlink,
+              symlink_open = icons.ui.FolderOpen,
+            },
+            git = {
+              unstaged = icons.git.FileUnstaged,
+              staged = icons.git.FileStaged,
+              unmerged = icons.git.FileUnmerged,
+              renamed = icons.git.FileRenamed,
+              untracked = icons.git.FileUntracked,
+              deleted = icons.git.FileDeleted,
+              ignored = icons.git.FileIgnored,
+            },
+          },
+        },
+        special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
+        symlink_destination = true,
+      },
+      filters = {
+        dotfiles = false,
+        git_clean = false,
+        no_buffer = false,
+        custom = { "node_modules", "\\.cache", "\\.git" },
+        exclude = {
+          ".gitignore",
+          ".prettierignore",
+        },
+      },
+    }
+  end,
   config = function(_, opts)
     require("nvim-tree").setup(opts)
     local api = require("nvim-tree.api")
