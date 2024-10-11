@@ -99,6 +99,13 @@ return {
         desc = "Scroll backward",
         mode = { "i", "n", "s" },
       },
+      {
+        "<f2>",
+        function()
+          require("user.utils.cheatsheet").run()
+        end,
+        desc = "Chatseet",
+      },
     },
   },
   {
