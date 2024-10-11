@@ -103,7 +103,7 @@ pcode.coderunner = {
 -- https://github.com/nvim-tree/nvim-tree.lua
 -- 0 = normal
 -- 1 = float
-pcode.nvimtree_isfloat = 0
+pcode.nvimtree_isfloat = 1
 
 -- https://github.com/roobert/tailwindcss-colorizer-cmp.nvim
 pcode.tailwindcolorizer = false
@@ -154,10 +154,10 @@ pcode.refactoring = false
 pcode.database = false
 
 -- https://github.com/rest-nvim/rest.nvim
-pcode.rest_client = true
+pcode.rest_client = false
 
 -- https://github.com/mfussenegger/nvim-dap
-pcode.nvim_dap = true -- not support for windows os (auto config mason-nvim-dap)
+pcode.nvim_dap = false -- not support for windows os (auto config mason-nvim-dap)
 
 -- conefig special support test & dap
 pcode.active_rust_config = false
@@ -166,7 +166,7 @@ pcode.active_javascript_config = {
   jest_command = "npm test -- ",
   jest_config = "jest.config.mjs",
 }
-pcode.active_prisma_config = true
+pcode.active_prisma_config = false
 pcode.active_php_config = false
 pcode.active_golang_config = false
 pcode.active_python_config = false

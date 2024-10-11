@@ -46,7 +46,7 @@ return {
     color = function()
       local buf = vim.api.nvim_get_current_buf()
       local ts = vim.treesitter.highlighter.active[buf]
-      return { fg = ts and not vim.tbl_isempty(ts) and "#50fa7b" or "#FF5555" }
+      return { fg = ts and not vim.tbl_isempty(ts) and "#98C379" or "#E06C75" }
     end,
     cond = hide_in_width,
   },
@@ -71,7 +71,7 @@ return {
     color = function()
       if pcode.codeium then
         local codeium = all_trim(vim.api.nvim_call_function("codeium#GetStatusString", {}))
-        return { fg = codeium == "OFF" and "#3E4452" or "#50fa7b" }
+        return { fg = codeium == "OFF" and "#3E4452" or "#98C379" }
       else
         return {}
       end
@@ -222,11 +222,11 @@ return {
     separator = { left = " ", right = "" },
     fmt = function(str)
       if pcode.show_mode == 1 then
-        return icons.ui.Neovim .. " " .. (mode_map[str] or str)
+        return icons.ui.Neovim .. " " .. str:sub(1, 1)
       elseif pcode.show_mode == 2 then
         return icons.ui.Neovim
       elseif pcode.show_mode == 3 then
-        return (mode_map[str] or str)
+        return str:sub(1, 1)
       elseif pcode.show_mode == 4 then
         return nil
       else
