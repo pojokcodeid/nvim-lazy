@@ -220,7 +220,7 @@ return {
   end,
 }
  ]]
- 
+
 return {
   "nvim-tree/nvim-tree.lua",
   cmd = { "NvimTreeFindFileToggle", "NvimTree", "NvimTreeOpen", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeClose" },
@@ -230,7 +230,6 @@ return {
   opts = function()
     local icons = pcode.icons
     return {
-      filters = { dotfiles = false },
       disable_netrw = true,
       hijack_cursor = true,
       sync_root_with_cwd = true,
@@ -303,6 +302,18 @@ return {
           ".gitignore",
           ".prettierignore",
         },
+      },
+      notify = {
+        threshold = vim.log.levels.INFO,
+        -- threshold = vim.log.levels.ERROR,
+      },
+      git = {
+        enable = true,
+        ignore = false,
+        show_on_dirs = true,
+        show_on_open_dirs = true,
+        disable_for_dirs = {},
+        timeout = 400,
       },
     }
   end,
