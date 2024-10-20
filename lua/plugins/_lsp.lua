@@ -1,8 +1,9 @@
 return {
   {
-    "williamboman/mason-lspconfig.nvim",
+    "pojokcodeid/auto-lsp.nvim",
     event = { "VeryLazy", "BufReadPre", "BufNewFile", "BufRead" },
     dependencies = {
+      { "williamboman/mason-lspconfig.nvim" },
       {
         "neovim/nvim-lspconfig",
         lazy = true,
@@ -72,66 +73,13 @@ return {
       vim.list_extend(opts.ensure_installed, servers)
       vim.list_extend(opts.skip_config, unregis_lsp)
       opts.automatic_installation = true
+      opts.format_on_save = pcode.format_on_save or false -- config format on save none-ls
+      opts.virtual_text = pcode.lsp_virtualtext or false
+      opts.timeout_ms = pcode.format_timeout_ms or 5000
       return opts
     end,
     config = function(_, opts)
-      require("mason-lspconfig").setup(opts)
-
-      local option = {}
-      require("mason-lspconfig").setup_handlers({
-        function(server_name) -- default handler (optional)
-          local capabilities = require("user.lsp.handlers").capabilities
-          if server_name == "clangd" then
-            capabilities.offsetEncoding = { "utf-16" }
-          end
-          local is_skip = false
-          local my_index = idxOf(opts.skip_config, server_name)
-          if my_index ~= nil then
-            is_skip = true
-          end
-          if not is_skip then
-            option = {
-              on_attach = require("user.lsp.handlers").on_attach,
-              capabilities = capabilities,
-            }
-
-            server_name = vim.split(server_name, "@")[1]
-
-            local require_ok, conf_opts = pcall(require, "user.lsp.settings." .. server_name)
-            if require_ok then
-              option = vim.tbl_deep_extend("force", conf_opts, option)
-            end
-            require("lspconfig")[server_name].setup(option)
-          end
-        end,
-        -- ["jdtls"] = function()
-        --   require("lspconfig").jdtls.setup({
-        --     on_attach = require("user.lsp.handlers").on_attach,
-        --     capabilities = require("user.lsp.handlers").capabilities,
-        --     cmd = {
-        --       "jdtls",
-        --       "-configuration",
-        --       vim.fn.expand("$HOME") .. "/.cache/jdtls/config",
-        --       "-data",
-        --       vim.fn.expand("$HOME") .. "/.cache/jdtls/workspace",
-        --     },
-        --     filetypes = { "java" },
-        --     root_dir = require("lspconfig.util").root_pattern(
-        --       -- Single-module projects
-        --       {
-        --         "build.xml", -- Ant
-        --         "pom.xml", -- Maven
-        --         "settings.gradle", -- Gradle
-        --         "settings.gradle.kts", -- Gradle
-        --       },
-        --       -- Multi-module projects
-        --       { "build.gradle", "build.gradle.kts" }
-        --     ) or vim.fn.getcwd(),
-        --     singe_file_support = true,
-        --   })
-        -- end,
-      })
-      require("user.lsp.handlers").setup()
+      require("auto-lsp").setup(opts)
     end,
     keys = {
       { "<leader>l", "", desc = "  LSP", mode = "n" },

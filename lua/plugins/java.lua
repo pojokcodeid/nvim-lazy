@@ -117,7 +117,8 @@ if pcode.active_java_config.active then
             },
             settings = opts.settings,
             -- enable CMP capabilities
-            capabilities = require("user.lsp.handlers").capabilities or nil,
+            -- capabilities = require("user.lsp.handlers").capabilities or nil,
+            capabilities = require("auto-lsp.lsp.handlers").capabilities or nil,
           }, opts.jdtls)
 
           -- Existing server will be reused if the root_dir matches.
@@ -138,31 +139,39 @@ if pcode.active_java_config.active then
             local client = vim.lsp.get_client_by_id(args.data.client_id)
             if client and client.name == "jdtls" then
               local wk = require("which-key")
-              wk.register({
-                ["<leader>c"] = { name = "+code" },
-                ["<leader>cx"] = { name = "+extract" },
-                ["<leader>cxv"] = { require("jdtls").extract_variable_all, "Extract Variable" },
-                ["<leader>cxc"] = { require("jdtls").extract_constant, "Extract Constant" },
-                ["gs"] = { require("jdtls").super_implementation, "Goto Super" },
-                ["<leader>co"] = { require("jdtls").organize_imports, "Organize Imports" },
-              }, { mode = "n", buffer = args.buf })
-              wk.register({
-                ["<leader>c"] = { name = "+code" },
-                ["<leader>cx"] = { name = "+extract" },
-                ["<leader>cxm"] = {
-                  [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]],
-                  "Extract Method",
+              wk.add({
+                {
+                  mode = "n",
+                  buffer = args.buf,
+                  { "<leader>cx", group = "extract" },
+                  { "<leader>cxv", require("jdtls").extract_variable_all, desc = "Extract Variable" },
+                  { "<leader>cxc", require("jdtls").extract_constant, desc = "Extract Constant" },
+                  { "gs", require("jdtls").super_implementation, desc = "Goto Super" },
+                  { "<leader>co", require("jdtls").organize_imports, desc = "Organize Imports" },
                 },
-                ["<leader>cxv"] = {
-                  [[<ESC><CMD>lua require('jdtls').extract_variable_all(true)<CR>]],
-                  "Extract Variable",
+              })
+              wk.add({
+                {
+                  mode = "v",
+                  buffer = args.buf,
+                  { "<leader>cx", group = "extract" },
+                  {
+                    "<leader>cxm",
+                    [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]],
+                    desc = "Extract Method",
+                  },
+                  {
+                    "<leader>cxv",
+                    [[<ESC><CMD>lua require('jdtls').extract_variable_all(true)<CR>]],
+                    desc = "Extract Variable",
+                  },
+                  {
+                    "<leader>cxc",
+                    [[<ESC><CMD>lua require('jdtls').extract_constant(true)<CR>]],
+                    desc = "Extract Constant",
+                  },
                 },
-                ["<leader>cxc"] = {
-                  [[<ESC><CMD>lua require('jdtls').extract_constant(true)<CR>]],
-                  "Extract Constant",
-                },
-              }, { mode = "v", buffer = args.buf })
-
+              })
               if opts.dap and mason_registry.is_installed("java-debug-adapter") then
                 -- custom init for Java debugger
                 require("jdtls").setup_dap(opts.dap)
