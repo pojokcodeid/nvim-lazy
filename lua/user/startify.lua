@@ -61,13 +61,7 @@ vim.api.nvim_create_autocmd("User", {
       {
         type = "text",
         val = {
-          "",
-        },
-      },
-      {
-        type = "text",
-        val = {
-          "  " .. footer_text .. " " .. stats.loaded .. "/" .. stats.count .. " plugins  in " .. ms .. "ms",
+          footer_text .. " " .. stats.loaded .. "/" .. stats.count .. " plugins  in " .. ms .. "ms",
         },
       },
       -- {
