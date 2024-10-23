@@ -52,10 +52,16 @@ vim.api.nvim_create_autocmd("User", {
     local stats = require("lazy").stats()
     local ms = math.floor(stats.startuptime * 100 + 0.5) / 100
     startify.section.footer.val = {
+      -- {
+      --   type = "text",
+      --   val = {
+      --     "───────────────────────────────────────────────",
+      --   },
+      -- },
       {
         type = "text",
         val = {
-          "───────────────────────────────────────────────",
+          "",
         },
       },
       {
@@ -64,12 +70,12 @@ vim.api.nvim_create_autocmd("User", {
           "  " .. footer_text .. " " .. stats.loaded .. "/" .. stats.count .. " plugins  in " .. ms .. "ms",
         },
       },
-      {
-        type = "text",
-        val = {
-          "───────────────────────────────────────────────",
-        },
-      },
+      -- {
+      --   type = "text",
+      --   val = {
+      --     "───────────────────────────────────────────────",
+      --   },
+      -- },
     }
     pcall(vim.cmd.AlphaRedraw)
   end,
