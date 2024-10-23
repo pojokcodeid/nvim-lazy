@@ -33,9 +33,9 @@ return {
               -- border = "none",
               border = icons.Border,
               icons = {
-                package_pending = icons.DotCircle,
+                package_pending = icons.Pending,
                 package_installed = icons.CheckCircle,
-                package_uninstalled = icons.BlankCircle,
+                package_uninstalled = icons.DotCircle,
               },
               keymaps = {
                 -- Keymap to expand a server in the UI

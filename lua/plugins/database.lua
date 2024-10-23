@@ -51,7 +51,7 @@ if pcode.database then
       { "<leader>D", "", desc = " 󰆼 DBUI" },
       { "<leader>Dd", "<cmd>Alpha<cr><cmd>NvimTreeClose<cr><cmd>DBUI<cr>", desc = "󰆼 DBUI Open" },
       { "<leader>Dq",
-        "<cmd>DBUIClose<cr><cmd>BufferLineCloseOthers<cr><cmd>bd!<cr><cmd>lua require('user.utils.bufferline').bufremove()<cr><cmd>Alpha<cr>",
+        "<cmd>DBUIClose<cr><cmd>BufferLineCloseOthers<cr><cmd>bd!<cr><cmd>lua require('auto-bufferline.configs.utils').bufremove()<cr><cmd>Alpha<cr>",
         desc = "󰅙 DBUI Close",
       },
     },

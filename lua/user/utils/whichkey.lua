@@ -74,7 +74,7 @@ end
 function M._CLOSE_BUFFER()
   local buf = vim.api.nvim_get_current_buf()
   --  delete current buffer
-  require("user.utils.bufferline").bufremove(buf)
+  require("auto-bufferline.configs.utils").bufremove(buf)
 end
 
 -- function for close all bufferline
@@ -83,7 +83,7 @@ function M._CLOSE_ALL_BUFFER()
   local bufs = vim.api.nvim_list_bufs()
   -- loop through all buffer
   for _, buf in pairs(bufs) do
-    require("user.utils.bufferline").bufremove(buf)
+    require("auto-bufferline.configs.utils").bufremove(buf)
   end
 end
 

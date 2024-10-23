@@ -7,6 +7,7 @@ dash_model = {
   [[   / _ / _ \  / / _ \/  '_/ / __/ _ / _  / -_) ]],
   [[  / .__\_____/ /\___/_/\_\  \__/\___\_,_/\__/  ]],
   [[ /_/      |___/                                ]],
+  [[              Powered By  eovim              ]],
 }
 
 local board = pcode.header1
@@ -53,7 +54,21 @@ vim.api.nvim_create_autocmd("User", {
     startify.section.footer.val = {
       {
         type = "text",
-        val = { footer_text .. " " .. stats.loaded .. "/" .. stats.count .. " plugins  in " .. ms .. "ms" },
+        val = {
+          "───────────────────────────────────────────────",
+        },
+      },
+      {
+        type = "text",
+        val = {
+          "  " .. footer_text .. " " .. stats.loaded .. "/" .. stats.count .. " plugins  in " .. ms .. "ms",
+        },
+      },
+      {
+        type = "text",
+        val = {
+          "───────────────────────────────────────────────",
+        },
       },
     }
     pcall(vim.cmd.AlphaRedraw)

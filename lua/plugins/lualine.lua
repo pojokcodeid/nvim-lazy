@@ -1,102 +1,44 @@
 return {
   {
-    "nvim-lualine/lualine.nvim",
+    "pojokcodeid/auto-lualine.nvim",
     event = { "InsertEnter", "BufRead", "BufNewFile" },
+    dependencies = { "nvim-lualine/lualine.nvim" },
     config = function()
-      local component = require("user.utils.lualine_component")
-      local colors = component.colors
-
-      -- check config for theme
-      local set_theme = "auto"
-      local bubbles_theme
-      local color = pcode.colorscheme
-      switch(color, {
-        ["tokyonight"] = function()
-          set_theme = "auto"
-        end,
-        ["tokyonight-night"] = function()
-          set_theme = "auto"
-        end,
-        ["tokyonight-storm"] = function()
-          set_theme = "auto"
-        end,
-        ["tokyonight-day"] = function()
-          set_theme = "auto"
-        end,
-        ["tokyonight-moon"] = function()
-          set_theme = "auto"
-        end,
-        ["dracula"] = function()
-          local clr = require("dracula").colors()
-          colors.blue = clr.green
-          colors.black = clr.black
-          colors.cyan = clr.yellow
-          set_theme = "bubbles_theme"
-        end,
-        ["Eva-Dark"] = function()
-          colors.skyblue_1 = "#56B7C3"
-          colors.grey = "#3b4261"
-          colors.blue = "#98C379"
-          colors.cyan = "#B0B7C3"
-          colors.yellow = "#EF973A"
-          colors.green1 = "#6495EE"
-          colors.red = "#E06C75"
-          set_theme = "bubbles_theme"
-        end,
-        ["Eva-Dark-Italic"] = function()
-          colors.skyblue_1 = "#598DEF"
-          colors.grey = "#3b4261"
-          colors.blue = "#98C379"
-          colors.cyan = "#B0B7C3"
-          colors.yellow = "#EF973A"
-          colors.green1 = "#56B7C3"
-          colors.red = "#E06C75"
-          set_theme = "bubbles_theme"
-        end,
-        ["Eva-Dark-Bold"] = function()
-          colors.skyblue_1 = "#598DEF"
-          colors.grey = "#3b4261"
-          colors.blue = "#98C379"
-          colors.cyan = "#B0B7C3"
-          colors.yellow = "#EF973A"
-          colors.green1 = "#56B7C3"
-          colors.red = "#E06C75"
-          set_theme = "bubbles_theme"
-        end,
-        default = function()
-          set_theme = "auto"
-        end,
-      })
-
-      bubbles_theme = component.bubbles_theme(colors)
-      if set_theme == "auto" then
-        bubbles_theme = vim.fn.fnamemodify("auto", ":t")
-      end
-
-      local gettheme = require("user.utils.lualine_template")
-      local theme_option = pcode.lualinetheme or "rounded"
-      local theme = gettheme.rounded(bubbles_theme)
-      if theme_option == "rounded" then
-        theme = gettheme.rounded(bubbles_theme)
-      elseif theme_option == "roundedall" then
-        theme = gettheme.roundedall(bubbles_theme)
-      elseif theme_option == "square" then
-        theme = gettheme.square(bubbles_theme)
-      elseif theme_option == "transparent" then
-        theme = gettheme.square(component.transparent(colors))
-      elseif theme_option == "triangle" then
-        theme = gettheme.triangle(bubbles_theme)
-      elseif theme_option == "parallelogram" then
-        theme = gettheme.parallelogram(bubbles_theme)
-      elseif theme_option == "default" then
-        theme = {}
-      end
-      require("lualine").setup({
-        options = theme.options,
-        sections = theme.sections,
-        inactive_sections = theme.inactive_sections,
-        tabline = theme.tabline,
-        extensions = theme.extensions,
+      local lualine = require("auto-lualine")
+      -- tokyonight, tokyonight-night, tokyonight-storm, tokyonight-day, tokyonight-moon
+      -- gruvbox-baby (default)
+      -- sonokai, sonokai_atlantis,
+      -- sonokai_andromeda,sonokai_shusia,sonokai_maia,sonokai_espresso
+      -- material, material_deepocean, material_palenight, material_lighter, material_darker
+      -- onedark, onedark_vivid, onedark_dark
+      -- nord
+      -- catppuccin, catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+      -- dracula
+      -- nightfox, dayfox, dawnfox, duskfox, nordfox, terafox, carbonfox
+      -- github_dark, github_dark_default, github_dark_colorblind, github_dark_dimmed
+      -- solarized-osaka
+      -- darcula-dark
+      -- juliana
+      -- Eva-Dark, Eva-Dark-Italic, Eva-Dark-Bold
+      local color = pcode.colorscheme or "auto"
+      -- rounded
+      -- roundedall
+      -- square
+      -- triangle
+      -- parallelogram
+      -- transparent
+      -- default
+      local options = pcode.lualinetheme or "roundedall"
+      -- 0 = on full text mode info,
+      -- 1 = on initial mode + logo
+      -- 2 = logo only
+      -- 3 = initial only
+      -- 4 = off
+      local show_mode = pcode.show_mode or 0
+      lualine.setup({
+        setColor = color,
+        setOption = options,
+        setMode = show_mode,
       })
     end,
   },
