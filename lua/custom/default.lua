@@ -37,7 +37,8 @@ pcode.progress = 1
 -- 2 = logo only
 -- 3 = initial only
 -- 4 = off
-pcode.show_mode = 2
+-- 5 = icon
+pcode.show_mode = 5
 
 -- true or false
 pcode.format_on_save = true

@@ -34,6 +34,7 @@ return {
       -- 2 = logo only
       -- 3 = initial only
       -- 4 = off
+      -- 5 = icon
       local show_mode = pcode.show_mode or 0
       lualine.setup({
         setColor = color,
