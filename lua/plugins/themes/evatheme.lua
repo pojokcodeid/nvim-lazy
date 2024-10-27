@@ -4,6 +4,7 @@ if substring(tostring(clr), "Eva") and true or false then
     "sharpchen/Eva-Theme.nvim",
     lazy = false,
     priority = 1000,
+    build = ":EvaCompile",
     config = function()
       require("Eva-Theme").setup({})
       local color = require("Eva-Theme.palette").dark
