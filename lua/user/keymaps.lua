@@ -179,6 +179,7 @@ keymap("i", "<C-s>", "<cmd>silent! w<cr>", opts)
 keymap("n", "<C-s>", "<cmd>silent! w<cr>", opts)
 keymap("n", "q", "<cmd>q<cr>", opts)
 keymap("x", "<S-Down>", ":'<,'>t'><cr>", opts)
+keymap("x", "<S-Up>", ":'<,'>t-1<cr>", opts)
 
 -- keymap("i", "<C-r>", "<cmd>RunFile<CR>", opts)
 -- keymap("n", "<C-r>", "<cmd>RunFile<CR>", opts)
