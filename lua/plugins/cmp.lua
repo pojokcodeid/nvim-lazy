@@ -80,14 +80,15 @@ return {
         formatting = {
           fields = { "kind", "abbr", "menu" },
           format = function(entry, vim_item)
+            vim_item.menu = vim_item.kind
             vim_item.kind = string.format("%s", require("user.icons")["kind"][vim_item.kind])
-            vim_item.menu = ({
-              nvim_lsp = "(LSP)",
-              luasnip = "(Snippet)",
-              buffer = "(Buffer)",
-              path = "(Path)",
-              codeium = "(Codeium)",
-            })[entry.source.name]
+            -- vim_item.menu = ({
+            --   nvim_lsp = "(LSP)",
+            --   luasnip = "(Snippet)",
+            --   buffer = "(Buffer)",
+            --   path = "(Path)",
+            --   codeium = "(Codeium)",
+            -- })[entry.source.name]
             return vim_item
           end,
         },
