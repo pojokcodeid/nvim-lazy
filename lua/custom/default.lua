@@ -104,7 +104,7 @@ pcode.coderunner = {
 -- https://github.com/nvim-tree/nvim-tree.lua
 -- 0 = normal
 -- 1 = float
-pcode.nvimtree_isfloat = 1
+pcode.nvimtree_isfloat = 0
 
 -- https://github.com/roobert/tailwindcss-colorizer-cmp.nvim
 pcode.tailwindcolorizer = false
