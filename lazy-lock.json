@@ -33,7 +33,7 @@
   "mini.indentscope": { "branch": "main", "commit": "da9af64649e114aa79480c238fd23f6524bc0903" },
   "minty": { "branch": "main", "commit": "6e5c4cfc66e5dbb248ab78293d1c147de0c33a54" },
   "neoscroll.nvim": { "branch": "master", "commit": "a731f66f1d39ec6175fd201c5bf849e54abda99c" },
-  "noice.nvim": { "branch": "main", "commit": "df448c649ef6bc5a6a633a44f2ad0ed8d4442499" },
+  "noice.nvim": { "branch": "main", "commit": "5a78b42bec5e775f2db03bf93f6d1e0f3636306c" },
   "nui.nvim": { "branch": "main", "commit": "a0fd35fcbb4cb479366f1dc5f20145fd718a3733" },
   "nvim-autopairs": { "branch": "master", "commit": "ee297f215e95a60b01fde33275cc3c820eddeebe" },
   "nvim-cmp": { "branch": "main", "commit": "f17d9b4394027ff4442b298398dfcaab97e40c4f" },
@@ -63,5 +63,6 @@
   "virt-column.nvim": { "branch": "master", "commit": "b62b4ef0774d19452d4ed18e473e824c7a756f2f" },
   "volt": { "branch": "main", "commit": "4472da2e77ad240e7fc56af6357b2a8fdf6aa0ae" },
   "which-key.nvim": { "branch": "main", "commit": "fb070344402cfc662299d9914f5546d840a22126" },
-  "yanky.nvim": { "branch": "main", "commit": "9268018e92d02650a94e39dd5f5903c542f7ea11" }
+  "yanky.nvim": { "branch": "main", "commit": "9268018e92d02650a94e39dd5f5903c542f7ea11" },
+  "zen-mode.nvim": { "branch": "main", "commit": "04b52674b8c800f8b7d4609e8bd8d0212e3ffa79" }
 }
