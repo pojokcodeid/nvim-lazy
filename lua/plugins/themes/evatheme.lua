@@ -4,7 +4,6 @@ if substring(tostring(clr), "Eva") and true or false then
     "sharpchen/Eva-Theme.nvim",
     lazy = false,
     priority = 1000,
-    build = ":EvaCompile",
     config = function()
       require("Eva-Theme").setup({})
       local color = require("Eva-Theme.palette").dark
@@ -34,6 +33,7 @@ if substring(tostring(clr), "Eva") and true or false then
           hi(0, "NvimTreeGitIgnoredIcon", { bg = color.dark, fg = color.git.ignored })
           hi(0, "NvimTreeGitMergeIcon", { bg = color.dark, fg = color.git.diffModified })
           hi(0, "NvimTreeGitStagedIcon", { bg = color.dark, fg = color.git.stagedModified })
+          hi(0, "NvimTreeWinSeparator", { bg = color.dark, fg = color.comment })
           hi(0, "MiniIndentscopeSymbol", { bg = color.dark, fg = color.parameter })
           -- cursor
           -- hi(0, "Cursor", { bg = "#838FA7", fg = "#838FA7" })
