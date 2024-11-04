@@ -1,4 +1,3 @@
--- PERF fully optimized
 if vim.g.vscode then
   -- config vscode
   Map = vim.keymap.set
@@ -11,5 +10,5 @@ if vim.g.vscode then
   require("_vscode.mappings")
 else
   -- config neovim
-  require("core")
+  require("pcode.core")
 end

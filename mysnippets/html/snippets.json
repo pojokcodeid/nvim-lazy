@@ -1,0 +1,88 @@
+{
+  "consoledotLog": {
+    "prefix": "console",
+    "body": "console.log(${1:object});",
+    "description": "Displays a message in the console"
+  },
+  "alert": {
+    "prefix": "alert",
+    "body": "alert(${1:object});",
+    "description": "Displays a message in the Popup Alert"
+  },
+  "author": {
+    "prefix": "@author",
+    "body": [
+      "<!-- ",
+      "Author  = Pojok Code",
+      "email   = pojokcodeid@gmail.com",
+      "Github  = https://github.com/pojokcodeid",
+      "Youtube = https://youtube.com/pojokcode",
+      "Date    = $CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}",
+      "File    = $TM_FILENAME",
+      "note    = Penyalahgunaan kode ini bukan tanggung jawab pojok code",
+      "-->"
+    ],
+    "description": "@author = Pojok Code"
+  },
+  "html5": {
+    "prefix": "html5-All",
+    "body": [
+      "<!DOCTYPE html>",
+      "<!-- ",
+      "Author  = Pojok Code",
+      "Date    = $CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}",
+      "File    = $TM_FILENAME",
+      "-->",
+      "<html lang=\"$1en\">",
+      "\t<head>",
+      "\t\t<title>$2</title>",
+      "\t\t<link rel=\"shortcut icon\" href=\"#\"/>",
+      "\t\t<meta charset=\"UTF-8\">",
+      "\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+      "\t\t<link href=\"$3css/style.css\" rel=\"stylesheet\">",
+      "\t</head>",
+      "\t<body>",
+      "\t\t$0",
+      "\t\t<script src=\"$4js/script.js\"></script>",
+      "\t</body>",
+      "</html>"
+    ],
+    "description": "HTML-All - Defines a template for a html5 document Full",
+    "scope": "text.html"
+  },
+  "document.getElementById": {
+    "prefix": "document.getElementById",
+    "body": "document.getElementById(${1:object});",
+    "description": "document.getElementById"
+  },
+  "document.getElementsByName": {
+    "prefix": "document.getElementsByName",
+    "body": "document.getElementsByName(${1:object});",
+    "description": "document.getElementsByName"
+  },
+  "document.getElementsByTagName": {
+    "prefix": "document.getElementsByTagName",
+    "body": "document.getElementsByTagName(${1:object});",
+    "description": "document.getElementsByTagName"
+  },
+  "document.getElementsByClassName": {
+    "prefix": "document.getElementsByClassName",
+    "body": "document.getElementsByClassName(${1:object});",
+    "description": "document.getElementsByClassName"
+  },
+  "document.getElementsByTagNameNS": {
+    "prefix": "document.getElementsByTagNameNS",
+    "body": "document.getElementsByTagNameNS(${1:object});",
+    "description": "document.getElementsByTagNameNS"
+  },
+  "document.write": {
+    "prefix": "document.write",
+    "body": "document.write(${1:object});",
+    "description": "document.write"
+  },
+  "document.writeln": {
+    "prefix": "document.writeln",
+    "body": "document.writeln(${1:object});",
+    "description": "document.writeln"
+  }
+}
