@@ -75,6 +75,12 @@ if transparent then
         end
       end,
     },
+    {
+      "rcarriga/nvim-notify",
+      opts = function(_, opts)
+        opts.background_colour = "#00000000"
+      end,
+    },
   }
 else
   return {}
