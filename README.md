@@ -79,14 +79,14 @@
 # Windows
 
 ```
-git clone https://github.com/pojokcodeid/nvim-lazy-basic.git "$env:LOCALAPPDATA\nvim"
+git clone https://github.com/pojokcodeid/neovim-starter.git "$env:LOCALAPPDATA\nvim"
 nvim
 ```
 
 # Linux
 
 ```bash
-git clone https://github.com/pojokcodeid/nvim-lazy-basic.git ~/.config/nvim
+git clone https://github.com/pojokcodeid/neovim-starter.git ~/.config/nvim
 ```
 
 # Uninstall
