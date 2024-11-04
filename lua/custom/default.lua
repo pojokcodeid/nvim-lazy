@@ -110,10 +110,10 @@ pcode.nvimtree_isfloat = 0
 pcode.tailwindcolorizer = false
 
 -- https://github.com/Exafunction/codeium.vim
-pcode.codeium = true
+pcode.codeium = false
 
 -- https://github.com/Exafunction/codeium.nvim
-pcode.codeium_nvim = false
+pcode.codeium_nvim = true
 
 -- https://github.com/kevinhwang91/nvim-ufo
 pcode.nvimufo = false

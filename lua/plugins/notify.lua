@@ -19,14 +19,15 @@ return {
     max_width = function()
       return math.floor(vim.o.columns * 0.75)
     end,
+    render = "wrapped-compact",
   },
   -- event = "BufWinEnter",
-  config = function()
+  config = function(_, opts)
     local notify = require("notify")
     -- this for transparency
     -- notify.setup { background_colour = "#000000", render = "compact" }
     -- notify.setup({ render = "compact" })
-    notify.setup({ render = "wrapped-compact" })
+    notify.setup(opts)
     -- this overwrites the vim notify function
     vim.notify = notify.notify
   end,

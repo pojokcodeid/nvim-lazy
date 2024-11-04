@@ -80,7 +80,7 @@ return {
         formatting = {
           fields = { "kind", "abbr", "menu" },
           format = function(entry, vim_item)
-            vim_item.menu = vim_item.kind
+            vim_item.menu = vim.api.nvim_get_mode().mode == "c" and "" or vim_item.kind
             vim_item.kind = string.format("%s", require("user.icons")["kind"][vim_item.kind])
             -- vim_item.menu = ({
             --   nvim_lsp = "(LSP)",
