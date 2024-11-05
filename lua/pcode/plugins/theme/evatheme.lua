@@ -3,17 +3,10 @@ return {
   lazy = false,
   priority = 1000,
   config = function()
-    require("Eva-Theme").setup({
-      override_highlight = {
-        dark = {
-          ["MiniIndentscopeSymbol"] = { fg = "#FF9070" },
-          ["MiniIndentscopeSymbolOff"] = { fg = "#FF9070" },
-        },
-      },
-    })
+    require("Eva-Theme").setup({})
     local color = {}
     if pcode.localcode then
-      color = require("Eva-Theme.palette").dark_base.punctuation
+      color = require("Eva-Theme.palette").dark_base
     else
       color = require("Eva-Theme.palette").dark
     end
