@@ -199,7 +199,7 @@ return {
   -- npm install -g tree-sitter-cli
   {
     "adalessa/laravel.nvim",
-    enabled = is_laravel_project(), -- pastikan membuka laravel project
+    enabled = is_laravel_project() and vim.fn.has("win32") == 0, -- pastikan membuka laravel project
     version = "v2.2.1",
     dependencies = {
       "tpope/vim-dotenv",
