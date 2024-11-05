@@ -3,7 +3,14 @@ return {
   lazy = false,
   priority = 1000,
   config = function()
-    require("Eva-Theme").setup({})
+    require("Eva-Theme").setup({
+      override_highlight = {
+        dark = {
+          ["MiniIndentscopeSymbol"] = { fg = "#FF9070" },
+          ["MiniIndentscopeSymbolOff"] = { fg = "#FF9070" },
+        },
+      },
+    })
     local color = {}
     if pcode.localcode then
       color = require("Eva-Theme.palette").dark_base.punctuation
@@ -43,6 +50,8 @@ return {
         hi(0, "CursorColumn", { bg = color.dark, fg = "#838FA7" })
         hi(0, "TermCursor", { bg = "#FF9070", fg = color.dark })
         hi(0, "TermCursorNC", { bg = "#FF9070", fg = color.dark })
+        hi(0, "MiniIndentscopeSymbol", { fg = "#FF9070" })
+        hi(0, "MiniIndentscopeSymbolOff", { fg = "#FF9070" })
       end,
     })
   end,
