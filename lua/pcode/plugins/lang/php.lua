@@ -64,8 +64,8 @@ return {
     "pojokcodeid/auto-conform.nvim",
     event = "VeryLazy",
     opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, { "php-cs-fixer", "blade-formatter" })
-      opts.formatters_by_ft.php = { "easy-coding-standard" }
+      vim.list_extend(opts.ensure_installed, { "pretty-php", "blade-formatter" })
+      opts.formatters_by_ft.php = { "pretty-php" }
       opts.formatters_by_ft.blade = { "blade-formatter" }
     end,
   },
