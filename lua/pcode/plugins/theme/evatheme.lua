@@ -5,10 +5,19 @@ return {
   config = function()
     require("Eva-Theme").setup({})
     local color = {}
+    local theme = vim.g.colors_name or "Eva-Dark"
     if pcode.localcode then
-      color = require("Eva-Theme.palette").dark_base
+      if substring(theme, "Dark") then
+        color = require("Eva-Theme.palette").dark_base
+      else
+        color = require("Eva-Theme.palette").light_base
+      end
     else
-      color = require("Eva-Theme.palette").dark
+      if substring(theme, "Dark") then
+        color = require("Eva-Theme.palette").dark
+      else
+        color = require("Eva-Theme.palette").light
+      end
     end
     vim.api.nvim_create_autocmd("ColorScheme", {
       pattern = "*",
