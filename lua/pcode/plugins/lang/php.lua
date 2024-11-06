@@ -64,8 +64,8 @@ return {
     "pojokcodeid/auto-conform.nvim",
     event = "VeryLazy",
     opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, { "php-cs-fixer", "blade-formatter" })
-      opts.formatters_by_ft.php = { "easy-coding-standard" }
+      vim.list_extend(opts.ensure_installed, { "pretty-php", "blade-formatter" })
+      opts.formatters_by_ft.php = { "pretty-php" }
       opts.formatters_by_ft.blade = { "blade-formatter" }
     end,
   },
@@ -199,9 +199,11 @@ return {
   -- npm install -g tree-sitter-cli
   {
     "adalessa/laravel.nvim",
-    enabled = is_laravel_project() and vim.fn.has("win32") == 0, -- pastikan membuka laravel project
-    version = "v2.2.1",
+    enabled = is_laravel_project(), -- pastikan membuka laravel project
+    -- version = "v2.2.1",
     dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
       "tpope/vim-dotenv",
       "nvim-telescope/telescope.nvim",
       "MunifTanjim/nui.nvim",
