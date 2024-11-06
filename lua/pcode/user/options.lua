@@ -69,3 +69,5 @@ vim.api.nvim_create_autocmd("FileType", {
     opt.relativenumber = false
   end,
 })
+
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
