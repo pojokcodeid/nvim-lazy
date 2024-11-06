@@ -199,9 +199,11 @@ return {
   -- npm install -g tree-sitter-cli
   {
     "adalessa/laravel.nvim",
-    enabled = is_laravel_project() and vim.fn.has("win32") == 0, -- pastikan membuka laravel project
-    version = "v2.2.1",
+    -- enabled = is_laravel_project() and vim.fn.has("win32") == 0, -- pastikan membuka laravel project
+    -- version = "v2.2.1",
     dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
       "tpope/vim-dotenv",
       "nvim-telescope/telescope.nvim",
       "MunifTanjim/nui.nvim",
