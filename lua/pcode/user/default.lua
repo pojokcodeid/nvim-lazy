@@ -65,7 +65,13 @@ pcode.themes = {
   -- jetbrains = "darcula-dark",
   --
   -- **:: Sublimetext Theme ::** --
-  sublimetext = "juliana",
+  -- sublimetext = "juliana",
+  --
+  -- **:: Tokyonight Theme ::** --
+  -- tokyonight = "tokyonight-night",
+  -- tokyonight = "tokyonight-storm",
+  -- tokyonight = "tokyonight-day",
+  tokyonight = "tokyonight-moon",
 }
 -- activate config transparent_bg
 pcode.transparent = false
