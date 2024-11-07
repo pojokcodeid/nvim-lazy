@@ -47,7 +47,7 @@ pcode.extras = {
 pcode.themes = {
   -- note: open remark only one
   -- **:: Eva Theme ::** --
-  evatheme = "Eva-Dark",
+  -- evatheme = "Eva-Dark",
   -- evatheme = "Eva-Dark-Italic",
   -- evatheme = "Eva-Dark-Bold",
   -- evatheme = "Eva-Light",
@@ -63,6 +63,9 @@ pcode.themes = {
   --
   -- **:: Jetbrains Theme ::** --
   -- jetbrains = "darcula-dark",
+  --
+  -- **:: Sublimetext Theme ::** --
+  sublimetext = "juliana",
 }
 -- activate config transparent_bg
 pcode.transparent = false
