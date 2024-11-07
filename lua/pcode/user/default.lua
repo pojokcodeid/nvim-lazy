@@ -47,8 +47,8 @@ pcode.extras = {
 pcode.themes = {
   -- note: open remark only one
   -- **:: Eva Theme ::** --
-  evatheme = "Eva-Dark",
-  -- evatheme = "Eva-Dark-Italic",
+  -- evatheme = "Eva-Dark",
+  evatheme = "Eva-Dark-Italic",
   -- evatheme = "Eva-Dark-Bold",
   -- evatheme = "Eva-Light",
   --
@@ -63,6 +63,22 @@ pcode.themes = {
   --
   -- **:: Jetbrains Theme ::** --
   -- jetbrains = "darcula-dark",
+  --
+  -- **:: Sublimetext Theme ::** --
+  -- sublimetext = "juliana",
+  --
+  -- **:: Tokyonight Theme ::** --
+  -- tokyonight = "tokyonight-night",
+  -- tokyonight = "tokyonight-storm",
+  -- tokyonight = "tokyonight-day",
+  -- tokyonight = "tokyonight-moon",
+  --
+  -- **:: Catppuccin Theme ::** --
+  -- catppuccin = "catppuccin",
+  -- catppuccin = "catppuccin-latte",
+  -- catppuccin = "catppuccin-frappe",
+  -- catppuccin = "catppuccin-macchiato",
+  -- catppuccin = "catppuccin-macchiato",
 }
 -- activate config transparent_bg
 pcode.transparent = false
