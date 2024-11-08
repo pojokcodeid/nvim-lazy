@@ -14,6 +14,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
+vim.opt.number = false
 
 local icons = require("pcode.user.icons").ui
 -- Make sure to setup `mapleader` and `maplocalleader` before
