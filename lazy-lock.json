@@ -6,7 +6,7 @@
   "auto-bufferline.nvim": { "branch": "main", "commit": "f5835a4b62bfb6f6c829f8f050e5102ccf230b3e" },
   "auto-conform.nvim": { "branch": "main", "commit": "5f0897235e84bf2f8ff9d634e81678d5bfa63ab8" },
   "auto-lint.nvim": { "branch": "main", "commit": "aff13cb8eaa055e66e940d43b7d83166397e5413" },
-  "auto-lsp.nvim": { "branch": "main", "commit": "4fab265af6207e24c0be4b88e4343178e3755625" },
+  "auto-lsp.nvim": { "branch": "main", "commit": "2a5ade9f78a1c60d747396445d4205352d2491db" },
   "auto-lualine.nvim": { "branch": "main", "commit": "fc8557f61dc1da12a8b90167a49420958b991d8c" },
   "breadcrumbs.nvim": { "branch": "master", "commit": "9f764278784ce2f10dbe2f555ba14be2451d36a0" },
   "bufferline.nvim": { "branch": "main", "commit": "5cc447cb2b463cb499c82eaeabbed4f5fa6a0a44" },

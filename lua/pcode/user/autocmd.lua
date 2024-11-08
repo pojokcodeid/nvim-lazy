@@ -115,3 +115,12 @@ vim.api.nvim_create_autocmd("ExitPre", {
   command = "set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175,a:ver90",
   desc = "Set cursor back to beam when leaving Neovim.",
 })
+
+-- Create an autocmd to set keymap for Java files
+vim.api.nvim_create_augroup("java_gradle_run", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "java",
+  callback = function()
+    vim.api.nvim_set_keymap("n", "<leader>rg", "<cmd>terminal<cr>gradle run<cr>", { noremap = true, silent = true })
+  end,
+})
