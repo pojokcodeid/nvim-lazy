@@ -126,4 +126,27 @@ return {
       return opts
     end,
   },
+  {
+    "nvim-java/nvim-java",
+    event = "VeryLazy",
+    config = function()
+      require("java").setup({
+        notifications = {
+          -- enable 'Configuring DAP' & 'DAP configured' messages on start up
+          dap = false,
+        },
+      })
+    end,
+    keys = {
+      { "<leader>rg", "", desc = "Gradle" },
+      { "<leader>rgp", "<cmd>JavaProfile<cr>", desc = "Java Profile" },
+      { "<leader>rgg", "<cmd>terminal<cr>gradle run<cr>", desc = "Run Gradle" },
+      { "<leader>rgb", "<cmd>JavaBuildBuildWorkspace<cr>", desc = "Java Build Workspace" },
+      { "<leader>rgd", "<cmd>JavaDapConfig<cr>", desc = "Java Configure DAP" },
+      { "<leader>T", "", desc = "Test" },
+      { "<leader>Tc", "<cmd>JavaTestRunCurrentClass<cr>", desc = "Test Current Class" },
+      { "<leader>Tm", "<cmd>JavaTestRunCurrentMethod<cr>", desc = "Test Current Method" },
+      { "<leader>Th", "<cmd>JavaTestViewLastReport<cr>", desc = "View Test Last Report" },
+    },
+  },
 }

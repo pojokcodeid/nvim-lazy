@@ -117,10 +117,10 @@ vim.api.nvim_create_autocmd("ExitPre", {
 })
 
 -- Create an autocmd to set keymap for Java files
-vim.api.nvim_create_augroup("java_gradle_run", { clear = true })
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "java",
-  callback = function()
-    vim.api.nvim_set_keymap("n", "<leader>rg", "<cmd>terminal<cr>gradle run<cr>", { noremap = true, silent = true })
-  end,
-})
+-- vim.api.nvim_create_augroup("java_gradle_run", { clear = true })
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "java",
+--   callback = function()
+--     vim.api.nvim_set_keymap("n", "<leader>rg", "<cmd>terminal<cr>gradle run<cr>", { noremap = true, silent = true })
+--   end,
+-- })
