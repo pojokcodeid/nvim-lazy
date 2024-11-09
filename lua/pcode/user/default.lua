@@ -82,6 +82,9 @@ pcode.themes = {
   --
   -- **:: Gruvbox Theme ::** --
   -- gruvbox = "gruvbox",
+  --
+  -- **:: Github Theme ::** --
+  -- github = "github_dark_dimmed",
 }
 -- activate config transparent_bg
 pcode.transparent = false
