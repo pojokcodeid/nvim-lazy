@@ -79,6 +79,9 @@ pcode.themes = {
   -- catppuccin = "catppuccin-frappe",
   -- catppuccin = "catppuccin-macchiato",
   -- catppuccin = "catppuccin-macchiato",
+  --
+  -- **:: Gruvbox Theme ::** --
+  -- gruvbox = "gruvbox",
 }
 -- activate config transparent_bg
 pcode.transparent = false
