@@ -6,6 +6,7 @@ pcode.lang = {
   deno = false,
   golang = false,
   java = false,
+  java2 = true,
   javascript = false,
   kotlin = false,
   markdown = false,
