@@ -119,7 +119,8 @@ M.opts = {
   },
 }
 
-M.attach_jdtls = function()
+M.attach_jdtls = function(op)
+  M.opts = M.extend_or_override(M.opts, op or {})
   local opt = vim.opt
   opt.shiftwidth = 4
   opt.tabstop = 4
@@ -179,8 +180,8 @@ M.attach_jdtls = function()
       local client = vim.lsp.get_client_by_id(args.data.client_id)
           -- stylua: ignore
           if client and client.name == "jdtls" then
-            M.jdtls_keymaps()
-            M.lsp_keymaps()
+            -- M.jdtls_keymaps()
+            -- M.lsp_keymaps()
             if M.opts.dap and mason_registry.is_installed("java-debug-adapter") then
               -- custom init for Java debugger
               require("jdtls").setup_dap(M.opts.dap)
