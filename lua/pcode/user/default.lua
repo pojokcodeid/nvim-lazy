@@ -7,6 +7,7 @@ pcode.lang = {
   golang = false,
   java = false,
   java2 = false,
+  java3 = true,
   javascript = false,
   kotlin = false,
   markdown = false,
