@@ -15,6 +15,25 @@ local function extend_or_override(config, custom, ...)
   return config
 end
 
+local function capabilities()
+  local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+  if status_ok then
+    return cmp_nvim_lsp.default_capabilities()
+  end
+
+  local CAPABILITIES = vim.lsp.protocol.make_client_capabilities()
+  CAPABILITIES.textDocument.completion.completionItem.snippetSupport = true
+  CAPABILITIES.textDocument.completion.completionItem.resolveSupport = {
+    properties = {
+      "documentation",
+      "detail",
+      "additionalTextEdits",
+    },
+  }
+
+  return CAPABILITIES
+end
+
 M = {
   {
     "williamboman/mason-lspconfig.nvim",
@@ -131,7 +150,8 @@ M = {
           settings = opts.settings,
           -- enable CMP capabilities
           -- capabilities = require("user.lsp.handlers").capabilities or nil,
-          capabilities = require("auto-lsp.lsp.handlers").capabilities or nil,
+          -- capabilities = require("auto-lsp.lsp.handlers").capabilities or nil,
+          capabilities = capabilities() or nil,
         }, opts.jdtls)
 
         -- Existing server will be reused if the root_dir matches.
