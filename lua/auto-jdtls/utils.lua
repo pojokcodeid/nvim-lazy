@@ -82,25 +82,62 @@ M.opts = {
     return vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
   end,
 
-  -- Where are the config and workspace dirs for a project?
-  jdtls_config_dir = function(project_name)
-    return vim.fn.stdpath("cache") .. "/jdtls/" .. project_name .. "/config"
+  get_jdtls = function()
+    local function check_os()
+      local uname = vim.loop.os_uname().sysname
+      if uname == "Darwin" then
+        return "mac"
+      elseif uname == "Windows_NT" then
+        return "win"
+      elseif uname == "Linux" then
+        return "linux"
+      else
+        return "unknown"
+      end
+    end
+    local mason_registry = require("mason-registry")
+    local jdtls = mason_registry.get_package("jdtls")
+    local jdtls_path = jdtls:get_install_path()
+    local launcher = vim.fn.glob(jdtls_path .. "/plugins/org.eclipse.equinox.launcher_*.jar")
+    local SYSTEM = check_os()
+    local config = jdtls_path .. "/config_" .. SYSTEM
+    local lombok = jdtls_path .. "/lombok.jar"
+    return launcher, config, lombok
   end,
+
   jdtls_workspace_dir = function(project_name)
-    return vim.fn.stdpath("cache") .. "/jdtls/" .. project_name .. "/workspace"
+    local function get_workspace()
+      local home = os.getenv("HOME")
+      local workspace_path = home .. "/code/workspace/"
+      local workspace_dir = workspace_path .. project_name
+      return workspace_dir
+    end
+    return get_workspace()
   end,
-  cmd = { vim.fn.exepath("jdtls") },
   full_cmd = function(opts)
     local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-    local cmd = vim.deepcopy(opts.cmd)
-    if project_name then
-      vim.list_extend(cmd, {
-        "-configuration",
-        opts.jdtls_config_dir(project_name),
-        "-data",
-        opts.jdtls_workspace_dir(project_name),
-      })
-    end
+    local launcher, os_config, lombok = opts.get_jdtls()
+    local cmd = {
+      "java",
+      "-Declipse.application=org.eclipse.jdt.ls.core.id1",
+      "-Dosgi.bundles.defaultStartLevel=4",
+      "-Declipse.product=org.eclipse.jdt.ls.core.product",
+      "-Dlog.protocol=true",
+      "-Dlog.level=ALL",
+      "-Xmx1g",
+      "--add-modules=ALL-SYSTEM",
+      "--add-opens",
+      "java.base/java.util=ALL-UNNAMED",
+      "--add-opens",
+      "java.base/java.lang=ALL-UNNAMED",
+      "-javaagent:" .. lombok,
+      "-jar",
+      launcher,
+      "-configuration",
+      os_config,
+      "-data",
+      opts.jdtls_workspace_dir(project_name),
+    }
     return cmd
   end,
 
@@ -178,21 +215,21 @@ M.attach_jdtls = function(op)
   vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)
       local client = vim.lsp.get_client_by_id(args.data.client_id)
-          -- stylua: ignore
-          if client and client.name == "jdtls" then
-            -- M.jdtls_keymaps()
-            -- M.lsp_keymaps()
-            if M.opts.dap and mason_registry.is_installed("java-debug-adapter") then
-              -- custom init for Java debugger
-              require("jdtls").setup_dap(M.opts.dap)
-              require("jdtls.dap").setup_dap_main_class_configs(M.opts.dap_main)
-            end
-
-            -- User can set additional keymaps in opts.on_attach
-            if M.opts.on_attach then
-              M.opts.on_attach(args)
-            end
+        -- stylua: ignore
+        if client and client.name == "jdtls" then
+          -- M.jdtls_keymaps()
+          -- M.lsp_keymaps()
+          if M.opts.dap and mason_registry.is_installed("java-debug-adapter") then
+            -- custom init for Java debugger
+            require("jdtls").setup_dap(M.opts.dap)
+            require("jdtls.dap").setup_dap_main_class_configs(M.opts.dap_main)
           end
+
+          -- User can set additional keymaps in opts.on_attach
+          if M.opts.on_attach then
+            M.opts.on_attach(args)
+          end
+        end
     end,
   })
 

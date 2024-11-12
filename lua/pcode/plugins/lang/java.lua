@@ -28,7 +28,7 @@ M = {
   },
   {
     "mfussenegger/nvim-jdtls",
-    dependencies = { "pojokcodeid/auto-jdtls.nvim" },
+    -- dependencies = { "pojokcodeid/auto-jdtls.nvim" },
     ft = { "java" },
     enabled = true,
     -- your opts go here
