@@ -30,28 +30,15 @@ M = {
       "andy-bell101/neotest-java",
     },
     config = function()
-      local project_type = "maven"
-      local gradle_file = vim.fn.findfile("build.gradle", vim.fn.getcwd())
-      if gradle_file then
-        project_type = "gradle"
-      end
+      -- local project_type = "maven"
+      -- local gradle_file = vim.fn.findfile("build.gradle", vim.fn.getcwd())
+      -- if gradle_file then
+      --   project_type = "gradle"
+      -- end
 
       require("neotest").setup({
         adapters = {
-          require("neotest-java")({
-            -- function to determine which runner to use based on project path
-            determine_runner = function(project_root_path)
-              -- return should be "maven" or "gradle"
-              return project_type
-            end,
-            -- override the builtin runner discovery behaviour to always use given
-            -- tool. Default is "nil", so no override
-            force_runner = nil,
-            -- if the automatic runner discovery can't uniquely determine whether
-            -- to use Gradle or Maven, fallback to using this runner. Default is
-            -- "gradle or maven"
-            fallback_runner = project_type,
-          }),
+          require("neotest-java"),
         },
       })
     end,
