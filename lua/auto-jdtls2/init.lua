@@ -2,6 +2,7 @@ local M = {}
 
 M.setup = function(opt)
   opt = opt or {}
+  require("auto-jdtls.utils").install()
   require("auto-jdtls.utils").attach_jdtls(opt)
 end
 

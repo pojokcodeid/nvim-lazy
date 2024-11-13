@@ -1,6 +1,13 @@
 return {
   "nvim-java/nvim-java",
-  event = "VeryLazy",
+  -- event = "VeryLazy",
+  ft = { "java" },
+  dependencies = {
+    "MunifTanjim/nui.nvim",
+    "neovim/nvim-lspconfig",
+    "mfussenegger/nvim-dap",
+    "williamboman/mason.nvim",
+  },
   config = function()
     require("java").setup({
       notifications = {

@@ -165,7 +165,31 @@ M.attach_jdtls = function(op)
   opt.ts = 4
   opt.expandtab = true
 
+  --  Check Ttriisittrer
+
+  local function ensure_ts_install(lang)
+    local parsers = require("nvim-treesitter.parsers")
+    local installed = parsers.has_parser(lang)
+
+    if not installed then
+      vim.cmd("TSInstall " .. lang)
+      require("notify")("Treesitter parser for " .. lang .. " installed successfully.")
+    end
+  end
+
+  -- Memeriksa dan menginstal atau mengonfirmasi Treesitter untuk Java
+  ensure_ts_install("java")
+
   local mason_registry = require("mason-registry")
+  if
+    not mason_registry.is_installed("jdtls")
+    or not mason_registry.is_installed("java-debug-adapter")
+    or not mason_registry.is_installed("java-test")
+  then
+    vim.cmd("Mason")
+    require("notify")("Mason Installed Dependency, please restart nvim after installation is completed")
+    return
+  end
   local bundles = {} ---@type string[]
   if M.opts.dap and mason_registry.is_installed("java-debug-adapter") then
     local java_dbg_pkg = mason_registry.get_package("java-debug-adapter")
@@ -236,4 +260,30 @@ M.attach_jdtls = function(op)
   attach_jdtls()
 end
 
+M.install = function()
+  local ensure_installed = {
+    "java-debug-adapter",
+    "java-test",
+    "jdtls",
+  }
+  local mr = require("mason-registry")
+  mr:on("package:install:success", function()
+    vim.defer_fn(function()
+      -- trigger FileType event to possibly load this newly installed LSP server
+      require("lazy.core.handler.event").trigger({
+        event = "FileType",
+        buf = vim.api.nvim_get_current_buf(),
+      })
+    end, 100)
+  end)
+
+  mr.refresh(function()
+    for _, tool in ipairs(ensure_installed) do
+      local p = mr.get_package(tool)
+      if not p:is_installed() then
+        p:install()
+      end
+    end
+  end)
+end
 return M

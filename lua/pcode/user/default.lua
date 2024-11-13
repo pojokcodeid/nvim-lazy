@@ -8,6 +8,7 @@ pcode.lang = {
   java = true,
   java2 = false,
   java3 = false,
+  java4 = false,
   javascript = false,
   kotlin = false,
   markdown = false,
@@ -44,6 +45,8 @@ pcode.extras = {
   visualmulti = true,
   yanky = true,
   zenmode = true,
+  lspsignatur = true,
+  telescopetreesiterinfo = true,
 }
 -- activate config themes
 pcode.themes = {
