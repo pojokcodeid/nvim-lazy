@@ -18,9 +18,10 @@ M = {
       require("auto-jdtls").setup(opts)
       require("auto-jdtls.utils").lsp_keymaps()
       require("auto-jdtls.utils").jdtls_keymaps()
-      vim.keymap.set("n", "<leader>rm", ":silent RunMvnSpringBoot<CR>", { desc = "Run Maven Sping Boot" })
-      vim.keymap.set("n", "<leader>rG", ":silent RunGradleSpringBoot<CR>", { desc = "Run Gradle Sping Boot" })
-      vim.keymap.set("n", "<leader>rM", ":silent RunMvnAndJava<CR>", { desc = "Run Maven Project" })
+      vim.keymap.set("n", "<leader>rM", ":RunMvnSpringBoot<CR>", { desc = "Run Maven Sping Boot" })
+      vim.keymap.set("n", "<leader>rG", ":RunGradleSpringBoot<CR>", { desc = "Run Gradle Sping Boot" })
+      vim.keymap.set("n", "<leader>rm", ":RunMaven<CR>", { desc = "Run Maven Project" })
+      vim.keymap.set("n", "<leader>rg", ":RunGradle<CR>", { desc = "Run Gradle Project" })
     end,
   },
   {
@@ -51,7 +52,6 @@ M = {
         { "<leader>To", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Show Output" },
         { "<Leader>TO", function() require("neotest").output_panel.toggle() end, desc = "Toggle Output Panel" },
         { "<Leader>TS", function() require("neotest").run.stop() end, desc = "Stop" },
-      	{ "<leader>rg", "<cmd>terminal<cr>gradle run<cr>", desc = "Run Gradle", mode = "n" },
       },
   },
   {
