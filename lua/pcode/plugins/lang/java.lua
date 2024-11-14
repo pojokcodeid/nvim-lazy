@@ -29,13 +29,8 @@ M = {
       "nvim-treesitter/nvim-treesitter",
       "andy-bell101/neotest-java",
     },
+    enabled = vim.fn.findfile("build.gradle", vim.fn.getcwd()) == "build.gradle" or false,
     config = function()
-      -- local project_type = "maven"
-      -- local gradle_file = vim.fn.findfile("build.gradle", vim.fn.getcwd())
-      -- if gradle_file then
-      --   project_type = "gradle"
-      -- end
-
       require("neotest").setup({
         adapters = {
           require("neotest-java"),
