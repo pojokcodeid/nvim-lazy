@@ -8,10 +8,16 @@ M = {
     end,
   },
   {
+    "pojokcodeid/auto-java-project.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("auto-java-project").setup()
+    end,
+  },
+  {
     "mfussenegger/nvim-jdtls",
     dependencies = { "pojokcodeid/auto-jdtls.nvim" },
     ft = { "java" },
-    enabled = true,
     -- your opts go here
     opts = {},
     config = function(_, opts)
@@ -33,8 +39,9 @@ M = {
       "nvim-treesitter/nvim-treesitter",
       "andy-bell101/neotest-java",
     },
-    enabled = vim.fn.findfile("build.gradle", vim.fn.getcwd()) == "build.gradle" or false,
+    -- enabled = vim.fn.findfile("build.gradle", vim.fn.getcwd()) == "build.gradle" or false,
     config = function()
+      require("auto-jdtls.create_maven_project")
       require("neotest").setup({
         adapters = {
           require("neotest-java"),

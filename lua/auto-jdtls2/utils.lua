@@ -52,6 +52,161 @@ M.lsp_keymaps=function ()
   vim.keymap.set("n", "<leader>lD", vim.lsp.buf.declaration, { desc = "Code Goto Declaration" })
 end
 
+M.is_maven_project = function()
+  if vim.fn.findfile("pom.xml", vim.fn.getcwd()) == "pom.xml" then
+    return true
+  else
+    return false
+  end
+end
+
+M.is_gradle_project = function()
+  if
+    vim.fn.findfile("build.gradle", vim.fn.getcwd()) == "build.gradle"
+    or vim.fn.findfile("settings.gradle", vim.fn.getcwd()) == "settings.gradle"
+    or vim.fn.findfile("gradlew", vim.fn.getcwd()) == "gradlew"
+  then
+    return true
+  else
+    return false
+  end
+end
+
+M.is_main_class = function()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local content = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
+  for i, line in ipairs(content) do
+    if line:match("public static void main%s*%(") then
+      return true
+    end
+  end
+
+  return false
+end
+
+M.run_aven_pring_boot = function()
+  if M.is_maven_project() then
+    vim.cmd("terminal mvn spring-boot:run")
+  else
+    local notif_ok, notify = pcall(require, "notify")
+    if notif_ok then
+      notify("Project pom.xml not found !", "info")
+    else
+      print("Project pom.xml not found !")
+    end
+  end
+end
+
+M.cmd_maven_spring_boot = function()
+  vim.api.nvim_create_user_command("RunMvnSpringBoot", function()
+    M.run_aven_pring_boot()
+  end, { nargs = 0 })
+end
+
+M.run_gradle_spring_boot = function()
+  if M.is_gradle_project() then
+    local uname = vim.loop.os_uname().sysname
+    if uname == "Windows_NT" then
+      vim.cmd("terminal .\\gradlew build --continuous")
+      vim.cmd("terminal .\\gradlew bootRun")
+    else
+      vim.cmd("terminal ./gradlew build --continuous")
+      vim.cmd("terminal ./gradlew bootRun")
+    end
+  else
+    local notif_ok, notify = pcall(require, "notify")
+    if notif_ok then
+      notify("Project build.gradle not found !", "info")
+    else
+      print("Project build.gradle not found !")
+    end
+  end
+end
+
+M.cmd_gradle_spring_boot = function()
+  vim.api.nvim_create_user_command("RunGradleSpringBoot", function()
+    M.run_gradle_spring_boot()
+  end, { nargs = 0 })
+end
+
+M.run_mvn_and_java = function()
+  if M.is_maven_project() then
+    local result = M.is_main_class()
+    if not result then
+      local notif_ok, notify = pcall(require, "notify")
+      if notif_ok then
+        notify("Please open java main class !", "info")
+      else
+        print("Please open java main class !")
+      end
+      return
+    else
+      -- Fungsi untuk mencari file .jar dalam folder target
+      local function find_jar_file()
+        local target_dir = "target"
+        local jar_file = nil
+
+        local handle = vim.loop.fs_scandir(target_dir)
+        if handle then
+          while true do
+            local name, t = vim.loop.fs_scandir_next(handle)
+            if not name then
+              break
+            end
+            if t == "file" and name:match("%.jar$") then
+              jar_file = name
+              break
+            end
+          end
+        end
+        return jar_file
+      end
+      local jar_file = find_jar_file()
+      -- Buat fungsi untuk menjalankan perintah secara berurutan dalam mode diam
+      function RunMvnAndJava()
+        -- daptkan path
+        local root = vim.uv.cwd()
+        local fname = vim.api.nvim_buf_get_name(0)
+        fname = fname:gsub(root, "")
+        fname = fname:gsub("/src/main/java/", "")
+        fname = fname:gsub("\\src\\main\\java\\", "")
+        fname = fname:gsub(".java", ""):gsub("/", ".")
+        fname = fname:gsub("\\", ".")
+        -- Jalankan perintah mvn package secara diam-diam
+        local notif_ok, notify = pcall(require, "notify")
+        if notif_ok then
+          notify("Compile Start !", "info")
+        end
+        vim.fn.jobstart("mvn package", {
+          on_exit = function()
+            vim.cmd("terminal java -cp target/" .. jar_file .. " " .. fname)
+          end,
+        })
+      end
+      RunMvnAndJava()
+    end
+  else
+    local notif_ok, notify = pcall(require, "notify")
+    if notif_ok then
+      notify("Project pom.xml not found !", "info")
+    else
+      print("Project pom.xml not found !")
+    end
+  end
+end
+
+M.cmd_mvn_and_java = function()
+  vim.api.nvim_create_user_command("RunMaven", function()
+    M.run_mvn_and_java()
+  end, { nargs = 0 })
+end
+
+M.cmd_gradle = function()
+  vim.api.nvim_create_user_command("RunGradle", function()
+    vim.cmd("terminal gradle run")
+  end, { nargs = 0 })
+end
+
 -- stylua: ignore 
 M.jdtls_keymaps=function ()
   -- add keymaps
@@ -213,6 +368,11 @@ M.attach_jdtls = function(op)
   end
   -- initialisasi config
   local function attach_jdtls()
+    -- load user cmd
+    M.cmd_maven_spring_boot()
+    M.cmd_gradle_spring_boot()
+    M.cmd_mvn_and_java()
+    M.cmd_gradle()
     -- Configuration can be augmented and overridden by opts.jdtls
     local config = M.extend_or_override({
       cmd = M.opts.full_cmd(M.opts),
