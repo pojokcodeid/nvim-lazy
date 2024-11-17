@@ -5,7 +5,10 @@ pcode.lang = {
   sql = false,
   deno = false,
   golang = false,
-  java = false,
+  java = true,
+  java2 = false,
+  java3 = false,
+  java4 = false,
   javascript = false,
   kotlin = false,
   markdown = false,
@@ -42,13 +45,15 @@ pcode.extras = {
   visualmulti = true,
   yanky = true,
   zenmode = true,
+  lspsignatur = false,
+  telescopetreesiterinfo = true,
 }
 -- activate config themes
 pcode.themes = {
   -- note: open remark only one
   -- **:: Eva Theme ::** --
-  -- evatheme = "Eva-Dark",
-  evatheme = "Eva-Dark-Italic",
+  evatheme = "Eva-Dark",
+  -- evatheme = "Eva-Dark-Italic",
   -- evatheme = "Eva-Dark-Bold",
   -- evatheme = "Eva-Light",
   --
@@ -79,6 +84,12 @@ pcode.themes = {
   -- catppuccin = "catppuccin-frappe",
   -- catppuccin = "catppuccin-macchiato",
   -- catppuccin = "catppuccin-macchiato",
+  --
+  -- **:: Gruvbox Theme ::** --
+  -- gruvbox = "gruvbox",
+  --
+  -- **:: Github Theme ::** --
+  -- github = "github_dark_dimmed",
 }
 -- activate config transparent_bg
 pcode.transparent = false
