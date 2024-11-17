@@ -45,7 +45,7 @@ pcode.extras = {
   visualmulti = true,
   yanky = true,
   zenmode = true,
-  lspsignatur = true,
+  lspsignatur = false,
   telescopetreesiterinfo = true,
 }
 -- activate config themes

@@ -12,6 +12,9 @@ M = {
     event = "VeryLazy",
     config = function()
       require("auto-java-project").setup()
+      vim.keymap.set("n", "<leader>Jc", ":CreateJavaClass<cr>", { desc = "Create Java Class" })
+      vim.keymap.set("n", "<leader>Jm", ":CreateJavaMainClass<cr>", { desc = "Create Java Main Class" })
+      vim.keymap.set("n", "<leader>Ji", ":CreateJavaInterface<cr>", { desc = "Create Java Interface" })
     end,
   },
   {
