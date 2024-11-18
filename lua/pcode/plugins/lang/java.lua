@@ -40,29 +40,41 @@ M = {
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
-      "andy-bell101/neotest-java",
+      "rcasia/neotest-java",
     },
-    -- enabled = vim.fn.findfile("build.gradle", vim.fn.getcwd()) == "build.gradle" or false,
-    config = function()
-      require("auto-jdtls.create_maven_project")
-      require("neotest").setup({
+    opts = function()
+      return {
         adapters = {
           require("neotest-java"),
         },
-      })
+      }
     end,
-      -- stylua: ignore
-      keys = {
-        { "<leader>T","",desc="  Test"},
-        { "<leader>Tt", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run File" },
-        { "<leader>Tr", function() require("neotest").run.run() end, desc = "Run Nearest" },
-        { "<leader>TT", function() require("neotest").run.run(vim.loop.cwd()) end, desc = "Run All Test Files" },
-        { "<leader>Tl", function() require("neotest").run.run_last() end, desc = "Run Last" },
-        { "<Leader>Ts", function() require("neotest").summary.toggle() end, desc = "Toggle Summary" },
-        { "<leader>To", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Show Output" },
-        { "<Leader>TO", function() require("neotest").output_panel.toggle() end, desc = "Toggle Output Panel" },
-        { "<Leader>TS", function() require("neotest").run.stop() end, desc = "Stop" },
-      },
+    enabled = vim.fn.findfile("build.gradle", vim.fn.getcwd()) == "build.gradle" or false,
+    config = function(_, opts)
+      -- get neotest namespace (api call creates or returns namespace)
+      local neotest_ns = vim.api.nvim_create_namespace("neotest")
+      vim.diagnostic.config({
+        virtual_text = {
+          format = function(diagnostic)
+            local message = diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
+            return message
+          end,
+        },
+      }, neotest_ns)
+      require("neotest").setup(opts)
+    end,
+    -- stylua: ignore
+    keys = {
+      { "<leader>T","",desc="  Test"},
+      { "<leader>Tt", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run File" },
+      { "<leader>Tr", function() require("neotest").run.run() end, desc = "Run Nearest" },
+      { "<leader>TT", function() require("neotest").run.run(vim.loop.cwd()) end, desc = "Run All Test Files" },
+      { "<leader>Tl", function() require("neotest").run.run_last() end, desc = "Run Last" },
+      { "<Leader>Ts", function() require("neotest").summary.toggle() end, desc = "Toggle Summary" },
+      { "<leader>To", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Show Output" },
+      { "<Leader>TO", function() require("neotest").output_panel.toggle() end, desc = "Toggle Output Panel" },
+      { "<Leader>TS", function() require("neotest").run.stop() end, desc = "Stop" },
+    },
   },
   {
     "rockerBOO/symbols-outline.nvim",
@@ -105,6 +117,37 @@ M = {
     keys = {
       { "<leader>Js", "<cmd>SymbolsOutline<cr>", desc = "Toggle Outline" },
     },
+  },
+  -- project.nvim [project search + auto cd]
+  -- https://github.com/ahmedkhalf/project.nvim
+  {
+    "zeioth/project.nvim",
+    cmd = "ProjectRoot",
+    ft = { "java" },
+    opts = {
+      -- How to find root directory
+      patterns = {
+        "build.gradle",
+        "pom.xml",
+      },
+      -- Don't list the next projects
+      exclude_dirs = {
+        "~/",
+      },
+      silent_chdir = true,
+      manual_mode = false,
+
+      -- Don't chdir for certain buffers
+      exclude_chdir = {
+        filetype = { "", "OverseerList", "alpha" },
+        buftype = { "nofile", "terminal" },
+      },
+
+      --ignore_lsp = { "lua_ls" },
+    },
+    config = function(_, opts)
+      require("project_nvim").setup(opts)
+    end,
   },
 }
 
