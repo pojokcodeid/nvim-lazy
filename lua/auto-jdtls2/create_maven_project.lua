@@ -34,22 +34,32 @@ local function mvn_new_project()
     end
   end
   -- Pindah ke direktori proyek
-  local success, err = pcall(vim.fn.chdir, project_dir)
+  -- Hapus satu level dari path
+  local parent_dir = vim.fn.fnamemodify(project_dir, ":h")
+  local success, err = pcall(vim.fn.chdir, parent_dir)
   if not success then
     create_notif("Error changing directory: " .. err, "error")
     return
   end
 
   create_notif("Changed directory to: " .. project_dir, "info")
+  -- Fungsi untuk mendapatkan nama direktori terakhir dari path
+  local function getLastDirName(path)
+    local uname = vim.loop.os_uname().sysname
+    local name
+    if uname == "Windows_NT" then
+      name = path:match("([^\\]+)$")
+    else
+      name = path:match("([^/]+)$")
+    end
+    return name
+  end
   -- Ambil input dari pengguna untuk Maven
   local group_id, canceled_group = get_user_input("Enter groupId: ", "com.example")
   if canceled_group then
     return
   end
-  local artifact_id, canceled_artifact = get_user_input("Enter artifactId: ", "myproject")
-  if canceled_artifact then
-    return
-  end
+  local artifact_id = getLastDirName(project_dir)
   local archetype_artifact_id, canceled_archetype =
     get_user_input("Enter archetypeArtifactId: ", "maven-archetype-quickstart")
   if canceled_archetype then
