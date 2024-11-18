@@ -81,19 +81,10 @@ local function create_java_class()
   -- Tulis konten kelas Java ke dalam file
   local class_content = string.format(
     [[
-/*
- * This Java source file.
- */
 package %s;
 
 public class %s {
-    /**
-     * 
-     */
-    public %s() {
-        
-    }
-    // Other methods and fields
+
 }
 ]],
     package_name,
