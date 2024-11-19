@@ -1,4 +1,11 @@
 local M = {}
+local is_gradle = function()
+  if vim.fn.findfile("pom.xml", vim.fn.getcwd()) == "pom.xml" then
+    return false
+  else
+    return true
+  end
+end
 M = {
   {
     "williamboman/mason-lspconfig.nvim",
@@ -49,7 +56,7 @@ M = {
         },
       }
     end,
-    enabled = vim.fn.findfile("build.gradle", vim.fn.getcwd()) == "build.gradle" or false,
+    enabled = is_gradle(),
     config = function(_, opts)
       -- get neotest namespace (api call creates or returns namespace)
       local neotest_ns = vim.api.nvim_create_namespace("neotest")
@@ -124,6 +131,7 @@ M = {
     "zeioth/project.nvim",
     cmd = "ProjectRoot",
     ft = { "java" },
+    -- enabled = vim.fn.findfile("build.gradle", vim.fn.getcwd()) == "build.gradle" or false,
     opts = {
       -- How to find root directory
       patterns = {
