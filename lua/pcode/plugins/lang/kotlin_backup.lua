@@ -1,16 +1,3 @@
-local function get_default_package()
-  local curr_file = vim.fn.expand("%:t")
-  curr_file = curr_file:gsub(".kt", "")
-  local path = vim.fn.expand("%:p:h")
-  local project_root = vim.fn.getcwd()
-  local relative_path = path:sub(#project_root + 1)
-  relative_path = relative_path:gsub("app\\src\\test\\kotlin\\", "")
-  relative_path = relative_path:gsub("app/src/test/kotlin/", "")
-  relative_path = relative_path:gsub("\\", ".")
-  relative_path = relative_path:gsub("/", ".")
-  return relative_path:sub(2) .. "." .. curr_file
-end
-
 return {
   -- install treesitter
   {
@@ -131,6 +118,18 @@ return {
       {
         "<leader>Tu",
         function()
+          local function get_default_package()
+            local path = vim.fn.expand("%:p:h")
+            local project_root = vim.fn.getcwd()
+            local relative_path = path:sub(#project_root + 1)
+            relative_path = relative_path:gsub("app\\src\\test\\kotlin\\", "")
+            relative_path = relative_path:gsub("app/src/test/kotlin/", "")
+            relative_path = relative_path:gsub("\\", ".")
+            relative_path = relative_path:gsub("/", ".")
+            return relative_path:sub(2)
+          end
+          local curr_file = vim.fn.expand("%:t")
+          curr_file = curr_file:gsub("kt", "")
           local current_word = ""
           local input = vim.fn.getline(".")
           current_word = all_trim((input:gsub("class", "")):gsub("{", "")) -- hilangkan bagian class
@@ -138,29 +137,11 @@ return {
           current_word = current_word:gsub("%(%)", "")
           current_word = current_word:gsub("{", "")
           current_word = current_word:gsub("@Test", "")
-          require("notify").notify(
-            'gradle test --tests "' .. get_default_package() .. "." .. all_trim(current_word) .. '"',
-            "info"
+          vim.cmd(
+            "terminal gradle test --tests " .. get_default_package() .. "." .. curr_file .. all_trim(current_word)
           )
-          vim.fn.jobstart("gradle cleanTest", {
-            on_exit = function()
-              vim.cmd('terminal gradle test --tests "' .. get_default_package() .. "." .. all_trim(current_word) .. '"')
-            end,
-          })
         end,
         desc = "Run Under Cursor",
-      },
-      {
-        "<leader>Tf",
-        function()
-          require("notify").notify('gradle test --tests "' .. get_default_package() .. '"', "info")
-          vim.fn.jobstart("gradle cleanTest", {
-            on_exit = function()
-              vim.cmd('terminal gradle test --tests "' .. get_default_package() .. '"')
-            end,
-          })
-        end,
-        desc = "Run Current File",
       },
       { "<leader>rg", "<cmd>terminal<cr>gradle run<cr>", desc = "Run Gradle", mode = "n" },
     },
