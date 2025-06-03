@@ -3,12 +3,12 @@ local api = vim.api
 -- General Settings
 api.nvim_create_augroup("_general_settings", { clear = true })
 
-api.nvim_create_autocmd("TextYankPost", {
-  group = "_general_settings",
-  callback = function()
-    require("vim.highlight").on_yank({ higroup = "Visual", timeout = 200 })
-  end,
-})
+-- api.nvim_create_autocmd("TextYankPost", {
+--   group = "_general_settings",
+--   callback = function()
+--     require("vim.highlight").on_yank({ higroup = "Visual", timeout = 200 })
+--   end,
+-- })
 
 api.nvim_create_autocmd("FileType", {
   group = "_general_settings",
