@@ -2,6 +2,7 @@ return {
   "hiphish/rainbow-delimiters.nvim",
   lazy = true,
   event = "BufRead",
+  branch = "master",
   config = function()
     -- Modul ini berisi beberapa definisi default
     local rainbow_delimiters = require("rainbow-delimiters")
