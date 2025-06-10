@@ -47,18 +47,19 @@ pcode.extras = {
   zenmode = true,
   lspsignatur = false,
   telescopetreesiterinfo = true,
+  fidget = false,
 }
 -- activate config themes
 pcode.themes = {
   -- note: open remark only one
   -- **:: Eva Theme ::** --
-  evatheme = "Eva-Dark",
+  -- evatheme = "Eva-Dark",
   -- evatheme = "Eva-Dark-Italic",
   -- evatheme = "Eva-Dark-Bold",
   -- evatheme = "Eva-Light",
   --
   -- **:: Dracula Theme ::** --
-  -- dracula = "dracula",
+  dracula = "dracula",
   -- dracula = "dracula-soft",
   --
   -- **:: Onedarkpro Theme ::** --
@@ -92,6 +93,6 @@ pcode.themes = {
   -- github = "github_dark_dimmed",
 }
 -- activate config transparent_bg
-pcode.transparent = false
+pcode.transparent = true
 pcode.localcode = true
 pcode.snippets_path = vim.fn.stdpath("config") .. "/mysnippets"

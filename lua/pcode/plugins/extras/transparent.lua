@@ -22,6 +22,7 @@ return {
           "WinBarNC",
           "NotifyBackground",
           "TabLine",
+          "TabLineFill",
         },
         exclude_groups = {
           -- disable active selection backgroun
