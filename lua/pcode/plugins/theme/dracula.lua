@@ -50,6 +50,7 @@ return {
         LspReferenceWrite = { bg = "#3b4261" },
         WinBar = { bg = colors.bg },
         WinBarNC = { fg = colors.fg, bg = colors.bg },
+        MasonBackdrop = { link = "NormalFloat" },
       },
       transparent_bg = false,
     }

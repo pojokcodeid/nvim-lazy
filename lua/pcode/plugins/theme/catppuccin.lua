@@ -49,6 +49,7 @@ return {
           Normal = { fg = colors.text, bg = transparent and colors.none or colors.base },
           NormalNC = { fg = colors.text, bg = transparent and colors.none or colors.base },
           StatusLine = { fg = colors.text, bg = colors.none },
+          MasonBackdrop = { link = "NormalFloat" },
         }
       end,
       highlight_overrides = {

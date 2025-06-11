@@ -48,6 +48,8 @@ pcode.extras = {
   lspsignatur = false,
   telescopetreesiterinfo = true,
   fidget = false,
+  tinydignostic = false,
+  dressing = false,
 }
 -- activate config themes
 pcode.themes = {
@@ -93,6 +95,6 @@ pcode.themes = {
   -- github = "github_dark_dimmed",
 }
 -- activate config transparent_bg
-pcode.transparent = true
+pcode.transparent = false
 pcode.localcode = true
 pcode.snippets_path = vim.fn.stdpath("config") .. "/mysnippets"

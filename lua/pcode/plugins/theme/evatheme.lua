@@ -23,6 +23,7 @@ return {
         hi(0, "NormalFloat", { bg = color.background })
         hi(0, "TabLine", { bg = color.background })
         hi(0, "NormalNC", { bg = color.background })
+        hi(0, "MasonBackdrop", { link = "NormalFloat" })
         hi(0, "@tag.delimiter.javascript", { fg = color.punctuation })
         hi(0, "@tag.delimiter.tsx", { fg = color.punctuation })
         -- git

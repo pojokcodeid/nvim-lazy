@@ -33,6 +33,7 @@ return {
         hi(0, "TelescopePromptNormal", { bg = colors.dark, fg = colors.grey })
         hi(0, "TelescopePromptPrefix", { bg = colors.dark, fg = colors.red })
         hi(0, "TelescopeResultsTitle", { bg = colors.olive_green, fg = colors.very_dark_gray })
+        hi(0, "MasonBackdrop", { link = "NormalFloat" })
       end,
     })
     local colorscheme = pcode.themes.jetbrains or "darcula-dark"

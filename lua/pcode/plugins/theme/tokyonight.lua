@@ -71,6 +71,7 @@ return {
         highlights["@tag.attribute"] = { fg = colors.green1, italic = true }
         -- highlights["@keyword.function"] = { fg = colors.blue, italic = true }
         -- highlights["@function"] = { fg = colors.blue, italic = true }
+        highlights.MasonBackdrop = { link = "NormalFloat" }
       end,
     })
   end,
