@@ -49,7 +49,7 @@ pcode.extras = {
   telescopetreesiterinfo = true,
   fidget = false,
   tinydignostic = false,
-  dressing = false,
+  dressing = true,
 }
 -- activate config themes
 pcode.themes = {

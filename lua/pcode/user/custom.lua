@@ -47,7 +47,23 @@ return {
     "williamboman/mason-lspconfig.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.skip_config, {})
-      opts.virtual_text = true
+      opts.virtual_text = false
+      vim.diagnostic.config({ virtual_lines = { current_line = true } })
+      -- sample custom diagnostic icon
+      vim.diagnostic.config({
+        underline = false,
+        virtual_text = false,
+        update_in_insert = false,
+        severity_sort = true,
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = " ",
+            [vim.diagnostic.severity.WARN] = " ",
+            [vim.diagnostic.severity.HINT] = " ",
+            [vim.diagnostic.severity.INFO] = " ",
+          },
+        },
+      })
     end,
   },
   -- add whichkey mappings
