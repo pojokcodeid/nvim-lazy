@@ -1,5 +1,5 @@
 return {
-  "stevearc/dressing.nvim",
+  "pojokcodeid/dressing.nvim",
   lazy = true,
   init = function()
     ---@diagnostic disable-next-line: duplicate-set-field
@@ -15,6 +15,7 @@ return {
   end,
   opts = {
     input = {
+      enabled = false,
       title_pos = "center",
       relative = "editor",
       default_prompt = "➤ ",
