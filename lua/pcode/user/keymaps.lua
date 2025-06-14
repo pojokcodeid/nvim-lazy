@@ -91,3 +91,80 @@ keymap("n", "<A-l>", "<cmd>terminal live-server<cr>", opts)
 
 -- close current buffer
 keymap("n", "<S-t>", "<cmd>lua require('auto-bufferline.configs.utils').bufremove()<cr>", opts)
+
+-- vim.keymap.set("n", "<leader>ti", function()
+--   local api = vim.api
+--   local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
+--   local parsers = vim.tbl_keys(parser_configs)
+--   table.sort(parsers)
+--
+--   local choices = {}
+--   local lookup = {}
+--
+--   for _, parser in ipairs(parsers) do
+--     local is_installed = #api.nvim_get_runtime_file("parser/" .. parser .. ".so", false) > 0
+--
+--     local label = (is_installed and "[✓] " or "[✗] ") .. parser
+--     table.insert(choices, label)
+--     lookup[label] = parser
+--   end
+--
+--   vim.ui.select(choices, {
+--     prompt = "Treesitter ([✓]= installed, [✗] = not installed)",
+--   }, function(choice)
+--     if choice then
+--       local parser_name = lookup[choice]
+--       if parser_name then
+--         vim.cmd("TSInstall " .. parser_name)
+--       end
+--     end
+--   end)
+-- end, { desc = "Install Treesitter" })
+--
+-- vim.keymap.set("n", "<leader>tu", function()
+--   local parsers = require("nvim-treesitter.info").installed_parsers()
+--   table.sort(parsers)
+--   local choices = {}
+--   local lookup = {}
+--
+--   for _, parser in ipairs(parsers) do
+--     local label = "[✓] " .. parser
+--     table.insert(choices, label)
+--     lookup[label] = parser
+--   end
+--
+--   vim.ui.select(choices, {
+--     prompt = "Uninstall Treesitter",
+--   }, function(choice)
+--     if choice then
+--       local parser_name = lookup[choice]
+--       if parser_name then
+--         vim.cmd("TSUninstall " .. parser_name)
+--       end
+--     end
+--   end)
+-- end, { desc = "Uninstall Treesitter" })
+
+vim.api.nvim_create_user_command("TSIsInstalled", function()
+  local parsers = require("nvim-treesitter.info").installed_parsers()
+  table.sort(parsers)
+  local choices = {}
+  local lookup = {}
+
+  for _, parser in ipairs(parsers) do
+    local label = "[✓] " .. parser
+    table.insert(choices, label)
+    lookup[label] = parser
+  end
+
+  vim.ui.select(choices, {
+    prompt = "Uninstall Treesitter",
+  }, function(choice)
+    if choice then
+      local parser_name = lookup[choice]
+      if parser_name then
+        vim.cmd("TSUninstall " .. parser_name)
+      end
+    end
+  end)
+end, {})
