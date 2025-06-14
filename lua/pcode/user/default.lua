@@ -50,6 +50,7 @@ pcode.extras = {
   fidget = false,
   tinydignostic = false,
   dressing = true,
+  telescopediff = true,
 }
 -- activate config themes
 pcode.themes = {

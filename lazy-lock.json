@@ -63,6 +63,7 @@
   "refactoring.nvim": { "branch": "master", "commit": "9cd0186ffe76fe6abc64c0aafb775c8f776ab5ee" },
   "showkeys": { "branch": "main", "commit": "cb0a50296f11f1e585acffba8c253b9e8afc1f84" },
   "smart-splits.nvim": { "branch": "master", "commit": "dcc9a886ac7214db6dd67d27044b8388b628dcb6" },
+  "telescope-diff.nvim": { "branch": "master", "commit": "c797b722516e871b51def7e69266f0cc9875bacf" },
   "telescope-treesitter-info.nvim": { "branch": "master", "commit": "4bed952c3c33015c4402007f179b478843d5aa3b" },
   "telescope.nvim": { "branch": "master", "commit": "b4da76be54691e854d3e0e02c36b0245f945c2c7" },
   "tiny-devicons-auto-colors.nvim": { "branch": "main", "commit": "51f548421f8a74680eff27d283c9d5ea6e8d0074" },
