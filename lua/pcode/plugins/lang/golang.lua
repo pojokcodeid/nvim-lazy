@@ -11,6 +11,10 @@ return {
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, { "gopls" })
+      -- add run command for current filebuffer
+      vim.api.nvim_create_user_command("RunGo", function()
+        vim.cmd("term go run " .. vim.fn.expand("%"))
+      end, {})
     end,
   },
   {
