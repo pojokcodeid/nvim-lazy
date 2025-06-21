@@ -23,6 +23,9 @@ return {
         "toggleterm",
         "Trouble",
         "trouble",
+        "term",
+        "terminal",
+        "zsh",
       },
       callback = function()
         vim.b.miniindentscope_disable = true
