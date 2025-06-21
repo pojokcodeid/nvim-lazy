@@ -11,9 +11,45 @@ return {
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, { "gopls" })
-      -- add run command for current filebuffer
-      vim.api.nvim_create_user_command("RunGo", function()
-        vim.cmd("term go run " .. vim.fn.expand("%"))
+      vim.api.nvim_create_user_command("GoRun", function()
+        local filename = vim.fn.expand("%:p") -- path lengkap file aktif
+        if not filename:match("%.go$") then
+          vim.notify("current file is not a go file.", vim.log.levels.WARN, { title = "GoRun" })
+          return
+        end
+
+        local Terminal = require("toggleterm.terminal").Terminal
+        local go_runner = Terminal:new({
+          cmd = "go run " .. filename,
+          direction = "float",
+          close_on_exit = false,
+          hidden = true,
+        })
+
+        go_runner:toggle()
+      end, {})
+      vim.api.nvim_create_user_command("GoBuild", function()
+        local cwd = vim.fn.getcwd()
+        local go_mod_path = cwd .. "/go.mod"
+        if vim.fn.filereadable(go_mod_path) == 0 then
+          vim.notify("current project is not a go project.", vim.log.levels.WARN, { title = "GoBuild" })
+          return
+        end
+
+        local Terminal = require("toggleterm.terminal").Terminal
+        -- create file exe jika os adalah windows
+        local filename = "output"
+        if vim.fn.has("win32") == 1 then
+          filename = "output.exe"
+        end
+        local go_runner = Terminal:new({
+          cmd = "go build -o " .. filename .. " && ./" .. filename,
+          direction = "float",
+          close_on_exit = false,
+          hidden = true,
+        })
+
+        go_runner:toggle()
       end, {})
     end,
   },
