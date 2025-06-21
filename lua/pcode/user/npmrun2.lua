@@ -1,31 +1,11 @@
-local function show_modal(text)
-  local buf = vim.api.nvim_create_buf(false, true) -- buffer untuk modal
-
-  vim.api.nvim_buf_set_lines(buf, 0, -1, false, { text, "", "Press q to close" })
-
-  local width = 50
-  local height = 5
-  local row = math.floor((vim.o.lines - height) / 2)
-  local col = math.floor((vim.o.columns - width) / 2)
-
-  local win = vim.api.nvim_open_win(buf, true, {
-    relative = "editor",
-    width = width,
-    height = height,
-    row = row,
-    col = col,
-    style = "minimal",
-    border = "rounded",
-  })
-
-  -- keymap untuk menutup modal dengan 'q'
-  vim.api.nvim_buf_set_keymap(buf, "n", "q", "", {
-    noremap = true,
-    silent = true,
-    callback = function()
-      vim.api.nvim_win_close(win, true)
-    end,
-  })
+local function open_new_buffer(name)
+  local buf = vim.api.nvim_create_buf(true, false)
+  vim.api.nvim_set_current_buf(buf)
+  vim.api.nvim_buf_set_option(buf, "modifiable", true)
+  if name then
+    vim.api.nvim_buf_set_name(buf, name)
+  end
+  return buf
 end
 
 local M = {}
@@ -118,20 +98,32 @@ M.start = function(dir)
     end
   end
 
+  local buffer_name = "npmrun.txt"
+  local output_buf = open_new_buffer(buffer_name)
+  vim.api.nvim_buf_set_lines(output_buf, 0, -1, false, {})
+
   local function append_to_buffer(lines)
     if not lines then
       return
     end
-
-    for _, line in ipairs(lines) do
-      if line ~= "" then
-        line = tostring(line)
-        line = line:gsub("^%s*(.-)%s*$", "%1")
-        if string.find(line, "http") then
-          show_modal(line)
-          break
-        end
+    if not vim.api.nvim_buf_is_valid(output_buf) then
+      return
+    end
+    local filtered = {}
+    for _, l in ipairs(lines) do
+      if l ~= "" then
+        table.insert(filtered, l)
       end
+    end
+    if #filtered > 0 then
+      local line_count = vim.api.nvim_buf_line_count(output_buf)
+      vim.api.nvim_buf_set_lines(output_buf, line_count, line_count, false, filtered)
+    end
+  end
+
+  local function close_output_buffer()
+    if output_buf and vim.api.nvim_buf_is_valid(output_buf) then
+      vim.api.nvim_buf_delete(output_buf, { force = true })
     end
   end
 
@@ -147,12 +139,14 @@ M.start = function(dir)
         return "[ERR] " .. l
       end, data))
     end,
-    on_exit = function(_, _)
+    on_exit = function(_, code)
+      append_to_buffer({ string.format(main_cmd .. " exited with code %d", code) })
+      close_output_buffer()
       job_cache[dir] = nil
     end,
   })
 
-  job_cache[dir] = { job_id = job_id }
+  job_cache[dir] = { job_id = job_id, buf = output_buf }
   log(main_cmd .. " started", "INFO")
 end
 
@@ -164,6 +158,9 @@ M.stop = function(dir)
       local job_entry = job_cache[cached_dir]
       if job_entry then
         vim.fn.jobstop(job_entry.job_id)
+        if job_entry.buf and vim.api.nvim_buf_is_valid(job_entry.buf) then
+          vim.api.nvim_buf_delete(job_entry.buf, { force = true })
+        end
       end
       job_cache[cached_dir] = nil
       log(main_cmd .. " stopped", "INFO")
