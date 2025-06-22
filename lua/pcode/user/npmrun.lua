@@ -6,6 +6,7 @@ local function modal_manager(opts)
   local buf_id = nil
   local last_content = ""
   local is_shown = false
+  local ever_shown = false
 
   local function close()
     if win_id and vim.api.nvim_win_is_valid(win_id) then
@@ -31,7 +32,6 @@ local function modal_manager(opts)
         end,
       })
     end
-    -- Pastikan buffer modifiable sebelum update, abaikan jika error (buffer deleted)
     pcall(vim.api.nvim_buf_set_option, buf_id, "modifiable", true)
     pcall(vim.api.nvim_buf_set_lines, buf_id, 0, -1, false, lines)
     pcall(vim.api.nvim_buf_set_option, buf_id, "modifiable", false)
@@ -47,6 +47,7 @@ local function modal_manager(opts)
       })
     end
     is_shown = true
+    ever_shown = true
   end
 
   local function show()
@@ -72,13 +73,15 @@ local function modal_manager(opts)
     end
   end
 
+  -- Hanya auto open saat pertama kali, tidak auto open setelah pernah di-close/hide
   local function set_content(content)
     last_content = content
-    if is_shown then
-      update(content)
-    else
+    if not ever_shown then
       open(content)
+    elseif is_shown then
+      update(content)
     end
+    -- jika ever_shown dan !is_shown, cukup simpan output saja
   end
 
   return {
@@ -148,6 +151,19 @@ M.setup = function(command_table, opts)
       end
     end, { desc = "Hide last NPM modal output" })
   end
+
+  -- Tambah user command global untuk show/hide modal
+  vim.api.nvim_create_user_command("NpmModalShow", function()
+    if last_modal then
+      last_modal.show()
+    end
+  end, { desc = "Show last NPM modal output" })
+
+  vim.api.nvim_create_user_command("NpmModalHide", function()
+    if last_modal then
+      last_modal.hide()
+    end
+  end, { desc = "Hide last NPM modal output" })
 
   for key, conf in pairs(command_table) do
     local start_cmd = conf.start or ("NpmRun" .. key)

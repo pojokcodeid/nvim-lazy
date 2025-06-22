@@ -94,29 +94,28 @@ local M = {
       end
 
       require("neotest").setup(opts)
-      local command = pcode.npm_commad
-        or {
-          dev = {
-            start = "NpmRunDev",
-            stop = "NpmStopDev",
-            cmd = "npm run dev",
-          },
-          prod = {
-            start = "NpmStart",
-            stop = "NpmStop",
-            cmd = "npm start",
-          },
-        }
-      require("pcode.user.npmrun").setup(command, {
-        show_mapping = "<leader>nm",
-        hide_mapping = "<leader>nh",
-        width = 70,
-        height = 20,
-      })
+      -- local command = pcode.npm_commad
+      --   or {
+      --     dev = {
+      --       start = "NpmRunDev",
+      --       stop = "NpmStopDev",
+      --       cmd = "npm run dev",
+      --     },
+      --     prod = {
+      --       start = "NpmStart",
+      --       stop = "NpmStop",
+      --       cmd = "npm start",
+      --     },
+      --   }
+      -- require("pcode.user.npmrun").setup(command, {
+      --   show_mapping = "<leader>nm",
+      --   hide_mapping = "<leader>nh",
+      --   width = 70,
+      --   height = 20,
+      -- })
     end,
     -- stylua: ignore
     keys = {
-      {"<leader>n","",desc="  Npm"},
       { "<leader>T","",desc="  Test"},
       { "<leader>Tt", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run File" },
       { "<leader>Tr", function() require("neotest").run.run() end, desc = "Run Nearest" },
@@ -127,6 +126,40 @@ local M = {
       { "<Leader>TO", function() require("neotest").output_panel.toggle() end, desc = "Toggle Output Panel" },
       { "<Leader>TS", function() require("neotest").run.stop() end, desc = "Stop" },
     },
+  },
+  {
+    "pojokcodeid/npm-runner.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "rcarriga/nvim-notify",
+    },
+    -- your opts go here
+    opts = {
+      command = {
+        dev = {
+          start = "NpmRunDev",
+          stop = "NpmStopDev",
+          cmd = "npm run dev",
+        },
+        prod = {
+          start = "NpmStart",
+          stop = "NpmStop",
+          cmd = "npm start",
+        },
+      },
+      opt = {
+        show_mapping = "<leader>nm",
+        hide_mapping = "<leader>nh",
+        width = 70,
+        height = 20,
+      },
+    },
+    keys = {
+      { "<leader>n", "", desc = "  Npm" },
+    },
+    config = function(_, opts)
+      require("npm-runner").setup(opts.command, opts.opt)
+    end,
   },
   {
     "rcarriga/nvim-dap-ui",
