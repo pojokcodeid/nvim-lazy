@@ -1,52 +1,112 @@
-local function show_modal(text)
-  local buf = vim.api.nvim_create_buf(false, true) -- buffer untuk modal
+local last_modal = nil -- global modal manager instance
 
-  vim.api.nvim_buf_set_lines(buf, 0, -1, false, { text, "", "Press q to close" })
+local function modal_manager(opts)
+  opts = opts or {}
+  local win_id = nil
+  local buf_id = nil
+  local last_content = ""
+  local is_shown = false
 
-  local width = 50
-  local height = 5
-  local row = math.floor((vim.o.lines - height) / 2)
-  local col = math.floor((vim.o.columns - width) / 2)
+  local function close()
+    if win_id and vim.api.nvim_win_is_valid(win_id) then
+      vim.api.nvim_win_close(win_id, true)
+      win_id = nil
+    end
+    is_shown = false
+  end
 
-  local win = vim.api.nvim_open_win(buf, true, {
-    relative = "editor",
-    width = width,
-    height = height,
-    row = row,
-    col = col,
-    style = "minimal",
-    border = "rounded",
-  })
+  local function open(content)
+    local lines = vim.split(content or "", "\n")
+    local width = opts.width or 70
+    local height = math.min(opts.height or 15, #lines + 6)
+    local row = math.floor((vim.o.lines - height) / 2)
+    local col = math.floor((vim.o.columns - width) / 2)
+    if not buf_id or not vim.api.nvim_buf_is_valid(buf_id) then
+      buf_id = vim.api.nvim_create_buf(false, true)
+      vim.api.nvim_buf_set_keymap(buf_id, "n", "q", "", {
+        noremap = true,
+        silent = true,
+        callback = function()
+          close()
+        end,
+      })
+    end
+    -- Pastikan buffer modifiable sebelum update, abaikan jika error (buffer deleted)
+    pcall(vim.api.nvim_buf_set_option, buf_id, "modifiable", true)
+    pcall(vim.api.nvim_buf_set_lines, buf_id, 0, -1, false, lines)
+    pcall(vim.api.nvim_buf_set_option, buf_id, "modifiable", false)
+    if not win_id or not vim.api.nvim_win_is_valid(win_id) then
+      win_id = vim.api.nvim_open_win(buf_id, true, {
+        relative = "editor",
+        width = width,
+        height = height,
+        row = row,
+        col = col,
+        style = "minimal",
+        border = "rounded",
+      })
+    end
+    is_shown = true
+  end
 
-  -- keymap untuk menutup modal dengan 'q'
-  vim.api.nvim_buf_set_keymap(buf, "n", "q", "", {
-    noremap = true,
-    silent = true,
-    callback = function()
-      vim.api.nvim_win_close(win, true)
+  local function show()
+    if is_shown then
+      return
+    end
+    if last_content ~= "" then
+      open(last_content)
+    end
+  end
+
+  local function hide()
+    close()
+  end
+
+  local function update(content)
+    last_content = content
+    if is_shown and buf_id and vim.api.nvim_buf_is_valid(buf_id) then
+      local lines = vim.split(content or "", "\n")
+      pcall(vim.api.nvim_buf_set_option, buf_id, "modifiable", true)
+      pcall(vim.api.nvim_buf_set_lines, buf_id, 0, -1, false, lines)
+      pcall(vim.api.nvim_buf_set_option, buf_id, "modifiable", false)
+    end
+  end
+
+  local function set_content(content)
+    last_content = content
+    if is_shown then
+      update(content)
+    else
+      open(content)
+    end
+  end
+
+  return {
+    show = show,
+    hide = hide,
+    update = update,
+    close = close,
+    set_content = set_content,
+    is_shown = function()
+      return is_shown
     end,
-  })
+  }
 end
 
 local M = {}
-
-local main_cmd = "npm run dev" -- default
+M._last_modal = nil
 
 local function log(message, level)
   vim.notify(string.format("npm-dev-runner: %s", message), vim.log.levels[level])
 end
 
--- Cache: dir -> { job_id=..., buf=... }
-local job_cache = {}
-
-local function find_cached_dir(dir)
+local function find_cached_dir(dir, cache)
   if not dir then
     vim.notify("npm-dev-runner: No directory provided to find_cached_dir()", vim.log.levels.ERROR)
     return
   end
-
   local cur = dir
-  while not job_cache[cur] do
+  while not cache[cur] do
     if cur == "/" or string.match(cur, "^[A-Z]:\\$") then
       return
     end
@@ -55,119 +115,131 @@ local function find_cached_dir(dir)
   return cur
 end
 
-local function is_running(dir)
-  local cached_dir = find_cached_dir(dir)
-  return cached_dir and job_cache[cached_dir]
+local function is_running(dir, cache)
+  local cached_dir = find_cached_dir(dir, cache)
+  return cached_dir and cache[cached_dir]
 end
 
 local function is_windows()
   return vim.loop.os_uname().version:match("Windows")
 end
 
-M.toggle = function(dir)
-  local running = is_running(dir)
-  if not running then
-    M.start(dir)
-    return
+local default_opts = {
+  show_mapping = "<leader>nm",
+  hide_mapping = "<leader>nh",
+}
+
+M.setup = function(command_table, opts)
+  opts = vim.tbl_deep_extend("force", {}, default_opts, opts or {})
+  command_table = command_table or {}
+
+  -- Keymap global, pakai modal terakhir yang aktif
+  if opts.show_mapping then
+    vim.keymap.set("n", opts.show_mapping, function()
+      if last_modal then
+        last_modal.show()
+      end
+    end, { desc = "Show last NPM modal output" })
   end
-  M.stop(dir)
-end
-
---- Fungsi setup menerima argumen command utama, contoh: require("npmrun").setup("pnpm dev")
-M.setup = function(cmd)
-  main_cmd = cmd or "npm run dev"
-  if not vim.fn.executable(main_cmd:match("%S+")) then
-    log(main_cmd .. " is not executable. Make sure it is installed and in PATH.", "ERROR")
-    return
-  end
-
-  local function find_dir(args)
-    local dir = args ~= "" and args or "%:p:h"
-    return vim.fn.expand(vim.fn.fnamemodify(vim.fn.expand(dir), ":p"))
-  end
-
-  vim.api.nvim_create_user_command("DevStart", function(opts)
-    M.start(find_dir(opts.args))
-  end, { nargs = "?" })
-
-  vim.api.nvim_create_user_command("DevStop", function(opts)
-    M.stop(find_dir(opts.args))
-  end, { nargs = "?" })
-
-  vim.api.nvim_create_user_command("DevToggle", function(opts)
-    M.toggle(find_dir(opts.args))
-  end, { nargs = "?" })
-end
-
-M.start = function(dir)
-  if is_running(dir) then
-    log(main_cmd .. " already running", "INFO")
-    return
+  if opts.hide_mapping then
+    vim.keymap.set("n", opts.hide_mapping, function()
+      if last_modal then
+        last_modal.hide()
+      end
+    end, { desc = "Hide last NPM modal output" })
   end
 
-  local cmd
-  if is_windows() then
-    cmd = { "cmd.exe", "/C" }
-    for word in main_cmd:gmatch("%S+") do
-      table.insert(cmd, word)
+  for key, conf in pairs(command_table) do
+    local start_cmd = conf.start or ("NpmRun" .. key)
+    local stop_cmd = conf.stop or ("NpmStop" .. key)
+    local cmd_str = conf.cmd or "npm run dev"
+    local cache = {}
+
+    local function do_start(dir)
+      if is_running(dir, cache) then
+        log(cmd_str .. " already running", "INFO")
+        return
+      end
+
+      local all_output = {}
+      local modal = modal_manager(opts)
+      last_modal = modal
+      M._last_modal = modal
+
+      local cmd
+      if is_windows() then
+        cmd = { "cmd.exe", "/C" }
+        for word in cmd_str:gmatch("%S+") do
+          table.insert(cmd, word)
+        end
+      else
+        cmd = {}
+        for word in cmd_str:gmatch("%S+") do
+          table.insert(cmd, word)
+        end
+      end
+
+      local function process_lines(lines)
+        if not lines then
+          return
+        end
+        for _, l in ipairs(lines) do
+          table.insert(all_output, tostring(l))
+        end
+        modal.set_content(table.concat(all_output, "\n"))
+      end
+
+      local job_id = vim.fn.jobstart(cmd, {
+        cwd = dir,
+        stdout_buffered = false,
+        stderr_buffered = false,
+        on_stdout = function(_, data)
+          process_lines(data)
+        end,
+        on_stderr = function(_, data)
+          process_lines(data)
+        end,
+        on_exit = function(_, code)
+          table.insert(all_output, ("Process exited with code: %d"):format(code))
+          modal.set_content(table.concat(all_output, "\n"))
+          cache[dir] = nil
+        end,
+      })
+
+      cache[dir] = { job_id = job_id, modal = modal }
+      log(cmd_str .. " started", "INFO")
     end
-  else
-    cmd = {}
-    for word in main_cmd:gmatch("%S+") do
-      table.insert(cmd, word)
-    end
-  end
 
-  local function append_to_buffer(lines)
-    if not lines then
-      return
-    end
-
-    for _, line in ipairs(lines) do
-      if line ~= "" then
-        line = tostring(line)
-        line = line:gsub("^%s*(.-)%s*$", "%1")
-        if string.find(line, "http") then
-          show_modal(line)
-          break
+    local function do_stop(dir)
+      local running = is_running(dir, cache)
+      if running then
+        local cached_dir = find_cached_dir(dir, cache)
+        if cached_dir then
+          local job_entry = cache[cached_dir]
+          if job_entry then
+            vim.fn.jobstop(job_entry.job_id)
+            if job_entry.modal then
+              job_entry.modal.close()
+            end
+          end
+          cache[cached_dir] = nil
+          log(cmd_str .. " stopped", "INFO")
         end
       end
     end
-  end
 
-  local job_id = vim.fn.jobstart(cmd, {
-    cwd = dir,
-    stdout_buffered = false, -- streaming mode
-    stderr_buffered = false,
-    on_stdout = function(_, data)
-      append_to_buffer(data)
-    end,
-    on_stderr = function(_, data)
-      append_to_buffer(vim.tbl_map(function(l)
-        return "[ERR] " .. l
-      end, data))
-    end,
-    on_exit = function(_, _)
-      job_cache[dir] = nil
-    end,
-  })
-
-  job_cache[dir] = { job_id = job_id }
-  log(main_cmd .. " started", "INFO")
-end
-
-M.stop = function(dir)
-  local running = is_running(dir)
-  if running then
-    local cached_dir = find_cached_dir(dir)
-    if cached_dir then
-      local job_entry = job_cache[cached_dir]
-      if job_entry then
-        vim.fn.jobstop(job_entry.job_id)
-      end
-      job_cache[cached_dir] = nil
-      log(main_cmd .. " stopped", "INFO")
+    local function find_dir(args)
+      local dir = args ~= "" and args or "%:p:h"
+      return vim.fn.expand(vim.fn.fnamemodify(vim.fn.expand(dir), ":p"))
     end
+
+    vim.api.nvim_create_user_command(start_cmd, function(opts)
+      do_start(find_dir(opts.args))
+    end, { nargs = "?" })
+
+    vim.api.nvim_create_user_command(stop_cmd, function(opts)
+      do_stop(find_dir(opts.args))
+    end, { nargs = "?" })
   end
 end
 
