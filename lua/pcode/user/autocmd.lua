@@ -355,3 +355,33 @@ end
 
 -- Create command
 vim.api.nvim_create_user_command("LspInfo2", lsp_info, { desc = "Show comprehensive LSP information" })
+
+vim.api.nvim_create_user_command("OpenBrowser", function(opts)
+  local url = opts.args
+  -- Jika tidak ada URL, pakai about:blank sebagai default
+  if url == "" then
+    url = "http://google.com"
+  end
+
+  -- Deteksi jika dijalankan di WSL
+  local is_wsl = vim.fn.system("uname -r"):find("WSL")
+  if is_wsl then
+    vim.fn.jobstart({ "/mnt/c/Windows/System32/cmd.exe", "/c", "start", url }, { detach = true })
+    return
+  end
+
+  -- Jika bukan WSL, gunakan cara biasa
+  local open_cmd
+  if vim.fn.has("mac") == 1 then
+    open_cmd = "open"
+  elseif vim.fn.has("unix") == 1 then
+    open_cmd = "xdg-open"
+  elseif vim.fn.has("win32") == 1 then
+    open_cmd = "start"
+  else
+    print("OS tidak didukung.")
+    return
+  end
+
+  vim.fn.jobstart({ open_cmd, url }, { detach = true })
+end, { nargs = "?", complete = "file" })
