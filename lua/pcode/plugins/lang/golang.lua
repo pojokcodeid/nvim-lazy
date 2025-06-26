@@ -51,6 +51,227 @@ return {
 
         go_runner:toggle()
       end, {})
+
+      -- Fungsi untuk membuat proyek Go
+      local function go_new_project()
+        local function create_notif(message, level)
+          local notif_ok, notify = pcall(require, "notify")
+          if notif_ok then
+            notify(message, level)
+          else
+            print(message)
+          end
+        end
+
+        local function get_user_input(prompt, default_value)
+          vim.fn.inputsave()
+          local result = vim.fn.input(prompt, default_value)
+          vim.fn.inputrestore()
+
+          if result == "" then
+            create_notif("Input canceled.", "info")
+            return nil, true
+          end
+          return result, false
+        end
+
+        local project_name, canceled = get_user_input("Enter project name: ", "myapp")
+        if canceled then
+          return
+        end
+
+        local file_name, canceled = get_user_input("Enter file name (without .go): ", "main")
+        if canceled then
+          return
+        end
+
+        local function_name, canceled = get_user_input("Enter function name: ", "main")
+        if canceled then
+          return
+        end
+
+        local cwd = vim.fn.getcwd()
+        local project_path = cwd .. "/" .. project_name
+        if vim.fn.isdirectory(project_path) == 1 then
+          create_notif("Project directory already exists: " .. project_path, "error")
+          return
+        end
+
+        local mkdir_cmd = string.format("mkdir -p '%s'", project_path)
+        local gomod_cmd = string.format("cd '%s' && go mod init %s", project_path, project_name)
+        local entry_file = string.format("%s/%s.go", project_path, file_name)
+        local main_code = string.format(
+          [[
+package main
+
+import "fmt"
+
+func %s() {
+  fmt.Println("Hello, world!")
+}
+]],
+          function_name
+        )
+
+        vim.fn.system(mkdir_cmd)
+        vim.fn.system(gomod_cmd)
+
+        local file = io.open(entry_file, "w")
+        if file then
+          file:write(main_code)
+          file:close()
+          create_notif("Go project created at " .. project_path, "info")
+          vim.cmd("cd " .. project_path)
+
+          -- Jika ada NvimTreeOpen, jalankan lalu kembalikan fokus ke file
+          if vim.fn.exists(":NvimTreeOpen") == 2 then
+            vim.cmd("NvimTreeOpen")
+            -- Penjadwalan agar kembali ke buffer file Go setelah NvimTree terbuka
+            vim.schedule(function()
+              vim.cmd("edit " .. entry_file)
+              -- Cari baris function
+              local lines = {}
+              for line in main_code:gmatch("([^\n]*)\n?") do
+                table.insert(lines, line)
+              end
+              local func_line = 1
+              for i, line in ipairs(lines) do
+                if line:find("func%s+" .. function_name .. "%s*%(") then
+                  func_line = i
+                  break
+                end
+              end
+              local target_line = func_line + 1
+              vim.api.nvim_win_set_cursor(0, { target_line, 4 })
+              vim.cmd("startinsert")
+            end)
+          else
+            vim.cmd("edit " .. entry_file)
+            local lines = {}
+            for line in main_code:gmatch("([^\n]*)\n?") do
+              table.insert(lines, line)
+            end
+            local func_line = 1
+            for i, line in ipairs(lines) do
+              if line:find("func%s+" .. function_name .. "%s*%(") then
+                func_line = i
+                break
+              end
+            end
+            local target_line = func_line + 1
+            vim.api.nvim_win_set_cursor(0, { target_line, 4 })
+            vim.cmd("startinsert")
+          end
+        else
+          create_notif("Failed to create file: " .. entry_file, "error")
+        end
+      end
+
+      vim.api.nvim_create_user_command("GoNewProject", go_new_project, {})
+
+      -- Fungsi untuk membuat file Go
+      local function go_new_file()
+        local function create_notif(message, level)
+          local notif_ok, notify = pcall(require, "notify")
+          if notif_ok then
+            notify(message, level)
+          else
+            print(message)
+          end
+        end
+
+        local function get_user_input(prompt, default_value)
+          vim.fn.inputsave()
+          local result = vim.fn.input(prompt, default_value)
+          vim.fn.inputrestore()
+          if result == "" then
+            create_notif("Input canceled.", "info")
+            return nil, true
+          end
+          return result, false
+        end
+
+        -- Ambil nama folder
+        local folder_name, canceled = get_user_input("Enter folder name (dot for current folder): ", ".")
+        if canceled then
+          return
+        end
+
+        -- Ambil nama file (tanpa .go)
+        local file_name, canceled = get_user_input("Enter file name (without .go): ", "newfile")
+        if canceled then
+          return
+        end
+
+        -- Ambil nama package
+        local package_name, canceled = get_user_input("Enter package name: ", "main")
+        if canceled then
+          return
+        end
+
+        -- Ambil nama function
+        local function_name, canceled = get_user_input("Enter function name: ", "main")
+        if canceled then
+          return
+        end
+
+        local cwd = vim.fn.getcwd()
+        local folder_path = (folder_name == "." or folder_name == "") and cwd or cwd .. "/" .. folder_name
+
+        -- Cek dan buat folder jika perlu
+        if vim.fn.isdirectory(folder_path) == 0 then
+          local mkdir_cmd = string.format("mkdir -p '%s'", folder_path)
+          vim.fn.system(mkdir_cmd)
+        end
+
+        local file_path = string.format("%s/%s.go", folder_path, file_name)
+
+        if vim.fn.filereadable(file_path) == 1 then
+          create_notif("File already exists: " .. file_path, "error")
+          return
+        end
+
+        local code = string.format(
+          [[
+package %s
+
+func %s() {
+
+}
+]],
+          package_name,
+          function_name
+        )
+
+        -- Buat file dan isi konten
+        local file = io.open(file_path, "w")
+        if file then
+          file:write(code)
+          file:close()
+          create_notif("Go file created: " .. file_path, "info")
+
+          -- Buka file dan tempatkan kursor di bawah function, mode insert
+          vim.cmd("edit " .. file_path)
+          local lines = {}
+          for line in code:gmatch("([^\n]*)\n?") do
+            table.insert(lines, line)
+          end
+          local func_line = 1
+          for i, line in ipairs(lines) do
+            if line:find("func%s+" .. function_name .. "%s*%(") then
+              func_line = i
+              break
+            end
+          end
+          local target_line = func_line + 1
+          vim.api.nvim_win_set_cursor(0, { target_line, 4 })
+          vim.cmd("startinsert")
+        else
+          create_notif("Failed to create file: " .. file_path, "error")
+        end
+      end
+
+      vim.api.nvim_create_user_command("GoNewFile", go_new_file, {})
     end,
   },
   {
