@@ -294,6 +294,7 @@ func %s() {
   {
     "nvim-neotest/neotest",
     event = "VeryLazy",
+    ft = "go",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
