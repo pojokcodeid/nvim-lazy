@@ -36,11 +36,15 @@ return {
         operators = {},
         -- miscs = {}, -- Uncomment to turn off hard-coded styles
       },
-      color_overrides = {},
+      color_overrides = {
+        all = {
+          mantle = "#1e1e2e",
+        },
+      },
       custom_highlights = function(colors)
         return {
           NvimTreeNormal = { fg = colors.text, bg = transparent and colors.none or colors.base },
-          NvimTreeWinSeparator = { fg = colors.mantle, bg = transparent and colors.none or colors.none },
+          NvimTreeWinSeparator = { fg = "#181825", bg = transparent and colors.none or colors.none },
           Pmenu = { fg = colors.text, bg = transparent and colors.none or colors.base },
           WhichKeyFloat = { fg = colors.text, bg = transparent and colors.none or colors.base },
           WhichKey = { fg = colors.text, bg = transparent and colors.none or colors.base },
@@ -48,7 +52,8 @@ return {
           NormalFloat = { fg = colors.text, bg = transparent and colors.none or colors.base },
           Normal = { fg = colors.text, bg = transparent and colors.none or colors.base },
           NormalNC = { fg = colors.text, bg = transparent and colors.none or colors.base },
-          StatusLine = { fg = colors.text, bg = colors.none },
+          TabLine = { fg = colors.text, bg = transparent and colors.none or colors.base },
+          StatusLine = { fg = colors.text, bg = transparent and colors.none or colors.base },
           MasonBackdrop = { link = "NormalFloat" },
         }
       end,
@@ -61,6 +66,7 @@ return {
       },
       default_integrations = true,
       integrations = {
+        bufferline = true,
         cmp = true,
         gitsigns = true,
         nvimtree = true,
