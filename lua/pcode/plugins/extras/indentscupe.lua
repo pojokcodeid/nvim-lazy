@@ -26,6 +26,7 @@ return {
         "term",
         "terminal",
         "zsh",
+        "keymaps_table",
       },
       callback = function()
         vim.b.miniindentscope_disable = true

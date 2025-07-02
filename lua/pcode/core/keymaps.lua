@@ -176,6 +176,9 @@ local function show_keymaps_popup()
   vim.api.nvim_buf_set_option(buf, "modifiable", false)
   vim.api.nvim_buf_set_option(buf, "bufhidden", "wipe")
 
+  -- Set the buffer's filetype to 'keymaps_table'
+  vim.api.nvim_buf_set_option(buf, "filetype", "keymaps_table")
+
   -- highlight section titles
   for i, l in ipairs(hls) do
     for _, v in ipairs(l) do
