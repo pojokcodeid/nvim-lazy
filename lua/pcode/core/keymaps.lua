@@ -1,56 +1,73 @@
+local mode_info = {
+  "Mode:",
+  " n => normal   i => insert   v => visual   x => visual block   t => terminal",
+  "",
+}
+
 local keymaps = {
   ["LSP"] = {
-    { "LSP Code Action", "<leader>la" },
-    { "LSP Code Format", "<leader>lf" },
-    { "LSP Information", "<leader>li" },
-    { "Mason Information", "<leader>lI" },
-    { "LSP Next Diagnostic", "<leader>lj" },
-    { "LSP Previous Diagnostic", "<leader>lk" },
-    { "LSP Quickfix", "<leader<lq" },
-    { "LSP Rename", "<leader>lr" },
-    { "LSP Signature Help", "<leader>ls" },
-    { "LSP Format On Range", "<leader>lF" },
+    { "LSP Code Action", "n", "<leader>la" },
+    { "LSP Code Format", "n", "<leader>lf" },
+    { "LSP Information", "n", "<leader>li" },
+    { "Mason Information", "n", "<leader>lI" },
+    { "LSP Next Diagnostic", "n", "<leader>lj" },
+    { "LSP Previous Diagnostic", "n", "<leader>lk" },
+    { "LSP Quickfix", "n", "<leader<lq" },
+    { "LSP Rename", "n", "<leader>lr" },
+    { "LSP Signature Help", "n", "<leader>ls" },
+    { "LSP Format On Range", "v", "<leader>lF" },
   },
   ["Cmp"] = {
-    { "Scroll Next Documentation", "CTRL + f" },
-    { "Scroll Previous Documentation", "CTRL + b" },
-    { "Mapping Complete", "CTRL + space" },
-    { "Abort Completion", "CTRL + e" },
-    { "Accept Completion", "↵" },
-    { "Next Autocompletion", "TAB" },
-    { "Previous Autocompletion", "SHIFT + TAB" },
+    { "Scroll Next Documentation", "i", "CTRL + f" },
+    { "Scroll Previous Documentation", "i", "CTRL + b" },
+    { "Mapping Complete", "i", "CTRL + space" },
+    { "Abort Completion", "i", "CTRL + e" },
+    { "Accept Completion", "i", "↵" },
+    { "Next Autocompletion", "i", "TAB" },
+    { "Previous Autocompletion", "i", "SHIFT + TAB" },
   },
   ["Terminal"] = {
-    { "Terminal Float", "<leader>tf" },
-    { "Terminal Horizontal", "<leader>th" },
-    { "Terminal new tab", "<leader>ts" },
-    { "Terminal Vertical", "<leader>tv" },
-    { "Terminal Close", "<leader>tx" },
+    { "Terminal Float", "n", "<leader>tf" },
+    { "Terminal Horizontal", "n", "<leader>th" },
+    { "Terminal new tab", "n", "<leader>ts" },
+    { "Terminal Vertical", "n", "<leader>tv" },
+    { "Terminal Close", "n", "<leader>tx" },
   },
   ["Comment"] = {
-    { "Comment line toggle", "gcc or CTRL + /" },
-    { "Comment block toggle", "gbc or CTRL + /" },
-    { "Comment visual selection", "gc" },
-    { "Comment visual selection using block delimiters", "gb" },
-    { "Comment out text object line wise", "gc<motion>" },
-    { "Comment out text object block wise", "gb<motion>" },
-    { "Add comment on the line above", "gcO" },
-    { "Add comment on the line below", "gco" },
-    { "Add comment at the end of line", "gcA" },
+    { "Comment line toggle", "n/v", "gcc or CTRL + /" },
+    { "Comment block toggle", "n/v", "gbc or CTRL + /" },
+    { "Comment visual selection", "v", "gc" },
+    { "Comment visual selection using block delimiters", "v", "gb" },
+    { "Comment out text object line wise", "v", "gc<motion>" },
+    { "Comment out text object block wise", "v", "gb<motion>" },
+    { "Add comment on the line above", "n", "gcO" },
+    { "Add comment on the line below", "n", "gco" },
+    { "Add comment at the end of line", "n", "gcA" },
   },
   ["Bufferline"] = {
-    { "Move Active Buffer Left", "SHIFT + h OR SHIFT + ArrowLeft" },
-    { "Move Active Buffer Right", "SHIFT + l OR SHIFT + ArrowRight" },
-    { "Reorder Bufferline", "SHIFT + PageUp/PageDown" },
-    { "Close Current Buffer", "SHIFT + t" },
+    { "Move Active Buffer Left", "n", "SHIFT + h/SHIFT + Left" },
+    { "Move Active Buffer Right", "n", "SHIFT + l/SHIFT + Right" },
+    { "Reorder Bufferline", "n", "SHIFT + PageUp/PageDown" },
+    { "Close Current Buffer", "n", "SHIFT + t" },
   },
   ["Window"] = {
-    { "Resize Window", "CTRL + ArrowLeft/ArrowRight/ArrowUp/ArrowDown" },
-    { "Navigate Window", "CTRL + h/l" },
+    { "Resize Window", "n", "CTRL + Left/Right/Up/Down" },
+    { "Navigate Window", "n", "CTRL + h/l" },
+  },
+  ["Text-Manipulation"] = {
+    { "Select Multiple Cursor Vertical", "n/i", "SHIFT + ALT + Up/Down" },
+    { "Select text", "n", "CTRL + d" },
+    { "Select Multiple Cursor", "i/n", "ALT + Left Click Mouse" },
+    { "Duplicate Row", "i/n/v", "SHIFT + ALT + Up/Down" },
+    { "Move Row", "i/n/v", "ALT + Up/Down" },
+  },
+  ["Ai"] = {
+    { "Approve AI Sugention", "i", "CTRL + g" },
+    { "Change AI Option", "i", "CTRL + Up/Down" },
+    { "Clear AI Sugention", "i", "CTRL + x" },
   },
 }
 
--- Section title highlight setup
 vim.api.nvim_set_hl(0, "KeymapsSectionOil", { bg = "#8fbcbb", fg = "#1e1e1e", bold = true })
 vim.api.nvim_set_hl(0, "KeymapsSectionCmp", { bg = "#b48ead", fg = "#1e1e1e", bold = true })
 vim.api.nvim_set_hl(0, "KeymapsSectionComment", { bg = "#bf616a", fg = "#1e1e1e", bold = true })
@@ -83,53 +100,73 @@ local function pad(str, width)
 end
 
 local function calc_widths(tbl)
-  local col1, col2 = 0, 0
+  local col1, col2, col3 = 0, 0, 0
   for _, group in pairs(tbl) do
     for _, row in ipairs(group) do
       col1 = math.max(col1, vim.fn.strdisplaywidth(row[1]))
       col2 = math.max(col2, vim.fn.strdisplaywidth(row[2]))
+      col3 = math.max(col3, vim.fn.strdisplaywidth(row[3]))
     end
   end
-  return col1, col2
+  return col1, col2, col3
 end
 
 local function make_lines(tbl, max_width)
-  local col1, col2 = calc_widths(tbl)
+  local col1, col2, col3 = calc_widths(tbl)
   if max_width then
-    local padding = max_width - (col1 + col2 + 3)
+    local want = col1 + col2 + col3 + 6
+    local padding = max_width - want
     if padding > 0 then
-      col1 = col1 + math.floor(padding * 0.7)
-      col2 = col2 + padding - math.floor(padding * 0.7)
+      col1 = col1 + math.floor(padding * 0.8)
+      col3 = col3 + (padding - math.floor(padding * 0.8))
     end
   end
   local lines = {}
   local hls = {}
-  Random_index = 1
 
-  for section, rows in pairs(tbl) do
+  -- Tambahkan info mode di bagian atas
+  for _, info in ipairs(mode_info) do
+    table.insert(lines, info)
+    table.insert(hls, {})
+  end
+
+  local random_index = 1
+
+  -- Urutkan section secara alfabetis
+  local section_names = {}
+  for section in pairs(tbl) do
+    table.insert(section_names, section)
+  end
+  table.sort(section_names)
+
+  for _, section in ipairs(section_names) do
+    local rows = tbl[section]
     local section_title = ("  %s  "):format(section)
     table.insert(lines, section_title)
-    table.insert(hls, { { 0, #section_title, section_hl[Random_index] or "Normal2" } })
-    Random_index = Random_index + 1
-    if Random_index > #section_hl then
-      Random_index = 1
+    table.insert(hls, { { 0, #section_title, section_hl[random_index] or "Normal2" } })
+    random_index = random_index + 1
+    if random_index > #section_hl then
+      random_index = 1
     end
-    -- Hapus baris Description, hanya tampilkan garis bawah dan data
-    table.insert(lines, string.rep("─", col1) .. "─┬─" .. string.rep("─", col2))
+
+    table.insert(
+      lines,
+      string.rep("─", col1) .. "─┬─" .. string.rep("─", col2) .. "─┬─" .. string.rep("─", col3)
+    )
     table.insert(hls, {})
     for _, row in ipairs(rows) do
-      table.insert(lines, pad(row[1], col1) .. " │ " .. pad(row[2], col2))
+      table.insert(lines, pad(row[1], col1) .. " │ " .. pad(row[2], col2) .. " │ " .. pad(row[3], col3))
       table.insert(hls, {})
     end
     table.insert(lines, "")
     table.insert(hls, {})
   end
-  return lines, col1 + col2 + 3, hls
+  return lines, col1 + col2 + col3 + 6, hls
 end
 
 local function show_keymaps_popup()
   local ui = vim.api.nvim_list_uis()[1]
-  local win_width = math.floor(ui.width * 0.7)
+  local win_width = math.floor(ui.width * 0.8)
   local lines, width, hls = make_lines(keymaps, win_width)
   width = win_width
   local height = #lines
@@ -156,7 +193,7 @@ local function show_keymaps_popup()
     width = width,
     height = height,
     style = "minimal",
-    border = "single",
+    border = "rounded",
     title = "Keymaps",
     title_pos = "center",
   })
