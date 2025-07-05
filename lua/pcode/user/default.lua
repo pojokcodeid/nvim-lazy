@@ -51,6 +51,7 @@ pcode.extras = {
   tinydignostic = false,
   dressing = true,
   telescopediff = true,
+  cheatsheet = true,
 }
 -- activate config themes
 pcode.themes = {

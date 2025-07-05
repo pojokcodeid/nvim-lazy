@@ -8,8 +8,15 @@
       {
         "language": "go",
         "path": "./go/snippets.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./javascript/snippets.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./javascript/snippets.json"
       }
     ]
   }
 }
-
