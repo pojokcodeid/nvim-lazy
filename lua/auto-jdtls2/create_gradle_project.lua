@@ -65,7 +65,7 @@ local function gradle_new_project()
         end, 4000) -- Delay is set in milliseconds (3,000ms = 3 seconds)
       end
       -- Run the delayed quit function
-      -- delayed_quit()
+      delayed_quit()
     end
   end
 

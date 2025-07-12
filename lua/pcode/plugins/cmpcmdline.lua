@@ -91,7 +91,8 @@ return {
   },
   {
     "hrsh7th/cmp-cmdline",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
+    event = "CmdlineEnter",
     config = function()
       local cmp = require("cmp")
       local mapping = {

@@ -61,7 +61,7 @@ vim.loader.enable()
 
 -- Disable statusline in dashboard
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "mysql", "dbout", "dbui", "http", "httpResult" },
+  pattern = { "dbout", "dbui", "http", "httpResult", "checkhealth", "qf", "help", "lazy" },
   callback = function()
     local opt = vim.opt
     opt.number = false -- Print line number

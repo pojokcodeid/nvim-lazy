@@ -1,12 +1,13 @@
 return {
   {
-    "nvchad/menu",
+    "nvzone/menu",
     lazy = true,
     event = { "VeryLazy" },
     dependencies = {
-      { "nvchad/volt", lazy = true },
+      { "nvzone/volt", lazy = true },
+      { "nvzone/showkeys", cmd = "ShowkeysToggle", lazy = true },
       {
-        "nvchad/minty",
+        "nvzone/minty",
         cmd = { "Shades", "Huefy" },
         lazy = true,
       },
@@ -22,10 +23,12 @@ return {
       end, {})
 
       -- mouse users + nvimtree users!
-      vim.keymap.set("n", "<RightMouse>", function()
+      vim.keymap.set({ "n", "v" }, "<RightMouse>", function()
+        require("menu.utils").delete_old_menus()
         vim.cmd.exec('"normal! \\<RightMouse>"')
 
-        local options = vim.bo.ft == "NvimTree" and "nvimtree" or "default"
+        local buf = vim.api.nvim_win_get_buf(vim.fn.getmousepos().winid)
+        local options = vim.bo[buf].ft == "NvimTree" and "nvimtree" or "default"
         require("menu").open(options, opts)
       end, {})
     end,

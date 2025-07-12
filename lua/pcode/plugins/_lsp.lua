@@ -1,7 +1,7 @@
 return {
   {
     "williamboman/mason-lspconfig.nvim",
-    event = { "VeryLazy", "BufReadPre", "BufNewFile", "BufRead" },
+    event = { "CmdlineEnter", "BufReadPre", "BufNewFile", "BufRead" },
     dependencies = {
       { "pojokcodeid/auto-lsp.nvim", lazy = true },
       {

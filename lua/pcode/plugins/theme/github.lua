@@ -53,6 +53,7 @@ return {
       specs = {},
       groups = {
         all = {
+          MasonBackdrop = { link = "NormalFloat" },
           illuminatedWord = { bg = "#3b4261" },
           illuminatedCurWord = { bg = "#3b4261" },
           IlluminatedWordText = { bg = "#3b4261" },

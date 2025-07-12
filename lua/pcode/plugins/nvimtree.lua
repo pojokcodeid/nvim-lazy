@@ -6,9 +6,24 @@ return {
   },
   opts = function(_, opts)
     local icons = require("pcode.user.icons")
-    opts.disable_netrw = true
-    opts.hijack_cursor = true
+    opts.auto_reload_on_write = false
+    opts.disable_netrw = false
+    opts.hijack_cursor = false
+    opts.hijack_netrw = true
+    opts.hijack_unnamed_buffer_when_opening = false
     opts.sync_root_with_cwd = true
+    opts.sort = {
+      sorter = "name",
+      folders_first = true,
+      files_first = false,
+    }
+    opts.root_dirs = {}
+    opts.prefer_startup_root = false
+    opts.sync_root_with_cwd = true
+    opts.reload_on_bufenter = false
+    opts.respect_buf_cwd = false
+    opts.on_attach = "default"
+    opts.select_prompts = false
     opts.update_focused_file = {
       enable = true,
       update_root = false,
@@ -112,6 +127,44 @@ return {
     return opts
   end,
   config = function(_, opts)
+    if pcode.nvimtree_float then
+      -- set nvimtree float view (default left side)
+      opts.view = {
+        adaptive_size = false,
+        centralize_selection = true,
+        side = "left",
+        preserve_window_proportions = false,
+        number = false,
+        relativenumber = false,
+        signcolumn = "yes",
+        float = {
+          enable = true,
+          open_win_config = function()
+            local screen_w = vim.opt.columns:get()
+            ---@diagnostic disable-next-line: undefined-field
+            local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+            local window_w = screen_w * 0.5
+            local window_h = screen_h * 0.9
+            local window_w_int = math.floor(window_w)
+            local window_h_int = math.floor(window_h)
+            local center_x = (screen_w - window_w) / 2
+            ---@diagnostic disable-next-line: undefined-field
+            local center_y = ((vim.opt.lines:get() - window_h) / 2) - vim.opt.cmdheight:get()
+            return {
+              border = "rounded",
+              relative = "editor",
+              row = center_y,
+              col = center_x,
+              width = window_w_int,
+              height = window_h_int,
+            }
+          end,
+        },
+        width = function()
+          return math.floor(vim.opt.columns:get() * 0.5)
+        end,
+      }
+    end
     require("nvim-tree").setup(opts)
     local api = require("nvim-tree.api")
     api.events.subscribe(api.events.Event.FileCreated, function(file)

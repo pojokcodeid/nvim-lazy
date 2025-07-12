@@ -2,11 +2,13 @@
 pcode.lang = {
   angular = false,
   cpp = false,
-  sql = true,
+  sql = false,
   deno = false,
   golang = false,
   java = false,
+  java2 = false,
   java3 = false,
+  java4 = false,
   javascript = false,
   kotlin = false,
   markdown = false,
@@ -20,43 +22,49 @@ pcode.lang = {
 pcode.extras = {
   autosave = false,
   bigfiles = false,
+  codeium = false,
   codeiumnvim = false,
-  liveserver = true,
+  neocodeium = true,
+  liveserver = false,
   minianimate = false,
   neoscroll = false,
   nvimufo = false,
-  refactoring = true,
-  rest = true,
+  refactoring = false,
+  rest = false,
   treesittercontex = false,
-  codeium = true,
-  colorizer = true,
-  dap = true,
-  deviconcolor = true,
+  colorizer = false,
+  dap = false,
+  deviconcolor = false,
   illuminate = true,
-  indentscupe = true,
+  indentscupe = false,
   navic = true,
-  nvimmenu = true,
+  nvimmenu = false,
   rainbowdelimiters = true,
-  scrollview = true,
+  scrollview = false,
   smartsplit = true,
   verticalcolumn = true,
   visualmulti = true,
   yanky = true,
-  zenmode = true,
+  zenmode = false,
   lspsignatur = false,
-  telescopetreesiterinfo = true,
+  telescopetreesiterinfo = false,
+  fidget = false,
+  tinydignostic = false,
+  dressing = true,
+  telescopediff = false,
+  cheatsheet = false,
 }
 -- activate config themes
 pcode.themes = {
   -- note: open remark only one
   -- **:: Eva Theme ::** --
-  evatheme = "Eva-Dark",
+  -- evatheme = "Eva-Dark",
   -- evatheme = "Eva-Dark-Italic",
   -- evatheme = "Eva-Dark-Bold",
   -- evatheme = "Eva-Light",
   --
   -- **:: Dracula Theme ::** --
-  -- dracula = "dracula",
+  dracula = "dracula",
   -- dracula = "dracula-soft",
   --
   -- **:: Onedarkpro Theme ::** --
@@ -93,3 +101,4 @@ pcode.themes = {
 pcode.transparent = false
 pcode.localcode = true
 pcode.snippets_path = vim.fn.stdpath("config") .. "/mysnippets"
+pcode.nvimtree_float = false

@@ -1,6 +1,6 @@
 local M = {
   "RRethy/vim-illuminate",
-  event = "VeryLazy",
+  event = "BufRead",
 }
 
 M.opts = {

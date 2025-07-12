@@ -5,13 +5,16 @@ return {
     dependencies = {
       -- codeium
       {
-        "Exafunction/codeium.nvim",
+        "Exafunction/windsurf.nvim",
         cmd = "Codeium",
-        enabled = false,
+        enabled = true,
         build = ":Codeium Auth",
         opts = {
           enable_chat = true,
         },
+        config = function(_, opts)
+          require("codeium").setup(opts)
+        end,
       },
     },
     --@param opts cmp.ConfigSchema

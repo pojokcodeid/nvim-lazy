@@ -21,6 +21,8 @@ return {
           "WinBar",
           "WinBarNC",
           "NotifyBackground",
+          "TabLine",
+          "TabLineFill",
         },
         exclude_groups = {
           -- disable active selection backgroun
@@ -53,6 +55,10 @@ return {
       -- create auto command to set transparent
       vim.cmd("TransparentDisable")
       vim.cmd("TransparentEnable")
+      vim.api.nvim_set_hl(0, "MasonHeader", { bold = true, bg = "NONE", fg = "#838FA7" })
+      vim.api.nvim_set_hl(0, "MasonMutedBlock", { bg = "NONE", fg = "#838FA7" })
+      vim.api.nvim_set_hl(0, "MasonHighlightBlockBold", { bold = true, bg = "NONE", fg = "#ABB2BF" })
+      vim.api.nvim_set_hl(0, "LazyH1", { bold = true, bg = "NONE", fg = "#ABB2BF" })
     end,
   },
   {

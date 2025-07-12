@@ -3,6 +3,7 @@ return {
   lazy = true,
   event = "VeryLazy",
   keys = {
+    { "<leader>u", "", desc = " 󰀦 Notify" },
     {
       "<leader>uN",
       function()
@@ -19,7 +20,7 @@ return {
     max_width = function()
       return math.floor(vim.o.columns * 0.4)
     end,
-    render = "wrapped-default",
+    render = "wrapped-compact",
     -- background_colour = "#00000000",
   },
   config = function(_, opts)

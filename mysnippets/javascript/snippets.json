@@ -1,0 +1,33 @@
+{
+  "author": {
+    "prefix": "@author",
+    "body": [
+      "/*",
+      "Author  = Pojok Code",
+      "email   = pojokcodeid@gmail.com",
+      "Github  = https://github.com/pojokcodeid",
+      "Youtube = https://youtube.com/pojokcode",
+      "Date    = $CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}",
+      "File    = $TM_FILENAME",
+      "note    = Penyalahgunaan kode ini bukan tanggung jawab pojok code",
+      "*/",
+      "$1"
+    ],
+    "description": "Komentar Author"
+  },
+  "/*": {
+    "prefix": "/*",
+    "body": ["/*", "* $1", "*/"],
+    "description": "Komentar"
+  },
+  "/": {
+    "prefix": "/",
+    "body": "// $1",
+    "description": "Komentar"
+  },
+  "function": {
+    "prefix": "function",
+    "body": ["function $1($2) {", "$0", "}"],
+    "description": "function"
+  }
+}

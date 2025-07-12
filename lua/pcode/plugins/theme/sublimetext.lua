@@ -12,6 +12,7 @@ return {
         -- custom hilights
         local hi = vim.api.nvim_set_hl
         hi(0, "FoldColumn", { bg = colors.bg2 })
+        hi(0, "MasonBackdrop", { link = "NormalFloat" })
       end,
     })
   end,

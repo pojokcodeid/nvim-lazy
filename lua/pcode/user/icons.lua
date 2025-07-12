@@ -2,7 +2,8 @@ return {
   kind = {
     Boolean = "󰨙",
     Color = "",
-    Codeium = "󰘦",
+    -- Codeium = "󰘦",
+    Codeium = "󰁨",
     Control = "",
     Collapsed = " ",
     Component = "󰅴",

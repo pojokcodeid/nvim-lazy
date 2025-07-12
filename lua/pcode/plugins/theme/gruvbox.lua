@@ -18,6 +18,7 @@ return {
         ["FoldColumn"] = { bg = "NONE" },
         ["Folded"] = { bg = "NONE" },
         ["SignColumn"] = { bg = "NONE" },
+        ["MasonBackdrop"] = { link = "NormalFloat" },
       },
     }
   end,
