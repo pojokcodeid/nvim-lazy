@@ -51,6 +51,7 @@ return {
         WinBar = { bg = colors.bg },
         WinBarNC = { fg = colors.fg, bg = colors.bg },
         MasonBackdrop = { link = "NormalFloat" },
+        CodeiumSuggestion = { fg = "#94969c" },
       },
       transparent_bg = false,
     }
