@@ -40,7 +40,7 @@ return {
   -- install mason (lsp, dap, linters, formatters)
   {
     "williamboman/mason.nvim",
-    opts = { ensure_installed = { "stylua" } },
+    -- opts = { ensure_installed = { "stylua" } },
   },
   -- overide lsp config
   {
