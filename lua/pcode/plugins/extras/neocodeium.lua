@@ -60,5 +60,13 @@ return {
     vim.keymap.set("i", "<c-x>", function()
       require("neocodeium").clear()
     end)
+    -- create user command CodeiumDiasable
+    vim.api.nvim_create_user_command("CodeiumDisable", function()
+      require("neocodeium.commands").disable(true)
+    end, {})
+    -- create user command CodeiumEnable
+    vim.api.nvim_create_user_command("CodeiumEnable", function()
+      require("neocodeium.commands").enable()
+    end, {})
   end,
 }
