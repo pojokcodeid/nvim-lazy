@@ -27,6 +27,7 @@ return {
         ["@string.css"] = { fg = colors.pink },
         ["@punctuation.delimiter.lua"] = { fg = colors.orange },
         NvimTreeFolderIcon = { fg = "#6776a7" },
+        NeoTreeDirectoryIcon = { fg = "#6776a7" },
         CmpItemAbbr = { fg = "#ABB2BF" },
         CmpItemKind = { fg = "#ABB2BF" },
         CmpItemAbbrDeprecated = { fg = "#ABB2BF" },
@@ -53,6 +54,10 @@ return {
         WinBarNC = { fg = colors.fg, bg = colors.bg },
         MasonBackdrop = { link = "NormalFloat" },
         CodeiumSuggestion = { fg = "#94969c" },
+        NeoTreeTabInactive = { fg = "#6776a7", bg = colors.bg },
+        NeoTreeTabSeparatorActive = { fg = "#6776a7", bg = colors.bg },
+        NeoTreeTabSeparatorInactive = { fg = "#6776a7", bg = colors.bg },
+        NeoTreeTabActive = { fg = colors.fg, bg = colors.selection },
       },
       transparent_bg = false,
     }
