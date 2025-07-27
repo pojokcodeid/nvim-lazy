@@ -25,6 +25,7 @@ return {
       "saadparwaiz1/cmp_luasnip",
       "hrsh7th/cmp-nvim-lua",
       "xzbdmw/colorful-menu.nvim",
+      "lukas-reineke/cmp-rg",
     },
     opts = function()
       local cmp = require("cmp")
@@ -85,6 +86,7 @@ return {
           { name = "buffer" },
           { name = "path" },
           { name = "nvim_lua" },
+          { name = "rg" },
         }),
         formatting = {
           fields = { "kind", "abbr", "menu" },

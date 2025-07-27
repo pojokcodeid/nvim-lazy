@@ -38,6 +38,6 @@ return {
     end, { desc = "Format file or range (in visual mode)" })
   end,
   keys = {
-    { "<leader>l", "", desc = " 󰘦 Lsp" },
+    { "<leader>l", "", desc = "󰘦 Lsp" },
   },
 }
