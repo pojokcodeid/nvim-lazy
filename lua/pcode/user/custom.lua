@@ -18,7 +18,7 @@ return {
     opts = {
       -- for more options check out https://github.com/pojokcodeid/auto-lualine.nvim
       setColor = "auto",
-      setOption = "roundedall",
+      setOption = "parallelogram",
       setMode = 5,
     },
   },
@@ -40,7 +40,7 @@ return {
   -- install mason (lsp, dap, linters, formatters)
   {
     "williamboman/mason.nvim",
-    opts = { ensure_installed = { "stylua" } },
+    -- opts = { ensure_installed = { "stylua" } },
   },
   -- overide lsp config
   {
@@ -102,44 +102,44 @@ return {
     end,
   },
   -- custem nvimtree
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = function(_, opts)
-      -- set nvimtree float view (default left side)
-      -- opts.view = {
-      -- 	adaptive_size = false,
-      -- 	centralize_selection = true,
-      -- 	side = "left",
-      -- 	preserve_window_proportions = false,
-      -- 	number = false,
-      -- 	relativenumber = false,
-      -- 	signcolumn = "yes",
-      -- 	float = {
-      -- 		enable = true,
-      -- 		open_win_config = function()
-      -- 			local screen_w = vim.opt.columns:get()
-      -- 			local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
-      -- 			local window_w = screen_w * 0.5
-      -- 			local window_h = screen_h * 0.9
-      -- 			local window_w_int = math.floor(window_w)
-      -- 			local window_h_int = math.floor(window_h)
-      -- 			local center_x = (screen_w - window_w) / 2
-      -- 			local center_y = ((vim.opt.lines:get() - window_h) / 2) - vim.opt.cmdheight:get()
-      -- 			return {
-      -- 				border = "rounded",
-      -- 				relative = "editor",
-      -- 				row = center_y,
-      -- 				col = center_x,
-      -- 				width = window_w_int,
-      -- 				height = window_h_int,
-      -- 			}
-      -- 		end,
-      -- 	},
-      -- 	width = function()
-      -- 		return math.floor(vim.opt.columns:get() * 0.5)
-      -- 	end,
-      -- }
-      return opts
-    end,
-  },
+  -- {
+  -- "nvim-tree/nvim-tree.lua",
+  -- opts = function(_, opts)
+  -- set nvimtree float view (default left side)
+  -- opts.view = {
+  -- 	adaptive_size = false,
+  -- 	centralize_selection = true,
+  -- 	side = "left",
+  -- 	preserve_window_proportions = false,
+  -- 	number = false,
+  -- 	relativenumber = false,
+  -- 	signcolumn = "yes",
+  -- 	float = {
+  -- 		enable = true,
+  -- 		open_win_config = function()
+  -- 			local screen_w = vim.opt.columns:get()
+  -- 			local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+  -- 			local window_w = screen_w * 0.5
+  -- 			local window_h = screen_h * 0.9
+  -- 			local window_w_int = math.floor(window_w)
+  -- 			local window_h_int = math.floor(window_h)
+  -- 			local center_x = (screen_w - window_w) / 2
+  -- 			local center_y = ((vim.opt.lines:get() - window_h) / 2) - vim.opt.cmdheight:get()
+  -- 			return {
+  -- 				border = "rounded",
+  -- 				relative = "editor",
+  -- 				row = center_y,
+  -- 				col = center_x,
+  -- 				width = window_w_int,
+  -- 				height = window_h_int,
+  -- 			}
+  -- 		end,
+  -- 	},
+  -- 	width = function()
+  -- 		return math.floor(vim.opt.columns:get() * 0.5)
+  -- 	end,
+  -- }
+  -- return opts
+  -- end,
+  -- },
 }
