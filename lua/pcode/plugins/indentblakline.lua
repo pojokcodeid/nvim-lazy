@@ -1,5 +1,5 @@
 return {
-	"lukas-reineke/indent-blankline.nvim",
+  --[[ 	"lukas-reineke/indent-blankline.nvim",
 	-- version = "3.5.4",
 	event = { "BufRead", "InsertEnter", "BufNewFile" },
 	lazy = true,
@@ -35,5 +35,5 @@ return {
 			},
 		},
 	},
-	main = "ibl",
+	main = "ibl", ]]
 }

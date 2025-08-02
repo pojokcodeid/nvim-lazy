@@ -1,0 +1,48 @@
+{
+  "author": {
+    "prefix": "@author",
+    "body": [
+      "/*",
+      "Author  = Pojok Code",
+      "email   = pojokcodeid@gmail.com",
+      "Github  = https://github.com/pojokcodeid",
+      "Youtube = https://youtube.com/pojokcode",
+      "Date    = $CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}",
+      "File    = $TM_FILENAME",
+      "note    = Penyalahgunaan kode ini bukan tanggung jawab pojok code",
+      "*/",
+      "$1"
+    ],
+    "description": "Komentar Author"
+  },
+  "/*": {
+    "prefix": "/*",
+    "body": ["/*", "* $1", "*/"],
+    "description": "Komentar"
+  },
+  "/": {
+    "prefix": "/",
+    "body": "// $1",
+    "description": "Komentar"
+  },
+  "main": {
+    "prefix": "main",
+    "body": [
+      "package main",
+      "",
+      "import (",
+      "\t\"fmt\"",
+      ")",
+      "",
+      "func main() {",
+      "\tfmt.Println($1)",
+      "}"
+    ],
+    "description": "main"
+  },
+  "func": {
+    "prefix": "func",
+    "body": ["func $1($2) {", "\t$3", "}"],
+    "description": "func"
+  }
+}

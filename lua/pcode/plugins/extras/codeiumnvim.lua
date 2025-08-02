@@ -2,16 +2,28 @@ return {
   -- codeium cmp source
   {
     "nvim-cmp",
+    event = "BufReadPre",
     dependencies = {
       -- codeium
       {
-        "Exafunction/codeium.nvim",
+        "Exafunction/windsurf.nvim",
         cmd = "Codeium",
-        enabled = false,
-        build = ":Codeium Auth",
+        enabled = true,
         opts = {
           enable_chat = true,
+          enable_cmp_source = true,
+          virtual_text = {
+            enabled = true,
+            key_bindings = {
+              accept = "<c-g>",
+              next = "<c-Down>",
+              prev = "<c-Up>",
+            },
+          },
         },
+        config = function(_, opts)
+          require("codeium").setup(opts)
+        end,
       },
     },
     --@param opts cmp.ConfigSchema

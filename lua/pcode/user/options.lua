@@ -61,7 +61,7 @@ vim.loader.enable()
 
 -- Disable statusline in dashboard
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "dbout", "dbui", "http", "httpResult" },
+  pattern = { "dbout", "dbui", "http", "httpResult", "checkhealth", "qf", "help", "lazy" },
   callback = function()
     local opt = vim.opt
     opt.number = false -- Print line number
@@ -71,3 +71,11 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
+
+local uname = vim.loop.os_uname()
+if uname.sysname == "Windows_NT" then
+  vim.opt.shell = "pwsh"
+  vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+  vim.opt.shellquote = ""
+  vim.opt.shellxquote = ""
+end

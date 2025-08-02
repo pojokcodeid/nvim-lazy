@@ -3,6 +3,7 @@ return {
   lazy = true,
   event = "VeryLazy",
   keys = {
+    { "<leader>u", "", desc = " 󰀦 Notify" },
     {
       "<leader>uN",
       function()

@@ -2,6 +2,8 @@ return {
   {
     "L3MON4D3/LuaSnip",
     event = "InsertEnter",
+    version = "v2.*",
+    -- build = "make install_jsregexp",
     opts = {
       history = true,
       delete_check_events = "TextChanged",
@@ -22,6 +24,8 @@ return {
       "hrsh7th/cmp-path",
       "saadparwaiz1/cmp_luasnip",
       "hrsh7th/cmp-nvim-lua",
+      "xzbdmw/colorful-menu.nvim",
+      "lukas-reineke/cmp-rg",
     },
     opts = function()
       local cmp = require("cmp")
@@ -82,19 +86,45 @@ return {
           { name = "buffer" },
           { name = "path" },
           { name = "nvim_lua" },
+          { name = "rg" },
         }),
         formatting = {
           fields = { "kind", "abbr", "menu" },
           format = function(entry, vim_item)
             vim_item.menu = vim.api.nvim_get_mode().mode == "c" and "" or all_trim(vim_item.kind)
-            vim_item.kind = string.format("%s", all_trim(require("pcode.user.icons")["kind"][vim_item.kind]))
-            -- vim_item.menu = ({
-            --   nvim_lsp = "(LSP)",
-            --   luasnip = "(Snippet)",
-            --   buffer = "(Buffer)",
-            --   path = "(Path)",
-            --   codeium = "(Codeium)",
-            -- })[entry.source.name]
+            vim_item.kind = string.format("%s", all_trim(require("pcode.user.icons")["kind2"][vim_item.kind]))
+
+            local original_notify = vim.notify
+            vim.notify = function(msg, level, opts)
+              if type(msg) == "string" and msg:match("has new line character, please open an issue") then
+                return
+              end
+              original_notify(msg, level, opts)
+            end
+
+            local ok, highlights_info = pcall(require("colorful-menu").cmp_highlights, entry)
+            if ok and highlights_info ~= nil then
+              vim_item.abbr_hl_group = highlights_info.highlights
+
+              -- ambil nama group hilightnya saja
+              -- eg. "@parameter"
+              local var_hilight = highlights_info.highlights[1][1]
+              local id = vim.fn.hlID(var_hilight)
+
+              local var_out = "@tag"
+              -- cek apakah hilight terdefinisi
+              if id ~= 0 then
+                var_out = var_hilight
+              else
+                var_out = var_hilight:match("([^%.]+)")
+              end
+
+              vim_item.menu_hl_group = var_out
+              -- vim.notify(var_out)
+            else
+              vim_item.abbr_hl_group = "CmpItemAbbr"
+              vim_item.menu_hl_group = "CmpItemAbbr"
+            end
             return vim_item
           end,
         },
