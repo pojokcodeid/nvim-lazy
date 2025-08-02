@@ -4,7 +4,7 @@ return {
     "williamboman/mason.nvim",
     "stevearc/conform.nvim",
   },
-  event = "VeryLazy",
+  event = "BufRead",
   opts = function(_, opts)
     opts.formatters = opts.formatters or {}
     opts.formatters_by_ft = opts.formatters_by_ft or {}
@@ -38,6 +38,6 @@ return {
     end, { desc = "Format file or range (in visual mode)" })
   end,
   keys = {
-    { "<leader>l", "", desc = " 󰘦 Lsp" },
+    { "<leader>l", "", desc = "󰘦 Lsp" },
   },
 }
