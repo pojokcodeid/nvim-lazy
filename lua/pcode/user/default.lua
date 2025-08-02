@@ -53,6 +53,7 @@ pcode.extras = {
   dressing = true,
   telescopediff = false,
   cheatsheet = false,
+  showkeys = true,
 }
 -- activate config themes
 pcode.themes = {

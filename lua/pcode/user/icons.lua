@@ -92,8 +92,8 @@ return {
     Unit = " 󱜥 ",
     Value = "  ",
     -- Variable = " 󰫧 ",
-    -- Variable = "  ",
-    Variable = " 󰰬 ",
+    Variable = "  ",
+    -- Variable = " 󰰬 ",
   },
   git = {
     LineAdded = "",
