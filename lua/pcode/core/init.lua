@@ -4,6 +4,6 @@ require("pcode.config.lazy_lib")
 require("pcode.user.colorscheme")
 require("pcode.core.neovide")
 
-vim.keymap.set({ "n", "v", "x" }, "<C-i>", function()
+--[[ vim.keymap.set({ "n", "v", "x" }, "<C-i>", function()
   require("gemini").ask_gemini()
-end, { noremap = true, silent = true, desc = "Prompt Gemini CLI" })
+end, { noremap = true, silent = true, desc = "Prompt Gemini CLI" }) ]]
