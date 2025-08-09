@@ -18,13 +18,13 @@ return {
         filetype = { "NvimTree", "neo-tree" },
         components = {
           {
-            text = "",
+            text = " ",
             fg = hl_attr("CursorLine", "bg"),
             bg = hl_attr("Normal", "bg"),
           },
 
           {
-            text = " Explorer                   ",
+            text = " Explorer                  ",
             fg = yellow,
             bg = function()
               return hl_attr("CursorLine", "bg")

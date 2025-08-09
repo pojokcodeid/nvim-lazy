@@ -58,6 +58,7 @@ return {
         NeoTreeTabSeparatorActive = { fg = "#6776a7", bg = colors.bg },
         NeoTreeTabSeparatorInactive = { fg = "#6776a7", bg = colors.bg },
         NeoTreeTabActive = { fg = colors.fg, bg = colors.selection },
+        NvimTreeWinSeparator = { fg = colors.selection, bg = "NONE" },
       },
       transparent_bg = false,
     }
