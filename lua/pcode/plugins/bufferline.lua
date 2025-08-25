@@ -18,7 +18,8 @@ return {
         filetype = { "NvimTree", "neo-tree" },
         components = {
           {
-            text = " ",
+            -- text = " ",
+            text = "",
             fg = hl_attr("CursorLine", "bg"),
             bg = hl_attr("Normal", "bg"),
           },
@@ -27,12 +28,14 @@ return {
             text = " Explorer                  ",
             fg = yellow,
             bg = function()
-              return hl_attr("CursorLine", "bg")
+              -- return hl_attr("CursorLine", "bg")
+              return hl_attr("Normal", "bg")
             end,
             bold = true,
           },
           {
-            text = "",
+            -- text = "",
+            text = "",
             fg = hl_attr("CursorLine", "bg"),
             bg = hl_attr("Normal", "bg"),
           },
@@ -53,11 +56,15 @@ return {
           bg = hl_attr("Normal", "bg"),
         },
         {
-          text = "",
+          -- text = "",
+          text = " ",
           fg = function(buffer)
             return buffer.is_focused and hl_attr("CursorLine", "bg") or hl_attr("Normal", "bg")
           end,
-          bg = hl_attr("Normal", "bg"),
+          -- bg = hl_attr("Normal", "bg"),
+          bg = function(buffer)
+            return buffer.is_focused and hl_attr("CursorLine", "bg") or hl_attr("Normal", "bg")
+          end,
         },
         {
           text = function(buffer)
@@ -86,11 +93,15 @@ return {
           delete_buffer_on_left_click = true,
         },
         {
-          text = "",
+          -- text = "",
+          text = " ",
           fg = function(buffer)
             return buffer.is_focused and hl_attr("CursorLine", "bg") or hl_attr("Normal", "bg")
           end,
-          bg = hl_attr("Normal", "bg"),
+          -- bg = hl_attr("Normal", "bg"),
+          bg = function(buffer)
+            return buffer.is_focused and hl_attr("CursorLine", "bg") or hl_attr("Normal", "bg")
+          end,
         },
       },
     }
