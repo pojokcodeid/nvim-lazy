@@ -19,13 +19,12 @@ return {
         components = {
           {
             -- text = " ",
-            text = "",
+            text = "  ",
             fg = hl_attr("CursorLine", "bg"),
             bg = hl_attr("Normal", "bg"),
           },
-
           {
-            text = " Explorer                  ",
+            text = vim.fn.fnamemodify(vim.fn.getcwd(), ":t") or "Explorer",
             fg = yellow,
             bg = function()
               -- return hl_attr("CursorLine", "bg")
