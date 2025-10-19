@@ -1,8 +1,10 @@
+local IN_WINDOWS = vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1
 return {
   {
     "L3MON4D3/LuaSnip",
     event = "InsertEnter",
     version = "v2.*",
+    build = IN_WINDOWS and "make install_jsregexp CC=gcc" or "make install_jsregexp",
     -- build = "make install_jsregexp",
     opts = {
       history = true,
