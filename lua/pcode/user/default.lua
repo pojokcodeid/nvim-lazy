@@ -4,7 +4,7 @@ pcode.lang = {
   cpp = false,
   sql = false,
   deno = false,
-  golang = false,
+  golang = true,
   java = false,
   java2 = false,
   java3 = false,
@@ -59,13 +59,13 @@ pcode.extras = {
 pcode.themes = {
   -- note: open remark only one
   -- **:: Eva Theme ::** --
-  -- evatheme = "Eva-Dark",
+  evatheme = "Eva-Dark",
   -- evatheme = "Eva-Dark-Italic",
   -- evatheme = "Eva-Dark-Bold",
   -- evatheme = "Eva-Light",
   --
   -- **:: Dracula Theme ::** --
-  dracula = "dracula",
+  -- dracula = "dracula",
   -- dracula = "dracula-soft",
   --
   -- **:: Onedarkpro Theme ::** --
