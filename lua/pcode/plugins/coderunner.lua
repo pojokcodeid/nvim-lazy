@@ -14,6 +14,7 @@ local rfile = {
   javascript = 'node "$dir/$fileName"',
   -- go = "go run .",
   go = "go run $fileName",
+  php = 'php "$dir/$fileName"',
 }
 
 local runProject = {}
