@@ -4,7 +4,10 @@ return {
     "L3MON4D3/LuaSnip",
     event = "InsertEnter",
     version = "v2.*",
-    build = IN_WINDOWS and "make install_jsregexp CC=gcc" or "make install_jsregexp",
+    dependencies = IN_WINDOWS and {
+      "kmarius/jsregexp",
+    } or {},
+    build = IN_WINDOWS and "" or "make install_jsregexp",
     -- build = "make install_jsregexp",
     opts = {
       history = true,
