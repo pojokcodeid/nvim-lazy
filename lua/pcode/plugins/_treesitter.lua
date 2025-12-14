@@ -4,6 +4,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufRead", "VeryLazy" },
     version = false,
+    branch = "master", -- sementara sampai stabil
     build = ":TSUpdate",
     lazy = true,
     cmd = {

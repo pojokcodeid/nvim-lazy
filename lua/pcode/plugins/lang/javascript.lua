@@ -38,7 +38,7 @@ local M = {
       "antoinemadec/FixCursorHold.nvim",
       "nvim-neotest/neotest-jest",
       "nvim-neotest/nvim-nio",
-      "marilari88/neotest-vitest",
+      -- "marilari88/neotest-vitest",
     },
     ft = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
     opts = {
@@ -60,7 +60,7 @@ local M = {
             return vim.fn.getcwd()
           end,
         },
-        ["neotest-vitest"] = {},
+        -- ["neotest-vitest"] = {},
       },
       status = { virtual_text = true },
       output = { open_on_run = true },
