@@ -1,4 +1,12 @@
 local config_file = "jest.config.ts"
+-- set tabsize 4 if file type php
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "javascript", "typescript" },
+  callback = function()
+    vim.opt.tabstop = 4
+    vim.opt.shiftwidth = 4
+  end,
+})
 local M = {
   {
     "nvim-treesitter/nvim-treesitter",

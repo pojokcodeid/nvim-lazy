@@ -9,7 +9,7 @@ pcode.lang = {
   java2 = false,
   java3 = false,
   java4 = false,
-  javascript = false,
+  javascript = true,
   kotlin = false,
   markdown = false,
   php = false,
@@ -30,7 +30,7 @@ pcode.extras = {
   neoscroll = false,
   nvimufo = false,
   refactoring = false,
-  rest = false,
+  rest = true,
   treesittercontex = false,
   colorizer = false,
   dap = false,
@@ -59,13 +59,13 @@ pcode.extras = {
 pcode.themes = {
   -- note: open remark only one
   -- **:: Eva Theme ::** --
-  -- evatheme = "Eva-Dark",
+  evatheme = "Eva-Dark",
   -- evatheme = "Eva-Dark-Italic",
   -- evatheme = "Eva-Dark-Bold",
   -- evatheme = "Eva-Light",
   --
   -- **:: Dracula Theme ::** --
-  dracula = "dracula",
+  -- dracula = "dracula",
   -- dracula = "dracula-soft",
   --
   -- **:: Onedarkpro Theme ::** --

@@ -79,3 +79,12 @@ if uname.sysname == "Windows_NT" then
   vim.opt.shellquote = ""
   vim.opt.shellxquote = ""
 end
+
+-- set tabsize 4 if file type php
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "php",
+  callback = function()
+    vim.opt.tabstop = 4
+    vim.opt.shiftwidth = 4
+  end,
+})

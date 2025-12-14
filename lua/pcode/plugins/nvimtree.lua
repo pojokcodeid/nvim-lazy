@@ -62,7 +62,7 @@ if pcode.use_nvimtree then
       opts.renderer = {
         root_folder_label = false,
         highlight_git = true,
-        indent_markers = { enable = true },
+        indent_markers = { enable = false },
         -- indent_markers = {
         --		enable = true,
         --		inline_arrows = true,
@@ -88,9 +88,19 @@ if pcode.use_nvimtree then
             default = icons.ui.Text,
             symlink = icons.ui.FileSymlink,
             bookmark = icons.ui.BookMark,
-            folder = {
+            --[[  folder = {
               arrow_closed = icons.ui.ChevronShortRight,
               arrow_open = icons.ui.ChevronShortDown,
+              default = icons.ui.Folder,
+              open = icons.ui.FolderOpen,
+              empty = icons.ui.EmptyFolder,
+              empty_open = icons.ui.EmptyFolderOpen,
+              symlink = icons.ui.FolderSymlink,
+              symlink_open = icons.ui.FolderOpen,
+            }, ]]
+            folder = {
+              arrow_closed = icons.ui.TriangleShortArrowRight,
+              arrow_open = icons.ui.TriangleShortArrowDown,
               default = icons.ui.Folder,
               open = icons.ui.FolderOpen,
               empty = icons.ui.EmptyFolder,

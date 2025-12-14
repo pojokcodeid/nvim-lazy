@@ -14,7 +14,20 @@ return {
       { "<leader>Rp", "<cmd>lua require('kulala').jump_prev()<cr>", desc = "Jump to previous request" },
       { "<leader>Rn", "<cmd>lua require('kulala').jump_next()<cr>", desc = "Jump to next request" },
     },
-    opts = {},
+    opts = {
+      ui = {
+        display_mode = "float",
+        icons = {
+          inlay = {
+            loading = "󱫥 ",
+            done = " ", -- dari FontAwesome atau emoji
+            error = " ",
+          },
+          lualine = "🐼",
+          textHighlight = "WarningMsg", -- highlight group for request elapsed time
+        },
+      },
+    },
   },
   {
     "nvim-treesitter/nvim-treesitter",

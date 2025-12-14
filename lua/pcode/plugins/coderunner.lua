@@ -13,7 +13,8 @@ local rfile = {
   scss = "sass $dir/$fileName $dir/$fileNameWithoutExt.css",
   javascript = 'node "$dir/$fileName"',
   -- go = "go run .",
-  go = "go run $fileName",
+  go = "go run $dir/$fileName",
+  php = 'php "$dir/$fileName"',
 }
 
 local runProject = {}
