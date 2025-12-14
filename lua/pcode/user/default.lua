@@ -20,6 +20,7 @@ pcode.lang = {
 }
 -- activate config extras
 pcode.extras = {
+  bufferline = true,
   autosave = false,
   bigfiles = false,
   codeium = false,
