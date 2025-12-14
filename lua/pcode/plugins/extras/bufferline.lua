@@ -1,5 +1,6 @@
 return {
   "willothy/nvim-cokeline",
+  branch = "main",
   event = { "BufRead", "BufNewFile" },
   opts = function()
     local truncate_text = function(text, max_length)
