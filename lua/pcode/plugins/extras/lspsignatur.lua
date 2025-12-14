@@ -1,6 +1,6 @@
 return {
   "ray-x/lsp_signature.nvim",
-  event = "VeryLazy",
+  event = "InsertEnter",
   opts = function()
     local is_enabled = true
     return {
@@ -11,7 +11,7 @@ return {
 
       -- Hint mode
       hint_enable = false, -- Display it as hint.
-      hint_prefix = "👈 ",
+      hint_prefix = "󰍩 ",
 
       -- Additionally, you can use <space>uH to toggle inlay hints.
       toggle_key_flip_floatwin_setting = is_enabled,
