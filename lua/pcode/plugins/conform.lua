@@ -23,12 +23,42 @@ return {
     local conform = require("conform")
     if opts.format_on_save then
       conform.setup({
-        format_on_save = {
-          lsp_fallback = true,
-          timeout_ms = opts.format_timeout_ms or 5000,
-        },
+        format_on_save = function(bufnr)
+          local notif_ok, notify = pcall(require, "notify")
+          if notif_ok then
+            local spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
+            local function show_spinner(msg, duration)
+              duration = duration or 3000 -- default 3 detik
+              local i = 1
+              local notif_id
+              local start_time = vim.loop.now()
+
+              local function update()
+                notif_id = notify(spinner[i] .. " " .. msg, "info", {
+                  replace = notif_id,
+                  timeout = duration,
+                })
+                i = i % #spinner + 1
+                if vim.loop.now() < start_time + 3000 then
+                  vim.defer_fn(update, 100) -- update setiap 100ms
+                end
+              end
+
+              update()
+            end
+            show_spinner("Formating ...", 500)
+          else
+            print("Formating ...")
+          end
+
+          return {
+            lsp_fallback = true,
+            timeout_ms = opts.format_timeout_ms or 5000,
+          }
+        end,
       })
     end
+
     vim.keymap.set({ "n", "v" }, "<leader>lF", function()
       conform.format({
         lsp_fallback = true,
@@ -38,6 +68,6 @@ return {
     end, { desc = "Format file or range (in visual mode)" })
   end,
   keys = {
-    { "<leader>l", "", desc = "󰘦 Lsp" },
+    { "<leader>l", "", desc = " 󰘦 Lsp" },
   },
 }

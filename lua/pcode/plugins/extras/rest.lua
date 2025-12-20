@@ -19,7 +19,7 @@ return {
         display_mode = "float",
         icons = {
           inlay = {
-            loading = "󱫥 ",
+            loading = " ",
             done = " ", -- dari FontAwesome atau emoji
             error = " ",
           },

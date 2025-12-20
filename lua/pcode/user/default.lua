@@ -8,11 +8,11 @@ pcode.lang = {
   java2 = false,
   java3 = false,
   java4 = false,
-  javascript = false,
+  javascript = true,
   kotlin = false,
   markdown = false,
   php = false,
-  prisma = false,
+  prisma = true,
   python = false,
   rust = false,
   sql = false,
@@ -31,7 +31,7 @@ pcode.extras = {
   deviconcolor = false,
   dressing = true,
   fidget = false,
-  illuminate = true,
+  illuminate = false,
   indentscupe = false,
   liveserver = false,
   lspsignatur = false,
@@ -43,30 +43,30 @@ pcode.extras = {
   nvimufo = false,
   rainbowdelimiters = true,
   refactoring = false,
-  rest = false,
+  rest = true,
   scrollview = false,
   showkeys = true,
-  smartsplit = true,
+  smartsplit = false,
   telescopediff = false,
   telescopetreesiterinfo = false,
   tinydignostic = false,
   treesittercontex = false,
-  verticalcolumn = true,
-  visualmulti = true,
-  yanky = true,
+  verticalcolumn = false,
+  visualmulti = false,
+  yanky = false,
   zenmode = false,
 }
 -- activate config themes
 pcode.themes = {
   -- note: open remark only one
   -- **:: Eva Theme ::** --
-  evatheme = "Eva-Dark",
+  -- evatheme = "Eva-Dark",
   -- evatheme = "Eva-Dark-Italic",
   -- evatheme = "Eva-Dark-Bold",
   -- evatheme = "Eva-Light",
   --
   -- **:: Dracula Theme ::** --
-  -- dracula = "dracula",
+  dracula = "dracula",
   -- dracula = "dracula-soft",
   --
   -- **:: Onedarkpro Theme ::** --
