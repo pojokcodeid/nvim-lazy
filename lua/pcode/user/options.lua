@@ -43,6 +43,7 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
+vim.opt.winborder = "rounded"
 -- vim.opt.shortmess = "ilmnrx"                        -- flags to shorten vim messages, see :help 'shortmess'
 -- vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 vim.opt.shortmess:append("c") -- don't give |ins-completion-menu| messages

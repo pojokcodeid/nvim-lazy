@@ -46,7 +46,7 @@ return {
 
               update()
             end
-            show_spinner("Formating ...", 500)
+            show_spinner("Formating ...", 100)
           else
             print("Formating ...")
           end
